@@ -1,0 +1,28 @@
+{
+  "resourceType": "ImplementationGuide",
+  "name": "Implementierungsleitfaden Rezeptanforderung",
+  "status": "draft",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "packageId": "0.0.1",
+  "definition": {
+    "page": {
+      "nameUrl": "ImplementationGuide/markdown/Einfuehrung.md",
+      "title": "Einführung",
+      "generation": "markdown",
+      "page": [
+       {
+          "nameUrl": "ImplementationGuide/markdown/ReleaseNotes.md",
+          "title": "Release Notes",
+          "generation": "markdown"
+        },
+        {
+          "generation": "markdown",
+          "nameUrl": "ImplementationGuide/markdown/Terminologie.md",
+          "title": "Terminologie"
+        }
+      ]
+    }
+  }
+}
