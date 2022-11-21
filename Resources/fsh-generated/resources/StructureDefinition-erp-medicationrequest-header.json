@@ -12,7 +12,7 @@
     }
   ],
   "url": "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/erp-medicationrequest-header",
-  "name": "MessageHeaderMedicationRequst",
+  "name": "MessageHeaderMedicationRequest",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
@@ -41,22 +41,6 @@
   "derivation": "constraint",
   "differential": {
     "element": [
-      {
-        "id": "MessageHeader.extension:\n* extension[Rezeptendempfaenger].value[x]",
-        "path": "MessageHeader.extension.value[x]",
-        "sliceName": "\n* extension[Rezeptendempfaenger].value[x]",
-        "min": 0,
-        "max": "*"
-      },
-      {
-        "id": "MessageHeader.event[x]",
-        "path": "MessageHeader.event[x]",
-        "type": [
-          {
-            "code": "Coding"
-          }
-        ]
-      },
       {
         "id": "MessageHeader.sender",
         "path": "MessageHeader.sender",

@@ -1,13 +1,13 @@
-Profile: BundleMedicationRequest
+Profile: BundleMedicationRequestReponse
 Parent: Bundle
-Id: erp-medicationrequest-bundle
-Title: "Message Bundle for MedicationRequest"
-Description: "A representation of resources for requesting a medication"
+Id: erp-medicationrequestresponse-bundle
+Title: "Message Bundle for a response to a MedicationRequest"
+Description: "Resources for a response of a medication request"
 * insert Meta
 * id 1..1
 * meta 1..1
 * meta.profile 1..1
-* meta.profile = "https://gematik.de/fhir/erp/StructureDefinition/BundleMedicationRequest|0.1" (exactly)
+* meta.profile = "https://gematik.de/fhir/erp/StructureDefinition/BundleMedicationRequestResponse|0.1" (exactly)
 * identifier 1..
 * identifier.system 1..
 * identifier.system = "urn:ietf:rfc:3986" (exactly)
@@ -32,7 +32,7 @@ Description: "A representation of resources for requesting a medication"
 * entry[Header].response ..0
 * entry[MedicationRequest].link ..0
 * entry[MedicationRequest].resource 1..
-* entry[MedicationRequest].resource only $ISiKMedikationsVerordnung
+* entry[MedicationRequest].resource only $KBV_PR_ERP_Prescription
 * entry[MedicationRequest].search ..0
 * entry[MedicationRequest].request ..0
 * entry[MedicationRequest].response ..0

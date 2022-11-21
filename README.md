@@ -2,7 +2,7 @@
 
 # spec-erezept-medicationrequest-communications FHIR-Profiles
 
-Communication ressources used to request a electronical prescription context. Ressources to to be published on www.simplifier.net/erezept-medicationrequest-communications
+Communication ressources used to request a electronical prescription context. Ressources to to be published on www.simplifier.net/erezept-medicationrequest-communication
 
 
 <details>

@@ -1,6 +1,6 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "erp-medicationrequest-bundle",
+  "id": "erp-medicationrequestresponse-bundle",
   "extension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
@@ -11,13 +11,13 @@
       "valueCode": "not-classified"
     }
   ],
-  "url": "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/erp-medicationrequest-bundle",
-  "name": "BundleMedicationRequest",
-  "title": "Message Bundle for MedicationRequest",
+  "url": "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/erp-medicationrequestresponse-bundle",
+  "name": "BundleMedicationRequestReponse",
+  "title": "Message Bundle for a response to a MedicationRequest",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "A representation of resources for requesting a medication",
+  "description": "Resources for a response of a medication request",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -63,7 +63,7 @@
         "path": "Bundle.meta.profile",
         "min": 1,
         "max": "1",
-        "fixedCanonical": "https://gematik.de/fhir/erp/StructureDefinition/BundleMedicationRequest|0.1"
+        "fixedCanonical": "https://gematik.de/fhir/erp/StructureDefinition/BundleMedicationRequestResponse|0.1"
       },
       {
         "id": "Bundle.identifier",
@@ -166,7 +166,7 @@
           {
             "code": "MedicationRequest",
             "profile": [
-              "https://gematik.de/fhir/isik/v2/Medikation/StructureDefinition/ISiKMedikationsVerordnung"
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription"
             ]
           }
         ]
