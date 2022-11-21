@@ -2,7 +2,7 @@ Profile: BundleMedicationRequestDispenseInformation
 Parent: Bundle
 Id: erp-medicationrequestdispenseinformation-bundle
 Title: "Message Bundle for sending dispenseInforamtion related to a MedicationRequest"
-Description: "Resources for sending dispenseInformation for a medication request"
+Description: "Communication ressource for sending dispenseInformation regarding a medication request"
 * insert Meta
 * id 1..1
 * meta 1..1

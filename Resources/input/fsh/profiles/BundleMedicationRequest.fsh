@@ -2,7 +2,7 @@ Profile: BundleMedicationRequest
 Parent: Bundle
 Id: erp-medicationrequest-bundle
 Title: "Message Bundle for MedicationRequest"
-Description: "A representation of resources for requesting a medication"
+Description: "A communication resource used for requesting a medication"
 * insert Meta
 * id 1..1
 * meta 1..1

@@ -2,7 +2,7 @@ Profile: BundleMedicationRequestCancelation
 Parent: Bundle
 Id: erp-medicationrequestcanelation-bundle
 Title: "Message Bundle for a canelling of a MedicationRequest"
-Description: "Resources for a cancelation of a medication request"
+Description: "Communication resource for cancelation of a medication request"
 * insert Meta
 * id 1..1
 * meta 1..1
