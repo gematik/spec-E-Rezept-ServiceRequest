@@ -13,7 +13,7 @@
   ],
   "url": "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/erp-medicationrequest-bundle",
   "name": "BundleMedicationRequest",
-  "title": "Message Bundle for MedicationRequest",
+  "title": "Message Bundle for a MedicationRequest",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",

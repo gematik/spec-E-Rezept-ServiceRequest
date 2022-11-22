@@ -13,11 +13,11 @@
   ],
   "url": "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/erp-medicationrequestdispenseinformation-bundle",
   "name": "BundleMedicationRequestDispenseInformation",
-  "title": "Message Bundle for sending dispenseInforamtion related to a MedicationRequest",
+  "title": "Message bundle for sending dispenseInformation in connection with a MedicationRequest",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "Communication ressource for sending dispenseInformation regarding a medication request",
+  "description": "Communication resource for sending dispenseInformation about a medication requisition.",
   "fhirVersion": "4.0.1",
   "mapping": [
     {

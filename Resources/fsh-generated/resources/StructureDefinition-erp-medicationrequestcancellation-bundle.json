@@ -13,11 +13,11 @@
   ],
   "url": "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/erp-medicationrequestcancellation-bundle",
   "name": "BundleMedicationRequestCancellation",
-  "title": "Message Bundle for a canelling of a MedicationRequest",
+  "title": "Message bundle for the cancellation of a MedicationRequest",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "Communication resource for cancelation of a medication request",
+  "description": "Means of communication for the cancellation of a medication request",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
