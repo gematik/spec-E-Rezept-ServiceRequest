@@ -15,5 +15,6 @@ dependencies:
   hl7.fhir.r4.core: 4.0.1
   hl7.fhir.extensions.r5: 4.0.1
   de.gematik.isik-medikation: 2.0.1
+  de.gematik.erezept-workflow.r4: 1.2.0
   kbv.ita.for: 1.1.0
   kbv.ita.erp: 1.1.0

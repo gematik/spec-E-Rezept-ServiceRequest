@@ -21,13 +21,16 @@ Description: "Communication ressource for sending dispenseInformation regarding 
 * entry ^slicing.rules = #closed
 * entry contains
     Header 1..1 and
-    MedicationRequest 1..1 and
-    Patient 1..1 and
-    Organization 1..1
+    DispenseInformation 1..1
 * entry[Header].link ..0
 * entry[Header].resource 1..
 * entry[Header].resource only MessageHeaderMedicationRequest
 * entry[Header].search ..0
 * entry[Header].request ..0
 * entry[Header].response ..0
-//DispensierInformationen als http://fhir.abda.de/eRezeptAbgabedaten/StructureDefinition/DAV-PR-Base-AbgabedatenBundle !?
+* entry[DispenseInformation].link ..0
+* entry[DispenseInformation].resource 1..
+* entry[DispenseInformation].resource only $GEM_ERP_PR_MedicationDispense
+* entry[DispenseInformation].search ..0
+* entry[DispenseInformation].request ..0
+* entry[DispenseInformation].response ..0

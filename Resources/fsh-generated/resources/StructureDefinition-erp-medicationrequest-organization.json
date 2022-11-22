@@ -1,18 +1,18 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "erp-medicationrequest-header",
+  "id": "erp-medicationrequest-organization",
   "extension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
-      "valueString": "Foundation.Other"
+      "valueString": "Base.Entities"
     },
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
-      "valueCode": "not-classified"
+      "valueCode": "business"
     }
   ],
-  "url": "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/erp-medicationrequest-header",
-  "name": "MessageHeaderMedicationRequest",
+  "url": "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/erp-medicationrequest-organization",
+  "name": "ProfileRequestingOrganization",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
@@ -29,6 +29,11 @@
       "name": "RIM Mapping"
     },
     {
+      "identity": "servd",
+      "uri": "http://www.omg.org/spec/ServD/1.0/",
+      "name": "ServD"
+    },
+    {
       "identity": "w5",
       "uri": "http://hl7.org/fhir/fivews",
       "name": "FiveWs Pattern Mapping"
@@ -36,28 +41,14 @@
   ],
   "kind": "resource",
   "abstract": false,
-  "type": "MessageHeader",
-  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/MessageHeader",
+  "type": "Organization",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Organization",
   "derivation": "constraint",
   "differential": {
     "element": [
       {
-        "id": "MessageHeader.sender",
-        "path": "MessageHeader.sender",
-        "min": 1,
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/Organization"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "MessageHeader.sender.reference",
-        "path": "MessageHeader.sender.reference",
-        "min": 1
+        "id": "Organization",
+        "path": "Organization"
       }
     ]
   }

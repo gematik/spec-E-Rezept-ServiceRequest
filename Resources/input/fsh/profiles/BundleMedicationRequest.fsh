@@ -15,6 +15,10 @@ Description: "A communication resource used for requesting a medication"
 * identifier.value ^short = "Eindeutige UUID"
 * type = #message (exactly)
 * timestamp 1..
+//Oder als weiteren Entry des Bundles?
+* extension contains
+    PrescriptionDeliveryTypeEX named PrescriptionDeliveryType 1..1
+* extension[PrescriptionDeliveryType] ^short = "Zustelltyp"
 * entry 1..
 * entry ^slicing.discriminator.type = #value
 * entry ^slicing.discriminator.path = "resource.meta.profile"
@@ -23,7 +27,7 @@ Description: "A communication resource used for requesting a medication"
     Header 1..1 and
     MedicationRequest 1..1 and
     Patient 1..1 and
-    Organization 1..1
+    RequestingOrganization 1..1
 * entry[Header].link ..0
 * entry[Header].resource 1..
 * entry[Header].resource only MessageHeaderMedicationRequest
@@ -42,11 +46,9 @@ Description: "A communication resource used for requesting a medication"
 * entry[Patient].search ..0
 * entry[Patient].request ..0
 * entry[Patient].response ..0
-* entry[Organization].link ..0
-* entry[Organization].resource 1..
-* entry[Organization].resource only Organization
-* entry[Organization].search ..0
-* entry[Organization].request ..0
-* entry[Organization].response ..0
-// PlegeEinrichtung zu "RequestingOrganization" (oder Besser) Umbennnen
-// ZustellTyp Codessystem : Selbstabholer ODER "Heimbelieferung durch Apotheke" ODER "über PflegeEinrichtung"
+* entry[RequestingOrganization].link ..0
+* entry[RequestingOrganization].resource 1..
+* entry[RequestingOrganization].resource only ProfileRequestingOrganization
+* entry[RequestingOrganization].search ..0
+* entry[RequestingOrganization].request ..0
+* entry[RequestingOrganization].response ..0

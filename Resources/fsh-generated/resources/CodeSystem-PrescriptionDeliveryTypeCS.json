@@ -1,0 +1,29 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "PrescriptionDeliveryTypeCS",
+  "id": "PrescriptionDeliveryTypeCS",
+  "title": "CodeSystem  Type",
+  "description": "This type defines how the prescription will be delivered",
+  "version": "1.0",
+  "url": "https://gematik.de/fhir/isik/v2/Basismodul/CodeSystem/PrescriptionDeliveryTypeCS",
+  "concept": [
+    {
+      "code": "selfPickup",
+      "display": "Selbstabholer"
+    },
+    {
+      "code": "pharmacy",
+      "display": "Heimbelieferung durch Apotheke"
+    },
+    {
+      "code": "requestingOrganisation",
+      "display": "Über anfragende Organisation"
+    }
+  ],
+  "experimental": false,
+  "publisher": "gematik GmbH",
+  "caseSensitive": true,
+  "count": 3
+}

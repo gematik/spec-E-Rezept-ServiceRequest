@@ -17,7 +17,7 @@
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "A representation of resources for requesting a medication",
+  "description": "A communication resource used for requesting a medication",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -219,39 +219,42 @@
         "max": "0"
       },
       {
-        "id": "Bundle.entry:Organization",
+        "id": "Bundle.entry:RequestingOrganization",
         "path": "Bundle.entry",
-        "sliceName": "Organization",
+        "sliceName": "RequestingOrganization",
         "min": 1,
         "max": "1"
       },
       {
-        "id": "Bundle.entry:Organization.link",
+        "id": "Bundle.entry:RequestingOrganization.link",
         "path": "Bundle.entry.link",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:Organization.resource",
+        "id": "Bundle.entry:RequestingOrganization.resource",
         "path": "Bundle.entry.resource",
         "min": 1,
         "type": [
           {
-            "code": "Organization"
+            "code": "Organization",
+            "profile": [
+              "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/erp-medicationrequest-organization"
+            ]
           }
         ]
       },
       {
-        "id": "Bundle.entry:Organization.search",
+        "id": "Bundle.entry:RequestingOrganization.search",
         "path": "Bundle.entry.search",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:Organization.request",
+        "id": "Bundle.entry:RequestingOrganization.request",
         "path": "Bundle.entry.request",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:Organization.response",
+        "id": "Bundle.entry:RequestingOrganization.response",
         "path": "Bundle.entry.response",
         "max": "0"
       }

@@ -6,4 +6,5 @@ Id: erp-medicationrequest-header
 * sender 1..
 * sender only Reference(Organization)
 * sender.reference 1..
-* source.endpoint = "https://ehex.de/KIM" (exactly)
+
+//Sender and receipient festmachen

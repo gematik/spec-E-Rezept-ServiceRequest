@@ -1,0 +1,19 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "PrescriptionDeliveryTypeVS",
+  "id": "PrescriptionDeliveryTypeVS",
+  "title": "ValueSet of types describing how prescription will be delivered",
+  "description": "This type defines how the prescription will delivered",
+  "version": "1.0",
+  "url": "https://gematik.de/fhir/isik/v2/Basismodul/ValueSet/PrescriptionDeliveryTypeVS",
+  "experimental": false,
+  "publisher": "gematik GmbH",
+  "compose": {
+    "include": [
+      {
+        "system": "https://gematik.de/fhir/isik/v2/Basismodul/CodeSystem/PrescriptionDeliveryTypeCS"
+      }
+    ]
+  }
+}

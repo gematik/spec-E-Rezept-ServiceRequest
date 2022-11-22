@@ -1,6 +1,6 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "erp-medicationrequestcanelation-bundle",
+  "id": "erp-medicationrequestcancellation-bundle",
   "extension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
@@ -11,13 +11,13 @@
       "valueCode": "not-classified"
     }
   ],
-  "url": "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/erp-medicationrequestcanelation-bundle",
-  "name": "BundleMedicationRequestCancelation",
+  "url": "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/erp-medicationrequestcancellation-bundle",
+  "name": "BundleMedicationRequestCancellation",
   "title": "Message Bundle for a canelling of a MedicationRequest",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "Resources for a cancelation of a medication request",
+  "description": "Communication resource for cancelation of a medication request",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
