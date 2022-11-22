@@ -1,6 +1,6 @@
-Profile: BundleMedicationRequestCancelation
+Profile: BundleMedicationRequestCancellation
 Parent: Bundle
-Id: erp-medicationrequestcanelation-bundle
+Id: erp-medicationrequestcancellation-bundle
 Title: "Message Bundle for a canelling of a MedicationRequest"
 Description: "Communication resource for cancelation of a medication request"
 * insert Meta
