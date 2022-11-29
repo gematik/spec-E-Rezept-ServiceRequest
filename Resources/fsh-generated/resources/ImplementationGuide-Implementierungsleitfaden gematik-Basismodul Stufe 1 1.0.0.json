@@ -73,56 +73,47 @@
     "resource": [
       {
         "reference": {
-          "reference": "StructureDefinition/erp-medicationrequest-bundle"
+          "reference": "StructureDefinition/gem-pr-erp-medreq-cancellation-bundle"
         },
-        "name": "Message Bundle for a MedicationRequest",
-        "description": "A communication resource used for requesting a medication",
+        "name": "GEM PR ERP MEDREQ Cancellation Bundle",
         "exampleBoolean": false
       },
       {
         "reference": {
-          "reference": "StructureDefinition/erp-medicationrequestcancellation-bundle"
+          "reference": "StructureDefinition/GEM-PR-ERP-MEDREQ-DispenseInformationBundle"
         },
-        "name": "Message bundle for the cancellation of a MedicationRequest",
-        "description": "Means of communication for the cancellation of a medication request",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/erp-medicationrequestdispenseinformation-bundle"
-        },
-        "name": "Message bundle for sending dispenseInformation in connection with a MedicationRequest",
+        "name": "GEM_PR_ERP_MEDREQ_DispenseInformationBundle",
         "description": "Communication resource for sending dispenseInformation about a medication requisition.",
         "exampleBoolean": false
       },
       {
         "reference": {
-          "reference": "StructureDefinition/erp-medicationrequestresponse-bundle"
+          "reference": "StructureDefinition/gem-pr-erp-medreq-message-header-medication-request"
         },
-        "name": "Message Bundle for a response to a MedicationRequest",
+        "name": "GEM PR ERP MEDREQ Message Header Medication Request",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/gem-pr-erp-medreq-request-bundle"
+        },
+        "name": "GEM PR ERP MEDREQ Request Bundle",
+        "description": "A communication resource used for requesting a medication",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/gem-pr-erp-medreq-requesting-organization"
+        },
+        "name": "GEM PR ERP MEDREQ Requesting Organization",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/gem-pr-erp-medreq-response-bundle"
+        },
+        "name": "GEM PR ERP MEDREQ Response Bundle",
         "description": "A communication resource used for responding to a medication request",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/gem-medreq-medication-request"
-        },
-        "name": "GEM MEDREQ Medication Request",
-        "description": "Profile on the Medication Request that is to be sent",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/erp-medicationrequest-header"
-        },
-        "name": "MessageHeaderMedicationRequest",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/erp-medicationrequest-organization"
-        },
-        "name": "ProfileRequestingOrganization",
         "exampleBoolean": false
       },
       {

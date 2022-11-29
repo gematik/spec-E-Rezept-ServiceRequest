@@ -1,8 +1,7 @@
-Profile: BundleMedicationRequestCancellation
+Profile: GEM_PR_ERP_MEDREQ_CancellationBundle
 Parent: Bundle
-Id: erp-medicationrequestcancellation-bundle
-Title: "Message bundle for the cancellation of a MedicationRequest"
-Description: "Means of communication for the cancellation of a medication request"
+Id: gem-pr-erp-medreq-cancellation-bundle
+Title: "GEM PR ERP MEDREQ Cancellation Bundle"
 * insert Meta
 * id 1..1
 * meta 1..1

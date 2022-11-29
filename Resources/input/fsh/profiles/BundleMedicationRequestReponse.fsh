@@ -1,7 +1,7 @@
-Profile: BundleMedicationRequestReponse
+Profile: GEM_PR_ERP_MEDREQ_ResponseBundle
 Parent: Bundle
-Id: erp-medicationrequestresponse-bundle
-Title: "Message Bundle for a response to a MedicationRequest"
+Id: gem-pr-erp-medreq-response-bundle
+Title: "GEM PR ERP MEDREQ Response Bundle"
 Description: "A communication resource used for responding to a medication request"
 * insert Meta
 * id 1..1

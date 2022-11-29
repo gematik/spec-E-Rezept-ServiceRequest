@@ -1,6 +1,8 @@
-Profile: MessageHeaderMedicationRequest
+Profile: GEM_PR_ERP_MEDREQ_MessageHeaderMedicationRequest
 Parent: MessageHeader
-Id: erp-medicationrequest-header
+Id: gem-pr-erp-medreq-message-header-medication-request
+Title: "GEM PR ERP MEDREQ Message Header Medication Request"
+Description: ""
 * insert Meta
 
 * sender 1..

@@ -1,7 +1,7 @@
-Profile: BundleMedicationRequestDispenseInformation
+Profile: GEM_PR_ERP_MEDREQ_DispenseInformationBundle
 Parent: Bundle
-Id: erp-medicationrequestdispenseinformation-bundle
-Title: "Message bundle for sending dispenseInformation in connection with a MedicationRequest"
+Id: GEM_PR_ERP_MEDREQ_DispenseInformationBundle
+Title: "GEM_PR_ERP_MEDREQ_DispenseInformationBundle"
 Description: "Communication resource for sending dispenseInformation about a medication requisition."
 * insert Meta
 * id 1..1
