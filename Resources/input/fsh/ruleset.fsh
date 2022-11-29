@@ -7,6 +7,10 @@ RuleSet: MetaProfile (profileName)
 * meta 1..1
 * meta.profile 1..1
 * meta.profile = "https://gematik.de/fhir/erp/StructureDefinition/{profileName}|0.1" (exactly)
+* meta.versionId 0..0
+* meta.source 0..0
+* meta.security 0..0
+* meta.tag 0..0
 
 RuleSet: Meta-Inst
 * status = #draft

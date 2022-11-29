@@ -346,7 +346,7 @@
         "definition": "The version specific identifier, as it appears in the version portion of the URL. This value changes when the resource is created, updated, or deleted.",
         "comment": "The server assigns this value, and ignores what the client specifies, except in the case that the server is imposing version integrity on updates/deletes.",
         "min": 0,
-        "max": "1",
+        "max": "0",
         "base": {
           "path": "Meta.versionId",
           "min": 0,
@@ -424,7 +424,7 @@
         "definition": "A uri that identifies the source system of the resource. This provides a minimal amount of [Provenance](provenance.html#) information that can be used to track or differentiate the source of information in the resource. The source may identify another FHIR server, document, message, database, etc.",
         "comment": "In the provenance resource, this corresponds to Provenance.entity.what[x]. The exact use of the source (and the implied Provenance.entity.role) is left to implementer discretion. Only one nominated source is allowed; for additional provenance details, a full Provenance resource should be used. \n\nThis element can be used to indicate where the current master source of a resource that has a canonical URL if the resource is no longer hosted at the canonical URL.",
         "min": 0,
-        "max": "1",
+        "max": "0",
         "base": {
           "path": "Meta.source",
           "min": 0,
@@ -516,7 +516,7 @@
         "definition": "Security labels applied to this resource. These tags connect specific resources to the overall security policy and infrastructure.",
         "comment": "The security labels can be updated without changing the stated version of the resource. The list of security labels is a set. Uniqueness is based the system/code, and version and display are ignored.",
         "min": 0,
-        "max": "*",
+        "max": "0",
         "base": {
           "path": "Meta.security",
           "min": 0,
@@ -592,7 +592,7 @@
         "definition": "Tags applied to this resource. Tags are intended to be used to identify and relate resources to process and workflow, and applications are not required to consider the tags when interpreting the meaning of a resource.",
         "comment": "The tags can be updated without changing the stated version of the resource. The list of tags is a set. Uniqueness is based the system/code, and version and display are ignored.",
         "min": 0,
-        "max": "*",
+        "max": "0",
         "base": {
           "path": "Meta.tag",
           "min": 0,
@@ -6396,11 +6396,31 @@
         "min": 1
       },
       {
+        "id": "Bundle.meta.versionId",
+        "path": "Bundle.meta.versionId",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.meta.source",
+        "path": "Bundle.meta.source",
+        "max": "0"
+      },
+      {
         "id": "Bundle.meta.profile",
         "path": "Bundle.meta.profile",
         "min": 1,
         "max": "1",
         "fixedCanonical": "https://gematik.de/fhir/erp/StructureDefinition/GEM_PR_ERP_MEDREQ_DispenseInformationBundle|0.1"
+      },
+      {
+        "id": "Bundle.meta.security",
+        "path": "Bundle.meta.security",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.meta.tag",
+        "path": "Bundle.meta.tag",
+        "max": "0"
       },
       {
         "id": "Bundle.identifier",
