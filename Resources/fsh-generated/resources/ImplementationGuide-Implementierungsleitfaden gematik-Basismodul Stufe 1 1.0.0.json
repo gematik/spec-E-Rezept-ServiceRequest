@@ -99,6 +99,7 @@
           "reference": "StructureDefinition/gem-pr-erp-medreq-message-header-medication-request"
         },
         "name": "GEM PR ERP MEDREQ Message Header Medication Request",
+        "description": "Header for Messages concerning Medication Request",
         "exampleBoolean": false
       },
       {
@@ -114,6 +115,7 @@
           "reference": "StructureDefinition/gem-pr-erp-medreq-requesting-organization"
         },
         "name": "GEM PR ERP MEDREQ Requesting Organization",
+        "description": "Organization that is requesting the medication",
         "exampleBoolean": false
       },
       {

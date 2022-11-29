@@ -18,6 +18,7 @@
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
+  "description": "Organization that is requesting the medication",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
