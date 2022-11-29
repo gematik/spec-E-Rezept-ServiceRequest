@@ -4,10 +4,8 @@ Id: gem-pr-erp-medreq-response-bundle
 Title: "GEM PR ERP MEDREQ Response Bundle"
 Description: "A communication resource used for responding to a medication request"
 * insert Meta
+* insert MetaProfile (GEM_PR_ERP_MEDREQ_ResponseBundle)
 * id 1..1
-* meta 1..1
-* meta.profile 1..1
-* meta.profile = "https://gematik.de/fhir/erp/StructureDefinition/BundleMedicationRequestResponse|0.1" (exactly)
 * identifier 1..
 * identifier.system 1..
 * identifier.system = "urn:ietf:rfc:3986" (exactly)

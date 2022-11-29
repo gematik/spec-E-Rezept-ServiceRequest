@@ -3,10 +3,8 @@ Parent: Bundle
 Id: gem-pr-erp-medreq-cancellation-bundle
 Title: "GEM PR ERP MEDREQ Cancellation Bundle"
 * insert Meta
+* insert MetaProfile (GEM_PR_ERP_MEDREQ_CancellationBundle)
 * id 1..1
-* meta 1..1
-* meta.profile 1..1
-* meta.profile = "https://gematik.de/fhir/erp/StructureDefinition/BundleMedicationRequestCancelation|0.1" (exactly)
 * identifier 1..
 * identifier.system 1..
 * identifier.system = "urn:ietf:rfc:3986" (exactly)

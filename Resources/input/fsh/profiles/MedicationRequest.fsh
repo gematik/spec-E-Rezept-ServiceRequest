@@ -1,11 +1,13 @@
 Profile: GEM_PR_ERP_MEDREQ_MedicationRequest
-Parent: MedicationRequest
+Parent: $ISiKMedikationsVerordnung
 Id: gem-pr-erp-medreq-medication-request
 Title: "GEM PR ERP MEDREQ Medication Request"
 Description: "Profile on the Medication Request that is to be sent"
-* category 1..1 MS
+* insert Meta
+* insert MetaProfile (GEM_PR_ERP_MEDREQ_MedicationRequest)
 * subject 1..1 MS
 * subject only Reference($KBV_PR_FOR_Patient)
+
 * medication[x] only Reference($KBV_PR_ERP_Medication_FreeText or $KBV_PR_ERP_Medication_Compounding or $KBV_PR_ERP_Medication_PZN or $KBV_PR_ERP_Medication_Ingredient)
 * medication[x] MS
 * medication[x] ^slicing.discriminator.type = #type
@@ -19,37 +21,15 @@ Description: "Profile on the Medication Request that is to be sent"
 * medicationReference.identifier ..0
 * medicationReference.display ..0
 
-* dosageInstruction ..1 MS
-* dosageInstruction.sequence ..0
-* dosageInstruction.text MS
-* dosageInstruction.text ^short = "Dosieranweisung"
-* dosageInstruction.text ^definition = "Dosieranweisung einer Verordnung"
-* dosageInstruction.text ^maxLength = 500
-* dosageInstruction.additionalInstruction ..0
-* dosageInstruction.patientInstruction MS
-* dosageInstruction.patientInstruction ^short = "Gebrauchsanweisung einer Rezeptur"
-* dosageInstruction.patientInstruction ^definition = "Gebrauchsanweisung einer Rezeptur"
-* dosageInstruction.patientInstruction ^maxLength = 500
-* dosageInstruction.timing ..0
-* dosageInstruction.asNeeded[x] ..0
-* dosageInstruction.site ..0
-* dosageInstruction.route ..0
-* dosageInstruction.method ..0
-* dosageInstruction.doseAndRate ..0
-* dosageInstruction.maxDosePerPeriod ..0
-* dosageInstruction.maxDosePerAdministration ..0
-* dosageInstruction.maxDosePerLifetime ..0
+* dosageInstruction 0..0
+* dosageInstruction.asNeededBoolean 0..0
+* dosageInstruction.asNeeded[x] 0..0
+* dosageInstruction.asNeeded[x] ^slicing.rules = #closed
 
-* substitution MS
-* substitution.allowed[x] only boolean
-* substitution.allowed[x] MS
-* substitution.allowed[x] ^slicing.discriminator.type = #type
-* substitution.allowed[x] ^slicing.discriminator.path = "$this"
-* substitution.allowed[x] ^slicing.ordered = false
+* dosageInstruction.timing.repeat.bounds[x] ^slicing.rules = #closed
+* dosageInstruction.doseAndRate.dose[x] ^slicing.rules = #closed
+* dosageInstruction.doseAndRate.rate[x] ^slicing.rules = #closed
+
+* substitution 0..0
+* substitution.allowedBoolean 0..0
 * substitution.allowed[x] ^slicing.rules = #closed
-* substitution.allowedBoolean 1.. MS
-* substitution.allowedBoolean only boolean
-* substitution.allowedBoolean ^sliceName = "allowedBoolean"
-* substitution.allowedBoolean ^short = "Aut idem"
-* substitution.allowedBoolean ^definition = "In diesem Feld wird angegeben ob das Arzneimittel austauschbar ist oder nicht\r\n\r\ntrue:  aut idem möglich (austauschbar)\r\nfalse: aut idem ausgeschlossen (nicht austauschbar)"
-* substitution.reason ..0
