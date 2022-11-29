@@ -12,6 +12,7 @@
     }
   ],
   "url": "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/erp-medicationrequestdispenseinformation-bundle",
+  "version": "1.0.0",
   "name": "BundleMedicationRequestDispenseInformation",
   "title": "Message bundle for sending dispenseInformation in connection with a MedicationRequest",
   "status": "draft",

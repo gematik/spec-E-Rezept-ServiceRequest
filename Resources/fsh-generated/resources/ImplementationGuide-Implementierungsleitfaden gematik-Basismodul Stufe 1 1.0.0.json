@@ -1,0 +1,170 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "Implementierungsleitfaden gematik-Basismodul Stufe 1 1.0.0",
+  "url": "https://gematik.de/fhir/isik/v2/Basismodul/ImplementationGuide/Implementierungsleitfaden gematik-Basismodul Stufe 1 1.0.0",
+  "version": "1.0.0",
+  "name": "ImplementierungsleitfadengematikBasismodulStufe1100",
+  "status": "active",
+  "publisher": "Gematik GmbH",
+  "contact": [
+    {
+      "name": "Gematik GmbH",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.gematik.de/"
+        },
+        {
+          "system": "email",
+          "value": "info@gematik.de"
+        }
+      ]
+    }
+  ],
+  "packageId": "Implementierungsleitfaden gematik-Basismodul Stufe 1 1.0.0",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "dependsOn": [
+    {
+      "packageId": "hl7.fhir.r4.core",
+      "version": "4.0.1",
+      "uri": "http://hl7.org/fhir",
+      "id": "hl7_fhir_r4_core"
+    },
+    {
+      "packageId": "de.basisprofil.r4",
+      "version": "1.4.0",
+      "uri": "http://fhir.org/packages/de.basisprofil.r4/ImplementationGuide/de.basisprofil.r4",
+      "id": "de_basisprofil_r4"
+    },
+    {
+      "packageId": "de.gematik.isik-medikation",
+      "version": "2.0.1",
+      "uri": "http://fhir.org/packages/de.gematik.isik-medikation/ImplementationGuide/de.gematik.isik-medikation",
+      "id": "de_gematik_isik_medikation"
+    },
+    {
+      "packageId": "de.gematik.erezept-workflow.r4",
+      "version": "1.2.0",
+      "uri": "http://fhir.org/packages/de.gematik.erezept-workflow.r4/ImplementationGuide/de.gematik.erezept-workflow.r4",
+      "id": "de_gematik_erezept_workflow_r4"
+    },
+    {
+      "packageId": "kbv.basis",
+      "version": "1.3.0",
+      "uri": "http://fhir.org/packages/kbv.basis/ImplementationGuide/kbv.basis",
+      "id": "kbv_basis"
+    },
+    {
+      "packageId": "kbv.ita.for",
+      "version": "1.1.0",
+      "uri": "http://fhir.org/packages/kbv.ita.for/ImplementationGuide/kbv.ita.for",
+      "id": "kbv_ita_for"
+    },
+    {
+      "packageId": "kbv.ita.erp",
+      "version": "1.1.0",
+      "uri": "http://fhir.org/packages/kbv.ita.erp/ImplementationGuide/kbv.ita.erp",
+      "id": "kbv_ita_erp"
+    }
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "StructureDefinition/erp-medicationrequest-bundle"
+        },
+        "name": "Message Bundle for a MedicationRequest",
+        "description": "A communication resource used for requesting a medication",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/erp-medicationrequestcancellation-bundle"
+        },
+        "name": "Message bundle for the cancellation of a MedicationRequest",
+        "description": "Means of communication for the cancellation of a medication request",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/erp-medicationrequestdispenseinformation-bundle"
+        },
+        "name": "Message bundle for sending dispenseInformation in connection with a MedicationRequest",
+        "description": "Communication resource for sending dispenseInformation about a medication requisition.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/erp-medicationrequestresponse-bundle"
+        },
+        "name": "Message Bundle for a response to a MedicationRequest",
+        "description": "A communication resource used for responding to a medication request",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/gem-medreq-medication-request"
+        },
+        "name": "GEM MEDREQ Medication Request",
+        "description": "Profile on the Medication Request that is to be sent",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/erp-medicationrequest-header"
+        },
+        "name": "MessageHeaderMedicationRequest",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/erp-medicationrequest-organization"
+        },
+        "name": "ProfileRequestingOrganization",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/PrescriptionDeliveryTypeEX"
+        },
+        "name": "PrescriptionDeliveryTypeEX",
+        "description": "Defines types of types describing how prescription will be delivered.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/PrescriptionDeliveryTypeVS"
+        },
+        "name": "ValueSet of types describing how prescription will be delivered",
+        "description": "This type defines how the prescription will delivered",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/PrescriptionDeliveryTypeCS"
+        },
+        "name": "CodeSystem  Type",
+        "description": "This type defines how the prescription will be delivered",
+        "exampleBoolean": false
+      }
+    ],
+    "page": {
+      "nameUrl": "toc.html",
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": []
+    },
+    "parameter": [
+      {
+        "code": "copyrightyear",
+        "value": "2022+"
+      },
+      {
+        "code": "releaselabel",
+        "value": "draft"
+      }
+    ]
+  }
+}

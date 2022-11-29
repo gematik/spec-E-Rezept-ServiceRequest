@@ -12,6 +12,7 @@
     }
   ],
   "url": "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/erp-medicationrequest-header",
+  "version": "1.0.0",
   "name": "MessageHeaderMedicationRequest",
   "status": "draft",
   "experimental": false,

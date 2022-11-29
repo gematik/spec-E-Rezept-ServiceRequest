@@ -2,6 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "PrescriptionDeliveryTypeEX",
   "url": "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/PrescriptionDeliveryTypeEX",
+  "version": "1.0.0",
   "name": "PrescriptionDeliveryTypeEX",
   "status": "active",
   "description": "Defines types of types describing how prescription will be delivered.",

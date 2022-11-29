@@ -12,6 +12,7 @@
     }
   ],
   "url": "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/erp-medicationrequest-bundle",
+  "version": "1.0.0",
   "name": "BundleMedicationRequest",
   "title": "Message Bundle for a MedicationRequest",
   "status": "draft",
@@ -166,7 +167,7 @@
           {
             "code": "MedicationRequest",
             "profile": [
-              "https://gematik.de/fhir/isik/v2/Medikation/StructureDefinition/ISiKMedikationsVerordnung"
+              "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/gem-medreq-medication-request"
             ]
           }
         ]
