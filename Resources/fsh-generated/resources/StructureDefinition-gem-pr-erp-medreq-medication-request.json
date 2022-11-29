@@ -642,7 +642,7 @@
         "definition": "A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc.",
         "comment": "Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. Often, when used, the URL is a reference to an implementation guide that defines these special rules as part of it's narrative along with other profiles, value sets, etc.",
         "min": 0,
-        "max": "1",
+        "max": "0",
         "base": {
           "path": "Resource.implicitRules",
           "min": 0,
@@ -807,7 +807,7 @@
           "contained resources"
         ],
         "min": 0,
-        "max": "*",
+        "max": "0",
         "base": {
           "path": "DomainResource.contained",
           "min": 0,
@@ -997,7 +997,7 @@
         "definition": "Identifiers associated with this medication request that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate. They are business identifiers assigned to this resource by the performer or other systems and remain constant as the resource is updated and propagates from server to server.",
         "comment": "This is a business identifier, not a resource identifier.",
         "min": 0,
-        "max": "*",
+        "max": "0",
         "base": {
           "path": "MedicationRequest.identifier",
           "min": 0,
@@ -1078,6 +1078,7 @@
             "code": "code"
           }
         ],
+        "fixedCode": "draft",
         "condition": [
           "ele-1"
         ],
@@ -1226,6 +1227,7 @@
             "code": "code"
           }
         ],
+        "fixedCode": "proposal",
         "condition": [
           "ele-1"
         ],
@@ -1469,7 +1471,7 @@
         "short": "Reported rather than primary record",
         "definition": "Indicates if this record was captured as a secondary 'reported' record rather than as an original primary source-of-truth record.  It may also indicate the source of the report.",
         "min": 0,
-        "max": "1",
+        "max": "0",
         "base": {
           "path": "MedicationRequest.reported[x]",
           "min": 0,
@@ -3931,7 +3933,7 @@
         "definition": "The expected type of the target of the reference. If both Reference.type and Reference.reference are populated and Reference.reference is a FHIR URL, both SHALL be consistent.\n\nThe type is the Canonical URL of Resource Definition that is the type this reference refers to. References are URLs that are relative to http://hl7.org/fhir/StructureDefinition/ e.g. \"Patient\" is a reference to http://hl7.org/fhir/StructureDefinition/Patient. Absolute URLs are only allowed for logical models (and can only be used in references in logical models, not resources).",
         "comment": "This element is used to indicate the type of  the target of the reference. This may be used which ever of the other elements are populated (or not). In some cases, the type of the target may be determined by inspection of the reference (e.g. a RESTful URL) or by resolving the target of the reference; if both the type and a reference is provided, the reference SHALL resolve to a resource of the same type as that specified.",
         "min": 0,
-        "max": "1",
+        "max": "0",
         "base": {
           "path": "Reference.type",
           "min": 0,
@@ -4003,7 +4005,11 @@
         },
         "type": [
           {
-            "code": "Identifier"
+            "code": "Identifier",
+            "profile": [
+              "http://fhir.de/StructureDefinition/identifier-kvid-10",
+              "http://fhir.de/StructureDefinition/identifier-pkv"
+            ]
           }
         ],
         "condition": [
@@ -4109,7 +4115,7 @@
         "definition": "The Encounter during which this [x] was created or to which the creation of this record is tightly associated.",
         "comment": "This will typically be the encounter the event occurred within, but some activities may be initiated prior to or after the official completion of an encounter but still be tied to the context of the encounter.\"    If there is a need to link to episodes of care they will be handled with an extension.",
         "min": 0,
-        "max": "1",
+        "max": "0",
         "base": {
           "path": "MedicationRequest.encounter",
           "min": 0,
@@ -4657,12 +4663,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/Practitioner",
-              "http://hl7.org/fhir/StructureDefinition/PractitionerRole",
-              "http://hl7.org/fhir/StructureDefinition/Organization",
-              "http://hl7.org/fhir/StructureDefinition/Patient",
-              "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
-              "http://hl7.org/fhir/StructureDefinition/Device"
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner"
             ]
           }
         ],
@@ -4871,7 +4872,7 @@
         "definition": "The expected type of the target of the reference. If both Reference.type and Reference.reference are populated and Reference.reference is a FHIR URL, both SHALL be consistent.\n\nThe type is the Canonical URL of Resource Definition that is the type this reference refers to. References are URLs that are relative to http://hl7.org/fhir/StructureDefinition/ e.g. \"Patient\" is a reference to http://hl7.org/fhir/StructureDefinition/Patient. Absolute URLs are only allowed for logical models (and can only be used in references in logical models, not resources).",
         "comment": "This element is used to indicate the type of  the target of the reference. This may be used which ever of the other elements are populated (or not). In some cases, the type of the target may be determined by inspection of the reference (e.g. a RESTful URL) or by resolving the target of the reference; if both the type and a reference is provided, the reference SHALL resolve to a resource of the same type as that specified.",
         "min": 0,
-        "max": "1",
+        "max": "0",
         "base": {
           "path": "Reference.type",
           "min": 0,
@@ -5443,7 +5444,7 @@
         "definition": "The URL pointing to a protocol, guideline, orderset, or other definition that is adhered to in whole or in part by this MedicationRequest.",
         "comment": "see [Canonical References](references.html#canonical)",
         "min": 0,
-        "max": "*",
+        "max": "0",
         "base": {
           "path": "MedicationRequest.instantiatesCanonical",
           "min": 0,
@@ -5490,7 +5491,7 @@
         "definition": "The URL pointing to an externally maintained protocol, guideline, orderset or other definition that is adhered to in whole or in part by this MedicationRequest.",
         "comment": "see http://en.wikipedia.org/wiki/Uniform_resource_identifier",
         "min": 0,
-        "max": "*",
+        "max": "0",
         "base": {
           "path": "MedicationRequest.instantiatesUri",
           "min": 0,
@@ -5543,7 +5544,7 @@
         "definition": "A plan or request that is fulfilled in whole or in part by this medication request.",
         "comment": "References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository.",
         "min": 0,
-        "max": "*",
+        "max": "0",
         "base": {
           "path": "MedicationRequest.basedOn",
           "min": 0,
@@ -5618,7 +5619,7 @@
         "definition": "A shared identifier common to all requests that were authorized more or less simultaneously by a single author, representing the identifier of the requisition or prescription.",
         "requirements": "Requests are linked either by a \"basedOn\" relationship (i.e. one request is fulfilling another) or by having a common requisition. Requests that are part of the same requisition are generally treated independently from the perspective of changing their state or maintaining them after initial creation.",
         "min": 0,
-        "max": "1",
+        "max": "0",
         "base": {
           "path": "MedicationRequest.groupIdentifier",
           "min": 0,
@@ -5687,7 +5688,7 @@
         "definition": "The description of the overall patte3rn of the administration of the medication to the patient.",
         "comment": "This attribute should not be confused with the protocol of the medication.",
         "min": 0,
-        "max": "1",
+        "max": "0",
         "base": {
           "path": "MedicationRequest.courseOfTherapyType",
           "min": 0,
@@ -5762,7 +5763,7 @@
         "definition": "Insurance plans, coverage extensions, pre-authorizations and/or pre-determinations that may be required for delivering the requested service.",
         "comment": "References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository.",
         "min": 0,
-        "max": "*",
+        "max": "1",
         "base": {
           "path": "MedicationRequest.insurance",
           "min": 0,
@@ -18002,7 +18003,7 @@
         "path": "MedicationRequest.dispenseRequest",
         "short": "Medication supply authorization",
         "definition": "Indicates the specific details for the dispense or medication supply part of a medication request (also known as a Medication Prescription or Medication Order).  Note that this information is not always sent with the order.  There may be in some settings (e.g. hospitals) institutional or system support for completing the dispense details in the pharmacy department.",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "MedicationRequest.dispenseRequest",
@@ -18236,7 +18237,7 @@
         "definition": "Indicates the quantity or duration for the first dispense of the medication.",
         "comment": "If populating this element, either the quantity or the duration must be included.",
         "min": 0,
-        "max": "1",
+        "max": "0",
         "base": {
           "path": "MedicationRequest.dispenseRequest.initialFill",
           "min": 0,
@@ -18639,7 +18640,7 @@
         "definition": "The minimum period of time that must occur between dispenses of the medication.",
         "comment": "The context of use may frequently define what kind of quantity this is and therefore what kind of units can be used. The context of use may also restrict the values for the comparator.",
         "min": 0,
-        "max": "1",
+        "max": "0",
         "base": {
           "path": "MedicationRequest.dispenseRequest.dispenseInterval",
           "min": 0,
@@ -18735,7 +18736,7 @@
         "comment": "It reflects the prescribers' perspective for the validity of the prescription. Dispenses must not be made against the prescription outside of this period. The lower-bound of the Dispensing Window signifies the earliest date that the prescription can be filled for the first time. If an upper-bound is not specified then the Prescription is open-ended or will default to a stale-date based on regulations.",
         "requirements": "Indicates when the Prescription becomes valid, and when it ceases to be a dispensable Prescription.",
         "min": 0,
-        "max": "1",
+        "max": "0",
         "base": {
           "path": "MedicationRequest.dispenseRequest.validityPeriod",
           "min": 0,
@@ -18797,7 +18798,7 @@
         "definition": "An integer indicating the number of times, in addition to the original dispense, (aka refills or repeats) that the patient can receive the prescribed medication. Usage Notes: This integer does not include the original order dispense. This means that if an order indicates dispense 30 tablets plus \"3 repeats\", then the order can be dispensed a total of 4 times and the patient can receive a total of 120 tablets.  A prescriber may explicitly say that zero refills are permitted after the initial dispense.",
         "comment": "If displaying \"number of authorized fills\", add 1 to this number.",
         "min": 0,
-        "max": "1",
+        "max": "0",
         "base": {
           "path": "MedicationRequest.dispenseRequest.numberOfRepeatsAllowed",
           "min": 0,
@@ -18856,7 +18857,7 @@
         "short": "angeforderte Abgabemenge",
         "definition": "The amount that is to be dispensed for one fill.",
         "comment": "The context of use may frequently define what kind of quantity this is and therefore what kind of units can be used. The context of use may also restrict the values for the comparator.",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "MedicationRequest.dispenseRequest.quantity",
@@ -19042,8 +19043,8 @@
       {
         "id": "MedicationRequest.dispenseRequest.quantity.value",
         "path": "MedicationRequest.dispenseRequest.quantity.value",
-        "short": "Numerical value (with implicit precision)",
-        "definition": "The value of the measured amount. The value includes an implicit precision in the presentation of the value.",
+        "short": "Anzahl der verordneten Packungen",
+        "definition": "Anzahl der verordneten Packungen",
         "comment": "The implicit precision in the value should always be honored. Monetary values have their own rules for handling precision (refer to standard accounting text books).",
         "requirements": "Precision is handled implicitly in almost all cases of measurement.",
         "min": 1,
@@ -19164,7 +19165,7 @@
         "comment": "Note that FHIR strings SHALL NOT exceed 1MB in size",
         "requirements": "There are many representations for units of measure and in many contexts, particular representations are fixed and required. I.e. mcg for micrograms.",
         "min": 0,
-        "max": "1",
+        "max": "0",
         "base": {
           "path": "Quantity.unit",
           "min": 0,
@@ -19224,6 +19225,7 @@
             "code": "uri"
           }
         ],
+        "fixedUri": "http://unitsofmeasure.org",
         "condition": [
           "ele-1",
           "qty-3"
@@ -19274,6 +19276,7 @@
             "code": "code"
           }
         ],
+        "fixedCode": "{Package}",
         "condition": [
           "ele-1"
         ],
@@ -19321,7 +19324,7 @@
         "definition": "Identifies the period time over which the supplied product is expected to be used, or the length of time the dispense is expected to last.",
         "comment": "In some situations, this attribute may be used instead of quantity to identify the amount supplied by how long it is expected to last, rather than the physical quantity issued, e.g. 90 days supply of medication (based on an ordered dosage). When possible, it is always better to specify quantity, as this tends to be more precise. expectedSupplyDuration will always be an estimate that can be influenced by external factors.",
         "min": 0,
-        "max": "1",
+        "max": "0",
         "base": {
           "path": "MedicationRequest.dispenseRequest.expectedSupplyDuration",
           "min": 0,
@@ -19420,7 +19423,7 @@
         "definition": "Indicates the intended dispensing Organization specified by the prescriber.",
         "comment": "References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository.",
         "min": 0,
-        "max": "1",
+        "max": "0",
         "base": {
           "path": "MedicationRequest.dispenseRequest.performer",
           "min": 0,
@@ -20180,6 +20183,36 @@
         "max": "0"
       },
       {
+        "id": "MedicationRequest.implicitRules",
+        "path": "MedicationRequest.implicitRules",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.contained",
+        "path": "MedicationRequest.contained",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.identifier",
+        "path": "MedicationRequest.identifier",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.status",
+        "path": "MedicationRequest.status",
+        "fixedCode": "draft"
+      },
+      {
+        "id": "MedicationRequest.intent",
+        "path": "MedicationRequest.intent",
+        "fixedCode": "proposal"
+      },
+      {
+        "id": "MedicationRequest.reported[x]",
+        "path": "MedicationRequest.reported[x]",
+        "max": "0"
+      },
+      {
         "id": "MedicationRequest.medication[x]",
         "path": "MedicationRequest.medication[x]",
         "slicing": {
@@ -20248,6 +20281,76 @@
         ]
       },
       {
+        "id": "MedicationRequest.subject.type",
+        "path": "MedicationRequest.subject.type",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.subject.identifier",
+        "path": "MedicationRequest.subject.identifier",
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "http://fhir.de/StructureDefinition/identifier-kvid-10",
+              "http://fhir.de/StructureDefinition/identifier-pkv"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.encounter",
+        "path": "MedicationRequest.encounter",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.requester",
+        "path": "MedicationRequest.requester",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.requester.type",
+        "path": "MedicationRequest.requester.type",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.instantiatesCanonical",
+        "path": "MedicationRequest.instantiatesCanonical",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.instantiatesUri",
+        "path": "MedicationRequest.instantiatesUri",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.basedOn",
+        "path": "MedicationRequest.basedOn",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.groupIdentifier",
+        "path": "MedicationRequest.groupIdentifier",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.courseOfTherapyType",
+        "path": "MedicationRequest.courseOfTherapyType",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.insurance",
+        "path": "MedicationRequest.insurance",
+        "max": "1"
+      },
+      {
         "id": "MedicationRequest.dosageInstruction",
         "path": "MedicationRequest.dosageInstruction",
         "max": "0"
@@ -20309,6 +20412,67 @@
           ],
           "rules": "closed"
         }
+      },
+      {
+        "id": "MedicationRequest.dispenseRequest",
+        "path": "MedicationRequest.dispenseRequest",
+        "min": 1
+      },
+      {
+        "id": "MedicationRequest.dispenseRequest.initialFill",
+        "path": "MedicationRequest.dispenseRequest.initialFill",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.dispenseRequest.dispenseInterval",
+        "path": "MedicationRequest.dispenseRequest.dispenseInterval",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.dispenseRequest.validityPeriod",
+        "path": "MedicationRequest.dispenseRequest.validityPeriod",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.dispenseRequest.numberOfRepeatsAllowed",
+        "path": "MedicationRequest.dispenseRequest.numberOfRepeatsAllowed",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.dispenseRequest.quantity",
+        "path": "MedicationRequest.dispenseRequest.quantity",
+        "min": 1
+      },
+      {
+        "id": "MedicationRequest.dispenseRequest.quantity.value",
+        "path": "MedicationRequest.dispenseRequest.quantity.value",
+        "short": "Anzahl der verordneten Packungen",
+        "definition": "Anzahl der verordneten Packungen"
+      },
+      {
+        "id": "MedicationRequest.dispenseRequest.quantity.unit",
+        "path": "MedicationRequest.dispenseRequest.quantity.unit",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.dispenseRequest.quantity.system",
+        "path": "MedicationRequest.dispenseRequest.quantity.system",
+        "fixedUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "MedicationRequest.dispenseRequest.quantity.code",
+        "path": "MedicationRequest.dispenseRequest.quantity.code",
+        "fixedCode": "{Package}"
+      },
+      {
+        "id": "MedicationRequest.dispenseRequest.expectedSupplyDuration",
+        "path": "MedicationRequest.dispenseRequest.expectedSupplyDuration",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.dispenseRequest.performer",
+        "path": "MedicationRequest.dispenseRequest.performer",
+        "max": "0"
       },
       {
         "id": "MedicationRequest.substitution",

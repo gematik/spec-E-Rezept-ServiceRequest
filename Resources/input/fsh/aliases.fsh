@@ -1,7 +1,13 @@
+Alias: $UNITSOFMEASURE = http://unitsofmeasure.org
+
 Alias: $ISiKMedikationsVerordnung = https://gematik.de/fhir/isik/v2/Medikation/StructureDefinition/ISiKMedikationsVerordnung
 Alias: $GEM_ERP_PR_MedicationDispense = https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense
 
 Alias: $KBV_PR_FOR_Patient = https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient
+Alias: $KBV_PR_FOR_Practitioner = https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner
+
+Alias: $KVID = http://fhir.de/StructureDefinition/identifier-kvid-10
+Alias: $PKVID = http://fhir.de/StructureDefinition/identifier-pkv
 
 Alias: $KBV_PR_ERP_Prescription = https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription
 Alias: $KBV_PR_ERP_Medication_FreeText = https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_FreeText
