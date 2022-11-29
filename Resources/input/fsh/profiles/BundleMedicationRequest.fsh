@@ -15,10 +15,6 @@ Description: "A communication resource used for requesting a medication"
 * identifier.value ^short = "Eindeutige UUID"
 * type = #message (exactly)
 * timestamp 1..
-//Oder als weiteren Entry des Bundles?
-* extension contains
-    PrescriptionDeliveryTypeEX named PrescriptionDeliveryType 1..1
-* extension[PrescriptionDeliveryType] ^short = "Zustelltyp"
 * entry 1..
 * entry ^slicing.discriminator.type = #value
 * entry ^slicing.discriminator.path = "resource.meta.profile"
@@ -36,7 +32,7 @@ Description: "A communication resource used for requesting a medication"
 * entry[Header].response ..0
 * entry[MedicationRequest].link ..0
 * entry[MedicationRequest].resource 1..
-* entry[MedicationRequest].resource only $ISiKMedikationsVerordnung
+* entry[MedicationRequest].resource only GEM_MEDREQ_MedicationRequest
 * entry[MedicationRequest].search ..0
 * entry[MedicationRequest].request ..0
 * entry[MedicationRequest].response ..0

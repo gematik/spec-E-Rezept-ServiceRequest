@@ -15,10 +15,6 @@ Description: "A communication resource used for responding to a medication reque
 * identifier.value ^short = "Eindeutige UUID"
 * type = #message (exactly)
 * timestamp 1..
-//Oder als weiteren Entry des Bundles?
-* extension contains
-    PrescriptionDeliveryTypeEX named PrescriptionDeliveryType 1..1
-* extension[PrescriptionDeliveryType] ^short = "Zustelltyp"
 * entry 1..
 * entry ^slicing.discriminator.type = #value
 * entry ^slicing.discriminator.path = "resource.meta.profile"
