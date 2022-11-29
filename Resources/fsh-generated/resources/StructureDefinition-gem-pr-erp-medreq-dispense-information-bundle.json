@@ -1,6 +1,6 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "GEM-PR-ERP-MEDREQ-DispenseInformationBundle",
+  "id": "gem-pr-erp-medreq-dispense-information-bundle",
   "extension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
@@ -11,10 +11,10 @@
       "valueCode": "not-classified"
     }
   ],
-  "url": "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/GEM_PR_ERP_MEDREQ_DispenseInformationBundle",
+  "url": "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/gem-pr-erp-medreq-dispense-information-bundle",
   "version": "1.0.0",
   "name": "GEM_PR_ERP_MEDREQ_DispenseInformationBundle",
-  "title": "GEM_PR_ERP_MEDREQ_DispenseInformationBundle",
+  "title": "GEM PR ERP MEDREQ Dispense Information Bundle",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
@@ -3611,7 +3611,10 @@
         },
         "type": [
           {
-            "code": "Resource"
+            "code": "MessageHeader",
+            "profile": [
+              "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/gem-pr-erp-medreq-message-header-medication-request"
+            ]
           }
         ],
         "isSummary": true,
@@ -6455,7 +6458,15 @@
       {
         "id": "Bundle.entry:Header.resource",
         "path": "Bundle.entry.resource",
-        "min": 1
+        "min": 1,
+        "type": [
+          {
+            "code": "MessageHeader",
+            "profile": [
+              "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/gem-pr-erp-medreq-message-header-medication-request"
+            ]
+          }
+        ]
       },
       {
         "id": "Bundle.entry:Header.search",

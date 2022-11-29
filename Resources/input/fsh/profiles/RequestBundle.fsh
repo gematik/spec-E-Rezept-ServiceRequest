@@ -26,13 +26,13 @@ Description: "A communication resource used for requesting a medication"
     RequestingOrganization 1..1
 * entry[Header].link ..0
 * entry[Header].resource 1..
-* entry[Header].resource only MessageHeaderMedicationRequest
+* entry[Header].resource only GEM_PR_ERP_MEDREQ_MessageHeaderMedicationRequest
 * entry[Header].search ..0
 * entry[Header].request ..0
 * entry[Header].response ..0
 * entry[MedicationRequest].link ..0
 * entry[MedicationRequest].resource 1..
-* entry[MedicationRequest].resource only GEM_MEDREQ_MedicationRequest
+* entry[MedicationRequest].resource only GEM_PR_ERP_MEDREQ_MedicationRequest
 * entry[MedicationRequest].search ..0
 * entry[MedicationRequest].request ..0
 * entry[MedicationRequest].response ..0
@@ -44,7 +44,7 @@ Description: "A communication resource used for requesting a medication"
 * entry[Patient].response ..0
 * entry[RequestingOrganization].link ..0
 * entry[RequestingOrganization].resource 1..
-* entry[RequestingOrganization].resource only ProfileRequestingOrganization
+* entry[RequestingOrganization].resource only GEM_PR_ERP_MEDREQ_RequestingOrganization
 * entry[RequestingOrganization].search ..0
 * entry[RequestingOrganization].request ..0
 * entry[RequestingOrganization].response ..0

@@ -26,7 +26,7 @@ Description: "A communication resource used for responding to a medication reque
     RequestingOrganization 1..1
 * entry[Header].link ..0
 * entry[Header].resource 1..
-* entry[Header].resource only MessageHeaderMedicationRequest
+* entry[Header].resource only GEM_PR_ERP_MEDREQ_MessageHeaderMedicationRequest
 * entry[Header].search ..0
 * entry[Header].request ..0
 * entry[Header].response ..0
@@ -38,13 +38,13 @@ Description: "A communication resource used for responding to a medication reque
 * entry[MedicationRequest].response ..0
 * entry[Patient].link ..0
 * entry[Patient].resource 1..
-* entry[Patient].resource only KBV_PR_FOR_Patient
+* entry[Patient].resource only $KBV_PR_FOR_Patient
 * entry[Patient].search ..0
 * entry[Patient].request ..0
 * entry[Patient].response ..0
 * entry[RequestingOrganization].link ..0
 * entry[RequestingOrganization].resource 1..
-* entry[RequestingOrganization].resource only ProfileRequestingOrganization
+* entry[RequestingOrganization].resource only GEM_PR_ERP_MEDREQ_RequestingOrganization
 * entry[RequestingOrganization].search ..0
 * entry[RequestingOrganization].request ..0
 * entry[RequestingOrganization].response ..0

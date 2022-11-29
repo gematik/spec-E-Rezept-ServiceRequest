@@ -1,12 +1,11 @@
 Profile: GEM_PR_ERP_MEDREQ_MedicationRequest
-Parent:
+Parent: MedicationRequest
 Id: gem-pr-erp-medreq-medication-request
 Title: "GEM PR ERP MEDREQ Medication Request"
 Description: "Profile on the Medication Request that is to be sent"
 * category 1..1 MS
 * subject 1..1 MS
 * subject only Reference($KBV_PR_FOR_Patient)
-GEM_PR_MREQ_MedicationRequest
 * medication[x] only Reference($KBV_PR_ERP_Medication_FreeText or $KBV_PR_ERP_Medication_Compounding or $KBV_PR_ERP_Medication_PZN or $KBV_PR_ERP_Medication_Ingredient)
 * medication[x] MS
 * medication[x] ^slicing.discriminator.type = #type

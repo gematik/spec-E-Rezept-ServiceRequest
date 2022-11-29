@@ -3611,7 +3611,10 @@
         },
         "type": [
           {
-            "code": "Resource"
+            "code": "MessageHeader",
+            "profile": [
+              "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/gem-pr-erp-medreq-message-header-medication-request"
+            ]
           }
         ],
         "isSummary": true,
@@ -5123,7 +5126,10 @@
         },
         "type": [
           {
-            "code": "Resource"
+            "code": "MedicationRequest",
+            "profile": [
+              "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/gem-pr-erp-medreq-medication-request"
+            ]
           }
         ],
         "isSummary": true,
@@ -8150,7 +8156,10 @@
         },
         "type": [
           {
-            "code": "Resource"
+            "code": "Organization",
+            "profile": [
+              "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/gem-pr-erp-medreq-requesting-organization"
+            ]
           }
         ],
         "isSummary": true,
@@ -9479,7 +9488,15 @@
       {
         "id": "Bundle.entry:Header.resource",
         "path": "Bundle.entry.resource",
-        "min": 1
+        "min": 1,
+        "type": [
+          {
+            "code": "MessageHeader",
+            "profile": [
+              "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/gem-pr-erp-medreq-message-header-medication-request"
+            ]
+          }
+        ]
       },
       {
         "id": "Bundle.entry:Header.search",
@@ -9511,7 +9528,15 @@
       {
         "id": "Bundle.entry:MedicationRequest.resource",
         "path": "Bundle.entry.resource",
-        "min": 1
+        "min": 1,
+        "type": [
+          {
+            "code": "MedicationRequest",
+            "profile": [
+              "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/gem-pr-erp-medreq-medication-request"
+            ]
+          }
+        ]
       },
       {
         "id": "Bundle.entry:MedicationRequest.search",
@@ -9583,7 +9608,15 @@
       {
         "id": "Bundle.entry:RequestingOrganization.resource",
         "path": "Bundle.entry.resource",
-        "min": 1
+        "min": 1,
+        "type": [
+          {
+            "code": "Organization",
+            "profile": [
+              "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/gem-pr-erp-medreq-requesting-organization"
+            ]
+          }
+        ]
       },
       {
         "id": "Bundle.entry:RequestingOrganization.search",

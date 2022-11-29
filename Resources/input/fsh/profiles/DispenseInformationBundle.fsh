@@ -1,7 +1,7 @@
 Profile: GEM_PR_ERP_MEDREQ_DispenseInformationBundle
 Parent: Bundle
-Id: GEM_PR_ERP_MEDREQ_DispenseInformationBundle
-Title: "GEM_PR_ERP_MEDREQ_DispenseInformationBundle"
+Id: gem-pr-erp-medreq-dispense-information-bundle
+Title: "GEM PR ERP MEDREQ Dispense Information Bundle"
 Description: "Communication resource for sending dispenseInformation about a medication requisition."
 * insert Meta
 * id 1..1
@@ -24,7 +24,7 @@ Description: "Communication resource for sending dispenseInformation about a med
     DispenseInformation 1..1
 * entry[Header].link ..0
 * entry[Header].resource 1..
-* entry[Header].resource only MessageHeaderMedicationRequest
+* entry[Header].resource only GEM_PR_ERP_MEDREQ_MessageHeaderMedicationRequest
 * entry[Header].search ..0
 * entry[Header].request ..0
 * entry[Header].response ..0

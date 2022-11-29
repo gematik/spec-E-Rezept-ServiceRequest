@@ -3610,7 +3610,10 @@
         },
         "type": [
           {
-            "code": "Resource"
+            "code": "MessageHeader",
+            "profile": [
+              "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/gem-pr-erp-medreq-message-header-medication-request"
+            ]
           }
         ],
         "isSummary": true,
@@ -5137,7 +5140,15 @@
       {
         "id": "Bundle.entry:Header.resource",
         "path": "Bundle.entry.resource",
-        "min": 1
+        "min": 1,
+        "type": [
+          {
+            "code": "MessageHeader",
+            "profile": [
+              "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/gem-pr-erp-medreq-message-header-medication-request"
+            ]
+          }
+        ]
       },
       {
         "id": "Bundle.entry:Header.search",

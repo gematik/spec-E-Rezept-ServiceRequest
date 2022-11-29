@@ -80,10 +80,18 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/GEM-PR-ERP-MEDREQ-DispenseInformationBundle"
+          "reference": "StructureDefinition/gem-pr-erp-medreq-dispense-information-bundle"
         },
-        "name": "GEM_PR_ERP_MEDREQ_DispenseInformationBundle",
+        "name": "GEM PR ERP MEDREQ Dispense Information Bundle",
         "description": "Communication resource for sending dispenseInformation about a medication requisition.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/gem-pr-erp-medreq-medication-request"
+        },
+        "name": "GEM PR ERP MEDREQ Medication Request",
+        "description": "Profile on the Medication Request that is to be sent",
         "exampleBoolean": false
       },
       {
