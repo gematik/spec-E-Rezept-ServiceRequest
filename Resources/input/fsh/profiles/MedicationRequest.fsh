@@ -13,6 +13,10 @@ Description: "Profile on the Medication Request that is to be sent"
 * intent = #proposal (exactly)
 * reported[x] 0..0
 
+* extension contains
+    PrescriptionDeliveryTypeEX named rescriptionDeliveryType 1..1
+* extension[rescriptionDeliveryType] ^short = "Zustelltyp"
+
 * medication[x] only Reference($KBV_PR_ERP_Medication_FreeText or $KBV_PR_ERP_Medication_Compounding or $KBV_PR_ERP_Medication_PZN or $KBV_PR_ERP_Medication_Ingredient)
 * medication[x] MS
 * medication[x] ^slicing.discriminator.type = #type

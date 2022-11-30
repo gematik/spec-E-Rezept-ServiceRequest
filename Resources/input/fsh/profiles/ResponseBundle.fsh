@@ -2,7 +2,7 @@ Profile: GEM_PR_ERP_MEDREQ_ResponseBundle
 Parent: Bundle
 Id: gem-pr-erp-medreq-response-bundle
 Title: "GEM PR ERP MEDREQ Response Bundle"
-Description: "A communication resource used for responding to a medication request"
+Description: "A communication resource for collecting information objects needed for responding to a medication request"
 * insert Meta
 * insert MetaProfile (GEM_PR_ERP_MEDREQ_ResponseBundle)
 * id 1..1
