@@ -107,7 +107,7 @@
           "reference": "StructureDefinition/gem-pr-erp-medreq-request-bundle"
         },
         "name": "GEM PR ERP MEDREQ Request Bundle",
-        "description": "A communication resource used for requesting a medication",
+        "description": "A communication resource for collecting information objects needed to request a medication",
         "exampleBoolean": false
       },
       {
@@ -123,7 +123,7 @@
           "reference": "StructureDefinition/gem-pr-erp-medreq-response-bundle"
         },
         "name": "GEM PR ERP MEDREQ Response Bundle",
-        "description": "A communication resource used for responding to a medication request",
+        "description": "A communication resource for collecting information objects needed for responding to a medication request",
         "exampleBoolean": false
       },
       {

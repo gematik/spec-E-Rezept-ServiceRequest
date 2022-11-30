@@ -18,7 +18,7 @@
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "A communication resource used for responding to a medication request",
+  "description": "A communication resource for collecting information objects needed for responding to a medication request",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
