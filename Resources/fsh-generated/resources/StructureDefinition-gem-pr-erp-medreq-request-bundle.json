@@ -222,7 +222,15 @@
       {
         "id": "Bundle.entry:Patient.resource",
         "path": "Bundle.entry.resource",
-        "min": 1
+        "min": 1,
+        "type": [
+          {
+            "code": "Patient",
+            "profile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient"
+            ]
+          }
+        ]
       },
       {
         "id": "Bundle.entry:Patient.search",
