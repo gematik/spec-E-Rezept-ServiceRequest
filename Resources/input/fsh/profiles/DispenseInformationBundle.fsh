@@ -28,7 +28,7 @@ Description: "Communication resource for sending dispenseInformation about a med
 * entry[Header].response ..0
 * entry[DispenseInformation].link ..0
 * entry[DispenseInformation].resource 1..
-* entry[DispenseInformation].resource only GEM_ERP_PR_MedicationDispense
+* entry[DispenseInformation].resource only https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription
 * entry[DispenseInformation].search ..0
 * entry[DispenseInformation].request ..0
 * entry[DispenseInformation].response ..0

@@ -185,9 +185,9 @@
         "min": 1,
         "type": [
           {
-            "code": "MedicationDispense",
+            "code": "MedicationRequest",
             "profile": [
-              "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense"
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription"
             ]
           }
         ]
