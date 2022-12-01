@@ -1,9 +1,9 @@
 {
   "resourceType": "ImplementationGuide",
-  "id": "Implementierungsleitfaden gematik-Basismodul Stufe 1 1.0.0",
-  "url": "https://gematik.de/fhir/erpmedreqcom/ImplementationGuide/Implementierungsleitfaden gematik-Basismodul Stufe 1 1.0.0",
+  "id": "Ressourcen zur Rezeptanforderung eines E-Rezeptes",
+  "url": "https://gematik.de/fhir/erpmedreqcom/ImplementationGuide/Ressourcen zur Rezeptanforderung eines E-Rezeptes",
   "version": "1.0.0",
-  "name": "ImplementierungsleitfadengematikBasismodulStufe1100",
+  "name": "RessourcenzurRezeptanforderungeinesERezeptes",
   "status": "active",
   "publisher": "Gematik GmbH",
   "contact": [
@@ -21,7 +21,7 @@
       ]
     }
   ],
-  "packageId": "Implementierungsleitfaden gematik-Basismodul Stufe 1 1.0.0",
+  "packageId": "Ressourcen zur Rezeptanforderung eines E-Rezeptes",
   "fhirVersion": [
     "4.0.1"
   ],
