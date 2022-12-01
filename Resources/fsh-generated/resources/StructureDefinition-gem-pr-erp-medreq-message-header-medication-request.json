@@ -77,6 +77,19 @@
         "max": "0"
       },
       {
+        "id": "MessageHeader.event[x]",
+        "path": "MessageHeader.event[x]",
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/isik/v2/Basismodul/ValueSet/RequestingOrganizationVS"
+        }
+      },
+      {
         "id": "MessageHeader.sender",
         "path": "MessageHeader.sender",
         "min": 1,
@@ -84,7 +97,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/Organization"
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization"
             ]
           }
         ]
@@ -93,6 +106,11 @@
         "id": "MessageHeader.sender.reference",
         "path": "MessageHeader.sender.reference",
         "min": 1
+      },
+      {
+        "id": "MessageHeader.source.endpoint",
+        "path": "MessageHeader.source.endpoint",
+        "short": "Source endpoint URI of sender. E.g. https://pvs.de/KIM"
       }
     ]
   }

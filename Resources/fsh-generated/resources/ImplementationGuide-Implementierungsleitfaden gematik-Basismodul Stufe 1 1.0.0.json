@@ -51,6 +51,12 @@
       "id": "de_gematik_erezept_workflow_r4"
     },
     {
+      "packageId": "de.gematik.fhir.directory",
+      "version": "0.9.0",
+      "uri": "http://fhir.org/packages/de.gematik.fhir.directory/ImplementationGuide/de.gematik.fhir.directory",
+      "id": "de_gematik_fhir_directory"
+    },
+    {
       "packageId": "kbv.basis",
       "version": "1.3.0",
       "uri": "http://fhir.org/packages/kbv.basis/ImplementationGuide/kbv.basis",
@@ -140,6 +146,14 @@
         },
         "name": "ValueSet of types describing how prescription will be delivered",
         "description": "This type defines how the prescription will delivered",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/RequestingOrganizationVS"
+        },
+        "name": "ValueSet of requesting Entity used in the MessageHeader",
+        "description": "ValueSet Header Event codes of request orgin",
         "exampleBoolean": false
       },
       {
