@@ -1,9 +1,8 @@
 canonical: https://gematik.de/fhir/erpmedreqcom
 fhirVersion: 4.0.1
-applyExtensionMetadataToRoot: false
-id: Ressourcen zur Rezeptanforderung eines E-Rezeptes
+id: gematik.de.fhir.erpmedreqcom
 name: Ressourcen zur Rezeptanforderung eines E-Rezeptes
-status: active
+status: draft
 version: "1.0.0"
 copyrightYear: 2022+
 releaseLabel: draft

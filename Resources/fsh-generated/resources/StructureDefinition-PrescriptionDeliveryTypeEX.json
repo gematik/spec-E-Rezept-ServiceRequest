@@ -28,6 +28,11 @@
   "differential": {
     "element": [
       {
+        "id": "Extension",
+        "path": "Extension",
+        "definition": "Defines types of types describing how prescription will be delivered."
+      },
+      {
         "id": "Extension.extension",
         "path": "Extension.extension",
         "max": "0"

@@ -1,10 +1,10 @@
 {
   "resourceType": "ImplementationGuide",
-  "id": "Ressourcen zur Rezeptanforderung eines E-Rezeptes",
-  "url": "https://gematik.de/fhir/erpmedreqcom/ImplementationGuide/Ressourcen zur Rezeptanforderung eines E-Rezeptes",
+  "id": "gematik.de.fhir.erpmedreqcom",
+  "url": "https://gematik.de/fhir/erpmedreqcom/ImplementationGuide/gematik.de.fhir.erpmedreqcom",
   "version": "1.0.0",
   "name": "RessourcenzurRezeptanforderungeinesERezeptes",
-  "status": "active",
+  "status": "draft",
   "publisher": "Gematik GmbH",
   "contact": [
     {
@@ -21,7 +21,7 @@
       ]
     }
   ],
-  "packageId": "Ressourcen zur Rezeptanforderung eines E-Rezeptes",
+  "packageId": "gematik.de.fhir.erpmedreqcom",
   "fhirVersion": [
     "4.0.1"
   ],
