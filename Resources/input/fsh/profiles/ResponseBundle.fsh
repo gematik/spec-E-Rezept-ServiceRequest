@@ -30,7 +30,7 @@ Description: "A communication resource for collecting information objects needed
 * entry[Header].response ..0
 * entry[MedicationRequest].link ..0
 * entry[MedicationRequest].resource 1..
-* entry[MedicationRequest].resource only $KBV_PR_ERP_Prescription
+* entry[MedicationRequest].resource only KBV_PR_ERP_Prescription
 * entry[MedicationRequest].search ..0
 * entry[MedicationRequest].request ..0
 * entry[MedicationRequest].response ..0
