@@ -1,8 +1,8 @@
 canonical: https://gematik.de/fhir/erpmedreqcom
 fhirVersion: 4.0.1
 applyExtensionMetadataToRoot: false
-id: Implementierungsleitfaden gematik-Basismodul Stufe 1 1.0.0
-name: Implementierungsleitfaden gematik-Basismodul Stufe 1 1.0.0
+id: Ressourcen zur Rezeptanforderung eines E-Rezeptes
+name: Ressourcen zur Rezeptanforderung eines E-Rezeptes
 status: active
 version: "1.0.0"
 copyrightYear: 2022+
