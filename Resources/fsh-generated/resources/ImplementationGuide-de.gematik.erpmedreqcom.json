@@ -1,7 +1,7 @@
 {
   "resourceType": "ImplementationGuide",
-  "id": "gematik.de.fhir.erpmedreqcom",
-  "url": "https://gematik.de/fhir/erpmedreqcom/ImplementationGuide/gematik.de.fhir.erpmedreqcom",
+  "id": "de.gematik.erpmedreqcom",
+  "url": "https://gematik.de/fhir/erpmedreqcom/ImplementationGuide/de.gematik.erpmedreqcom",
   "version": "1.0.0",
   "name": "RessourcenzurRezeptanforderungeinesERezeptes",
   "status": "draft",
@@ -21,7 +21,7 @@
       ]
     }
   ],
-  "packageId": "gematik.de.fhir.erpmedreqcom",
+  "packageId": "de.gematik.erpmedreqcom",
   "fhirVersion": [
     "4.0.1"
   ],
