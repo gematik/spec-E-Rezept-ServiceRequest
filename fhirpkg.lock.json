@@ -1,8 +1,8 @@
 {
-  "updated": "2022-12-01T11:44:45.9407907+01:00",
+  "updated": "2022-12-01T12:31:14.7457373+01:00",
   "dependencies": {
-    "de.basisprofil.r4": "1.4.0",
     "hl7.fhir.r4.core": "4.0.1",
+    "de.basisprofil.r4": "1.4.0",
     "de.gematik.erezept-workflow.r4": "1.2.0",
     "kbv.ita.erp": "1.1.0",
     "KBV.Basis": "1.3.0",
