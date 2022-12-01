@@ -1,5 +1,5 @@
 Profile: GEM_PR_ERP_MEDREQ_MedicationRequest
-Parent: $ISiKMedikationsVerordnung
+Parent: MedicationRequest
 Id: gem-pr-erp-medreq-medication-request
 Title: "GEM PR ERP MEDREQ Medication Request"
 Description: "Profile on the Medication Request that is to be sent"
@@ -14,8 +14,8 @@ Description: "Profile on the Medication Request that is to be sent"
 * reported[x] 0..0
 
 * extension contains
-    PrescriptionDeliveryTypeEX named rescriptionDeliveryType 1..1
-* extension[rescriptionDeliveryType] ^short = "Zustelltyp"
+    PrescriptionDeliveryTypeEX named prescriptionDeliveryType 1..1
+* extension[prescriptionDeliveryType] ^short = "Zustelltyp"
 
 * medication[x] only Reference($KBV_PR_ERP_Medication_FreeText or $KBV_PR_ERP_Medication_Compounding or $KBV_PR_ERP_Medication_PZN or $KBV_PR_ERP_Medication_Ingredient)
 * medication[x] MS
@@ -48,12 +48,6 @@ Description: "Profile on the Medication Request that is to be sent"
 * insurance 0..1
 
 * dosageInstruction 0..0
-* dosageInstruction.asNeededBoolean 0..0
-* dosageInstruction.asNeeded[x] 0..0
-* dosageInstruction.asNeeded[x] ^slicing.rules = #closed
-* dosageInstruction.timing.repeat.bounds[x] ^slicing.rules = #closed
-* dosageInstruction.doseAndRate.dose[x] ^slicing.rules = #closed
-* dosageInstruction.doseAndRate.rate[x] ^slicing.rules = #closed
 
 * dispenseRequest 1..1 MS
 * dispenseRequest.initialFill 0..0
@@ -73,5 +67,3 @@ Description: "Profile on the Medication Request that is to be sent"
 * dispenseRequest.performer 0..0
 
 * substitution 0..0
-* substitution.allowedBoolean 0..0
-* substitution.allowed[x] ^slicing.rules = #closed

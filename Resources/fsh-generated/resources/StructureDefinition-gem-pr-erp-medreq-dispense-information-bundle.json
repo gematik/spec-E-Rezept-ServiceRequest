@@ -11,7 +11,7 @@
       "valueCode": "not-classified"
     }
   ],
-  "url": "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/gem-pr-erp-medreq-dispense-information-bundle",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-dispense-information-bundle",
   "version": "1.0.0",
   "name": "GEM_PR_ERP_MEDREQ_DispenseInformationBundle",
   "title": "GEM PR ERP MEDREQ Dispense Information Bundle",
@@ -147,7 +147,7 @@
           {
             "code": "MessageHeader",
             "profile": [
-              "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/gem-pr-erp-medreq-message-header-medication-request"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-message-header-medication-request"
             ]
           }
         ]

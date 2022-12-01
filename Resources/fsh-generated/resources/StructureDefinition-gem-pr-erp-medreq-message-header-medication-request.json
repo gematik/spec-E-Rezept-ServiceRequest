@@ -11,7 +11,7 @@
       "valueCode": "not-classified"
     }
   ],
-  "url": "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/gem-pr-erp-medreq-message-header-medication-request",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-message-header-medication-request",
   "version": "1.0.0",
   "name": "GEM_PR_ERP_MEDREQ_MessageHeaderMedicationRequest",
   "title": "GEM PR ERP MEDREQ Message Header Medication Request",
