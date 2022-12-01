@@ -7,7 +7,7 @@
   "title": "CodeSystem  Type",
   "description": "This type defines how the prescription will be delivered",
   "version": "1.0",
-  "url": "https://gematik.de/fhir/isik/v2/Basismodul/CodeSystem/PrescriptionDeliveryTypeCS",
+  "url": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/PrescriptionDeliveryTypeCS",
   "concept": [
     {
       "code": "selfPickup",

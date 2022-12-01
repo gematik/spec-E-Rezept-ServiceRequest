@@ -1,7 +1,7 @@
 {
   "resourceType": "ImplementationGuide",
   "id": "Implementierungsleitfaden gematik-Basismodul Stufe 1 1.0.0",
-  "url": "https://gematik.de/fhir/isik/v2/Basismodul/ImplementationGuide/Implementierungsleitfaden gematik-Basismodul Stufe 1 1.0.0",
+  "url": "https://gematik.de/fhir/erpmedreqcom/ImplementationGuide/Implementierungsleitfaden gematik-Basismodul Stufe 1 1.0.0",
   "version": "1.0.0",
   "name": "ImplementierungsleitfadengematikBasismodulStufe1100",
   "status": "active",
@@ -37,12 +37,6 @@
       "version": "1.4.0",
       "uri": "http://fhir.org/packages/de.basisprofil.r4/ImplementationGuide/de.basisprofil.r4",
       "id": "de_basisprofil_r4"
-    },
-    {
-      "packageId": "de.gematik.isik-medikation",
-      "version": "2.0.1",
-      "uri": "http://fhir.org/packages/de.gematik.isik-medikation/ImplementationGuide/de.gematik.isik-medikation",
-      "id": "de_gematik_isik_medikation"
     },
     {
       "packageId": "de.gematik.erezept-workflow.r4",
