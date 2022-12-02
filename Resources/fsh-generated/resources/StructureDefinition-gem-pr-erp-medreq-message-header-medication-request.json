@@ -84,7 +84,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/Organization"
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization"
             ]
           }
         ]
@@ -93,6 +93,11 @@
         "id": "MessageHeader.sender.reference",
         "path": "MessageHeader.sender.reference",
         "min": 1
+      },
+      {
+        "id": "MessageHeader.source.endpoint",
+        "path": "MessageHeader.source.endpoint",
+        "short": "Source endpoint URI of sender. E.g. https://pvs.de/KIM"
       }
     ]
   }
