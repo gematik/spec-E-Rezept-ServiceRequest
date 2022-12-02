@@ -103,7 +103,7 @@
       {
         "id": "Organization.telecom.value",
         "path": "Organization.telecom.value",
-        "short": "Source endpoint URI of sender. E.g. https://pvs.de/KIM",
+        "short": "Source endpoint URI of sender. E.g. https://pflegeinrichtung.de/KIM",
         "min": 1
       },
       {
