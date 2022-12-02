@@ -77,19 +77,6 @@
         "max": "0"
       },
       {
-        "id": "MessageHeader.event[x]",
-        "path": "MessageHeader.event[x]",
-        "type": [
-          {
-            "code": "Coding"
-          }
-        ],
-        "binding": {
-          "strength": "required",
-          "valueSet": "https://gematik.de/fhir/isik/v2/Basismodul/ValueSet/RequestingOrganizationVS"
-        }
-      },
-      {
         "id": "MessageHeader.sender",
         "path": "MessageHeader.sender",
         "min": 1,

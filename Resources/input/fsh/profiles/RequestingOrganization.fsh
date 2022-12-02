@@ -5,5 +5,6 @@ Title: "GEM PR ERP MEDREQ Requesting Organization"
 Description: "Organization that is requesting the medication"
 * insert Meta
 * insert MetaProfile (GEM_PR_ERP_MEDREQ_RequestingOrganization)
-
-//Verpflichtende Angabe zu Kim-Adresse und physischer Adresse
+* type from RequestingOrganizationVS
+* telecom 1..1
+* address 1..1
