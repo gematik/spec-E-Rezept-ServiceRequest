@@ -28,4 +28,3 @@ Title: "GEM PR ERP MEDREQ Cancellation Bundle"
 * entry[Header].request ..0
 * entry[Header].response ..0
 //IdentifierForCancelation
-//Freetext
