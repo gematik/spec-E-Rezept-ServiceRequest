@@ -146,7 +146,7 @@
           {
             "code": "MessageHeader",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-message-header-medication-request"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-cancellation-message-header-medication-request"
             ]
           }
         ]
