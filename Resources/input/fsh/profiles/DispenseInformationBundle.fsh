@@ -19,16 +19,30 @@ Description: "Communication resource for sending dispenseInformation about a med
 * entry ^slicing.rules = #closed
 * entry contains
     Header 1..1 and
-    DispenseInformation 1..1
+    MedicationRequest 1..1 and
+    DispenseInformation 1..1 and
+    RequestingOrganization 0..1
 * entry[Header].link ..0
 * entry[Header].resource 1..
 * entry[Header].resource only GEM_PR_ERP_MEDREQ_MessageHeaderMedicationRequest
 * entry[Header].search ..0
 * entry[Header].request ..0
 * entry[Header].response ..0
+* entry[MedicationRequest].link ..0
+* entry[MedicationRequest].resource 1..
+* entry[MedicationRequest].resource only KBV_PR_ERP_Prescription
+* entry[MedicationRequest].search ..0
+* entry[MedicationRequest].request ..0
+* entry[MedicationRequest].response ..0
 * entry[DispenseInformation].link ..0
 * entry[DispenseInformation].resource 1..
 * entry[DispenseInformation].resource only GEM_ERP_PR_MedicationDispense
 * entry[DispenseInformation].search ..0
 * entry[DispenseInformation].request ..0
 * entry[DispenseInformation].response ..0
+* entry[RequestingOrganization].link ..0
+* entry[RequestingOrganization].resource 1..
+* entry[RequestingOrganization].resource only GEM_PR_ERP_MEDREQ_RequestingOrganization
+* entry[RequestingOrganization].search ..0
+* entry[RequestingOrganization].request ..0
+* entry[RequestingOrganization].response ..0

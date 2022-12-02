@@ -125,7 +125,7 @@
           ],
           "rules": "closed"
         },
-        "min": 2
+        "min": 3
       },
       {
         "id": "Bundle.entry:Header",
@@ -168,6 +168,46 @@
         "max": "0"
       },
       {
+        "id": "Bundle.entry:MedicationRequest",
+        "path": "Bundle.entry",
+        "sliceName": "MedicationRequest",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Bundle.entry:MedicationRequest.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:MedicationRequest.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "MedicationRequest",
+            "profile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:MedicationRequest.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:MedicationRequest.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:MedicationRequest.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
         "id": "Bundle.entry:DispenseInformation",
         "path": "Bundle.entry",
         "sliceName": "DispenseInformation",
@@ -204,6 +244,46 @@
       },
       {
         "id": "Bundle.entry:DispenseInformation.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:RequestingOrganization",
+        "path": "Bundle.entry",
+        "sliceName": "RequestingOrganization",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Bundle.entry:RequestingOrganization.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:RequestingOrganization.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Organization",
+            "profile": [
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-requesting-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:RequestingOrganization.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:RequestingOrganization.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:RequestingOrganization.response",
         "path": "Bundle.entry.response",
         "max": "0"
       }
