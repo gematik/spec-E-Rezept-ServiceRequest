@@ -97,7 +97,8 @@
       {
         "id": "Organization.telecom.system",
         "path": "Organization.telecom.system",
-        "min": 1
+        "min": 1,
+        "patternCode": "url"
       },
       {
         "id": "Organization.telecom.value",

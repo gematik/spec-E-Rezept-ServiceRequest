@@ -41,5 +41,6 @@ Description: "Organization that is requesting the medication"
 * telecom 1..
 * telecom only ContactPoint
 * telecom.system 1..
+* telecom.system = #url
 * telecom.value 1..
 * telecom.value ^short = "Source endpoint URI of sender. E.g. https://pvs.de/KIM"
