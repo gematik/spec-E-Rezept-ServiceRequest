@@ -9,5 +9,3 @@ Description: "Header for Messages concerning Medication Request"
 * sender 1..1
 * sender only Reference(KBV_PR_FOR_Organization)
 * sender.reference 1..1
-* source.endpoint 1..1
-* source.endpoint ^short = "Source endpoint URI of sender. E.g. https://pvs.de/KIM"

@@ -1,0 +1,74 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "gem-pr-erp-medreq-cancellation-message-header-medication-request",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Foundation.Other"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "not-classified"
+    }
+  ],
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-cancellation-message-header-medication-request",
+  "version": "1.0.0",
+  "name": "GEM_PR_ERP_MEDREQ_CancellationMessageHeaderMedicationRequest",
+  "title": "GEM PR ERP MEDREQ Cancellation Message Header Medication Request",
+  "status": "draft",
+  "experimental": false,
+  "publisher": "gematik GmbH",
+  "description": "Header for Cancellation Messages concerning Medication Request",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "MessageHeader",
+  "baseDefinition": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-message-header-medication-request",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "MessageHeader.extension",
+        "path": "MessageHeader.extension",
+        "min": 1
+      },
+      {
+        "id": "MessageHeader.extension:FreeText",
+        "path": "MessageHeader.extension",
+        "sliceName": "FreeText",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/FreeTextEX"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MessageHeader.extension:FreeText.value[x]",
+        "path": "MessageHeader.extension.value[x]",
+        "min": 1
+      }
+    ]
+  }
+}
