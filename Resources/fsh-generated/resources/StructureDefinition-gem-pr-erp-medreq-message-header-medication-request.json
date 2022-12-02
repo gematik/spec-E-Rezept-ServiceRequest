@@ -18,7 +18,7 @@
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "Header for Messages concerning Medication Request",
+  "description": "Header for Messages Bundles used for Medication Request",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
