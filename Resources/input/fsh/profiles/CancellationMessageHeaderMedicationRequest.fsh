@@ -11,8 +11,8 @@ Description: "Header for Cancellation Messages concerning Medication Request"
 * sender.reference 1..1
 
 * extension contains
-    FreeTextEX named FreeText 1.. and
-    IdentifierEX named IdentifierForCancelation 1..
+    IdentifierEX named IdentifierForCancelation 1.. and
+    FreeTextEX named FreeText 1..
 * extension[FreeText].value[x] 1..
 * extension[FreeText].value[x] only string
 * extension[FreeText] ^short = "Begründung der Stornierung"

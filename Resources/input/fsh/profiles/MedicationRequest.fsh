@@ -14,7 +14,7 @@ Description: "Profile on the Medication Request that is to be sent"
 * reported[x] 0..0
 
 * extension contains
-    PrescriptionDeliveryTypeEX named prescriptionDeliveryType 1..1 and
+    PrescriptionDeliveryTypeEX named PrescriptionDeliveryType 1..1 and
     RemainingQuantityEX named RemainingQuantity 0..1 and
     RemainingRangeDateEX named RemainingRangeDate 0..1 and
     FreeTextEX named FreeText 0..1
@@ -56,10 +56,6 @@ Description: "Profile on the Medication Request that is to be sent"
 * dosageInstruction 0..0
 
 * dispenseRequest 1..1 MS
-* dispenseRequest.initialFill 0..0
-* dispenseRequest.dispenseInterval 0..0
-* dispenseRequest.validityPeriod 0..0
-* dispenseRequest.numberOfRepeatsAllowed 0..0
 * dispenseRequest.quantity 1..1 MS
 * dispenseRequest.quantity.value 1..1 MS
 * dispenseRequest.quantity.value ^short = "Anzahl der verordneten Packungen"
@@ -69,7 +65,6 @@ Description: "Profile on the Medication Request that is to be sent"
 * dispenseRequest.quantity.system = $UNITSOFMEASURE (exactly)
 * dispenseRequest.quantity.code 1..1 MS
 * dispenseRequest.quantity.code = #{Package} (exactly)
-* dispenseRequest.expectedSupplyDuration 0..0
 * dispenseRequest.performer 0..0
 
 * substitution 0..0
