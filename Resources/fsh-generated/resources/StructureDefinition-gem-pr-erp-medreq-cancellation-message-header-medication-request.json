@@ -82,27 +82,6 @@
         "min": 2
       },
       {
-        "id": "MessageHeader.extension:FreeText",
-        "path": "MessageHeader.extension",
-        "sliceName": "FreeText",
-        "short": "Begründung der Stornierung",
-        "min": 1,
-        "max": "*",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/FreeTextEX"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "MessageHeader.extension:FreeText.value[x]",
-        "path": "MessageHeader.extension.value[x]",
-        "min": 1
-      },
-      {
         "id": "MessageHeader.extension:IdentifierForCancelation",
         "path": "MessageHeader.extension",
         "sliceName": "IdentifierForCancelation",
@@ -120,6 +99,27 @@
       },
       {
         "id": "MessageHeader.extension:IdentifierForCancelation.value[x]",
+        "path": "MessageHeader.extension.value[x]",
+        "min": 1
+      },
+      {
+        "id": "MessageHeader.extension:FreeText",
+        "path": "MessageHeader.extension",
+        "sliceName": "FreeText",
+        "short": "Begründung der Stornierung",
+        "min": 1,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/FreeTextEX"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MessageHeader.extension:FreeText.value[x]",
         "path": "MessageHeader.extension.value[x]",
         "min": 1
       },

@@ -102,9 +102,9 @@
         "min": 1
       },
       {
-        "id": "MedicationRequest.extension:prescriptionDeliveryType",
+        "id": "MedicationRequest.extension:PrescriptionDeliveryType",
         "path": "MedicationRequest.extension",
-        "sliceName": "prescriptionDeliveryType",
+        "sliceName": "PrescriptionDeliveryType",
         "short": "Zustelltyp",
         "min": 1,
         "max": "1",
@@ -336,26 +336,6 @@
         "mustSupport": true
       },
       {
-        "id": "MedicationRequest.dispenseRequest.initialFill",
-        "path": "MedicationRequest.dispenseRequest.initialFill",
-        "max": "0"
-      },
-      {
-        "id": "MedicationRequest.dispenseRequest.dispenseInterval",
-        "path": "MedicationRequest.dispenseRequest.dispenseInterval",
-        "max": "0"
-      },
-      {
-        "id": "MedicationRequest.dispenseRequest.validityPeriod",
-        "path": "MedicationRequest.dispenseRequest.validityPeriod",
-        "max": "0"
-      },
-      {
-        "id": "MedicationRequest.dispenseRequest.numberOfRepeatsAllowed",
-        "path": "MedicationRequest.dispenseRequest.numberOfRepeatsAllowed",
-        "max": "0"
-      },
-      {
         "id": "MedicationRequest.dispenseRequest.quantity",
         "path": "MedicationRequest.dispenseRequest.quantity",
         "min": 1,
@@ -387,11 +367,6 @@
         "min": 1,
         "fixedCode": "{Package}",
         "mustSupport": true
-      },
-      {
-        "id": "MedicationRequest.dispenseRequest.expectedSupplyDuration",
-        "path": "MedicationRequest.dispenseRequest.expectedSupplyDuration",
-        "max": "0"
       },
       {
         "id": "MedicationRequest.dispenseRequest.performer",
