@@ -15,5 +15,7 @@ Description: "Header for Cancellation Messages concerning Medication Request"
     IdentifierEX named IdentifierForCancelation 1..
 * extension[FreeText].value[x] 1..
 * extension[FreeText].value[x] only string
+* extension[FreeText] ^short = "Begründung der Stornierung"
 * extension[IdentifierForCancelation].value[x] 1..
 * extension[IdentifierForCancelation].value[x] only uuid
+* extension[IdentifierForCancelation] ^short = "UUID des zu stornierungen MedicationRequestBundles"

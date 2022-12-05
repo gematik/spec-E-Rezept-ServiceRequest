@@ -118,6 +118,57 @@
         ]
       },
       {
+        "id": "MedicationRequest.extension:RemainingQuantity",
+        "path": "MedicationRequest.extension",
+        "sliceName": "RemainingQuantity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/RemainingQuantityEX"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.extension:RemainingRangeDate",
+        "path": "MedicationRequest.extension",
+        "sliceName": "RemainingRangeDate",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/RemainingRangeDateEX"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.extension:FreeText",
+        "path": "MedicationRequest.extension",
+        "sliceName": "FreeText",
+        "short": "Freitext",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/FreeTextEX"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.extension:FreeText.value[x]",
+        "path": "MedicationRequest.extension.value[x]",
+        "min": 1
+      },
+      {
         "id": "MedicationRequest.identifier",
         "path": "MedicationRequest.identifier",
         "max": "0"

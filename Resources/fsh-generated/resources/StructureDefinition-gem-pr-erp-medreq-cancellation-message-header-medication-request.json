@@ -85,6 +85,7 @@
         "id": "MessageHeader.extension:FreeText",
         "path": "MessageHeader.extension",
         "sliceName": "FreeText",
+        "short": "Begründung der Stornierung",
         "min": 1,
         "max": "*",
         "type": [
@@ -105,6 +106,7 @@
         "id": "MessageHeader.extension:IdentifierForCancelation",
         "path": "MessageHeader.extension",
         "sliceName": "IdentifierForCancelation",
+        "short": "UUID des zu stornierungen MedicationRequestBundles",
         "min": 1,
         "max": "*",
         "type": [

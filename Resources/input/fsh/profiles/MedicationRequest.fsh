@@ -14,8 +14,14 @@ Description: "Profile on the Medication Request that is to be sent"
 * reported[x] 0..0
 
 * extension contains
-    PrescriptionDeliveryTypeEX named prescriptionDeliveryType 1..1
+    PrescriptionDeliveryTypeEX named prescriptionDeliveryType 1..1 and
+    RemainingQuantityEX named RemainingQuantity 0..1 and
+    RemainingRangeDateEX named RemainingRangeDate 0..1 and
+    FreeTextEX named FreeText 0..1
 * extension[prescriptionDeliveryType] ^short = "Zustelltyp"
+* extension[FreeText].value[x] 1..
+* extension[FreeText].value[x] only string
+* extension[FreeText] ^short = "Freitext"
 
 * medication[x] only Reference($KBV_PR_ERP_Medication_FreeText or $KBV_PR_ERP_Medication_Compounding or $KBV_PR_ERP_Medication_PZN or $KBV_PR_ERP_Medication_Ingredient)
 * medication[x] MS

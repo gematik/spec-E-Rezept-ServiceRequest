@@ -1,13 +1,13 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "FreeTextEX",
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/FreeTextEX",
+  "id": "RemainingRangeDateEX",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/RemainingRangeDateEX",
   "version": "1.0.0",
-  "name": "FreeTextEX",
+  "name": "RemainingRangeDateEX",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "Optional text",
+  "description": "Datum bis zu welchem die aktuelle Restreichweite halten würde",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -37,14 +37,14 @@
       {
         "id": "Extension.url",
         "path": "Extension.url",
-        "fixedUri": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/FreeTextEX"
+        "fixedUri": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/RemainingRangeDateEX"
       },
       {
         "id": "Extension.value[x]",
         "path": "Extension.value[x]",
         "type": [
           {
-            "code": "string"
+            "code": "date"
           }
         ]
       }

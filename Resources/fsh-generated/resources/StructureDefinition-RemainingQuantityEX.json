@@ -1,13 +1,13 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "FreeTextEX",
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/FreeTextEX",
+  "id": "RemainingQuantityEX",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/RemainingQuantityEX",
   "version": "1.0.0",
-  "name": "FreeTextEX",
+  "name": "RemainingQuantityEX",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "Optional text",
+  "description": "Restreichweite",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -37,14 +37,17 @@
       {
         "id": "Extension.url",
         "path": "Extension.url",
-        "fixedUri": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/FreeTextEX"
+        "fixedUri": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/RemainingQuantityEX"
       },
       {
         "id": "Extension.value[x]",
         "path": "Extension.value[x]",
         "type": [
           {
-            "code": "string"
+            "code": "Quantity",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/SimpleQuantity"
+            ]
           }
         ]
       }
