@@ -93,44 +93,13 @@
           ],
           "rules": "closed"
         },
-        "max": "2",
-        "mustSupport": true
-      },
-      {
-        "id": "Organization.identifier:Institutionskennzeichen",
-        "path": "Organization.identifier",
-        "sliceName": "Institutionskennzeichen",
-        "min": 0,
         "max": "1",
         "mustSupport": true
-      },
-      {
-        "id": "Organization.identifier:Betriebsstaettennummer",
-        "path": "Organization.identifier",
-        "sliceName": "Betriebsstaettennummer",
-        "min": 0,
-        "max": "1",
-        "mustSupport": true
-      },
-      {
-        "id": "Organization.identifier:VKNR",
-        "path": "Organization.identifier",
-        "sliceName": "VKNR",
-        "min": 0,
-        "max": "0"
       },
       {
         "id": "Organization.identifier:Telematik-ID",
         "path": "Organization.identifier",
         "sliceName": "Telematik-ID",
-        "min": 0,
-        "max": "1",
-        "mustSupport": true
-      },
-      {
-        "id": "Organization.identifier:Standortnummer",
-        "path": "Organization.identifier",
-        "sliceName": "Standortnummer",
         "min": 0,
         "max": "1",
         "mustSupport": true
