@@ -79,7 +79,7 @@
       {
         "id": "MessageHeader.extension",
         "path": "MessageHeader.extension",
-        "min": 2
+        "min": 3
       },
       {
         "id": "MessageHeader.extension:IdentifierForCancelation",
@@ -101,6 +101,21 @@
         "id": "MessageHeader.extension:IdentifierForCancelation.value[x]",
         "path": "MessageHeader.extension.value[x]",
         "min": 1
+      },
+      {
+        "id": "MessageHeader.extension:CancellationReasonType",
+        "path": "MessageHeader.extension",
+        "sliceName": "CancellationReasonType",
+        "min": 1,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/CancellationReasonTypeEX"
+            ]
+          }
+        ]
       },
       {
         "id": "MessageHeader.extension:FreeText",

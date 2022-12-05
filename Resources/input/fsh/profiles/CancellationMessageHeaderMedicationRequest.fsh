@@ -12,6 +12,7 @@ Description: "Header for Cancellation Messages concerning Medication Request"
 
 * extension contains
     IdentifierEX named IdentifierForCancelation 1.. and
+    CancellationReasonTypeEX named CancellationReasonType 1.. and
     FreeTextEX named FreeText 1..
 * extension[FreeText].value[x] 1..
 * extension[FreeText].value[x] only string

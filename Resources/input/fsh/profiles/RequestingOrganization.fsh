@@ -7,6 +7,16 @@ Title: "GEM PR ERP MEDREQ Requesting Organization"
 Description: "Organization that is requesting the medication"
 * insert Meta
 * insert MetaProfile (GEM_PR_ERP_MEDREQ_RequestingOrganization)
+* identifier ..2 MS
+* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.path = "type"
+* identifier ^slicing.rules = #closed
+* identifier contains
+    Institutionskennzeichen 0..1 MS and
+    Betriebsstaettennummer 0..1 MS and
+    VKNR 0..0 and
+    Telematik-ID 0..1 MS and
+    Standortnummer 0..1 MS
 * type from RequestingOrganizationVS
 * address 1..1
 * address only $address-de-basis
