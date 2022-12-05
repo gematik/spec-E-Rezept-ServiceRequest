@@ -267,7 +267,7 @@
           {
             "code": "Organization",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-requesting-organization"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-organization"
             ]
           }
         ]
@@ -284,6 +284,46 @@
       },
       {
         "id": "Bundle.entry:RequestingOrganization.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:DispensingOrganization",
+        "path": "Bundle.entry",
+        "sliceName": "DispensingOrganization",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Bundle.entry:DispensingOrganization.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:DispensingOrganization.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Organization",
+            "profile": [
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:DispensingOrganization.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:DispensingOrganization.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:DispensingOrganization.response",
         "path": "Bundle.entry.response",
         "max": "0"
       }

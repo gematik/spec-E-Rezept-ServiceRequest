@@ -1,12 +1,12 @@
 
 Alias: $address-de-basis = http://fhir.de/StructureDefinition/address-de-basis
-Profile: GEM_PR_ERP_MEDREQ_RequestingOrganization
+Profile: GEM_PR_ERP_MEDREQ_Organization
 Parent: Organization
-Id: gem-pr-erp-medreq-requesting-organization
-Title: "GEM PR ERP MEDREQ Requesting Organization"
-Description: "Organization that is requesting the medication"
+Id: gem-pr-erp-medreq-organization
+Title: "GEM PR ERP MEDREQ Organization"
+Description: "Organization used in the context of a medicationRequest"
 * insert Meta
-* insert MetaProfile (GEM_PR_ERP_MEDREQ_RequestingOrganization)
+* insert MetaProfile (GEM_PR_ERP_MEDREQ_Organization)
 * identifier ..1 MS
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "type"
@@ -49,4 +49,4 @@ Description: "Organization that is requesting the medication"
 * telecom.system 1..
 * telecom.system = #url
 * telecom.value 1..
-* telecom.value ^short = "Source endpoint URI of sender. E.g. https://pflegeinrichtung.de/KIM"
+* telecom.value ^short = "Source endpoint URI of sender. E.g. https://pflegeinrichtung.de/KIM or https://apotheke.de/KIM "

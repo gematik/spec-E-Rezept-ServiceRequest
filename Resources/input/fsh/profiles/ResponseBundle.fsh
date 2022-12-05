@@ -21,7 +21,8 @@ Description: "A communication resource for collecting information objects needed
     Header 1..1 and
     MedicationRequest 1..1 and
     Patient 1..1 and
-    RequestingOrganization 1..1
+    RequestingOrganization 1..1 and
+    DispensingOrganization 0..1
 * entry[Header].link ..0
 * entry[Header].resource 1..
 * entry[Header].resource only GEM_PR_ERP_MEDREQ_MessageHeaderMedicationRequest
@@ -42,7 +43,13 @@ Description: "A communication resource for collecting information objects needed
 * entry[Patient].response ..0
 * entry[RequestingOrganization].link ..0
 * entry[RequestingOrganization].resource 1..
-* entry[RequestingOrganization].resource only GEM_PR_ERP_MEDREQ_RequestingOrganization
+* entry[RequestingOrganization].resource only GEM_PR_ERP_MEDREQ_Organization
 * entry[RequestingOrganization].search ..0
 * entry[RequestingOrganization].request ..0
 * entry[RequestingOrganization].response ..0
+* entry[DispensingOrganization].link ..0
+* entry[DispensingOrganization].resource 1..
+* entry[DispensingOrganization].resource only GEM_PR_ERP_MEDREQ_Organization
+* entry[DispensingOrganization].search ..0
+* entry[DispensingOrganization].request ..0
+* entry[DispensingOrganization].response ..0

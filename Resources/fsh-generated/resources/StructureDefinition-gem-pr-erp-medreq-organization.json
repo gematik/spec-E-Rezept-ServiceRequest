@@ -1,6 +1,6 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "gem-pr-erp-medreq-requesting-organization",
+  "id": "gem-pr-erp-medreq-organization",
   "extension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
@@ -11,14 +11,14 @@
       "valueCode": "business"
     }
   ],
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-requesting-organization",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-organization",
   "version": "1.0.0",
-  "name": "GEM_PR_ERP_MEDREQ_RequestingOrganization",
-  "title": "GEM PR ERP MEDREQ Requesting Organization",
+  "name": "GEM_PR_ERP_MEDREQ_Organization",
+  "title": "GEM PR ERP MEDREQ Organization",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "Organization that is requesting the medication",
+  "description": "Organization used in the context of a medicationRequest",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -69,7 +69,7 @@
         "path": "Organization.meta.profile",
         "min": 1,
         "max": "1",
-        "fixedCanonical": "https://gematik.de/fhir/erp/StructureDefinition/GEM_PR_ERP_MEDREQ_RequestingOrganization|0.1"
+        "fixedCanonical": "https://gematik.de/fhir/erp/StructureDefinition/GEM_PR_ERP_MEDREQ_Organization|0.1"
       },
       {
         "id": "Organization.meta.security",
@@ -126,7 +126,7 @@
       {
         "id": "Organization.telecom.value",
         "path": "Organization.telecom.value",
-        "short": "Source endpoint URI of sender. E.g. https://pflegeinrichtung.de/KIM",
+        "short": "Source endpoint URI of sender. E.g. https://pflegeinrichtung.de/KIM or https://apotheke.de/KIM ",
         "min": 1
       },
       {
