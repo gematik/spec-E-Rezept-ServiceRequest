@@ -18,6 +18,7 @@ Description: "Profile on the Medication Request that is to be sent"
     RemainingQuantityEX named RemainingQuantity ..1 and
     RemainingRangeDateEX named RemainingRangeDate ..1 and
     FreeTextEX named FreeText ..1
+* extension[PrescriptionDeliveryType] 1..1 MS
 * extension[PrescriptionDeliveryType] ^short = "Zustelltyp"
 * extension[FreeText].value[x] 1..
 * extension[FreeText].value[x] only string
