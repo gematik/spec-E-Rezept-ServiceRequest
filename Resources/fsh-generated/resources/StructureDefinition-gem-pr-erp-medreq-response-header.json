@@ -1,6 +1,6 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "gem-pr-erp-medreq-message-header-response",
+  "id": "gem-pr-erp-medreq-response-header",
   "extension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
@@ -11,10 +11,10 @@
       "valueCode": "not-classified"
     }
   ],
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-message-header-response",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-response-header",
   "version": "1.0.0",
-  "name": "GEM_PR_ERP_MEDREQ_MessageHeaderResponse",
-  "title": "GEM PR ERP MEDREQ Message Header Response",
+  "name": "GEM_PR_ERP_MEDREQ_ResponseHeader",
+  "title": "GEM PR ERP MEDREQ Response Header",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
@@ -64,7 +64,7 @@
         "path": "MessageHeader.meta.profile",
         "min": 1,
         "max": "1",
-        "fixedCanonical": "https://gematik.de/fhir/erp/StructureDefinition/GEM_PR_ERP_MEDREQ_MessageHeaderResponse|0.9"
+        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_ResponseHeader|0.9"
       },
       {
         "id": "MessageHeader.meta.security",
@@ -110,6 +110,19 @@
             ]
           }
         ]
+      },
+      {
+        "id": "MessageHeader.event[x]",
+        "path": "MessageHeader.event[x]",
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/MessageEventTypeVS"
+        }
       },
       {
         "id": "MessageHeader.sender",

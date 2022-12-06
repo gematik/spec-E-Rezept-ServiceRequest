@@ -12,8 +12,9 @@ Description: "Organization used in the context of a medicationRequest"
 * identifier ^slicing.discriminator.path = "type"
 * identifier ^slicing.rules = #closed
 * identifier contains
-    Telematik-ID 0..1 MS
-* type from RequestingOrganizationVS
+    Telematik-ID 0..1
+* type from RequestingOrganizationTypeVS
+* name 1..1
 * address 1..1
 * address only $address-de-basis
 * address.extension ..0
@@ -50,3 +51,46 @@ Description: "Organization used in the context of a medicationRequest"
 * telecom.system = #url
 * telecom.value 1..
 * telecom.value ^short = "Source endpoint URI of sender. E.g. https://pflegeinrichtung.de/KIM or https://apotheke.de/KIM "
+
+
+Instance: RequestingOrganizationExample
+InstanceOf: GEM_PR_ERP_MEDREQ_Organization
+Usage: #example
+Title: "Requesting Organization Example"
+Description: "Example of a Organisation responsible for the request of the medication"
+* id = "a8efd0b3-58c3-48f7-89f5-67f86dd298e8"
+* MetaInstance(GEM_PR_ERP_MEDREQ_Organization)
+* identifier[+][Telematik-ID].system = "https://gematik.de/fhir/sid/telematik-id"
+* identifier[=][Telematik-ID].value = "3-abc-1234567890"
+* name = "Pflegeheim am Platz der Sonne"
+* telecom[+].system = #url
+* telecom[=].value = "https://pflegeheim.de/KIM"
+* address[+].line[+].extension[Strasse].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"
+* address[=].line[=].extension[Strasse].valueString = "Meinekestraße"
+* address[=].line[=].extension[Hausnummer].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"
+* address[=].line[=].extension[Hausnummer].valueString = "61"
+* address[=].line[=].extension[Adresszusatz].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator"
+* address[=].line[=].extension[Adresszusatz].valueString = "Geriatrie"
+* address[=].city = "Berlin"
+* address[=].postalCode = "10247"
+
+Instance:  DispensingOrganizationExample
+InstanceOf: GEM_PR_ERP_MEDREQ_Organization
+Usage: #example
+Title: "Requesting Dispensing Example"
+Description: "Example of a Organisation responsible for the request of the medication"
+* id = "f89adcee-7fe3-4b06-bc5f-e17b592a3a5f"
+* MetaInstance(GEM_PR_ERP_MEDREQ_Organization)
+* identifier[+][Telematik-ID].system = "https://gematik.de/fhir/sid/telematik-id"
+* identifier[=][Telematik-ID].value = "3-abc-1234567890"
+* name = "Apotheke am Platz der Sonne"
+* telecom[+].system = #url
+* telecom[=].value = "https://apotheke.de/KIM"
+* address[+].line[+].extension[Strasse].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"
+* address[=].line[=].extension[Strasse].valueString = "Meinekestraße"
+* address[=].line[=].extension[Hausnummer].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"
+* address[=].line[=].extension[Hausnummer].valueString = "63"
+* address[=].line[=].extension[Adresszusatz].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator"
+* address[=].line[=].extension[Adresszusatz].valueString = "Apotheke am Pflegeheim"
+* address[=].city = "Berlin"
+* address[=].postalCode = "10247"

@@ -5,7 +5,7 @@
   "id": "PrescriptionDeliveryTypeVS",
   "title": "ValueSet of types describing how prescription will be delivered",
   "description": "This type defines how the prescription will delivered",
-  "version": "1.0",
+  "version": "1.0.0",
   "url": "https://gematik.de/fhir/erpmedreqcom/ValueSet/PrescriptionDeliveryTypeVS",
   "experimental": false,
   "publisher": "gematik GmbH",

@@ -10,16 +10,16 @@
   "url": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/PrescriptionDeliveryTypeCS",
   "concept": [
     {
-      "code": "selfPickup",
+      "code": "SelfPickup",
       "display": "Selbstabholer"
     },
     {
-      "code": "pharmacy",
-      "display": "Belieferung der anfragenden Organisation durch Apotheke"
+      "code": "RequestingOrganisation",
+      "display": "Beschaffung durch anfragende Organisation"
     },
     {
-      "code": "requestingOrganisation",
-      "display": "Beschaffung durch anfragende Organisation"
+      "code": "DispensingOrganisation",
+      "display": "Belieferung der anfragenden Organisation durch Apotheke"
     }
   ],
   "experimental": false,

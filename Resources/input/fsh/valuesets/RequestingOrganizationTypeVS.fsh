@@ -1,5 +1,5 @@
-ValueSet: RequestingOrganizationVS
-Id: RequestingOrganizationVS
+ValueSet: RequestingOrganizationTypeVS
+Id: RequestingOrganizationTypeVS
 Title: "ValueSet of requesting Entity used in the MessageHeader"
 Description: "ValueSet Header Event codes of request orgin"
 * insert Meta

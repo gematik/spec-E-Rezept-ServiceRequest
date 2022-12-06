@@ -1,0 +1,21 @@
+{
+  "resourceType": "MessageHeader",
+  "id": "b2e0e631-42fd-4d8a-a7b2-a2f54fe70bf7",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-message-header",
+      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_MessageHeader|0.9"
+    ]
+  },
+  "sender": {
+    "reference": "Organization/f89adcee-7fe3-4b06-bc5f-e17b592a3a5f"
+  },
+  "source": {
+    "endpoint": "https://apotheke.de/KIM"
+  },
+  "eventCoding": {
+    "code": "RequestingMessage",
+    "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/MessageEventTypeCS",
+    "display": "Nachricht zur Rezeptanforderung"
+  }
+}

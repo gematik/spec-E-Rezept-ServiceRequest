@@ -1,6 +1,6 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "gem-pr-erp-medreq-cancellation-message-header-medication-request",
+  "id": "gem-pr-erp-medreq-cancellation-header",
   "extension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
@@ -11,14 +11,14 @@
       "valueCode": "not-classified"
     }
   ],
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-cancellation-message-header-medication-request",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-cancellation-header",
   "version": "1.0.0",
-  "name": "GEM_PR_ERP_MEDREQ_CancellationMessageHeaderMedicationRequest",
-  "title": "GEM PR ERP MEDREQ Cancellation Message Header Medication Request",
+  "name": "GEM_PR_ERP_MEDREQ_CancellationHeader",
+  "title": "GEM PR ERP MEDREQ CancellationHeader",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "Header for Cancellation Messages concerning Medication Request",
+  "description": "Header for cancellation message of a medication Request",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -64,7 +64,7 @@
         "path": "MessageHeader.meta.profile",
         "min": 1,
         "max": "1",
-        "fixedCanonical": "https://gematik.de/fhir/erp/StructureDefinition/GEM_PR_ERP_MEDREQ_CancellationMessageHeaderMedicationRequest|0.9"
+        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_CancellationHeader|0.9"
       },
       {
         "id": "MessageHeader.meta.security",
@@ -79,7 +79,7 @@
       {
         "id": "MessageHeader.extension",
         "path": "MessageHeader.extension",
-        "min": 3
+        "min": 1
       },
       {
         "id": "MessageHeader.extension:IdentifierForCancelation",
@@ -87,7 +87,7 @@
         "sliceName": "IdentifierForCancelation",
         "short": "UUID des zu stornierungen MedicationRequestBundles",
         "min": 1,
-        "max": "*",
+        "max": "1",
         "type": [
           {
             "code": "Extension",
@@ -106,8 +106,8 @@
         "id": "MessageHeader.extension:CancellationReasonType",
         "path": "MessageHeader.extension",
         "sliceName": "CancellationReasonType",
-        "min": 1,
-        "max": "*",
+        "min": 0,
+        "max": "1",
         "type": [
           {
             "code": "Extension",
@@ -122,8 +122,8 @@
         "path": "MessageHeader.extension",
         "sliceName": "FreeText",
         "short": "Begründung der Stornierung",
-        "min": 1,
-        "max": "*",
+        "min": 0,
+        "max": "1",
         "type": [
           {
             "code": "Extension",
@@ -134,9 +134,17 @@
         ]
       },
       {
-        "id": "MessageHeader.extension:FreeText.value[x]",
-        "path": "MessageHeader.extension.value[x]",
-        "min": 1
+        "id": "MessageHeader.event[x]",
+        "path": "MessageHeader.event[x]",
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/MessageEventTypeVS"
+        }
       },
       {
         "id": "MessageHeader.sender",

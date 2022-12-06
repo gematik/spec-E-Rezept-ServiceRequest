@@ -1,0 +1,49 @@
+{
+  "resourceType": "MedicationRequest",
+  "id": "fe63895a-c5df-4598-ba4a-d2fee3477cb9",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-medication-request",
+      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_MedicationRequest|0.9"
+    ]
+  },
+  "status": "draft",
+  "intent": "proposal",
+  "extension": [
+    {
+      "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeEX",
+      "valueCoding": {
+        "code": "SelfPickup",
+        "system": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeCS",
+        "display": "Selbstabholer"
+      }
+    }
+  ],
+  "dispenseRequest": {
+    "quantity": {
+      "system": "http://unitsofmeasure.org",
+      "code": "{Package}",
+      "value": 1
+    }
+  },
+  "medicationReference": {
+    "reference": "Medication/MedicationExamplePZN"
+  },
+  "subject": {
+    "reference": "Patient/b04f58bc-bb37-4490-9561-2e6954764c4a"
+  },
+  "dosageInstruction": [
+    {
+      "extension": [
+        {
+          "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_DosageFlag",
+          "valueBoolean": true
+        }
+      ],
+      "text": "3mal täglich dünn auftragen"
+    }
+  ],
+  "substitution": {
+    "allowedBoolean": true
+  }
+}

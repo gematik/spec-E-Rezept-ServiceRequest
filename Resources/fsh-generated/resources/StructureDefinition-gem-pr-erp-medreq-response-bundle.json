@@ -74,7 +74,7 @@
         "path": "Bundle.meta.profile",
         "min": 1,
         "max": "1",
-        "fixedCanonical": "https://gematik.de/fhir/erp/StructureDefinition/GEM_PR_ERP_MEDREQ_ResponseBundle|0.9"
+        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_ResponseBundle|0.9"
       },
       {
         "id": "Bundle.meta.security",
@@ -128,59 +128,59 @@
         "min": 4
       },
       {
-        "id": "Bundle.entry:Header",
+        "id": "Bundle.entry:ResponseHeader",
         "path": "Bundle.entry",
-        "sliceName": "Header",
+        "sliceName": "ResponseHeader",
         "min": 1,
         "max": "1"
       },
       {
-        "id": "Bundle.entry:Header.link",
+        "id": "Bundle.entry:ResponseHeader.link",
         "path": "Bundle.entry.link",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:Header.resource",
+        "id": "Bundle.entry:ResponseHeader.resource",
         "path": "Bundle.entry.resource",
         "min": 1,
         "type": [
           {
             "code": "MessageHeader",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-message-header-response"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-response-header"
             ]
           }
         ]
       },
       {
-        "id": "Bundle.entry:Header.search",
+        "id": "Bundle.entry:ResponseHeader.search",
         "path": "Bundle.entry.search",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:Header.request",
+        "id": "Bundle.entry:ResponseHeader.request",
         "path": "Bundle.entry.request",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:Header.response",
+        "id": "Bundle.entry:ResponseHeader.response",
         "path": "Bundle.entry.response",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:MedicationRequest",
+        "id": "Bundle.entry:Prescription",
         "path": "Bundle.entry",
-        "sliceName": "MedicationRequest",
+        "sliceName": "Prescription",
         "min": 1,
         "max": "1"
       },
       {
-        "id": "Bundle.entry:MedicationRequest.link",
+        "id": "Bundle.entry:Prescription.link",
         "path": "Bundle.entry.link",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:MedicationRequest.resource",
+        "id": "Bundle.entry:Prescription.resource",
         "path": "Bundle.entry.resource",
         "min": 1,
         "type": [
@@ -193,17 +193,17 @@
         ]
       },
       {
-        "id": "Bundle.entry:MedicationRequest.search",
+        "id": "Bundle.entry:Prescription.search",
         "path": "Bundle.entry.search",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:MedicationRequest.request",
+        "id": "Bundle.entry:Prescription.request",
         "path": "Bundle.entry.request",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:MedicationRequest.response",
+        "id": "Bundle.entry:Prescription.response",
         "path": "Bundle.entry.response",
         "max": "0"
       },

@@ -1,0 +1,29 @@
+{
+  "resourceType": "MessageHeader",
+  "id": "00dd7c71-ef9c-4d68-ab8a-e4e160b9806c",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-response-header",
+      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_ResponseHeader|0.9"
+    ]
+  },
+  "extension": [
+    {
+      "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionIdEX"
+    },
+    {
+      "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/AccessCodeEX"
+    }
+  ],
+  "eventCoding": {
+    "code": "RespondingMessage",
+    "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/MessageEventTypeCS",
+    "display": "Antwort auf eine Rezeptanforderung"
+  },
+  "sender": {
+    "reference": "Organisation/f67dcc87-f877-49da-a249-aac4d1b15418"
+  },
+  "source": {
+    "endpoint": "https://praxis_um_die_ecke.de/KIM"
+  }
+}

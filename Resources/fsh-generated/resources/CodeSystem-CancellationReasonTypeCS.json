@@ -10,11 +10,11 @@
   "url": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/CancellationReasonTypeCS",
   "concept": [
     {
-      "code": "informationMissing",
+      "code": "InformationMissing",
       "display": "Informationen unvollständig"
     },
     {
-      "code": "informationenIncorrect",
+      "code": "InformationenIncorrect",
       "display": "Informationen fehlerhaft"
     }
   ],

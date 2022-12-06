@@ -25,7 +25,7 @@ Description: "Communication resource for sending dispenseInformation about a med
     DispensingOrganization 0..1
 * entry[Header].link ..0
 * entry[Header].resource 1..
-* entry[Header].resource only GEM_PR_ERP_MEDREQ_MessageHeaderMedicationRequest
+* entry[Header].resource only GEM_PR_ERP_MEDREQ_MessageHeader
 * entry[Header].search ..0
 * entry[Header].request ..0
 * entry[Header].response ..0

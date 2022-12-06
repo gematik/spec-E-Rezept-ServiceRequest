@@ -1,0 +1,260 @@
+{
+  "resourceType": "Bundle",
+  "id": "eef90d54-892a-4dcb-b1e6-2fad40b2c3e7",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-request-bundle",
+      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_RequestBundle|0.9"
+    ]
+  },
+  "type": "message",
+  "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:uuid:f4bb6000-fc6c-4cf0-b021-57bd0d77673f"
+  },
+  "timestamp": "2022-12-01T12:12:54.234+02:00",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "MessageHeader",
+        "id": "b2e0e631-42fd-4d8a-a7b2-a2f54fe70bf7",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-message-header",
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_MessageHeader|0.9"
+          ]
+        },
+        "sender": {
+          "reference": "Organization/f89adcee-7fe3-4b06-bc5f-e17b592a3a5f"
+        },
+        "source": {
+          "endpoint": "https://apotheke.de/KIM"
+        },
+        "eventCoding": {
+          "code": "RequestingMessage",
+          "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/MessageEventTypeCS",
+          "display": "Nachricht zur Rezeptanforderung"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "12b8036c-0cc6-43cf-b9cc-c6ebccde0d58",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-medication-request",
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_MedicationRequest|0.9"
+          ]
+        },
+        "status": "draft",
+        "intent": "proposal",
+        "extension": [
+          {
+            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeEX",
+            "valueCoding": {
+              "code": "DispensingOrganisation",
+              "system": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeCS",
+              "display": "Belieferung der anfragenden Organisation durch Apotheke"
+            }
+          }
+        ],
+        "dispenseRequest": {
+          "quantity": {
+            "system": "http://unitsofmeasure.org",
+            "code": "{Package}",
+            "value": 1
+          }
+        },
+        "medicationReference": {
+          "reference": "Medication/MedicationExamplePZN"
+        },
+        "subject": {
+          "reference": "Patient/b04f58bc-bb37-4490-9561-2e6954764c4a"
+        },
+        "dosageInstruction": [
+          {
+            "extension": [
+              {
+                "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_DosageFlag",
+                "valueBoolean": true
+              }
+            ],
+            "text": "3mal täglich dünn auftragen"
+          }
+        ],
+        "substitution": {
+          "allowedBoolean": true
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "b04f58bc-bb37-4490-9561-2e6954764c4a",
+        "meta": {
+          "profile": [
+            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
+          ]
+        },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "code": "GKV",
+                  "system": "http://fhir.de/CodeSystem/identifier-type-de-basis"
+                }
+              ]
+            },
+            "system": "http://fhir.de/sid/gkv/kvid-10",
+            "value": "S037462981"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Fürst",
+            "_family": {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+                  "valueString": "Fuerst"
+                }
+              ]
+            },
+            "given": [
+              "Doreen"
+            ]
+          }
+        ],
+        "birthDate": "1965-04-10",
+        "address": [
+          {
+            "type": "both",
+            "line": [
+              "Pappelallee 89"
+            ],
+            "_line": [
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                    "valueString": "89"
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                    "valueString": "Pappelallee"
+                  }
+                ]
+              }
+            ],
+            "city": "Rothenkirchen",
+            "postalCode": "08237",
+            "country": "D"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Organization",
+        "id": "a8efd0b3-58c3-48f7-89f5-67f86dd298e8",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-organization",
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_Organization|0.9"
+          ]
+        },
+        "telecom": [
+          {
+            "system": "url",
+            "value": "https://pflegeheim.de/KIM"
+          }
+        ],
+        "address": [
+          {
+            "type": "physical",
+            "city": "Berlin",
+            "postalCode": "10247",
+            "_line": [
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                    "valueString": "Meinekestraße"
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                    "valueString": "61"
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator",
+                    "valueString": "Geriatrie"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "identifier": [
+          {
+            "system": "https://gematik.de/fhir/sid/telematik-id",
+            "value": "3-abc-1234567890"
+          }
+        ],
+        "name": "Pflegeheim am Platz der Sonne"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Organization",
+        "id": "f89adcee-7fe3-4b06-bc5f-e17b592a3a5f",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-organization",
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_Organization|0.9"
+          ]
+        },
+        "telecom": [
+          {
+            "system": "url",
+            "value": "https://apotheke.de/KIM"
+          }
+        ],
+        "address": [
+          {
+            "type": "physical",
+            "city": "Berlin",
+            "postalCode": "10247",
+            "_line": [
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                    "valueString": "Meinekestraße"
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                    "valueString": "63"
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator",
+                    "valueString": "Apotheke am Pflegeheim"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "identifier": [
+          {
+            "system": "https://gematik.de/fhir/sid/telematik-id",
+            "value": "3-abc-1234567890"
+          }
+        ],
+        "name": "Apotheke am Platz der Sonne"
+      }
+    }
+  ]
+}

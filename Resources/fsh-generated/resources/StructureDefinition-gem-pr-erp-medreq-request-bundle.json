@@ -74,7 +74,7 @@
         "path": "Bundle.meta.profile",
         "min": 1,
         "max": "1",
-        "fixedCanonical": "https://gematik.de/fhir/erp/StructureDefinition/GEM_PR_ERP_MEDREQ_RequestBundle|0.9"
+        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_RequestBundle|0.9"
       },
       {
         "id": "Bundle.meta.security",
@@ -128,42 +128,42 @@
         "min": 4
       },
       {
-        "id": "Bundle.entry:Header",
+        "id": "Bundle.entry:RequestHeader",
         "path": "Bundle.entry",
-        "sliceName": "Header",
+        "sliceName": "RequestHeader",
         "min": 1,
         "max": "1"
       },
       {
-        "id": "Bundle.entry:Header.link",
+        "id": "Bundle.entry:RequestHeader.link",
         "path": "Bundle.entry.link",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:Header.resource",
+        "id": "Bundle.entry:RequestHeader.resource",
         "path": "Bundle.entry.resource",
         "min": 1,
         "type": [
           {
             "code": "MessageHeader",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-message-header-medication-request"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-message-header"
             ]
           }
         ]
       },
       {
-        "id": "Bundle.entry:Header.search",
+        "id": "Bundle.entry:RequestHeader.search",
         "path": "Bundle.entry.search",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:Header.request",
+        "id": "Bundle.entry:RequestHeader.request",
         "path": "Bundle.entry.request",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:Header.response",
+        "id": "Bundle.entry:RequestHeader.response",
         "path": "Bundle.entry.response",
         "max": "0"
       },
