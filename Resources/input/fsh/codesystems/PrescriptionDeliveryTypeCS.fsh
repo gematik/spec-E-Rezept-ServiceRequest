@@ -5,5 +5,5 @@ Description: "This type defines how the prescription will be delivered"
 * insert Meta
 
 * #selfPickup "Selbstabholer"
-* #pharmacy "Heimbelieferung durch Apotheke"
-* #requestingOrganisation "Über anfragende Organisation"
+* #pharmacy "Belieferung der anfragenden Organisation durch Apotheke"
+* #requestingOrganisation "Beschaffung durch anfragende Organisation"
