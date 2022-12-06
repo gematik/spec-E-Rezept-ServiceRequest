@@ -11,11 +11,11 @@
   "concept": [
     {
       "code": "informationMissing",
-      "display": "Fehlende Informationen"
+      "display": "Informationen unvollständig"
     },
     {
       "code": "informationenIncorrect",
-      "display": "Fehlerhafte Informationen"
+      "display": "Informationen fehlerhaft"
     }
   ],
   "experimental": false,
