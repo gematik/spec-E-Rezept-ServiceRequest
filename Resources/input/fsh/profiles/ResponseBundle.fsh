@@ -25,7 +25,7 @@ Description: "A communication resource for collecting information objects needed
     DispensingOrganization 0..1
 * entry[Header].link ..0
 * entry[Header].resource 1..
-* entry[Header].resource only GEM_PR_ERP_MEDREQ_MessageHeaderMedicationRequest
+* entry[Header].resource only GEM_PR_ERP_MEDREQ_MessageHeaderResponse
 * entry[Header].search ..0
 * entry[Header].request ..0
 * entry[Header].response ..0

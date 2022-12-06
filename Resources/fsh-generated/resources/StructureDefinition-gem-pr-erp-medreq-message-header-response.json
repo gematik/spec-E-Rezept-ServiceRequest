@@ -1,0 +1,134 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "gem-pr-erp-medreq-message-header-response",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Foundation.Other"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "not-classified"
+    }
+  ],
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-message-header-response",
+  "version": "1.0.0",
+  "name": "GEM_PR_ERP_MEDREQ_MessageHeaderResponse",
+  "title": "GEM PR ERP MEDREQ Message Header Response",
+  "status": "draft",
+  "experimental": false,
+  "publisher": "gematik GmbH",
+  "description": "Header for Messages Bundles used for Responses to Medication Requests",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "MessageHeader",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/MessageHeader",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "MessageHeader.meta",
+        "path": "MessageHeader.meta",
+        "min": 1
+      },
+      {
+        "id": "MessageHeader.meta.versionId",
+        "path": "MessageHeader.meta.versionId",
+        "max": "0"
+      },
+      {
+        "id": "MessageHeader.meta.source",
+        "path": "MessageHeader.meta.source",
+        "max": "0"
+      },
+      {
+        "id": "MessageHeader.meta.profile",
+        "path": "MessageHeader.meta.profile",
+        "min": 1,
+        "max": "1",
+        "fixedCanonical": "https://gematik.de/fhir/erp/StructureDefinition/GEM_PR_ERP_MEDREQ_MessageHeaderResponse|0.9"
+      },
+      {
+        "id": "MessageHeader.meta.security",
+        "path": "MessageHeader.meta.security",
+        "max": "0"
+      },
+      {
+        "id": "MessageHeader.meta.tag",
+        "path": "MessageHeader.meta.tag",
+        "max": "0"
+      },
+      {
+        "id": "MessageHeader.extension",
+        "path": "MessageHeader.extension",
+        "min": 2
+      },
+      {
+        "id": "MessageHeader.extension:PrescriptionID",
+        "path": "MessageHeader.extension",
+        "sliceName": "PrescriptionID",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionIdEX"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MessageHeader.extension:AccessCode",
+        "path": "MessageHeader.extension",
+        "sliceName": "AccessCode",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/AccessCodeEX"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MessageHeader.sender",
+        "path": "MessageHeader.sender",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MessageHeader.sender.reference",
+        "path": "MessageHeader.sender.reference",
+        "min": 1
+      }
+    ]
+  }
+}
