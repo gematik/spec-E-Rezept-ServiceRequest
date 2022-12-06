@@ -1,5 +1,5 @@
 Extension: RemainingRangeDateEX
 Id: RemainingRangeDateEX
-Description: "Datum bis zu welchem die aktuelle Restreichweite halten würde"
+Description: "Date up to which the remaining range would currently be sufficient"
 * insert Meta
 * value[x] only date

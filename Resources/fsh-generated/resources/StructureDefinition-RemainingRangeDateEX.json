@@ -7,7 +7,7 @@
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "Datum bis zu welchem die aktuelle Restreichweite halten würde",
+  "description": "Date up to which the remaining range would currently be sufficient",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
