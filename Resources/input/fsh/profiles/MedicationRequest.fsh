@@ -52,7 +52,7 @@ Description: "Profile on the Medication Request that is to be sent"
 * courseOfTherapyType 0..0
 * insurance 0..1
 
-* dosageInstruction 0..0
+* dosageInstruction 0..1
 
 * dispenseRequest 1..1 MS
 * dispenseRequest.quantity 1..1 MS

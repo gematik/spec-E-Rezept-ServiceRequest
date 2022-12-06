@@ -327,7 +327,7 @@
       {
         "id": "MedicationRequest.dosageInstruction",
         "path": "MedicationRequest.dosageInstruction",
-        "max": "0"
+        "max": "1"
       },
       {
         "id": "MedicationRequest.dispenseRequest",
