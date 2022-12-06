@@ -17,10 +17,7 @@ Title: "GEM PR ERP MEDREQ Cancellation Bundle"
 * entry ^slicing.discriminator.path = "resource.meta.profile"
 * entry ^slicing.rules = #closed
 * entry contains
-    Header 1..1 and
-    MedicationRequest 1..1 and
-    Patient 1..1 and
-    Organization 1..1
+    Header 1..1 
 * entry[Header].link ..0
 * entry[Header].resource 1..
 * entry[Header].resource only GEM_PR_ERP_MEDREQ_CancellationMessageHeaderMedicationRequest
