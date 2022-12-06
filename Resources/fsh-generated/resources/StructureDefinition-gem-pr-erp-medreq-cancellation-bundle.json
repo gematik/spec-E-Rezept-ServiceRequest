@@ -73,7 +73,7 @@
         "path": "Bundle.meta.profile",
         "min": 1,
         "max": "1",
-        "fixedCanonical": "https://gematik.de/fhir/erp/StructureDefinition/GEM_PR_ERP_MEDREQ_CancellationBundle|0.1"
+        "fixedCanonical": "https://gematik.de/fhir/erp/StructureDefinition/GEM_PR_ERP_MEDREQ_CancellationBundle|0.9"
       },
       {
         "id": "Bundle.meta.security",
