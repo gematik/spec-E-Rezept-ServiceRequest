@@ -53,3 +53,5 @@ Description: "Communication resource for sending dispenseInformation about a med
 * entry[DispensingOrganization].search ..0
 * entry[DispensingOrganization].request ..0
 * entry[DispensingOrganization].response ..0
+
+// TODO: Instance fehlt

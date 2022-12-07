@@ -23,7 +23,7 @@ Description: "Header for Messages Bundles used for Responses to Medication Reque
 
 Instance: ResponseHeaderExample
 InstanceOf: GEM_PR_ERP_MEDREQ_ResponseHeader
-Usage: #example
+Usage: #inline
 Title: "ResponseHeaderExample"
 Description: "Example of a response header"
 * id = "00dd7c71-ef9c-4d68-ab8a-e4e160b9806c"

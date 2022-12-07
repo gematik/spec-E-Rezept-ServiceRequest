@@ -117,7 +117,7 @@ Usage: #inline
 
 Instance: MedicationRequestExampleSelfPickup
 InstanceOf: GEM_PR_ERP_MEDREQ_MedicationRequest
-Usage: #example
+Usage: #inline
 Title: "MedicationRequestExample_SelfPickup"
 Description: "Example of a medication request to be picked up by the patient themselves"
 * id = "fe63895a-c5df-4598-ba4a-d2fee3477cb9"
@@ -134,7 +134,7 @@ Description: "Example of a medication request to be picked up by the patient the
 
 Instance: MedicationRequestExampleRequestingOrganisation
 InstanceOf: GEM_PR_ERP_MEDREQ_MedicationRequest
-Usage: #example
+Usage: #inline
 Title: "MedicationRequestExample_RequestingOrganisation"
 Description: "Example of a medication request resulting in a prescription sent to the dispensing organization"
 * id = "b3eb274e-195f-4ac3-a6e6-f1d113434693"
@@ -151,7 +151,7 @@ Description: "Example of a medication request resulting in a prescription sent t
 
 Instance: MedicationRequestExampleDispensingOrganisation
 InstanceOf: GEM_PR_ERP_MEDREQ_MedicationRequest
-Usage: #example
+Usage: #inline
 Title: "MedicationRequestExample_DispensingOrganisation"
 Description: "Example of a medication request resulting in a prescription sent to the dispensing organization"
 * id = "12b8036c-0cc6-43cf-b9cc-c6ebccde0d58"

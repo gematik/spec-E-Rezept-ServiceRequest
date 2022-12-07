@@ -112,10 +112,10 @@ Usage: #inline
 * payor.identifier.value = "108018347"
 * payor.display = "AOK Baden-Württemberg"
 
-Instance: ResponseBundleExample1
+Instance: ResponseBundleExample
 InstanceOf: GEM_PR_ERP_MEDREQ_ResponseBundle
 Usage: #example
-Title: "GEM PR ERP MEDREQ Response Bundle Example1"
+Title: "GEM PR ERP MEDREQ Response Bundle Example"
 Description: "Example of a response bundle for a medicationrequest"
 * id = "f9c235cc-757d-11ed-a1eb-0242ac120002"
 * MetaInstance(GEM_PR_ERP_MEDREQ_ResponseBundle)

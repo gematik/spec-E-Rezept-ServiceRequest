@@ -52,7 +52,7 @@ Description: "Example of a RequestHeader"
 
 Instance: RequestHeaderExampleRequestingOrganisation
 InstanceOf: GEM_PR_ERP_MEDREQ_MessageHeader
-Usage: #example
+Usage: #inline
 Title: "RequestHeaderExampleRequestingOrganisation"
 Description: "Example of a RequestHeader triggered by a RequestingOrganisation"
 * id = "3a0fa348-fc66-4f29-b842-cbad1523c846"
@@ -63,7 +63,7 @@ Description: "Example of a RequestHeader triggered by a RequestingOrganisation"
 
 Instance: RequestHeaderExampleDispensingOrganisation
 InstanceOf: GEM_PR_ERP_MEDREQ_MessageHeader
-Usage: #example
+Usage: #inline
 Title: "RequestHeaderExampleDispensingOrganisation"
 Description: "Example of a RequestHeader triggered by a DispensingOrganisation"
 * id = "b2e0e631-42fd-4d8a-a7b2-a2f54fe70bf7"

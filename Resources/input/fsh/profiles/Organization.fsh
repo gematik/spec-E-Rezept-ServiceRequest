@@ -55,7 +55,7 @@ Description: "Organization used in the context of a medicationRequest"
 
 Instance: RequestingOrganizationExample
 InstanceOf: GEM_PR_ERP_MEDREQ_Organization
-Usage: #example
+Usage: #inline
 Title: "Requesting Organization Example"
 Description: "Example of a Organisation responsible for the request of the medication"
 * id = "a8efd0b3-58c3-48f7-89f5-67f86dd298e8"
@@ -76,7 +76,7 @@ Description: "Example of a Organisation responsible for the request of the medic
 
 Instance:  DispensingOrganizationExample
 InstanceOf: GEM_PR_ERP_MEDREQ_Organization
-Usage: #example
+Usage: #inline
 Title: "Requesting Dispensing Example"
 Description: "Example of a Organisation responsible for the request of the medication"
 * id = "f89adcee-7fe3-4b06-bc5f-e17b592a3a5f"

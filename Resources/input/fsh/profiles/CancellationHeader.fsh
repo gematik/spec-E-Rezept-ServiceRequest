@@ -26,7 +26,7 @@ Description: "Header for cancellation message of a medication Request"
 
 Instance: CancellationHeaderExample
 InstanceOf: GEM_PR_ERP_MEDREQ_CancellationHeader
-Usage: #example
+Usage: #inline
 Title: "CancellationHeaderExample"
 Description: "Example of a cancellation Header"
 * id = "853c0a72-d4e3-41b6-b4cb-e506d6f224ca"
