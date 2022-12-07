@@ -1,10 +1,10 @@
 {
   "resourceType": "Bundle",
-  "id": "6febb835-2e73-4028-9285-e6ca253597f6",
+  "id": "ExampleForResponseBundle",
   "meta": {
     "profile": [
-      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-request-bundle",
-      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_RequestBundle|0.9"
+      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-response-bundle",
+      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_ResponseBundle|0.9"
     ]
   },
   "type": "message",
@@ -12,51 +12,75 @@
     "system": "urn:ietf:rfc:3986",
     "value": "urn:uuid:7a1d5187-3070-4a23-a877-162bdd479b9b"
   },
-  "timestamp": "2022-12-03T16:55:42.154+02:00",
+  "timestamp": "2022-12-04T08:52:41.153+02:00",
   "entry": [
     {
       "resource": {
         "resourceType": "MessageHeader",
-        "id": "3a0fa348-fc66-4f29-b842-cbad1523c846",
+        "id": "00dd7c71-ef9c-4d68-ab8a-e4e160b9806c",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-message-header",
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_MessageHeader|0.9"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-response-header",
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_ResponseHeader|0.9"
           ]
         },
+        "extension": [
+          {
+            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionIdEX",
+            "valueIdentifier": {
+              "system": "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode",
+              "value": "160.000.033.491.280.78"
+            }
+          },
+          {
+            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/AccessCodeEX",
+            "valueIdentifier": {
+              "system": "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
+              "value": "777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
+            }
+          }
+        ],
+        "eventCoding": {
+          "code": "RespondingMessage",
+          "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/MessageEventTypeCS",
+          "display": "Antwort auf eine Rezeptanforderung"
+        },
         "sender": {
-          "reference": "Organization/a8efd0b3-58c3-48f7-89f5-67f86dd298e8"
+          "reference": "Organisation/f67dcc87-f877-49da-a249-aac4d1b15418"
         },
         "source": {
-          "endpoint": "https://pflegeheim.de/KIM"
-        },
-        "eventCoding": {
-          "code": "RequestingMessage",
-          "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/MessageEventTypeCS",
-          "display": "Nachricht zur Rezeptanforderung"
+          "endpoint": "https://praxis_um_die_ecke.de/KIM"
         }
       }
     },
     {
       "resource": {
         "resourceType": "MedicationRequest",
-        "id": "fe63895a-c5df-4598-ba4a-d2fee3477cb9",
+        "id": "5fb9b3b5-df19-4a7a-8d19-0dee164da7fe",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-medication-request",
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_MedicationRequest|0.9"
+            "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription|1.1.0"
           ]
         },
-        "status": "draft",
-        "intent": "proposal",
+        "status": "active",
+        "intent": "order",
         "extension": [
           {
-            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeEX",
-            "valueCoding": {
-              "code": "SelfPickup",
-              "system": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeCS",
-              "display": "Selbstabholer"
-            }
+            "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_EmergencyServicesFee",
+            "valueBoolean": false
+          },
+          {
+            "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_BVG",
+            "valueBoolean": false
+          },
+          {
+            "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Multiple_Prescription",
+            "extension": [
+              {
+                "url": "Kennzeichen",
+                "valueBoolean": false
+              }
+            ]
           }
         ],
         "dispenseRequest": {
@@ -65,12 +89,6 @@
             "code": "{Package}",
             "value": 1
           }
-        },
-        "medicationReference": {
-          "reference": "Medication/MedicationExamplePZN"
-        },
-        "subject": {
-          "reference": "Patient/b04f58bc-bb37-4490-9561-2e6954764c4a"
         },
         "dosageInstruction": [
           {
@@ -83,9 +101,24 @@
             "text": "3mal täglich dünn auftragen"
           }
         ],
+        "medicationReference": {
+          "reference": "Medication/MedicationExamplePZN"
+        },
+        "subject": {
+          "reference": "Patient/b04f58bc-bb37-4490-9561-2e6954764c4a"
+        },
+        "authoredOn": "2022-12-04T08:51:40.153+02:00",
+        "requester": {
+          "reference": "Practitioner/fcdcfa8a-b1ff-488f-b32f-16359cd78596"
+        },
         "substitution": {
           "allowedBoolean": true
-        }
+        },
+        "insurance": [
+          {
+            "reference": "Coverage/2e3afa48-ccc6-42c8-9780-1ceebdbd7440"
+          }
+        ]
       }
     },
     {
