@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "id": "eef90d54-892a-4dcb-b1e6-2fad40b2c3e7",
+  "id": "ExampleForRequestBundleFromDispensingOrganisation",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-request-bundle",

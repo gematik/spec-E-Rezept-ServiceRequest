@@ -75,9 +75,9 @@ Description: "Example of a bundle for a medicationrequest requested by a Request
 Instance: RequestBundleExample_DispensingOrganisation
 InstanceOf: GEM_PR_ERP_MEDREQ_RequestBundle
 Usage: #example
-Title: "ExampleForRequestBundleFromDispensingOrganisation"
+Title: "Example of RequestBundle by a DispensingOrganisation"
 Description: "Example of a bundle for a medicationrequest triggered by a DispensingOrganisation for a RequestingOrganization"
-* id = "eef90d54-892a-4dcb-b1e6-2fad40b2c3e7"
+* id = "ExampleForRequestBundleFromDispensingOrganisation"
 * MetaInstance(GEM_PR_ERP_MEDREQ_RequestBundle)
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:f4bb6000-fc6c-4cf0-b021-57bd0d77673f"
