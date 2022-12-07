@@ -59,6 +59,7 @@ InstanceOf: KBV_PR_FOR_Practitioner
 Usage: #inline
 Title: "KBV_PR_FOR_PractitionerExample"
 Description: "Example of a KBV_PR_FOR_Practitioner"
+* id = "fcdcfa8a-b1ff-488f-b32f-16359cd78596"
 * identifier.type = http://terminology.hl7.org/CodeSystem/v2-0203#LANR
 * identifier.system = "https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR"
 * identifier.value = "754236701"
@@ -94,6 +95,8 @@ Description: "Example of a KBV_PR_ERP_Prescription"
 Instance: KBV_PR_FOR_CoverageExample
 InstanceOf: KBV_PR_FOR_Coverage
 Usage: #inline
+* id = "2e3afa48-ccc6-42c8-9780-1ceebdbd7440"
+* extension[+][BesonderePersonengruppe].url = "http://fhir.de/StructureDefinition/gkv/besondere-personengruppe"
 * extension[0].url = "http://fhir.de/StructureDefinition/gkv/besondere-personengruppe"
 * extension[=].valueCoding = https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_PERSONENGRUPPE#00
 * extension[+].url = "http://fhir.de/StructureDefinition/gkv/dmp-kennzeichen"

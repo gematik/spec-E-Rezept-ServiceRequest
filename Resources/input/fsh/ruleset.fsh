@@ -13,4 +13,4 @@ RuleSet: MetaProfile (profileName)
 * meta.tag 0..0
 
 RuleSet: MetaInstance(profileName)
-* meta.profile = "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/{profileName}|0.9" (exactly)
+* ^meta.profile = "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/{profileName}|0.9" (exactly)

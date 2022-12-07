@@ -41,7 +41,7 @@
   "identifier": [
     {
       "system": "https://gematik.de/fhir/sid/telematik-id",
-      "value": "3-abc-1234567890"
+      "value": "10-67.245.00001234"
     }
   ],
   "name": "Pflegeheim am Platz der Sonne"

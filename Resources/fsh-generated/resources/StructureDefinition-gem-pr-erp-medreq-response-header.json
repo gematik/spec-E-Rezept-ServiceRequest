@@ -94,7 +94,8 @@
               "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionIdEX"
             ]
           }
-        ]
+        ],
+        "mustSupport": true
       },
       {
         "id": "MessageHeader.extension:AccessCode",
@@ -109,7 +110,8 @@
               "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/AccessCodeEX"
             ]
           }
-        ]
+        ],
+        "mustSupport": true
       },
       {
         "id": "MessageHeader.event[x]",

@@ -26,10 +26,18 @@
         },
         "extension": [
           {
-            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionIdEX"
+            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionIdEX",
+            "valueIdentifier": {
+              "system": "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode",
+              "value": "160.000.033.491.280.78"
+            }
           },
           {
-            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/AccessCodeEX"
+            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/AccessCodeEX",
+            "valueIdentifier": {
+              "system": "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
+              "value": "777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
+            }
           }
         ],
         "eventCoding": {
@@ -101,14 +109,14 @@
         },
         "authoredOn": "2022-12-04T08:51:40.153+02:00",
         "requester": {
-          "reference": "Practitioner/KBV_PR_FOR_PractitionerExample"
+          "reference": "Practitioner/fcdcfa8a-b1ff-488f-b32f-16359cd78596"
         },
         "substitution": {
           "allowedBoolean": true
         },
         "insurance": [
           {
-            "reference": "Coverage/KBV_PR_FOR_CoverageExample"
+            "reference": "Coverage/2e3afa48-ccc6-42c8-9780-1ceebdbd7440"
           }
         ]
       }
@@ -225,7 +233,7 @@
         "identifier": [
           {
             "system": "https://gematik.de/fhir/sid/telematik-id",
-            "value": "3-abc-1234567890"
+            "value": "10-67.245.00001234"
           }
         ],
         "name": "Pflegeheim am Platz der Sonne"

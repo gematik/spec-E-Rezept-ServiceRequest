@@ -61,7 +61,7 @@ Description: "Example of a Organisation responsible for the request of the medic
 * id = "a8efd0b3-58c3-48f7-89f5-67f86dd298e8"
 * MetaInstance(GEM_PR_ERP_MEDREQ_Organization)
 * identifier[+][Telematik-ID].system = "https://gematik.de/fhir/sid/telematik-id"
-* identifier[=][Telematik-ID].value = "3-abc-1234567890"
+* identifier[=][Telematik-ID].value = "10-67.245.00001234"
 * name = "Pflegeheim am Platz der Sonne"
 * telecom[+].system = #url
 * telecom[=].value = "https://pflegeheim.de/KIM"
