@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "id": "ExampleForRequestBundleFromDispensingOrganisation",
+  "id": "RequestBundleFromRequestingOrganization",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-request-bundle",
@@ -10,14 +10,14 @@
   "type": "message",
   "identifier": {
     "system": "urn:ietf:rfc:3986",
-    "value": "urn:uuid:f4bb6000-fc6c-4cf0-b021-57bd0d77673f"
+    "value": "urn:uuid:7a1d5187-3070-4a23-a877-162bdd479b9b"
   },
-  "timestamp": "2022-12-01T12:12:54.234+02:00",
+  "timestamp": "2022-12-03T16:55:42.154+02:00",
   "entry": [
     {
       "resource": {
         "resourceType": "MessageHeader",
-        "id": "b2e0e631-42fd-4d8a-a7b2-a2f54fe70bf7",
+        "id": "3a0fa348-fc66-4f29-b842-cbad1523c846",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-message-header",
@@ -25,10 +25,10 @@
           ]
         },
         "sender": {
-          "reference": "Organization/f89adcee-7fe3-4b06-bc5f-e17b592a3a5f"
+          "reference": "Organization/a8efd0b3-58c3-48f7-89f5-67f86dd298e8"
         },
         "source": {
-          "endpoint": "https://apotheke.de/KIM"
+          "endpoint": "https://pflegeheim.de/KIM"
         },
         "eventCoding": {
           "code": "RequestingMessage",
@@ -40,7 +40,7 @@
     {
       "resource": {
         "resourceType": "MedicationRequest",
-        "id": "12b8036c-0cc6-43cf-b9cc-c6ebccde0d58",
+        "id": "fe63895a-c5df-4598-ba4a-d2fee3477cb9",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-medication-request",
@@ -53,9 +53,9 @@
           {
             "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeEX",
             "valueCoding": {
-              "code": "DispensingOrganisation",
+              "code": "SelfPickup",
               "system": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeCS",
-              "display": "Belieferung der anfragenden Organisation durch Apotheke"
+              "display": "Selbstabholer"
             }
           }
         ],

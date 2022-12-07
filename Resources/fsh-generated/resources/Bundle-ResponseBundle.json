@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "id": "ExampleForResponseBundle",
+  "id": "ResponseBundle",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-response-bundle",

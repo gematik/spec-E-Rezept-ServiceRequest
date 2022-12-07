@@ -60,7 +60,7 @@ InstanceOf: GEM_PR_ERP_MEDREQ_RequestBundle
 Usage: #example
 Title: "Example of RequestBundle by a RequestingOrganisation"
 Description: "Example of a bundle for a medicationrequest requested by a RequestingOrganization"
-* id = "ExampleForRequestBundleFromRequestingOrganization"
+* id = "RequestBundleFromRequestingOrganization"
 * MetaInstance(GEM_PR_ERP_MEDREQ_RequestBundle)
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:7a1d5187-3070-4a23-a877-162bdd479b9b"
@@ -77,7 +77,7 @@ InstanceOf: GEM_PR_ERP_MEDREQ_RequestBundle
 Usage: #example
 Title: "Example of RequestBundle by a DispensingOrganisation"
 Description: "Example of a bundle for a medicationrequest triggered by a DispensingOrganisation for a RequestingOrganization"
-* id = "ExampleForRequestBundleFromDispensingOrganisation"
+* id = "RequestBundleFromDispensingOrganisation"
 * MetaInstance(GEM_PR_ERP_MEDREQ_RequestBundle)
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:f4bb6000-fc6c-4cf0-b021-57bd0d77673f"

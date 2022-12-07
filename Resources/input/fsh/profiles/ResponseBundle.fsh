@@ -117,7 +117,7 @@ InstanceOf: GEM_PR_ERP_MEDREQ_ResponseBundle
 Usage: #example
 Title: "GEM PR ERP MEDREQ Response Bundle Example"
 Description: "Example of a response bundle for a medicationrequest"
-* id = "ExampleForResponseBundle"
+* id = "ResponseBundle"
 * MetaInstance(GEM_PR_ERP_MEDREQ_ResponseBundle)
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:7a1d5187-3070-4a23-a877-162bdd479b9b"
