@@ -1,0 +1,55 @@
+{
+  "resourceType": "Bundle",
+  "id": "CancellationBundleFromPractitioner",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-cancellation-bundle",
+      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_CancellationBundle|0.9"
+    ]
+  },
+  "type": "message",
+  "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:uuid:2d77d48c-f177-4540-82b2-3a25d20d1cc9"
+  },
+  "timestamp": "2022-12-07T12:12:54.234+02:00",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "MessageHeader",
+        "id": "e0e10aa4-3405-49de-8969-1e13864aa111",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-cancellation-header",
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_CancellationHeader|0.9"
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/IdentifierEX",
+            "valueUuid": "7a1d5187-3070-4a23-a877-162bdd479b9b"
+          },
+          {
+            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/CancellationReasonTypeEX",
+            "valueCoding": {
+              "code": "InformationMissing",
+              "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/CancellationReasonTypeCS",
+              "display": "Informationen unvollständig"
+            }
+          }
+        ],
+        "eventCoding": {
+          "code": "CancellationMessage",
+          "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/MessageEventTypeCS",
+          "display": "Stornierung einer Rezeptanforderung"
+        },
+        "sender": {
+          "reference": "Organisation/f67dcc87-f877-49da-a249-aac4d1b15418"
+        },
+        "source": {
+          "endpoint": "https://praxis_um_die_ecke.de/KIM"
+        }
+      }
+    }
+  ]
+}

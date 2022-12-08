@@ -267,7 +267,23 @@
           "reference": "Bundle/CancellationBundleFromDispensingOrganisation"
         },
         "name": "Example of CancellationBundle by a DispensingOrganisation",
-        "description": "Example of a cancellation bundle of a medicationrequest initiated by a RequestingOrganizatio",
+        "description": "Example of a cancellation bundle of a medicationrequest initiated by a RequestingOrganization",
+        "exampleCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-cancellation-bundle"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/CancellationBundleFromPractitioner"
+        },
+        "name": "Example of CancellationBundle by a Practitioner",
+        "description": "Example of a cancellation bundle of a medicationrequest initiated by a Practitioner",
+        "exampleCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-cancellation-bundle"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/CancellationBundleFromRequestingOrganisation"
+        },
+        "name": "Example of CancellationBundle by a RequestingOrganisation",
+        "description": "Example of a cancellation bundle of a medicationrequest initiated by a RequestingOrganization",
         "exampleCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-cancellation-bundle"
       },
       {
