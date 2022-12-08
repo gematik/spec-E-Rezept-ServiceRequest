@@ -12,9 +12,6 @@ Als Ergebnis einer Bescheinigungsanfrage antwortet die Kasse eine KIM-Nachricht,
 
 ## Signatur
 
-Die Signatur ist als Base64-Codierter PKCS#7-Container der KIM-Antwort zu entnehmen.
-Sie trägt die signierte Bescheinigung innerhalb des Signaturcontainers (enveloping Signatur).
-Mit der Konnektoroperation `verifyDocument` kann die Signatur der Kasse geprüft werden.
 
 ```xml
 <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
