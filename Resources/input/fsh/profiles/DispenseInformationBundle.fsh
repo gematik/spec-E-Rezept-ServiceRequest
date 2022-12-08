@@ -130,4 +130,4 @@ Description: "Example of DispenseInformationBundle to provide a complete informa
 * entry[+][Patient].resource = KBV_PR_FOR_PatientExample
 * entry[+][RequestingOrganization].resource = RequestingOrganizationExample
 * entry[+][DispensingOrganization].resource = DispensingOrganizationExample
-* entry[+][DispenseInformation].resource = DispenseInformationExample
+* entry[+][DispenseInformation].resource = GEM_ERP_PR_MedicationDispenseExample
