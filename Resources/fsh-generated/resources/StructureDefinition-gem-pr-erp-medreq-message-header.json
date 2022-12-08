@@ -14,7 +14,7 @@
   "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-message-header",
   "version": "1.0.0",
   "name": "GEM_PR_ERP_MEDREQ_MessageHeader",
-  "title": "GEM PR ERP MEDREQ RequestHeader",
+  "title": "GEM PR ERP MEDREQ MessageHeader",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",

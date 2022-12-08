@@ -154,7 +154,8 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization"
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization",
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-organization"
             ]
           }
         ]

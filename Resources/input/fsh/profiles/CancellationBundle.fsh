@@ -25,4 +25,15 @@ Title: "GEM PR ERP MEDREQ Cancellation Bundle"
 * entry[CancellationHeader].request ..0
 * entry[CancellationHeader].response ..0
 
-// TODO: Instance fehlt
+Instance: GEM_PR_ERP_MEDREQ_CancellationBundleExmaple
+InstanceOf: GEM_PR_ERP_MEDREQ_CancellationBundle
+Usage: #example
+Title: "Example of CancellationBundle by a DispensingOrganisation"
+Description: "Example of a cancellation bundle of a medicationrequest initiated by a RequestingOrganizatio"
+* id = "CancellationBundleFromDispensingOrganisation"
+* MetaInstance(GEM_PR_ERP_MEDREQ_CancellationBundle)
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:uuid:2d77d48c-f177-4540-82b2-3a25d20d1cc9"
+* type = #message
+* timestamp = "2022-12-07T12:12:54.234+02:00"
+* entry[+][CancellationHeader].resource = MessageHeaderExampleDispensingOrganisation

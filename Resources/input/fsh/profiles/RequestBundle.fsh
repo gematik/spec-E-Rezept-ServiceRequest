@@ -58,7 +58,7 @@ Description: "A communication resource for collecting information objects needed
 Instance: RequestBundleExample_RequestingOrganisation
 InstanceOf: GEM_PR_ERP_MEDREQ_RequestBundle
 Usage: #example
-Title: "Example of RequestBundle by a RequestingOrganisation"
+Title: "Example of RequestBundle initiated by a RequestingOrganisation"
 Description: "Example of a bundle for a medicationrequest requested by a RequestingOrganization"
 * id = "RequestBundleFromRequestingOrganization"
 * MetaInstance(GEM_PR_ERP_MEDREQ_RequestBundle)
@@ -66,7 +66,7 @@ Description: "Example of a bundle for a medicationrequest requested by a Request
 * identifier.value = "urn:uuid:7a1d5187-3070-4a23-a877-162bdd479b9b"
 * type = #message
 * timestamp = "2022-12-03T16:55:42.154+02:00"
-* entry[+][RequestHeader].resource = RequestHeaderExampleRequestingOrganisation
+* entry[+][RequestHeader].resource = MessageHeaderExampleRequestingOrganisation
 * entry[+][MedicationRequest].resource = MedicationRequestExampleSelfPickup
 * entry[+][Patient].resource = KBV_PR_FOR_PatientExample
 * entry[+][RequestingOrganization].resource = RequestingOrganizationExample
@@ -75,7 +75,7 @@ Description: "Example of a bundle for a medicationrequest requested by a Request
 Instance: RequestBundleExample_DispensingOrganisation
 InstanceOf: GEM_PR_ERP_MEDREQ_RequestBundle
 Usage: #example
-Title: "Example of RequestBundle by a DispensingOrganisation"
+Title: "Example of RequestBundle initiated by a DispensingOrganisation"
 Description: "Example of a bundle for a medicationrequest triggered by a DispensingOrganisation for a RequestingOrganization"
 * id = "RequestBundleFromDispensingOrganisation"
 * MetaInstance(GEM_PR_ERP_MEDREQ_RequestBundle)
@@ -83,7 +83,7 @@ Description: "Example of a bundle for a medicationrequest triggered by a Dispens
 * identifier.value = "urn:uuid:f4bb6000-fc6c-4cf0-b021-57bd0d77673f"
 * type = #message
 * timestamp = "2022-12-01T12:12:54.234+02:00"
-* entry[+][RequestHeader].resource = RequestHeaderExampleDispensingOrganisation
+* entry[+][RequestHeader].resource = MessageHeaderExampleDispensingOrganisation
 * entry[+][MedicationRequest].resource = MedicationRequestExampleDispensingOrganisation
 * entry[+][Patient].resource = KBV_PR_FOR_PatientExample
 * entry[+][RequestingOrganization].resource = RequestingOrganizationExample

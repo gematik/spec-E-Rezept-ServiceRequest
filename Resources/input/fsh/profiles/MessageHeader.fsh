@@ -1,7 +1,7 @@
 Profile: GEM_PR_ERP_MEDREQ_MessageHeader
 Parent: MessageHeader
 Id: gem-pr-erp-medreq-message-header
-Title: "GEM PR ERP MEDREQ RequestHeader"
+Title: "GEM PR ERP MEDREQ MessageHeader"
 Description: "Header for Messages Bundles used for Medication Request"
 * insert Meta
 * insert MetaProfile (GEM_PR_ERP_MEDREQ_MessageHeader)
@@ -36,24 +36,10 @@ Usage: #inline
 * address[Strassenanschrift].postalCode = "10249"
 * address[Strassenanschrift].country = "D"
 
-/*
-Instance: RequestHeaderExamplePraxis
-InstanceOf: GEM_PR_ERP_MEDREQ_MessageHeader
-Usage: #example
-Title: "RequestHeaderExample"
-Description: "Example of a RequestHeader"
-* id = "542ad200-7579-486d-89fb-0d2cef76e1f3"
-* MetaInstance(GEM_PR_ERP_MEDREQ_MessageHeader)
-* sender.reference = "Organisation/f67dcc87-f877-49da-a249-aac4d1b15418"
-//* sender.reference = Reference(KBV_PR_FOR_Organization/f67dcc87-f877-49da-a249-aac4d1b15418)
-* source.endpoint = "https://praxis_um_die_ecke.de/KIM"
-* eventCoding = https://gematik.de/fhir/erpmedreqcom/CodeSystem/MessageEventTypeCS#RequestingMessage "Nachricht zur Rezeptanforderung"
-*/
-
-Instance: RequestHeaderExampleRequestingOrganisation
+Instance: MessageHeaderExampleRequestingOrganisation
 InstanceOf: GEM_PR_ERP_MEDREQ_MessageHeader
 Usage: #inline
-Title: "RequestHeaderExampleRequestingOrganisation"
+Title: "MessageHeaderExampleRequestingOrganisation"
 Description: "Example of a RequestHeader triggered by a RequestingOrganisation"
 * id = "3a0fa348-fc66-4f29-b842-cbad1523c846"
 * MetaInstance(GEM_PR_ERP_MEDREQ_MessageHeader)
@@ -61,10 +47,10 @@ Description: "Example of a RequestHeader triggered by a RequestingOrganisation"
 * source.endpoint = "https://pflegeheim.de/KIM"
 * eventCoding = https://gematik.de/fhir/erpmedreqcom/CodeSystem/MessageEventTypeCS#RequestingMessage "Nachricht zur Rezeptanforderung"
 
-Instance: RequestHeaderExampleDispensingOrganisation
+Instance: MessageHeaderExampleDispensingOrganisation
 InstanceOf: GEM_PR_ERP_MEDREQ_MessageHeader
 Usage: #inline
-Title: "RequestHeaderExampleDispensingOrganisation"
+Title: "MessageHeaderExampleDispensingOrganisation"
 Description: "Example of a RequestHeader triggered by a DispensingOrganisation"
 * id = "b2e0e631-42fd-4d8a-a7b2-a2f54fe70bf7"
 * MetaInstance(GEM_PR_ERP_MEDREQ_MessageHeader)
