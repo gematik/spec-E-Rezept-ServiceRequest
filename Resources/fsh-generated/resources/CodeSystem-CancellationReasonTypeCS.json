@@ -6,7 +6,7 @@
   "id": "CancellationReasonTypeCS",
   "title": "CodeSystem for CancellationReasonType",
   "description": "Definition of reasons why a prescriptionRequest was cancelled",
-  "version": "1.0.0",
+  "version": "0.9",
   "url": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/CancellationReasonTypeCS",
   "concept": [
     {

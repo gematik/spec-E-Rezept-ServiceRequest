@@ -5,7 +5,7 @@
   "id": "CancellationReasonTypeVS",
   "title": "ValueSet of reasons why a prescriptionRequest was cancelled",
   "description": "This type defines reasons why a prescriptionRequest was cancelled",
-  "version": "1.0.0",
+  "version": "0.9",
   "url": "https://gematik.de/fhir/erpmedreqcom/ValueSet/CancellationReasonTypeVS",
   "experimental": false,
   "publisher": "gematik GmbH",

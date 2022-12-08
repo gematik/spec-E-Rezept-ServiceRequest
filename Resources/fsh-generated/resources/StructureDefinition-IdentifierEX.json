@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "IdentifierEX",
   "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/IdentifierEX",
-  "version": "1.0.0",
+  "version": "0.9",
   "name": "IdentifierEX",
   "status": "draft",
   "experimental": false,

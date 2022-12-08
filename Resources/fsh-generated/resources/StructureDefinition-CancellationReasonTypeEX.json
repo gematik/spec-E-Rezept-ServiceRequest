@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "CancellationReasonTypeEX",
   "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/CancellationReasonTypeEX",
-  "version": "1.0.0",
+  "version": "0.9",
   "name": "CancellationReasonTypeEX",
   "status": "draft",
   "experimental": false,

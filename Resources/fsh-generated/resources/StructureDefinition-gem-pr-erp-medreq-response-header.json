@@ -12,7 +12,7 @@
     }
   ],
   "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-response-header",
-  "version": "1.0.0",
+  "version": "0.9",
   "name": "GEM_PR_ERP_MEDREQ_ResponseHeader",
   "title": "GEM PR ERP MEDREQ Response Header",
   "status": "draft",
