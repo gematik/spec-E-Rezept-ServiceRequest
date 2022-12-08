@@ -16,7 +16,7 @@
       }
     ],
     "page": {
-      "nameUrl": "ImplementationGuide/markdown/Ablauf.md",
+      "nameUrl": "ImplementationGuide/markdown/Introduction.md",
       "title": "Abläufe",
       "generation": "markdown",
       "page": [
@@ -33,6 +33,11 @@
         {
           "nameUrl": "ImplementationGuide/markdown/Response.md",
           "title": "Übermittlung der Verschreibung",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "ImplementationGuide/markdown/CancellationByPractitioner.md",
+          "title": "Stornierung durch Verordnenden",
           "generation": "markdown"
         },
         {
