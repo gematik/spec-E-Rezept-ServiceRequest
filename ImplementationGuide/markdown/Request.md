@@ -39,7 +39,9 @@ Die hauptsächliche Information muss sich der Übermittlung des [GEM PR ERP MEDR
 Dieser bietet im Vergleich zur eigentlichen Verordnung welche im folgenden durch den Leistungserbringer in Form einer [KBV_PR_ERP_Prescription](https://simplifier.net/erezept/kbvprerpprescription) weitreichende obligatorische Felder, welche zur Zeit der Erstellung der Rezeptanforderung noch nicht bekannt sein müssen, ist aber inhaltlich darauf ausgelegt einfach in eine `KBV_PR_ERP_Prescription` durch Ergänzung umgewandelt werden zu können.
 Verpflichtend ist die Angabe des `PrescriptionDeliveryType`, des  Zustelltyps, dieser definiert den Weitereichung der durch der `KBV_PR_ERP_Prescription` durch den Verordnenden Leistungserbringer.
 Erwähnenswerte optionale Angaben sind die Möglichkeit
-- vorausgegangene Verordnungen unter `priorPrescription`angeben zu können
+
+- nur die `PriorPrescriptionID` einer vorausgegangene Verordnung angeben zu können.
+- eine vorausgegangene Verordnung (z.B. vom Typ [KBV_PR_ERP_Prescription](https://simplifier.net/erezept/kbvprerpprescription)) unter `priorPrescription` angeben zu können
 - Auskunft über die Restreichweite der aktuellen Medikation mit Hilfe der Attribute `RemainingQuantity` und `RemainingRangeDate` geben zu können
 - zusätzliche Informationen in Form eines Freitext-Feldes an den Verordnenden übermitteln zu können.
 
@@ -49,10 +51,10 @@ Der im `MedicationRequest` verpflichtend anzugebene Patient vom Typ [KBV_PR_FOR_
 
 ### RequestingOrganization
 
-Die abfragende Organisation beispielsweise einer Pflegeeinrichtung muss im `Request Bundle`vom Typ
+Die anfordernde Organisation beispielsweise eine Pflegeeinrichtung muss im `Request Bundle`vom Typ
 [GEM PR ERP MEDREQ Organization](https://simplifier.net/erezept-medicationrequest-communication/gem_pr_erp_medreq_organization) hinterlegt werden.
 {{tree:<https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-organization>}}
-Neben der optionalen Angabe der `Telematik-ID` ist die Angabe einer Adresse und einer `KIM-Adresse` unter `telecom.value`zwingend notwendig, um die sich aus der Abgabe ergebenden Dispensierinformation and die `RequestingOrganization` zurückschicken zu können.
+Die Angabe der 'Telematik-ID' ist optional. Die Angabe einer Adresse und einer 'KIM-Adresse' ist verpflichtend. Die verordnende Leistungserbringerinstitution nutzt die KIM-Adresse, um Folgenachrichten, bspw. mit den Informationen zum ausgestellten E-Rezept oder eine Ablehnung, an die 'RequestingOrganization' zu senden.
 Der Typ der Organisation wird in Form der im [RequestingOrganizationTypeVS](https://simplifier.net/erezept-medicationrequest-communication/requestingorganizationtypevs) hinterlegten CodeSystems festgehalten.
 
 ### DispensingOrganization
