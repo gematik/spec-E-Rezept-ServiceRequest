@@ -1,37 +1,38 @@
+
 # Inhalt
 
 - [Inhalt](#inhalt)
   - [Verwendung von KIM](#verwendung-von-kim)
   - [KIM Dienstkennungen](#kim-dienstkennungen)
-  - [KIM Daten�bertragung](#kim-daten�bertragung)
+  - [KIM Datenübertragung](#kim-datenübertragung)
   - [KIM Rezeptanforderung](#kim-rezeptanforderung)
 
 ## Verwendung von KIM
 
-Die �bertragung der Daten bzw. der Anfrage erfolgt via KIM. Dabei sind vier Nachrichtentypen zu unterscheiden:
+Die Übertragung der Daten bzw. der Anfrage erfolgt via KIM. Dabei sind vier Nachrichtentypen zu unterscheiden:
 
-- �bermittlung der Rezeptanforderung (Anforderung)
-- �bermittlung der Verordnung zu einer Rezeptanforderung  (Antwort)
-- �bermittlung der Abgabeinformationen zu einer Rezeptanforderung (Abgabeinformationen)
+- Übermittlung der Rezeptanforderung (Anforderung)
+- Übermittlung der Verordnung zu einer Rezeptanforderung  (Antwort)
+- Übermittlung der Abgabeinformationen zu einer Rezeptanforderung (Abgabeinformationen)
 - Stornierung/Ablehnung einer Rezeptanforderung (Stornierung)
 
 ## KIM Dienstkennungen
 
-Dienstkennungen in KIM-Nachrichten kennzeichnen den transportierten Inhalt f�r das Empfangssystem. Diese erlauben damit eine Dunkelverarbeitung bei Nachrichtenempfang und ggfs. die vollautomatisierte Erstellung und den Versand einer Antwortnachricht.
+Dienstkennungen in KIM-Nachrichten kennzeichnen den transportierten Inhalt für das Empfangssystem. Diese erlauben damit eine Dunkelverarbeitung bei Nachrichtenempfang und ggfs. die vollautomatisierte Erstellung und den Versand einer Antwortnachricht.
 
 |Anwendung                          |elektronische Ersatzbescheinigung (eEB)|
 |:--------                          |:--------------------------------------|
 |Verantwortlich                     |gematik                                |
-|Anwendungsbeschreibung             |Rezeptanforderungsverfahren zur �bertragung relevanter Informationen zur Anforderung, �bertragung von Verschreibungen und resultierenden Abgabeinformationen|
-|Dienstkennung & Kurzbeschreibung|**eRezept-Rezeptanforderung;Anforderung;V1.0** <br /> Nachrichten-Typ: Anfragedaten zur Anforderung einer E-Rezeptes<br /> Verwendung: Pflegeeinrichtungen, Vertrags�rzte, Vertragszahn�rzte, Krankenh�user, Apotheken <br /><br />  **eRezept-Rezeptanforderung;Antwort;V1.0** <br /> Nachrichten-Typ: Auf eine Rezeptanforderung beruhende elektronische Verordnung<br /> Verwendung: Pflegeeinrichtungen, Vertrags�rzte, Vertragszahn�rzte, Krankenh�user, Apotheken <br /> <br /> **eRezept-Rezeptanforderung;Abgabeinformationen;V1.0** <br /> Nachrichten-Typ: Abgabeinformationen zu einer Abgabe ausgel�st durch eine Rezeptanforderung<br />  Verwendung: Pflegeeinrichtungen, Apotheken <br /> <br /> **eRezept-Rezeptanforderung;Stornierung;V1.0** <br /> Nachrichten-Typ: Stornierung/Ablehnung einer Rezeptanforderung<br />  Verwendung: Pflegeeinrichtungen, Vertrags�rzte, Vertragszahn�rzte, Krankenh�user, Apotheken|
+|Anwendungsbeschreibung             |Rezeptanforderungsverfahren zur Übertragung relevanter Informationen zur Anforderung, Übertragung von Verschreibungen und resultierenden Abgabeinformationen|
+|Dienstkennung & Kurzbeschreibung|**eRezept-Rezeptanforderung;Anforderung;V1.0** <br /> Nachrichten-Typ: Anfragedaten zur Anforderung einer E-Rezeptes<br /> Verwendung: Pflegeeinrichtungen, Vertragsärzte, Vertragszahnärzte, Krankenhäuser, Apotheken <br /><br />  **eRezept-Rezeptanforderung;Antwort;V1.0** <br /> Nachrichten-Typ: Auf eine Rezeptanforderung beruhende elektronische Verordnung<br /> Verwendung: Pflegeeinrichtungen, Vertragsärzte, Vertragszahnärzte, Krankenhäuser, Apotheken <br /> <br /> **eRezept-Rezeptanforderung;Abgabeinformationen;V1.0** <br /> Nachrichten-Typ: Abgabeinformationen zu einer Abgabe ausgeläst durch eine Rezeptanforderung<br />  Verwendung: Pflegeeinrichtungen, Apotheken <br /> <br /> **eRezept-Rezeptanforderung;Stornierung;V1.0** <br /> Nachrichten-Typ: Stornierung/Ablehnung einer Rezeptanforderung<br />  Verwendung: Pflegeeinrichtungen, Vertragsärzte, Vertragszahnärzte, Krankenhäuser, Apotheken|
 
-## KIM Daten�bertragung
+## KIM Datenübertragung
 
-Die FHIR-Datens�tze in Anfrage- und Antwortnachrichten werden ausschlie�lich als Anhang in der KIM Nachricht �bertragen.
+Die FHIR-Datensätze in Anfrage- und Antwortnachrichten werden ausschließlich als Anhang in der KIM Nachricht übertragen.
 
 ## KIM Rezeptanforderung
 
-Die FHIR-Datens�tze in Anfrage- und Antwortnachrichten werden ausschlie�lich als Anhang in der KIM Nachricht �bertragen.
+Die FHIR-Datensätze in Anfrage- und Antwortnachrichten werden ausschließlich als Anhang in der KIM Nachricht übertragen.
 **siehe unten**
 
 |KIM-Header              |Inhalt                                 |verpflichtend|
@@ -45,7 +46,7 @@ Die FHIR-Datens�tze in Anfrage- und Antwortnachrichten werden ausschlie�lich
 |Content-Disposition     |attachment; filename="<T/E>ERP_MEDREQ_ANF_<UUID>.xml" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: request bundle-identifier|
 |Content-Description     |ERP_MEDREQ_ANF                                |ja|
 
-Der Anhang enth�lt die Anfrage als FHIR-Ressource `EEBAnfrageBundle`
+Der Anhang enthält die Anfrage als FHIR-Ressource `EEBAnfrageBundle`
 
 ### KIM Rezeptanforderung Beispielnachricht
 
