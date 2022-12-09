@@ -28,6 +28,10 @@
           {
             "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/VorgangsIdEX",
             "valueString": "VorgangsID_des_initial_AustellendenSystems-f17b6592a3a5c"
+          },
+          {
+            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PatientIdEX",
+            "valueString": "PatientID_des_initial_AustellendenSystems-3ddee2863325d"
           }
         ],
         "sender": {

@@ -29,7 +29,8 @@ Das Request Bundle verfügt über folgende mögliche Einträge.
 
 Jedes Bundle muss über einen [RequestHeader](https://simplifier.net/erezept-medicationrequest-communication/gem_pr_erp_medreq_messageheader) beinhalten, in welchem neben de Klassifizierung der Nachricht unter dem `event`-Attribut, verpflichtende Angaben zu der versendenden Organisation festgehalten im `sender` werden.
 {{tree:<https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-message-header>}}
-Das setzen einer eindeutigen Vorgangs-ID im Header ist verpflichtend. Die nachfolgenden Nachrichten können über die jeweils enthaltene Vorgangs-ID durch die verarbeitenden System in Verbindung gebracht werden.
+Das setzen einer eindeutigen `VorgangsID` im Header ist verpflichtend. Die nachfolgenden Nachrichten können über die jeweils enthaltene Vorgangs-ID durch die verarbeitenden System in Verbindung gebracht werden.
+Ebenfalls muss eine eindeutige `PatientID` gesetzt werden. Sie dient dem "anfragendem" System, als eindeutiges Zuordnungsmerkmal des Patienten.
 
 ### MedicationRequest
 

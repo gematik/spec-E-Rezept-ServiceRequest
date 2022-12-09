@@ -79,7 +79,7 @@
       {
         "id": "MessageHeader.extension",
         "path": "MessageHeader.extension",
-        "min": 1
+        "min": 2
       },
       {
         "id": "MessageHeader.extension:VorgangsID",
@@ -92,6 +92,22 @@
             "code": "Extension",
             "profile": [
               "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/VorgangsIdEX"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MessageHeader.extension:PatientID",
+        "path": "MessageHeader.extension",
+        "sliceName": "PatientID",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PatientIdEX"
             ]
           }
         ],

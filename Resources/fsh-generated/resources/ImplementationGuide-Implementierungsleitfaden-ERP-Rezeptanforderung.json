@@ -176,6 +176,14 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/PatientIdEX"
+        },
+        "name": "PatientIdEX",
+        "description": "Extension for the Identifier of the Patient, defined by the initial creator of the reuqest bundle",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/PrescriptionDeliveryTypeEX"
         },
         "name": "PrescriptionDeliveryTypeEX",

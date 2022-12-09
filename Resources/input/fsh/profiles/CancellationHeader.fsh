@@ -15,10 +15,12 @@ Description: "Header for cancellation message of a medication Request"
 
 * extension contains
     VorgangsIdEX named VorgangsID 1..1 and
+    PatientIdEX named PatientID 1..1 and
     IdentifierEX named IdentifierForCancelation 1..1 and
     CancellationReasonTypeEX named CancellationReasonType 0..1 and
     FreeTextEX named FreeText 0..1
 * extension[VorgangsID] 1..1 MS
+* extension[PatientID] 1..1 MS
 * extension[IdentifierForCancelation].value[x] 1..1
 * extension[IdentifierForCancelation].value[x] only uuid
 * extension[IdentifierForCancelation] ^short = "UUID des zu stornierungen MedicationRequestBundles"
@@ -37,6 +39,7 @@ Description: "Example of a cancellation Header used by a requesting organisation
 * sender.reference = "Organisation/a8efd0b3-58c3-48f7-89f5-67f86dd298e8" //RequestingOrganizationExample
 * source.endpoint = "https://pflegeheim.de/KIM"
 * extension[+][VorgangsID].valueString = "VorgangsID_des_initial_AustellendenSystems-f17b6592a3a5c"
+* extension[+][PatientID].valueString = "PatientID_des_initial_AustellendenSystems-3ddee2863325d"
 * extension[+][IdentifierForCancelation].url = "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/IdentifierEX"
 * extension[=][IdentifierForCancelation].valueUuid = "7a1d5187-3070-4a23-a877-162bdd479b9b"
 * extension[+][CancellationReasonTypeEX].url = "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/CancellationReasonTypeEX"
@@ -53,6 +56,7 @@ Description: "Example of a cancellation Header used by prescribing organisation"
 * sender.reference = "Organisation/f67dcc87-f877-49da-a249-aac4d1b15418" //KBV_PR_FOR_OrganizationExample
 * source.endpoint = "https://praxis_um_die_ecke.de/KIM"
 * extension[+][VorgangsID].valueString = "VorgangsID_des_initial_AustellendenSystems-f17b6592a3a5c"
+* extension[+][PatientID].valueString = "PatientID_des_initial_AustellendenSystems-3ddee2863325d"
 * extension[+][IdentifierForCancelation].url = "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/IdentifierEX"
 * extension[=][IdentifierForCancelation].valueUuid = "7a1d5187-3070-4a23-a877-162bdd479b9b"
 * extension[+][CancellationReasonTypeEX].url = "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/CancellationReasonTypeEX"

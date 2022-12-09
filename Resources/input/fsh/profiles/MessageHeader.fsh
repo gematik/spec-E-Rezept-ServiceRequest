@@ -14,8 +14,10 @@ Description: "Header for Messages Bundles used for Medication Request"
 * sender.reference 1..1
 
 * extension contains
-    VorgangsIdEX named VorgangsID 1..1
+    VorgangsIdEX named VorgangsID 1..1 and
+    PatientIdEX named PatientID 1..1
 * extension[VorgangsID] 1..1 MS
+* extension[PatientID] 1..1 MS
 
 Instance: KBV_PR_FOR_OrganizationExample
 InstanceOf: KBV_PR_FOR_Organization
@@ -47,6 +49,7 @@ Description: "Example of a RequestHeader triggered by a RequestingOrganisation"
 * id = "3a0fa348-fc66-4f29-b842-cbad1523c846"
 * MetaInstance(GEM_PR_ERP_MEDREQ_MessageHeader)
 * extension[+][VorgangsID].valueString = "VorgangsID_des_initial_AustellendenSystems-f17b6592a3a5c"
+* extension[+][PatientID].valueString = "PatientID_des_initial_AustellendenSystems-3ddee2863325d"
 * sender.reference = "Organization/a8efd0b3-58c3-48f7-89f5-67f86dd298e8"
 * source.endpoint = "https://pflegeheim.de/KIM"
 * eventCoding = https://gematik.de/fhir/erpmedreqcom/CodeSystem/MessageEventTypeCS#RequestingMessage "Nachricht zur Rezeptanforderung"
@@ -60,6 +63,7 @@ Description: "Example of a RequestHeader triggered by a DispensingOrganisation"
 * MetaInstance(GEM_PR_ERP_MEDREQ_MessageHeader)
 * extension[+][VorgangsID].valueString = "VorgangsID_des_initial_AustellendenSystems-f17b6592a3a5c"
 * sender.reference = "Organization/f89adcee-7fe3-4b06-bc5f-e17b592a3a5f"
+* extension[+][PatientID].valueString = "PatientID_des_initial_AustellendenSystems-3ddee2863325d"
 * source.endpoint = "https://apotheke.de/KIM"
 * eventCoding = https://gematik.de/fhir/erpmedreqcom/CodeSystem/MessageEventTypeCS#RequestingMessage "Nachricht zur Rezeptanforderung"
 

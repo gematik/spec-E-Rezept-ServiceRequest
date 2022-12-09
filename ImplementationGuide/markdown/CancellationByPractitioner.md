@@ -21,6 +21,8 @@ Der verpflichtende MessageHeader dieses Bundles vom Typ [GEM PR ERP MEDREQ Cance
 in der extension `IdentifierForCancelation` übertragen.
 {{tree:https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-cancellation-header}}
 Neben der verpflichtenden Angabe der _Vorgangs-ID_, welche aus dem Header des `RequestBundles` übernommen werden muss, ist auch eine verpflichtende Angabe zu der versendenden Organisation im `sender` notwendig.
+Die Angaben zur PatientID sind aus dem RequestBundle Header zu übernehmen.
+
 Optional kann
 
 - ein Grund für Ablehnung vom Typ [CancellationReasonTypeCS](https://simplifier.net/erezept-medicationrequest-communication/cancellationreasontypecs) angegeben werden.
