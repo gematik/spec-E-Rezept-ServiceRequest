@@ -21,19 +21,19 @@ Der zweite Fall, das die initiale Rezeptanforderung von der Apotheke ausgelöst 
 ## Senden eines Request Bundles
 
 Die Übermittlung einer Rezeptanforderung wird in Form eines  _[Request Bundles](https://simplifier.net/erezept-medicationrequest-communication/gem_pr_erp_medreq_requestbundle)_  an einen Verordnenden Leistungserbringer übertragen.
-{{tree:<https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-request-bundle>}}
+{{tree:https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-request-bundle}}
 Jedes Bundle erhält einen eindeutigen `identifier`  vom Type RFC3986, zur weiteren Identifikation. Dieser kann z.B. im Falle einer Stornierung der Anforderung verwendet werden, um das gewünschte Bundle zu identifizieren Details angegeben werden
 Das Request Bundle verfügt über folgende mögliche Einträge.
 
 ### Header
 
 Jedes Bundle muss über einen [RequestHeader](https://simplifier.net/erezept-medicationrequest-communication/gem_pr_erp_medreq_messageheader) beinhalten, in welchem neben de Klassifizierung der Nachricht unter dem `event`-Attribut, verpflichtende Angaben zu der versendenden Organisation festgehalten im `sender` werden.
-{{tree:<https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-message-header>}}
+{{tree:https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-message-header}}
 
 ### MedicationRequest
 
 Die hauptsächliche Information muss sich der Übermittlung des [GEM PR ERP MEDREQ Medication Request](https://simplifier.net/erezept-medicationrequest-communication/gem_pr_erp_medreq_medicationrequest)  befinden.
-{{tree:<https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-medication-request>}}
+{{tree:https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-medication-request}}
 Dieser bietet im Vergleich zur eigentlichen Verordnung welche im folgenden durch den Leistungserbringer in Form einer [KBV_PR_ERP_Prescription](https://simplifier.net/erezept/kbvprerpprescription) weitreichende obligatorische Felder, welche zur Zeit der Erstellung der Rezeptanforderung noch nicht bekannt sein müssen, ist aber inhaltlich darauf ausgelegt einfach in eine `KBV_PR_ERP_Prescription` durch Ergänzung umgewandelt werden zu können.
 Verpflichtend ist die Angabe des `PrescriptionDeliveryType`, des  Zustelltyps, dieser definiert den Weitereichung der durch der `KBV_PR_ERP_Prescription` durch den Verordnenden Leistungserbringer.
 Erwähnenswerte optionale Angaben sind die Möglichkeit
@@ -49,7 +49,7 @@ Der im `MedicationRequest` verpflichtend anzugebene Patient vom Typ [KBV_PR_FOR_
 
 Die abfragende Organisation beispielsweise einer Pflegeeinrichtung muss im `Request Bundle`vom Typ
 [GEM PR ERP MEDREQ Organization](https://simplifier.net/erezept-medicationrequest-communication/gem_pr_erp_medreq_organization) hinterlegt werden.
-{{tree:<https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-organization>}}
+{{tree:https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-organization}}
 Neben der optionalen Angabe der `Telematik-ID` ist die Angabe einer Adresse und einer `KIM-Adresse` unter `telecom.value`zwingend notwendig, um die sich aus der Abgabe ergebenden Dispensierinformation and die `RequestingOrganization` zurückschicken zu können.
 Der Typ der Organisation wird in Form der im [RequestingOrganizationTypeVS](https://simplifier.net/erezept-medicationrequest-communication/requestingorganizationtypevs) hinterlegten CodeSystems festgehalten.
 

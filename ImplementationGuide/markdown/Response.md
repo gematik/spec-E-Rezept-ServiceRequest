@@ -23,7 +23,7 @@ weitergereicht.
 ### ResponseHeader
 
 Der ResponseHeader vom Typ [GEM PR ERP MEDREQ Response Header](https://simplifier.net/erezept-medicationrequest-communication/gem_pr_erp_medreq_responseheader)
-{{tree:<https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-response-header>}} enthält neben einer verpflichtende Angabe zu der versendenden Organisation im `sender` vor, das die `PrescriptionID` und der `AccessCode` als Extension übergeben werden.
+{{tree:https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-response-header}} enthält neben einer verpflichtende Angabe zu der versendenden Organisation im `sender` vor, das die `PrescriptionID` und der `AccessCode` als Extension übergeben werden.
 Dies soll eine Einlösung der Verschreibung gegenüber dem E-Rezept-Fachdienst ermöglichen.
 
 ### Prescription
