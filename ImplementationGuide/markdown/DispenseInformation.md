@@ -21,9 +21,9 @@ Die Übermittlung einer Diepensierinformationen wird in Form eines [GEM PR ERP M
 
 ### MessageHeader
 
-Jedes Bundle muss über einen [RequestHeader](https://simplifier.net/erezept-medicationrequest-communication/gem_pr_erp_medreq_messageheader) beinhalten, in welchem neben de Klassifizierung der Nachricht unter dem `event`-Attribut.
-Neben der verpflichtenden Angabe der _Vorgangs-ID_, welche aus dem Header des `RequestBundles` übernommen werden muss, ist auch eine verpflichtende Angabe zu der versendenden Organisation im `sender` notwendig.
-Die Angaben zur PatientID sind aus dem Header des `ResponseBundle` zu übernehmen.
+Jedes Bundle muss über einen [MessageHeader](https://simplifier.net/erezept-medicationrequest-communication/gem_pr_erp_medreq_messageheader) verfügen, in welchem neben de Klassifizierung der Nachricht unter dem `event`-Attribut.
+Neben der verpflichtenden Angabe der `VorgangsID`, welche aus dem Header des `ResponseBundle` übernommen werden muss, ist auch eine verpflichtende Angabe zu der versendenden Organisation im `sender` notwendig.
+Die Angaben zur `PatientID` sind aus dem `Header` des `ResponseBundle` zu übernehmen.
 {{tree:https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-message-header}}
 
 ### Prescription

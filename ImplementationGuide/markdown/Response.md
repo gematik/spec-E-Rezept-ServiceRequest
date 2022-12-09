@@ -28,8 +28,8 @@ Der ResponseHeader vom Typ [GEM PR ERP MEDREQ Response Header](https://simplifie
 {{tree:https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-response-header}}
 Es müssen  die `PrescriptionID` und der `AccessCode` als Extension übergeben werden.
 Dies soll eine Einlösung der Verschreibung gegenüber dem E-Rezept-Fachdienst ermöglichen.
-Neben der verpflichtenden Angabe der _Vorgangs-ID_, welche aus dem Header des `RequestBundles` übernommen werden muss, ist auch eine verpflichtende Angabe zu der versendenden Organisation im `sender` notwendig.
-Die Angaben zur PatientID sind aus dem RequestBundle Header zu übernehmen.
+Neben der verpflichtenden Angabe der `VorgangsID`, welche aus dem Header des `RequestBundles` übernommen werden muss, ist auch eine verpflichtende Angabe zu der versendenden Organisation im `sender` notwendig.
+Die Angaben zur `PatientID` sind aus dem `Header` des `RequestBundle` zu übernehmen.
 
 ### Prescription
 
