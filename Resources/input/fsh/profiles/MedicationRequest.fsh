@@ -15,11 +15,13 @@ Description: "Profile on the Medication Request that is to be sent"
 
 * extension contains
     PrescriptionDeliveryTypeEX named PrescriptionDeliveryType 1..1 and
+    PrescriptionIdEX named PriorPrescriptionID ..1 and
     RemainingQuantityEX named RemainingQuantity ..1 and
     RemainingRangeDateEX named RemainingRangeDate ..1 and
     FreeTextEX named FreeText ..1
 * extension[PrescriptionDeliveryType] 1..1 MS
 * extension[PrescriptionDeliveryType] ^short = "Zustelltyp"
+* extension[PrescriptionIdEX] ^short = "PrescriptionId der vorausgegangenen Verordnung"
 * extension[FreeText].value[x] 1..
 * extension[FreeText].value[x] only string
 * extension[FreeText] ^short = "Freitext"

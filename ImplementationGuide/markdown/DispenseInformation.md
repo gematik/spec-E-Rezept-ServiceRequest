@@ -28,7 +28,8 @@ Das Request Bundle verfügt über folgende mögliche Einträge.
 
 ### MessageHeader
 
-Jedes Bundle muss über einen [RequestHeader](https://simplifier.net/erezept-medicationrequest-communication/gem_pr_erp_medreq_messageheader) beinhalten, in welchem neben de Klassifizierung der Nachricht unter dem `event`-Attribut, verpflichtende Angaben zu der versendenden Organisation festgehalten im `sender` werden.
+Jedes Bundle muss über einen [RequestHeader](https://simplifier.net/erezept-medicationrequest-communication/gem_pr_erp_medreq_messageheader) beinhalten, in welchem neben de Klassifizierung der Nachricht unter dem `event`-Attribut.
+Neben der verpflichtenden Angabe der _Vorgangs-ID_, welche aus dem Header des `RequestBundles` übernommen werden muss, ist auch eine verpflichtende Angabe zu der versendenden Organisation im `sender` notwendig.
 {{tree:https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-message-header}}
 
 ### Prescription
@@ -41,7 +42,7 @@ Der _Patient_ muss vom aus dem `ResponseBundle` übernommen werden.
 
 ### RequestingOrganization
 
-Die a_bfragende Organisation_ muss aus dem `ResponseBundle` übernommen werden.
+Die _abfragende Organisation_ muss aus dem `ResponseBundle` übernommen werden.
 
 ### DispensingOrganization
 

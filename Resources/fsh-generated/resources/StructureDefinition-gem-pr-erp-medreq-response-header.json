@@ -79,7 +79,23 @@
       {
         "id": "MessageHeader.extension",
         "path": "MessageHeader.extension",
-        "min": 2
+        "min": 3
+      },
+      {
+        "id": "MessageHeader.extension:VorgangsID",
+        "path": "MessageHeader.extension",
+        "sliceName": "VorgangsID",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/VorgangsIdEX"
+            ]
+          }
+        ],
+        "mustSupport": true
       },
       {
         "id": "MessageHeader.extension:PrescriptionID",

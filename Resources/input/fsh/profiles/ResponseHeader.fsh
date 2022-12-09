@@ -14,12 +14,12 @@ Description: "Header for Messages Bundles used for Responses to Medication Reque
 * sender.reference 1..1
 
 * extension contains
+    VorgangsIdEX named VorgangsID 1..1 and
     PrescriptionIdEX named PrescriptionID 1..1 and
     AccessCodeEX named AccessCode 1..1
+* extension[VorgangsID] 1..1 MS
 * extension[PrescriptionID] 1..1 MS
 * extension[AccessCode] 1..1 MS
-
-
 
 Instance: ResponseHeaderExample
 InstanceOf: GEM_PR_ERP_MEDREQ_ResponseHeader
@@ -31,5 +31,6 @@ Description: "Example of a response header"
 * eventCoding = https://gematik.de/fhir/erpmedreqcom/CodeSystem/MessageEventTypeCS#RespondingMessage "Antwort auf eine Rezeptanforderung"
 * sender.reference = "Organisation/f67dcc87-f877-49da-a249-aac4d1b15418"
 * source.endpoint = "https://praxis_um_die_ecke.de/KIM"
+* extension[+][VorgangsID].valueString = "VorgangsID_des_initial_AustellendenSystems-f17b6592a3a5c"
 * extension[+][PrescriptionID].valueIdentifier.value = "160.000.033.491.280.78"
 * extension[+][AccessCode].valueIdentifier.value = "777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"

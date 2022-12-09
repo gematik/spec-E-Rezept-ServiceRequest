@@ -208,6 +208,14 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/VorgangsIdEX"
+        },
+        "name": "VorgangsIdEX",
+        "description": "Extension for the Identifier of the Medication Request operation",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "ValueSet/CancellationReasonTypeVS"
         },
         "name": "ValueSet of reasons why a prescriptionRequest was cancelled",

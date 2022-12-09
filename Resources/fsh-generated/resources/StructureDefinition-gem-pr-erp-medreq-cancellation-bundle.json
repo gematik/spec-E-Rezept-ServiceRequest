@@ -99,7 +99,7 @@
       {
         "id": "Bundle.identifier.value",
         "path": "Bundle.identifier.value",
-        "short": "Eindeutige UUID",
+        "short": "Eindeutige UUID des Bundles",
         "min": 1
       },
       {

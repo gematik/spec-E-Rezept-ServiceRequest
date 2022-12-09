@@ -26,16 +26,20 @@
         },
         "extension": [
           {
+            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/VorgangsIdEX",
+            "valueString": "VorgangsID_des_initial_AustellendenSystems-f17b6592a3a5c"
+          },
+          {
             "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionIdEX",
             "valueIdentifier": {
-              "system": "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode",
+              "system": "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
               "value": "160.000.033.491.280.78"
             }
           },
           {
             "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/AccessCodeEX",
             "valueIdentifier": {
-              "system": "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
+              "system": "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode",
               "value": "777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
             }
           }

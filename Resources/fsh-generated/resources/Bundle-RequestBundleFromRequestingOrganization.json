@@ -24,6 +24,12 @@
             "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_MessageHeader|0.9"
           ]
         },
+        "extension": [
+          {
+            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/VorgangsIdEX",
+            "valueString": "VorgangsID_des_initial_AustellendenSystems-f17b6592a3a5c"
+          }
+        ],
         "sender": {
           "reference": "Organization/a8efd0b3-58c3-48f7-89f5-67f86dd298e8"
         },

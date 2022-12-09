@@ -19,12 +19,16 @@ Nachdem der Verschreibende eine `RequestBundle` erhalten hat, kann er die dem Me
 weitergereicht.
 
 ## Senden eines Response Bundles
+Die Übermittlung einer Verschreibung erfolgt mit Hilfe eines  _[Response Bundle](https://simplifier.net/erezept-medicationrequest-communication/gem_pr_erp_medreq_responsebundle)_
+{{tree:https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-response-bundle}}
 
 ### ResponseHeader
 
 Der ResponseHeader vom Typ [GEM PR ERP MEDREQ Response Header](https://simplifier.net/erezept-medicationrequest-communication/gem_pr_erp_medreq_responseheader)
-{{tree:https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-response-header}} enthält neben einer verpflichtende Angabe zu der versendenden Organisation im `sender` vor, das die `PrescriptionID` und der `AccessCode` als Extension übergeben werden.
+{{tree:https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-response-header}}
+Es müssen  die `PrescriptionID` und der `AccessCode` als Extension übergeben werden.
 Dies soll eine Einlösung der Verschreibung gegenüber dem E-Rezept-Fachdienst ermöglichen.
+Neben der verpflichtenden Angabe der _Vorgangs-ID_, welche aus dem Header des `RequestBundles` übernommen werden muss, ist auch eine verpflichtende Angabe zu der versendenden Organisation im `sender` notwendig.
 
 ### Prescription
 

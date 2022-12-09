@@ -119,6 +119,22 @@
         "mustSupport": true
       },
       {
+        "id": "MedicationRequest.extension:PriorPrescriptionID",
+        "path": "MedicationRequest.extension",
+        "sliceName": "PriorPrescriptionID",
+        "short": "PrescriptionId der vorausgegangenen Verordnung",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionIdEX"
+            ]
+          }
+        ]
+      },
+      {
         "id": "MedicationRequest.extension:RemainingQuantity",
         "path": "MedicationRequest.extension",
         "sliceName": "RemainingQuantity",

@@ -1,13 +1,13 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "PrescriptionIdEX",
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionIdEX",
+  "id": "VorgangsIdEX",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/VorgangsIdEX",
   "version": "0.9",
-  "name": "PrescriptionIdEX",
+  "name": "VorgangsIdEX",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "Extension for the AccessCode Identifier",
+  "description": "Extension for the Identifier of the Medication Request operation",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -37,17 +37,14 @@
       {
         "id": "Extension.url",
         "path": "Extension.url",
-        "fixedUri": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionIdEX"
+        "fixedUri": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/VorgangsIdEX"
       },
       {
         "id": "Extension.value[x]",
         "path": "Extension.value[x]",
         "type": [
           {
-            "code": "Identifier",
-            "profile": [
-              "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PrescriptionId"
-            ]
+            "code": "string"
           }
         ]
       }

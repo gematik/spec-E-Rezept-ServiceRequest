@@ -9,7 +9,7 @@ Title: "GEM PR ERP MEDREQ Cancellation Bundle"
 * identifier.system 1..
 * identifier.system = "urn:ietf:rfc:3986" (exactly)
 * identifier.value 1..
-* identifier.value ^short = "Eindeutige UUID"
+* identifier.value ^short = "Eindeutige UUID des Bundles"
 * type = #message (exactly)
 * timestamp 1..
 * entry 1..

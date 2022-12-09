@@ -20,7 +20,7 @@ Zum stornieren einer Rezeptanforderung eines `RequestBundles` wird ein [Cancella
 Der verpflichtende MessageHeader dieses Bundles vom Typ [GEM PR ERP MEDREQ CancellationHeader](https://simplifier.net/erezept-medicationrequest-communication/gem_pr_erp_medreq_cancellationheader) muss den Identifier des `RequestBundles`
 in der extension `IdentifierForCancelation` übertragen.
 {{tree:https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-cancellation-header}}
-Auch dieser Header sieht eine verpflichtende Angabe zu der versendenden Organisation im `sender` vor.
+Neben der verpflichtenden Angabe der _Vorgangs-ID_, welche aus dem Header des `RequestBundles` übernommen werden muss, ist auch eine verpflichtende Angabe zu der versendenden Organisation im `sender` notwendig.
 Optional kann
 
 - ein Grund für Ablehnung vom Typ [CancellationReasonTypeCS](https://simplifier.net/erezept-medicationrequest-communication/cancellationreasontypecs) angegeben werden.

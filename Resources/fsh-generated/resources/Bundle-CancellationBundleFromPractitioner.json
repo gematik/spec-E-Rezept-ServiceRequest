@@ -26,6 +26,10 @@
         },
         "extension": [
           {
+            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/VorgangsIdEX",
+            "valueString": "VorgangsID_des_initial_AustellendenSystems-f17b6592a3a5c"
+          },
+          {
             "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/IdentifierEX",
             "valueUuid": "7a1d5187-3070-4a23-a877-162bdd479b9b"
           },
