@@ -3,7 +3,7 @@ canonical: https://gematik.de/fhir/erpmedreqcom
 fhirVersion: 4.0.1
 applyExtensionMetadataToRoot: false
 name: Implementierungsleitfaden-ERP-Rezeptanforderung
-FSHOnly: false
+FSHOnly: true
 copyrightYear: 2022
 releaseLabel: draft
 status: draft
