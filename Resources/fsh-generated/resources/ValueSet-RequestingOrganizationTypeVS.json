@@ -1,0 +1,22 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "RequestingOrganizationTypeVS",
+  "id": "RequestingOrganizationTypeVS",
+  "title": "ValueSet of requesting Entity used in the MessageHeader",
+  "description": "ValueSet Header Event codes of request orgin",
+  "version": "0.9",
+  "url": "https://gematik.de/fhir/erpmedreqcom/ValueSet/RequestingOrganizationTypeVS",
+  "experimental": false,
+  "publisher": "gematik GmbH",
+  "compose": {
+    "include": [
+      {
+        "system": "https://gematik.de/fhir/directory/CodeSystem/PractitionerProfessionOID"
+      },
+      {
+        "system": "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID"
+      }
+    ]
+  }
+}

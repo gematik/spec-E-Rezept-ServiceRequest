@@ -1,0 +1,28 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "PrescriptionDeliveryTypeCS",
+  "id": "PrescriptionDeliveryTypeCS",
+  "title": "CodeSystem for PrescriptionDeliveryType",
+  "description": "This type defines how the prescription will be delivered",
+  "version": "0.9",
+  "url": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/PrescriptionDeliveryTypeCS",
+  "concept": [
+    {
+      "code": "SelfPickup",
+      "display": "Selbstabholer"
+    },
+    {
+      "code": "RequestingOrganisation",
+      "display": "Beschaffung durch anfragende Organisation"
+    },
+    {
+      "code": "DispensingOrganisation",
+      "display": "Belieferung der anfragenden Organisation durch Apotheke"
+    }
+  ],
+  "experimental": false,
+  "publisher": "gematik GmbH",
+  "count": 3
+}

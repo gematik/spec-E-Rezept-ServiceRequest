@@ -1,0 +1,66 @@
+{
+  "resourceType": "ImplementationGuide",
+  "url": "https://gematik.de/fhir/erpmedreqcom/ImplementationGuide/ERP-Rezeptanforderung",
+  "name": "Implementierungsleitfaden-ERP-Rezeptanforderung",
+  "status": "draft",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "packageId": "0.9",
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "Patient/437f2555-2396-4c64-a656-e9553161ca3c"
+        }
+      }
+    ],
+    "page": {
+      "nameUrl": "ImplementationGuide/markdown/Introduction.md",
+      "title": "Abläufe",
+      "generation": "markdown",
+      "page": [
+        {
+          "nameUrl": "ImplementationGuide/markdown/Request.md",
+          "title": "Übermittlung der Rezeptanforderung",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "ImplementationGuide/markdown/CancellationByRequester.md",
+          "title": "Stornierung durch Anfordernden",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "ImplementationGuide/markdown/Response.md",
+          "title": "Übermittlung der Verschreibung",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "ImplementationGuide/markdown/CancellationByPractitioner.md",
+          "title": "Stornierung durch Verordnenden",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "ImplementationGuide/markdown/DispenseInformation.md",
+          "title": "Übermittlung der Abgabeinformation",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "ImplementationGuide/markdown/KimMessages.md",
+          "title": "Übermittlung von KIM Nachrichten",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "ImplementationGuide/markdown/ReleaseNotes.md",
+          "title": "Release Notes",
+          "generation": "markdown"
+        },
+        {
+          "generation": "markdown",
+          "nameUrl": "ImplementationGuide/markdown/Terminologie.md",
+          "title": "Terminologie"
+        }
+      ]
+    }
+  }
+}

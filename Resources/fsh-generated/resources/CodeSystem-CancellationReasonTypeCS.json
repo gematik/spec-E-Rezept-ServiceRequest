@@ -1,0 +1,24 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "CancellationReasonTypeCS",
+  "id": "CancellationReasonTypeCS",
+  "title": "CodeSystem for CancellationReasonType",
+  "description": "Definition of reasons why a prescriptionRequest was cancelled",
+  "version": "0.9",
+  "url": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/CancellationReasonTypeCS",
+  "concept": [
+    {
+      "code": "InformationMissing",
+      "display": "Informationen unvollständig"
+    },
+    {
+      "code": "InformationenIncorrect",
+      "display": "Informationen fehlerhaft"
+    }
+  ],
+  "experimental": false,
+  "publisher": "gematik GmbH",
+  "count": 2
+}

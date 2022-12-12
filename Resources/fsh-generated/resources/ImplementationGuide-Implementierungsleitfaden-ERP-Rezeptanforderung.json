@@ -1,0 +1,355 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "Implementierungsleitfaden-ERP-Rezeptanforderung",
+  "url": "https://gematik.de/fhir/erpmedreqcom/ImplementationGuide/Implementierungsleitfaden-ERP-Rezeptanforderung",
+  "version": "0.9",
+  "name": "ImplementierungsleitfadenERPRezeptanforderung",
+  "status": "draft",
+  "publisher": "Gematik GmbH",
+  "contact": [
+    {
+      "name": "Gematik GmbH",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.gematik.de/"
+        },
+        {
+          "system": "email",
+          "value": "info@gematik.de"
+        }
+      ]
+    }
+  ],
+  "packageId": "Implementierungsleitfaden-ERP-Rezeptanforderung",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "dependsOn": [
+    {
+      "packageId": "hl7.fhir.r4.core",
+      "version": "4.0.1",
+      "uri": "http://hl7.org/fhir",
+      "id": "hl7_fhir_r4_core"
+    },
+    {
+      "packageId": "de.basisprofil.r4",
+      "version": "1.4.0",
+      "uri": "http://fhir.org/packages/de.basisprofil.r4/ImplementationGuide/de.basisprofil.r4",
+      "id": "de_basisprofil_r4"
+    },
+    {
+      "packageId": "de.gematik.erezept-workflow.r4",
+      "version": "1.2.0",
+      "uri": "http://fhir.org/packages/de.gematik.erezept-workflow.r4/ImplementationGuide/de.gematik.erezept-workflow.r4",
+      "id": "de_gematik_erezept_workflow_r4"
+    },
+    {
+      "packageId": "de.gematik.fhir.directory",
+      "version": "0.9.0",
+      "uri": "http://fhir.org/packages/de.gematik.fhir.directory/ImplementationGuide/de.gematik.fhir.directory",
+      "id": "de_gematik_fhir_directory"
+    },
+    {
+      "packageId": "kbv.basis",
+      "version": "1.3.0",
+      "uri": "http://fhir.org/packages/kbv.basis/ImplementationGuide/kbv.basis",
+      "id": "kbv_basis"
+    },
+    {
+      "packageId": "kbv.ita.for",
+      "version": "1.1.0",
+      "uri": "http://fhir.org/packages/kbv.ita.for/ImplementationGuide/kbv.ita.for",
+      "id": "kbv_ita_for"
+    },
+    {
+      "packageId": "kbv.ita.erp",
+      "version": "1.1.0",
+      "uri": "http://fhir.org/packages/kbv.ita.erp/ImplementationGuide/kbv.ita.erp",
+      "id": "kbv_ita_erp"
+    }
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "StructureDefinition/gem-pr-erp-medreq-cancellation-bundle"
+        },
+        "name": "GEM PR ERP MEDREQ Cancellation Bundle",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/gem-pr-erp-medreq-cancellation-header"
+        },
+        "name": "GEM PR ERP MEDREQ CancellationHeader",
+        "description": "Header for cancellation message of a medication Request",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/gem-pr-erp-medreq-dispense-information-bundle"
+        },
+        "name": "GEM PR ERP MEDREQ Dispense Information Bundle",
+        "description": "Communication resource for sending dispenseInformation about a medication requisition.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/gem-pr-erp-medreq-medication-request"
+        },
+        "name": "GEM PR ERP MEDREQ Medication Request",
+        "description": "Profile on the Medication Request that is to be sent",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/gem-pr-erp-medreq-message-header"
+        },
+        "name": "GEM PR ERP MEDREQ MessageHeader",
+        "description": "Header for Messages Bundles used for Medication Request",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/gem-pr-erp-medreq-organization"
+        },
+        "name": "GEM PR ERP MEDREQ Organization",
+        "description": "Organization used in the context of a medicationRequest",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/gem-pr-erp-medreq-request-bundle"
+        },
+        "name": "GEM PR ERP MEDREQ Request Bundle",
+        "description": "A communication resource for collecting information objects needed to request a medication",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/gem-pr-erp-medreq-response-bundle"
+        },
+        "name": "GEM PR ERP MEDREQ Response Bundle",
+        "description": "A communication resource for collecting information objects needed for responding to a medication request",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/gem-pr-erp-medreq-response-header"
+        },
+        "name": "GEM PR ERP MEDREQ Response Header",
+        "description": "Header for Messages Bundles used for Responses to Medication Requests",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/AccessCodeEX"
+        },
+        "name": "AccessCodeEX",
+        "description": "Extension for the Prescription Identifier",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/CancellationReasonTypeEX"
+        },
+        "name": "CancellationReasonTypeEX",
+        "description": "Definition of reasons why a prescriptionRequest was cancelled.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/FreeTextEX"
+        },
+        "name": "FreeTextEX",
+        "description": "Optional text",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/IdentifierEX"
+        },
+        "name": "IdentifierEX",
+        "description": "Identifier of the MedicationRequest that is cancelled",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/PatientIdEX"
+        },
+        "name": "PatientIdEX",
+        "description": "Extension for the Identifier of the Patient, defined by the initial creator of the reuqest bundle",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/PrescriptionDeliveryTypeEX"
+        },
+        "name": "PrescriptionDeliveryTypeEX",
+        "description": "Defines types of types describing how prescription will be delivered.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/PrescriptionIdEX"
+        },
+        "name": "PrescriptionIdEX",
+        "description": "Extension for the AccessCode Identifier",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/RemainingQuantityEX"
+        },
+        "name": "RemainingQuantityEX",
+        "description": "Restreichweite",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/RemainingRangeDateEX"
+        },
+        "name": "RemainingRangeDateEX",
+        "description": "Date up to which the remaining range would currently be sufficient",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/VorgangsIdEX"
+        },
+        "name": "VorgangsIdEX",
+        "description": "Extension for the Identifier of the Medication Request operation",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/CancellationReasonTypeVS"
+        },
+        "name": "ValueSet of reasons why a prescriptionRequest was cancelled",
+        "description": "This type defines reasons why a prescriptionRequest was cancelled",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/MessageEventTypeVS"
+        },
+        "name": "ValueSet of messages types used for requesting medications",
+        "description": "This type defines  types used for requesting medications",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/PrescriptionDeliveryTypeVS"
+        },
+        "name": "ValueSet of types describing how prescription will be delivered",
+        "description": "This type defines how the prescription will delivered",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/RequestingOrganizationTypeVS"
+        },
+        "name": "ValueSet of requesting Entity used in the MessageHeader",
+        "description": "ValueSet Header Event codes of request orgin",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/CancellationReasonTypeCS"
+        },
+        "name": "CodeSystem for CancellationReasonType",
+        "description": "Definition of reasons why a prescriptionRequest was cancelled",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/MessageEventTypeCS"
+        },
+        "name": "CodeSystem for MessageEventTypes",
+        "description": "Definition of message types used for communication about medication requests",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/PrescriptionDeliveryTypeCS"
+        },
+        "name": "CodeSystem for PrescriptionDeliveryType",
+        "description": "This type defines how the prescription will be delivered",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Bundle/CancellationBundleFromDispensingOrganisation"
+        },
+        "name": "Example of CancellationBundle by a DispensingOrganisation",
+        "description": "Example of a cancellation bundle of a medicationrequest initiated by a RequestingOrganization",
+        "exampleCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-cancellation-bundle"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/CancellationBundleFromPractitioner"
+        },
+        "name": "Example of CancellationBundle by a Practitioner",
+        "description": "Example of a cancellation bundle of a medicationrequest initiated by a Practitioner",
+        "exampleCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-cancellation-bundle"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/CancellationBundleFromRequestingOrganisation"
+        },
+        "name": "Example of CancellationBundle by a RequestingOrganisation",
+        "description": "Example of a cancellation bundle of a medicationrequest initiated by a RequestingOrganization",
+        "exampleCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-cancellation-bundle"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/DispenseInformationBundle"
+        },
+        "name": "Example of DispenseInformationBundle",
+        "description": "Example of DispenseInformationBundle to provide a complete information ressource about the dispense",
+        "exampleCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-dispense-information-bundle"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/RequestBundleFromDispensingOrganisation"
+        },
+        "name": "Example of RequestBundle initiated by a DispensingOrganisation",
+        "description": "Example of a bundle for a medicationrequest triggered by a DispensingOrganisation for a RequestingOrganization",
+        "exampleCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-request-bundle"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/RequestBundleFromRequestingOrganization"
+        },
+        "name": "Example of RequestBundle initiated by a RequestingOrganisation",
+        "description": "Example of a bundle for a medicationrequest requested by a RequestingOrganization",
+        "exampleCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-request-bundle"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/ResponseBundle"
+        },
+        "name": "GEM PR ERP MEDREQ Response Bundle Example",
+        "description": "Example of a response bundle for a medicationrequest",
+        "exampleCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-response-bundle"
+      }
+    ],
+    "page": {
+      "nameUrl": "toc.html",
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": []
+    },
+    "parameter": [
+      {
+        "code": "copyrightyear",
+        "value": "2022"
+      },
+      {
+        "code": "releaselabel",
+        "value": "draft"
+      }
+    ]
+  }
+}

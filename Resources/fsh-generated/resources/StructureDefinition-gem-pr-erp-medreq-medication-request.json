@@ -1,0 +1,395 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "gem-pr-erp-medreq-medication-request",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Clinical.Medications"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "patient"
+    }
+  ],
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-medication-request",
+  "version": "0.9",
+  "name": "GEM_PR_ERP_MEDREQ_MedicationRequest",
+  "title": "GEM PR ERP MEDREQ Medication Request",
+  "status": "draft",
+  "experimental": false,
+  "publisher": "gematik GmbH",
+  "description": "Profile on the Medication Request that is to be sent",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "script10.6",
+      "uri": "http://ncpdp.org/SCRIPT10_6",
+      "name": "Mapping to NCPDP SCRIPT 10.6"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "MedicationRequest",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/MedicationRequest",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "MedicationRequest.meta",
+        "path": "MedicationRequest.meta",
+        "min": 1
+      },
+      {
+        "id": "MedicationRequest.meta.versionId",
+        "path": "MedicationRequest.meta.versionId",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.meta.source",
+        "path": "MedicationRequest.meta.source",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.meta.profile",
+        "path": "MedicationRequest.meta.profile",
+        "min": 1,
+        "max": "1",
+        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_MedicationRequest|0.9"
+      },
+      {
+        "id": "MedicationRequest.meta.security",
+        "path": "MedicationRequest.meta.security",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.meta.tag",
+        "path": "MedicationRequest.meta.tag",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.implicitRules",
+        "path": "MedicationRequest.implicitRules",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.contained",
+        "path": "MedicationRequest.contained",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.extension",
+        "path": "MedicationRequest.extension",
+        "min": 1
+      },
+      {
+        "id": "MedicationRequest.extension:PrescriptionDeliveryType",
+        "path": "MedicationRequest.extension",
+        "sliceName": "PrescriptionDeliveryType",
+        "short": "Zustelltyp",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeEX"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.extension:PriorPrescriptionID",
+        "path": "MedicationRequest.extension",
+        "sliceName": "PriorPrescriptionID",
+        "short": "PrescriptionId der vorausgegangenen Verordnung",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionIdEX"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.extension:RemainingQuantity",
+        "path": "MedicationRequest.extension",
+        "sliceName": "RemainingQuantity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/RemainingQuantityEX"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.extension:RemainingRangeDate",
+        "path": "MedicationRequest.extension",
+        "sliceName": "RemainingRangeDate",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/RemainingRangeDateEX"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.extension:FreeText",
+        "path": "MedicationRequest.extension",
+        "sliceName": "FreeText",
+        "short": "Freitext",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/FreeTextEX"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.extension:FreeText.value[x]",
+        "path": "MedicationRequest.extension.value[x]",
+        "min": 1
+      },
+      {
+        "id": "MedicationRequest.identifier",
+        "path": "MedicationRequest.identifier",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.status",
+        "path": "MedicationRequest.status",
+        "fixedCode": "draft"
+      },
+      {
+        "id": "MedicationRequest.intent",
+        "path": "MedicationRequest.intent",
+        "fixedCode": "proposal"
+      },
+      {
+        "id": "MedicationRequest.reported[x]",
+        "path": "MedicationRequest.reported[x]",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.medication[x]",
+        "path": "MedicationRequest.medication[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "rules": "closed"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.medicationReference",
+        "path": "MedicationRequest.medicationReference",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_FreeText",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_Compounding",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_Ingredient"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.medicationReference.reference",
+        "path": "MedicationRequest.medicationReference.reference",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.medicationReference.type",
+        "path": "MedicationRequest.medicationReference.type",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.medicationReference.identifier",
+        "path": "MedicationRequest.medicationReference.identifier",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.medicationReference.display",
+        "path": "MedicationRequest.medicationReference.display",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.subject",
+        "path": "MedicationRequest.subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.subject.type",
+        "path": "MedicationRequest.subject.type",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.subject.identifier",
+        "path": "MedicationRequest.subject.identifier",
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "http://fhir.de/StructureDefinition/identifier-kvid-10",
+              "http://fhir.de/StructureDefinition/identifier-pkv"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.encounter",
+        "path": "MedicationRequest.encounter",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.requester",
+        "path": "MedicationRequest.requester",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.requester.type",
+        "path": "MedicationRequest.requester.type",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.instantiatesCanonical",
+        "path": "MedicationRequest.instantiatesCanonical",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.instantiatesUri",
+        "path": "MedicationRequest.instantiatesUri",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.basedOn",
+        "path": "MedicationRequest.basedOn",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.groupIdentifier",
+        "path": "MedicationRequest.groupIdentifier",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.courseOfTherapyType",
+        "path": "MedicationRequest.courseOfTherapyType",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.insurance",
+        "path": "MedicationRequest.insurance",
+        "max": "1"
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction",
+        "path": "MedicationRequest.dosageInstruction",
+        "max": "1"
+      },
+      {
+        "id": "MedicationRequest.dispenseRequest",
+        "path": "MedicationRequest.dispenseRequest",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.dispenseRequest.quantity",
+        "path": "MedicationRequest.dispenseRequest.quantity",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.dispenseRequest.quantity.value",
+        "path": "MedicationRequest.dispenseRequest.quantity.value",
+        "short": "Anzahl der verordneten Packungen",
+        "definition": "Anzahl der verordneten Packungen",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.dispenseRequest.quantity.unit",
+        "path": "MedicationRequest.dispenseRequest.quantity.unit",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.dispenseRequest.quantity.system",
+        "path": "MedicationRequest.dispenseRequest.quantity.system",
+        "min": 1,
+        "fixedUri": "http://unitsofmeasure.org",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.dispenseRequest.quantity.code",
+        "path": "MedicationRequest.dispenseRequest.quantity.code",
+        "min": 1,
+        "fixedCode": "{Package}",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.dispenseRequest.performer",
+        "path": "MedicationRequest.dispenseRequest.performer",
+        "max": "0"
+      }
+    ]
+  }
+}

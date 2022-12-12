@@ -1,0 +1,32 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "MessageEventTypeCS",
+  "id": "MessageEventTypeCS",
+  "title": "CodeSystem for MessageEventTypes",
+  "description": "Definition of message types used for communication about medication requests",
+  "version": "0.9",
+  "url": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/MessageEventTypeCS",
+  "concept": [
+    {
+      "code": "RequestingMessage",
+      "display": "Nachricht zur Rezeptanforderung"
+    },
+    {
+      "code": "RespondingMessage",
+      "display": "Antwort auf eine Rezeptanforderung"
+    },
+    {
+      "code": "CancellationMessage",
+      "display": "Stornierung einer Rezeptanforderung"
+    },
+    {
+      "code": "DispenseMessage",
+      "display": "Abgabeinformation der Rezeptanforderung"
+    }
+  ],
+  "experimental": false,
+  "publisher": "gematik GmbH",
+  "count": 4
+}
