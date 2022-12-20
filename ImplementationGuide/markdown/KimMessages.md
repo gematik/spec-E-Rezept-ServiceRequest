@@ -20,11 +20,11 @@ Die Übertragung der Daten bzw. der Anfrage erfolgt via KIM. Dabei sind vier Nac
 
 Dienstkennungen in KIM-Nachrichten kennzeichnen den transportierten Inhalt für das Empfangssystem. Diese erlauben damit eine Dunkelverarbeitung bei Nachrichtenempfang und ggfs. die vollautomatisierte Erstellung und den Versand einer Antwortnachricht.
 
-|Anwendung                          |elektronische Ersatzbescheinigung (eEB)|
+|Anwendung                          |E-Rezept|
 |:--------                          |:--------------------------------------|
 |Verantwortlich                     |gematik                                |
 |Anwendungsbeschreibung             |Rezeptanforderungsverfahren zur Übertragung relevanter Informationen zur Anforderung, Übertragung von Verschreibungen und resultierenden Abgabeinformationen|
-|Dienstkennung & Kurzbeschreibung|**eRezept-Rezeptanforderung;Anforderung;V1.0** <br /> Nachrichten-Typ: Anfragedaten zur Anforderung einer E-Rezeptes<br /> Verwendung: Pflegeeinrichtungen, Vertragsärzte, Vertragszahnärzte, Krankenhäuser, Apotheken <br /><br />  **eRezept-Rezeptanforderung;Antwort;V1.0** <br /> Nachrichten-Typ: Auf eine Rezeptanforderung beruhende elektronische Verordnung<br /> Verwendung: Pflegeeinrichtungen, Vertragsärzte, Vertragszahnärzte, Krankenhäuser, Apotheken <br /> <br /> **eRezept-Rezeptanforderung;Abgabeinformationen;V1.0** <br /> Nachrichten-Typ: Abgabeinformationen zu einer Abgabe ausgeläst durch eine Rezeptanforderung<br />  Verwendung: Pflegeeinrichtungen, Apotheken <br /> <br /> **eRezept-Rezeptanforderung;Stornierung;V1.0** <br /> Nachrichten-Typ: Stornierung/Ablehnung einer Rezeptanforderung<br />  Verwendung: Pflegeeinrichtungen, Vertragsärzte, Vertragszahnärzte, Krankenhäuser, Apotheken|
+|Dienstkennung & Kurzbeschreibung|**E-Rezept;Rezeptanforderung;V1.0** <br /> Nachrichten-Typ: Anfragedaten zur Anforderung einer E-Rezeptes<br /> Verwendung: Pflegeeinrichtungen, Vertragsärzte, Vertragszahnärzte, Krankenhäuser, Apotheken <br /><br />  **E-Rezept;Rezeptanforderung_Rezeptuebermittlung;V1.0** <br /> Nachrichten-Typ: Auf eine Rezeptanforderung beruhende elektronische Verordnung<br /> Verwendung: Pflegeeinrichtungen, Vertragsärzte, Vertragszahnärzte, Krankenhäuser, Apotheken <br /> <br /> **E-Rezept;Verordnung_Dispensierung;V1.0** <br /> Nachrichten-Typ: Abgabeinformationen zu einer Abgabe ausgelöst durch eine Verordnung und eine Abgabe<br />  Verwendung: Pflegeeinrichtungen, Apotheken  <br /> <br /> **E-Rezept;Rezeptanforderung_Storno;V1.0** <br /> Nachrichten-Typ: Stornierung einer Rezeptanforderung<br />  Verwendung: Pflegeeinrichtungen, Vertragsärzte, Vertragszahnärzte, Krankenhäuser, Apotheken <br /> <br /> **E-Rezept;Rezeptanforderung_Ablehnung;V1.0** <br /> Nachrichten-Typ: Ablehnung einer Rezeptanforderung<br />  Verwendung: Pflegeeinrichtungen, Vertragsärzte, Vertragszahnärzte, Krankenhäuser, Apotheken|
 
 ## KIM Datenübertragung
 
@@ -38,15 +38,22 @@ Die FHIR-Datensätze in Anfrage- und Antwortnachrichten werden ausschließlich a
 |KIM-Header              |Inhalt                                 |verpflichtend|
 |------------------------|---------------------------------------|-------------|
 |X-KIM-Dienstkennung     |eRezept-Rezeptanforderung;Anforderung;V1.0|ja|
-|X-KIM-Sendersystem      |\<PVS-Bezeichnung>;\<Releaseversion>   |ja|
-|X-KIM-Support           |\<Support-Email-Adresse PVS-Hersteller>|nein|
+|X-KIM-Sendersystem      |\<PS-Bezeichnung>;\<Releaseversion>   |ja|
+|X-KIM-Support           |\<Support-Email-Adresse PS-Hersteller>|nein|
 |Subject                 |\<T/E>ERP_MEDREQ_ANF_\<UUID>                 |ja <br />T/E: *T*estsystem (RU) / *E*chtsystem (PU)<br />UUID: request bundle-identifier |
 |Content-Type            | application/xml;<br />name="<T/E>ERP_MEDREQ_ANF_<UUID>.xml" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: request bundle-identifier <br />
 |Content-Transfer-Encoding |base64 |ja|
 |Content-Disposition     |attachment; filename="<T/E>ERP_MEDREQ_ANF_<UUID>.xml" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: request bundle-identifier|
 |Content-Description     |ERP_MEDREQ_ANF                                |ja|
 
-Der Anhang enthält die Anfrage als FHIR-Ressource `EEBAnfrageBundle`
+Der Anhang enthält die jeweilige FHIR-Ressource
+
+- Rezeptanforderung: `GEM_PR_ERP_MEDREQ_RequestBundle`
+- Rezeptanforderung_Rezeptuebermittlung: `GEM_PR_ERP_MEDREQ_ResponseBundle`
+- Verordnung_Dispensierung: `GEM_PR_ERP_MEDREQ_DispenseInformationBundle`
+- Rezeptanforderung_Storno: `GEM_PR_ERP_MEDREQ_CancellationBundle`
+- Rezeptanforderung_Ablehnung: `GEM_PR_ERP_MEDREQ_CancellationBundle`
+
 
 ### KIM Rezeptanforderung Beispielnachricht
 
@@ -59,14 +66,14 @@ Der Anhang enthält die Anfrage als FHIR-Ressource `EEBAnfrageBundle`
     MIME-Version: 1.0
     Content-Type: multipart/mixed;
      boundary="----=_Part_6_1831919254.1667563379306"
-    X-KIM-Dienstkennung: eRezept-Rezeptanforderung;Anforderung;V1.0
+    X-KIM-Dienstkennung: E-Rezept;Rezeptanforderung;V1.0
     X-KIM-Sendersystem: SmartPlegeTI;1.8.0
 
     ------=_Part_6_1831919254.1667563379306
     Content-Type: text/plain; charset=utf-8
     Content-Transfer-Encoding: 7bit
 
-    eEB Anfrage TERP_MEDREQ_ANF_7a1d5187-3070-4a23-a877-162bdd479b9b
+    Rezeptanforderung TERP_MEDREQ_ANF_7a1d5187-3070-4a23-a877-162bdd479b9b
     ------=_Part_6_1831919254.1667563379306
     Content-Type: application/xml;
      name=TERP_MEDREQ_ANF_7a1d5187-3070-4a23-a877-162bdd479b9b.xml
