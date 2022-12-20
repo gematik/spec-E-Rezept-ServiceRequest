@@ -1,4 +1,21 @@
 
+# <a id="Inhalt"></a>Inhalt
+
+- [Inhalt](#Inhalt)
+  - [Vorbemerkungen zum Mapping](#Vorbemerkungen-zum-Mapping)
+  - [Mapping-Tabelle fachlicher Informationsobjekte zu FHIR-Objekten](#Mapping-Table)
+
+## <a id="Vorbemerkungen-zum-Mapping"></a>Vorbemerkungen zum Mapping
+
+Die untenstehende Tabelle beschreibt das Mapping der Informationsobjekte, die aus der fachlichen Ausarbeitung der User Stories und der damit verbundenen Use Cases hervorgegangen sind auf konkrete FHIR-Objekte. Ziel des Mapping ist es,
+
+  - die fachlichen Informationsobjekte möglichst vollständig wiederzuspiegeln.
+  - vorhandene FHIR-Types, die im Kontext des E-Rezepts bereits verwendet werden, möglichst häufig wiederzuverwenden (sofern es der konkrete Use Case zulässt), um dadurch zusätzliche Mapping-Aufwände in den Primärsystemen gering zu halten.
+  - dort, wo es fachlich notwendig erscheint, eigens definierte FHIR-Types anzubieten, dort aber (z.B. bei Subtypen) möglichst häufig erneut auf Wiederverwendung vorhandener Typen zu setzen
+  - Pflicht- und Optionsfelder (Kardinalitäten der Informationsobjekte) konsistenz zur fachlichen Notwendigkeit anzubieten
+
+
+## <a id="Mapping-Table"></a>Mapping-Tabelle fachlicher Informationsobjekte zu FHIR-Objekten
 
 
 |Informationsobjekt 1.Ebene|Informationsobjekt 2.Ebene|Informationsobjekt 3.Ebene|Kardinalität|FHIR-Type-Mapping|FHIR-Base-Type||
