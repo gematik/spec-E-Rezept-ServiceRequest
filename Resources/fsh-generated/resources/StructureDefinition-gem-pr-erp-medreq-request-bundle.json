@@ -248,6 +248,46 @@
         "max": "0"
       },
       {
+        "id": "Bundle.entry:Practitioner",
+        "path": "Bundle.entry",
+        "sliceName": "Practitioner",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Bundle.entry:Practitioner.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:Practitioner.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Practitioner",
+            "profile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:Practitioner.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:Practitioner.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:Practitioner.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
         "id": "Bundle.entry:RequestingOrganization",
         "path": "Bundle.entry",
         "sliceName": "RequestingOrganization",

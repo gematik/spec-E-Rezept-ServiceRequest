@@ -21,6 +21,7 @@ Description: "A communication resource for collecting information objects needed
     RequestHeader 1..1 and
     MedicationRequest 1..1 and
     Patient 1..1 and
+    Practitioner 0..1 and
     RequestingOrganization 1..1 and
     DispensingOrganization 0..1
 * entry[RequestHeader].link ..0
@@ -37,10 +38,16 @@ Description: "A communication resource for collecting information objects needed
 * entry[MedicationRequest].response ..0
 * entry[Patient].link ..0
 * entry[Patient].resource 1..
-* entry[Patient].resource only $KBV_PR_FOR_Patient
+* entry[Patient].resource only KBV_PR_FOR_Patient
 * entry[Patient].search ..0
 * entry[Patient].request ..0
 * entry[Patient].response ..0
+* entry[Practitioner].link ..0
+* entry[Practitioner].resource 1..
+* entry[Practitioner].resource only KBV_PR_FOR_Practitioner
+* entry[Practitioner].search ..0
+* entry[Practitioner].request ..0
+* entry[Practitioner].response ..0
 * entry[RequestingOrganization].link ..0
 * entry[RequestingOrganization].resource 1..
 * entry[RequestingOrganization].resource only GEM_PR_ERP_MEDREQ_Organization

@@ -10,9 +10,9 @@ Die FHIR-Datensätze in Anfrage- und Antwortnachrichten werden ausschließlich a
 
 |KIM-Header              |Inhalt                                 |verpflichtend|
 |------------------------|---------------------------------------|-------------|
-|X-KIM-Dienstkennung     |eRezept-Rezeptanforderung;Anforderung;V1.0|ja|
-|X-KIM-Sendersystem      |\<PVS-Bezeichnung>;\<Releaseversion>   |ja|
-|X-KIM-Support           |\<Support-Email-Adresse PVS-Hersteller>|nein|
+|X-KIM-Dienstkennung     |E-Rezept;Rezeptanforderung;V1.0|ja|
+|X-KIM-Sendersystem      |\<PS-Bezeichnung>;\<Releaseversion>   |ja|
+|X-KIM-Support           |\<Support-Email-Adresse PS-Hersteller>|nein|
 |Subject                 |\<T/E>ERP_MEDREQ_ANF_\<UUID>                 |ja <br />T/E: *T*estsystem (RU) / *E*chtsystem (PU)<br />UUID: request bundle-identifier |
 |Content-Type            | application/xml;<br />name="<T/E>ERP_MEDREQ_ANF_<UUID>.xml" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: request bundle-identifier <br />
 |Content-Transfer-Encoding |base64 |ja|
@@ -31,14 +31,14 @@ Der Anhang enthält die Anfrage als FHIR-Ressource `GEM PR ERP MEDREQ Request Bu
     MIME-Version: 1.0
     Content-Type: multipart/mixed;
      boundary="----=_Part_6_1831919254.1667563379306"
-    X-KIM-Dienstkennung: eRezept-Rezeptanforderung;Anforderung;V1.0
+    X-KIM-Dienstkennung: E-Rezept;Rezeptanforderung;V1.0
     X-KIM-Sendersystem: SmartPlegeTI;1.8.0
 
     ------=_Part_6_1831919254.1667563379306
     Content-Type: text/plain; charset=utf-8
     Content-Transfer-Encoding: 7bit
 
-    eEB Anfrage TERP_MEDREQ_ANF_7a1d5187-3070-4a23-a877-162bdd479b9b
+    Rezeptanforderung TERP_MEDREQ_ANF_7a1d5187-3070-4a23-a877-162bdd479b9b
     ------=_Part_6_1831919254.1667563379306
     Content-Type: application/xml;
      name=TERP_MEDREQ_ANF_7a1d5187-3070-4a23-a877-162bdd479b9b.xml
