@@ -1,6 +1,6 @@
 Profile: GEM_PR_ERP_MEDREQ_CancellationHeader
 Parent: MessageHeader
-Id: gem-pr-erp-medreq-cancellation-header
+Id: GEM_PR_ERP_MEDREQ_CancellationHeader
 Title: "GEM PR ERP MEDREQ CancellationHeader"
 Description: "Header for cancellation message of a medication Request"
 * insert Meta

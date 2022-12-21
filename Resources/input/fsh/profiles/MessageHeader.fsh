@@ -1,6 +1,6 @@
 Profile: GEM_PR_ERP_MEDREQ_MessageHeader
 Parent: MessageHeader
-Id: gem-pr-erp-medreq-message-header
+Id: GEM_PR_ERP_MEDREQ_MessageHeader
 Title: "GEM PR ERP MEDREQ MessageHeader"
 Description: "Header for Messages Bundles used for Medication Request"
 * insert Meta

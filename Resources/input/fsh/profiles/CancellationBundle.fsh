@@ -1,6 +1,6 @@
 Profile: GEM_PR_ERP_MEDREQ_CancellationBundle
 Parent: Bundle
-Id: gem-pr-erp-medreq-cancellation-bundle
+Id: GEM_PR_ERP_MEDREQ_CancellationBundle
 Title: "GEM PR ERP MEDREQ Cancellation Bundle"
 * insert Meta
 * insert MetaProfile (GEM_PR_ERP_MEDREQ_CancellationBundle)
