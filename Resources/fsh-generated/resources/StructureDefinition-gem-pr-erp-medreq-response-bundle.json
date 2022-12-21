@@ -125,7 +125,7 @@
           ],
           "rules": "closed"
         },
-        "min": 4
+        "min": 6
       },
       {
         "id": "Bundle.entry:ResponseHeader",
@@ -244,6 +244,86 @@
       },
       {
         "id": "Bundle.entry:Patient.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:Practitioner",
+        "path": "Bundle.entry",
+        "sliceName": "Practitioner",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Bundle.entry:Practitioner.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:Practitioner.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Practitioner",
+            "profile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:Practitioner.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:Practitioner.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:Practitioner.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:PrescribingOrganization",
+        "path": "Bundle.entry",
+        "sliceName": "PrescribingOrganization",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Bundle.entry:PrescribingOrganization.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:PrescribingOrganization.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Organization",
+            "profile": [
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:PrescribingOrganization.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:PrescribingOrganization.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:PrescribingOrganization.response",
         "path": "Bundle.entry.response",
         "max": "0"
       },

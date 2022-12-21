@@ -117,23 +117,6 @@
         "min": 1
       },
       {
-        "id": "Organization.telecom",
-        "path": "Organization.telecom",
-        "min": 1
-      },
-      {
-        "id": "Organization.telecom.system",
-        "path": "Organization.telecom.system",
-        "min": 1,
-        "patternCode": "url"
-      },
-      {
-        "id": "Organization.telecom.value",
-        "path": "Organization.telecom.value",
-        "short": "Source endpoint URI of sender. E.g. https://pflegeinrichtung.de/KIM or https://apotheke.de/KIM ",
-        "min": 1
-      },
-      {
         "id": "Organization.address",
         "path": "Organization.address",
         "min": 1,
@@ -146,119 +129,8 @@
             ]
           }
         ]
-      },
-      {
-        "id": "Organization.address.extension",
-        "path": "Organization.address.extension",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "url"
-            }
-          ],
-          "description": "Extensions are always sliced by (at least) url",
-          "rules": "closed"
-        },
-        "max": "0"
-      },
-      {
-        "id": "Organization.address.extension:Stadtteil",
-        "path": "Organization.address.extension",
-        "sliceName": "Stadtteil",
-        "max": "0"
-      },
-      {
-        "id": "Organization.address.use",
-        "path": "Organization.address.use",
-        "max": "0"
-      },
-      {
-        "id": "Organization.address.type",
-        "path": "Organization.address.type",
-        "min": 1,
-        "fixedCode": "physical"
-      },
-      {
-        "id": "Organization.address.text",
-        "path": "Organization.address.text",
-        "max": "0"
-      },
-      {
-        "id": "Organization.address.line",
-        "path": "Organization.address.line",
-        "min": 1,
-        "max": "1"
-      },
-      {
-        "id": "Organization.address.line.extension",
-        "path": "Organization.address.line.extension",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "url"
-            }
-          ],
-          "description": "Extensions are always sliced by (at least) url",
-          "rules": "closed"
-        }
-      },
-      {
-        "id": "Organization.address.line.extension:Strasse",
-        "path": "Organization.address.line.extension",
-        "sliceName": "Strasse"
-      },
-      {
-        "id": "Organization.address.line.extension:Strasse.value[x]",
-        "path": "Organization.address.line.extension.value[x]",
-        "maxLength": 46
-      },
-      {
-        "id": "Organization.address.line.extension:Hausnummer",
-        "path": "Organization.address.line.extension",
-        "sliceName": "Hausnummer"
-      },
-      {
-        "id": "Organization.address.line.extension:Hausnummer.value[x]",
-        "path": "Organization.address.line.extension.value[x]",
-        "maxLength": 9
-      },
-      {
-        "id": "Organization.address.line.extension:Adresszusatz",
-        "path": "Organization.address.line.extension",
-        "sliceName": "Adresszusatz",
-        "mustSupport": true
-      },
-      {
-        "id": "Organization.address.line.extension:Adresszusatz.value[x]",
-        "path": "Organization.address.line.extension.value[x]",
-        "maxLength": 40
-      },
-      {
-        "id": "Organization.address.city",
-        "path": "Organization.address.city",
-        "short": "Ortsname",
-        "definition": "Ortsname der anfordernden Organisation",
-        "min": 1,
-        "maxLength": 40
-      },
-      {
-        "id": "Organization.address.state",
-        "path": "Organization.address.state",
-        "max": "0"
-      },
-      {
-        "id": "Organization.address.postalCode",
-        "path": "Organization.address.postalCode",
-        "min": 1,
-        "maxLength": 10
-      },
-      {
-        "id": "Organization.address.period",
-        "path": "Organization.address.period",
-        "max": "0"
       }
     ]
-  }
+  },
+  "inProgress": true
 }

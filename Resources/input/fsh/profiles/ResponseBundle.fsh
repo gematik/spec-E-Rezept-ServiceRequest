@@ -21,6 +21,8 @@ Description: "A communication resource for collecting information objects needed
     ResponseHeader 1..1 and
     Prescription 1..1 and
     Patient 1..1 and
+    Practitioner 1..1 and
+    PrescribingOrganization 1..1 and
     RequestingOrganization 1..1 and
     DispensingOrganization 0..1
 * entry[ResponseHeader].link ..0
@@ -41,6 +43,18 @@ Description: "A communication resource for collecting information objects needed
 * entry[Patient].search ..0
 * entry[Patient].request ..0
 * entry[Patient].response ..0
+* entry[Practitioner].link ..0
+* entry[Practitioner].resource 1..
+* entry[Practitioner].resource only $KBV_PR_FOR_Practitioner
+* entry[Practitioner].search ..0
+* entry[Practitioner].request ..0
+* entry[Practitioner].response ..0
+* entry[PrescribingOrganization].link ..0
+* entry[PrescribingOrganization].resource 1..
+* entry[PrescribingOrganization].resource only GEM_PR_ERP_MEDREQ_Organization
+* entry[PrescribingOrganization].search ..0
+* entry[PrescribingOrganization].request ..0
+* entry[PrescribingOrganization].response ..0
 * entry[RequestingOrganization].link ..0
 * entry[RequestingOrganization].resource 1..
 * entry[RequestingOrganization].resource only GEM_PR_ERP_MEDREQ_Organization
@@ -126,5 +140,7 @@ Description: "Example of a response bundle for a medicationrequest"
 * entry[+][ResponseHeader].resource = ResponseHeaderExample
 * entry[+][Prescription].resource = KBV_PR_ERP_PrescriptionExample
 * entry[+][Patient].resource = KBV_PR_FOR_PatientExample
+* entry[+][Practitioner].resource = KBV_PR_FOR_PractitionerExample
+* entry[+][PrescribingOrganization].resource = PrescribingOrganizationExample
 * entry[+][RequestingOrganization].resource = RequestingOrganizationExample
 * entry[+][DispensingOrganization].resource = DispensingOrganizationExample

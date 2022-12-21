@@ -53,6 +53,27 @@ Description: "Organization used in the context of a medicationRequest"
 * telecom.value ^short = "Source endpoint URI of sender. E.g. https://pflegeinrichtung.de/KIM or https://apotheke.de/KIM "
 
 
+Instance: PrescribingOrganizationExample
+InstanceOf: GEM_PR_ERP_MEDREQ_Organization
+Usage: #inline
+Title: "Prescribing Organization Example"
+Description: "Example of a Organisation responsible for prescribing medication"
+* id = "b2aad0e1-45a2-33af-ff31-4829ae8fb22c"
+* MetaInstance(GEM_PR_ERP_MEDREQ_Organization)
+* identifier[+][Telematik-ID].system = "https://gematik.de/fhir/sid/telematik-id"
+* identifier[=][Telematik-ID].value = "10-42.423.00045678"
+* name = "Gemeinschaftspraxis Waldorf und Statler"
+* telecom[+].system = #url
+* telecom[=].value = "https://xwaldorfstatlerx.de/KIM"
+* address[+].line[+].extension[Strasse].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"
+* address[=].line[=].extension[Strasse].valueString = "Theatergasse"
+* address[=].line[=].extension[Hausnummer].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"
+* address[=].line[=].extension[Hausnummer].valueString = "1"
+* address[=].line[=].extension[Adresszusatz].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator"
+* address[=].line[=].extension[Adresszusatz].valueString = "Gemeinschaftspraxis Allgemeinmedizin"
+* address[=].city = "Berlin"
+* address[=].postalCode = "10247"
+
 Instance: RequestingOrganizationExample
 InstanceOf: GEM_PR_ERP_MEDREQ_Organization
 Usage: #inline
