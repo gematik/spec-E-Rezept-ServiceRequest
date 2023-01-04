@@ -48,7 +48,19 @@
         {
           "nameUrl": "ImplementationGuide/markdown/KimMessages.md",
           "title": "Übermittlung von KIM Nachrichten",
-          "generation": "markdown"
+          "generation": "markdown",
+           "page": [
+                    {
+                      "nameUrl": "ImplementationGuide/markdown/KimMessages/Request.md",
+                      "title": "Übermittlung einer Rezeptanforderung",
+                      "generation": "markdown"
+                    },
+                    {
+                      "nameUrl": "ImplementationGuide/markdown/KimMessages/Request.md",
+                      "title": "Übermittlung einer Rezeptanforderung",
+                      "generation": "markdown"
+                    }
+                  ]
         },
         {
           "nameUrl": "ImplementationGuide/markdown/Mappingtable.md",
