@@ -1,0 +1,17 @@
+{
+  "folders": [
+	{
+		"path": "../../../.."
+	},
+	{
+		"path": "../../../../../spec-VSDM-Ersatzbescheinigung"
+	},
+	{
+		"path": "../../../../../fhir-profile-apovzd"
+	},
+	{
+		"path": "../../../../../fhir-profiles-erp"
+	}
+],
+  "settings": {}
+}

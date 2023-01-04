@@ -56,8 +56,8 @@
                       "generation": "markdown"
                     },
                     {
-                      "nameUrl": "ImplementationGuide/markdown/KimMessages/Request.md",
-                      "title": "Übermittlung einer Rezeptanforderung",
+                      "nameUrl": "ImplementationGuide/markdown/KimMessages/MessageDispositionNotification.md",
+                      "title": "Übermittlung einer Eingangsbestätigung",
                       "generation": "markdown"
                     }
                   ]
