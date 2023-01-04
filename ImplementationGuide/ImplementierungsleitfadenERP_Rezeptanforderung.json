@@ -51,6 +51,11 @@
           "generation": "markdown"
         },
         {
+          "nameUrl": "ImplementationGuide/markdown/Mappingtable.md",
+          "title": "Mapping fachl. Informationsobjekte auf FHIR-Types",
+          "generation": "markdown"
+        },
+        {
           "nameUrl": "ImplementationGuide/markdown/ReleaseNotes.md",
           "title": "Release Notes",
           "generation": "markdown"
