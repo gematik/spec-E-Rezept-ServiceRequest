@@ -26,7 +26,6 @@ Description: "Profile on the Medication Request that is to be sent"
 * extension[FreeText].value[x] only string
 * extension[FreeText] ^short = "Freitext"
 
-* medication[x] 1..1 MS
 * medication[x] ^slicing.discriminator.type = #type
 * medication[x] ^slicing.discriminator.path = "$this"
 * medication[x] ^slicing.rules = #closed
@@ -38,15 +37,17 @@ Description: "Profile on the Medication Request that is to be sent"
 * medicationReference.identifier ..0
 * medicationReference.display ..0
 
-* subject 1..1 MS
-* subject only Reference($KBV_PR_FOR_Patient)
+* subject only Reference(KBV_PR_FOR_Patient)
 * subject.type 0..0
-* subject.identifier only $KVID or $PKVID
+* subject.identifier 0..0
+* subject.reference 1..1
 
 * encounter 0..0
 
-* requester only Reference($KBV_PR_FOR_Practitioner)
+* requester only Reference(KBV_PR_FOR_Practitioner)
 * requester.type 0..0
+* requester.identifier 0..0
+* requester.reference 1..1
 
 * instantiatesCanonical 0..0
 * instantiatesUri 0..0

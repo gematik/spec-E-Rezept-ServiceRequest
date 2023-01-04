@@ -48,6 +48,23 @@
         {
           "nameUrl": "ImplementationGuide/markdown/KimMessages.md",
           "title": "Übermittlung von KIM Nachrichten",
+          "generation": "markdown",
+           "page": [
+                    {
+                      "nameUrl": "ImplementationGuide/markdown/KimMessages/Request.md",
+                      "title": "Übermittlung einer Rezeptanforderung",
+                      "generation": "markdown"
+                    },
+                    {
+                      "nameUrl": "ImplementationGuide/markdown/KimMessages/MessageDispositionNotification.md",
+                      "title": "Übermittlung einer Eingangsbestätigung",
+                      "generation": "markdown"
+                    }
+                  ]
+        },
+        {
+          "nameUrl": "ImplementationGuide/markdown/Mappingtable.md",
+          "title": "Mapping fachl. Informationsobjekte auf FHIR-Types",
           "generation": "markdown"
         },
         {

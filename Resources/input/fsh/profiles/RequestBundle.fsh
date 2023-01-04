@@ -38,7 +38,7 @@ Description: "A communication resource for collecting information objects needed
 * entry[MedicationRequest].response ..0
 * entry[Patient].link ..0
 * entry[Patient].resource 1..
-* entry[Patient].resource only $KBV_PR_FOR_Patient
+* entry[Patient].resource only KBV_PR_FOR_Patient
 * entry[Patient].search ..0
 * entry[Patient].request ..0
 * entry[Patient].response ..0

@@ -226,8 +226,7 @@
             }
           ],
           "rules": "closed"
-        },
-        "mustSupport": true
+        }
       },
       {
         "id": "MedicationRequest.medicationReference",
@@ -278,8 +277,12 @@
               "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient"
             ]
           }
-        ],
-        "mustSupport": true
+        ]
+      },
+      {
+        "id": "MedicationRequest.subject.reference",
+        "path": "MedicationRequest.subject.reference",
+        "min": 1
       },
       {
         "id": "MedicationRequest.subject.type",
@@ -289,15 +292,7 @@
       {
         "id": "MedicationRequest.subject.identifier",
         "path": "MedicationRequest.subject.identifier",
-        "type": [
-          {
-            "code": "Identifier",
-            "profile": [
-              "http://fhir.de/StructureDefinition/identifier-kvid-10",
-              "http://fhir.de/StructureDefinition/identifier-pkv"
-            ]
-          }
-        ]
+        "max": "0"
       },
       {
         "id": "MedicationRequest.encounter",
@@ -317,8 +312,18 @@
         ]
       },
       {
+        "id": "MedicationRequest.requester.reference",
+        "path": "MedicationRequest.requester.reference",
+        "min": 1
+      },
+      {
         "id": "MedicationRequest.requester.type",
         "path": "MedicationRequest.requester.type",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.requester.identifier",
+        "path": "MedicationRequest.requester.identifier",
         "max": "0"
       },
       {
