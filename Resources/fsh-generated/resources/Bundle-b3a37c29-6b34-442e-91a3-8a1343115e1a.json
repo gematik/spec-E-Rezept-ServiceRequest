@@ -1,0 +1,61 @@
+{
+  "resourceType": "Bundle",
+  "id": "b3a37c29-6b34-442e-91a3-8a1343115e1a",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_CancellationBundle|1.0"
+    ]
+  },
+  "type": "message",
+  "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:uuid:2d77d48c-f177-4540-82b2-3a25d20d1cc9"
+  },
+  "timestamp": "2022-12-07T12:12:54.234+02:00",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "MessageHeader",
+        "id": "ddaa2669-199f-4d71-92b2-10d4b8cb0ad9",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_CancellationHeader|1.0"
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/VorgangsIdEX",
+            "valueString": "VorgangsID_des_initial_AustellendenSystems-f17b6592a3a5c"
+          },
+          {
+            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PatientIdEX",
+            "valueString": "PatientID_des_initial_AustellendenSystems-3ddee2863325d"
+          },
+          {
+            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/IdentifierEX",
+            "valueUuid": "7a1d5187-3070-4a23-a877-162bdd479b9b"
+          },
+          {
+            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/CancellationReasonTypeEX",
+            "valueCoding": {
+              "code": "InformationenIncorrect",
+              "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/CancellationReasonTypeCS",
+              "display": "Informationen fehlerhaft"
+            }
+          }
+        ],
+        "eventCoding": {
+          "code": "CancellationMessage",
+          "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/MessageEventTypeCS",
+          "display": "Stornierung einer Rezeptanforderung"
+        },
+        "sender": {
+          "reference": "Organisation/f89adcee-7fe3-4b06-bc5f-e17b592a3a5f"
+        },
+        "source": {
+          "endpoint": "https://pflegeheim.de/KIM"
+        }
+      }
+    }
+  ]
+}

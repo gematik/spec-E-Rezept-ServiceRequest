@@ -1,9 +1,9 @@
 Profile: GEM_PR_ERP_MEDREQ_CancellationHeader
 Parent: MessageHeader
-Id: GEM_PR_ERP_MEDREQ_CancellationHeader
+Id: GEM-PR-ERP-MEDREQ-CancellationHeader
 Title: "GEM PR ERP MEDREQ CancellationHeader"
 Description: "Header for cancellation message of a medication Request"
-* insert Meta
+* insert Meta (GEM_PR_ERP_MEDREQ_CancellationHeader)
 * insert MetaProfile (GEM_PR_ERP_MEDREQ_CancellationHeader)
 
 * event[x] only Coding
@@ -37,6 +37,23 @@ Description: "Example of a cancellation Header used by a requesting organisation
 * MetaInstance(GEM_PR_ERP_MEDREQ_CancellationHeader)
 * eventCoding = https://gematik.de/fhir/erpmedreqcom/CodeSystem/MessageEventTypeCS#CancellationMessage "Stornierung einer Rezeptanforderung"
 * sender.reference = "Organisation/a8efd0b3-58c3-48f7-89f5-67f86dd298e8" //RequestingOrganizationExample
+* source.endpoint = "https://pflegeheim.de/KIM"
+* extension[+][VorgangsID].valueString = "VorgangsID_des_initial_AustellendenSystems-f17b6592a3a5c"
+* extension[+][PatientID].valueString = "PatientID_des_initial_AustellendenSystems-3ddee2863325d"
+* extension[+][IdentifierForCancelation].url = "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/IdentifierEX"
+* extension[=][IdentifierForCancelation].valueUuid = "7a1d5187-3070-4a23-a877-162bdd479b9b"
+* extension[+][CancellationReasonTypeEX].url = "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/CancellationReasonTypeEX"
+* extension[=][CancellationReasonTypeEX].valueCoding = https://gematik.de/fhir/erpmedreqcom/CodeSystem/CancellationReasonTypeCS#InformationenIncorrect "Informationen fehlerhaft"
+
+Instance: CancellationHeaderExample_DispensingOrganisation
+InstanceOf: GEM_PR_ERP_MEDREQ_CancellationHeader
+Usage: #inline
+Title: "CancellationHeaderExample_DispensingOrganisation"
+Description: "Example of a cancellation Header used by a requesting organisation"
+* id = "ddaa2669-199f-4d71-92b2-10d4b8cb0ad9"
+* MetaInstance(GEM_PR_ERP_MEDREQ_CancellationHeader)
+* eventCoding = https://gematik.de/fhir/erpmedreqcom/CodeSystem/MessageEventTypeCS#CancellationMessage "Stornierung einer Rezeptanforderung"
+* sender.reference = "Organisation/f89adcee-7fe3-4b06-bc5f-e17b592a3a5f" //DispensingOrganizationExample
 * source.endpoint = "https://pflegeheim.de/KIM"
 * extension[+][VorgangsID].valueString = "VorgangsID_des_initial_AustellendenSystems-f17b6592a3a5c"
 * extension[+][PatientID].valueString = "PatientID_des_initial_AustellendenSystems-3ddee2863325d"

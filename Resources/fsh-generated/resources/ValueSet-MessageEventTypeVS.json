@@ -5,14 +5,14 @@
   "id": "MessageEventTypeVS",
   "title": "ValueSet of messages types used for requesting medications",
   "description": "This type defines  types used for requesting medications",
-  "version": "0.9",
-  "url": "https://gematik.de/fhir/erpmedreqcom/ValueSet/MessageEventTypeVS",
+  "version": "1.0",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/MessageEventTypeVS",
   "experimental": false,
   "publisher": "gematik GmbH",
   "compose": {
     "include": [
       {
-        "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/MessageEventTypeCS"
+        "system": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/MessageEventTypeCS"
       }
     ]
   }

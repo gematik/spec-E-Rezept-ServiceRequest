@@ -1,9 +1,9 @@
 {
   "resourceType": "Bundle",
-  "id": "CancellationBundleFromPractitioner",
+  "id": "7fa39618-5e2e-4e14-a38b-02ee9a6a016f",
   "meta": {
     "profile": [
-      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_CancellationBundle"
+      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_CancellationBundle|1.0"
     ]
   },
   "type": "message",
@@ -16,10 +16,10 @@
     {
       "resource": {
         "resourceType": "MessageHeader",
-        "id": "e0e10aa4-3405-49de-8969-1e13864aa111",
+        "id": "853c0a72-d4e3-41b6-b4cb-e506d6f224ca",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_CancellationHeader"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_CancellationHeader|1.0"
           ]
         },
         "extension": [
@@ -38,9 +38,9 @@
           {
             "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/CancellationReasonTypeEX",
             "valueCoding": {
-              "code": "InformationMissing",
+              "code": "InformationenIncorrect",
               "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/CancellationReasonTypeCS",
-              "display": "Informationen unvollständig"
+              "display": "Informationen fehlerhaft"
             }
           }
         ],
@@ -50,10 +50,10 @@
           "display": "Stornierung einer Rezeptanforderung"
         },
         "sender": {
-          "reference": "Organisation/f67dcc87-f877-49da-a249-aac4d1b15418"
+          "reference": "Organisation/a8efd0b3-58c3-48f7-89f5-67f86dd298e8"
         },
         "source": {
-          "endpoint": "https://praxis_um_die_ecke.de/KIM"
+          "endpoint": "https://pflegeheim.de/KIM"
         }
       }
     }

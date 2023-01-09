@@ -5,14 +5,14 @@
   "id": "PrescriptionDeliveryTypeVS",
   "title": "ValueSet of types describing how prescription will be delivered",
   "description": "This type defines how the prescription will delivered",
-  "version": "0.9",
-  "url": "https://gematik.de/fhir/erpmedreqcom/ValueSet/PrescriptionDeliveryTypeVS",
+  "version": "1.0",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeVS",
   "experimental": false,
   "publisher": "gematik GmbH",
   "compose": {
     "include": [
       {
-        "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/PrescriptionDeliveryTypeCS"
+        "system": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeCS"
       }
     ]
   }

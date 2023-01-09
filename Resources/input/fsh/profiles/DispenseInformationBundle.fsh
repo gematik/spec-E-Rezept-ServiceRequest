@@ -3,7 +3,7 @@ Parent: Bundle
 Id: gem-pr-erp-medreq-dispense-information-bundle
 Title: "GEM PR ERP MEDREQ Dispense Information Bundle"
 Description: "Communication resource for sending dispenseInformation about a medication requisition."
-* insert Meta
+* insert Meta (GEM_PR_ERP_MEDREQ_DispenseInformationBundle)
 * insert MetaProfile (GEM_PR_ERP_MEDREQ_DispenseInformationBundle)
 * id 1..1
 * identifier 1..
@@ -95,7 +95,7 @@ Usage: #inline
 Title: "GEM ERP PR Medication Dispense Example"
 Description: "Example of a GEM_ERP_PR_MedicationDispense"
 * id = "c312572d-165c-4b4e-8617-a58ced204939"
-* meta.profile[+] = "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|1.2"
+* MetaInstance(GEM_ERP_PR_MedicationDispenseExample)
 * contained[+] = SumatripanMedication
 * identifier[+].system = "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"
 * identifier[=].value = "160.000.033.491.280.78"
@@ -114,7 +114,7 @@ InstanceOf: GEM_PR_ERP_MEDREQ_DispenseInformationBundle
 Usage: #example
 Title: "Example of DispenseInformationBundle"
 Description: "Example of DispenseInformationBundle to provide a complete information ressource about the dispense"
-* id = "DispenseInformationBundle"
+* id = "4321fb9d-bdf4-4c59-b4d6-aedf092a3502"
 * MetaInstance(GEM_PR_ERP_MEDREQ_DispenseInformationBundle)
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:2e3200df-66e1-4c82-90e1-1bdec82f8442"

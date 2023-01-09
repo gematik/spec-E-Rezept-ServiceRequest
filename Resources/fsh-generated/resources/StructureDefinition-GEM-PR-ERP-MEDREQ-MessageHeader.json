@@ -12,7 +12,7 @@
     }
   ],
   "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_MessageHeader",
-  "version": "0.9",
+  "version": "1.0",
   "name": "GEM_PR_ERP_MEDREQ_MessageHeader",
   "title": "GEM PR ERP MEDREQ MessageHeader",
   "status": "draft",
@@ -64,7 +64,7 @@
         "path": "MessageHeader.meta.profile",
         "min": 1,
         "max": "1",
-        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_MessageHeader"
+        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_MessageHeader|1.0"
       },
       {
         "id": "MessageHeader.meta.security",
@@ -72,23 +72,8 @@
         "max": "0"
       },
       {
-        "id": "MessageHeader.meta.tag",
-        "path": "MessageHeader.meta.tag",
-        "max": "0"
-      },
-      {
         "id": "MessageHeader.extension",
         "path": "MessageHeader.extension",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "url"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
-        },
         "min": 2
       },
       {
@@ -145,7 +130,7 @@
             "code": "Reference",
             "targetProfile": [
               "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization",
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-organization"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Organization"
             ]
           }
         ]

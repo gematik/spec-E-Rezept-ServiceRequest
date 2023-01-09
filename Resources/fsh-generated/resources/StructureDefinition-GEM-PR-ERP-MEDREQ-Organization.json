@@ -1,0 +1,259 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "GEM-PR-ERP-MEDREQ-Organization",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Base.Entities"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "business"
+    }
+  ],
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_Organization",
+  "version": "1.0",
+  "name": "GEM_PR_ERP_MEDREQ_Organization",
+  "title": "GEM PR ERP MEDREQ Organization",
+  "status": "draft",
+  "experimental": false,
+  "publisher": "gematik GmbH",
+  "description": "Organization used in the context of a medicationRequest",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "servd",
+      "uri": "http://www.omg.org/spec/ServD/1.0/",
+      "name": "ServD"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Organization",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Organization",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Organization.meta",
+        "path": "Organization.meta",
+        "min": 1
+      },
+      {
+        "id": "Organization.meta.versionId",
+        "path": "Organization.meta.versionId",
+        "max": "0"
+      },
+      {
+        "id": "Organization.meta.source",
+        "path": "Organization.meta.source",
+        "max": "0"
+      },
+      {
+        "id": "Organization.meta.profile",
+        "path": "Organization.meta.profile",
+        "min": 1,
+        "max": "1",
+        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_Organization|1.0"
+      },
+      {
+        "id": "Organization.meta.security",
+        "path": "Organization.meta.security",
+        "max": "0"
+      },
+      {
+        "id": "Organization.identifier",
+        "path": "Organization.identifier",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "type"
+            }
+          ],
+          "rules": "closed"
+        },
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.identifier:Telematik-ID",
+        "path": "Organization.identifier",
+        "sliceName": "Telematik-ID",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Organization.type",
+        "path": "Organization.type",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/RequestingOrganizationTypeVS"
+        }
+      },
+      {
+        "id": "Organization.name",
+        "path": "Organization.name",
+        "min": 1
+      },
+      {
+        "id": "Organization.telecom",
+        "path": "Organization.telecom",
+        "min": 1
+      },
+      {
+        "id": "Organization.telecom.system",
+        "path": "Organization.telecom.system",
+        "min": 1,
+        "patternCode": "url"
+      },
+      {
+        "id": "Organization.telecom.value",
+        "path": "Organization.telecom.value",
+        "short": "Source endpoint URI of sender. E.g. https://pflegeinrichtung.de/KIM or https://apotheke.de/KIM ",
+        "min": 1
+      },
+      {
+        "id": "Organization.address",
+        "path": "Organization.address",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Address",
+            "profile": [
+              "http://fhir.de/StructureDefinition/address-de-basis"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Organization.address.extension",
+        "path": "Organization.address.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "description": "Extensions are always sliced by (at least) url",
+          "rules": "closed"
+        },
+        "max": "0"
+      },
+      {
+        "id": "Organization.address.extension:Stadtteil",
+        "path": "Organization.address.extension",
+        "sliceName": "Stadtteil",
+        "max": "0"
+      },
+      {
+        "id": "Organization.address.use",
+        "path": "Organization.address.use",
+        "max": "0"
+      },
+      {
+        "id": "Organization.address.type",
+        "path": "Organization.address.type",
+        "min": 1,
+        "fixedCode": "physical"
+      },
+      {
+        "id": "Organization.address.text",
+        "path": "Organization.address.text",
+        "max": "0"
+      },
+      {
+        "id": "Organization.address.line",
+        "path": "Organization.address.line",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Organization.address.line.extension",
+        "path": "Organization.address.line.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "description": "Extensions are always sliced by (at least) url",
+          "rules": "closed"
+        }
+      },
+      {
+        "id": "Organization.address.line.extension:Strasse",
+        "path": "Organization.address.line.extension",
+        "sliceName": "Strasse"
+      },
+      {
+        "id": "Organization.address.line.extension:Strasse.value[x]",
+        "path": "Organization.address.line.extension.value[x]",
+        "maxLength": 46
+      },
+      {
+        "id": "Organization.address.line.extension:Hausnummer",
+        "path": "Organization.address.line.extension",
+        "sliceName": "Hausnummer"
+      },
+      {
+        "id": "Organization.address.line.extension:Hausnummer.value[x]",
+        "path": "Organization.address.line.extension.value[x]",
+        "maxLength": 9
+      },
+      {
+        "id": "Organization.address.line.extension:Adresszusatz",
+        "path": "Organization.address.line.extension",
+        "sliceName": "Adresszusatz",
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.address.line.extension:Adresszusatz.value[x]",
+        "path": "Organization.address.line.extension.value[x]",
+        "maxLength": 40
+      },
+      {
+        "id": "Organization.address.city",
+        "path": "Organization.address.city",
+        "short": "Ortsname",
+        "definition": "Ortsname der anfordernden Organisation",
+        "min": 1,
+        "maxLength": 40
+      },
+      {
+        "id": "Organization.address.state",
+        "path": "Organization.address.state",
+        "max": "0"
+      },
+      {
+        "id": "Organization.address.postalCode",
+        "path": "Organization.address.postalCode",
+        "min": 1,
+        "maxLength": 10
+      },
+      {
+        "id": "Organization.address.period",
+        "path": "Organization.address.period",
+        "max": "0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,398 @@
+{
+  "resourceType": "Bundle",
+  "id": "4321fb9d-bdf4-4c59-b4d6-aedf092a3502",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_DispenseInformationBundle|1.0"
+    ]
+  },
+  "type": "message",
+  "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:uuid:2e3200df-66e1-4c82-90e1-1bdec82f8442"
+  },
+  "timestamp": "2022-12-12T12:12:54.234+02:00",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "MessageHeader",
+        "id": "b2e0e631-42fd-4d8a-a7b2-a2f54fe70bf7",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_MessageHeader|1.0"
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/VorgangsIdEX",
+            "valueString": "VorgangsID_des_initial_AustellendenSystems-f17b6592a3a5c"
+          },
+          {
+            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PatientIdEX",
+            "valueString": "PatientID_des_initial_AustellendenSystems-3ddee2863325d"
+          }
+        ],
+        "sender": {
+          "reference": "Organization/f89adcee-7fe3-4b06-bc5f-e17b592a3a5f"
+        },
+        "source": {
+          "endpoint": "https://apotheke.de/KIM"
+        },
+        "eventCoding": {
+          "code": "RequestingMessage",
+          "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/MessageEventTypeCS",
+          "display": "Nachricht zur Rezeptanforderung"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "5fb9b3b5-df19-4a7a-8d19-0dee164da7fe",
+        "meta": {
+          "profile": [
+            "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription|1.1.0"
+          ]
+        },
+        "status": "active",
+        "intent": "order",
+        "extension": [
+          {
+            "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_EmergencyServicesFee",
+            "valueBoolean": false
+          },
+          {
+            "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_BVG",
+            "valueBoolean": false
+          },
+          {
+            "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Multiple_Prescription",
+            "extension": [
+              {
+                "url": "Kennzeichen",
+                "valueBoolean": false
+              }
+            ]
+          }
+        ],
+        "dispenseRequest": {
+          "quantity": {
+            "system": "http://unitsofmeasure.org",
+            "code": "{Package}",
+            "value": 1
+          }
+        },
+        "dosageInstruction": [
+          {
+            "extension": [
+              {
+                "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_DosageFlag",
+                "valueBoolean": true
+              }
+            ],
+            "text": "3mal täglich dünn auftragen"
+          }
+        ],
+        "medicationReference": {
+          "reference": "Medication/7474c076-701c-4a7e-a71e-822f106e5262"
+        },
+        "subject": {
+          "reference": "Patient/b04f58bc-bb37-4490-9561-2e6954764c4a"
+        },
+        "authoredOn": "2022-12-04T08:51:40.153+02:00",
+        "requester": {
+          "reference": "Practitioner/fcdcfa8a-b1ff-488f-b32f-16359cd78596"
+        },
+        "substitution": {
+          "allowedBoolean": true
+        },
+        "insurance": [
+          {
+            "reference": "Coverage/2e3afa48-ccc6-42c8-9780-1ceebdbd7440"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "b04f58bc-bb37-4490-9561-2e6954764c4a",
+        "meta": {
+          "profile": [
+            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
+          ]
+        },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "code": "GKV",
+                  "system": "http://fhir.de/CodeSystem/identifier-type-de-basis"
+                }
+              ]
+            },
+            "system": "http://fhir.de/sid/gkv/kvid-10",
+            "value": "S037462981"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Fürst",
+            "_family": {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+                  "valueString": "Fuerst"
+                }
+              ]
+            },
+            "given": [
+              "Doreen"
+            ]
+          }
+        ],
+        "birthDate": "1965-04-10",
+        "address": [
+          {
+            "type": "both",
+            "line": [
+              "Pappelallee 89"
+            ],
+            "_line": [
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                    "valueString": "89"
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                    "valueString": "Pappelallee"
+                  }
+                ]
+              }
+            ],
+            "city": "Rothenkirchen",
+            "postalCode": "08237",
+            "country": "D"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Organization",
+        "id": "a8efd0b3-58c3-48f7-89f5-67f86dd298e8",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_Organization|1.0"
+          ]
+        },
+        "telecom": [
+          {
+            "system": "url",
+            "value": "https://pflegeheim.de/KIM"
+          }
+        ],
+        "address": [
+          {
+            "type": "physical",
+            "city": "Berlin",
+            "postalCode": "10247",
+            "_line": [
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                    "valueString": "Meinekestraße"
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                    "valueString": "61"
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator",
+                    "valueString": "Geriatrie"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "identifier": [
+          {
+            "system": "https://gematik.de/fhir/sid/telematik-id",
+            "value": "10-67.245.00001234"
+          }
+        ],
+        "name": "Pflegeheim am Platz der Sonne"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Organization",
+        "id": "f89adcee-7fe3-4b06-bc5f-e17b592a3a5f",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_Organization|1.0"
+          ]
+        },
+        "telecom": [
+          {
+            "system": "url",
+            "value": "https://apotheke.de/KIM"
+          }
+        ],
+        "address": [
+          {
+            "type": "physical",
+            "city": "Berlin",
+            "postalCode": "10247",
+            "_line": [
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                    "valueString": "Meinekestraße"
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                    "valueString": "63"
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator",
+                    "valueString": "Apotheke am Pflegeheim"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "identifier": [
+          {
+            "system": "https://gematik.de/fhir/sid/telematik-id",
+            "value": "3-abc-1234567890"
+          }
+        ],
+        "name": "Apotheke am Platz der Sonne"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationDispense",
+        "id": "c312572d-165c-4b4e-8617-a58ced204939",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|1.2"
+          ]
+        },
+        "status": "completed",
+        "identifier": [
+          {
+            "system": "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
+            "value": "160.000.033.491.280.78"
+          }
+        ],
+        "performer": [
+          {
+            "actor": {
+              "identifier": {
+                "system": "https://gematik.de/fhir/sid/telematik-id",
+                "value": "3-abc-1234567890"
+              }
+            }
+          }
+        ],
+        "contained": [
+          {
+            "resourceType": "Medication",
+            "id": "001413e4-a5e9-48da-9b07-c17bab476407",
+            "meta": {
+              "profile": [
+                "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.1.0"
+              ]
+            },
+            "extension": [
+              {
+                "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Medication_Type",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "http://snomed.info/sct",
+                      "version": "http://snomed.info/sct/900000000000207008/version/20220331",
+                      "code": "763158003",
+                      "display": "Medicinal product (product)"
+                    }
+                  ]
+                }
+              },
+              {
+                "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Category",
+                "valueCoding": {
+                  "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Category",
+                  "code": "00"
+                }
+              },
+              {
+                "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Vaccine",
+                "valueBoolean": false
+              },
+              {
+                "url": "http://fhir.de/StructureDefinition/normgroesse",
+                "valueCode": "N1"
+              }
+            ],
+            "code": {
+              "coding": [
+                {
+                  "system": "http://fhir.de/CodeSystem/ifa/pzn",
+                  "code": "06313728"
+                }
+              ],
+              "text": "Sumatriptan-1a Pharma 100 mg Tabletten"
+            },
+            "form": {
+              "coding": [
+                {
+                  "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM",
+                  "code": "TAB"
+                }
+              ]
+            },
+            "amount": {
+              "numerator": {
+                "unit": "St",
+                "extension": [
+                  {
+                    "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_PackagingSize",
+                    "valueString": "20 St."
+                  }
+                ]
+              },
+              "denominator": {
+                "value": 1
+              }
+            }
+          }
+        ],
+        "medicationReference": {
+          "reference": "#001413e4-a5e9-48da-9b07-c17bab476407"
+        },
+        "subject": {
+          "identifier": {
+            "system": "http://fhir.de/sid/gkv/kvid-10",
+            "value": "X234567890"
+          }
+        },
+        "whenHandedOver": "2022-02-28",
+        "dosageInstruction": [
+          {
+            "text": "1-0-1-0"
+          }
+        ]
+      }
+    }
+  ]
+}

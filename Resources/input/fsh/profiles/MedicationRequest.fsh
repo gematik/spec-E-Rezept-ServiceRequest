@@ -1,9 +1,9 @@
 Profile: GEM_PR_ERP_MEDREQ_MedicationRequest
 Parent: MedicationRequest
-Id: gem-pr-erp-medreq-medication-request
+Id: GEM-PR-ERP-MEDREQ-MedicationRequest
 Title: "GEM PR ERP MEDREQ Medication Request"
 Description: "Profile on the Medication Request that is to be sent"
-* insert Meta
+* insert Meta (GEM_PR_ERP_MEDREQ_MedicationRequest)
 * insert MetaProfile (GEM_PR_ERP_MEDREQ_MedicationRequest)
 
 * implicitRules 0..0
@@ -100,6 +100,7 @@ Usage: #inline
 Instance: MedicationExamplePZN
 InstanceOf: Medication
 Usage: #inline
+* id = "7474c076-701c-4a7e-a71e-822f106e5262"
 * meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.1.0"
 * extension[0].url = "https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Medication_Type"
 * extension[=].valueCodeableConcept.coding.version = "http://snomed.info/sct/900000000000207008/version/20220331"
@@ -157,7 +158,7 @@ InstanceOf: GEM_PR_ERP_MEDREQ_MedicationRequest
 Usage: #inline
 Title: "MedicationRequestExample_DispensingOrganisation"
 Description: "Example of a medication request resulting in a prescription sent to the dispensing organization"
-* id = "12b8036c-0cc6-43cf-b9cc-c6ebccde0d58"
+* id = "b2e0e631-42fd-4d8a-a7b2-a2f54fe70bf7"
 * MetaInstance(GEM_PR_ERP_MEDREQ_MedicationRequest)
 * extension[+][PrescriptionDeliveryTypeEX].url = "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeEX"
 * extension[=][PrescriptionDeliveryTypeEX].valueCoding = https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeCS#DispensingOrganisation "Belieferung der anfragenden Organisation durch Apotheke"

@@ -1,9 +1,9 @@
 Profile: GEM_PR_ERP_MEDREQ_ResponseBundle
 Parent: Bundle
-Id: gem-pr-erp-medreq-response-bundle
+Id: GEM-PR-ERP-MEDREQ-ResponseBundle
 Title: "GEM PR ERP MEDREQ Response Bundle"
 Description: "A communication resource for collecting information objects needed for responding to a medication request"
-* insert Meta
+* insert Meta (GEM_PR_ERP_MEDREQ_ResponseBundle)
 * insert MetaProfile (GEM_PR_ERP_MEDREQ_ResponseBundle)
 * id 1..1
 * identifier 1..
@@ -131,16 +131,23 @@ InstanceOf: GEM_PR_ERP_MEDREQ_ResponseBundle
 Usage: #example
 Title: "GEM PR ERP MEDREQ Response Bundle Example"
 Description: "Example of a response bundle for a medicationrequest"
-* id = "ResponseBundle"
+* id = "c7133d88-459b-4cf4-b808-2dc75726a482"
 * MetaInstance(GEM_PR_ERP_MEDREQ_ResponseBundle)
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:7a1d5187-3070-4a23-a877-162bdd479b9b"
 * type = #message
 * timestamp = "2022-12-04T08:52:41.153+02:00"
-* entry[+][ResponseHeader].resource = ResponseHeaderExample
-* entry[+][Prescription].resource = KBV_PR_ERP_PrescriptionExample
-* entry[+][Patient].resource = KBV_PR_FOR_PatientExample
-* entry[+][Practitioner].resource = KBV_PR_FOR_PractitionerExample
-* entry[+][PrescribingOrganization].resource = PrescribingOrganizationExample
-* entry[+][RequestingOrganization].resource = RequestingOrganizationExample
-* entry[+][DispensingOrganization].resource = DispensingOrganizationExample
+* entry[+][ResponseHeader].fullUrl = "https://gematik.de/fhir/ResponseHeader/00dd7c71-ef9c-4d68-ab8a-e4e160b9806c"
+* entry[=][ResponseHeader].resource = ResponseHeaderExample
+* entry[+][Prescription].fullUrl = "https://gematik.de/fhir/Prescription/5fb9b3b5-df19-4a7a-8d19-0dee164da7fe"
+* entry[=][Prescription].resource = KBV_PR_ERP_PrescriptionExample
+* entry[+][Patient].fullUrl = "https://gematik.de/fhir/Patient/b04f58bc-bb37-4490-9561-2e6954764c4a"
+* entry[=][Patient].resource = KBV_PR_FOR_PatientExample
+* entry[+][Practitioner].fullUrl = "https://gematik.de/fhir/Practitioner/fcdcfa8a-b1ff-488f-b32f-16359cd78596"
+* entry[=][Practitioner].resource = KBV_PR_FOR_PractitionerExample
+* entry[+][PrescribingOrganization].fullUrl = "https://gematik.de/fhir/PrescribingOrganization/b2aad0e1-45a2-33af-ff31-4829ae8fb22c"
+* entry[=][PrescribingOrganization].resource = PrescribingOrganizationExample
+* entry[+][RequestingOrganization].fullUrl = "https://gematik.de/fhir/RequestingOrganization/a8efd0b3-58c3-48f7-89f5-67f86dd298e8"
+* entry[=][RequestingOrganization].resource = RequestingOrganizationExample
+* entry[+][DispensingOrganization].fullUrl = "https://gematik.de/fhir/DispensingOrganization/f89adcee-7fe3-4b06-bc5f-e17b592a3a5f"
+* entry[=][DispensingOrganization].resource = DispensingOrganizationExample

@@ -2,10 +2,10 @@
 Alias: $address-de-basis = http://fhir.de/StructureDefinition/address-de-basis
 Profile: GEM_PR_ERP_MEDREQ_Organization
 Parent: Organization
-Id: gem-pr-erp-medreq-organization
+Id: GEM-PR-ERP-MEDREQ-Organization
 Title: "GEM PR ERP MEDREQ Organization"
 Description: "Organization used in the context of a medicationRequest"
-* insert Meta
+* insert Meta (GEM_PR_ERP_MEDREQ_Organization)
 * insert MetaProfile (GEM_PR_ERP_MEDREQ_Organization)
 * identifier ..1 MS
 * identifier ^slicing.discriminator.type = #pattern

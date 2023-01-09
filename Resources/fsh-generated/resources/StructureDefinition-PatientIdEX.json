@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "PatientIdEX",
   "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PatientIdEX",
-  "version": "0.9",
+  "version": "1.0",
   "name": "PatientIdEX",
   "status": "draft",
   "experimental": false,

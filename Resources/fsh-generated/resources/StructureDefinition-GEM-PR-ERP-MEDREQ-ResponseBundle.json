@@ -1,6 +1,6 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "gem-pr-erp-medreq-request-bundle",
+  "id": "GEM-PR-ERP-MEDREQ-ResponseBundle",
   "extension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
@@ -11,14 +11,14 @@
       "valueCode": "not-classified"
     }
   ],
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-request-bundle",
-  "version": "0.9",
-  "name": "GEM_PR_ERP_MEDREQ_RequestBundle",
-  "title": "GEM PR ERP MEDREQ Request Bundle",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_ResponseBundle",
+  "version": "1.0",
+  "name": "GEM_PR_ERP_MEDREQ_ResponseBundle",
+  "title": "GEM PR ERP MEDREQ Response Bundle",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "A communication resource for collecting information objects needed to request a medication",
+  "description": "A communication resource for collecting information objects needed for responding to a medication request",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -74,16 +74,11 @@
         "path": "Bundle.meta.profile",
         "min": 1,
         "max": "1",
-        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_RequestBundle"
+        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_ResponseBundle|1.0"
       },
       {
         "id": "Bundle.meta.security",
         "path": "Bundle.meta.security",
-        "max": "0"
-      },
-      {
-        "id": "Bundle.meta.tag",
-        "path": "Bundle.meta.tag",
         "max": "0"
       },
       {
@@ -100,7 +95,7 @@
       {
         "id": "Bundle.identifier.value",
         "path": "Bundle.identifier.value",
-        "short": "Eindeutige UUID",
+        "short": "Eindeutige UUID des Bundles",
         "min": 1
       },
       {
@@ -125,85 +120,85 @@
           ],
           "rules": "closed"
         },
-        "min": 4
+        "min": 6
       },
       {
-        "id": "Bundle.entry:RequestHeader",
+        "id": "Bundle.entry:ResponseHeader",
         "path": "Bundle.entry",
-        "sliceName": "RequestHeader",
+        "sliceName": "ResponseHeader",
         "min": 1,
         "max": "1"
       },
       {
-        "id": "Bundle.entry:RequestHeader.link",
+        "id": "Bundle.entry:ResponseHeader.link",
         "path": "Bundle.entry.link",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:RequestHeader.resource",
+        "id": "Bundle.entry:ResponseHeader.resource",
         "path": "Bundle.entry.resource",
         "min": 1,
         "type": [
           {
             "code": "MessageHeader",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_MessageHeader"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-ResponseHeader"
             ]
           }
         ]
       },
       {
-        "id": "Bundle.entry:RequestHeader.search",
+        "id": "Bundle.entry:ResponseHeader.search",
         "path": "Bundle.entry.search",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:RequestHeader.request",
+        "id": "Bundle.entry:ResponseHeader.request",
         "path": "Bundle.entry.request",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:RequestHeader.response",
+        "id": "Bundle.entry:ResponseHeader.response",
         "path": "Bundle.entry.response",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:MedicationRequest",
+        "id": "Bundle.entry:Prescription",
         "path": "Bundle.entry",
-        "sliceName": "MedicationRequest",
+        "sliceName": "Prescription",
         "min": 1,
         "max": "1"
       },
       {
-        "id": "Bundle.entry:MedicationRequest.link",
+        "id": "Bundle.entry:Prescription.link",
         "path": "Bundle.entry.link",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:MedicationRequest.resource",
+        "id": "Bundle.entry:Prescription.resource",
         "path": "Bundle.entry.resource",
         "min": 1,
         "type": [
           {
             "code": "MedicationRequest",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-medication-request"
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription"
             ]
           }
         ]
       },
       {
-        "id": "Bundle.entry:MedicationRequest.search",
+        "id": "Bundle.entry:Prescription.search",
         "path": "Bundle.entry.search",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:MedicationRequest.request",
+        "id": "Bundle.entry:Prescription.request",
         "path": "Bundle.entry.request",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:MedicationRequest.response",
+        "id": "Bundle.entry:Prescription.response",
         "path": "Bundle.entry.response",
         "max": "0"
       },
@@ -251,7 +246,7 @@
         "id": "Bundle.entry:Practitioner",
         "path": "Bundle.entry",
         "sliceName": "Practitioner",
-        "min": 0,
+        "min": 1,
         "max": "1"
       },
       {
@@ -288,6 +283,46 @@
         "max": "0"
       },
       {
+        "id": "Bundle.entry:PrescribingOrganization",
+        "path": "Bundle.entry",
+        "sliceName": "PrescribingOrganization",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Bundle.entry:PrescribingOrganization.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:PrescribingOrganization.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Organization",
+            "profile": [
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_Organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:PrescribingOrganization.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:PrescribingOrganization.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:PrescribingOrganization.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
         "id": "Bundle.entry:RequestingOrganization",
         "path": "Bundle.entry",
         "sliceName": "RequestingOrganization",
@@ -307,7 +342,7 @@
           {
             "code": "Organization",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-organization"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_Organization"
             ]
           }
         ]
@@ -347,7 +382,7 @@
           {
             "code": "Organization",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-organization"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_Organization"
             ]
           }
         ]
