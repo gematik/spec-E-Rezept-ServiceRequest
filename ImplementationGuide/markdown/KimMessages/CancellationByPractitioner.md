@@ -19,7 +19,7 @@ Die FHIR-Datensätze in Anfrage- und Antwortnachrichten werden ausschließlich a
 |Content-Disposition     |attachment; filename="<T/E>ERP_MEDREQ_ABL_\<UUID>.xml" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: cancellation bundle identifier|
 |Content-Description     |ERP_MEDREQ_ABL                                |ja|
 
-Der Anhang enthält die Ablehnung auf die Rezeptanforderung als FHIR-Ressource `GEM PR ERP MEDREQ Cancellation Bundle`.
+Der Anhang enthält die Ablehnung der Rezeptanforderung als FHIR-Ressource `GEM PR ERP MEDREQ Cancellation Bundle`.
 
 ### KIM Beispielnachricht
 
