@@ -14,10 +14,11 @@ Die FHIR-Datensätze in Anfrage- und Antwortnachrichten werden ausschließlich a
 |X-KIM-Sendersystem      |\<PS-Bezeichnung>;\<Releaseversion>   |ja|
 |X-KIM-Support           |\<Support-Email-Adresse PS-Hersteller>|nein|
 |Subject                 |\<T/E>ERP_MEDREQ_ANF_\<UUID>                 |ja <br />T/E: *T*estsystem (RU) / *E*chtsystem (PU)<br />UUID: request bundle-identifier |
-|Content-Type            | application/xml;<br />name="<T/E>ERP_MEDREQ_ANF_<UUID>.xml" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: request bundle-identifier <br />
+|Content-Type            | application/xml;<br />name="<T/E>ERP_MEDREQ_ANF_<UUID>.xml" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: request bundle-identifier <br />|
 |Content-Transfer-Encoding |base64 |ja|
 |Content-Disposition     |attachment; filename="<T/E>ERP_MEDREQ_ANF_<UUID>.xml" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: request bundle-identifier|
 |Content-Description     |ERP_MEDREQ_ANF                                |ja|
+
 Der Anhang enthält die Anfrage als FHIR-Ressource `GEM PR ERP MEDREQ Request Bundle`
 
 ### KIM Rezeptanforderung Beispielnachricht
