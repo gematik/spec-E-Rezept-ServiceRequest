@@ -71,6 +71,11 @@
                       "generation": "markdown"
                     },
                     {
+                      "nameUrl": "ImplementationGuide/markdown/KimMessages/DispenseInformation.md",
+                      "title": "Übermittlung einer Verordnungs- und Dispensierinformation",
+                      "generation": "markdown"
+                    },
+                    {
                       "nameUrl": "ImplementationGuide/markdown/KimMessages/MessageDispositionNotification.md",
                       "title": "Übermittlung einer Eingangsbestätigung",
                       "generation": "markdown"

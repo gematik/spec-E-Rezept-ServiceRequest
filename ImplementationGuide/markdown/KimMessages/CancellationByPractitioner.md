@@ -31,16 +31,16 @@ Der Anhang enthält die Ablehnung der Rezeptanforderung als FHIR-Ressource `GEM 
     Subject: TERP_MEDREQ_ABL_7a1d5187-3070-4a23-a877-162bdd4798af
     MIME-Version: 1.0
     Content-Type: multipart/mixed;
-     boundary="----=_Part_6_1831919254.1667563379311"
+     boundary="----=_Part_6_1831919254.1667563377253"
     X-KIM-Dienstkennung: E-Rezept;Rezeptanforderung_Ablehnung;V1.0
     X-KIM-Sendersystem: UltraPVS;2.0
 
-    ------=_Part_6_1831919254.1667563379311
+    ------=_Part_6_1831919254.1667563377253
     Content-Type: text/plain; charset=utf-8
     Content-Transfer-Encoding: 7bit
 
     Ablehnung der Rezeptanforderung TERP_MEDREQ_ABL_7a1d5187-3070-4a23-a877-162bdd4798af
-    ------=_Part_6_1831919254.1667563379311
+    ------=_Part_6_1831919254.1667563377253
     Content-Type: application/xml;
      name=TERP_MEDREQ_ABL_7a1d5187-3070-4a23-a877-162bdd4798af.xml
     Content-Transfer-Encoding: base64
@@ -51,4 +51,4 @@ Der Anhang enthält die Ablehnung der Rezeptanforderung als FHIR-Ressource `GEM 
     encodiertes Beispiel von
     BASE64_ENCODE(https://simplifier.net/erezept-medicationrequest-communication/cancellationbundlefrompractitioner)
 
-    ------=_Part_6_1831919254.1667563379311--
+    ------=_Part_6_1831919254.1667563377253--
