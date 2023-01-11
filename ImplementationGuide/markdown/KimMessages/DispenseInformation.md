@@ -32,14 +32,14 @@ Der Anhang enthält die Verordnungs- und Dispensierungsinformation als FHIR-Ress
     MIME-Version: 1.0
     Content-Type: multipart/mixed;
      boundary="----=_Part_6_1831919254.1667563377253"
-    X-KIM-Dienstkennung: E-Rezept;Rezeptanforderung_Ablehnung;V1.0
-    X-KIM-Sendersystem: UltraPVS;2.0
+    X-KIM-Dienstkennung: E-Rezept;Verordnung_Dispensierung;V1.0
+    X-KIM-Sendersystem: MyAPO;21.0.4
 
     ------=_Part_6_1831919254.1667563377253
     Content-Type: text/plain; charset=utf-8
     Content-Transfer-Encoding: 7bit
 
-    Ablehnung der Rezeptanforderung TERP_MEDREQ_DIS_7a1d5187-3070-4a23-a877-162bdd47007a
+    Verordnungsinformationen und Dispensierinformationen TERP_MEDREQ_DIS_7a1d5187-3070-4a23-a877-162bdd47007a
     ------=_Part_6_1831919254.1667563377253
     Content-Type: application/xml;
      name=TERP_MEDREQ_DIS_7a1d5187-3070-4a23-a877-162bdd47007a.xml
