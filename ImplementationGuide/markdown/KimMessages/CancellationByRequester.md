@@ -39,7 +39,7 @@ Der Anhang enthält die Stornierung einer Rezeptanforderung als FHIR-Ressource `
     Content-Type: text/plain; charset=utf-8
     Content-Transfer-Encoding: 7bit
 
-    Ablehnung der Rezeptanforderung TERP_MEDREQ_STO_7a1d5187-3070-4a23-a877-162bdd477aa
+    Stornierung der Rezeptanforderung TERP_MEDREQ_STO_7a1d5187-3070-4a23-a877-162bdd477aa
     ------=_Part_6_1831919254.1667563377855
     Content-Type: application/xml;
      name=TERP_MEDREQ_STO_7a1d5187-3070-4a23-a877-162bdd477aa.xml
