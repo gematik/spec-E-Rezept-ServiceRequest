@@ -6,6 +6,7 @@
   - [KIM Dienstkennungen](#kim-dienstkennungen)
   - [KIM Datenübertragung](#kim-datenübertragung)
   - [KIM Rezeptanforderung](#kim-rezeptanforderung)
+  - [Übertragung von Klartextinformationen](#kim-klartext)
 
 ## Verwendung von KIM
 
@@ -29,3 +30,9 @@ Dienstkennungen in KIM-Nachrichten kennzeichnen den transportierten Inhalt für 
 ## KIM Datenübertragung
 
 Die FHIR-Datensätze in Anfrage- und Antwortnachrichten werden ausschließlich als Anhang in der KIM Nachricht übertragen.
+
+## Übertragung von Klartextinformationen
+
+Derzeit ist es nicht vorgesehen, neben dem Anhang (FHIR-Datensätze in XML-Auszeichnung) eine zusätzliche, für Menschen leichter lesbare Repräsentation der übermittelten Informationen, z.B. als HTML- oder Plain-Text, in einer KIM Nachricht zu übertragen.
+
+Es wird davon ausgegangen, dass das konsumierende Primärsystem die Verarbeitung und Aufbereitung der Informationen durchführt entsprechend des Umsetzungsvorschlags des technischen Konzepts. Zukünftig wird es für das sendene Primärsystem einer KIM Nachricht ermöglicht werden, über den Verzeichnisdienst zusätzliche sog. Anwendungskennzeichen der Empfängerseite abrufen zu können. Dadurch kann es vor dem Versand der KIM Nachricht prüfen, ob die Empfängerseite fähig ist, die KIM Nachricht zu verarbeiten.
