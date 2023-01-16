@@ -33,7 +33,7 @@ InstanceOf: GEM_PR_ERP_MEDREQ_CancellationHeader
 Usage: #inline
 Title: "CancellationHeaderExample_RequestingOrganisation"
 Description: "Example of a cancellation Header used by a requesting organisation"
-* id = "853c0a72-d4e3-41b6-b4cb-e506d6f224ca"
+* id = "CancellationHeaderExample-RequestingOrganisation"
 * MetaInstance(GEM_PR_ERP_MEDREQ_CancellationHeader)
 * eventCoding = https://gematik.de/fhir/erpmedreqcom/CodeSystem/MessageEventTypeCS#CancellationMessage "Stornierung einer Rezeptanforderung"
 * sender.reference = "Organisation/a8efd0b3-58c3-48f7-89f5-67f86dd298e8" //RequestingOrganizationExample
@@ -50,7 +50,7 @@ InstanceOf: GEM_PR_ERP_MEDREQ_CancellationHeader
 Usage: #inline
 Title: "CancellationHeaderExample_DispensingOrganisation"
 Description: "Example of a cancellation Header used by a requesting organisation"
-* id = "ddaa2669-199f-4d71-92b2-10d4b8cb0ad9"
+* id = "CancellationHeaderExample-DispensingOrganisation"
 * MetaInstance(GEM_PR_ERP_MEDREQ_CancellationHeader)
 * eventCoding = https://gematik.de/fhir/erpmedreqcom/CodeSystem/MessageEventTypeCS#CancellationMessage "Stornierung einer Rezeptanforderung"
 * sender.reference = "Organisation/f89adcee-7fe3-4b06-bc5f-e17b592a3a5f" //DispensingOrganizationExample
@@ -67,7 +67,7 @@ InstanceOf: GEM_PR_ERP_MEDREQ_CancellationHeader
 Usage: #inline
 Title: "CancellationHeaderExample_Praxis"
 Description: "Example of a cancellation Header used by prescribing organisation"
-* id = "e0e10aa4-3405-49de-8969-1e13864aa111"
+* id = "CancellationHeaderExample-Praxis"
 * MetaInstance(GEM_PR_ERP_MEDREQ_CancellationHeader)
 * eventCoding = https://gematik.de/fhir/erpmedreqcom/CodeSystem/MessageEventTypeCS#CancellationMessage "Stornierung einer Rezeptanforderung"
 * sender.reference = "Organisation/f67dcc87-f877-49da-a249-aac4d1b15418" //KBV_PR_FOR_OrganizationExample

@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "id": "7fa39618-5e2e-4e14-a38b-02ee9a6a016f",
+  "id": "CancellationBundleExample-DispensingOrganisation",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_CancellationBundle|1.0"
@@ -14,9 +14,10 @@
   "timestamp": "2022-12-07T12:12:54.234+02:00",
   "entry": [
     {
+      "fullUrl": "https://gematik.de/fhir/MessageHeader/CancellationHeaderExample-DispensingOrganisation",
       "resource": {
         "resourceType": "MessageHeader",
-        "id": "853c0a72-d4e3-41b6-b4cb-e506d6f224ca",
+        "id": "CancellationHeaderExample-DispensingOrganisation",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_CancellationHeader|1.0"
@@ -50,7 +51,7 @@
           "display": "Stornierung einer Rezeptanforderung"
         },
         "sender": {
-          "reference": "Organisation/a8efd0b3-58c3-48f7-89f5-67f86dd298e8"
+          "reference": "Organisation/f89adcee-7fe3-4b06-bc5f-e17b592a3a5f"
         },
         "source": {
           "endpoint": "https://pflegeheim.de/KIM"
