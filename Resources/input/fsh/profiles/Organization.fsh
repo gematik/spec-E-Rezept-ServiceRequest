@@ -5,8 +5,8 @@ Parent: Organization
 Id: GEM-PR-ERP-MEDREQ-Organization
 Title: "GEM PR ERP MEDREQ Organization"
 Description: "Organization used in the context of a medicationRequest"
-* insert Meta (GEM_PR_ERP_MEDREQ_Organization)
-* insert MetaProfile (GEM_PR_ERP_MEDREQ_Organization)
+* insert Meta (GEM-PR-ERP-MEDREQ-Organization)
+* insert MetaProfile (GEM-PR-ERP-MEDREQ-Organization)
 * identifier ..1 MS
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "type"
@@ -58,7 +58,7 @@ InstanceOf: GEM_PR_ERP_MEDREQ_Organization
 Usage: #inline
 Title: "Prescribing Organization Example"
 Description: "Example of a Organisation responsible for prescribing medication"
-* id = "b2aad0e1-45a2-33af-ff31-4829ae8fb22c"
+* id = "PrescribingOrganizationExample"
 * MetaInstance(GEM_PR_ERP_MEDREQ_Organization)
 * identifier[+][Telematik-ID].system = "https://gematik.de/fhir/sid/telematik-id"
 * identifier[=][Telematik-ID].value = "10-42.423.00045678"
@@ -79,7 +79,7 @@ InstanceOf: GEM_PR_ERP_MEDREQ_Organization
 Usage: #inline
 Title: "Requesting Organization Example"
 Description: "Example of a Organisation responsible for the request of the medication"
-* id = "a8efd0b3-58c3-48f7-89f5-67f86dd298e8"
+* id = "RequestingOrganizationExample"
 * MetaInstance(GEM_PR_ERP_MEDREQ_Organization)
 * identifier[+][Telematik-ID].system = "https://gematik.de/fhir/sid/telematik-id"
 * identifier[=][Telematik-ID].value = "10-67.245.00001234"
@@ -95,12 +95,12 @@ Description: "Example of a Organisation responsible for the request of the medic
 * address[=].city = "Berlin"
 * address[=].postalCode = "10247"
 
-Instance:  DispensingOrganizationExample
+Instance: DispensingOrganizationExample
 InstanceOf: GEM_PR_ERP_MEDREQ_Organization
 Usage: #inline
-Title: "Requesting Dispensing Example"
+Title: "DispensingOrganizationExample"
 Description: "Example of a Organisation responsible for the request of the medication"
-* id = "f89adcee-7fe3-4b06-bc5f-e17b592a3a5f"
+* id = "DispensingOrganizationExample"
 * MetaInstance(GEM_PR_ERP_MEDREQ_Organization)
 * identifier[+][Telematik-ID].system = "https://gematik.de/fhir/sid/telematik-id"
 * identifier[=][Telematik-ID].value = "3-abc-1234567890"

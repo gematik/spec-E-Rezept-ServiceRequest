@@ -3,8 +3,8 @@ Parent: MedicationRequest
 Id: GEM-PR-ERP-MEDREQ-MedicationRequest
 Title: "GEM PR ERP MEDREQ Medication Request"
 Description: "Profile on the Medication Request that is to be sent"
-* insert Meta (GEM_PR_ERP_MEDREQ_MedicationRequest)
-* insert MetaProfile (GEM_PR_ERP_MEDREQ_MedicationRequest)
+* insert Meta (GEM-PR-ERP-MEDREQ-MedicationRequest)
+* insert MetaProfile (GEM-PR-ERP-MEDREQ-MedicationRequest)
 
 * implicitRules 0..0
 * contained 0..0
@@ -76,7 +76,7 @@ Description: "Profile on the Medication Request that is to be sent"
 Instance: KBV_PR_FOR_PatientExample
 InstanceOf: KBV_PR_FOR_Patient
 Usage: #inline
-* id = "b04f58bc-bb37-4490-9561-2e6954764c4a"
+* id = "KBV-PR-FOR-PatientExample"
 * meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
 * identifier.type = http://fhir.de/CodeSystem/identifier-type-de-basis#GKV
 * identifier.system = "http://fhir.de/sid/gkv/kvid-10"
@@ -100,7 +100,7 @@ Usage: #inline
 Instance: MedicationExamplePZN
 InstanceOf: Medication
 Usage: #inline
-* id = "7474c076-701c-4a7e-a71e-822f106e5262"
+* id = "MedicationExamplePZN"
 * meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.1.0"
 * extension[0].url = "https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Medication_Type"
 * extension[=].valueCodeableConcept.coding.version = "http://snomed.info/sct/900000000000207008/version/20220331"
@@ -124,8 +124,8 @@ InstanceOf: GEM_PR_ERP_MEDREQ_MedicationRequest
 Usage: #inline
 Title: "MedicationRequestExample_SelfPickup"
 Description: "Example of a medication request to be picked up by the patient themselves"
-* id = "fe63895a-c5df-4598-ba4a-d2fee3477cb9"
-* MetaInstance(GEM_PR_ERP_MEDREQ_MedicationRequest)
+* id = "MedicationRequestExampleSelfPickup"
+* MetaInstance(GEM-PR-ERP-MEDREQ-MedicationRequest)
 * extension[+][PrescriptionDeliveryTypeEX].url = "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeEX"
 * extension[=][PrescriptionDeliveryTypeEX].valueCoding = https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeCS#SelfPickup "Selbstabholer"
 * medicationReference = Reference(MedicationExamplePZN)
@@ -141,8 +141,8 @@ InstanceOf: GEM_PR_ERP_MEDREQ_MedicationRequest
 Usage: #inline
 Title: "MedicationRequestExample_RequestingOrganisation"
 Description: "Example of a medication request resulting in a prescription sent to the dispensing organization"
-* id = "b3eb274e-195f-4ac3-a6e6-f1d113434693"
-* MetaInstance(GEM_PR_ERP_MEDREQ_MedicationRequest)
+* id = "MedicationRequestExampleRequestingOrganisation"
+* MetaInstance(GEM-PR-ERP-MEDREQ-MedicationRequest)
 * extension[+][PrescriptionDeliveryTypeEX].url = "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeEX"
 * extension[=][PrescriptionDeliveryTypeEX].valueCoding = https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeCS#RequestingOrganisation "Beschaffung durch anfragende Organisation"
 * medicationReference = Reference(MedicationExamplePZN)
@@ -158,8 +158,8 @@ InstanceOf: GEM_PR_ERP_MEDREQ_MedicationRequest
 Usage: #inline
 Title: "MedicationRequestExample_DispensingOrganisation"
 Description: "Example of a medication request resulting in a prescription sent to the dispensing organization"
-* id = "b2e0e631-42fd-4d8a-a7b2-a2f54fe70bf7"
-* MetaInstance(GEM_PR_ERP_MEDREQ_MedicationRequest)
+* id = "MessageHeaderExampleDispensingOrganisation"
+* MetaInstance(GEM-PR-ERP-MEDREQ-MedicationRequest)
 * extension[+][PrescriptionDeliveryTypeEX].url = "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeEX"
 * extension[=][PrescriptionDeliveryTypeEX].valueCoding = https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeCS#DispensingOrganisation "Belieferung der anfragenden Organisation durch Apotheke"
 * medicationReference = Reference(MedicationExamplePZN)

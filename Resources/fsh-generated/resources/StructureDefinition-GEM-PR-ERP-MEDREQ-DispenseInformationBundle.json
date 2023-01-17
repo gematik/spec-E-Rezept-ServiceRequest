@@ -1,6 +1,6 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "gem-pr-erp-medreq-dispense-information-bundle",
+  "id": "GEM-PR-ERP-MEDREQ-DispenseInformationBundle",
   "extension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
@@ -11,7 +11,7 @@
       "valueCode": "not-classified"
     }
   ],
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_DispenseInformationBundle",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-DispenseInformationBundle",
   "version": "1.0",
   "name": "GEM_PR_ERP_MEDREQ_DispenseInformationBundle",
   "title": "GEM PR ERP MEDREQ Dispense Information Bundle",
@@ -74,7 +74,7 @@
         "path": "Bundle.meta.profile",
         "min": 1,
         "max": "1",
-        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_DispenseInformationBundle|1.0"
+        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-DispenseInformationBundle|1.0"
       },
       {
         "id": "Bundle.meta.security",

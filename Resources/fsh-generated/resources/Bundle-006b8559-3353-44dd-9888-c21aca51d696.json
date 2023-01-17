@@ -3,7 +3,7 @@
   "id": "006b8559-3353-44dd-9888-c21aca51d696",
   "meta": {
     "profile": [
-      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_RequestBundle|1.0"
+      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-RequestBundle|1.0"
     ]
   },
   "type": "message",
@@ -14,13 +14,13 @@
   "timestamp": "2022-12-03T16:55:42.154+02:00",
   "entry": [
     {
-      "fullUrl": "https://gematik.de/fhir/MessageHeader/3a0fa348-fc66-4f29-b842-cbad1523c846",
+      "fullUrl": "https://gematik.de/fhir/MessageHeader/MessageHeaderExampleRequestingOrganisation",
       "resource": {
         "resourceType": "MessageHeader",
-        "id": "3a0fa348-fc66-4f29-b842-cbad1523c846",
+        "id": "MessageHeaderExampleRequestingOrganisation",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_MessageHeader|1.0"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-MessageHeader|1.0"
           ]
         },
         "extension": [
@@ -34,7 +34,7 @@
           }
         ],
         "sender": {
-          "reference": "Organization/a8efd0b3-58c3-48f7-89f5-67f86dd298e8"
+          "reference": "Organization/RequestingOrganizationExample"
         },
         "source": {
           "endpoint": "https://pflegeheim.de/KIM"
@@ -47,13 +47,13 @@
       }
     },
     {
-      "fullUrl": "https://gematik.de/fhir/MedicationRequest/fe63895a-c5df-4598-ba4a-d2fee3477cb9",
+      "fullUrl": "https://gematik.de/fhir/MedicationRequest/MedicationRequestExampleSelfPickup",
       "resource": {
         "resourceType": "MedicationRequest",
-        "id": "fe63895a-c5df-4598-ba4a-d2fee3477cb9",
+        "id": "MedicationRequestExampleSelfPickup",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_MedicationRequest|1.0"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-MedicationRequest|1.0"
           ]
         },
         "status": "draft",
@@ -76,10 +76,10 @@
           }
         },
         "medicationReference": {
-          "reference": "Medication/7474c076-701c-4a7e-a71e-822f106e5262"
+          "reference": "Medication/MedicationExamplePZN"
         },
         "subject": {
-          "reference": "Patient/b04f58bc-bb37-4490-9561-2e6954764c4a"
+          "reference": "Patient/KBV-PR-FOR-PatientExample"
         },
         "dosageInstruction": [
           {
@@ -98,10 +98,10 @@
       }
     },
     {
-      "fullUrl": "https://gematik.de/fhir/Patient/b04f58bc-bb37-4490-9561-2e6954764c4a",
+      "fullUrl": "https://gematik.de/fhir/Patient/KBV-PR-FOR-PatientExample",
       "resource": {
         "resourceType": "Patient",
-        "id": "b04f58bc-bb37-4490-9561-2e6954764c4a",
+        "id": "KBV-PR-FOR-PatientExample",
         "meta": {
           "profile": [
             "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
@@ -167,10 +167,10 @@
       }
     },
     {
-      "fullUrl": "https://gematik.de/fhir/Practitioner/fcdcfa8a-b1ff-488f-b32f-16359cd78596",
+      "fullUrl": "https://gematik.de/fhir/Practitioner/KBV-PR-FOR-PractitionerExample",
       "resource": {
         "resourceType": "Practitioner",
-        "id": "fcdcfa8a-b1ff-488f-b32f-16359cd78596",
+        "id": "KBV-PR-FOR-PractitionerExample",
         "meta": {
           "profile": [
             "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner|1.1.0"
@@ -233,13 +233,13 @@
       }
     },
     {
-      "fullUrl": "https://gematik.de/fhir/RequestingOrganization/a8efd0b3-58c3-48f7-89f5-67f86dd298e8",
+      "fullUrl": "https://gematik.de/fhir/RequestingOrganization/RequestingOrganizationExample",
       "resource": {
         "resourceType": "Organization",
-        "id": "a8efd0b3-58c3-48f7-89f5-67f86dd298e8",
+        "id": "RequestingOrganizationExample",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_Organization|1.0"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Organization|1.0"
           ]
         },
         "telecom": [
@@ -283,13 +283,13 @@
       }
     },
     {
-      "fullUrl": "https://gematik.de/fhir/DispensingOrganization/f89adcee-7fe3-4b06-bc5f-e17b592a3a5f",
+      "fullUrl": "https://gematik.de/fhir/DispensingOrganization/DispensingOrganizationExample",
       "resource": {
         "resourceType": "Organization",
-        "id": "f89adcee-7fe3-4b06-bc5f-e17b592a3a5f",
+        "id": "DispensingOrganizationExample",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_Organization|1.0"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Organization|1.0"
           ]
         },
         "telecom": [

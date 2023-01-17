@@ -11,7 +11,7 @@
       "valueCode": "not-classified"
     }
   ],
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_ResponseBundle",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-ResponseBundle",
   "version": "1.0",
   "name": "GEM_PR_ERP_MEDREQ_ResponseBundle",
   "title": "GEM PR ERP MEDREQ Response Bundle",
@@ -74,7 +74,7 @@
         "path": "Bundle.meta.profile",
         "min": 1,
         "max": "1",
-        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_ResponseBundle|1.0"
+        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-ResponseBundle|1.0"
       },
       {
         "id": "Bundle.meta.security",
@@ -302,7 +302,7 @@
           {
             "code": "Organization",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_Organization"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Organization"
             ]
           }
         ]
@@ -342,7 +342,7 @@
           {
             "code": "Organization",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_Organization"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Organization"
             ]
           }
         ]
@@ -382,7 +382,7 @@
           {
             "code": "Organization",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_Organization"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Organization"
             ]
           }
         ]

@@ -3,7 +3,7 @@
   "id": "CancellationBundleExample-RequestingOrganisation",
   "meta": {
     "profile": [
-      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_CancellationBundle|1.0"
+      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-CancellationBundle|1.0"
     ]
   },
   "type": "message",
@@ -20,7 +20,7 @@
         "id": "CancellationHeaderExample-RequestingOrganisation",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_CancellationHeader|1.0"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-CancellationHeader|1.0"
           ]
         },
         "extension": [
@@ -51,7 +51,7 @@
           "display": "Stornierung einer Rezeptanforderung"
         },
         "sender": {
-          "reference": "Organisation/a8efd0b3-58c3-48f7-89f5-67f86dd298e8"
+          "reference": "Organisation/RequestingOrganizationExample"
         },
         "source": {
           "endpoint": "https://pflegeheim.de/KIM"

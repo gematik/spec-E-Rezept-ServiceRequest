@@ -3,8 +3,8 @@ Parent: Bundle
 Id: GEM-PR-ERP-MEDREQ-ResponseBundle
 Title: "GEM PR ERP MEDREQ Response Bundle"
 Description: "A communication resource for collecting information objects needed for responding to a medication request"
-* insert Meta (GEM_PR_ERP_MEDREQ_ResponseBundle)
-* insert MetaProfile (GEM_PR_ERP_MEDREQ_ResponseBundle)
+* insert Meta (GEM-PR-ERP-MEDREQ-ResponseBundle)
+* insert MetaProfile (GEM-PR-ERP-MEDREQ-ResponseBundle)
 * id 1..1
 * identifier 1..
 * identifier.system 1..
@@ -73,7 +73,7 @@ InstanceOf: KBV_PR_FOR_Practitioner
 Usage: #inline
 Title: "KBV_PR_FOR_PractitionerExample"
 Description: "Example of a KBV_PR_FOR_Practitioner"
-* id = "fcdcfa8a-b1ff-488f-b32f-16359cd78596"
+* id = "KBV-PR-FOR-PractitionerExample"
 * identifier.type = http://terminology.hl7.org/CodeSystem/v2-0203#LANR
 * identifier.system = "https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR"
 * identifier.value = "754236701"
@@ -91,7 +91,7 @@ InstanceOf: KBV_PR_ERP_Prescription
 Usage: #inline
 Title: "KBV_PR_ERP_PrescriptionExample"
 Description: "Example of a KBV_PR_ERP_Prescription"
-* id = "5fb9b3b5-df19-4a7a-8d19-0dee164da7fe"
+* id = "KBV-PR-ERP-PrescriptionExample"
 * extension[+][Notdienstgebuehr].valueBoolean = false
 * extension[+][BVG].valueBoolean = false
 * extension[+][Mehrfachverordnung].extension[+][Kennzeichen].valueBoolean = false
@@ -109,7 +109,7 @@ Description: "Example of a KBV_PR_ERP_Prescription"
 Instance: KBV_PR_FOR_CoverageExample
 InstanceOf: KBV_PR_FOR_Coverage
 Usage: #inline
-* id = "2e3afa48-ccc6-42c8-9780-1ceebdbd7440"
+* id = "KBV-PR-FOR-CoverageExample"
 * extension[+][BesonderePersonengruppe].url = "http://fhir.de/StructureDefinition/gkv/besondere-personengruppe"
 * extension[0].url = "http://fhir.de/StructureDefinition/gkv/besondere-personengruppe"
 * extension[=].valueCoding = https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_PERSONENGRUPPE#00
@@ -131,7 +131,7 @@ InstanceOf: GEM_PR_ERP_MEDREQ_ResponseBundle
 Usage: #example
 Title: "GEM PR ERP MEDREQ Response Bundle Example"
 Description: "Example of a response bundle for a medicationrequest"
-* id = "c7133d88-459b-4cf4-b808-2dc75726a482"
+* id = "ResponseBundleExample"
 * MetaInstance(GEM_PR_ERP_MEDREQ_ResponseBundle)
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:7a1d5187-3070-4a23-a877-162bdd479b9b"
@@ -139,15 +139,15 @@ Description: "Example of a response bundle for a medicationrequest"
 * timestamp = "2022-12-04T08:52:41.153+02:00"
 * entry[+][ResponseHeader].fullUrl = "https://gematik.de/fhir/ResponseHeader/00dd7c71-ef9c-4d68-ab8a-e4e160b9806c"
 * entry[=][ResponseHeader].resource = ResponseHeaderExample
-* entry[+][Prescription].fullUrl = "https://gematik.de/fhir/Prescription/5fb9b3b5-df19-4a7a-8d19-0dee164da7fe"
+* entry[+][Prescription].fullUrl = "https://gematik.de/fhir/Prescription/KBV-PR-ERP-PrescriptionExample"
 * entry[=][Prescription].resource = KBV_PR_ERP_PrescriptionExample
-* entry[+][Patient].fullUrl = "https://gematik.de/fhir/Patient/b04f58bc-bb37-4490-9561-2e6954764c4a"
+* entry[+][Patient].fullUrl = "https://gematik.de/fhir/Patient/KBV-PR-FOR-PatientExample"
 * entry[=][Patient].resource = KBV_PR_FOR_PatientExample
-* entry[+][Practitioner].fullUrl = "https://gematik.de/fhir/Practitioner/fcdcfa8a-b1ff-488f-b32f-16359cd78596"
+* entry[+][Practitioner].fullUrl = "https://gematik.de/fhir/Practitioner/KBV-PR-FOR-PractitionerExample"
 * entry[=][Practitioner].resource = KBV_PR_FOR_PractitionerExample
-* entry[+][PrescribingOrganization].fullUrl = "https://gematik.de/fhir/PrescribingOrganization/b2aad0e1-45a2-33af-ff31-4829ae8fb22c"
+* entry[+][PrescribingOrganization].fullUrl = "https://gematik.de/fhir/PrescribingOrganization/PrescribingOrganizationExample"
 * entry[=][PrescribingOrganization].resource = PrescribingOrganizationExample
-* entry[+][RequestingOrganization].fullUrl = "https://gematik.de/fhir/RequestingOrganization/a8efd0b3-58c3-48f7-89f5-67f86dd298e8"
+* entry[+][RequestingOrganization].fullUrl = "https://gematik.de/fhir/RequestingOrganization/RequestingOrganizationExample"
 * entry[=][RequestingOrganization].resource = RequestingOrganizationExample
-* entry[+][DispensingOrganization].fullUrl = "https://gematik.de/fhir/DispensingOrganization/f89adcee-7fe3-4b06-bc5f-e17b592a3a5f"
+* entry[+][DispensingOrganization].fullUrl = "https://gematik.de/fhir/DispensingOrganization/DispensingOrganizationExample"
 * entry[=][DispensingOrganization].resource = DispensingOrganizationExample

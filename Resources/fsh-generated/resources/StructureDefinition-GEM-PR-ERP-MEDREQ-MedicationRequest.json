@@ -11,7 +11,7 @@
       "valueCode": "patient"
     }
   ],
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_MedicationRequest",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-MedicationRequest",
   "version": "1.0",
   "name": "GEM_PR_ERP_MEDREQ_MedicationRequest",
   "title": "GEM PR ERP MEDREQ Medication Request",
@@ -74,7 +74,7 @@
         "path": "MedicationRequest.meta.profile",
         "min": 1,
         "max": "1",
-        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_MedicationRequest|1.0"
+        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-MedicationRequest|1.0"
       },
       {
         "id": "MedicationRequest.meta.security",

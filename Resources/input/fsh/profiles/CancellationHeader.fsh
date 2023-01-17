@@ -3,8 +3,8 @@ Parent: MessageHeader
 Id: GEM-PR-ERP-MEDREQ-CancellationHeader
 Title: "GEM PR ERP MEDREQ CancellationHeader"
 Description: "Header for cancellation message of a medication Request"
-* insert Meta (GEM_PR_ERP_MEDREQ_CancellationHeader)
-* insert MetaProfile (GEM_PR_ERP_MEDREQ_CancellationHeader)
+* insert Meta (GEM-PR-ERP-MEDREQ-CancellationHeader)
+* insert MetaProfile (GEM-PR-ERP-MEDREQ-CancellationHeader)
 
 * event[x] only Coding
 * event[x] from MessageEventTypeVS
@@ -34,9 +34,9 @@ Usage: #inline
 Title: "CancellationHeaderExample_RequestingOrganisation"
 Description: "Example of a cancellation Header used by a requesting organisation"
 * id = "CancellationHeaderExample-RequestingOrganisation"
-* MetaInstance(GEM_PR_ERP_MEDREQ_CancellationHeader)
+* MetaInstance(GEM-PR-ERP-MEDREQ-CancellationHeader)
 * eventCoding = https://gematik.de/fhir/erpmedreqcom/CodeSystem/MessageEventTypeCS#CancellationMessage "Stornierung einer Rezeptanforderung"
-* sender.reference = "Organisation/a8efd0b3-58c3-48f7-89f5-67f86dd298e8" //RequestingOrganizationExample
+* sender.reference = "Organisation/RequestingOrganizationExample" //RequestingOrganizationExample
 * source.endpoint = "https://pflegeheim.de/KIM"
 * extension[+][VorgangsID].valueString = "VorgangsID_des_initial_AustellendenSystems-f17b6592a3a5c"
 * extension[+][PatientID].valueString = "PatientID_des_initial_AustellendenSystems-3ddee2863325d"
@@ -51,9 +51,9 @@ Usage: #inline
 Title: "CancellationHeaderExample_DispensingOrganisation"
 Description: "Example of a cancellation Header used by a requesting organisation"
 * id = "CancellationHeaderExample-DispensingOrganisation"
-* MetaInstance(GEM_PR_ERP_MEDREQ_CancellationHeader)
+* MetaInstance(GEM-PR-ERP-MEDREQ-CancellationHeader)
 * eventCoding = https://gematik.de/fhir/erpmedreqcom/CodeSystem/MessageEventTypeCS#CancellationMessage "Stornierung einer Rezeptanforderung"
-* sender.reference = "Organisation/f89adcee-7fe3-4b06-bc5f-e17b592a3a5f" //DispensingOrganizationExample
+* sender.reference = "Organisation/DispensingOrganizationExample" //DispensingOrganizationExample
 * source.endpoint = "https://pflegeheim.de/KIM"
 * extension[+][VorgangsID].valueString = "VorgangsID_des_initial_AustellendenSystems-f17b6592a3a5c"
 * extension[+][PatientID].valueString = "PatientID_des_initial_AustellendenSystems-3ddee2863325d"
@@ -68,9 +68,9 @@ Usage: #inline
 Title: "CancellationHeaderExample_Praxis"
 Description: "Example of a cancellation Header used by prescribing organisation"
 * id = "CancellationHeaderExample-Praxis"
-* MetaInstance(GEM_PR_ERP_MEDREQ_CancellationHeader)
+* MetaInstance(GEM-PR-ERP-MEDREQ-CancellationHeader)
 * eventCoding = https://gematik.de/fhir/erpmedreqcom/CodeSystem/MessageEventTypeCS#CancellationMessage "Stornierung einer Rezeptanforderung"
-* sender.reference = "Organisation/f67dcc87-f877-49da-a249-aac4d1b15418" //KBV_PR_FOR_OrganizationExample
+* sender.reference = "Organisation/KBV-PR-FOR-OrganizationExample" //KBV_PR_FOR_OrganizationExample
 * source.endpoint = "https://praxis_um_die_ecke.de/KIM"
 * extension[+][VorgangsID].valueString = "VorgangsID_des_initial_AustellendenSystems-f17b6592a3a5c"
 * extension[+][PatientID].valueString = "PatientID_des_initial_AustellendenSystems-3ddee2863325d"

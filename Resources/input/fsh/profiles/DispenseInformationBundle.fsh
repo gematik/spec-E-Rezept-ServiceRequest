@@ -1,10 +1,10 @@
 Profile: GEM_PR_ERP_MEDREQ_DispenseInformationBundle
 Parent: Bundle
-Id: gem-pr-erp-medreq-dispense-information-bundle
+Id: GEM-PR-ERP-MEDREQ-DispenseInformationBundle
 Title: "GEM PR ERP MEDREQ Dispense Information Bundle"
 Description: "Communication resource for sending dispenseInformation about a medication requisition."
-* insert Meta (GEM_PR_ERP_MEDREQ_DispenseInformationBundle)
-* insert MetaProfile (GEM_PR_ERP_MEDREQ_DispenseInformationBundle)
+* insert Meta (GEM-PR-ERP-MEDREQ-DispenseInformationBundle)
+* insert MetaProfile (GEM-PR-ERP-MEDREQ-DispenseInformationBundle)
 * id 1..1
 * identifier 1..
 * identifier.system 1..
@@ -65,7 +65,7 @@ Instance: SumatripanMedication
 InstanceOf: Medication
 Title:   "Sample Medication Sumatripan"
 Usage: #inline
-* id = "001413e4-a5e9-48da-9b07-c17bab476407"
+* id = "SumatripanMedication"
 * meta.profile[+] = "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.1.0"
 * extension[+].url = "https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Medication_Type"
 * extension[=].valueCodeableConcept.coding.system = "http://snomed.info/sct"
@@ -94,13 +94,13 @@ InstanceOf: GEM_ERP_PR_MedicationDispense
 Usage: #inline
 Title: "GEM ERP PR Medication Dispense Example"
 Description: "Example of a GEM_ERP_PR_MedicationDispense"
-* id = "c312572d-165c-4b4e-8617-a58ced204939"
-* MetaInstance(GEM_ERP_PR_MedicationDispenseExample)
+* id = "GEM-ERP-PR-MedicationDispenseExample"
+* MetaInstance(GEM-ERP-PR-MedicationDispenseExample)
 * contained[+] = SumatripanMedication
 * identifier[+].system = "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"
 * identifier[=].value = "160.000.033.491.280.78"
 * status = #completed
-* medicationReference.reference = "#001413e4-a5e9-48da-9b07-c17bab476407"
+* medicationReference.reference = "#SumatripanMedication"
 * subject.identifier.system = "http://fhir.de/sid/gkv/kvid-10"
 * subject.identifier.value = "X234567890"
 * performer[+].actor.identifier.system = "https://gematik.de/fhir/sid/telematik-id"
@@ -114,15 +114,21 @@ InstanceOf: GEM_PR_ERP_MEDREQ_DispenseInformationBundle
 Usage: #example
 Title: "Example of DispenseInformationBundle"
 Description: "Example of DispenseInformationBundle to provide a complete information ressource about the dispense"
-* id = "4321fb9d-bdf4-4c59-b4d6-aedf092a3502"
-* MetaInstance(GEM_PR_ERP_MEDREQ_DispenseInformationBundle)
+* id = "DispenseInformationExample"
+* MetaInstance(GEM-PR-ERP-MEDREQ-DispenseInformationBundle)
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:2e3200df-66e1-4c82-90e1-1bdec82f8442"
 * type = #message
 * timestamp = "2022-12-12T12:12:54.234+02:00"
-* entry[+][MessageHeader].resource = MessageHeaderExampleDispensingOrganisation
-* entry[+][Prescription].resource = KBV_PR_ERP_PrescriptionExample
-* entry[+][Patient].resource = KBV_PR_FOR_PatientExample
-* entry[+][RequestingOrganization].resource = RequestingOrganizationExample
-* entry[+][DispensingOrganization].resource = DispensingOrganizationExample
-* entry[+][DispenseInformation].resource = GEM_ERP_PR_MedicationDispenseExample
+* entry[+][MessageHeader].fullUrl = "https://gematik.de/fhir/MessageHeader/MessageHeaderExampleDispensingOrganisation"
+* entry[=][MessageHeader].resource = MessageHeaderExampleDispensingOrganisation
+* entry[+][Prescription].fullUrl = "https://gematik.de/fhir/Prescription/KBV-PR-ERP-PrescriptionExample"
+* entry[=][Prescription].resource = KBV_PR_ERP_PrescriptionExample
+* entry[+][Patient].fullUrl = "https://gematik.de/fhir/Patient/KBV-PR-FOR-PatientExample"
+* entry[=][Patient].resource = KBV_PR_FOR_PatientExample
+* entry[+][RequestingOrganization].fullUrl = "https://gematik.de/fhir/RequestingOrganization/RequestingOrganizationExample"
+* entry[=][RequestingOrganization].resource = RequestingOrganizationExample
+* entry[+][DispensingOrganization].fullUrl = "https://gematik.de/fhir/DispensingOrganization/DispensingOrganizationExample"
+* entry[=][DispensingOrganization].resource = DispensingOrganizationExample
+* entry[+][DispenseInformation].fullUrl = "https://gematik.de/fhir/MedicationDispense/GEM-ERP-PR-MedicationDispenseExample"
+* entry[=][DispenseInformation].resource = GEM_ERP_PR_MedicationDispenseExample
