@@ -97,7 +97,7 @@ Description: "Example of a KBV_PR_ERP_Prescription"
 * extension[+][Mehrfachverordnung].extension[+][Kennzeichen].valueBoolean = false
 * medicationReference = Reference(MedicationExamplePZN)
 * subject = Reference(KBV_PR_FOR_PatientExample)
-* authoredOn = "2022-12-04T08:51:40.153+02:00"
+* authoredOn = "2022-12-04"
 * requester = Reference(KBV_PR_FOR_PractitionerExample)
 * dosageInstruction.extension[Dosierungskennzeichen].url = "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_DosageFlag"
 * dosageInstruction.extension[Dosierungskennzeichen].valueBoolean = true

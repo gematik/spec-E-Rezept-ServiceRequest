@@ -115,7 +115,7 @@
         "subject": {
           "reference": "Patient/KBV-PR-FOR-PatientExample"
         },
-        "authoredOn": "2022-12-04T08:51:40.153+02:00",
+        "authoredOn": "2022-12-04",
         "requester": {
           "reference": "Practitioner/KBV-PR-FOR-PractitionerExample"
         },

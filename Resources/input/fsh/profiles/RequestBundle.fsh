@@ -81,9 +81,9 @@ Description: "Example of a bundle for a medicationrequest requested by a Request
 * entry[=][Patient].resource = KBV_PR_FOR_PatientExample
 * entry[+][Practitioner].fullUrl = "https://gematik.de/fhir/Practitioner/KBV-PR-FOR-PractitionerExample"
 * entry[=][Practitioner].resource = KBV_PR_FOR_PractitionerExample
-* entry[+][RequestingOrganization].fullUrl = "https://gematik.de/fhir/RequestingOrganization/RequestingOrganizationExample"
+* entry[+][RequestingOrganization].fullUrl = "https://gematik.de/fhir/RequestingOrganization/a8efd0b3-58c3-48f7-89f5-67f86dd298e8"
 * entry[=][RequestingOrganization].resource = RequestingOrganizationExample
-* entry[+][DispensingOrganization].fullUrl = "https://gematik.de/fhir/DispensingOrganization/DispensingOrganizationExample"
+* entry[+][DispensingOrganization].fullUrl = "https://gematik.de/fhir/DispensingOrganization/f89adcee-7fe3-4b06-bc5f-e17b592a3a5f"
 * entry[=][DispensingOrganization].resource = DispensingOrganizationExample
 
 Instance: RequestBundleExample_DispensingOrganisation
@@ -105,7 +105,7 @@ Description: "Example of a bundle for a medicationrequest triggered by a Dispens
 * entry[=][Patient].resource = KBV_PR_FOR_PatientExample
 * entry[+][Practitioner].fullUrl = "https://gematik.de/fhir/Practitioner/KBV-PR-FOR-PractitionerExample"
 * entry[=][Practitioner].resource = KBV_PR_FOR_PractitionerExample
-* entry[+][RequestingOrganization].fullUrl = "https://gematik.de/fhir/RequestingOrganization/RequestingOrganizationExample"
+* entry[+][RequestingOrganization].fullUrl = "https://gematik.de/fhir/RequestingOrganization/a8efd0b3-58c3-48f7-89f5-67f86dd298e8"
 * entry[=][RequestingOrganization].resource = RequestingOrganizationExample
-* entry[+][DispensingOrganization].fullUrl = "https://gematik.de/fhir/DispensingOrganization/DispensingOrganizationExample"
+* entry[+][DispensingOrganization].fullUrl = "https://gematik.de/fhir/DispensingOrganization/f89adcee-7fe3-4b06-bc5f-e17b592a3a5f"
 * entry[=][DispensingOrganization].resource = DispensingOrganizationExample

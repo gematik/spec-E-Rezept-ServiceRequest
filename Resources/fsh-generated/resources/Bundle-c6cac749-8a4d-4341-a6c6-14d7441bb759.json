@@ -233,7 +233,7 @@
       }
     },
     {
-      "fullUrl": "https://gematik.de/fhir/RequestingOrganization/RequestingOrganizationExample",
+      "fullUrl": "https://gematik.de/fhir/RequestingOrganization/a8efd0b3-58c3-48f7-89f5-67f86dd298e8",
       "resource": {
         "resourceType": "Organization",
         "id": "RequestingOrganizationExample",
@@ -283,7 +283,7 @@
       }
     },
     {
-      "fullUrl": "https://gematik.de/fhir/DispensingOrganization/DispensingOrganizationExample",
+      "fullUrl": "https://gematik.de/fhir/DispensingOrganization/f89adcee-7fe3-4b06-bc5f-e17b592a3a5f",
       "resource": {
         "resourceType": "Organization",
         "id": "DispensingOrganizationExample",
