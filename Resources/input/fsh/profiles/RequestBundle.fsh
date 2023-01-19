@@ -50,13 +50,13 @@ Description: "A communication resource for collecting information objects needed
 * entry[Practitioner].response ..0
 * entry[RequestingOrganization].link ..0
 * entry[RequestingOrganization].resource 1..
-* entry[RequestingOrganization].resource only GEM_PR_ERP_MEDREQ_Organization
+* entry[RequestingOrganization].resource only GEM_PR_ERP_MEDREQ_RequestingOrganization
 * entry[RequestingOrganization].search ..0
 * entry[RequestingOrganization].request ..0
 * entry[RequestingOrganization].response ..0
 * entry[DispensingOrganization].link ..0
 * entry[DispensingOrganization].resource 1..
-* entry[DispensingOrganization].resource only GEM_PR_ERP_MEDREQ_Organization
+* entry[DispensingOrganization].resource only GEM_PR_ERP_MEDREQ_DispensingOrganization
 * entry[DispensingOrganization].search ..0
 * entry[DispensingOrganization].request ..0
 * entry[DispensingOrganization].response ..0

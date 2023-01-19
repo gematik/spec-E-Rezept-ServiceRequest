@@ -10,7 +10,7 @@ Description: "Header for cancellation message of a medication Request"
 * event[x] from MessageEventTypeVS
 
 * sender 1..1
-* sender only Reference(KBV_PR_FOR_Organization or GEM_PR_ERP_MEDREQ_Organization)
+* sender only Reference(KBV_PR_FOR_Organization or GEM_PR_ERP_MEDREQ_RequestingOrganization or GEM_PR_ERP_MEDREQ_DispensingOrganization or GEM_PR_ERP_MEDREQ_PrescribingOrganization)
 * sender.reference 1..1
 
 * extension contains

@@ -239,47 +239,40 @@
         "id": "RequestingOrganizationExample",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Organization|1.0"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-RequestingOrganization|1.0"
           ]
         },
-        "telecom": [
-          {
-            "system": "url",
-            "value": "https://pflegeheim.de/KIM"
-          }
-        ],
-        "address": [
-          {
-            "type": "physical",
-            "city": "Berlin",
-            "postalCode": "10247",
-            "_line": [
-              {
-                "extension": [
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-                    "valueString": "Meinekestraße"
-                  },
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-                    "valueString": "61"
-                  },
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator",
-                    "valueString": "Geriatrie"
-                  }
-                ]
-              }
-            ]
-          }
-        ],
         "identifier": [
           {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "PRN"
+                }
+              ]
+            },
             "system": "https://gematik.de/fhir/sid/telematik-id",
             "value": "10-67.245.00001234"
           }
         ],
-        "name": "Pflegeheim am Platz der Sonne"
+        "address": [
+          {
+            "type": "both",
+            "line": [
+              "Meinekestraße 61"
+            ],
+            "city": "Berlin",
+            "postalCode": "10247"
+          }
+        ],
+        "name": "Pflegeheim am Platz der Sonne",
+        "telecom": [
+          {
+            "system": "email",
+            "value": "pflegeheim@Kim-dienstleiseter.telematik"
+          }
+        ]
       }
     },
     {
@@ -289,47 +282,40 @@
         "id": "DispensingOrganizationExample",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Organization|1.0"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-DispensingOrganization|1.0"
           ]
         },
-        "telecom": [
-          {
-            "system": "url",
-            "value": "https://apotheke.de/KIM"
-          }
-        ],
-        "address": [
-          {
-            "type": "physical",
-            "city": "Berlin",
-            "postalCode": "10247",
-            "_line": [
-              {
-                "extension": [
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-                    "valueString": "Meinekestraße"
-                  },
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-                    "valueString": "63"
-                  },
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator",
-                    "valueString": "Apotheke am Pflegeheim"
-                  }
-                ]
-              }
-            ]
-          }
-        ],
         "identifier": [
           {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "PRN"
+                }
+              ]
+            },
             "system": "https://gematik.de/fhir/sid/telematik-id",
             "value": "3-abc-1234567890"
           }
         ],
-        "name": "Apotheke am Platz der Sonne"
+        "address": [
+          {
+            "type": "both",
+            "line": [
+              "Meinekestraße 63"
+            ],
+            "city": "Berlin",
+            "postalCode": "10247"
+          }
+        ],
+        "name": "Apotheke am Platz der Sonne",
+        "telecom": [
+          {
+            "system": "email",
+            "value": "apotheke@Kim-dienstleiseter.telematik"
+          }
+        ]
       }
     }
   ]
