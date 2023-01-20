@@ -130,8 +130,8 @@
             "type": {
               "coding": [
                 {
-                  "code": "GKV",
-                  "system": "http://fhir.de/CodeSystem/identifier-type-de-basis"
+                  "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
+                  "code": "GKV"
                 }
               ]
             },
@@ -156,7 +156,6 @@
             ]
           }
         ],
-        "birthDate": "1965-04-10",
         "address": [
           {
             "type": "both",
@@ -181,7 +180,8 @@
             "postalCode": "08237",
             "country": "D"
           }
-        ]
+        ],
+        "birthDate": "1965-04-10"
       }
     },
     {

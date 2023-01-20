@@ -8,6 +8,7 @@
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
+  "description": "Requesting Organisation",
   "fhirVersion": "4.0.1",
   "mapping": [
     {

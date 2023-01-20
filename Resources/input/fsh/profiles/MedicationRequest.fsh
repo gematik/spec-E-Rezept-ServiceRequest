@@ -78,24 +78,24 @@ InstanceOf: KBV_PR_FOR_Patient
 Usage: #inline
 * id = "KBV-PR-FOR-PatientExample"
 * meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
-* identifier.type = http://fhir.de/CodeSystem/identifier-type-de-basis#GKV
-* identifier.system = "http://fhir.de/sid/gkv/kvid-10"
-* identifier.value = "S037462981"
-* name.use = #official
-* name.family = "Fürst"
-* name.family.extension[+].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
-* name.family.extension[=].valueString = "Fuerst"
-* name.given = "Doreen"
+* identifier[versichertenId_GKV].type = http://fhir.de/CodeSystem/identifier-type-de-basis#GKV
+* identifier[versichertenId_GKV].system = "http://fhir.de/sid/gkv/kvid-10"
+* identifier[versichertenId_GKV].value = "S037462981"
+* name[name].use = #official
+* name[name].family = "Fürst"
+* name[name].family.extension[nachname].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
+* name[name].family.extension[nachname].valueString = "Fuerst"
+* name[name].given = "Doreen"
 * birthDate = "1965-04-10"
-* address.type = #both
-* address.line = "Pappelallee 89"
-* address.line.extension[0].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"
-* address.line.extension[=].valueString = "89"
-* address.line.extension[+].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"
-* address.line.extension[=].valueString = "Pappelallee"
-* address.city = "Rothenkirchen"
-* address.postalCode = "08237"
-* address.country = "D"
+* address[Strassenanschrift].type = #both
+* address[Strassenanschrift].line = "Pappelallee 89"
+* address[Strassenanschrift].line.extension[Hausnummer].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"
+* address[Strassenanschrift].line.extension[Hausnummer].valueString = "89"
+* address[Strassenanschrift].line.extension[Strasse].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"
+* address[Strassenanschrift].line.extension[Strasse].valueString = "Pappelallee"
+* address[Strassenanschrift].city = "Rothenkirchen"
+* address[Strassenanschrift].postalCode = "08237"
+* address[Strassenanschrift].country = "D"
 
 Instance: MedicationExamplePZN
 InstanceOf: Medication

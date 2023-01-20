@@ -53,6 +53,8 @@ Description: "Example of a RequestHeader triggered by a RequestingOrganisation"
 * sender.reference = "Organization/RequestingOrganizationExample"
 * source.endpoint = "https://pflegeheim.de/KIM"
 * eventCoding = https://gematik.de/fhir/erpmedreqcom/CodeSystem/MessageEventTypeCS#RequestingMessage "Nachricht zur Rezeptanforderung"
+* focus[+].reference = "MedicationRequest/MedicationRequestExampleSelfPickup"
+* focus[+].reference = "Patient/KBV-PR-FOR-PatientExample"
 
 Instance: MessageHeaderExampleDispensingOrganisation
 InstanceOf: GEM_PR_ERP_MEDREQ_MessageHeader

@@ -2,7 +2,7 @@ Profile: GEM_PR_ERP_MEDREQ_PrescribingOrganization
 Parent: KBV_PR_Base_Organization
 Id: GEM-PR-ERP-MEDREQ-PrescribingOrganization
 Title: "GEM_PR_ERP_MEDREQ_Organization"
-Description: ""
+Description: "Prescribing Organisation"
 * insert Meta (GEM-PR-ERP-MEDREQ-PrescribingOrganization)
 * insert MetaProfile (GEM-PR-ERP-MEDREQ-PrescribingOrganization)
 * type from RequestingOrganizationTypeVS
@@ -12,7 +12,7 @@ Profile: GEM_PR_ERP_MEDREQ_RequestingOrganization
 Parent: KBV_PR_Base_Organization
 Id: GEM-PR-ERP-MEDREQ-RequestingOrganization
 Title: "GEM_PR_ERP_MEDREQ_Organization"
-Description: ""
+Description: "Requesting Organisation"
 * insert Meta (GEM-PR-ERP-MEDREQ-RequestingOrganization)
 * insert MetaProfile (GEM-PR-ERP-MEDREQ-RequestingOrganization)
 * type from RequestingOrganizationTypeVS
@@ -21,12 +21,10 @@ Profile: GEM_PR_ERP_MEDREQ_DispensingOrganization
 Parent: KBV_PR_Base_Organization
 Id: GEM-PR-ERP-MEDREQ-DispensingOrganization
 Title: "GEM_PR_ERP_MEDREQ_Organization"
-Description: ""
+Description: "Dispensing Organization"
 * insert Meta (GEM-PR-ERP-MEDREQ-DispensingOrganization)
 * insert MetaProfile (GEM-PR-ERP-MEDREQ-DispensingOrganization)
 * type from RequestingOrganizationTypeVS
-
-
 
 
 Instance: PrescribingOrganizationExample

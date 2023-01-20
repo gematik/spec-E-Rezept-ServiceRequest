@@ -74,17 +74,17 @@ Usage: #inline
 Title: "KBV_PR_FOR_PractitionerExample"
 Description: "Example of a KBV_PR_FOR_Practitioner"
 * id = "KBV-PR-FOR-PractitionerExample"
-* identifier.type = http://terminology.hl7.org/CodeSystem/v2-0203#LANR
-* identifier.system = "https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR"
-* identifier.value = "754236701"
-* name.use = #official
-* name.family = "Schulz"
-* name.family.extension.url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
-* name.family.extension.valueString = "Schulz"
-* name.given = "Ben"
-* qualification[0].code = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type#00
-* qualification[+].code = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Berufsbezeichnung#Berufsbezeichnung
-* qualification[=].code.text = "Facharzt für Allgemeinmedizin"
+* identifier[+][ANR].type = http://terminology.hl7.org/CodeSystem/v2-0203#LANR
+* identifier[=][ANR].system = "https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR"
+* identifier[=][ANR].value = "754236701"
+* name[name].use = #official
+* name[name].family = "Schulz"
+* name[name].family.extension[nachname].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
+* name[name].family.extension[nachname].valueString = "Schulz"
+* name[name].given = "Ben"
+* qualification[+][Typ].code = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type#00
+* qualification[+][Berufsbezeichnung].code = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Berufsbezeichnung#Berufsbezeichnung
+* qualification[=][Berufsbezeichnung].code.text = "Facharzt für Allgemeinmedizin"
 
 Instance: KBV_PR_ERP_PrescriptionExample
 InstanceOf: KBV_PR_ERP_Prescription
@@ -111,14 +111,14 @@ InstanceOf: KBV_PR_FOR_Coverage
 Usage: #inline
 * id = "KBV-PR-FOR-CoverageExample"
 * extension[+][BesonderePersonengruppe].url = "http://fhir.de/StructureDefinition/gkv/besondere-personengruppe"
-* extension[0].url = "http://fhir.de/StructureDefinition/gkv/besondere-personengruppe"
-* extension[=].valueCoding = https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_PERSONENGRUPPE#00
-* extension[+].url = "http://fhir.de/StructureDefinition/gkv/dmp-kennzeichen"
-* extension[=].valueCoding = https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DMP#00
-* extension[+].url = "http://fhir.de/StructureDefinition/gkv/wop"
-* extension[=].valueCoding = https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ITA_WOP#01
-* extension[+].url = "http://fhir.de/StructureDefinition/gkv/versichertenart"
-* extension[=].valueCoding = https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_VERSICHERTENSTATUS#1
+* extension[=][BesonderePersonengruppe].url = "http://fhir.de/StructureDefinition/gkv/besondere-personengruppe"
+* extension[=][BesonderePersonengruppe].valueCoding = https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_PERSONENGRUPPE#00
+* extension[+][DMPKennzeichen].url = "http://fhir.de/StructureDefinition/gkv/dmp-kennzeichen"
+* extension[=][DMPKennzeichen].valueCoding = https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DMP#00
+* extension[+][WOP].url = "http://fhir.de/StructureDefinition/gkv/wop"
+* extension[=][WOP].valueCoding = https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ITA_WOP#01
+* extension[+][Versichertenart].url = "http://fhir.de/StructureDefinition/gkv/versichertenart"
+* extension[=][Versichertenart].valueCoding = https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_VERSICHERTENSTATUS#1
 * status = #active
 * type = http://fhir.de/CodeSystem/versicherungsart-de-basis#SEL
 * beneficiary = Reference(Patient/30635f5d-c233-4500-94e8-6414940236aa)
