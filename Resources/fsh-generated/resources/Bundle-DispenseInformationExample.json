@@ -34,7 +34,7 @@
           }
         ],
         "sender": {
-          "reference": "Organization/DispensingOrganizationExample"
+          "reference": "DispensingOrganization/DispensingOrganizationExample"
         },
         "source": {
           "endpoint": "https://apotheke.de/KIM"

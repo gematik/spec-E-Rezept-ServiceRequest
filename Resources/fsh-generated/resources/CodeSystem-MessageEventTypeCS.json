@@ -7,7 +7,7 @@
   "title": "CodeSystem for MessageEventTypes",
   "description": "Definition of message types used for communication about medication requests",
   "version": "1.0",
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/MessageEventTypeCS",
+  "url": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/MessageEventTypeCS",
   "concept": [
     {
       "code": "RequestingMessage",

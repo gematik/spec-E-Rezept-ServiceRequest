@@ -43,15 +43,7 @@
           "code": "RequestingMessage",
           "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/MessageEventTypeCS",
           "display": "Nachricht zur Rezeptanforderung"
-        },
-        "focus": [
-          {
-            "reference": "MedicationRequest/MedicationRequestExampleSelfPickup"
-          },
-          {
-            "reference": "Patient/KBV-PR-FOR-PatientExample"
-          }
-        ]
+        }
       }
     },
     {

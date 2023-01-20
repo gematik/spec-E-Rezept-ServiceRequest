@@ -2,7 +2,7 @@ CodeSystem: MessageEventTypeCS
 Id: MessageEventTypeCS
 Title: "CodeSystem for MessageEventTypes"
 Description: "Definition of message types used for communication about medication requests"
-* insert Meta (MessageEventTypeCS)
+* insert MetaCodeSystem(MessageEventTypeCS)
 
 * #RequestingMessage "Nachricht zur Rezeptanforderung"
 * #RespondingMessage "Antwort auf eine Rezeptanforderung"

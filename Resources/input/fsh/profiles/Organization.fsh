@@ -67,6 +67,7 @@ Usage: #inline
 Title: "DispensingOrganizationExample"
 Description: "Example of a Organisation responsible for the request of the medication"
 * id = "DispensingOrganizationExample"
+//* ^url = https://gematik.de/fhir/DispensingOrganization/DispensingOrganizationExample
 * MetaInstance(GEM_PR_ERP_MEDREQ_Organization)
 * identifier[Telematik-ID].system = "https://gematik.de/fhir/sid/telematik-id"
 * identifier[Telematik-ID].value = "3-abc-1234567890"

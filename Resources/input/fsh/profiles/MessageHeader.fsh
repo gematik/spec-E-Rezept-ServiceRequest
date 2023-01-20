@@ -53,8 +53,8 @@ Description: "Example of a RequestHeader triggered by a RequestingOrganisation"
 * sender.reference = "Organization/RequestingOrganizationExample"
 * source.endpoint = "https://pflegeheim.de/KIM"
 * eventCoding = https://gematik.de/fhir/erpmedreqcom/CodeSystem/MessageEventTypeCS#RequestingMessage "Nachricht zur Rezeptanforderung"
-* focus[+].reference = "MedicationRequest/MedicationRequestExampleSelfPickup"
-* focus[+].reference = "Patient/KBV-PR-FOR-PatientExample"
+//* focus[+].reference = "MedicationRequest/MedicationRequestExampleSelfPickup"
+//* focus[+].reference = "Patient/KBV-PR-FOR-PatientExample"
 
 Instance: MessageHeaderExampleDispensingOrganisation
 InstanceOf: GEM_PR_ERP_MEDREQ_MessageHeader
@@ -68,5 +68,10 @@ Description: "Example of a RequestHeader triggered by a DispensingOrganisation"
 * extension[+][PatientID].valueString = "PatientID_des_initial_AustellendenSystems-3ddee2863325d"
 * source.endpoint = "https://apotheke.de/KIM"
 * eventCoding = https://gematik.de/fhir/erpmedreqcom/CodeSystem/MessageEventTypeCS#RequestingMessage "Nachricht zur Rezeptanforderung"
+* sender.reference = "DispensingOrganization/DispensingOrganizationExample"
+//* focus[+].reference = "Prescription/KBV_PR_ERP_PrescriptionExample"
+//* focus[+].reference = "Patient/KBV_PR_FOR_PatientExample"
+//* focus[+].reference = "RequestingOrganizationExample/RequestingOrganizationExample"
+//* focus[+].reference = "DispenseInformation/GEM_ERP_PR_MedicationDispenseExample"
 
 

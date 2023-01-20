@@ -132,3 +132,4 @@ Description: "Example of DispenseInformationBundle to provide a complete informa
 * entry[=][DispensingOrganization].resource = DispensingOrganizationExample
 * entry[+][DispenseInformation].fullUrl = "https://gematik.de/fhir/MedicationDispense/GEM-ERP-PR-MedicationDispenseExample"
 * entry[=][DispenseInformation].resource = GEM_ERP_PR_MedicationDispenseExample
+
