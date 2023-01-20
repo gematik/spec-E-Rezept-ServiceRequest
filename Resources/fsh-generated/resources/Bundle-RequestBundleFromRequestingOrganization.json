@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "id": "c6cac749-8a4d-4341-a6c6-14d7441bb759",
+  "id": "RequestBundleFromRequestingOrganization",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-RequestBundle|1.0"
@@ -9,15 +9,15 @@
   "type": "message",
   "identifier": {
     "system": "urn:ietf:rfc:3986",
-    "value": "urn:uuid:f4bb6000-fc6c-4cf0-b021-57bd0d77673f"
+    "value": "urn:uuid:7a1d5187-3070-4a23-a877-162bdd479b9b"
   },
-  "timestamp": "2022-12-01T12:12:54.234+02:00",
+  "timestamp": "2022-12-03T16:55:42.154+02:00",
   "entry": [
     {
-      "fullUrl": "https://gematik.de/fhir/RequestHeader/MessageHeaderExampleDispensingOrganisation",
+      "fullUrl": "https://gematik.de/fhir/MessageHeader/MessageHeaderExampleRequestingOrganisation",
       "resource": {
         "resourceType": "MessageHeader",
-        "id": "MessageHeaderExampleDispensingOrganisation",
+        "id": "MessageHeaderExampleRequestingOrganisation",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-MessageHeader|1.0"
@@ -34,10 +34,10 @@
           }
         ],
         "sender": {
-          "reference": "DispensingOrganization/DispensingOrganizationExample"
+          "reference": "Organization/RequestingOrganizationExample"
         },
         "source": {
-          "endpoint": "https://apotheke.de/KIM"
+          "endpoint": "https://pflegeheim.de/KIM"
         },
         "eventCoding": {
           "code": "RequestingMessage",
@@ -47,10 +47,10 @@
       }
     },
     {
-      "fullUrl": "https://gematik.de/fhir/MedicationRequest/MessageHeaderExampleDispensingOrganisation",
+      "fullUrl": "https://gematik.de/fhir/MedicationRequest/MedicationRequestExampleSelfPickup",
       "resource": {
         "resourceType": "MedicationRequest",
-        "id": "MessageHeaderExampleDispensingOrganisation",
+        "id": "MedicationRequestExampleSelfPickup",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-MedicationRequest|1.0"
@@ -62,9 +62,9 @@
           {
             "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeEX",
             "valueCoding": {
-              "code": "DispensingOrganisation",
+              "code": "SelfPickup",
               "system": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeCS",
-              "display": "Belieferung der anfragenden Organisation durch Apotheke"
+              "display": "Selbstabholer"
             }
           }
         ],
