@@ -1,10 +1,10 @@
 Profile: GEM_PR_ERP_MEDREQ_ResponseHeader
 Parent: MessageHeader
-Id: gem-pr-erp-medreq-response-header
+Id: GEM-PR-ERP-MEDREQ-ResponseHeader
 Title: "GEM PR ERP MEDREQ Response Header"
 Description: "Header for Messages Bundles used for Responses to Medication Requests"
-* insert Meta
-* insert MetaProfile (GEM_PR_ERP_MEDREQ_ResponseHeader)
+* insert Meta (GEM-PR-ERP-MEDREQ-ResponseHeader)
+* insert MetaProfile (GEM-PR-ERP-MEDREQ-ResponseHeader)
 
 * event[x] only Coding
 * event[x] from MessageEventTypeVS
@@ -31,7 +31,7 @@ Description: "Example of a response header"
 * id = "00dd7c71-ef9c-4d68-ab8a-e4e160b9806c"
 * MetaInstance(GEM_PR_ERP_MEDREQ_ResponseHeader)
 * eventCoding = https://gematik.de/fhir/erpmedreqcom/CodeSystem/MessageEventTypeCS#RespondingMessage "Antwort auf eine Rezeptanforderung"
-* sender.reference = "Organisation/f67dcc87-f877-49da-a249-aac4d1b15418"
+* sender.reference = "Organisation/KBV-PR-FOR-OrganizationExample"
 * source.endpoint = "https://praxis_um_die_ecke.de/KIM"
 * extension[+][VorgangsID].valueString = "VorgangsID_des_initial_AustellendenSystems-f17b6592a3a5c"
 * extension[+][PatientID].valueString = "PatientID_des_initial_AustellendenSystems-3ddee2863325d"

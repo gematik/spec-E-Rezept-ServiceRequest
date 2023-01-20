@@ -1,7 +1,7 @@
 Extension: PrescriptionDeliveryTypeEX
 Id: PrescriptionDeliveryTypeEX
 Description: "Defines types of types describing how prescription will be delivered."
-* insert Meta
+* insert Meta (PrescriptionDeliveryTypeEX)
 * value[x] only Coding
 * value[x] from PrescriptionDeliveryTypeVS (required)
 * value[x] ^binding.description = "Zustelltyp"

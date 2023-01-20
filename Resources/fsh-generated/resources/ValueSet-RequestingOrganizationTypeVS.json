@@ -5,7 +5,7 @@
   "id": "RequestingOrganizationTypeVS",
   "title": "ValueSet of requesting Entity used in the MessageHeader",
   "description": "ValueSet Header Event codes of request orgin",
-  "version": "0.9",
+  "version": "1.0",
   "url": "https://gematik.de/fhir/erpmedreqcom/ValueSet/RequestingOrganizationTypeVS",
   "experimental": false,
   "publisher": "gematik GmbH",

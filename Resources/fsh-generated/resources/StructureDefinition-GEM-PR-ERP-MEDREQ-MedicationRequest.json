@@ -1,6 +1,6 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "gem-pr-erp-medreq-medication-request",
+  "id": "GEM-PR-ERP-MEDREQ-MedicationRequest",
   "extension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
@@ -11,8 +11,8 @@
       "valueCode": "patient"
     }
   ],
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-medication-request",
-  "version": "0.9",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-MedicationRequest",
+  "version": "1.0",
   "name": "GEM_PR_ERP_MEDREQ_MedicationRequest",
   "title": "GEM PR ERP MEDREQ Medication Request",
   "status": "draft",
@@ -74,16 +74,11 @@
         "path": "MedicationRequest.meta.profile",
         "min": 1,
         "max": "1",
-        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_MedicationRequest|0.9"
+        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-MedicationRequest|1.0"
       },
       {
         "id": "MedicationRequest.meta.security",
         "path": "MedicationRequest.meta.security",
-        "max": "0"
-      },
-      {
-        "id": "MedicationRequest.meta.tag",
-        "path": "MedicationRequest.meta.tag",
         "max": "0"
       },
       {

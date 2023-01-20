@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "VorgangsIdEX",
   "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/VorgangsIdEX",
-  "version": "0.9",
+  "version": "1.0",
   "name": "VorgangsIdEX",
   "status": "draft",
   "experimental": false,

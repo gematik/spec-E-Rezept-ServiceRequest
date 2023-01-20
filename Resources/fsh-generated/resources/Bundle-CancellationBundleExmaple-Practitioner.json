@@ -1,10 +1,9 @@
 {
   "resourceType": "Bundle",
-  "id": "CancellationBundleFromPractitioner",
+  "id": "CancellationBundleExmaple-Practitioner",
   "meta": {
     "profile": [
-      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-cancellation-bundle",
-      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_CancellationBundle|0.9"
+      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-CancellationBundle|1.0"
     ]
   },
   "type": "message",
@@ -15,13 +14,13 @@
   "timestamp": "2022-12-07T12:12:54.234+02:00",
   "entry": [
     {
+      "fullUrl": "https://gematik.de/fhir/MessageHeader/CancellationHeaderExample-Praxis",
       "resource": {
         "resourceType": "MessageHeader",
-        "id": "e0e10aa4-3405-49de-8969-1e13864aa111",
+        "id": "CancellationHeaderExample-Praxis",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-cancellation-header",
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_CancellationHeader|0.9"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-CancellationHeader|1.0"
           ]
         },
         "extension": [
@@ -35,7 +34,7 @@
           },
           {
             "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/IdentifierEX",
-            "valueUuid": "7a1d5187-3070-4a23-a877-162bdd479b9b"
+            "valueUuid": "urn:uuid:7a1d5187-3070-4a23-a877-162bdd479b9b"
           },
           {
             "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/CancellationReasonTypeEX",
@@ -52,7 +51,7 @@
           "display": "Stornierung einer Rezeptanforderung"
         },
         "sender": {
-          "reference": "Organisation/f67dcc87-f877-49da-a249-aac4d1b15418"
+          "reference": "Organisation/KBV-PR-FOR-OrganizationExample"
         },
         "source": {
           "endpoint": "https://praxis_um_die_ecke.de/KIM"

@@ -8,6 +8,7 @@ script_path=./scripts/$script_name
 parentdir="$(dirname "$script_path")"
 mkdir -p "$parentdir"
 
-curl https://raw.githubusercontent.com/gematik/spec-TemplateForSimplifierProjects/master/scripts/$script_name -o $script_path
+#curl https://raw.githubusercontent.com/gematik/spec-TemplateForSimplifierProjects/master/scripts/$script_name -o $script_path
+curl https://raw.githubusercontent.com/gematik/spec-TemplateForSimplifierProjects/feature/improved_dependencies_for_hapi_call/scripts/$script_name -o $script_path
 chmod a+x $script_path
 $script_path "$@"

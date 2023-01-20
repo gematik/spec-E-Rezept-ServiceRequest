@@ -1,7 +1,7 @@
 Extension: CancellationReasonTypeEX
 Id: CancellationReasonTypeEX
 Description: "Definition of reasons why a prescriptionRequest was cancelled."
-* insert Meta
+* insert Meta (CancellationReasonTypeEX)
 * value[x] only Coding
 * value[x] from CancellationReasonTypeVS (required)
 * value[x] ^binding.description = "Grund für die Stornierung"
