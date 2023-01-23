@@ -30,8 +30,8 @@ Description: "Header for cancellation message of a medication Request"
 * extension[FreeText] ^short = "Begründung der Stornierung"
 
 Invariant:   freetextorreasontype
-Description: "Choose Freetext or Reasontype"
-Expression:  "(MessageHeader.extension('https://gematik.de/fhir/erpmedreqcom/StructureDefinition/FreeTextEX').exists().not() and MessageHeader.extension('https://gematik.de/fhir/erpmedreqcom/StructureDefinition/CancellationReasonTypeEX').exists()) or (MessageHeader.extension('https://gematik.de/fhir/erpmedreqcom/StructureDefinition/FreeTextEX').exists() and MessageHeader.extension('https://gematik.de/fhir/erpmedreqcom/StructureDefinition/CancellationReasonTypeEX').exists().not())"
+Description: "Choose providing of one of Freetext or Reasontype, but not both or none"
+Expression:  "(Bundle.entry.resource.extension('https://gematik.de/fhir/erpmedreqcom/StructureDefinition/FreeTextEX').exists().not() and Bundle.entry.resource.extension('https://gematik.de/fhir/erpmedreqcom/StructureDefinition/CancellationReasonTypeEX').exists()) or (Bundle.entry.resource.extension('https://gematik.de/fhir/erpmedreqcom/StructureDefinition/FreeTextEX').exists() and Bundle.entry.resource.extension('https://gematik.de/fhir/erpmedreqcom/StructureDefinition/CancellationReasonTypeEX').exists().not())"
 Severity:    #error
 
 Instance: CancellationHeaderExample_RequestingOrganisation
@@ -51,7 +51,7 @@ Description: "Example of a cancellation Header used by a requesting organisation
 * extension[+][CancellationReasonTypeEX].url = "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/CancellationReasonTypeEX"
 * extension[=][CancellationReasonTypeEX].valueCoding = https://gematik.de/fhir/erpmedreqcom/CodeSystem/CancellationReasonTypeCS#InformationenIncorrect "Informationen fehlerhaft"
 * extension[+][FreeTextEX].url = "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/FreeTextEX"
-* extension[=][FreeTextEX].valueString = "blah"
+* extension[=][FreeTextEX].valueString = "Ausfuehrlicher Freitext"
 
 Instance: CancellationHeaderExample_DispensingOrganisation
 InstanceOf: GEM_PR_ERP_MEDREQ_CancellationHeader
