@@ -127,7 +127,7 @@ Description: "Example of a medication request to be picked up by the patient the
 * id = "MedicationRequestExampleSelfPickup"
 * MetaInstance(GEM-PR-ERP-MEDREQ-MedicationRequest)
 * extension[+][PrescriptionDeliveryTypeEX].url = "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeEX"
-* extension[=][PrescriptionDeliveryTypeEX].valueCoding = https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeCS#SelfPickup "Selbstabholer"
+* extension[=][PrescriptionDeliveryTypeEX].valueCoding = https://gematik.de/fhir/erpmedreqcom/CodeSystem/PrescriptionDeliveryTypeCS#SelfPickup "Selbstabholer"
 * medicationReference = Reference(MedicationExamplePZN)
 * subject = Reference(KBV_PR_FOR_PatientExample)
 * dosageInstruction.extension.url = "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_DosageFlag"
@@ -144,7 +144,7 @@ Description: "Example of a medication request resulting in a prescription sent t
 * id = "MedicationRequestExampleRequestingOrganisation"
 * MetaInstance(GEM-PR-ERP-MEDREQ-MedicationRequest)
 * extension[+][PrescriptionDeliveryTypeEX].url = "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeEX"
-* extension[=][PrescriptionDeliveryTypeEX].valueCoding = https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeCS#RequestingOrganisation "Beschaffung durch anfragende Organisation"
+* extension[=][PrescriptionDeliveryTypeEX].valueCoding = https://gematik.de/fhir/erpmedreqcom/CodeSystem/PrescriptionDeliveryTypeCS#RequestingOrganisation
 * medicationReference = Reference(MedicationExamplePZN)
 * subject = Reference(KBV_PR_FOR_PatientExample)
 * dosageInstruction.extension.url = "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_DosageFlag"
@@ -161,7 +161,7 @@ Description: "Example of a medication request resulting in a prescription sent t
 * id = "MessageHeaderExampleDispensingOrganisation"
 * MetaInstance(GEM-PR-ERP-MEDREQ-MedicationRequest)
 * extension[+][PrescriptionDeliveryTypeEX].url = "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeEX"
-* extension[=][PrescriptionDeliveryTypeEX].valueCoding = https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeCS#DispensingOrganisation "Belieferung der anfragenden Organisation durch Apotheke"
+* extension[=][PrescriptionDeliveryTypeEX].valueCoding = https://gematik.de/fhir/erpmedreqcom/CodeSystem/PrescriptionDeliveryTypeCS#DispensingOrganisation
 * medicationReference = Reference(MedicationExamplePZN)
 * subject = Reference(KBV_PR_FOR_PatientExample)
 * dosageInstruction.extension.url = "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_DosageFlag"

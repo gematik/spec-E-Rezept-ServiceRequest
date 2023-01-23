@@ -63,8 +63,7 @@
             "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeEX",
             "valueCoding": {
               "code": "DispensingOrganisation",
-              "system": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeCS",
-              "display": "Belieferung der anfragenden Organisation durch Apotheke"
+              "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/PrescriptionDeliveryTypeCS"
             }
           }
         ],

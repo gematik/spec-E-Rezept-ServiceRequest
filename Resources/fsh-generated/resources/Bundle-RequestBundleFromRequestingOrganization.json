@@ -63,7 +63,7 @@
             "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeEX",
             "valueCoding": {
               "code": "SelfPickup",
-              "system": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeCS",
+              "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/PrescriptionDeliveryTypeCS",
               "display": "Selbstabholer"
             }
           }
