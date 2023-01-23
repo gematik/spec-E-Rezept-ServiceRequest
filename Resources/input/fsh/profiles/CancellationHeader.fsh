@@ -5,6 +5,7 @@ Title: "GEM PR ERP MEDREQ CancellationHeader"
 Description: "Header for cancellation message of a medication Request"
 * insert Meta (GEM-PR-ERP-MEDREQ-CancellationHeader)
 * insert MetaProfile (GEM-PR-ERP-MEDREQ-CancellationHeader)
+* obeys freetextorreasontype
 
 * event[x] only Coding
 * event[x] from MessageEventTypeVS
@@ -28,6 +29,11 @@ Description: "Header for cancellation message of a medication Request"
 * extension[FreeText].value[x] only string
 * extension[FreeText] ^short = "Begründung der Stornierung"
 
+Invariant:   freetextorreasontype
+Description: "Choose Freetext or Reasontype"
+Expression:  "(MessageHeader.extension('https://gematik.de/fhir/erpmedreqcom/StructureDefinition/FreeTextEX').exists().not() and MessageHeader.extension('https://gematik.de/fhir/erpmedreqcom/StructureDefinition/CancellationReasonTypeEX').exists()) or (MessageHeader.extension('https://gematik.de/fhir/erpmedreqcom/StructureDefinition/FreeTextEX').exists() and MessageHeader.extension('https://gematik.de/fhir/erpmedreqcom/StructureDefinition/CancellationReasonTypeEX').exists().not())"
+Severity:    #error
+
 Instance: CancellationHeaderExample_RequestingOrganisation
 InstanceOf: GEM_PR_ERP_MEDREQ_CancellationHeader
 Usage: #inline
@@ -44,6 +50,8 @@ Description: "Example of a cancellation Header used by a requesting organisation
 * extension[=][IdentifierForCancelation].valueUuid = "urn:uuid:7a1d5187-3070-4a23-a877-162bdd479b9b"
 * extension[+][CancellationReasonTypeEX].url = "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/CancellationReasonTypeEX"
 * extension[=][CancellationReasonTypeEX].valueCoding = https://gematik.de/fhir/erpmedreqcom/CodeSystem/CancellationReasonTypeCS#InformationenIncorrect "Informationen fehlerhaft"
+* extension[+][FreeTextEX].url = "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/FreeTextEX"
+* extension[=][FreeTextEX].valueString = "blah"
 
 Instance: CancellationHeaderExample_DispensingOrganisation
 InstanceOf: GEM_PR_ERP_MEDREQ_CancellationHeader
