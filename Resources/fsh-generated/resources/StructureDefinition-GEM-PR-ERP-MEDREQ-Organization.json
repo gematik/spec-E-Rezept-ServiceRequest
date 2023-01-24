@@ -1,14 +1,14 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "GEM-PR-ERP-MEDREQ-PrescribingOrganization",
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-PrescribingOrganization",
+  "id": "GEM-PR-ERP-MEDREQ-Organization",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Organization",
   "version": "1.0",
-  "name": "GEM_PR_ERP_MEDREQ_PrescribingOrganization",
+  "name": "GEM_PR_ERP_MEDREQ_Organization",
   "title": "GEM_PR_ERP_MEDREQ_Organization",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "Prescribing Organisation",
+  "description": "Organisation in MedReq Context",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -59,7 +59,7 @@
         "path": "Organization.meta.profile",
         "min": 1,
         "max": "1",
-        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-PrescribingOrganization|1.0"
+        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Organization|1.0"
       },
       {
         "id": "Organization.meta.security",
@@ -67,12 +67,17 @@
         "max": "0"
       },
       {
-        "id": "Organization.type",
-        "path": "Organization.type",
-        "binding": {
-          "strength": "required",
-          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/RequestingOrganizationTypeVS"
-        }
+        "id": "Organization.identifier",
+        "path": "Organization.identifier",
+        "min": 1
+      },
+      {
+        "id": "Organization.identifier:Telematik-ID",
+        "path": "Organization.identifier",
+        "sliceName": "Telematik-ID",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
       }
     ]
   }
