@@ -6,14 +6,14 @@ Description: "Bundle that is used for MedicationRequests with KIM"
 * insert Meta (GEM_ERP_PR_MEDREQ_Bundle)
 * insert MetaProfile (GEM_ERP_PR_MEDREQ_Bundle)
 * id 1..1
-* identifier 1..
-* identifier.system 1..
+* identifier 1..1
+* identifier.system 1..1
 * identifier.system = "urn:ietf:rfc:3986" (exactly)
-* identifier.value 1..
+* identifier.value 1..1
 * identifier.value ^short = "Eindeutige UUID des Bundles"
 * type = #message (exactly)
-* timestamp 1..
-* entry 1..
+* timestamp 1..1
+* entry 1..*
 * entry ^slicing.discriminator.type = #value
 * entry ^slicing.discriminator.path = "resource.meta.profile"
 * entry ^slicing.rules = #open
