@@ -1,0 +1,241 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "gem-erp-pr-medreq-bundle",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Foundation.Other"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "not-classified"
+    }
+  ],
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_ERP_PR_MEDREQ_Bundle",
+  "version": "1.0",
+  "name": "GEM_ERP_PR_MEDREQ_Bundle",
+  "title": "GEM ERP PR MEDREQ Bundle",
+  "status": "draft",
+  "experimental": false,
+  "publisher": "gematik GmbH",
+  "description": "Bundle that is used for MedicationRequests with KIM",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "cda",
+      "uri": "http://hl7.org/v3/cda",
+      "name": "CDA (R2)"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Bundle",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Bundle",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Bundle.id",
+        "path": "Bundle.id",
+        "min": 1
+      },
+      {
+        "id": "Bundle.meta",
+        "path": "Bundle.meta",
+        "min": 1
+      },
+      {
+        "id": "Bundle.meta.versionId",
+        "path": "Bundle.meta.versionId",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.meta.source",
+        "path": "Bundle.meta.source",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.meta.profile",
+        "path": "Bundle.meta.profile",
+        "min": 1,
+        "max": "1",
+        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_ERP_PR_MEDREQ_Bundle|1.0"
+      },
+      {
+        "id": "Bundle.meta.security",
+        "path": "Bundle.meta.security",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.identifier",
+        "path": "Bundle.identifier",
+        "min": 1
+      },
+      {
+        "id": "Bundle.identifier.system",
+        "path": "Bundle.identifier.system",
+        "min": 1,
+        "fixedUri": "urn:ietf:rfc:3986"
+      },
+      {
+        "id": "Bundle.identifier.value",
+        "path": "Bundle.identifier.value",
+        "short": "Eindeutige UUID des Bundles",
+        "min": 1
+      },
+      {
+        "id": "Bundle.type",
+        "path": "Bundle.type",
+        "fixedCode": "message"
+      },
+      {
+        "id": "Bundle.timestamp",
+        "path": "Bundle.timestamp",
+        "min": 1
+      },
+      {
+        "id": "Bundle.entry",
+        "path": "Bundle.entry",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "resource.meta.profile"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 3
+      },
+      {
+        "id": "Bundle.entry:MessageHeader",
+        "path": "Bundle.entry",
+        "sliceName": "MessageHeader",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Bundle.entry:MessageHeader.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "MessageHeader",
+            "profile": [
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-MessageHeader"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:ServiceRequest",
+        "path": "Bundle.entry",
+        "sliceName": "ServiceRequest",
+        "min": 1,
+        "max": "*"
+      },
+      {
+        "id": "Bundle.entry:ServiceRequest.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "ServiceRequest",
+            "profile": [
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-service-request"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:MedicationRequest",
+        "path": "Bundle.entry",
+        "sliceName": "MedicationRequest",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Bundle.entry:MedicationRequest.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "MedicationRequest",
+            "profile": [
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-MedicationRequest"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:DispenseInformation",
+        "path": "Bundle.entry",
+        "sliceName": "DispenseInformation",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Bundle.entry:DispenseInformation.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "MedicationDispense",
+            "profile": [
+              "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:Patient",
+        "path": "Bundle.entry",
+        "sliceName": "Patient",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Bundle.entry:Patient.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "Patient",
+            "profile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:Practitioner",
+        "path": "Bundle.entry",
+        "sliceName": "Practitioner",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Bundle.entry:Practitioner.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "Practitioner",
+            "profile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
