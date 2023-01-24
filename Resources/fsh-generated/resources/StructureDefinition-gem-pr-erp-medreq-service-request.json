@@ -139,6 +139,11 @@
         "mustSupport": true
       },
       {
+        "id": "ServiceRequest.reasonCode",
+        "path": "ServiceRequest.reasonCode",
+        "mustSupport": true
+      },
+      {
         "id": "ServiceRequest.note",
         "path": "ServiceRequest.note",
         "mustSupport": true

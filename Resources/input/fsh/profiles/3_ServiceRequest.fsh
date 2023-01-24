@@ -25,4 +25,7 @@ Description: "ServiceRequest that is used for Rezeptanforderung via KIM"
 * requester 1..1 MS
 * requester only Reference(KBV_PR_FOR_Practitioner or PractitionerRole or Organization)
 
+* reasonCode MS //TODO CS finden
+//TODO: Invariante bei Code XX dann GEM_PR_ERP_MEDREQ_RemainingMedication_Observation nutzen
+
 * note MS

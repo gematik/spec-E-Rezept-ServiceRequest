@@ -92,32 +92,9 @@
         "max": "0"
       },
       {
-        "id": "MedicationRequest.extension",
-        "path": "MedicationRequest.extension",
-        "min": 1
-      },
-      {
-        "id": "MedicationRequest.extension:PrescriptionDeliveryType",
-        "path": "MedicationRequest.extension",
-        "sliceName": "PrescriptionDeliveryType",
-        "short": "Zustelltyp",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeEX"
-            ]
-          }
-        ],
-        "mustSupport": true
-      },
-      {
         "id": "MedicationRequest.extension:PriorPrescriptionID",
         "path": "MedicationRequest.extension",
         "sliceName": "PriorPrescriptionID",
-        "short": "PrescriptionId der vorausgegangenen Verordnung",
         "min": 0,
         "max": "1",
         "type": [
@@ -128,57 +105,6 @@
             ]
           }
         ]
-      },
-      {
-        "id": "MedicationRequest.extension:RemainingQuantity",
-        "path": "MedicationRequest.extension",
-        "sliceName": "RemainingQuantity",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/RemainingQuantityEX"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "MedicationRequest.extension:RemainingRangeDate",
-        "path": "MedicationRequest.extension",
-        "sliceName": "RemainingRangeDate",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/RemainingRangeDateEX"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "MedicationRequest.extension:FreeText",
-        "path": "MedicationRequest.extension",
-        "sliceName": "FreeText",
-        "short": "Freitext",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/FreeTextEX"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "MedicationRequest.extension:FreeText.value[x]",
-        "path": "MedicationRequest.extension.value[x]",
-        "min": 1
       },
       {
         "id": "MedicationRequest.identifier",
