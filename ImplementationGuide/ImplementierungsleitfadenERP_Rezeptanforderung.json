@@ -56,6 +56,26 @@
                       "generation": "markdown"
                     },
                     {
+                      "nameUrl": "ImplementationGuide/markdown/KimMessages/Response.md",
+                      "title": "Übermittlung eines Rezepts",
+                      "generation": "markdown"
+                    },
+                    {
+                      "nameUrl": "ImplementationGuide/markdown/KimMessages/CancellationByPractitioner.md",
+                      "title": "Übermittlung einer Rezeptablehnung",
+                      "generation": "markdown"
+                    },
+                    {
+                      "nameUrl": "ImplementationGuide/markdown/KimMessages/CancellationByRequester.md",
+                      "title": "Übermittlung einer Rezeptstornierung",
+                      "generation": "markdown"
+                    },
+                    {
+                      "nameUrl": "ImplementationGuide/markdown/KimMessages/DispenseInformation.md",
+                      "title": "Übermittlung einer Verordnungs- und Dispensierinformation",
+                      "generation": "markdown"
+                    },
+                    {
                       "nameUrl": "ImplementationGuide/markdown/KimMessages/DeliveryStatusNotification.md",
                       "title": "Übermittlung einer Zustellbestätigung",
                       "generation": "markdown"
