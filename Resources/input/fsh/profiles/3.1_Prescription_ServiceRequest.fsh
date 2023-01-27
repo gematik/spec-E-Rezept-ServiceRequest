@@ -38,8 +38,9 @@ Description: "ServiceRequest that is used to request a prescription from a pract
 * intent = #order
 
 * code 1..1 MS
-* code from GEM_VS_MEDREQ_ServiceRequestCategory
+* code from GEM_VS_MEDREQ_ServiceRequestCode
   * ^short = "Gibt die Art des ServiceRequests an."
+  * ^comment = "#prescription-request dient der Anfrage eines Rezeptes an einen Arzt. #pharmacy-delivery-request dient als ServiceRequest für eine Apotheke zur Belieferung"
 
 * subject MS
 * subject only Reference($KBV_PR_FOR_Patient)

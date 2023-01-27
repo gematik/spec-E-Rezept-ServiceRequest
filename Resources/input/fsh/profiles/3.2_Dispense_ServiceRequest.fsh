@@ -4,6 +4,9 @@ Id: gem-pr-erp-medreq-dispense-service-request
 Title: "GEM PR ERP MEDREQ Dispense Service Request"
 Description: "ServiceRequest that is used to initiate a dispense request for a pharmacy"
 
+* extension contains
+    GEM_EX_MEDREQ_EPrescriptionToken named EPrescriptionToken 1..1
+
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
@@ -16,12 +19,7 @@ Description: "ServiceRequest that is used to initiate a dispense request for a p
 * basedOn 0..1 MS
   * ^short = "MedicationRequest, der von der Pflegeeinrichtung gewünscht wird oder vom Arzt erfüllt wurde."
   * ^comment = "Einem ServiceRequest ist genau ein MedicationRequest zugeordnet, sodass unabhängige Bearbeitungen möglich sind."
-* basedOn only Reference(GEM_PR_ERP_MEDREQ_MedicationRequest or $KBV_PR_ERP_Prescription)
-
-* replaces 0..1 MS
-* replaces only Reference(GEM_PR_ERP_MEDREQ_Prescription_ServiceRequest)
-  * ^short = "Wenn eine Pflegeeinrichtung ihre alte Anfrage stornieren möchte und eine neue Stellt, kann hier das zu stornierende ServiceRequest angegeben werden."
-  * ^comment = "Nur vom Requester zu nutzen, um eine alte Anfrage zu stornieren"
+* basedOn only Reference($KBV_PR_ERP_Prescription)
 
 * requisition 1..1 MS
 * requisition only GEM_ERP_MEDREQ_PR_RequestGroupIdentifier
@@ -32,11 +30,12 @@ Description: "ServiceRequest that is used to initiate a dispense request for a p
 * status from GEM_VS_MEDREQ_RequestStatus
   * ^short = "Gibt den Bearbeitungsstand eines ServiceRequests an"
 
-* intent = #order
+* intent = #filler-order
 
 * code 1..1 MS
-* code from GEM_VS_MEDREQ_ServiceRequestCategory
+* code from GEM_VS_MEDREQ_ServiceRequestCode
   * ^short = "Gibt die Art des ServiceRequests an."
+  * ^comment = "#prescription-request dient der Anfrage eines Rezeptes an einen Arzt. #pharmacy-delivery-request dient als ServiceRequest für eine Apotheke zur Belieferung"
 
 * subject MS
 * subject only Reference($KBV_PR_FOR_Patient)

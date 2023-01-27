@@ -2,12 +2,12 @@
   "resourceType": "CodeSystem",
   "status": "active",
   "content": "complete",
-  "name": "GEM_CS_MEDREQ_ServiceRequestCategory",
-  "id": "gem-cs-medreq-service-request-category",
-  "title": "GEM CS MEDREQ Service Request Category",
+  "name": "GEM_CS_MEDREQ_ServiceRequestCode",
+  "id": "gem-cs-medreq-service-request-code",
+  "title": "GEM CS MEDREQ Service Request Code",
   "description": "Codes to identify the type of ServiceRequest",
   "version": "0.9",
-  "url": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/gem-cs-medreq-service-request-category",
+  "url": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/gem-cs-medreq-service-request-code",
   "concept": [
     {
       "code": "prescription-request",

@@ -10,8 +10,12 @@
   "url": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/PrescriptionFullfillmentTypeCS",
   "concept": [
     {
+      "code": "issue-prescription",
+      "display": "Ausstellung des Rezeptes"
+    },
+    {
       "code": "return-to-requester",
-      "display": "Ausstellung des Rezeptes an die anfragende Organisation"
+      "display": "Ausstellung des Rezeptes und Übermittlung an die anfragende Organisation"
     },
     {
       "code": "send-to-pharmacy",
@@ -20,5 +24,5 @@
   ],
   "experimental": false,
   "publisher": "gematik GmbH",
-  "count": 2
+  "count": 3
 }

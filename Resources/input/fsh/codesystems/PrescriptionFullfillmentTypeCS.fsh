@@ -4,5 +4,6 @@ Title: "CodeSystem for PrescriptionFullfillmentType"
 Description: "This type defines how the prescription will be delivered"
 * insert MetaCodeSystem(PrescriptionFullfillmentTypeCS)
 
-* #return-to-requester "Ausstellung des Rezeptes an die anfragende Organisation"
+* #issue-prescription "Ausstellung des Rezeptes"
+* #return-to-requester "Ausstellung des Rezeptes und Übermittlung an die anfragende Organisation"
 * #send-to-pharmacy "Weiterleiten des Rezeptes an die ausliefernde Apotheke"

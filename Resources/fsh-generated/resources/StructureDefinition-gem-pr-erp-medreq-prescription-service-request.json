@@ -1521,7 +1521,7 @@
         "path": "ServiceRequest.code",
         "short": "Gibt die Art des ServiceRequests an.",
         "definition": "A code that identifies a particular service (i.e., procedure, diagnostic investigation, or panel of investigations) that have been requested.",
-        "comment": "Many laboratory and radiology procedure codes embed the specimen/organ system in the test order name, for example,  serum or serum/plasma glucose, or a chest x-ray. The specimen might not be recorded separately from the test code.",
+        "comment": "#prescription-request dient der Anfrage eines Rezeptes an einen Arzt. #pharmacy-delivery-request dient als ServiceRequest für eine Apotheke zur Belieferung",
         "alias": [
           "service requested"
         ],
@@ -1554,7 +1554,7 @@
         "isSummary": true,
         "binding": {
           "strength": "required",
-          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/gem-vs-medreq-service-request-category"
+          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/gem-vs-medreq-service-request-code"
         },
         "mapping": [
           {
@@ -4013,11 +4013,12 @@
         "id": "ServiceRequest.code",
         "path": "ServiceRequest.code",
         "short": "Gibt die Art des ServiceRequests an.",
+        "comment": "#prescription-request dient der Anfrage eines Rezeptes an einen Arzt. #pharmacy-delivery-request dient als ServiceRequest für eine Apotheke zur Belieferung",
         "min": 1,
         "mustSupport": true,
         "binding": {
           "strength": "required",
-          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/gem-vs-medreq-service-request-category"
+          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/gem-vs-medreq-service-request-code"
         }
       },
       {
