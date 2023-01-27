@@ -14,7 +14,7 @@ Description: "Profile on the Medication Request that is to be sent"
 * reported[x] 0..0
 
 * extension contains
-    PrescriptionIdEX named PriorPrescriptionID ..1
+    PrescriptionIdEX named PriorPrescriptionID ..1 // hilft diese Informtion? Hat der Arzt das? Kann er das abrufen?
 
 * medication[x] ^slicing.discriminator.type = #type
 * medication[x] ^slicing.discriminator.path = "$this"

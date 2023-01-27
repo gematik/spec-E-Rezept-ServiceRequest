@@ -72,73 +72,18 @@
         "max": "0"
       },
       {
-        "id": "MessageHeader.extension",
-        "path": "MessageHeader.extension",
-        "min": 2
-      },
-      {
-        "id": "MessageHeader.extension:VorgangsID",
-        "path": "MessageHeader.extension",
-        "sliceName": "VorgangsID",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/VorgangsIdEX"
-            ]
-          }
-        ],
-        "mustSupport": true
-      },
-      {
-        "id": "MessageHeader.extension:PatientID",
-        "path": "MessageHeader.extension",
-        "sliceName": "PatientID",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PatientIdEX"
-            ]
-          }
-        ],
-        "mustSupport": true
-      },
-      {
-        "id": "MessageHeader.event[x]",
-        "path": "MessageHeader.event[x]",
-        "type": [
-          {
-            "code": "Coding"
-          }
-        ],
-        "binding": {
-          "strength": "required",
-          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/MessageEventTypeVS"
-        }
-      },
-      {
-        "id": "MessageHeader.sender",
-        "path": "MessageHeader.sender",
-        "min": 1,
+        "id": "MessageHeader.focus",
+        "path": "MessageHeader.focus",
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
-              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization",
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Organization"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-prescription-service-request",
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-dispense-service-request"
             ]
           }
-        ]
-      },
-      {
-        "id": "MessageHeader.sender.reference",
-        "path": "MessageHeader.sender.reference",
-        "min": 1
+        ],
+        "mustSupport": true
       }
     ]
   }

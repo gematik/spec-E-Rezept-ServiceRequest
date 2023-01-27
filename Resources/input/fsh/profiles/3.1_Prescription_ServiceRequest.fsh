@@ -1,15 +1,15 @@
-Profile: GEM_PR_ERP_MEDREQ_ServiceRequest
+Profile: GEM_PR_ERP_MEDREQ_Prescription_ServiceRequest
 Parent: ServiceRequest
-Id: gem-pr-erp-medreq-service-request
-Title: "GEM PR ERP MEDREQ Service Request"
-Description: "ServiceRequest that is used for Rezeptanforderung via KIM"
+Id: gem-pr-erp-medreq-prescription-service-request
+Title: "GEM PR ERP MEDREQ Prescription Service Request"
+Description: "ServiceRequest that is used to request a prescription from a practitioner"
 * identifier only GEM_ERP_MEDREQ_PR_RequestIdentifier
 * basedOn 1..1
   * ^comment = "Einem ServiceRequest ist genau ein MedicationRequest zugeordnet, sodass unabhängige Bearbeitungen möglich sind."
-* basedOn only Reference(GEM_PR_ERP_MEDREQ_MedicationRequest or $KBV_PR_ERP_Prescription)
+* basedOn only Reference(GEM_PR_ERP_MEDREQ_MedicationRequest)
 
-* category 1..1 MS
-* category from PrescriptionDeliveryTypeVS (required)
+* orderDetail 1..1 MS
+* orderDetail from PrescriptionDeliveryTypeVS (required)
 
 // code könnte man noch finden "Medikationsanforderung" o.Ä. gibt es bestimmt schon
 
@@ -27,5 +27,6 @@ Description: "ServiceRequest that is used for Rezeptanforderung via KIM"
 
 * reasonCode MS //TODO CS finden
 //TODO: Invariante bei Code XX dann GEM_PR_ERP_MEDREQ_RemainingMedication_Observation nutzen
+* reasonReference only Reference(GEM_PR_ERP_MEDREQ_RemainingMedication_Observation)
 
 * note MS

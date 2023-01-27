@@ -1,3 +1,4 @@
+//TODO: Ableiten von KIM Bundle
 Profile: GEM_ERP_PR_MEDREQ_Bundle
 Parent: Bundle
 Id: gem-erp-pr-medreq-bundle
@@ -5,12 +6,6 @@ Title: "GEM ERP PR MEDREQ Bundle"
 Description: "Bundle that is used for MedicationRequests with KIM"
 * insert Meta (GEM_ERP_PR_MEDREQ_Bundle)
 * insert MetaProfile (GEM_ERP_PR_MEDREQ_Bundle)
-* id 1..1
-* identifier 1..1
-* identifier.system 1..1
-* identifier.system = "urn:ietf:rfc:3986" (exactly)
-* identifier.value 1..1
-* identifier.value ^short = "Eindeutige UUID des Bundles"
 * type = #message (exactly)
 * timestamp 1..1
 * entry 1..*
@@ -19,13 +14,15 @@ Description: "Bundle that is used for MedicationRequests with KIM"
 * entry ^slicing.rules = #open
 * entry contains
     MessageHeader 1..1 and
-    ServiceRequest 1..* and
+    PrescriptionServiceRequest 1..* and
+    DispenseServiceRequest 0..* and
     MedicationRequest 0..* and
     DispenseInformation 0..* and
     Patient 1..1 and
     Practitioner 0..*
 * entry[MessageHeader].resource only GEM_PR_ERP_MEDREQ_MessageHeader
-* entry[ServiceRequest].resource only GEM_PR_ERP_MEDREQ_ServiceRequest
+* entry[PrescriptionServiceRequest].resource only GEM_PR_ERP_MEDREQ_Prescription_ServiceRequest
+* entry[DispenseServiceRequest].resource only GEM_PR_ERP_MEDREQ_Dispense_ServiceRequest
 * entry[MedicationRequest].resource only GEM_PR_ERP_MEDREQ_MedicationRequest
 * entry[DispenseInformation].resource only GEM_ERP_PR_MedicationDispense
 * entry[Patient].resource only $KBV_PR_FOR_Patient

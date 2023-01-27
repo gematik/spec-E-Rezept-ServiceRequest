@@ -50,11 +50,6 @@
   "differential": {
     "element": [
       {
-        "id": "Bundle.id",
-        "path": "Bundle.id",
-        "min": 1
-      },
-      {
         "id": "Bundle.meta",
         "path": "Bundle.meta",
         "min": 1
@@ -80,23 +75,6 @@
         "id": "Bundle.meta.security",
         "path": "Bundle.meta.security",
         "max": "0"
-      },
-      {
-        "id": "Bundle.identifier",
-        "path": "Bundle.identifier",
-        "min": 1
-      },
-      {
-        "id": "Bundle.identifier.system",
-        "path": "Bundle.identifier.system",
-        "min": 1,
-        "fixedUri": "urn:ietf:rfc:3986"
-      },
-      {
-        "id": "Bundle.identifier.value",
-        "path": "Bundle.identifier.value",
-        "short": "Eindeutige UUID des Bundles",
-        "min": 1
       },
       {
         "id": "Bundle.type",
@@ -142,20 +120,39 @@
         ]
       },
       {
-        "id": "Bundle.entry:ServiceRequest",
+        "id": "Bundle.entry:PrescriptionServiceRequest",
         "path": "Bundle.entry",
-        "sliceName": "ServiceRequest",
+        "sliceName": "PrescriptionServiceRequest",
         "min": 1,
         "max": "*"
       },
       {
-        "id": "Bundle.entry:ServiceRequest.resource",
+        "id": "Bundle.entry:PrescriptionServiceRequest.resource",
         "path": "Bundle.entry.resource",
         "type": [
           {
             "code": "ServiceRequest",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-service-request"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-prescription-service-request"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:DispenseServiceRequest",
+        "path": "Bundle.entry",
+        "sliceName": "DispenseServiceRequest",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Bundle.entry:DispenseServiceRequest.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "ServiceRequest",
+            "profile": [
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-dispense-service-request"
             ]
           }
         ]
