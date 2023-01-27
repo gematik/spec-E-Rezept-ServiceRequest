@@ -1,6 +1,6 @@
 Instance: Example-Practitioner
 InstanceOf: $KBV_PR_FOR_Practitioner
-Usage: #example
+Usage: #inline
 Title: "Example-Practitioner"
 Description: "Beispielarzt zum Ausstellen der Rezepte"
 * meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner|1.1.0"

@@ -1,6 +1,6 @@
 Instance: Example-Patient
 InstanceOf: $KBV_PR_FOR_Patient
-Usage: #example
+Usage: #inline
 Title: "Example-Patient"
 Description: "Beispiel Patient"
 * meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"

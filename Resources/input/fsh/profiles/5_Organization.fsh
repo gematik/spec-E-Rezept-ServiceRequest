@@ -37,7 +37,7 @@ and TIM-Adresse 0..1 MS
 
 Instance: Example-Pharmacy-Organization
 InstanceOf: GEM_PR_ERP_MEDREQ_Organization
-Usage: #example
+Usage: #inline
 Title: "Example-Pharmacy-Organization"
 Description: "Beispiel Apotheke zur Belieferung des Medikaments"
 * identifier[Telematik-ID].type = http://terminology.hl7.org/CodeSystem/v2-0203#PRN
@@ -54,7 +54,7 @@ Description: "Beispiel Apotheke zur Belieferung des Medikaments"
 
 Instance: Example-HealthCareService-Organization
 InstanceOf: GEM_PR_ERP_MEDREQ_Organization
-Usage: #example
+Usage: #inline
 Title: "Example-HealthCareService-Organization"
 Description: "Beispiel Pflegeeinrichtung"
 * identifier[Telematik-ID].type = http://terminology.hl7.org/CodeSystem/v2-0203#PRN

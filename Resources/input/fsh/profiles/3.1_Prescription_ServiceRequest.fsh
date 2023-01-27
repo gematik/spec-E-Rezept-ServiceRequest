@@ -99,7 +99,7 @@ Severity: #error
 
 Instance: Initial-Prescription-Request
 InstanceOf: GEM_PR_ERP_MEDREQ_Prescription_ServiceRequest
-Usage: #example
+Usage: #inline
 Title: "Initial Prescription Request"
 Description: "This ServiceRequest is sent initially to the prescribing practitioner"
 * identifier[0]
@@ -117,11 +117,11 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * authoredOn = "2023-01-27"
 * requester.reference = "Example-HealthCareService-Organization"
 * performerType.coding.code = #ausstellender-arzt
-* performer.reference = "#Practitioner/1234"
+* performer.reference = "Example-Practitioner"
 
 Instance: Response-Prescription-Request
 InstanceOf: GEM_PR_ERP_MEDREQ_Prescription_ServiceRequest
-Usage: #example
+Usage: #inline
 Title: "Initial Prescription Request"
 Description: "ServiceRequest that is returned to the requester"
 * extension[EPrescriptionToken].valueIdentifier
@@ -142,4 +142,4 @@ Description: "ServiceRequest that is returned to the requester"
 * authoredOn = "2023-01-27"
 * requester.reference = "Example-HealthCareService-Organization"
 * performerType.coding.code = #ausstellender-arzt
-* performer.reference = "#Practitioner/1234"
+* performer.reference = "Example-Practitioner"
