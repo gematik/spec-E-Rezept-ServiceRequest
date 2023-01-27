@@ -4,6 +4,7 @@ Id: gem-pr-erp-medreq-prescription-service-request
 Title: "GEM PR ERP MEDREQ Prescription Service Request"
 Description: "ServiceRequest that is used to request a prescription from a practitioner"
 * identifier only GEM_ERP_MEDREQ_PR_RequestIdentifier
+
 * basedOn 1..1
   * ^comment = "Einem ServiceRequest ist genau ein MedicationRequest zugeordnet, sodass unabhängige Bearbeitungen möglich sind."
 * basedOn only Reference(GEM_PR_ERP_MEDREQ_MedicationRequest)
