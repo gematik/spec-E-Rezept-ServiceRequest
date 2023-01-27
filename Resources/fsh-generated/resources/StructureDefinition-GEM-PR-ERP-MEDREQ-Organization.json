@@ -1003,7 +1003,7 @@
         "short": "Identifies this organization  across multiple systems",
         "definition": "Identifier for the organization that is used to identify the organization across multiple disparate systems.",
         "requirements": "Organizations are known by a variety of ids. Some institutions maintain several, and most collect identifiers for exchange with other organizations concerning the organization.",
-        "min": 1,
+        "min": 2,
         "max": "*",
         "base": {
           "path": "Organization.identifier",
@@ -2307,7 +2307,7 @@
         "short": "Identifies this organization  across multiple systems",
         "definition": "Identifier for the organization that is used to identify the organization across multiple disparate systems.",
         "requirements": "Organizations are known by a variety of ids. Some institutions maintain several, and most collect identifiers for exchange with other organizations concerning the organization.",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "Organization.identifier",
@@ -5849,7 +5849,7 @@
           ],
           "rules": "open"
         },
-        "min": 1
+        "min": 2
       },
       {
         "id": "Organization.identifier:Telematik-ID",
@@ -5897,7 +5897,7 @@
         "id": "Organization.identifier:KIM-Adresse",
         "path": "Organization.identifier",
         "sliceName": "KIM-Adresse",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "type": [
           {

@@ -11,7 +11,7 @@ Description: "Organisation in MedReq Context"
 * identifier ^slicing.rules = #open
 
 * identifier contains  Telematik-ID 1..1 MS
-and KIM-Adresse 0..1 MS
+and KIM-Adresse 1..1 MS
 and TIM-Adresse 0..1 MS
 
 * identifier[Telematik-ID] only $telematikid
@@ -35,3 +35,36 @@ and TIM-Adresse 0..1 MS
 * identifier[TIM-Adresse].type.coding.code 1..1
 * identifier[TIM-Adresse].type.coding.display = "TIM-Adresse"
 
+Instance: Example-Pharmacy-Organization
+InstanceOf: GEM_PR_ERP_MEDREQ_Organization
+Usage: #example
+Title: "Example-Pharmacy-Organization"
+Description: "Beispiel Apotheke zur Belieferung des Medikaments"
+* identifier[Telematik-ID].type = http://terminology.hl7.org/CodeSystem/v2-0203#PRN
+* identifier[Telematik-ID].system = "https://gematik.de/fhir/sid/telematik-id"
+* identifier[Telematik-ID].value = "1-031234567"
+
+* identifier[TIM-Adresse].type = https://gematik.de/fhir/directory/CodeSystem/EndpointDirectoryConnectionType#tim
+* identifier[TIM-Adresse].system = $tim
+* identifier[TIM-Adresse].value = "abrakadabra@tim.de"
+
+* identifier[KIM-Adresse].type = https://gematik.de/fhir/directory/CodeSystem/EndpointDirectoryConnectionType#kim-2.0
+* identifier[KIM-Adresse].system = $kim
+* identifier[KIM-Adresse].value = "abrakadabra@kim.de"
+
+Instance: Example-HealthCareService-Organization
+InstanceOf: GEM_PR_ERP_MEDREQ_Organization
+Usage: #example
+Title: "Example-HealthCareService-Organization"
+Description: "Beispiel Pflegeeinrichtung"
+* identifier[Telematik-ID].type = http://terminology.hl7.org/CodeSystem/v2-0203#PRN
+* identifier[Telematik-ID].system = "https://gematik.de/fhir/sid/telematik-id"
+* identifier[Telematik-ID].value = "andere-telematik-id"
+
+* identifier[TIM-Adresse].type = https://gematik.de/fhir/directory/CodeSystem/EndpointDirectoryConnectionType#tim
+* identifier[TIM-Adresse].system = $tim
+* identifier[TIM-Adresse].value = "wunder-zunder@tim.de"
+
+* identifier[KIM-Adresse].type = https://gematik.de/fhir/directory/CodeSystem/EndpointDirectoryConnectionType#kim-2.0
+* identifier[KIM-Adresse].system = $kim
+* identifier[KIM-Adresse].value = "wunder-zunder@kim.de"

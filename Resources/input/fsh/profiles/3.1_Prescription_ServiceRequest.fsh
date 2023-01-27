@@ -115,7 +115,7 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * orderDetail.coding.code = #return-to-requester
 * occurrenceDateTime = "2023-02-01"
 * authoredOn = "2023-01-27"
-* requester.reference = "#Organization/1234"
+* requester.reference = "Example-HealthCareService-Organization"
 * performerType.coding.code = #ausstellender-arzt
 * performer.reference = "#Practitioner/1234"
 
@@ -140,6 +140,6 @@ Description: "ServiceRequest that is returned to the requester"
 * orderDetail.coding.code = #return-to-requester
 * occurrenceDateTime = "2023-02-01"
 * authoredOn = "2023-01-27"
-* requester.reference = "#Organization/1234"
+* requester.reference = "Example-HealthCareService-Organization"
 * performerType.coding.code = #ausstellender-arzt
 * performer.reference = "#Practitioner/1234"

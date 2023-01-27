@@ -1,0 +1,47 @@
+{
+  "resourceType": "Organization",
+  "id": "Example-HealthCareService-Organization",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Organization|1.0"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "PRN"
+          }
+        ]
+      },
+      "system": "https://gematik.de/fhir/sid/telematik-id",
+      "value": "andere-telematik-id"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "tim",
+            "system": "https://gematik.de/fhir/directory/CodeSystem/EndpointDirectoryConnectionType"
+          }
+        ]
+      },
+      "system": "http://gematik.de/fhir/sid/TIM-Adresse",
+      "value": "wunder-zunder@tim.de"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "kim-2.0",
+            "system": "https://gematik.de/fhir/directory/CodeSystem/EndpointDirectoryConnectionType"
+          }
+        ]
+      },
+      "system": "http://gematik.de/fhir/sid/KIM-Adresse",
+      "value": "wunder-zunder@kim.de"
+    }
+  ]
+}
