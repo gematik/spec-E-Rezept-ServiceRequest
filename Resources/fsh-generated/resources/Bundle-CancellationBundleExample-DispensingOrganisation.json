@@ -1,0 +1,62 @@
+{
+  "resourceType": "Bundle",
+  "id": "CancellationBundleExample-DispensingOrganisation",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-CancellationBundle|1.0"
+    ]
+  },
+  "type": "message",
+  "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:uuid:2d77d48c-f177-4540-82b2-3a25d20d1cc9"
+  },
+  "timestamp": "2022-12-07T12:12:54.234+02:00",
+  "entry": [
+    {
+      "fullUrl": "https://gematik.de/fhir/MessageHeader/CancellationHeaderExample-DispensingOrganisation",
+      "resource": {
+        "resourceType": "MessageHeader",
+        "id": "CancellationHeaderExample-DispensingOrganisation",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-CancellationHeader|1.0"
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/VorgangsIdEX",
+            "valueString": "VorgangsID_des_initial_AustellendenSystems-f17b6592a3a5c"
+          },
+          {
+            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PatientIdEX",
+            "valueString": "PatientID_des_initial_AustellendenSystems-3ddee2863325d"
+          },
+          {
+            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/IdentifierEX",
+            "valueUuid": "urn:uuid:7a1d5187-3070-4a23-a877-162bdd479b9b"
+          },
+          {
+            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/CancellationReasonTypeEX",
+            "valueCoding": {
+              "code": "InformationenIncorrect",
+              "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/CancellationReasonTypeCS",
+              "display": "Informationen fehlerhaft"
+            }
+          }
+        ],
+        "eventCoding": {
+          "code": "CancellationMessage",
+          "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/MessageEventTypeCS",
+          "display": "Stornierung einer Rezeptanforderung"
+        },
+        "sender": {
+          "reference": "Organisation/DispensingOrganizationExample"
+        },
+        "source": {
+          "endpoint": "https://pflegeheim.de/KIM"
+        }
+      }
+    }
+  ]
+}

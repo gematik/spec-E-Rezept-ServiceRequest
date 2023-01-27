@@ -1,6 +1,6 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "gem-pr-erp-medreq-request-bundle",
+  "id": "GEM-PR-ERP-MEDREQ-RequestBundle",
   "extension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
@@ -11,8 +11,8 @@
       "valueCode": "not-classified"
     }
   ],
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-request-bundle",
-  "version": "0.9",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-RequestBundle",
+  "version": "1.0",
   "name": "GEM_PR_ERP_MEDREQ_RequestBundle",
   "title": "GEM PR ERP MEDREQ Request Bundle",
   "status": "draft",
@@ -74,16 +74,11 @@
         "path": "Bundle.meta.profile",
         "min": 1,
         "max": "1",
-        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_RequestBundle|0.9"
+        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-RequestBundle|1.0"
       },
       {
         "id": "Bundle.meta.security",
         "path": "Bundle.meta.security",
-        "max": "0"
-      },
-      {
-        "id": "Bundle.meta.tag",
-        "path": "Bundle.meta.tag",
         "max": "0"
       },
       {
@@ -147,7 +142,7 @@
           {
             "code": "MessageHeader",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-message-header"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-MessageHeader"
             ]
           }
         ]
@@ -187,7 +182,7 @@
           {
             "code": "MedicationRequest",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-medication-request"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-MedicationRequest"
             ]
           }
         ]
@@ -307,7 +302,7 @@
           {
             "code": "Organization",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-organization"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-RequestingOrganization"
             ]
           }
         ]
@@ -347,7 +342,7 @@
           {
             "code": "Organization",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-organization"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-DispensingOrganization"
             ]
           }
         ]

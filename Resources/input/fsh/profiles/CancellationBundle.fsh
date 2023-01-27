@@ -1,9 +1,9 @@
 Profile: GEM_PR_ERP_MEDREQ_CancellationBundle
 Parent: Bundle
-Id: gem-pr-erp-medreq-cancellation-bundle
+Id: GEM-PR-ERP-MEDREQ-CancellationBundle
 Title: "GEM PR ERP MEDREQ Cancellation Bundle"
-* insert Meta
-* insert MetaProfile (GEM_PR_ERP_MEDREQ_CancellationBundle)
+* insert Meta (GEM-PR-ERP-MEDREQ-CancellationBundle)
+* insert MetaProfile (GEM-PR-ERP-MEDREQ-CancellationBundle)
 * id 1..1
 * identifier 1..
 * identifier.system 1..
@@ -30,36 +30,39 @@ InstanceOf: GEM_PR_ERP_MEDREQ_CancellationBundle
 Usage: #example
 Title: "Example of CancellationBundle by a DispensingOrganisation"
 Description: "Example of a cancellation bundle of a medicationrequest initiated by a RequestingOrganization"
-* id = "CancellationBundleFromDispensingOrganisation"
-* MetaInstance(GEM_PR_ERP_MEDREQ_CancellationBundle)
+* id = "CancellationBundleExample-DispensingOrganisation"
+* MetaInstance(GEM-PR-ERP-MEDREQ-CancellationBundle)
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:2d77d48c-f177-4540-82b2-3a25d20d1cc9"
 * type = #message
 * timestamp = "2022-12-07T12:12:54.234+02:00"
-* entry[+][CancellationHeader].resource = MessageHeaderExampleDispensingOrganisation
+* entry[+][CancellationHeader].fullUrl = "https://gematik.de/fhir/MessageHeader/CancellationHeaderExample-DispensingOrganisation"
+* entry[=][CancellationHeader].resource = CancellationHeaderExample_DispensingOrganisation
 
 Instance: GEM_PR_ERP_MEDREQ_CancellationBundleExample_RequestingOrganisation
 InstanceOf: GEM_PR_ERP_MEDREQ_CancellationBundle
 Usage: #example
 Title: "Example of CancellationBundle by a RequestingOrganisation"
 Description: "Example of a cancellation bundle of a medicationrequest initiated by a RequestingOrganization"
-* id = "CancellationBundleFromRequestingOrganisation"
-* MetaInstance(GEM_PR_ERP_MEDREQ_CancellationBundle)
+* id = "CancellationBundleExample-RequestingOrganisation"
+* MetaInstance(GEM-PR-ERP-MEDREQ-CancellationBundle)
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:2d77d48c-f177-4540-82b2-3a25d20d1cc9"
 * type = #message
 * timestamp = "2022-12-07T12:12:54.234+02:00"
-* entry[+][CancellationHeader].resource = MessageHeaderExampleRequestingOrganisation
+* entry[+][CancellationHeader].fullUrl = "https://gematik.de/fhir/MessageHeader/CancellationHeaderExample-RequestingOrganisation"
+* entry[=][CancellationHeader].resource = CancellationHeaderExample_RequestingOrganisation
 
-Instance: GEM_PR_ERP_MEDREQ_CancellationBundleExmaple_Practitioner
+Instance: GEM_PR_ERP_MEDREQ_CancellationBundleExample_Practitioner
 InstanceOf: GEM_PR_ERP_MEDREQ_CancellationBundle
 Usage: #example
 Title: "Example of CancellationBundle by a Practitioner"
 Description: "Example of a cancellation bundle of a medicationrequest initiated by a Practitioner"
-* id = "CancellationBundleFromPractitioner"
-* MetaInstance(GEM_PR_ERP_MEDREQ_CancellationBundle)
+* id = "CancellationBundleExmaple-Practitioner"
+* MetaInstance(GEM-PR-RP-MEDREQ-CancellationBundle)
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:2d77d48c-f177-4540-82b2-3a25d20d1cc9"
 * type = #message
 * timestamp = "2022-12-07T12:12:54.234+02:00"
-* entry[+][CancellationHeader].resource = CancellationHeaderExample_Praxis
+* entry[+][CancellationHeader].fullUrl = "https://gematik.de/fhir/MessageHeader/CancellationHeaderExample-Praxis"
+* entry[=][CancellationHeader].resource = CancellationHeaderExample_Praxis

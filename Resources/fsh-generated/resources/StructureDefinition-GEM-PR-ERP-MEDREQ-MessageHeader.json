@@ -1,6 +1,6 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "gem-pr-erp-medreq-cancellation-header",
+  "id": "GEM-PR-ERP-MEDREQ-MessageHeader",
   "extension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
@@ -11,14 +11,14 @@
       "valueCode": "not-classified"
     }
   ],
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-cancellation-header",
-  "version": "0.9",
-  "name": "GEM_PR_ERP_MEDREQ_CancellationHeader",
-  "title": "GEM PR ERP MEDREQ CancellationHeader",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-MessageHeader",
+  "version": "1.0",
+  "name": "GEM_PR_ERP_MEDREQ_MessageHeader",
+  "title": "GEM PR ERP MEDREQ MessageHeader",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "Header for cancellation message of a medication Request",
+  "description": "Header for Messages Bundles used for Medication Request",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -64,7 +64,7 @@
         "path": "MessageHeader.meta.profile",
         "min": 1,
         "max": "1",
-        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_CancellationHeader|0.9"
+        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-MessageHeader|1.0"
       },
       {
         "id": "MessageHeader.meta.security",
@@ -72,14 +72,9 @@
         "max": "0"
       },
       {
-        "id": "MessageHeader.meta.tag",
-        "path": "MessageHeader.meta.tag",
-        "max": "0"
-      },
-      {
         "id": "MessageHeader.extension",
         "path": "MessageHeader.extension",
-        "min": 3
+        "min": 2
       },
       {
         "id": "MessageHeader.extension:VorgangsID",
@@ -114,58 +109,6 @@
         "mustSupport": true
       },
       {
-        "id": "MessageHeader.extension:IdentifierForCancelation",
-        "path": "MessageHeader.extension",
-        "sliceName": "IdentifierForCancelation",
-        "short": "UUID des zu stornierungen MedicationRequestBundles",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/IdentifierEX"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "MessageHeader.extension:IdentifierForCancelation.value[x]",
-        "path": "MessageHeader.extension.value[x]",
-        "min": 1
-      },
-      {
-        "id": "MessageHeader.extension:CancellationReasonType",
-        "path": "MessageHeader.extension",
-        "sliceName": "CancellationReasonType",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/CancellationReasonTypeEX"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "MessageHeader.extension:FreeText",
-        "path": "MessageHeader.extension",
-        "sliceName": "FreeText",
-        "short": "Begründung der Stornierung",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/FreeTextEX"
-            ]
-          }
-        ]
-      },
-      {
         "id": "MessageHeader.event[x]",
         "path": "MessageHeader.event[x]",
         "type": [
@@ -187,7 +130,9 @@
             "code": "Reference",
             "targetProfile": [
               "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization",
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-organization"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-RequestingOrganization",
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-DispensingOrganization",
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-PrescribingOrganization"
             ]
           }
         ]

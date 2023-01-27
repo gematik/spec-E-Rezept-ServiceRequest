@@ -1,10 +1,9 @@
 {
   "resourceType": "Bundle",
-  "id": "DispenseInformationBundle",
+  "id": "DispenseInformationExample",
   "meta": {
     "profile": [
-      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-dispense-information-bundle",
-      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_DispenseInformationBundle|0.9"
+      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-DispenseInformationBundle|1.0"
     ]
   },
   "type": "message",
@@ -15,13 +14,13 @@
   "timestamp": "2022-12-12T12:12:54.234+02:00",
   "entry": [
     {
+      "fullUrl": "https://gematik.de/fhir/MessageHeader/MessageHeaderExampleDispensingOrganisation",
       "resource": {
         "resourceType": "MessageHeader",
-        "id": "b2e0e631-42fd-4d8a-a7b2-a2f54fe70bf7",
+        "id": "MessageHeaderExampleDispensingOrganisation",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-message-header",
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_MessageHeader|0.9"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-MessageHeader|1.0"
           ]
         },
         "extension": [
@@ -35,7 +34,7 @@
           }
         ],
         "sender": {
-          "reference": "Organization/f89adcee-7fe3-4b06-bc5f-e17b592a3a5f"
+          "reference": "DispensingOrganization/DispensingOrganizationExample"
         },
         "source": {
           "endpoint": "https://apotheke.de/KIM"
@@ -48,9 +47,10 @@
       }
     },
     {
+      "fullUrl": "https://gematik.de/fhir/Prescription/KBV-PR-ERP-PrescriptionExample",
       "resource": {
         "resourceType": "MedicationRequest",
-        "id": "5fb9b3b5-df19-4a7a-8d19-0dee164da7fe",
+        "id": "KBV-PR-ERP-PrescriptionExample",
         "meta": {
           "profile": [
             "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription|1.1.0"
@@ -99,26 +99,27 @@
           "reference": "Medication/MedicationExamplePZN"
         },
         "subject": {
-          "reference": "Patient/b04f58bc-bb37-4490-9561-2e6954764c4a"
+          "reference": "Patient/KBV-PR-FOR-PatientExample"
         },
-        "authoredOn": "2022-12-04T08:51:40.153+02:00",
+        "authoredOn": "2022-12-04",
         "requester": {
-          "reference": "Practitioner/fcdcfa8a-b1ff-488f-b32f-16359cd78596"
+          "reference": "Practitioner/KBV-PR-FOR-PractitionerExample"
         },
         "substitution": {
           "allowedBoolean": true
         },
         "insurance": [
           {
-            "reference": "Coverage/2e3afa48-ccc6-42c8-9780-1ceebdbd7440"
+            "reference": "Coverage/KBV-PR-FOR-CoverageExample"
           }
         ]
       }
     },
     {
+      "fullUrl": "https://gematik.de/fhir/Patient/KBV-PR-FOR-PatientExample",
       "resource": {
         "resourceType": "Patient",
-        "id": "b04f58bc-bb37-4490-9561-2e6954764c4a",
+        "id": "KBV-PR-FOR-PatientExample",
         "meta": {
           "profile": [
             "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
@@ -129,8 +130,8 @@
             "type": {
               "coding": [
                 {
-                  "code": "GKV",
-                  "system": "http://fhir.de/CodeSystem/identifier-type-de-basis"
+                  "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
+                  "code": "GKV"
                 }
               ]
             },
@@ -155,7 +156,6 @@
             ]
           }
         ],
-        "birthDate": "1965-04-10",
         "address": [
           {
             "type": "both",
@@ -180,113 +180,101 @@
             "postalCode": "08237",
             "country": "D"
           }
-        ]
+        ],
+        "birthDate": "1965-04-10"
       }
     },
     {
+      "fullUrl": "https://gematik.de/fhir/RequestingOrganization/RequestingOrganizationExample",
       "resource": {
         "resourceType": "Organization",
-        "id": "a8efd0b3-58c3-48f7-89f5-67f86dd298e8",
+        "id": "RequestingOrganizationExample",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-organization",
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_Organization|0.9"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-RequestingOrganization|1.0"
           ]
         },
-        "telecom": [
-          {
-            "system": "url",
-            "value": "https://pflegeheim.de/KIM"
-          }
-        ],
-        "address": [
-          {
-            "type": "physical",
-            "city": "Berlin",
-            "postalCode": "10247",
-            "_line": [
-              {
-                "extension": [
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-                    "valueString": "Meinekestraße"
-                  },
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-                    "valueString": "61"
-                  },
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator",
-                    "valueString": "Geriatrie"
-                  }
-                ]
-              }
-            ]
-          }
-        ],
         "identifier": [
           {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "PRN"
+                }
+              ]
+            },
             "system": "https://gematik.de/fhir/sid/telematik-id",
             "value": "10-67.245.00001234"
           }
         ],
-        "name": "Pflegeheim am Platz der Sonne"
+        "address": [
+          {
+            "type": "both",
+            "line": [
+              "Meinekestraße 61"
+            ],
+            "city": "Berlin",
+            "postalCode": "10247"
+          }
+        ],
+        "name": "Pflegeheim am Platz der Sonne",
+        "telecom": [
+          {
+            "system": "email",
+            "value": "pflegeheim@Kim-dienstleiseter.telematik"
+          }
+        ]
       }
     },
     {
+      "fullUrl": "https://gematik.de/fhir/DispensingOrganization/DispensingOrganizationExample",
       "resource": {
         "resourceType": "Organization",
-        "id": "f89adcee-7fe3-4b06-bc5f-e17b592a3a5f",
+        "id": "DispensingOrganizationExample",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-organization",
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_PR_ERP_MEDREQ_Organization|0.9"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-DispensingOrganization|1.0"
           ]
         },
-        "telecom": [
-          {
-            "system": "url",
-            "value": "https://apotheke.de/KIM"
-          }
-        ],
-        "address": [
-          {
-            "type": "physical",
-            "city": "Berlin",
-            "postalCode": "10247",
-            "_line": [
-              {
-                "extension": [
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-                    "valueString": "Meinekestraße"
-                  },
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-                    "valueString": "63"
-                  },
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator",
-                    "valueString": "Apotheke am Pflegeheim"
-                  }
-                ]
-              }
-            ]
-          }
-        ],
         "identifier": [
           {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "PRN"
+                }
+              ]
+            },
             "system": "https://gematik.de/fhir/sid/telematik-id",
             "value": "3-abc-1234567890"
           }
         ],
-        "name": "Apotheke am Platz der Sonne"
+        "address": [
+          {
+            "type": "both",
+            "line": [
+              "Meinekestraße 63"
+            ],
+            "city": "Berlin",
+            "postalCode": "10247"
+          }
+        ],
+        "name": "Apotheke am Platz der Sonne",
+        "telecom": [
+          {
+            "system": "email",
+            "value": "apotheke@Kim-dienstleiseter.telematik"
+          }
+        ]
       }
     },
     {
+      "fullUrl": "https://gematik.de/fhir/MedicationDispense/GEM-ERP-PR-MedicationDispenseExample",
       "resource": {
         "resourceType": "MedicationDispense",
-        "id": "c312572d-165c-4b4e-8617-a58ced204939",
+        "id": "GEM-ERP-PR-MedicationDispenseExample",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|1.2"
@@ -312,7 +300,7 @@
         "contained": [
           {
             "resourceType": "Medication",
-            "id": "001413e4-a5e9-48da-9b07-c17bab476407",
+            "id": "SumatripanMedication",
             "meta": {
               "profile": [
                 "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.1.0"
@@ -382,7 +370,7 @@
           }
         ],
         "medicationReference": {
-          "reference": "#001413e4-a5e9-48da-9b07-c17bab476407"
+          "reference": "#SumatripanMedication"
         },
         "subject": {
           "identifier": {

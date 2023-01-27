@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "PrescriptionDeliveryTypeEX",
   "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeEX",
-  "version": "0.9",
+  "version": "1.0",
   "name": "PrescriptionDeliveryTypeEX",
   "status": "draft",
   "experimental": false,

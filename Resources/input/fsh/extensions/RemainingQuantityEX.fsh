@@ -1,5 +1,5 @@
 Extension: RemainingQuantityEX
 Id: RemainingQuantityEX
 Description: "Restreichweite"
-* insert Meta
+* insert Meta (RemainingQuantityEX)
 * value[x] only SimpleQuantity

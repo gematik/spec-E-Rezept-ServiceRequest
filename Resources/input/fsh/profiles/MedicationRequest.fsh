@@ -1,10 +1,10 @@
 Profile: GEM_PR_ERP_MEDREQ_MedicationRequest
 Parent: MedicationRequest
-Id: gem-pr-erp-medreq-medication-request
+Id: GEM-PR-ERP-MEDREQ-MedicationRequest
 Title: "GEM PR ERP MEDREQ Medication Request"
 Description: "Profile on the Medication Request that is to be sent"
-* insert Meta
-* insert MetaProfile (GEM_PR_ERP_MEDREQ_MedicationRequest)
+* insert Meta (GEM-PR-ERP-MEDREQ-MedicationRequest)
+* insert MetaProfile (GEM-PR-ERP-MEDREQ-MedicationRequest)
 
 * implicitRules 0..0
 * contained 0..0
@@ -76,30 +76,31 @@ Description: "Profile on the Medication Request that is to be sent"
 Instance: KBV_PR_FOR_PatientExample
 InstanceOf: KBV_PR_FOR_Patient
 Usage: #inline
-* id = "b04f58bc-bb37-4490-9561-2e6954764c4a"
+* id = "KBV-PR-FOR-PatientExample"
 * meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
-* identifier.type = http://fhir.de/CodeSystem/identifier-type-de-basis#GKV
-* identifier.system = "http://fhir.de/sid/gkv/kvid-10"
-* identifier.value = "S037462981"
-* name.use = #official
-* name.family = "Fürst"
-* name.family.extension[+].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
-* name.family.extension[=].valueString = "Fuerst"
-* name.given = "Doreen"
+* identifier[versichertenId_GKV].type = http://fhir.de/CodeSystem/identifier-type-de-basis#GKV
+* identifier[versichertenId_GKV].system = "http://fhir.de/sid/gkv/kvid-10"
+* identifier[versichertenId_GKV].value = "S037462981"
+* name[name].use = #official
+* name[name].family = "Fürst"
+* name[name].family.extension[nachname].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
+* name[name].family.extension[nachname].valueString = "Fuerst"
+* name[name].given = "Doreen"
 * birthDate = "1965-04-10"
-* address.type = #both
-* address.line = "Pappelallee 89"
-* address.line.extension[0].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"
-* address.line.extension[=].valueString = "89"
-* address.line.extension[+].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"
-* address.line.extension[=].valueString = "Pappelallee"
-* address.city = "Rothenkirchen"
-* address.postalCode = "08237"
-* address.country = "D"
+* address[Strassenanschrift].type = #both
+* address[Strassenanschrift].line = "Pappelallee 89"
+* address[Strassenanschrift].line.extension[Hausnummer].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"
+* address[Strassenanschrift].line.extension[Hausnummer].valueString = "89"
+* address[Strassenanschrift].line.extension[Strasse].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"
+* address[Strassenanschrift].line.extension[Strasse].valueString = "Pappelallee"
+* address[Strassenanschrift].city = "Rothenkirchen"
+* address[Strassenanschrift].postalCode = "08237"
+* address[Strassenanschrift].country = "D"
 
 Instance: MedicationExamplePZN
 InstanceOf: Medication
 Usage: #inline
+* id = "MedicationExamplePZN"
 * meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.1.0"
 * extension[0].url = "https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Medication_Type"
 * extension[=].valueCodeableConcept.coding.version = "http://snomed.info/sct/900000000000207008/version/20220331"
@@ -123,10 +124,10 @@ InstanceOf: GEM_PR_ERP_MEDREQ_MedicationRequest
 Usage: #inline
 Title: "MedicationRequestExample_SelfPickup"
 Description: "Example of a medication request to be picked up by the patient themselves"
-* id = "fe63895a-c5df-4598-ba4a-d2fee3477cb9"
-* MetaInstance(GEM_PR_ERP_MEDREQ_MedicationRequest)
+* id = "MedicationRequestExampleSelfPickup"
+* MetaInstance(GEM-PR-ERP-MEDREQ-MedicationRequest)
 * extension[+][PrescriptionDeliveryTypeEX].url = "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeEX"
-* extension[=][PrescriptionDeliveryTypeEX].valueCoding = https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeCS#SelfPickup "Selbstabholer"
+* extension[=][PrescriptionDeliveryTypeEX].valueCoding = https://gematik.de/fhir/erpmedreqcom/CodeSystem/PrescriptionDeliveryTypeCS#SelfPickup "Selbstabholer"
 * medicationReference = Reference(MedicationExamplePZN)
 * subject = Reference(KBV_PR_FOR_PatientExample)
 * dosageInstruction.extension.url = "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_DosageFlag"
@@ -140,10 +141,10 @@ InstanceOf: GEM_PR_ERP_MEDREQ_MedicationRequest
 Usage: #inline
 Title: "MedicationRequestExample_RequestingOrganisation"
 Description: "Example of a medication request resulting in a prescription sent to the dispensing organization"
-* id = "b3eb274e-195f-4ac3-a6e6-f1d113434693"
-* MetaInstance(GEM_PR_ERP_MEDREQ_MedicationRequest)
+* id = "MedicationRequestExampleRequestingOrganisation"
+* MetaInstance(GEM-PR-ERP-MEDREQ-MedicationRequest)
 * extension[+][PrescriptionDeliveryTypeEX].url = "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeEX"
-* extension[=][PrescriptionDeliveryTypeEX].valueCoding = https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeCS#RequestingOrganisation "Beschaffung durch anfragende Organisation"
+* extension[=][PrescriptionDeliveryTypeEX].valueCoding = https://gematik.de/fhir/erpmedreqcom/CodeSystem/PrescriptionDeliveryTypeCS#RequestingOrganisation
 * medicationReference = Reference(MedicationExamplePZN)
 * subject = Reference(KBV_PR_FOR_PatientExample)
 * dosageInstruction.extension.url = "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_DosageFlag"
@@ -157,10 +158,10 @@ InstanceOf: GEM_PR_ERP_MEDREQ_MedicationRequest
 Usage: #inline
 Title: "MedicationRequestExample_DispensingOrganisation"
 Description: "Example of a medication request resulting in a prescription sent to the dispensing organization"
-* id = "12b8036c-0cc6-43cf-b9cc-c6ebccde0d58"
-* MetaInstance(GEM_PR_ERP_MEDREQ_MedicationRequest)
+* id = "MessageHeaderExampleDispensingOrganisation"
+* MetaInstance(GEM-PR-ERP-MEDREQ-MedicationRequest)
 * extension[+][PrescriptionDeliveryTypeEX].url = "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeEX"
-* extension[=][PrescriptionDeliveryTypeEX].valueCoding = https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionDeliveryTypeCS#DispensingOrganisation "Belieferung der anfragenden Organisation durch Apotheke"
+* extension[=][PrescriptionDeliveryTypeEX].valueCoding = https://gematik.de/fhir/erpmedreqcom/CodeSystem/PrescriptionDeliveryTypeCS#DispensingOrganisation
 * medicationReference = Reference(MedicationExamplePZN)
 * subject = Reference(KBV_PR_FOR_PatientExample)
 * dosageInstruction.extension.url = "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_DosageFlag"
