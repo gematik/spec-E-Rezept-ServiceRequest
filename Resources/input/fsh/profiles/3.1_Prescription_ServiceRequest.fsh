@@ -4,6 +4,9 @@ Id: gem-pr-erp-medreq-prescription-service-request
 Title: "GEM PR ERP MEDREQ Prescription Service Request"
 Description: "ServiceRequest that is used to request a prescription from a practitioner"
 
+* extension contains
+    GEM_EX_MEDREQ_EPrescriptionToken named EPrescriptionToken 0..1
+
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
@@ -84,3 +87,5 @@ AuslieferndeApotheke 0..1 MS
 * note MS
   * ^short = "Weitere Angaben zur Rezeptanforderung"
   * ^comment = "Eventuell nicht spezifizierte Anwendungsfälle können hier im Freitext platziert werden"
+
+//TODO: Invariante, wenn status completed => Token 1..1
