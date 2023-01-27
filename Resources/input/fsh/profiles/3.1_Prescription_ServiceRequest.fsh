@@ -55,7 +55,7 @@ Description: "ServiceRequest that is used to request a prescription from a pract
   * ^short = "Gibt das Datum an, an dem das Rezept ausgestellt werden soll"
 
 * authoredOn 1..1 MS
-  * ^short = "Datum der Erstellung des Requests"
+  * ^short = "Datum der Erstellung des Anfrage"
   * ^comment = "Wird initial angelegt und dann nicht mehr verändert."
 
 

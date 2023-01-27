@@ -40,36 +40,25 @@ Description: "ServiceRequest that is used to initiate a dispense request for a p
 * subject MS
 * subject only Reference($KBV_PR_FOR_Patient)
 
-* orderDetail 1..1 MS
-* orderDetail from PrescriptionFullfillmentTypeVS (required)
-  * ^short = "Gibt an wie die Rezeptanfrage erfüllt werden soll."
-  * ^comment = "Wenn das Rezept an eine Apotheke geht, muss ein entsprechender ServiceRequest im Bundle enthalten sein."
-
 * occurrence[x] 1..1 MS
 * occurrence[x] only dateTime
-  * ^short = "Gibt das Datum an, an dem das Rezept ausgestellt werden soll"
+  * ^short = "Gibt das Datum an, an dem das Medikament ausgeliefert werden soll"
 
 * authoredOn 1..1 MS
-  * ^short = "Datum der Erstellung des Requests"
+  * ^short = "Datum der Erstellung des Anfrage"
   * ^comment = "Wird initial angelegt und dann nicht mehr verändert."
-
 
 * requester 1..1 MS
 * requester only Reference(KBV_PR_FOR_Practitioner or $KBV_PR_FOR_PractitionerRole or $KBV_PR_FOR_Organization)
 
-//TODO geht das hier schöner: ?
 * performerType 1..1 MS
   * ^short = "Gibt an, wer den ServiceRequest erfüllen soll"
   * ^comment = "Dient als Unterscheidungsmerkmal für die ServiceRequests."
 * performerType.coding 1..1
 * performerType.coding.system = "https://gematik.de/fhir/erpmedreqcom/GEM_VS_MEDREQ_PerformerType"
-* performerType.coding.code = #ausstellender-arzt
+* performerType.coding.code = #beliefernde-apotheke
 
 * performer only Reference($KBV_PR_FOR_Practitioner or $KBV_PR_FOR_Organization or $KBV_PR_FOR_PractitionerRole)
-
-* reasonCode MS //TODO CS finden
-//TODO: Invariante bei Code XX dann GEM_PR_ERP_MEDREQ_RemainingMedication_Observation nutzen
-* reasonReference only Reference(GEM_PR_ERP_MEDREQ_RemainingMedication_Observation)
 
 * note MS
   * ^short = "Weitere Angaben zur Rezeptanforderung"

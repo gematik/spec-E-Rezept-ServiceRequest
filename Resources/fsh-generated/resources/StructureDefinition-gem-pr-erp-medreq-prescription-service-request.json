@@ -2031,7 +2031,7 @@
       {
         "id": "ServiceRequest.authoredOn",
         "path": "ServiceRequest.authoredOn",
-        "short": "Datum der Erstellung des Requests",
+        "short": "Datum der Erstellung des Anfrage",
         "definition": "When the request transitioned to being actionable.",
         "comment": "Wird initial angelegt und dann nicht mehr verändert.",
         "alias": [
@@ -4062,7 +4062,7 @@
       {
         "id": "ServiceRequest.authoredOn",
         "path": "ServiceRequest.authoredOn",
-        "short": "Datum der Erstellung des Requests",
+        "short": "Datum der Erstellung des Anfrage",
         "comment": "Wird initial angelegt und dann nicht mehr verändert.",
         "min": 1,
         "mustSupport": true
