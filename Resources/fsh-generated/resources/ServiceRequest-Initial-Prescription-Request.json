@@ -1,0 +1,64 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "Initial-Prescription-Request",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-prescription-service-request"
+    ]
+  },
+  "intent": "order",
+  "identifier": [
+    {
+      "system": "https://gematik.de/GEM_NS_MEDREQ_RequestId",
+      "value": "012345"
+    }
+  ],
+  "basedOn": [
+    {
+      "reference": "#MedicationRequest/1"
+    }
+  ],
+  "requisition": {
+    "system": "https://gematik.de/GEM_NS_MEDREQ_RequestGroupId",
+    "value": "X2"
+  },
+  "status": "active",
+  "code": {
+    "coding": [
+      {
+        "_code": {
+          "value": "prescription-request"
+        }
+      }
+    ]
+  },
+  "subject": {
+    "reference": "#Patient/1234"
+  },
+  "orderDetail": [
+    {
+      "coding": [
+        {
+          "code": "return-to-requester"
+        }
+      ]
+    }
+  ],
+  "occurrenceDateTime": "2023-02-01",
+  "authoredOn": "2023-01-27",
+  "requester": {
+    "reference": "#Organization/1234"
+  },
+  "performerType": {
+    "coding": [
+      {
+        "code": "ausstellender-arzt"
+      }
+    ]
+  },
+  "performer": [
+    {
+      "reference": "#Practitioner/1234"
+    }
+  ]
+}

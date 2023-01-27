@@ -32,6 +32,7 @@ Description: "ServiceRequest that is used to request a prescription from a pract
   * ^comment = "Ist als Fall oder VorgangsID zu verstehen, um nachverfolgen zu können zu welcher Anfrage der ServiceRequest gehört."
 
 * status MS
+* status obeys sr-1
 * status from GEM_VS_MEDREQ_RequestStatus
   * ^short = "Gibt den Bearbeitungsstand eines ServiceRequests an"
 
@@ -76,17 +77,44 @@ Description: "ServiceRequest that is used to request a prescription from a pract
 //TODO: Invariante bei Code XX dann GEM_PR_ERP_MEDREQ_RemainingMedication_Observation nutzen
 * reasonReference only Reference(GEM_PR_ERP_MEDREQ_RemainingMedication_Observation)
 
-* supportingInfo ^slicing.discriminator.type = #exists
-* supportingInfo ^slicing.discriminator.path = "identifier"
+* supportingInfo ^slicing.discriminator.type = #pattern
+* supportingInfo ^slicing.discriminator.path = "meta.profile"
 * supportingInfo ^slicing.rules = #open
 * supportingInfo ^slicing.description = "Unterstützende Informationen zur Rezeptanforderung"
 
 * supportingInfo contains
 AuslieferndeApotheke 0..1 MS
+and MedikamentenReichweite 0..1 MS
 * supportingInfo[AuslieferndeApotheke] only Reference(GEM_PR_ERP_MEDREQ_Organization)
+* supportingInfo[MedikamentenReichweite] only Reference(GEM_PR_ERP_MEDREQ_RemainingMedication_Observation)
 
 * note MS
   * ^short = "Weitere Angaben zur Rezeptanforderung"
   * ^comment = "Eventuell nicht spezifizierte Anwendungsfälle können hier im Freitext platziert werden"
 
-//TODO: Invariante, wenn status completed => Token 1..1
+Invariant: sr-1
+Description: "Wenn der Status auf 'completed' gesetzt ist, muss ein Token vorhanden sein"
+Expression: "(status = 'completed') implies exist(extension.where(system='https://gematik.de/fhir/erp/NamingSystem/GEM_NS_EPrescriptionToken'))"
+Severity: #error
+
+Instance: Initial-Prescription-Request
+InstanceOf: GEM_PR_ERP_MEDREQ_Prescription_ServiceRequest
+Usage: #example
+Title: "Initial Prescription Request"
+Description: ""
+* identifier[0]
+  * system = "https://gematik.de/GEM_NS_MEDREQ_RequestId"
+  * value = "012345"
+* basedOn.reference = "#MedicationRequest/1"
+* requisition[0].system = "https://gematik.de/GEM_NS_MEDREQ_RequestGroupId"
+* requisition[=].value = "X2"
+* status = #active
+* intent = #order
+* code.coding.code.value = #prescription-request
+* subject.reference = "#Patient/1234"
+* orderDetail.coding.code = #return-to-requester
+* occurrenceDateTime = "2023-02-01"
+* authoredOn = "2023-01-27"
+* requester.reference = "#Organization/1234"
+* performerType.coding.code = #ausstellender-arzt
+* performer.reference = "#Practitioner/1234"

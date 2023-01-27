@@ -358,7 +358,7 @@
             "code": "uri"
           }
         ],
-        "patternUri": "https://fhir.gkvsv.de/NamingSystem/GKVSV_NS_Belegnummer",
+        "patternUri": "https://gematik.de/GEM_NS_MEDREQ_RequestGroupId",
         "example": [
           {
             "label": "General",
@@ -615,7 +615,7 @@
       {
         "id": "Identifier.system",
         "path": "Identifier.system",
-        "patternUri": "https://fhir.gkvsv.de/NamingSystem/GKVSV_NS_Belegnummer"
+        "patternUri": "https://gematik.de/GEM_NS_MEDREQ_RequestGroupId"
       }
     ]
   }

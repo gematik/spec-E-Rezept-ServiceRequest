@@ -1197,6 +1197,13 @@
             "expression": "hasValue() or (children().count() > id.count())",
             "xpath": "@value|f:*|h:div",
             "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          },
+          {
+            "key": "sr-1",
+            "severity": "error",
+            "human": "Wenn der Status auf 'completed' gesetzt ist, muss ein Token vorhanden sein",
+            "expression": "(status = 'completed') implies exist(extension.where(system='https://gematik.de/fhir/erp/NamingSystem/GEM_NS_EPrescriptionToken'))",
+            "source": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-prescription-service-request"
           }
         ],
         "mustSupport": true,
@@ -3385,8 +3392,8 @@
         "slicing": {
           "discriminator": [
             {
-              "type": "exists",
-              "path": "identifier"
+              "type": "pattern",
+              "path": "meta.profile"
             }
           ],
           "rules": "open",
@@ -3491,6 +3498,87 @@
             "code": "Reference",
             "targetProfile": [
               "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Organization"
+            ]
+          }
+        ],
+        "condition": [
+          "ele-1"
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          },
+          {
+            "key": "ref-1",
+            "severity": "error",
+            "human": "SHALL have a contained resource if a local reference is provided",
+            "expression": "reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))",
+            "xpath": "not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])",
+            "source": "http://hl7.org/fhir/StructureDefinition/DetectedIssue"
+          }
+        ],
+        "mustSupport": true,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          },
+          {
+            "identity": "rim",
+            "map": "The target of a resource reference is a RIM entry point (Act, Role, or Entity)"
+          },
+          {
+            "identity": "workflow",
+            "map": "Request.supportingInfo"
+          },
+          {
+            "identity": "v2",
+            "map": "Accompanying segments"
+          },
+          {
+            "identity": "rim",
+            "map": ".outboundRelationship[typeCode=PERT].target"
+          }
+        ]
+      },
+      {
+        "id": "ServiceRequest.supportingInfo:MedikamentenReichweite",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+            "valueCode": "normative"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
+            "valueCode": "4.0.0"
+          }
+        ],
+        "path": "ServiceRequest.supportingInfo",
+        "sliceName": "MedikamentenReichweite",
+        "short": "Additional clinical information",
+        "definition": "Additional clinical information about the patient or specimen that may influence the services or their interpretations.     This information includes diagnosis, clinical findings and other observations.  In laboratory ordering these are typically referred to as \"ask at order entry questions (AOEs)\".  This includes observations explicitly requested by the producer (filler) to provide context or supporting information needed to complete the order. For example,  reporting the amount of inspired oxygen for blood gas measurements.",
+        "comment": "To represent information about how the services are to be delivered use the `instructions` element.",
+        "alias": [
+          "Ask at order entry question",
+          "AOE"
+        ],
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "ServiceRequest.supportingInfo",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-remaining-medication-observation"
             ]
           }
         ],
@@ -3998,6 +4086,15 @@
         "id": "ServiceRequest.status",
         "path": "ServiceRequest.status",
         "short": "Gibt den Bearbeitungsstand eines ServiceRequests an",
+        "constraint": [
+          {
+            "key": "sr-1",
+            "severity": "error",
+            "human": "Wenn der Status auf 'completed' gesetzt ist, muss ein Token vorhanden sein",
+            "expression": "(status = 'completed') implies exist(extension.where(system='https://gematik.de/fhir/erp/NamingSystem/GEM_NS_EPrescriptionToken'))",
+            "source": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-prescription-service-request"
+          }
+        ],
         "mustSupport": true,
         "binding": {
           "strength": "required",
@@ -4144,8 +4241,8 @@
         "slicing": {
           "discriminator": [
             {
-              "type": "exists",
-              "path": "identifier"
+              "type": "pattern",
+              "path": "meta.profile"
             }
           ],
           "rules": "open",
@@ -4163,6 +4260,22 @@
             "code": "Reference",
             "targetProfile": [
               "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Organization"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.supportingInfo:MedikamentenReichweite",
+        "path": "ServiceRequest.supportingInfo",
+        "sliceName": "MedikamentenReichweite",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-remaining-medication-observation"
             ]
           }
         ],
