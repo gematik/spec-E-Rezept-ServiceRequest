@@ -1,0 +1,72 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "gem-ex-medreq-eprescription-token",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_EX_MEDREQ_EPrescriptionToken",
+  "version": "1.0",
+  "name": "GEM_EX_MEDREQ_EPrescriptionToken",
+  "title": "GEM EX MEDREQ E Prescription Token",
+  "status": "draft",
+  "experimental": false,
+  "publisher": "gematik GmbH",
+  "description": "This extension carries an eprescription token",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Element"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-ex-medreq-eprescription-token"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "Identifier"
+          }
+        ]
+      },
+      {
+        "id": "Extension.value[x].system",
+        "path": "Extension.value[x].system",
+        "patternUri": "https://gematik.de/fhir/erp/NamingSystem/GEM_NS_EPrescriptionToken"
+      },
+      {
+        "id": "Extension.value[x].value",
+        "path": "Extension.value[x].value",
+        "constraint": [
+          {
+            "key": "GEM-INV-E-Prescription-Regex",
+            "severity": "error",
+            "human": "Regex Invariante zur Validierung eines E-Rezept Tokens",
+            "expression": "$this.toString().matches('^Task/[0-9]{3}.[0-9]{3}.[0-9]{3}.[0-9]{3}.[0-9]{3}.[0-9]{2}/$accept?ac=[A-Za-z0-9]+$')",
+            "source": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_EX_MEDREQ_EPrescriptionToken"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -72,6 +72,15 @@ Description: "ServiceRequest that is used to request a prescription from a pract
 //TODO: Invariante bei Code XX dann GEM_PR_ERP_MEDREQ_RemainingMedication_Observation nutzen
 * reasonReference only Reference(GEM_PR_ERP_MEDREQ_RemainingMedication_Observation)
 
+* supportingInfo ^slicing.discriminator.type = #exists
+* supportingInfo ^slicing.discriminator.path = "identifier"
+* supportingInfo ^slicing.rules = #open
+* supportingInfo ^slicing.description = "Unterstützende Informationen zur Rezeptanforderung"
+
+* supportingInfo contains
+AuslieferndeApotheke 0..1 MS
+* supportingInfo[AuslieferndeApotheke] only Reference(GEM_PR_ERP_MEDREQ_Organization)
+
 * note MS
   * ^short = "Weitere Angaben zur Rezeptanforderung"
   * ^comment = "Eventuell nicht spezifizierte Anwendungsfälle können hier im Freitext platziert werden"

@@ -35,7 +35,7 @@
       {
         "id": "Identifier.system",
         "path": "Identifier.system",
-        "fixedUri": "https://gematik.de/GEM_NS_MEDREQ_RequestGroupId"
+        "patternUri": "https://fhir.gkvsv.de/NamingSystem/GKVSV_NS_Belegnummer"
       }
     ]
   }
