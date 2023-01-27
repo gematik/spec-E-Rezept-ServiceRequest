@@ -48,7 +48,9 @@ Der Anhang enthält die Verordnungs- und Dispensierungsinformation als FHIR-Ress
      filename=TERP_MEDREQ_DIS_7a1d5187-3070-4a23-a877-162bdd47007a.xml
     Content-Description: ERP_MEDREQ_DIS
 
-    encodiertes Beispiel von
-    BASE64_ENCODE(https://simplifier.net/erezept-medicationrequest-communication/dispenseinformationbundle)
-
+    RGllc2VzIGlzdCBlaW4gZW5jb2RpZXJ0ZXMgQmVpc3BpZWwgZGVyIGVudHNwcmVjaGVuZGVuIHRy
+    YW5zcG9ydGllcnRlbiBGSElSIE5hY2hyaWNodC4gRGllIGpld2VpbGlnZSBCZWlzcGllbG5hY2hy
+    aWNodCBiZWZpbmRldCBzaWNoIGhpZXI6IGh0dHBzOi8vc2ltcGxpZmllci5uZXQvZXJlemVwdC1t
+    ZWRpY2F0aW9ucmVxdWVzdC1jb21tdW5pY2F0aW9uL35yZXNvdXJjZXM/Y2F0ZWdvcnk9RXhhbXBs
+    ZSZmaGlyVmVyc2lvbj1SNCZzb3J0Qnk9UmFua1Njb3JlX2Rlc2M=
     ------=_Part_6_1831919254.1667563377253--
