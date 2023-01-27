@@ -33,7 +33,7 @@
     ]
   },
   "subject": {
-    "reference": "#Patient/1234"
+    "reference": "Example-Patient"
   },
   "orderDetail": [
     {

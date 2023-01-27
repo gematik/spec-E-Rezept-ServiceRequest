@@ -1,0 +1,18 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "GEM_CS_MEDREQ_MedicationRequestReason",
+  "id": "gem-cs-medreq-medication-request-reason",
+  "title": "GEM CS MEDREQ Medication Request Reason",
+  "description": "CodeSystem to state why medication is needed",
+  "version": "0.9",
+  "url": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/gem-cs-medreq-medication-request-reason",
+  "concept": [
+    {
+      "code": "medication-runs-out",
+      "display": "Medikation geht zu neige"
+    }
+  ],
+  "count": 1
+}

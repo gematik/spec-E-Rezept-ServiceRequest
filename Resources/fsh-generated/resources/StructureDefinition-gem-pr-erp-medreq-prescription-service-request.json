@@ -2951,6 +2951,7 @@
             "source": "http://hl7.org/fhir/StructureDefinition/DetectedIssue"
           }
         ],
+        "mustSupport": true,
         "isSummary": true,
         "mapping": [
           {
@@ -3172,18 +3173,10 @@
             "source": "http://hl7.org/fhir/StructureDefinition/Element"
           }
         ],
-        "mustSupport": true,
         "isSummary": true,
         "binding": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
-              "valueString": "ServiceRequestReason"
-            }
-          ],
-          "strength": "example",
-          "description": "Diagnosis or problem codes justifying the reason for requesting the service investigation.",
-          "valueSet": "http://hl7.org/fhir/ValueSet/procedure-reason"
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/gem-vs-medreq-medication-request-reason"
         },
         "mapping": [
           {
@@ -4216,12 +4209,16 @@
               "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_PractitionerRole"
             ]
           }
-        ]
+        ],
+        "mustSupport": true
       },
       {
         "id": "ServiceRequest.reasonCode",
         "path": "ServiceRequest.reasonCode",
-        "mustSupport": true
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/gem-vs-medreq-medication-request-reason"
+        }
       },
       {
         "id": "ServiceRequest.reasonReference",

@@ -71,17 +71,17 @@ Description: "ServiceRequest that is used to request a prescription from a pract
 * performerType.coding.system = "https://gematik.de/fhir/erpmedreqcom/GEM_VS_MEDREQ_PerformerType"
 * performerType.coding.code = #ausstellender-arzt
 
+* performer MS
 * performer only Reference($KBV_PR_FOR_Practitioner or $KBV_PR_FOR_Organization or $KBV_PR_FOR_PractitionerRole)
 
-* reasonCode MS //TODO CS finden
-//TODO: Invariante bei Code XX dann GEM_PR_ERP_MEDREQ_RemainingMedication_Observation nutzen
+* reasonCode from GEM_VS_MEDREQ_MedicationRequestReason
+
 * reasonReference only Reference(GEM_PR_ERP_MEDREQ_RemainingMedication_Observation)
 
 * supportingInfo ^slicing.discriminator.type = #pattern
 * supportingInfo ^slicing.discriminator.path = "meta.profile"
 * supportingInfo ^slicing.rules = #open
 * supportingInfo ^slicing.description = "Unterstützende Informationen zur Rezeptanforderung"
-
 * supportingInfo contains
 AuslieferndeApotheke 0..1 MS
 and MedikamentenReichweite 0..1 MS
@@ -111,7 +111,7 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * status = #active
 * intent = #order
 * code.coding.code.value = #prescription-request
-* subject.reference = "#Patient/1234"
+* subject.reference = "Example-Patient"
 * orderDetail.coding.code = #return-to-requester
 * occurrenceDateTime = "2023-02-01"
 * authoredOn = "2023-01-27"
@@ -136,7 +136,7 @@ Description: "ServiceRequest that is returned to the requester"
 * status = #completed
 * intent = #order
 * code.coding.code.value = #prescription-request
-* subject.reference = "#Patient/1234"
+* subject.reference = "Example-Patient"
 * orderDetail.coding.code = #return-to-requester
 * occurrenceDateTime = "2023-02-01"
 * authoredOn = "2023-01-27"
