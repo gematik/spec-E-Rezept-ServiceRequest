@@ -1,0 +1,17 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "KimDienstleistungsVS",
+  "id": "kim-dienstkennung-vs",
+  "title": "Kim Dienstkennung VS",
+  "description": "Valueset containing all KIM Dienstkennungen",
+  "version": "0.9",
+  "url": "https://gematik.de/fhir/erpmedreqcom/ValueSet/kim-dienstkennung-vs",
+  "compose": {
+    "include": [
+      {
+        "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/kim-dienstkennung-cs"
+      }
+    ]
+  }
+}

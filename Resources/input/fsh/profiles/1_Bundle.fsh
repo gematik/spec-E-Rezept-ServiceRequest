@@ -1,26 +1,16 @@
-//TODO: Ableiten von KIM Bundle??
-Profile: GEM_ERP_PR_MEDREQ_Bundle
-Parent: Bundle
-Id: gem-erp-pr-medreq-bundle
-Title: "GEM ERP PR MEDREQ Bundle"
-Description: "Bundle that is used for MedicationRequests with KIM"
-* insert Meta (GEM_ERP_PR_MEDREQ_Bundle)
-* insert MetaProfile (GEM_ERP_PR_MEDREQ_Bundle)
-* type = #message (exactly)
-* timestamp 1..1
-* entry 1..*
-* entry ^slicing.discriminator.type = #value
-* entry ^slicing.discriminator.path = "resource.meta.profile"
-* entry ^slicing.rules = #open
+Profile: GEM_PR_MEDREQ_MessageBundle
+Parent: GEM_PR_KIM_MessageBundle
+Id: GEM-PR-MEDREQ-MessageBundle
+Title: "GEM_PR_MEDREQ_MessageBundle"
+Description: "Basic Bundle for communication of FHIR Ressources with KIM Messages"
 * entry contains
-    MessageHeader 1..1 and
-    PrescriptionServiceRequest 1..* and
-    DispenseServiceRequest 0..* and
-    MedicationRequest 0..* and
-    DispenseInformation 0..* and
-    Patient 1..1 and
-    Practitioner 0..*
-* entry[MessageHeader].resource only GEM_PR_ERP_MEDREQ_MessageHeader
+    PrescriptionServiceRequest 1..* MS and
+    DispenseServiceRequest 0..* MS and
+    MedicationRequest 0..* MS and
+    DispenseInformation 0..* MS and
+    Patient 1..1 MS and
+    Practitioner 0..* MS
+* entry[MessageHeader].resource only GEM_PR_KIM_MessageHeader
 * entry[PrescriptionServiceRequest].resource only GEM_PR_ERP_MEDREQ_Prescription_ServiceRequest
 * entry[DispenseServiceRequest].resource only GEM_PR_ERP_MEDREQ_Dispense_ServiceRequest
 * entry[MedicationRequest].resource only GEM_PR_ERP_MEDREQ_MedicationRequest
