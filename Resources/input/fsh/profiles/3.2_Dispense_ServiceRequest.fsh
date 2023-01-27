@@ -19,7 +19,7 @@ Description: "ServiceRequest that is used to initiate a dispense request for a p
 * basedOn 0..1 MS
   * ^short = "MedicationRequest, der von der Pflegeeinrichtung gewünscht wird oder vom Arzt erfüllt wurde."
   * ^comment = "Einem ServiceRequest ist genau ein MedicationRequest zugeordnet, sodass unabhängige Bearbeitungen möglich sind."
-* basedOn only Reference($KBV_PR_ERP_Prescription)
+* basedOn only Reference($KBV_PR_ERP_Prescription) //referenzierte Objekte im Bundle einfügen
 
 * requisition 1..1 MS
 * requisition only GEM_ERP_MEDREQ_PR_RequestGroupIdentifier
@@ -59,6 +59,15 @@ Description: "ServiceRequest that is used to initiate a dispense request for a p
 * performerType.coding.code = #beliefernde-apotheke
 
 * performer only Reference($KBV_PR_FOR_Practitioner or $KBV_PR_FOR_Organization or $KBV_PR_FOR_PractitionerRole)
+
+* supportingInfo ^slicing.discriminator.type = #pattern
+* supportingInfo ^slicing.discriminator.path = "meta.profile"
+* supportingInfo ^slicing.rules = #open
+* supportingInfo ^slicing.description = "Unterstützende Informationen zur Rezeptanforderung"
+* supportingInfo contains
+AusstellenderArzt 0..1 MS
+and MedikamentenReichweite 0..1 MS
+* supportingInfo[AusstellenderArzt] only Reference(GEM_PR_ERP_MEDREQ_Organization)
 
 * note MS
   * ^short = "Weitere Angaben zur Rezeptanforderung"

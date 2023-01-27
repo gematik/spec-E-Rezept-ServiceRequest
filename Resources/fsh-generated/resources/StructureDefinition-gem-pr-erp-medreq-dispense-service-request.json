@@ -250,6 +250,44 @@
         ]
       },
       {
+        "id": "ServiceRequest.supportingInfo",
+        "path": "ServiceRequest.supportingInfo",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "meta.profile"
+            }
+          ],
+          "rules": "open",
+          "description": "Unterstützende Informationen zur Rezeptanforderung"
+        }
+      },
+      {
+        "id": "ServiceRequest.supportingInfo:AusstellenderArzt",
+        "path": "ServiceRequest.supportingInfo",
+        "sliceName": "AusstellenderArzt",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Organization"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.supportingInfo:MedikamentenReichweite",
+        "path": "ServiceRequest.supportingInfo",
+        "sliceName": "MedikamentenReichweite",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
         "id": "ServiceRequest.note",
         "path": "ServiceRequest.note",
         "short": "Weitere Angaben zur Rezeptanforderung",

@@ -19,3 +19,5 @@ Description: "Basic Bundle for communication of FHIR Ressources with KIM Message
     MessageHeader 1..1
 * entry[MessageHeader].resource 1..
 * entry[MessageHeader].resource only GEM_PR_KIM_MessageHeader
+
+// Invariante zum Auflösen der Referenzen
