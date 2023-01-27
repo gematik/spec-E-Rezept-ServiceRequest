@@ -101,7 +101,7 @@ Instance: Initial-Prescription-Request
 InstanceOf: GEM_PR_ERP_MEDREQ_Prescription_ServiceRequest
 Usage: #example
 Title: "Initial Prescription Request"
-Description: ""
+Description: "This ServiceRequest is sent initially to the prescribing practitioner"
 * identifier[0]
   * system = "https://gematik.de/GEM_NS_MEDREQ_RequestId"
   * value = "012345"
@@ -109,6 +109,31 @@ Description: ""
 * requisition[0].system = "https://gematik.de/GEM_NS_MEDREQ_RequestGroupId"
 * requisition[=].value = "X2"
 * status = #active
+* intent = #order
+* code.coding.code.value = #prescription-request
+* subject.reference = "#Patient/1234"
+* orderDetail.coding.code = #return-to-requester
+* occurrenceDateTime = "2023-02-01"
+* authoredOn = "2023-01-27"
+* requester.reference = "#Organization/1234"
+* performerType.coding.code = #ausstellender-arzt
+* performer.reference = "#Practitioner/1234"
+
+Instance: Response-Prescription-Request
+InstanceOf: GEM_PR_ERP_MEDREQ_Prescription_ServiceRequest
+Usage: #example
+Title: "Initial Prescription Request"
+Description: "ServiceRequest that is returned to the requester"
+* extension[EPrescriptionToken].valueIdentifier
+  * system = "https://gematik.de/fhir/erp/NamingSystem/GEM_NS_EPrescriptionToken"
+  * value = "Task/160.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
+* identifier[0]
+  * system = "https://gematik.de/GEM_NS_MEDREQ_RequestId"
+  * value = "012345"
+* basedOn.reference = "#MedicationRequest/1"
+* requisition[0].system = "https://gematik.de/GEM_NS_MEDREQ_RequestGroupId"
+* requisition[=].value = "X2"
+* status = #completed
 * intent = #order
 * code.coding.code.value = #prescription-request
 * subject.reference = "#Patient/1234"

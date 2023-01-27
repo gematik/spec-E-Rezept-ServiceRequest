@@ -1,0 +1,73 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "Response-Prescription-Request",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-prescription-service-request"
+    ]
+  },
+  "intent": "order",
+  "extension": [
+    {
+      "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-ex-medreq-eprescription-token",
+      "valueIdentifier": {
+        "system": "https://gematik.de/fhir/erp/NamingSystem/GEM_NS_EPrescriptionToken",
+        "value": "Task/160.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "system": "https://gematik.de/GEM_NS_MEDREQ_RequestId",
+      "value": "012345"
+    }
+  ],
+  "basedOn": [
+    {
+      "reference": "#MedicationRequest/1"
+    }
+  ],
+  "requisition": {
+    "system": "https://gematik.de/GEM_NS_MEDREQ_RequestGroupId",
+    "value": "X2"
+  },
+  "status": "completed",
+  "code": {
+    "coding": [
+      {
+        "_code": {
+          "value": "prescription-request"
+        }
+      }
+    ]
+  },
+  "subject": {
+    "reference": "#Patient/1234"
+  },
+  "orderDetail": [
+    {
+      "coding": [
+        {
+          "code": "return-to-requester"
+        }
+      ]
+    }
+  ],
+  "occurrenceDateTime": "2023-02-01",
+  "authoredOn": "2023-01-27",
+  "requester": {
+    "reference": "#Organization/1234"
+  },
+  "performerType": {
+    "coding": [
+      {
+        "code": "ausstellender-arzt"
+      }
+    ]
+  },
+  "performer": [
+    {
+      "reference": "#Practitioner/1234"
+    }
+  ]
+}
