@@ -55,6 +55,25 @@
       {
         "id": "ServiceRequest.identifier",
         "path": "ServiceRequest.identifier",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "system"
+            }
+          ],
+          "rules": "open",
+          "description": "Defines identifiers that can be used for this context"
+        },
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.identifier:requestId",
+        "path": "ServiceRequest.identifier",
+        "sliceName": "requestId",
+        "min": 1,
+        "max": "1",
         "type": [
           {
             "code": "Identifier",
@@ -67,6 +86,7 @@
       {
         "id": "ServiceRequest.basedOn",
         "path": "ServiceRequest.basedOn",
+        "short": "MedicationRequest, der von der Pflegeeinrichtung gewünscht wird oder vom Arzt erfüllt wurde.",
         "comment": "Einem ServiceRequest ist genau ein MedicationRequest zugeordnet, sodass unabhängige Bearbeitungen möglich sind.",
         "min": 1,
         "max": "1",
@@ -74,20 +94,82 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-MedicationRequest"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-MedicationRequest",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription"
             ]
           }
-        ]
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.replaces",
+        "path": "ServiceRequest.replaces",
+        "short": "Wenn eine Pflegeeinrichtung ihre alte Anfrage stornieren möchte und eine neue Stellt, kann hier das zu stornierende ServiceRequest angegeben werden.",
+        "comment": "Nur vom Requester zu nutzen, um eine alte Anfrage zu stornieren",
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-prescription-service-request"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.requisition",
+        "path": "ServiceRequest.requisition",
+        "short": "Identifier des Vorgangs. Alle ServiceRequests innerhalb eines Vorgangs erhalten die gleiche ID.",
+        "comment": "Ist als Fall oder VorgangsID zu verstehen, um nachverfolgen zu können zu welcher Anfrage der ServiceRequest gehört.",
+        "min": 1,
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-erp-medreq-pr-request-group-identifier"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.status",
+        "path": "ServiceRequest.status",
+        "short": "Gibt den Bearbeitungsstand eines ServiceRequests an",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/gem-vs-medreq-request-status"
+        }
+      },
+      {
+        "id": "ServiceRequest.intent",
+        "path": "ServiceRequest.intent",
+        "patternCode": "order"
+      },
+      {
+        "id": "ServiceRequest.code",
+        "path": "ServiceRequest.code",
+        "short": "Gibt die Art des ServiceRequests an.",
+        "min": 1,
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/gem-vs-medreq-service-request-category"
+        }
       },
       {
         "id": "ServiceRequest.orderDetail",
         "path": "ServiceRequest.orderDetail",
+        "short": "Gibt an wie die Rezeptanfrage erfüllt werden soll.",
+        "comment": "Wenn das Rezept an eine Apotheke geht, muss ein entsprechender ServiceRequest im Bundle enthalten sein.",
         "min": 1,
         "max": "1",
         "mustSupport": true,
         "binding": {
           "strength": "required",
-          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/PrescriptionDeliveryTypeVS"
+          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/PrescriptionFullfillmentTypeVS"
         }
       },
       {
@@ -97,15 +179,16 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/Patient"
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient"
             ]
           }
-        ]
+        ],
+        "mustSupport": true
       },
       {
         "id": "ServiceRequest.occurrence[x]",
         "path": "ServiceRequest.occurrence[x]",
-        "comment": "Gibt den letzten Bearbeitungsstand der Ressource an (als lastupdated)",
+        "short": "Gibt das Datum an, an dem das Rezept ausgestellt werden soll",
         "min": 1,
         "type": [
           {
@@ -117,6 +200,7 @@
       {
         "id": "ServiceRequest.authoredOn",
         "path": "ServiceRequest.authoredOn",
+        "short": "Datum der Erstellung des Requests",
         "comment": "Wird initial angelegt und dann nicht mehr verändert.",
         "min": 1,
         "mustSupport": true
@@ -130,12 +214,50 @@
             "code": "Reference",
             "targetProfile": [
               "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner",
-              "http://hl7.org/fhir/StructureDefinition/PractitionerRole",
-              "http://hl7.org/fhir/StructureDefinition/Organization"
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_PractitionerRole",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization"
             ]
           }
         ],
         "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.performerType",
+        "path": "ServiceRequest.performerType",
+        "short": "Gibt an, wer den ServiceRequest erfüllen soll",
+        "comment": "Dient als Unterscheidungsmerkmal für die ServiceRequests.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.performerType.coding",
+        "path": "ServiceRequest.performerType.coding",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "ServiceRequest.performerType.coding.system",
+        "path": "ServiceRequest.performerType.coding.system",
+        "patternUri": "https://gematik.de/fhir/erpmedreqcom/GEM_VS_MEDREQ_PerformerType"
+      },
+      {
+        "id": "ServiceRequest.performerType.coding.code",
+        "path": "ServiceRequest.performerType.coding.code",
+        "patternCode": "ausstellender-arzt"
+      },
+      {
+        "id": "ServiceRequest.performer",
+        "path": "ServiceRequest.performer",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_PractitionerRole"
+            ]
+          }
+        ]
       },
       {
         "id": "ServiceRequest.reasonCode",
@@ -157,6 +279,8 @@
       {
         "id": "ServiceRequest.note",
         "path": "ServiceRequest.note",
+        "short": "Weitere Angaben zur Rezeptanforderung",
+        "comment": "Eventuell nicht spezifizierte Anwendungsfälle können hier im Freitext platziert werden",
         "mustSupport": true
       }
     ]

@@ -9,7 +9,7 @@ Description: "ServiceRequest that is used to initiate a dispense request for a p
 * basedOn only Reference(GEM_PR_ERP_MEDREQ_MedicationRequest)
 
 * orderDetail 1..1 MS
-* orderDetail from PrescriptionDeliveryTypeVS (required)
+// orderDetail from PrescriptionDeliveryTypeVS (required)
 
 // code könnte man noch finden "Medikationsanforderung" o.Ä. gibt es bestimmt schon
 

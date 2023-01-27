@@ -2,6 +2,8 @@ Alias: $UNITSOFMEASURE = http://unitsofmeasure.org
 
 Alias: $KBV_PR_FOR_Patient = https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient
 Alias: $KBV_PR_FOR_Practitioner = https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner
+Alias: $KBV_PR_FOR_Organization = https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization
+Alias: $KBV_PR_FOR_PractitionerRole = https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_PractitionerRole
 
 Alias: $KVID = http://fhir.de/StructureDefinition/identifier-kvid-10
 Alias: $PKVID = http://fhir.de/StructureDefinition/identifier-pkv
@@ -14,3 +16,6 @@ Alias: $KBV_PR_ERP_Prescription = https://fhir.kbv.de/StructureDefinition/KBV_PR
 
 Alias: $address-de-basis = http://fhir.de/StructureDefinition/address-de-basis
 Alias: $telematikid = http://fhir.de/StructureDefinition/identifier-telematik-id
+
+Alias: $Hl7_Request_Status_VS = http://hl7.org/fhir/ValueSet/request-status
+Alias: $HL7_Intent_VS = http://hl7.org/fhir/ValueSet/request-intent

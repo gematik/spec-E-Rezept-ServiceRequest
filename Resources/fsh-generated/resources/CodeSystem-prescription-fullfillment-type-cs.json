@@ -1,0 +1,24 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "PrescriptionFullfillmentTypeCS",
+  "id": "prescription-fullfillment-type-cs",
+  "title": "CodeSystem for PrescriptionFullfillmentType",
+  "description": "This type defines how the prescription will be delivered",
+  "version": "1.0",
+  "url": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/PrescriptionFullfillmentTypeCS",
+  "concept": [
+    {
+      "code": "return-to-requester",
+      "display": "Ausstellung des Rezeptes an die anfragende Organisation"
+    },
+    {
+      "code": "send-to-pharmacy",
+      "display": "Weiterleiten des Rezeptes an die ausliefernde Apotheke"
+    }
+  ],
+  "experimental": false,
+  "publisher": "gematik GmbH",
+  "count": 2
+}

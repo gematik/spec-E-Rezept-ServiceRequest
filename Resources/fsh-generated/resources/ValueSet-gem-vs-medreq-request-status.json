@@ -1,0 +1,37 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "GEM_VS_MEDREQ_RequestStatus",
+  "id": "gem-vs-medreq-request-status",
+  "title": "GEM VS MEDREQ Request Status",
+  "description": "ValueSet to define the status of a request",
+  "version": "1.0",
+  "url": "https://gematik.de/fhir/erpmedreqcom/ValueSet/GEM_VS_MEDREQ_RequestStatus",
+  "experimental": false,
+  "publisher": "gematik GmbH",
+  "compose": {
+    "include": [
+      {
+        "valueSet": [
+          "http://hl7.org/fhir/ValueSet/request-status"
+        ]
+      }
+    ],
+    "exclude": [
+      {
+        "system": "http://hl7.org/fhir/ValueSet/request-status",
+        "concept": [
+          {
+            "code": "draft"
+          },
+          {
+            "code": "on-hold"
+          },
+          {
+            "code": "unknown"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,12 +1,12 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "gem-erp-medreq-pr-request-identifier",
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-erp-medreq-pr-request-identifier",
+  "id": "gem-erp-medreq-pr-request-group-identifier",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-erp-medreq-pr-request-group-identifier",
   "version": "0.9",
-  "name": "GEM_ERP_MEDREQ_PR_RequestIdentifier",
-  "title": "GEM ERP MEDREQ Request Identifier",
+  "name": "GEM_ERP_MEDREQ_PR_RequestGroupIdentifier",
+  "title": "GEM ERP MEDREQ Request Group Identifier",
   "status": "active",
-  "description": "Identifier used to identify a single ServiceRequest in KIM Rezeptanforderung",
+  "description": "Identifier used to identify a group of ServiceRequests that were triggered in a single operation",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -35,7 +35,7 @@
       {
         "id": "Identifier.system",
         "path": "Identifier.system",
-        "fixedUri": "https://gematik.de/GEM_NS_MEDREQ_RequestId"
+        "fixedUri": "https://gematik.de/GEM_NS_MEDREQ_RequestGroupId"
       }
     ]
   }
