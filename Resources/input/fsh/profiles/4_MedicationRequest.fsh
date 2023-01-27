@@ -6,13 +6,6 @@ Description: "Profile on the Medication Request that is to be sent"
 * insert Meta (GEM-PR-ERP-MEDREQ-MedicationRequest)
 * insert MetaProfile (GEM-PR-ERP-MEDREQ-MedicationRequest)
 
-* implicitRules 0..0
-* contained 0..0
-* identifier 0..0
-* status = #draft (exactly)
-* intent = #proposal (exactly)
-* reported[x] 0..0
-
 * extension contains
     PrescriptionIdEX named PriorPrescriptionID 0..1
 
@@ -27,14 +20,14 @@ Description: "Profile on the Medication Request that is to be sent"
 * medicationReference.identifier ..0
 * medicationReference.display ..0
 
-* subject only Reference(KBV_PR_FOR_Patient)
+* subject only Reference($KBV_PR_FOR_Patient)
 * subject.type 0..0
 * subject.identifier 0..0
 * subject.reference 1..1
 
 * encounter 0..0
 
-* requester only Reference(KBV_PR_FOR_Practitioner)
+* requester only Reference($KBV_PR_FOR_Practitioner)
 * requester.type 0..0
 * requester.identifier 0..0
 * requester.reference 1..1

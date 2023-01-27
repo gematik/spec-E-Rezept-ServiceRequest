@@ -16,6 +16,8 @@ Alias: $KBV_PR_ERP_Prescription = https://fhir.kbv.de/StructureDefinition/KBV_PR
 
 Alias: $address-de-basis = http://fhir.de/StructureDefinition/address-de-basis
 Alias: $telematikid = http://fhir.de/StructureDefinition/identifier-telematik-id
+Alias: $kim = http://gematik.de/fhir/sid/KIM-Adresse
+Alias: $tim = http://gematik.de/fhir/sid/TIM-Adresse
 
 Alias: $Hl7_Request_Status_VS = http://hl7.org/fhir/ValueSet/request-status
 Alias: $HL7_Intent_VS = http://hl7.org/fhir/ValueSet/request-intent

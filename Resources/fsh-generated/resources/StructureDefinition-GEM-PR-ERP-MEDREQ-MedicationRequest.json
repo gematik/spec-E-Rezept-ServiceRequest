@@ -641,7 +641,7 @@
         "definition": "A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc.",
         "comment": "Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. Often, when used, the URL is a reference to an implementation guide that defines these special rules as part of it's narrative along with other profiles, value sets, etc.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "Resource.implicitRules",
           "min": 0,
@@ -806,7 +806,7 @@
           "contained resources"
         ],
         "min": 0,
-        "max": "0",
+        "max": "*",
         "base": {
           "path": "DomainResource.contained",
           "min": 0,
@@ -1064,7 +1064,7 @@
         "definition": "Identifiers associated with this medication request that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate. They are business identifiers assigned to this resource by the performer or other systems and remain constant as the resource is updated and propagates from server to server.",
         "comment": "This is a business identifier, not a resource identifier.",
         "min": 0,
-        "max": "0",
+        "max": "*",
         "base": {
           "path": "MedicationRequest.identifier",
           "min": 0,
@@ -1145,7 +1145,6 @@
             "code": "code"
           }
         ],
-        "fixedCode": "draft",
         "condition": [
           "ele-1"
         ],
@@ -1293,7 +1292,6 @@
             "code": "code"
           }
         ],
-        "fixedCode": "proposal",
         "condition": [
           "ele-1"
         ],
@@ -1536,7 +1534,7 @@
         "short": "Reported rather than primary record",
         "definition": "Indicates if this record was captured as a secondary 'reported' record rather than as an original primary source-of-truth record.  It may also indicate the source of the report.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "MedicationRequest.reported[x]",
           "min": 0,
@@ -6109,16 +6107,6 @@
         "max": "0"
       },
       {
-        "id": "MedicationRequest.implicitRules",
-        "path": "MedicationRequest.implicitRules",
-        "max": "0"
-      },
-      {
-        "id": "MedicationRequest.contained",
-        "path": "MedicationRequest.contained",
-        "max": "0"
-      },
-      {
         "id": "MedicationRequest.extension:PriorPrescriptionID",
         "path": "MedicationRequest.extension",
         "sliceName": "PriorPrescriptionID",
@@ -6132,26 +6120,6 @@
             ]
           }
         ]
-      },
-      {
-        "id": "MedicationRequest.identifier",
-        "path": "MedicationRequest.identifier",
-        "max": "0"
-      },
-      {
-        "id": "MedicationRequest.status",
-        "path": "MedicationRequest.status",
-        "fixedCode": "draft"
-      },
-      {
-        "id": "MedicationRequest.intent",
-        "path": "MedicationRequest.intent",
-        "fixedCode": "proposal"
-      },
-      {
-        "id": "MedicationRequest.reported[x]",
-        "path": "MedicationRequest.reported[x]",
-        "max": "0"
       },
       {
         "id": "MedicationRequest.medication[x]",
