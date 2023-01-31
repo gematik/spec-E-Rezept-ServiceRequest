@@ -61,7 +61,7 @@ Description: "ServiceRequest that is used to request a prescription from a pract
 
 
 * requester 1..1 MS
-* requester only Reference(KBV_PR_FOR_Practitioner or $KBV_PR_FOR_PractitionerRole or $KBV_PR_FOR_Organization)
+* requester only Reference($KBV_PR_FOR_Practitioner or $KBV_PR_FOR_PractitionerRole or $KBV_PR_FOR_Organization)
 
 //TODO geht das hier schöner: ?
 * performerType 1..1 MS
