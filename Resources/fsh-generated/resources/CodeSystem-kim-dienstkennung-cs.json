@@ -50,6 +50,10 @@
       "display": "Rückmeldung bzw. qualifizierte Antwort auf den Nachrichten-Typ 'DiMus;Lieferung'"
     },
     {
+      "code": "eRezept;Rezeptanforderung;V1.0",
+      "display": "Rezeptanforderung mit KIM"
+    },
+    {
       "code": "eRezept;Zuweisung;V1.0",
       "display": "Direktzuweisung des E-Rezepts"
     },
@@ -298,5 +302,5 @@
       "display": "fachliche Rückmeldung zur 1ClickAbrechnung"
     }
   ],
-  "count": 72
+  "count": 73
 }

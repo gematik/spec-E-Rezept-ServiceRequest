@@ -8,3 +8,14 @@ Description: "Header for Messages Bundles used for Medication Request"
 
 * focus only Reference(GEM_PR_ERP_MEDREQ_Prescription_ServiceRequest or GEM_PR_ERP_MEDREQ_Dispense_ServiceRequest)
 
+Instance: PrescriptionMessageHeader
+InstanceOf: GEM_PR_MEDREQ_MessageHeader
+Usage: #inline
+Title: "Prescription Message Header"
+Description: "Message Header for a PrescriptionRequest"
+* focus.reference = "Initial-Prescription-Request"
+* eventCoding = #eRezept;Rezeptanforderung;V1.0
+* sender.reference = "Example-HealthCareService-Organization"
+* destination.receiver.reference = "Example-Practitioner"
+* destination.endpoint = "http://test-practitioner.de"
+* source.endpoint = "http://test-pflegeheim.de"

@@ -12,6 +12,9 @@ Description: "Dienstkennungen von KIM für FHIR-Nachrichten"
 * #DiMus;Lieferung;V1.0 "DiMus Lieferung"
 * #DiMus;Eingangsbestaetigung;V1.0 "Eingangsbestätigung (MDN) zum Digitalen Muster"
 * #DiMus;Rueckmeldung;V1.0 "Rückmeldung bzw. qualifizierte Antwort auf den Nachrichten-Typ 'DiMus;Lieferung'"
+// TEST
+* #eRezept;Rezeptanforderung;V1.0 "Rezeptanforderung mit KIM"
+// TEST
 * #eRezept;Zuweisung;V1.0 "Direktzuweisung des E-Rezepts"
 * #eRezept;Kommunikation;V1.0 "Freie E-Rezept-Kommunikation"
 * #eAU;Lieferung;V1.0 "elektronische Arbeitsunfähigkeitsbescheinigung (Ausfertigung Krankenkasse)"
