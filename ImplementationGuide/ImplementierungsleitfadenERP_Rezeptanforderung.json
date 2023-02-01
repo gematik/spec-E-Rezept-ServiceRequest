@@ -76,6 +76,11 @@
                       "generation": "markdown"
                     },
                     {
+                      "nameUrl": "ImplementationGuide/markdown/KimMessages/CCmessage.md",
+                      "title": "Übermittlung einer Nachrichtenkopie",
+                      "generation": "markdown"
+                    },
+                    {
                       "nameUrl": "ImplementationGuide/markdown/KimMessages/DeliveryStatusNotification.md",
                       "title": "Übermittlung einer Zustellbestätigung",
                       "generation": "markdown"
