@@ -33,6 +33,23 @@ Die FHIR-Datensätze in Anfrage- und Antwortnachrichten werden ausschließlich a
 
 ## Übertragung von Klartextinformationen
 
-Derzeit ist es nicht vorgesehen, neben dem Anhang (FHIR-Datensätze in XML-Auszeichnung) eine zusätzliche, für Menschen leichter lesbare Repräsentation der übermittelten Informationen, z.B. als HTML- oder Plain-Text, in einer KIM Nachricht zu übertragen.
+Es ist vorzusehen, dass neben dem Anhang (FHIR-Datensätze in XML-Auszeichnung) eine zusätzliche, für Menschen leichter lesbare Repräsentation der wichtigsten übermittelten Informationen als Plain-Text, in einer KIM Nachricht übertragen werden. Dadurch ist es möglich, dass ein Mitarbeiter der empfangenden Leisterungserbringerinstitution die Initiative übernehmen kann, falls das empfangende Primärsystem (noch) nicht in der Lage ist, die FHIR-Datensätze der Nachricht automatisiert zu verarbeiten und zu präsentieren.
 
-Es wird davon ausgegangen, dass das konsumierende Primärsystem die Verarbeitung und Aufbereitung der Informationen durchführt entsprechend des Umsetzungsvorschlags des technischen Konzepts. Zukünftig wird es für das sendene Primärsystem einer KIM Nachricht ermöglicht werden, über den Verzeichnisdienst zusätzliche sog. Anwendungskennzeichen der Empfängerseite abrufen zu können. Dadurch kann es vor dem Versand der KIM Nachricht prüfen, ob die Empfängerseite fähig ist, die KIM Nachricht zu verarbeiten.
+Die Darstellung der Informationen erfolgt im KIM-Nachrichtensegment `Content-Type: text/plain` nach der Zeichenkette für Nachrichtentyp und Nachrichten-ID. Welche Informationen darzustellen sind, ist der [Mappingtabelle](https://simplifier.net/guide/Implementierungsleitfaden-ERP-Rezeptanforderung/ImplementationGuide-markdown-Mappingtable?version=current) zu entnehmen. Der jeweilige Nachrichtentyp ist über das Informationsobjekt 1. Ebene abgegrenzt (Rezeptanforderung, Rezeptanforderung_Storno, Rezeptanforderung_Rezeptuebermittlung, Rezeptanforderung_Ablehnung, Verordnung_Dispensierung).
+
+Die Darstellung erfolgt als Schlüssel-/Wertpaar in der Form
+
+    <Bezeichner>:
+    <Wert>
+
+Als Schlüssel (Bezeichner der Informationseinheit) wird das Informationsobjekt 2. Ebene verwendet und, sofern vorhanden, das Informationsobjekt 3. Ebene. Anschließend folgt als Trenner ein `:CRLF` (Doppelpunkt und Zeilenumbruch), gefolgt vom konkreten Wert der Informationseinheit.
+
+Beispiel zweier Schlüssel-/Wertpaar aus einer Rezeptanforderung:
+
+    Praeparat Bezeichnung:
+    Ibuprofen akut 1500
+
+    Praeparat Packungsgroesse:
+    250 Stck
+
+Es wird perspektivisch davon ausgegangen, dass die in den Use Cases beschriebenen Primärsysteme die Erzeugung, Verarbeitung und Aufbereitung der entsprechenden FHIR-Datensätze durchführen werden entsprechend des Umsetzungsvorschlags des technischen Konzepts und der Bedarf an diese Form der Klartextdarstellung der Informationen sukzessive abnimmt.
