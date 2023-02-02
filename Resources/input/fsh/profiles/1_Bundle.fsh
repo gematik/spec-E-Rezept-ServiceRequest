@@ -33,7 +33,11 @@ Title: "Medication Request To Prescriber"
 Description: "Request sent to Prescriber to get a Prescription"
 * identifier.value = "29888885-6639-481c-934e-4b7b51745084"
 * timestamp.value = "2015-02-07T13:28:17.239+02:00"
+* entry[PrescriptionServiceRequest].fullUrl = "http://medreq-test.de/ServiceRequest/Initial-Prescription-Request"
 * entry[PrescriptionServiceRequest].resource = Initial-Prescription-Request
+* entry[MessageHeader].fullUrl = "http://medreq-test.deMessageHeader/PrescriptionMessageHeader"
 * entry[MessageHeader].resource = PrescriptionMessageHeader
+* entry[Practitioner].fullUrl = "http://medreq-test.de/Practitioner/Example-Practitioner"
 * entry[Practitioner].resource = Example-Practitioner
+* entry[Patient].fullUrl = "http://medreq-test.de/Patient/Example-Patient"
 * entry[Patient].resource = Example-Patient

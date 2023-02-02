@@ -13,6 +13,7 @@
   },
   "entry": [
     {
+      "fullUrl": "http://medreq-test.de/ServiceRequest/Initial-Prescription-Request",
       "resource": {
         "resourceType": "ServiceRequest",
         "id": "Initial-Prescription-Request",
@@ -79,6 +80,7 @@
       }
     },
     {
+      "fullUrl": "http://medreq-test.deMessageHeader/PrescriptionMessageHeader",
       "resource": {
         "resourceType": "MessageHeader",
         "id": "PrescriptionMessageHeader",
@@ -112,6 +114,7 @@
       }
     },
     {
+      "fullUrl": "http://medreq-test.de/Practitioner/Example-Practitioner",
       "resource": {
         "resourceType": "Practitioner",
         "id": "Example-Practitioner",
@@ -202,6 +205,7 @@
       }
     },
     {
+      "fullUrl": "http://medreq-test.de/Patient/Example-Patient",
       "resource": {
         "resourceType": "Patient",
         "id": "Example-Patient",
