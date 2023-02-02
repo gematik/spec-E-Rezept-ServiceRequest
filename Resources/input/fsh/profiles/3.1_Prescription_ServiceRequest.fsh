@@ -5,8 +5,7 @@ Title: "GEM PR ERP MEDREQ Prescription Service Request"
 Description: "ServiceRequest that is used to request a prescription from a practitioner"
 
 * extension contains
-    GEM_EX_MEDREQ_EPrescriptionToken named EPrescriptionToken 0..1 and
-    PrescriptionIdEX named PriorPrescriptionID 0..1
+    GEM_EX_MEDREQ_EPrescriptionToken named EPrescriptionToken 0..
 
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "system"
@@ -20,7 +19,7 @@ Description: "ServiceRequest that is used to request a prescription from a pract
 * basedOn 1..1 MS
   * ^short = "MedicationRequest, der von der Pflegeeinrichtung gewünscht wird oder vom Arzt erfüllt wurde."
   * ^comment = "Einem ServiceRequest ist genau ein MedicationRequest zugeordnet, sodass unabhängige Bearbeitungen möglich sind."
-* basedOn only Reference($KBV_PR_ERP_Prescription)
+* basedOn only Reference(GEM_PR_ERP_MEDREQ_MedicationRequest or $KBV_PR_ERP_Prescription)
 
 * replaces 0..1 MS
 * replaces only Reference(GEM_PR_ERP_MEDREQ_Prescription_ServiceRequest)
@@ -103,9 +102,6 @@ InstanceOf: GEM_PR_ERP_MEDREQ_Prescription_ServiceRequest
 Usage: #inline
 Title: "Initial Prescription Request"
 Description: "This ServiceRequest is sent initially to the prescribing practitioner"
-* extension[PriorPrescriptionID].valueIdentifier
-  * system = "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"
-  * value = "160.100.000.000.001.36"
 * identifier[0]
   * system = "https://gematik.de/GEM_NS_MEDREQ_RequestId"
   * value = "012345"

@@ -57,27 +57,12 @@
         "path": "ServiceRequest.extension",
         "sliceName": "EPrescriptionToken",
         "min": 0,
-        "max": "1",
+        "max": "*",
         "type": [
           {
             "code": "Extension",
             "profile": [
               "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_EX_MEDREQ_EPrescriptionToken"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "ServiceRequest.extension:PriorPrescriptionID",
-        "path": "ServiceRequest.extension",
-        "sliceName": "PriorPrescriptionID",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionIdEX"
             ]
           }
         ]
@@ -124,6 +109,7 @@
           {
             "code": "Reference",
             "targetProfile": [
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-MedicationRequest",
               "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription"
             ]
           }
