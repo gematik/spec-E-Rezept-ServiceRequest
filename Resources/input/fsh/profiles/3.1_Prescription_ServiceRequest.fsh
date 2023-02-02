@@ -85,7 +85,7 @@ Description: "ServiceRequest that is used to request a prescription from a pract
 * supportingInfo contains
 AuslieferndeApotheke 0..1 MS
 and MedikamentenReichweite 0..1 MS
-* supportingInfo[AuslieferndeApotheke] only Reference(GEM_PR_ERP_MEDREQ_Organization)
+* supportingInfo[AuslieferndeApotheke] only Reference($KBV_PR_FOR_Organization)
 * supportingInfo[MedikamentenReichweite] only Reference(GEM_PR_ERP_MEDREQ_RemainingMedication_Observation)
 
 * note MS

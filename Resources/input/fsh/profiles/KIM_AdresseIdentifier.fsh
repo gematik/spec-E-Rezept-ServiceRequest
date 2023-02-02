@@ -36,3 +36,10 @@ Usage: #inline
 Title: "Hans-Topp-Glücklich-Identifier"
 Description: "Beispiel Identifier für den Arzt Hans Topp Glücklich"
 * value = "hans@ytopp-gluecklich.kim.telematik"
+
+Instance: Test-Apotheke-Identifier
+InstanceOf: GEM_PR_MEDREQ_KIMAdresse
+Usage: #inline
+Title: "Test-Apotheke-Identifier"
+Description: "Beispiel Identifier für die ausführende Apotheke"
+* value = "arbeitsplatz-1@test-apotheke.kim.telematik"

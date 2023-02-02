@@ -329,7 +329,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Organization"
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization"
             ]
           }
         ],

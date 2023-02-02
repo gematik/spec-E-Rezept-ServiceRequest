@@ -21,7 +21,7 @@ Description: "Basic Bundle for communication of FHIR Ressources with KIM Message
 * entry[DispenseInformation].resource only GEM_ERP_PR_MedicationDispense
 * entry[Patient].resource only $KBV_PR_FOR_Patient
 * entry[Practitioner].resource only $KBV_PR_FOR_Practitioner
-* entry[DispensingOrganization].resource only GEM_PR_ERP_MEDREQ_Organization
+* entry[DispensingOrganization].resource only $KBV_PR_FOR_Organization
 * entry[InsuranceCoverage].resource only $KBV_PR_FOR_Coverage
 
 //TODO: Umfassende Bundle Examples Pflege->Arzt; Arzt->Pflege; Pflege -> Apotheke; Apotheke -> Pflege
@@ -36,7 +36,7 @@ Description: "Request sent to Prescriber to get a Prescription"
 * entry[PrescriptionServiceRequest].fullUrl = "http://medreq-test.de/ServiceRequest/Initial-Prescription-Request"
 * entry[PrescriptionServiceRequest].resource = Initial-Prescription-Request
 * entry[MessageHeader].fullUrl = "http://medreq-test.deMessageHeader/Prescription-Request-MessageHeader"
-* entry[MessageHeader].resource = Prescription-Request-MessageHeader
+* entry[MessageHeader].resource = HealthCareService-to-Practitioner-MessageHeader
 * entry[Practitioner].fullUrl = "http://medreq-test.de/Practitioner/Example-Practitioner"
 * entry[Practitioner].resource = Example-Practitioner
 * entry[Patient].fullUrl = "http://medreq-test.de/Patient/Example-Patient"

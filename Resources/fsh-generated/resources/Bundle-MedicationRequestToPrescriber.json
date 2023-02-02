@@ -83,7 +83,7 @@
       "fullUrl": "http://medreq-test.deMessageHeader/Prescription-Request-MessageHeader",
       "resource": {
         "resourceType": "MessageHeader",
-        "id": "Prescription-Request-MessageHeader",
+        "id": "HealthCareService-to-Practitioner-MessageHeader",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-MessageHeader|1.0"
