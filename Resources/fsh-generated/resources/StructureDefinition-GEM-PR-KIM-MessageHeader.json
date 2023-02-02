@@ -56,9 +56,45 @@
         "min": 1
       },
       {
+        "id": "MessageHeader.destination.receiver.identifier",
+        "path": "MessageHeader.destination.receiver.identifier",
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-medreq-kim-adresse"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MessageHeader.destination.receiver.display",
+        "path": "MessageHeader.destination.receiver.display",
+        "short": "Anzeigename der KIM Adresse",
+        "mustSupport": true
+      },
+      {
         "id": "MessageHeader.sender",
         "path": "MessageHeader.sender",
         "min": 1
+      },
+      {
+        "id": "MessageHeader.sender.identifier",
+        "path": "MessageHeader.sender.identifier",
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-medreq-kim-adresse"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MessageHeader.sender.display",
+        "path": "MessageHeader.sender.display",
+        "short": "Anzeigename der KIM Adresse",
+        "mustSupport": true
       },
       {
         "id": "MessageHeader.focus",

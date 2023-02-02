@@ -80,10 +80,10 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.deMessageHeader/PrescriptionMessageHeader",
+      "fullUrl": "http://medreq-test.deMessageHeader/Prescription-Request-MessageHeader",
       "resource": {
         "resourceType": "MessageHeader",
-        "id": "PrescriptionMessageHeader",
+        "id": "Prescription-Request-MessageHeader",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-MessageHeader|1.0"
@@ -98,14 +98,20 @@
           "code": "eRezept;Rezeptanforderung;V1.0"
         },
         "sender": {
-          "reference": "Example-HealthCareService-Organization"
+          "identifier": {
+            "value": "pflegeheim.immergrün.arzt@sana-pflegeheime.kim.telematik"
+          },
+          "display": "Pflegeheim Immergrün"
         },
         "destination": [
           {
             "receiver": {
-              "reference": "Example-Practitioner"
+              "identifier": {
+                "value": "hans@ytopp-gluecklich.kim.telematik"
+              },
+              "display": "Praxis Hans Topp-Glücklich"
             },
-            "endpoint": "http://test-practitioner.de"
+            "endpoint": "klaus@test.de"
           }
         ],
         "source": {

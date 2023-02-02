@@ -22,3 +22,17 @@ Description: "NamingSystem for Gematik KIM-Adresse"
 * uniqueId.type = #uri
 * uniqueId.value = $kim
 * uniqueId.preferred = true
+
+Instance: Pflegeheim-Immergrün-Identifier
+InstanceOf: GEM_PR_MEDREQ_KIMAdresse
+Usage: #inline
+Title: "Pflegeheim-Immergrün-Identifier"
+Description: "Beispiel Identifier für Pflegeheim Immergrün"
+* value = "pflegeheim.immergrün.arzt@sana-pflegeheime.kim.telematik"
+
+Instance: Hans-Topp-Glücklich-Identifier
+InstanceOf: GEM_PR_MEDREQ_KIMAdresse
+Usage: #inline
+Title: "Hans-Topp-Glücklich-Identifier"
+Description: "Beispiel Identifier für den Arzt Hans Topp Glücklich"
+* value = "hans@ytopp-gluecklich.kim.telematik"
