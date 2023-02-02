@@ -7,7 +7,7 @@
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "Extension for the AccessCode Identifier",
+  "description": "Extension for Prescription ID",
   "fhirVersion": "4.0.1",
   "mapping": [
     {

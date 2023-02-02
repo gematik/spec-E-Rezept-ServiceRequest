@@ -23,6 +23,15 @@
           ]
         },
         "intent": "order",
+        "extension": [
+          {
+            "valueIdentifier": {
+              "system": "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
+              "value": "160.100.000.000.001.36"
+            },
+            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionIdEX"
+          }
+        ],
         "identifier": [
           {
             "system": "https://gematik.de/GEM_NS_MEDREQ_RequestId",

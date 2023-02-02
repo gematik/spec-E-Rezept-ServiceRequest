@@ -1,0 +1,26 @@
+{
+  "resourceType": "Coverage",
+  "id": "Initial-Coverage",
+  "meta": {
+    "profile": [
+      "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Coverage|1.1.0"
+    ]
+  },
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "code": "GKV",
+        "system": "http://fhir.de/CodeSystem/versicherungsart-de-basis"
+      }
+    ]
+  },
+  "beneficiary": {
+    "reference": "Patient/Example-Patient"
+  },
+  "payor": [
+    {
+      "display": "AOK Bayern Die Gesundh."
+    }
+  ]
+}

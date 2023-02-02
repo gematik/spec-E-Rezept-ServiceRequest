@@ -11,9 +11,9 @@ Alias: $PKVID = http://fhir.de/StructureDefinition/identifier-pkv
 
 Alias: $KBV_PR_ERP_Medication_FreeText = https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_FreeText|1.1.0
 Alias: $KBV_PR_ERP_Medication_Compounding = https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_Compounding|1.1.0
-Alias: $KBV_PR_ERP_Medication_PZN = https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.1.0
+Alias: $KBV_PR_ERP_Medication_PZN = https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN
 Alias: $KBV_PR_ERP_Medication_Ingredient = https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_Ingredient|1.1.0
-Alias: $KBV_PR_ERP_Prescription = https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription|1.1.0
+Alias: $KBV_PR_ERP_Prescription = https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription
 
 Alias: $address-de-basis = http://fhir.de/StructureDefinition/address-de-basis
 Alias: $telematikid = http://fhir.de/StructureDefinition/identifier-telematik-id

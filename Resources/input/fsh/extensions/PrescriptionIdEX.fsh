@@ -1,5 +1,5 @@
 Extension: PrescriptionIdEX
 Id: PrescriptionIdEX
-Description: "Extension for the AccessCode Identifier"
+Description: "Extension for Prescription ID"
 * insert Meta (PrescriptionIdEX)
 * value[x] only GEM_ERP_PR_PrescriptionId
