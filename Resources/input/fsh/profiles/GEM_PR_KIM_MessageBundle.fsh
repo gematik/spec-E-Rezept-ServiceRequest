@@ -3,6 +3,7 @@ Parent: Bundle
 Id: GEM-PR-KIM-MessageBundle
 Title: "GEM_PR_KIM_MessageBundle"
 Description: "Basic Bundle for communication of FHIR Ressources with KIM Messages"
+
 //Slice für identifier
 * identifier 1..
 * identifier.system 1..

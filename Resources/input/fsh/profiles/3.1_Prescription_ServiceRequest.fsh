@@ -3,6 +3,8 @@ Parent: ServiceRequest
 Id: gem-pr-erp-medreq-prescription-service-request
 Title: "GEM PR ERP MEDREQ Prescription Service Request"
 Description: "ServiceRequest that is used to request a prescription from a practitioner"
+* insert Meta (gem-pr-erp-medreq-prescription-service-request)
+* insert MetaProfile (gem-pr-erp-medreq-prescription-service-request)
 
 * extension contains
     GEM_EX_MEDREQ_EPrescriptionToken named EPrescriptionToken 0..
@@ -32,7 +34,7 @@ Description: "ServiceRequest that is used to request a prescription from a pract
   * ^comment = "Ist als Fall oder VorgangsID zu verstehen, um nachverfolgen zu können zu welcher Anfrage der ServiceRequest gehört."
 
 * status MS
-* status obeys sr-1
+//* status obeys sr-1
 * status from GEM_VS_MEDREQ_RequestStatus
   * ^short = "Gibt den Bearbeitungsstand eines ServiceRequests an"
 
@@ -105,19 +107,19 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * identifier[0]
   * system = "https://gematik.de/GEM_NS_MEDREQ_RequestId"
   * value = "012345"
-* basedOn.reference = "#MedicationRequest/1"
+* basedOn = Reference(Example-Initial-Medication-Request)
 * requisition[0].system = "https://gematik.de/GEM_NS_MEDREQ_RequestGroupId"
-* requisition[=].value = "X2"
+* requisition[=].value = "GroupID-2"
 * status = #active
 * intent = #order
 * code.coding.code.value = #prescription-request
-* subject.reference = "Example-Patient"
+* subject = Reference(Patient/Example-Patient)
 * orderDetail.coding.code = #return-to-requester
 * occurrenceDateTime = "2023-02-01"
 * authoredOn = "2023-01-27"
-* requester.reference = "Example-HealthCareService-Organization"
+* requester = Reference(Example-HealthCareService-Organization)
 * performerType.coding.code = #ausstellender-arzt
-* performer.reference = "Example-Practitioner"
+* performer = Reference(Example-Practitioner)
 
 Instance: Response-Prescription-Request
 InstanceOf: GEM_PR_ERP_MEDREQ_Prescription_ServiceRequest
@@ -130,16 +132,16 @@ Description: "ServiceRequest that is returned to the requester"
 * identifier[0]
   * system = "https://gematik.de/GEM_NS_MEDREQ_RequestId"
   * value = "012345"
-* basedOn.reference = "#MedicationRequest/1"
+* basedOn = Reference(Example-Response-KBV-Prescription)
 * requisition[0].system = "https://gematik.de/GEM_NS_MEDREQ_RequestGroupId"
-* requisition[=].value = "X2"
+* requisition[=].value = "GroupID-2"
 * status = #completed
 * intent = #order
 * code.coding.code.value = #prescription-request
-* subject.reference = "Example-Patient"
+* subject = Reference(Example-Patient)
 * orderDetail.coding.code = #return-to-requester
-* occurrenceDateTime = "2023-02-01"
+* occurrenceDateTime = "2023-01-30" //update wann es tatsächlich ausgestellt wurde
 * authoredOn = "2023-01-27"
-* requester.reference = "Example-HealthCareService-Organization"
+* requester = Reference(Example-HealthCareService-Organization)
 * performerType.coding.code = #ausstellender-arzt
-* performer.reference = "Example-Practitioner"
+* performer = Reference(Example-Practitioner)

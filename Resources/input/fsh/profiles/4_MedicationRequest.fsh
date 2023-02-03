@@ -66,8 +66,8 @@ Usage: #inline
   * value = "160.100.000.000.001.36"
 * status = #active
 * intent = #order
-* medicationReference = Reference(Medication/Example-Initial-Medication)
-* subject = Reference(Patient/Example-Patient)
+* medicationReference = Reference(Example-Initial-Medication)
+* subject = Reference(Example-Patient)
 * authoredOn = "2022-05-20"
 * dosageInstruction.text = "2mal tägl. 5ml"
 * dispenseRequest.quantity = 1 '{Package}'
@@ -84,6 +84,8 @@ Usage: #inline
 * extension[Arzneimittelkategorie].valueCoding = https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Category#00
 * extension[Impfstoff].url = "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Vaccine"
 * extension[Impfstoff].valueBoolean = false
+* extension[Normgroesse].url = "http://fhir.de/StructureDefinition/normgroesse"
+* extension[Normgroesse].valueCode = #N1
 * code = http://fhir.de/CodeSystem/ifa/pzn#08585997
 * code.text = "Prospan® Hustensaft 100ml"
 * form = https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM#FLE

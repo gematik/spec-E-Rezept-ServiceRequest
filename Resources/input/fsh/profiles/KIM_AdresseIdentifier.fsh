@@ -3,6 +3,7 @@ Parent: Identifier
 Id: gem-pr-medreq-kim-adresse
 Title: "GEM PR MEDREQ KIM-Adresse"
 Description: "Identifier zur Angabe der KIM-Adresse"
+* insert Meta (gem-pr-medreq-kim-adresse)
 * system = $kim
 
 Instance: GEM-NS-KIM-Adresse

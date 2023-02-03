@@ -3,6 +3,9 @@ Parent: Observation
 Id: gem-pr-erp-medreq-remaining-medication-observation
 Title: "GEM PR ERP MEDREQ Remaining Medication Observation "
 Description: "Describes how long the remaining medication will last"
+* insert Meta (gem-pr-erp-medreq-remaining-medication-observation)
+* insert MetaProfile (gem-pr-erp-medreq-remaining-medication-observation)
+
 * status = #final (exactly)
 
 * code from GEM_VS_MEDREQ_MedicationRange

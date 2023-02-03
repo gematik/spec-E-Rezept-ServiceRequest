@@ -12,10 +12,12 @@
     }
   ],
   "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-remaining-medication-observation",
-  "version": "0.9",
+  "version": "1.0",
   "name": "GEM_PR_ERP_MEDREQ_RemainingMedication_Observation",
   "title": "GEM PR ERP MEDREQ Remaining Medication Observation ",
-  "status": "active",
+  "status": "draft",
+  "experimental": false,
+  "publisher": "gematik GmbH",
   "description": "Describes how long the remaining medication will last",
   "fhirVersion": "4.0.1",
   "mapping": [
@@ -57,6 +59,33 @@
   "derivation": "constraint",
   "differential": {
     "element": [
+      {
+        "id": "Observation.meta",
+        "path": "Observation.meta",
+        "min": 1
+      },
+      {
+        "id": "Observation.meta.versionId",
+        "path": "Observation.meta.versionId",
+        "max": "0"
+      },
+      {
+        "id": "Observation.meta.source",
+        "path": "Observation.meta.source",
+        "max": "0"
+      },
+      {
+        "id": "Observation.meta.profile",
+        "path": "Observation.meta.profile",
+        "min": 1,
+        "max": "1",
+        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-remaining-medication-observation"
+      },
+      {
+        "id": "Observation.meta.security",
+        "path": "Observation.meta.security",
+        "max": "0"
+      },
       {
         "id": "Observation.status",
         "path": "Observation.status",

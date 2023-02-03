@@ -3,6 +3,7 @@ Parent: MessageHeader
 Id: GEM-PR-KIM-MessageHeader
 Title: "GEM PR KIM MessageHeader"
 Description: "Basic Message Header for communication of FHIR Ressources with KIM Messages"
+
 //
 * event[x] from KimDienstleistungsVS
 //sender und receicer als Identifier und KIM-Adresse als Identifier modellieren

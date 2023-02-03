@@ -1,4 +1,4 @@
-Instance: Example-Response-Medication-Request
+Instance: Example-Response-KBV-Prescription
 InstanceOf: $KBV_PR_ERP_Prescription
 Usage: #inline
 * meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription|1.1.0"

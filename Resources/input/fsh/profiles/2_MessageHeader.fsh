@@ -3,8 +3,8 @@ Parent: GEM_PR_KIM_MessageHeader
 Id: GEM-PR-MEDREQ-MessageHeader
 Title: "GEM PR MEDREQ MessageHeader"
 Description: "Header for Messages Bundles used for Medication Request"
-* insert Meta (GEM-PR-ERP-MEDREQ-MessageHeader)
-* insert MetaProfile (GEM-PR-ERP-MEDREQ-MessageHeader)
+* insert Meta (GEM-PR-MEDREQ-MessageHeader)
+* insert MetaProfile (GEM-PR-MEDREQ-MessageHeader)
 
 * focus only Reference(GEM_PR_ERP_MEDREQ_Prescription_ServiceRequest or GEM_PR_ERP_MEDREQ_Dispense_ServiceRequest)
 
@@ -13,7 +13,7 @@ InstanceOf: GEM_PR_MEDREQ_MessageHeader
 Usage: #inline
 Title: "HealthCareService to Practitioner Message Header"
 Description: "Message Header for a PrescriptionRequest"
-* focus.reference = "Initial-Prescription-Request"
+* focus[+] = Reference(Initial-Prescription-Request)
 * eventCoding = #eRezept;Rezeptanforderung;V1.0
 * sender.identifier = Pflegeheim-Immergrün-Identifier
 * sender.display = "Pflegeheim Immergrün"
@@ -27,7 +27,7 @@ InstanceOf: GEM_PR_MEDREQ_MessageHeader
 Usage: #inline
 Title: "Prescription Response Message Header"
 Description: "Message Header for a PrescriptionRequest"
-* focus.reference = "Initial-Prescription-Request"
+* focus[+] = Reference(Initial-Prescription-Request)
 * eventCoding = #eRezept;Rezeptanforderung;V1.0
 * sender.identifier = Hans-Topp-Glücklich-Identifier
 * sender.display = "Praxis Hans Topp-Glücklich"
@@ -42,7 +42,7 @@ InstanceOf: GEM_PR_MEDREQ_MessageHeader
 Usage: #inline
 Title: "HealthCareService to Pharmacy Message Header"
 Description: "Message Header for a PrescriptionRequest"
-* focus.reference = "Initial-Prescription-Request"
+* focus[+] = Reference(Initial-Prescription-Request)
 * eventCoding = #eRezept;Rezeptanforderung;V1.0
 * sender.identifier = Pflegeheim-Immergrün-Identifier
 * sender.display = "Pflegeheim Immergrün"
@@ -57,7 +57,7 @@ InstanceOf: GEM_PR_MEDREQ_MessageHeader
 Usage: #inline
 Title: "HealthCareService to Pharmacy Message Header"
 Description: "Message Header for a PrescriptionRequest"
-* focus.reference = "Initial-Prescription-Request"
+* focus[+] = Reference(Initial-Prescription-Request)
 * eventCoding = #eRezept;Rezeptanforderung;V1.0
 * sender.identifier = Test-Apotheke-Identifier
 * sender.display = "Test Apotheke"

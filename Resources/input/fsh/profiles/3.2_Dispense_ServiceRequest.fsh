@@ -3,6 +3,8 @@ Parent: ServiceRequest
 Id: gem-pr-erp-medreq-dispense-service-request
 Title: "GEM PR ERP MEDREQ Dispense Service Request"
 Description: "ServiceRequest that is used to initiate a dispense request for a pharmacy"
+* insert Meta (gem-pr-erp-medreq-dispense-service-request)
+* insert MetaProfile (gem-pr-erp-medreq-dispense-service-request)
 
 * extension contains
     GEM_EX_MEDREQ_EPrescriptionToken named EPrescriptionToken 1..1

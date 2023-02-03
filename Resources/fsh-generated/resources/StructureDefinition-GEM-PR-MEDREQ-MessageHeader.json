@@ -11,7 +11,7 @@
       "valueCode": "not-classified"
     }
   ],
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-MessageHeader",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-MessageHeader",
   "version": "1.0",
   "name": "GEM_PR_MEDREQ_MessageHeader",
   "title": "GEM PR MEDREQ MessageHeader",
@@ -64,7 +64,7 @@
         "path": "MessageHeader.meta.profile",
         "min": 1,
         "max": "1",
-        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-MessageHeader|1.0"
+        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-MessageHeader"
       },
       {
         "id": "MessageHeader.meta.security",

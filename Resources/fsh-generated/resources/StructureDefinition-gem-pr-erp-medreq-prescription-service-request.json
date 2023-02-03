@@ -12,10 +12,12 @@
     }
   ],
   "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-prescription-service-request",
-  "version": "0.9",
+  "version": "1.0",
   "name": "GEM_PR_ERP_MEDREQ_Prescription_ServiceRequest",
   "title": "GEM PR ERP MEDREQ Prescription Service Request",
-  "status": "active",
+  "status": "draft",
+  "experimental": false,
+  "publisher": "gematik GmbH",
   "description": "ServiceRequest that is used to request a prescription from a practitioner",
   "fhirVersion": "4.0.1",
   "mapping": [
@@ -52,6 +54,33 @@
   "derivation": "constraint",
   "differential": {
     "element": [
+      {
+        "id": "ServiceRequest.meta",
+        "path": "ServiceRequest.meta",
+        "min": 1
+      },
+      {
+        "id": "ServiceRequest.meta.versionId",
+        "path": "ServiceRequest.meta.versionId",
+        "max": "0"
+      },
+      {
+        "id": "ServiceRequest.meta.source",
+        "path": "ServiceRequest.meta.source",
+        "max": "0"
+      },
+      {
+        "id": "ServiceRequest.meta.profile",
+        "path": "ServiceRequest.meta.profile",
+        "min": 1,
+        "max": "1",
+        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-prescription-service-request"
+      },
+      {
+        "id": "ServiceRequest.meta.security",
+        "path": "ServiceRequest.meta.security",
+        "max": "0"
+      },
       {
         "id": "ServiceRequest.extension:EPrescriptionToken",
         "path": "ServiceRequest.extension",
@@ -152,15 +181,6 @@
         "id": "ServiceRequest.status",
         "path": "ServiceRequest.status",
         "short": "Gibt den Bearbeitungsstand eines ServiceRequests an",
-        "constraint": [
-          {
-            "key": "sr-1",
-            "severity": "error",
-            "human": "Wenn der Status auf 'completed' gesetzt ist, muss ein Token vorhanden sein",
-            "expression": "(status = 'completed') implies exist(extension.where(system='https://gematik.de/fhir/erp/NamingSystem/GEM_NS_EPrescriptionToken'))",
-            "source": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-prescription-service-request"
-          }
-        ],
         "mustSupport": true,
         "binding": {
           "strength": "required",

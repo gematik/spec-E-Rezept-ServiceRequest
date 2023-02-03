@@ -12,10 +12,12 @@
     }
   ],
   "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-MessageBundle",
-  "version": "0.9",
+  "version": "1.0",
   "name": "GEM_PR_MEDREQ_MessageBundle",
   "title": "GEM_PR_MEDREQ_MessageBundle",
-  "status": "active",
+  "status": "draft",
+  "experimental": false,
+  "publisher": "gematik GmbH",
   "description": "Basic Bundle for communication of FHIR Ressources with KIM Messages",
   "fhirVersion": "4.0.1",
   "mapping": [
@@ -48,20 +50,64 @@
   "differential": {
     "element": [
       {
+        "id": "Bundle.meta",
+        "path": "Bundle.meta",
+        "min": 1
+      },
+      {
+        "id": "Bundle.meta.versionId",
+        "path": "Bundle.meta.versionId",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.meta.source",
+        "path": "Bundle.meta.source",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.meta.profile",
+        "path": "Bundle.meta.profile",
+        "min": 1,
+        "max": "1",
+        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-MessageBundle"
+      },
+      {
+        "id": "Bundle.meta.security",
+        "path": "Bundle.meta.security",
+        "max": "0"
+      },
+      {
         "id": "Bundle.entry",
         "path": "Bundle.entry",
         "min": 2
       },
       {
-        "id": "Bundle.entry:PrescriptionServiceRequest",
+        "id": "Bundle.entry:MessageHeader",
         "path": "Bundle.entry",
-        "sliceName": "PrescriptionServiceRequest",
+        "sliceName": "MessageHeader"
+      },
+      {
+        "id": "Bundle.entry:MessageHeader.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "MessageHeader",
+            "profile": [
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-MessageHeader"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:Rezeptanforderung",
+        "path": "Bundle.entry",
+        "sliceName": "Rezeptanforderung",
         "min": 0,
         "max": "*",
         "mustSupport": true
       },
       {
-        "id": "Bundle.entry:PrescriptionServiceRequest.resource",
+        "id": "Bundle.entry:Rezeptanforderung.resource",
         "path": "Bundle.entry.resource",
         "type": [
           {
@@ -73,15 +119,15 @@
         ]
       },
       {
-        "id": "Bundle.entry:DispenseServiceRequest",
+        "id": "Bundle.entry:Belieferungsanforderung",
         "path": "Bundle.entry",
-        "sliceName": "DispenseServiceRequest",
+        "sliceName": "Belieferungsanforderung",
         "min": 0,
         "max": "*",
         "mustSupport": true
       },
       {
-        "id": "Bundle.entry:DispenseServiceRequest.resource",
+        "id": "Bundle.entry:Belieferungsanforderung.resource",
         "path": "Bundle.entry.resource",
         "type": [
           {
@@ -93,65 +139,121 @@
         ]
       },
       {
-        "id": "Bundle.entry:MedicationRequest",
+        "id": "Bundle.entry:VerordnungAnfrage",
         "path": "Bundle.entry",
-        "sliceName": "MedicationRequest",
+        "sliceName": "VerordnungAnfrage",
         "min": 0,
         "max": "*",
         "mustSupport": true
       },
       {
-        "id": "Bundle.entry:MedicationRequest.resource",
+        "id": "Bundle.entry:VerordnungAnfrage.resource",
         "path": "Bundle.entry.resource",
         "type": [
           {
             "code": "MedicationRequest",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-MedicationRequest",
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-MedicationRequest"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:VerordnungArzneimittel",
+        "path": "Bundle.entry",
+        "sliceName": "VerordnungArzneimittel",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:VerordnungArzneimittel.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "MedicationRequest",
+            "profile": [
               "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription"
             ]
           }
         ]
       },
       {
-        "id": "Bundle.entry:Medication",
+        "id": "Bundle.entry:RezeptierdatenFreitextverordnung",
         "path": "Bundle.entry",
-        "sliceName": "Medication",
+        "sliceName": "RezeptierdatenFreitextverordnung",
         "min": 0,
         "max": "*",
         "mustSupport": true
       },
       {
-        "id": "Bundle.entry:Medication.resource",
+        "id": "Bundle.entry:RezeptierdatenFreitextverordnung.resource",
         "path": "Bundle.entry.resource",
         "type": [
           {
             "code": "Medication",
             "profile": [
-              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_FreeText",
-              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_Compounding",
-              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN",
-              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_Ingredient"
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_FreeText"
             ]
           }
         ]
       },
       {
-        "id": "Bundle.entry:DispenseInformation",
+        "id": "Bundle.entry:RezeptierdatenRezepturverordnung",
         "path": "Bundle.entry",
-        "sliceName": "DispenseInformation",
+        "sliceName": "RezeptierdatenRezepturverordnung",
         "min": 0,
         "max": "*",
         "mustSupport": true
       },
       {
-        "id": "Bundle.entry:DispenseInformation.resource",
+        "id": "Bundle.entry:RezeptierdatenRezepturverordnung.resource",
         "path": "Bundle.entry.resource",
         "type": [
           {
-            "code": "MedicationDispense",
+            "code": "Medication",
             "profile": [
-              "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense"
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_Compounding"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:RezeptierdatenPZNVerordnung",
+        "path": "Bundle.entry",
+        "sliceName": "RezeptierdatenPZNVerordnung",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:RezeptierdatenPZNVerordnung.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "Medication",
+            "profile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:RezeptierdatenWirkstoffverordnung",
+        "path": "Bundle.entry",
+        "sliceName": "RezeptierdatenWirkstoffverordnung",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:RezeptierdatenWirkstoffverordnung.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "Medication",
+            "profile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_Ingredient"
             ]
           }
         ]
@@ -197,15 +299,15 @@
         ]
       },
       {
-        "id": "Bundle.entry:DispensingOrganization",
+        "id": "Bundle.entry:Organization",
         "path": "Bundle.entry",
-        "sliceName": "DispensingOrganization",
+        "sliceName": "Organization",
         "min": 0,
-        "max": "1",
+        "max": "*",
         "mustSupport": true
       },
       {
-        "id": "Bundle.entry:DispensingOrganization.resource",
+        "id": "Bundle.entry:Organization.resource",
         "path": "Bundle.entry.resource",
         "type": [
           {
@@ -217,15 +319,14 @@
         ]
       },
       {
-        "id": "Bundle.entry:InsuranceCoverage",
+        "id": "Bundle.entry:Krankenversicherungsverhaeltnis",
         "path": "Bundle.entry",
-        "sliceName": "InsuranceCoverage",
+        "sliceName": "Krankenversicherungsverhaeltnis",
         "min": 0,
-        "max": "1",
-        "mustSupport": true
+        "max": "1"
       },
       {
-        "id": "Bundle.entry:InsuranceCoverage.resource",
+        "id": "Bundle.entry:Krankenversicherungsverhaeltnis.resource",
         "path": "Bundle.entry.resource",
         "type": [
           {

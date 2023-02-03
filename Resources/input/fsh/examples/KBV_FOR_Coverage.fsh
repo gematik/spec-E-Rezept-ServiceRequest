@@ -1,12 +1,3 @@
-Instance: Initial-Coverage
-InstanceOf: $KBV_PR_FOR_Coverage
-Usage: #example
-* meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Coverage|1.1.0"
-* status = #active
-* type = http://fhir.de/CodeSystem/versicherungsart-de-basis#GKV
-* beneficiary = Reference(Patient/Example-Patient)
-* payor.display = "AOK Bayern Die Gesundh."
-
 Instance: Response-Coverage
 InstanceOf: $KBV_PR_FOR_Coverage
 Usage: #example
