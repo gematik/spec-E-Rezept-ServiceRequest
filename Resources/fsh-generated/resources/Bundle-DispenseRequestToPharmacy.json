@@ -63,6 +63,12 @@
           ]
         },
         "intent": "filler-order",
+        "supportingInfo": [
+          {
+            "type": "Practitioner",
+            "reference": "Practitioner/Example-Practitioner"
+          }
+        ],
         "extension": [
           {
             "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-ex-medreq-eprescription-token",
@@ -117,11 +123,6 @@
             "identifier": {
               "value": "arbeitsplatz-1@test-apotheke.kim.telematik"
             }
-          }
-        ],
-        "supportingInfo": [
-          {
-            "reference": "Practitioner/Example-Practitioner"
           }
         ]
       }

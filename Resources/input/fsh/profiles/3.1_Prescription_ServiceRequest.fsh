@@ -7,7 +7,7 @@ Description: "ServiceRequest that is used to request a prescription from a pract
 * insert MetaProfile (gem-pr-erp-medreq-prescription-service-request)
 
 * extension contains
-    GEM_EX_MEDREQ_EPrescriptionToken named EPrescriptionToken 0..1
+    GEM_EX_MEDREQ_EPrescriptionToken named EPrescriptionToken 0..1 MS
 
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "system"
@@ -81,14 +81,16 @@ Description: "ServiceRequest that is used to request a prescription from a pract
 * reasonReference only Reference(GEM_PR_ERP_MEDREQ_RemainingMedication_Observation)
 
 * supportingInfo ^slicing.discriminator.type = #pattern
-* supportingInfo ^slicing.discriminator.path = "meta.profile"
+* supportingInfo ^slicing.discriminator.path = "type"
 * supportingInfo ^slicing.rules = #open
 * supportingInfo ^slicing.description = "Unterstützende Informationen zur Rezeptanforderung"
 * supportingInfo contains
 AuslieferndeApotheke 0..1 MS
 and MedikamentenReichweite 0..1 MS
 * supportingInfo[AuslieferndeApotheke] only Reference($KBV_PR_FOR_Organization)
+* supportingInfo[AuslieferndeApotheke].type = "Organization"
 * supportingInfo[MedikamentenReichweite] only Reference(GEM_PR_ERP_MEDREQ_RemainingMedication_Observation)
+* supportingInfo[MedikamentenReichweite].type = "Observation"
 
 * note MS
   * ^short = "Weitere Angaben zur Rezeptanforderung"
@@ -126,9 +128,10 @@ InstanceOf: GEM_PR_ERP_MEDREQ_Prescription_ServiceRequest
 Usage: #inline
 Title: "Initial Prescription Request"
 Description: "ServiceRequest that is returned to the requester"
-* extension[EPrescriptionToken].valueIdentifier
-  * system = "https://gematik.de/fhir/erp/NamingSystem/GEM_NS_EPrescriptionToken"
-  * value = "Task/160.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
+//TODO: Warum geht das hier nicht??
+* extension[0].url = "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-ex-medreq-eprescription-token"
+* extension[=].valueIdentifier.system = "https://gematik.de/fhir/erp/NamingSystem/GEM_NS_EPrescriptionToken"
+* extension[=].valueIdentifier.value = "Task/160.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
 * identifier[0]
   * system = "https://gematik.de/GEM_NS_MEDREQ_RequestId"
   * value = "012345"

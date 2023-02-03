@@ -5,7 +5,7 @@ Description: "This extension carries an eprescription token"
 * insert Meta (GEM_EX_MEDREQ_EPrescriptionToken)
 * value[x] only Identifier
 * value[x].system = "https://gematik.de/fhir/erp/NamingSystem/GEM_NS_EPrescriptionToken"
-* value[x].value obeys GEM-INV-E-Prescription-Regex
+//TODO: fix Expression * value[x].value obeys GEM-INV-E-Prescription-Regex
 
 Invariant: GEM-INV-E-Prescription-Regex
 Description: "Regex Invariante zur Validierung eines E-Rezept Tokens"

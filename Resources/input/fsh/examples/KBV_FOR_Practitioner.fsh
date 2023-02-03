@@ -1,9 +1,8 @@
 Instance: Example-Practitioner
 InstanceOf: $KBV_PR_FOR_Practitioner
-Usage: #example
+Usage: #inline
 Title: "Example-Practitioner"
 Description: "Beispielarzt zum Ausstellen der Rezepte"
-* meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner|1.1.0"
 * identifier[ANR].type = http://terminology.hl7.org/CodeSystem/v2-0203#LANR
 * identifier[ANR].system = "https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR"
 * identifier[ANR].value = "838382202"

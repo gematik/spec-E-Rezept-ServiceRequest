@@ -7,7 +7,7 @@ Description: "ServiceRequest that is used to initiate a dispense request for a p
 * insert MetaProfile (gem-pr-erp-medreq-dispense-service-request)
 
 * extension contains
-    GEM_EX_MEDREQ_EPrescriptionToken named EPrescriptionToken 1..1
+    GEM_EX_MEDREQ_EPrescriptionToken named EPrescriptionToken 1..1 MS
 
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "system"
@@ -63,13 +63,12 @@ Description: "ServiceRequest that is used to initiate a dispense request for a p
 * performer only Reference($KBV_PR_FOR_Practitioner or $KBV_PR_FOR_Organization or $KBV_PR_FOR_PractitionerRole)
 
 * supportingInfo ^slicing.discriminator.type = #pattern
-* supportingInfo ^slicing.discriminator.path = "meta.profile"
+* supportingInfo ^slicing.discriminator.path = "type"
 * supportingInfo ^slicing.rules = #open
 * supportingInfo ^slicing.description = "Unterstützende Informationen zur Rezeptanforderung"
-* supportingInfo contains
-AusstellenderArzt 1..1 MS
-and MedikamentenReichweite 0..1 MS
+* supportingInfo contains AusstellenderArzt 1..1 MS
 * supportingInfo[AusstellenderArzt] only Reference($KBV_PR_FOR_Practitioner)
+* supportingInfo[AusstellenderArzt].type = "Practitioner"
 
 * note MS
   * ^short = "Weitere Angaben zur Rezeptanforderung"
@@ -80,9 +79,10 @@ InstanceOf: GEM_PR_ERP_MEDREQ_Dispense_ServiceRequest
 Usage: #inline
 Title: "Initial Dispense Request"
 Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
-* extension[EPrescriptionToken].valueIdentifier
-  * system = "https://gematik.de/fhir/erp/NamingSystem/GEM_NS_EPrescriptionToken"
-  * value = "Task/160.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
+//TODO: Warum geht das hier nicht??
+* extension[0].url = "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-ex-medreq-eprescription-token"
+* extension[=].valueIdentifier.system = "https://gematik.de/fhir/erp/NamingSystem/GEM_NS_EPrescriptionToken"
+* extension[=].valueIdentifier.value = "Task/160.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
 * identifier[0]
   * system = "https://gematik.de/GEM_NS_MEDREQ_RequestId"
   * value = "012345"
@@ -92,10 +92,11 @@ Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
 * status = #active
 * intent = #filler-order
 * code.coding.code.value = #dispense-request
-* subject = Reference(Patient/Example-Patient)
+* subject = Reference(Example-Patient)
 * occurrenceDateTime = "2023-02-01"
 * authoredOn = "2023-02-01"
 * requester = Reference(Example-HealthCareService-Organization)
 * performerType.coding.code = #beliefernde-apotheke
 * performer.identifier = Test-Apotheke-Identifier
 * supportingInfo[AusstellenderArzt] = Reference(Example-Practitioner)
+* supportingInfo[AusstellenderArzt].type = "Practitioner"

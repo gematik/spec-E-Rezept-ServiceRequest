@@ -99,7 +99,8 @@
               "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_EX_MEDREQ_EPrescriptionToken"
             ]
           }
-        ]
+        ],
+        "mustSupport": true
       },
       {
         "id": "ServiceRequest.identifier",
@@ -285,7 +286,7 @@
           "discriminator": [
             {
               "type": "pattern",
-              "path": "meta.profile"
+              "path": "type"
             }
           ],
           "rules": "open",
@@ -310,12 +311,10 @@
         "mustSupport": true
       },
       {
-        "id": "ServiceRequest.supportingInfo:MedikamentenReichweite",
-        "path": "ServiceRequest.supportingInfo",
-        "sliceName": "MedikamentenReichweite",
-        "min": 0,
-        "max": "1",
-        "mustSupport": true
+        "id": "ServiceRequest.supportingInfo:AusstellenderArzt.type",
+        "path": "ServiceRequest.supportingInfo.type",
+        "min": 1,
+        "patternUri": "Practitioner"
       },
       {
         "id": "ServiceRequest.note",

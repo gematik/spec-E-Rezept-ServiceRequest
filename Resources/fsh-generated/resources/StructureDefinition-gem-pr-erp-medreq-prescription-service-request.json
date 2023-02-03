@@ -94,7 +94,8 @@
               "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_EX_MEDREQ_EPrescriptionToken"
             ]
           }
-        ]
+        ],
+        "mustSupport": true
       },
       {
         "id": "ServiceRequest.identifier",
@@ -332,7 +333,7 @@
           "discriminator": [
             {
               "type": "pattern",
-              "path": "meta.profile"
+              "path": "type"
             }
           ],
           "rules": "open",
@@ -356,6 +357,12 @@
         "mustSupport": true
       },
       {
+        "id": "ServiceRequest.supportingInfo:AuslieferndeApotheke.type",
+        "path": "ServiceRequest.supportingInfo.type",
+        "min": 1,
+        "patternUri": "Organization"
+      },
+      {
         "id": "ServiceRequest.supportingInfo:MedikamentenReichweite",
         "path": "ServiceRequest.supportingInfo",
         "sliceName": "MedikamentenReichweite",
@@ -370,6 +377,12 @@
           }
         ],
         "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.supportingInfo:MedikamentenReichweite.type",
+        "path": "ServiceRequest.supportingInfo.type",
+        "min": 1,
+        "patternUri": "Observation"
       },
       {
         "id": "ServiceRequest.note",
