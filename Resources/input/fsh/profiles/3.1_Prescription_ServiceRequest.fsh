@@ -7,7 +7,7 @@ Description: "ServiceRequest that is used to request a prescription from a pract
 * insert MetaProfile (gem-pr-erp-medreq-prescription-service-request)
 
 * extension contains
-    GEM_EX_MEDREQ_EPrescriptionToken named EPrescriptionToken 0..
+    GEM_EX_MEDREQ_EPrescriptionToken named EPrescriptionToken 0..1
 
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "system"
@@ -119,7 +119,7 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * authoredOn = "2023-01-27"
 * requester = Reference(Example-HealthCareService-Organization)
 * performerType.coding.code = #ausstellender-arzt
-* performer = Reference(Example-Practitioner)
+* performer.identifier = Hans-Topp-Glücklich-Identifier
 
 Instance: Response-Prescription-Request
 InstanceOf: GEM_PR_ERP_MEDREQ_Prescription_ServiceRequest

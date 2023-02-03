@@ -4,4 +4,4 @@ Title: "GEM CS MEDREQ Service Request Code"
 Description: "Codes to identify the type of ServiceRequest"
 
 * #prescription-request "Anfrage für ein Rezept"
-* #pharmacy-delivery-request "Anfrage für die Auslieferung eines Rezepts"
+* #dispense-request "Anfrage für die Belieferung eines Rezepts"

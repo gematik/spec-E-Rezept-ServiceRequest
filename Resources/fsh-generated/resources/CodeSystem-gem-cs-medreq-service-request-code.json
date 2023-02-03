@@ -14,8 +14,8 @@
       "display": "Anfrage für ein Rezept"
     },
     {
-      "code": "pharmacy-delivery-request",
-      "display": "Anfrage für die Auslieferung eines Rezepts"
+      "code": "dispense-request",
+      "display": "Anfrage für die Belieferung eines Rezepts"
     }
   ],
   "count": 2

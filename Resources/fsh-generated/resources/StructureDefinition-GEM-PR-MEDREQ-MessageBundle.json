@@ -103,7 +103,7 @@
         "path": "Bundle.entry",
         "sliceName": "Rezeptanforderung",
         "min": 0,
-        "max": "*",
+        "max": "1",
         "mustSupport": true
       },
       {
@@ -123,7 +123,7 @@
         "path": "Bundle.entry",
         "sliceName": "Belieferungsanforderung",
         "min": 0,
-        "max": "*",
+        "max": "1",
         "mustSupport": true
       },
       {
@@ -143,7 +143,7 @@
         "path": "Bundle.entry",
         "sliceName": "VerordnungAnfrage",
         "min": 0,
-        "max": "*",
+        "max": "1",
         "mustSupport": true
       },
       {
@@ -163,7 +163,7 @@
         "path": "Bundle.entry",
         "sliceName": "VerordnungArzneimittel",
         "min": 0,
-        "max": "*",
+        "max": "1",
         "mustSupport": true
       },
       {
@@ -183,7 +183,7 @@
         "path": "Bundle.entry",
         "sliceName": "RezeptierdatenFreitextverordnung",
         "min": 0,
-        "max": "*",
+        "max": "1",
         "mustSupport": true
       },
       {
@@ -203,7 +203,7 @@
         "path": "Bundle.entry",
         "sliceName": "RezeptierdatenRezepturverordnung",
         "min": 0,
-        "max": "*",
+        "max": "1",
         "mustSupport": true
       },
       {
@@ -223,7 +223,7 @@
         "path": "Bundle.entry",
         "sliceName": "RezeptierdatenPZNVerordnung",
         "min": 0,
-        "max": "*",
+        "max": "1",
         "mustSupport": true
       },
       {
@@ -243,7 +243,7 @@
         "path": "Bundle.entry",
         "sliceName": "RezeptierdatenWirkstoffverordnung",
         "min": 0,
-        "max": "*",
+        "max": "1",
         "mustSupport": true
       },
       {
@@ -254,6 +254,26 @@
             "code": "Medication",
             "profile": [
               "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_Ingredient"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:AbgabeInformationen",
+        "path": "Bundle.entry",
+        "sliceName": "AbgabeInformationen",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:AbgabeInformationen.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "MedicationDispense",
+            "profile": [
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-Abgabeinformationen"
             ]
           }
         ]

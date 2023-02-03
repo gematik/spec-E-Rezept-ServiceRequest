@@ -27,7 +27,7 @@ InstanceOf: GEM_PR_MEDREQ_MessageHeader
 Usage: #inline
 Title: "Prescription Response Message Header"
 Description: "Message Header for a PrescriptionRequest"
-* focus[+] = Reference(Initial-Prescription-Request)
+* focus[+] = Reference(Response-Prescription-Request)
 * eventCoding = #eRezept;Rezeptanforderung;V1.0
 * sender.identifier = Hans-Topp-Glücklich-Identifier
 * sender.display = "Praxis Hans Topp-Glücklich"
@@ -42,7 +42,7 @@ InstanceOf: GEM_PR_MEDREQ_MessageHeader
 Usage: #inline
 Title: "HealthCareService to Pharmacy Message Header"
 Description: "Message Header for a PrescriptionRequest"
-* focus[+] = Reference(Initial-Prescription-Request)
+* focus[+] = Reference(Initial-Dispense-Request)
 * eventCoding = #eRezept;Rezeptanforderung;V1.0
 * sender.identifier = Pflegeheim-Immergrün-Identifier
 * sender.display = "Pflegeheim Immergrün"

@@ -12,13 +12,13 @@ Description: "Profile on the Medication Request that is to be sent"
 * medication[x] ^slicing.discriminator.type = #type
 * medication[x] ^slicing.discriminator.path = "$this"
 * medication[x] ^slicing.rules = #closed
-* medicationReference 1.. MS
+* medicationReference 1..1 MS
 * medicationReference only Reference($KBV_PR_ERP_Medication_FreeText or $KBV_PR_ERP_Medication_Compounding or $KBV_PR_ERP_Medication_PZN or $KBV_PR_ERP_Medication_Ingredient)
 * medicationReference ^sliceName = "medicationReference"
-* medicationReference.reference 1.. MS
-* medicationReference.type ..0
-* medicationReference.identifier ..0
-* medicationReference.display ..0
+* medicationReference.reference 1..1 MS
+* medicationReference.type 0..0
+* medicationReference.identifier 0..0
+* medicationReference.display 0..0
 
 * subject only Reference($KBV_PR_FOR_Patient)
 * subject.type 0..0

@@ -22,3 +22,5 @@ Alias: $tim = http://gematik.de/fhir/sid/TIM-Adresse
 
 Alias: $Hl7_Request_Status_VS = http://hl7.org/fhir/ValueSet/request-status
 Alias: $HL7_Intent_VS = http://hl7.org/fhir/ValueSet/request-intent
+
+Alias: $DAV-EX-ERP-Rezeptaenderung = http://fhir.abda.de/eRezeptAbgabedaten/StructureDefinition/DAV-EX-ERP-Rezeptaenderung

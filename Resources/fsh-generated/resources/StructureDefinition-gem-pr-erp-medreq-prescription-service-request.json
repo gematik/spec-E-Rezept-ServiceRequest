@@ -86,7 +86,7 @@
         "path": "ServiceRequest.extension",
         "sliceName": "EPrescriptionToken",
         "min": 0,
-        "max": "*",
+        "max": "1",
         "type": [
           {
             "code": "Extension",

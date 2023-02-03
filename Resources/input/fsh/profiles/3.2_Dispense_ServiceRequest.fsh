@@ -67,10 +67,35 @@ Description: "ServiceRequest that is used to initiate a dispense request for a p
 * supportingInfo ^slicing.rules = #open
 * supportingInfo ^slicing.description = "Unterstützende Informationen zur Rezeptanforderung"
 * supportingInfo contains
-AusstellenderArzt 0..1 MS
+AusstellenderArzt 1..1 MS
 and MedikamentenReichweite 0..1 MS
-* supportingInfo[AusstellenderArzt] only Reference($KBV_PR_FOR_Organization)
+* supportingInfo[AusstellenderArzt] only Reference($KBV_PR_FOR_Practitioner)
 
 * note MS
   * ^short = "Weitere Angaben zur Rezeptanforderung"
   * ^comment = "Eventuell nicht spezifizierte Anwendungsfälle können hier im Freitext platziert werden"
+
+Instance: Initial-Dispense-Request
+InstanceOf: GEM_PR_ERP_MEDREQ_Dispense_ServiceRequest
+Usage: #inline
+Title: "Initial Dispense Request"
+Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
+* extension[EPrescriptionToken].valueIdentifier
+  * system = "https://gematik.de/fhir/erp/NamingSystem/GEM_NS_EPrescriptionToken"
+  * value = "Task/160.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
+* identifier[0]
+  * system = "https://gematik.de/GEM_NS_MEDREQ_RequestId"
+  * value = "012345"
+* basedOn = Reference(Example-Response-KBV-Prescription)
+* requisition[0].system = "https://gematik.de/GEM_NS_MEDREQ_RequestGroupId"
+* requisition[=].value = "GroupID-2"
+* status = #active
+* intent = #filler-order
+* code.coding.code.value = #dispense-request
+* subject = Reference(Patient/Example-Patient)
+* occurrenceDateTime = "2023-02-01"
+* authoredOn = "2023-02-01"
+* requester = Reference(Example-HealthCareService-Organization)
+* performerType.coding.code = #beliefernde-apotheke
+* performer.identifier = Test-Apotheke-Identifier
+* supportingInfo[AusstellenderArzt] = Reference(Example-Practitioner)
