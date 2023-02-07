@@ -15,7 +15,7 @@
   "version": "0.9",
   "name": "GEM_PR_KIM_MessageHeader",
   "title": "GEM PR KIM MessageHeader",
-  "status": "active",
+  "status": "draft",
   "description": "Basic Message Header for communication of FHIR Ressources with KIM Messages",
   "fhirVersion": "4.0.1",
   "mapping": [

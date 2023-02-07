@@ -15,7 +15,7 @@
   "version": "0.9",
   "name": "GEM_PR_KIM_MessageBundle",
   "title": "GEM_PR_KIM_MessageBundle",
-  "status": "active",
+  "status": "draft",
   "description": "Basic Bundle for communication of FHIR Ressources with KIM Messages",
   "fhirVersion": "4.0.1",
   "mapping": [

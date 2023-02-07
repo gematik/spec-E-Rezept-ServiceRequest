@@ -63,7 +63,7 @@ Description: "ServiceRequest that is used to request a prescription from a pract
 
 
 * requester 1..1 MS
-* requester only Reference($KBV_PR_FOR_Practitioner or $KBV_PR_FOR_PractitionerRole or $KBV_PR_FOR_Organization)
+* requester only Reference( GEM_ERP_MEDREP_Organization)
 
 //TODO geht das hier schöner: ?
 * performerType 1..1 MS
@@ -74,7 +74,7 @@ Description: "ServiceRequest that is used to request a prescription from a pract
 * performerType.coding.code = #ausstellender-arzt
 
 * performer MS
-* performer only Reference($KBV_PR_FOR_Practitioner or $KBV_PR_FOR_Organization or $KBV_PR_FOR_PractitionerRole)
+* performer only Reference($KBV_PR_FOR_Practitioner)
 
 * reasonCode from GEM_VS_MEDREQ_MedicationRequestReason
 
@@ -86,8 +86,8 @@ Description: "ServiceRequest that is used to request a prescription from a pract
 * supportingInfo ^slicing.description = "Unterstützende Informationen zur Rezeptanforderung"
 * supportingInfo contains
 AuslieferndeApotheke 0..1 MS
-and MedikamentenReichweite 0..1 MS
-* supportingInfo[AuslieferndeApotheke] only Reference($KBV_PR_FOR_Organization)
+and MedikamentenReichweite 0..2 MS
+* supportingInfo[AuslieferndeApotheke] only Reference(GEM_ERP_MEDREP_Organization)
 * supportingInfo[AuslieferndeApotheke].type = "Organization"
 * supportingInfo[MedikamentenReichweite] only Reference(GEM_PR_ERP_MEDREQ_RemainingMedication_Observation)
 * supportingInfo[MedikamentenReichweite].type = "Observation"

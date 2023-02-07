@@ -6,6 +6,8 @@ Alias: $KBV_PR_FOR_Organization = https://fhir.kbv.de/StructureDefinition/KBV_PR
 Alias: $KBV_PR_FOR_PractitionerRole = https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_PractitionerRole
 Alias: $KBV_PR_FOR_Coverage = https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Coverage
 
+Alias: $KBV_PR_Base_Organization = https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization
+
 Alias: $KVID = http://fhir.de/StructureDefinition/identifier-kvid-10
 Alias: $PKVID = http://fhir.de/StructureDefinition/identifier-pkv
 
