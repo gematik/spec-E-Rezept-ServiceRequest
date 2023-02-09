@@ -1,10 +1,10 @@
 Profile: GEM_PR_ERP_MEDREQ_Dispense_ServiceRequest
 Parent: ServiceRequest
-Id: gem-pr-erp-medreq-dispense-service-request
+Id: GEM-PR-ERP-MEDREQ-Dispense-ServiceRequest
 Title: "GEM PR ERP MEDREQ Dispense Service Request"
 Description: "ServiceRequest that is used to initiate a dispense request for a pharmacy"
-* insert Meta (gem-pr-erp-medreq-dispense-service-request)
-* insert MetaProfile (gem-pr-erp-medreq-dispense-service-request)
+* insert Meta (GEM-PR-ERP-MEDREQ-Dispense-ServiceRequest)
+* insert MetaProfile (GEM-PR-ERP-MEDREQ-Dispense-ServiceRequest)
 
 * extension contains
     GEM_EX_MEDREQ_EPrescriptionToken named EPrescriptionToken 1..1 MS
@@ -51,7 +51,7 @@ Description: "ServiceRequest that is used to initiate a dispense request for a p
   * ^comment = "Wird initial angelegt und dann nicht mehr verändert."
 
 * requester 1..1 MS
-* requester only Reference(GEM_ERP_MEDREQ_Organization)
+* requester only Reference(GEM_PR_MEDREQ_Organization)
 
 * performerType 1..1 MS
   * ^short = "Gibt an, wer den ServiceRequest erfüllen soll"
@@ -60,7 +60,7 @@ Description: "ServiceRequest that is used to initiate a dispense request for a p
 * performerType.coding.system = "https://gematik.de/fhir/erpmedreqcom/GEM_VS_MEDREQ_PerformerType"
 * performerType.coding.code = #beliefernde-apotheke
 
-* performer only Reference(GEM_ERP_MEDREQ_Organization)
+* performer only Reference(GEM_PR_MEDREQ_Organization)
 
 * supportingInfo ^slicing.discriminator.type = #pattern
 * supportingInfo ^slicing.discriminator.path = "type"

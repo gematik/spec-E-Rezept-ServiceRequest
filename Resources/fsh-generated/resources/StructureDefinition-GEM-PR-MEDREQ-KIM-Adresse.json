@@ -1,9 +1,9 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "gem-pr-medreq-kim-adresse",
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-medreq-kim-adresse",
+  "id": "GEM-PR-MEDREQ-KIM-Adresse",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-KIM-Adresse",
   "version": "1.0",
-  "name": "GEM_PR_MEDREQ_KIMAdresse",
+  "name": "GEM_PR_MEDREQ_KIM_Adresse",
   "title": "GEM PR MEDREQ KIM-Adresse",
   "status": "draft",
   "experimental": false,

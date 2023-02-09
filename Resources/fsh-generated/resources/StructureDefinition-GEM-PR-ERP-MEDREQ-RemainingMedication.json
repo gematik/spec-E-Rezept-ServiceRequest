@@ -1,6 +1,6 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "gem-pr-erp-medreq-remaining-medication-observation",
+  "id": "GEM-PR-ERP-MEDREQ-RemainingMedication",
   "extension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
@@ -11,9 +11,9 @@
       "valueCode": "patient"
     }
   ],
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-remaining-medication-observation",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-RemainingMedication",
   "version": "1.0",
-  "name": "GEM_PR_ERP_MEDREQ_RemainingMedication_Observation",
+  "name": "GEM_PR_ERP_MEDREQ_RemainingMedication",
   "title": "GEM PR ERP MEDREQ Remaining Medication Observation ",
   "status": "draft",
   "experimental": false,
@@ -79,7 +79,7 @@
         "path": "Observation.meta.profile",
         "min": 1,
         "max": "1",
-        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-erp-medreq-remaining-medication-observation"
+        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-RemainingMedication"
       },
       {
         "id": "Observation.meta.security",

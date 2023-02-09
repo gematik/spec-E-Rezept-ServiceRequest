@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "gem-erp-medreq-pr-request-group-identifier",
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-erp-medreq-pr-request-group-identifier",
+  "id": "GEM-ERP-MEDREQ-PR-RequestGroupIdentifier",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-ERP-MEDREQ-PR-RequestGroupIdentifier",
   "version": "1.0",
   "name": "GEM_ERP_MEDREQ_PR_RequestGroupIdentifier",
   "title": "GEM ERP MEDREQ Request Group Identifier",

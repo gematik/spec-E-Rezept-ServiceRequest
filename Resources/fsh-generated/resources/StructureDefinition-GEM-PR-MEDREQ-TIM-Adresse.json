@@ -1,14 +1,14 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "gem-erp-medreq-pr-request-identifier",
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-erp-medreq-pr-request-identifier",
+  "id": "GEM-PR-MEDREQ-TIM-Adresse",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-TIM-Adresse",
   "version": "1.0",
-  "name": "GEM_ERP_MEDREQ_PR_RequestIdentifier",
-  "title": "GEM ERP MEDREQ Request Identifier",
+  "name": "GEM_PR_MEDREQ_TIM_Adresse",
+  "title": "GEM PR MEDREQ TIM-Adresse",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "Identifier used to identify a single ServiceRequest in KIM Rezeptanforderung",
+  "description": "Identifier zur Angabe der TIM-Adresse",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -37,7 +37,18 @@
       {
         "id": "Identifier.system",
         "path": "Identifier.system",
-        "fixedUri": "https://gematik.de/GEM_NS_MEDREQ_RequestId"
+        "patternUri": "http://gematik.de/fhir/sid/TIM-Adresse"
+      },
+      {
+        "id": "Identifier.value",
+        "path": "Identifier.value",
+        "min": 1,
+        "example": [
+          {
+            "label": "General",
+            "valueString": "example@super-care.tim.telematik"
+          }
+        ]
       }
     ]
   }

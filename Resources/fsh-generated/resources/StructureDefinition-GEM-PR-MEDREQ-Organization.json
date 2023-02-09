@@ -1,9 +1,9 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "gem-erp-medreq-organization",
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-erp-medreq-organization",
+  "id": "GEM-PR-MEDREQ-Organization",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-Organization",
   "version": "1.0",
-  "name": "GEM_ERP_MEDREQ_Organization",
+  "name": "GEM_PR_MEDREQ_Organization",
   "title": "GEM ERP MEDREQ Organization",
   "status": "draft",
   "experimental": false,
@@ -59,7 +59,7 @@
         "path": "Organization.meta.profile",
         "min": 1,
         "max": "1",
-        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-erp-medreq-organization"
+        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-Organization"
       },
       {
         "id": "Organization.meta.security",
@@ -81,7 +81,7 @@
           {
             "code": "Identifier",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-medreq-kim-adresse"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-KIM-Adresse"
             ]
           }
         ],
@@ -110,7 +110,7 @@
           {
             "code": "Identifier",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-pr-medreq-tim-adresse"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-TIM-Adresse"
             ]
           }
         ]

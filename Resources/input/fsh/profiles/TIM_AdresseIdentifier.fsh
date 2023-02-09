@@ -1,9 +1,9 @@
-Profile: GEM_PR_MEDREQ_TIMAdresse
+Profile: GEM_PR_MEDREQ_TIM_Adresse
 Parent: Identifier
-Id: gem-pr-medreq-tim-adresse
+Id: GEM-PR-MEDREQ-TIM-Adresse
 Title: "GEM PR MEDREQ TIM-Adresse"
 Description: "Identifier zur Angabe der TIM-Adresse"
-* insert Meta (gem-pr-medreq-tim-adresse)
+* insert Meta (GEM-PR-MEDREQ-TIM-Adresse)
 * system = $tim
 * value 1..1
   * ^example.valueString = "example@super-care.tim.telematik"

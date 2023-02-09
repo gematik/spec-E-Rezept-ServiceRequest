@@ -1,10 +1,10 @@
 Profile: GEM_PR_ERP_MEDREQ_Prescription_ServiceRequest
 Parent: ServiceRequest
-Id: gem-pr-erp-medreq-prescription-service-request
+Id: GEM-PR-ERP-MEDREQ-Prescription-ServiceRequest
 Title: "GEM PR ERP MEDREQ Prescription Service Request"
 Description: "ServiceRequest that is used to request a prescription from a practitioner"
-* insert Meta (gem-pr-erp-medreq-prescription-service-request)
-* insert MetaProfile (gem-pr-erp-medreq-prescription-service-request)
+* insert Meta (GEM-PR-ERP-MEDREQ-Prescription-ServiceRequest)
+* insert MetaProfile (GEM-PR-ERP-MEDREQ-Prescription-ServiceRequest)
 
 * extension contains
     GEM_EX_MEDREQ_EPrescriptionToken named EPrescriptionToken 0..1 MS
@@ -63,7 +63,7 @@ Description: "ServiceRequest that is used to request a prescription from a pract
 
 
 * requester 1..1 MS
-* requester only Reference( GEM_ERP_MEDREQ_Organization)
+* requester only Reference(GEM_PR_MEDREQ_Organization)
 
 //TODO geht das hier schöner: ?
 * performerType 1..1 MS
@@ -78,7 +78,7 @@ Description: "ServiceRequest that is used to request a prescription from a pract
 
 * reasonCode from GEM_VS_MEDREQ_MedicationRequest_Reason
 
-* reasonReference only Reference(GEM_PR_ERP_MEDREQ_RemainingMedication_Observation)
+* reasonReference only Reference(GEM_PR_ERP_MEDREQ_RemainingMedication)
 
 * supportingInfo ^slicing.discriminator.type = #pattern
 * supportingInfo ^slicing.discriminator.path = "type"
@@ -87,9 +87,9 @@ Description: "ServiceRequest that is used to request a prescription from a pract
 * supportingInfo contains
 AuslieferndeApotheke 0..1 MS
 and MedikamentenReichweite 0..2 MS
-* supportingInfo[AuslieferndeApotheke] only Reference(GEM_ERP_MEDREQ_Organization)
+* supportingInfo[AuslieferndeApotheke] only Reference(GEM_PR_MEDREQ_Organization)
 * supportingInfo[AuslieferndeApotheke].type = "Organization"
-* supportingInfo[MedikamentenReichweite] only Reference(GEM_PR_ERP_MEDREQ_RemainingMedication_Observation)
+* supportingInfo[MedikamentenReichweite] only Reference(GEM_PR_ERP_MEDREQ_RemainingMedication)
 * supportingInfo[MedikamentenReichweite].type = "Observation"
 
 * note MS
