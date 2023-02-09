@@ -49,7 +49,7 @@
         ],
         "binding": {
           "strength": "required",
-          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/CancellationReasonTypeVS",
+          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/GEM-VS-MEDREQ-Cancellation-Reason-Type",
           "description": "Grund für die Stornierung"
         }
       },

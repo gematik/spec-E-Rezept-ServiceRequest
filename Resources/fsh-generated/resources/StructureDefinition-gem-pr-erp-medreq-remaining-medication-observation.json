@@ -96,7 +96,7 @@
         "path": "Observation.code",
         "binding": {
           "strength": "required",
-          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/gem-vs-medreq-medication-range"
+          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/GEM-VS-MEDREQ-MedicationRange"
         }
       },
       {

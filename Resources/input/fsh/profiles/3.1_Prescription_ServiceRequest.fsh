@@ -41,7 +41,7 @@ Description: "ServiceRequest that is used to request a prescription from a pract
 * intent = #order
 
 * code 1..1 MS
-* code from GEM_VS_MEDREQ_ServiceRequestCode
+* code from GEM_VS_MEDREQ_Service_Request_Code
   * ^short = "Gibt die Art des ServiceRequests an."
   * ^comment = "#prescription-request dient der Anfrage eines Rezeptes an einen Arzt. #pharmacy-delivery-request dient als ServiceRequest für eine Apotheke zur Belieferung"
 
@@ -49,7 +49,7 @@ Description: "ServiceRequest that is used to request a prescription from a pract
 * subject only Reference($KBV_PR_FOR_Patient)
 
 * orderDetail 1..1 MS
-* orderDetail from PrescriptionFullfillmentTypeVS (required)
+* orderDetail from GEM_VS_MEDREQ_Prescription_Fullfillment_Type (required)
   * ^short = "Gibt an wie die Rezeptanfrage erfüllt werden soll."
   * ^comment = "Wenn das Rezept an eine Apotheke geht, muss ein entsprechender ServiceRequest im Bundle enthalten sein."
 
@@ -76,7 +76,7 @@ Description: "ServiceRequest that is used to request a prescription from a pract
 * performer MS
 * performer only Reference($KBV_PR_FOR_Practitioner)
 
-* reasonCode from GEM_VS_MEDREQ_MedicationRequestReason
+* reasonCode from GEM_VS_MEDREQ_MedicationRequest_Reason
 
 * reasonReference only Reference(GEM_PR_ERP_MEDREQ_RemainingMedication_Observation)
 
@@ -114,7 +114,7 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * requisition[=].value = "GroupID-2"
 * status = #active
 * intent = #order
-* code.coding.code.value = #prescription-request
+* code = #prescription-request
 * subject = Reference(Patient/Example-Patient)
 * orderDetail.coding.code = #return-to-requester
 * occurrenceDateTime = "2023-02-01"
@@ -128,7 +128,6 @@ InstanceOf: GEM_PR_ERP_MEDREQ_Prescription_ServiceRequest
 Usage: #inline
 Title: "Initial Prescription Request"
 Description: "ServiceRequest that is returned to the requester"
-//TODO: Warum geht das hier nicht??
 * extension[0].url = "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-ex-medreq-eprescription-token"
 * extension[=].valueIdentifier.system = "https://gematik.de/fhir/erp/NamingSystem/GEM_NS_EPrescriptionToken"
 * extension[=].valueIdentifier.value = "Task/160.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
@@ -140,7 +139,7 @@ Description: "ServiceRequest that is returned to the requester"
 * requisition[=].value = "GroupID-2"
 * status = #completed
 * intent = #order
-* code.coding.code.value = #prescription-request
+* code = #prescription-request
 * subject = Reference(Example-Patient)
 * orderDetail.coding.code = #return-to-requester
 * occurrenceDateTime = "2023-01-30" //update wann es tatsächlich ausgestellt wurde

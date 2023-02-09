@@ -1,13 +1,13 @@
 {
   "resourceType": "CodeSystem",
-  "status": "active",
+  "status": "draft",
   "content": "complete",
   "name": "GEM_CS_MEDREQ_PerformerType",
-  "id": "gem-cs-medreq-performer-type",
+  "id": "GEM-CS-MEDREQ-PerformerType",
   "title": "GEM CS MEDREQ Performer Type",
   "description": "Codes für die Angabe des Performer Types",
-  "version": "0.9",
-  "url": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/gem-cs-medreq-performer-type",
+  "version": "1.0",
+  "url": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-PerformerType",
   "concept": [
     {
       "code": "ausstellender-arzt",
@@ -18,5 +18,7 @@
       "display": "Apotheke, die das Rezept beliefern soll"
     }
   ],
+  "experimental": false,
+  "publisher": "gematik GmbH",
   "count": 2
 }

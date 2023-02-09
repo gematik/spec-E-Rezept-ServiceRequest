@@ -1,0 +1,19 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "GEM_VS_MEDREQ_MedicationRequest_Reason",
+  "id": "GEM-VS-MEDREQ-MedicationRequest-Reason",
+  "title": "GEM VS MEDREQ Medication Request Reason",
+  "description": "Valueset to state why medication is needed",
+  "version": "1.0",
+  "url": "https://gematik.de/fhir/erpmedreqcom/ValueSet/GEM-VS-MEDREQ-MedicationRequest-Reason",
+  "experimental": false,
+  "publisher": "gematik GmbH",
+  "compose": {
+    "include": [
+      {
+        "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-MedicationRequest-Reason"
+      }
+    ]
+  }
+}

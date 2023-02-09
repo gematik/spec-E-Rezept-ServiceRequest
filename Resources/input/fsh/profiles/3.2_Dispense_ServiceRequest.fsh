@@ -35,7 +35,7 @@ Description: "ServiceRequest that is used to initiate a dispense request for a p
 * intent = #filler-order
 
 * code 1..1 MS
-* code from GEM_VS_MEDREQ_ServiceRequestCode
+* code from GEM_VS_MEDREQ_Service_Request_Code
   * ^short = "Gibt die Art des ServiceRequests an."
   * ^comment = "#prescription-request dient der Anfrage eines Rezeptes an einen Arzt. #pharmacy-delivery-request dient als ServiceRequest für eine Apotheke zur Belieferung"
 
@@ -91,7 +91,7 @@ Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
 * requisition[=].value = "GroupID-2"
 * status = #active
 * intent = #filler-order
-* code.coding.code.value = #dispense-request
+* code = #dispense-request
 * subject = Reference(Example-Patient)
 * occurrenceDateTime = "2023-02-01"
 * authoredOn = "2023-02-01"

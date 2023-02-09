@@ -2,12 +2,12 @@
   "resourceType": "CodeSystem",
   "status": "draft",
   "content": "complete",
-  "name": "MessageEventTypeCS",
-  "id": "MessageEventTypeCS",
+  "name": "GEM_CS_MEDREQ_MessageEvent_Type",
+  "id": "GEM-CS-MEDREQ-MessageEvent-Type",
   "title": "CodeSystem for MessageEventTypes",
   "description": "Definition of message types used for communication about medication requests",
   "version": "1.0",
-  "url": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/MessageEventTypeCS",
+  "url": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-MessageEvent-Type",
   "concept": [
     {
       "code": "RequestingMessage",

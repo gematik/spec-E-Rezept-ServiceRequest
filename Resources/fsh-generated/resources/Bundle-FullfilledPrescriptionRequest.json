@@ -91,9 +91,7 @@
         "code": {
           "coding": [
             {
-              "_code": {
-                "value": "prescription-request"
-              }
+              "code": "prescription-request"
             }
           ]
         },

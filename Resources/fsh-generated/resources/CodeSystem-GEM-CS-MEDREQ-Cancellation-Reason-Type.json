@@ -2,12 +2,12 @@
   "resourceType": "CodeSystem",
   "status": "draft",
   "content": "complete",
-  "name": "CancellationReasonTypeCS",
-  "id": "CancellationReasonTypeCS",
+  "name": "GEM_CS_MEDREQ_Cancellation_Reason_Type",
+  "id": "GEM-CS-MEDREQ-Cancellation-Reason-Type",
   "title": "CodeSystem for CancellationReasonType",
   "description": "Definition of reasons why a prescriptionRequest was cancelled",
   "version": "1.0",
-  "url": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/CancellationReasonTypeCS",
+  "url": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-Cancellation-Reason-Type",
   "concept": [
     {
       "code": "InformationMissing",

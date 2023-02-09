@@ -2,11 +2,11 @@
   "resourceType": "ValueSet",
   "status": "draft",
   "name": "GEM_VS_MEDREQ_RequestStatus",
-  "id": "gem-vs-medreq-request-status",
+  "id": "GEM-VS-MEDREQ-RequestStatus",
   "title": "GEM VS MEDREQ Request Status",
   "description": "ValueSet to define the status of a request",
   "version": "1.0",
-  "url": "https://gematik.de/fhir/erpmedreqcom/ValueSet/GEM_VS_MEDREQ_RequestStatus",
+  "url": "https://gematik.de/fhir/erpmedreqcom/ValueSet/GEM-VS-MEDREQ-RequestStatus",
   "experimental": false,
   "publisher": "gematik GmbH",
   "compose": {

@@ -47,7 +47,7 @@
         "path": "MessageHeader.event[x]",
         "binding": {
           "strength": "required",
-          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/kim-dienstkennung-vs"
+          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/GEM-VS-MEDREQ-KIM-Dienstkennung"
         }
       },
       {

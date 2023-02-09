@@ -1,18 +1,18 @@
 {
   "resourceType": "ValueSet",
   "status": "draft",
-  "name": "PrescriptionFullfillmentTypeVS",
-  "id": "PrescriptionFullfillmentTypeVS",
+  "name": "GEM_VS_MEDREQ_Prescription_Fullfillment_Type",
+  "id": "GEM-VS-MEDREQ-Prescription-Fullfillment-Type",
   "title": "ValueSet of types describing how prescription will be fulfulled",
   "description": "This type defines how the prescription will fullfilled",
   "version": "1.0",
-  "url": "https://gematik.de/fhir/erpmedreqcom/ValueSet/PrescriptionFullfillmentTypeVS",
+  "url": "https://gematik.de/fhir/erpmedreqcom/ValueSet/GEM-VS-MEDREQ-Prescription-Fullfillment-Type",
   "experimental": false,
   "publisher": "gematik GmbH",
   "compose": {
     "include": [
       {
-        "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/PrescriptionFullfillmentTypeCS"
+        "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-Prescription-Fullfillment-Type"
       }
     ]
   }

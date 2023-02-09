@@ -97,9 +97,7 @@
         "code": {
           "coding": [
             {
-              "_code": {
-                "value": "dispense-request"
-              }
+              "code": "dispense-request"
             }
           ]
         },

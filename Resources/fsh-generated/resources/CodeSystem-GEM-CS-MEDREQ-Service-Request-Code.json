@@ -1,13 +1,13 @@
 {
   "resourceType": "CodeSystem",
-  "status": "active",
+  "status": "draft",
   "content": "complete",
-  "name": "GEM_CS_MEDREQ_ServiceRequestCode",
-  "id": "gem-cs-medreq-service-request-code",
+  "name": "GEM_CS_MEDREQ_Service_Request_Code",
+  "id": "GEM-CS-MEDREQ-Service-Request-Code",
   "title": "GEM CS MEDREQ Service Request Code",
   "description": "Codes to identify the type of ServiceRequest",
-  "version": "0.9",
-  "url": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/gem-cs-medreq-service-request-code",
+  "version": "1.0",
+  "url": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-ServiceRequest-Code",
   "concept": [
     {
       "code": "prescription-request",
@@ -18,5 +18,7 @@
       "display": "Anfrage für die Belieferung eines Rezepts"
     }
   ],
+  "experimental": false,
+  "publisher": "gematik GmbH",
   "count": 2
 }

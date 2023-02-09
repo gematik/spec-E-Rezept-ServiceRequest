@@ -185,7 +185,7 @@
         "mustSupport": true,
         "binding": {
           "strength": "required",
-          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/gem-vs-medreq-request-status"
+          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/GEM-VS-MEDREQ-RequestStatus"
         }
       },
       {
@@ -202,7 +202,7 @@
         "mustSupport": true,
         "binding": {
           "strength": "required",
-          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/gem-vs-medreq-service-request-code"
+          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/GEM-VS-MEDREQ-Service-Request-Code"
         }
       },
       {
@@ -215,7 +215,7 @@
         "mustSupport": true,
         "binding": {
           "strength": "required",
-          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/PrescriptionFullfillmentTypeVS"
+          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/GEM-VS-MEDREQ-Prescription-Fullfillment-Type"
         }
       },
       {
@@ -307,7 +307,7 @@
         "path": "ServiceRequest.reasonCode",
         "binding": {
           "strength": "required",
-          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/gem-vs-medreq-medication-request-reason"
+          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/GEM-VS-MEDREQ-MedicationRequest-Reason"
         }
       },
       {

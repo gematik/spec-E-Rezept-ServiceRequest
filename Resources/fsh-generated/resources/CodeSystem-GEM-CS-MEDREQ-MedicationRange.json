@@ -1,18 +1,20 @@
 {
   "resourceType": "CodeSystem",
-  "status": "active",
+  "status": "draft",
   "content": "complete",
   "name": "GEM_CS_MEDREQ_MedicationRange",
-  "id": "gem-cs-medreq-medication-range",
+  "id": "GEM-CS-MEDREQ-MedicationRange",
   "title": "GEM CS MEDREQ Medication Range",
   "description": "CodeSystem to state why medication is needed",
-  "version": "0.9",
-  "url": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/gem-cs-medreq-medication-range",
+  "version": "1.0",
+  "url": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-MedicationRange",
   "concept": [
     {
       "code": "range-of-medication",
       "display": "Angabe der Restreichweite des Medikaments"
     }
   ],
+  "experimental": false,
+  "publisher": "gematik GmbH",
   "count": 1
 }

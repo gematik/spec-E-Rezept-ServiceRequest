@@ -6,7 +6,7 @@ Description: "Basic Message Header for communication of FHIR Ressources with KIM
 * ^status = #draft
 
 //
-* event[x] from KimDienstleistungsVS
+* event[x] from GEM_VS_MEDREQ_KIM_Dienstkennung (required)
 //sender und receicer als Identifier und KIM-Adresse als Identifier modellieren
 // Im FHIR Message header ist source.endpoint und destination.endpoint 1..1, soll das als KIM Adresse genutzt werden?
 //email ist uri?
