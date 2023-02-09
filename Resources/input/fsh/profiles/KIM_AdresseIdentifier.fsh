@@ -5,6 +5,8 @@ Title: "GEM PR MEDREQ KIM-Adresse"
 Description: "Identifier zur Angabe der KIM-Adresse"
 * insert Meta (gem-pr-medreq-kim-adresse)
 * system = $kim
+* value 1..1
+  * ^example.valueString = "example@super-care.kim.telematik"
 
 Instance: GEM-NS-KIM-Adresse
 InstanceOf: NamingSystem

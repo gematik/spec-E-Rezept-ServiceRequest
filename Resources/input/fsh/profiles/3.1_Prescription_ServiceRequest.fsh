@@ -63,7 +63,7 @@ Description: "ServiceRequest that is used to request a prescription from a pract
 
 
 * requester 1..1 MS
-* requester only Reference( GEM_ERP_MEDREP_Organization)
+* requester only Reference( GEM_ERP_MEDREQ_Organization)
 
 //TODO geht das hier schöner: ?
 * performerType 1..1 MS
@@ -87,7 +87,7 @@ Description: "ServiceRequest that is used to request a prescription from a pract
 * supportingInfo contains
 AuslieferndeApotheke 0..1 MS
 and MedikamentenReichweite 0..2 MS
-* supportingInfo[AuslieferndeApotheke] only Reference(GEM_ERP_MEDREP_Organization)
+* supportingInfo[AuslieferndeApotheke] only Reference(GEM_ERP_MEDREQ_Organization)
 * supportingInfo[AuslieferndeApotheke].type = "Organization"
 * supportingInfo[MedikamentenReichweite] only Reference(GEM_PR_ERP_MEDREQ_RemainingMedication_Observation)
 * supportingInfo[MedikamentenReichweite].type = "Observation"

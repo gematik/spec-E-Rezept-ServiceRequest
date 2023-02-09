@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
   "id": "gem-ex-medreq-eprescription-token",
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_EX_MEDREQ_EPrescriptionToken",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-ex-medreq-eprescription-token",
   "version": "1.0",
   "name": "GEM_EX_MEDREQ_EPrescriptionToken",
   "title": "GEM EX MEDREQ E Prescription Token",

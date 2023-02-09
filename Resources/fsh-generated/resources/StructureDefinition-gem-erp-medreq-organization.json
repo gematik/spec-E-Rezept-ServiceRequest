@@ -1,10 +1,10 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "gem-erp-medrep-organization",
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-erp-medrep-organization",
+  "id": "gem-erp-medreq-organization",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-erp-medreq-organization",
   "version": "1.0",
-  "name": "GEM_ERP_MEDREP_Organization",
-  "title": "GEM ERP MEDREP Organization",
+  "name": "GEM_ERP_MEDREQ_Organization",
+  "title": "GEM ERP MEDREQ Organization",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
@@ -59,7 +59,7 @@
         "path": "Organization.meta.profile",
         "min": 1,
         "max": "1",
-        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-erp-medrep-organization"
+        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-erp-medreq-organization"
       },
       {
         "id": "Organization.meta.security",

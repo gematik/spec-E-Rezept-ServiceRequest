@@ -429,7 +429,7 @@
         "id": "Example-HealthCareService-Organization",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-erp-medrep-organization"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-erp-medreq-organization"
           ]
         },
         "identifier": [

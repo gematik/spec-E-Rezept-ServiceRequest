@@ -1,10 +1,10 @@
-Profile: GEM_ERP_MEDREP_Organization
+Profile: GEM_ERP_MEDREQ_Organization
 Parent: $KBV_PR_Base_Organization
-Id: gem-erp-medrep-organization
-Title: "GEM ERP MEDREP Organization"
+Id: gem-erp-medreq-organization
+Title: "GEM ERP MEDREQ Organization"
 Description: "Organization in MEDREQ Context"
-* insert Meta (gem-erp-medrep-organization)
-* insert MetaProfile (gem-erp-medrep-organization)
+* insert Meta (gem-erp-medreq-organization)
+* insert MetaProfile (gem-erp-medreq-organization)
 
 * identifier contains KIMAdresse 1..1 MS and TIMAdresse 0..1
 * identifier[KIMAdresse] only GEM_PR_MEDREQ_KIMAdresse
@@ -16,7 +16,7 @@ Description: "Organization in MEDREQ Context"
 * identifier[TIMAdresse].type = https://gematik.de/fhir/directory/CodeSystem/EndpointDirectoryConnectionType#tim
 
 Instance: Example-HealthCareService-Organization
-InstanceOf:  GEM_ERP_MEDREP_Organization
+InstanceOf:  GEM_ERP_MEDREQ_Organization
 Usage: #inline
 * identifier[Telematik-ID].type = http://terminology.hl7.org/CodeSystem/v2-0203#PRN
 * identifier[Telematik-ID].system = "https://gematik.de/fhir/sid/telematik-id"

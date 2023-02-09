@@ -96,7 +96,7 @@
           {
             "code": "Extension",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM_EX_MEDREQ_EPrescriptionToken"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-ex-medreq-eprescription-token"
             ]
           }
         ],
@@ -233,7 +233,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-erp-medrep-organization"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-erp-medreq-organization"
             ]
           }
         ],
@@ -270,7 +270,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-erp-medrep-organization"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/gem-erp-medreq-organization"
             ]
           }
         ]

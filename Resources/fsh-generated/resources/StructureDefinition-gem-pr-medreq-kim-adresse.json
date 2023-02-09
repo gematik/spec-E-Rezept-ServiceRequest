@@ -38,6 +38,17 @@
         "id": "Identifier.system",
         "path": "Identifier.system",
         "patternUri": "http://gematik.de/fhir/sid/KIM-Adresse"
+      },
+      {
+        "id": "Identifier.value",
+        "path": "Identifier.value",
+        "min": 1,
+        "example": [
+          {
+            "label": "General",
+            "valueString": "example@super-care.kim.telematik"
+          }
+        ]
       }
     ]
   }
