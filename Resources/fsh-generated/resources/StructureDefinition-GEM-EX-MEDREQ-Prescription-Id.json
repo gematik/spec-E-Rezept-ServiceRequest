@@ -1,9 +1,9 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "PrescriptionIdEX",
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionIdEX",
+  "id": "GEM-EX-MEDREQ-Prescription-Id",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-EX-MEDREQ-Prescription-Id",
   "version": "1.0",
-  "name": "PrescriptionIdEX",
+  "name": "GEM_EX_MEDREQ_Prescription_Id",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
@@ -37,7 +37,7 @@
       {
         "id": "Extension.url",
         "path": "Extension.url",
-        "fixedUri": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/PrescriptionIdEX"
+        "fixedUri": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-EX-MEDREQ-Prescription-Id"
       },
       {
         "id": "Extension.value[x]",

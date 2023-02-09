@@ -1,13 +1,14 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "AccessCodeEX",
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/AccessCodeEX",
+  "id": "GEM-EX-MEDREQ-EPrescriptionToken",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-EX-MEDREQ-EPrescriptionToken",
   "version": "1.0",
-  "name": "AccessCodeEX",
+  "name": "GEM_EX_MEDREQ_EPrescriptionToken",
+  "title": "GEM EX MEDREQ E Prescription Token",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "Extension for the Prescription Identifier",
+  "description": "This extension carries an eprescription token",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -37,19 +38,21 @@
       {
         "id": "Extension.url",
         "path": "Extension.url",
-        "fixedUri": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/AccessCodeEX"
+        "fixedUri": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-EX-MEDREQ-EPrescriptionToken"
       },
       {
         "id": "Extension.value[x]",
         "path": "Extension.value[x]",
         "type": [
           {
-            "code": "Identifier",
-            "profile": [
-              "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_AccessCode"
-            ]
+            "code": "Identifier"
           }
         ]
+      },
+      {
+        "id": "Extension.value[x].system",
+        "path": "Extension.value[x].system",
+        "patternUri": "https://gematik.de/fhir/erp/NamingSystem/GEM_NS_EPrescriptionToken"
       }
     ]
   }

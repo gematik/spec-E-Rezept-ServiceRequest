@@ -7,7 +7,7 @@ Description: "Profile on the Medication Request that is to be sent"
 * insert MetaProfile (GEM-PR-ERP-MEDREQ-MedicationRequest)
 
 * extension contains
-    PrescriptionIdEX named PriorPrescriptionID 0..1
+    GEM_EX_MEDREQ_Prescription_Id named PriorPrescriptionID 0..1
 
 * medication[x] ^slicing.discriminator.type = #type
 * medication[x] ^slicing.discriminator.path = "$this"

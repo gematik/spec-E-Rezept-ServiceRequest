@@ -1,8 +1,8 @@
 Extension: GEM_EX_MEDREQ_EPrescriptionToken
-Id: gem-ex-medreq-eprescription-token
+Id: GEM-EX-MEDREQ-EPrescriptionToken
 Title: "GEM EX MEDREQ E Prescription Token"
 Description: "This extension carries an eprescription token"
-* insert Meta (gem-ex-medreq-eprescription-token)
+* insert Meta (GEM-EX-MEDREQ-EPrescriptionToken)
 * value[x] only Identifier
 * value[x].system = "https://gematik.de/fhir/erp/NamingSystem/GEM_NS_EPrescriptionToken"
 //TODO: fix Expression * value[x].value obeys GEM-INV-E-Prescription-Regex
