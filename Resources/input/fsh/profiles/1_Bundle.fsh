@@ -26,19 +26,103 @@ Description: "Basic Bundle for communication of FHIR Ressources with KIM Message
     Organization 0..* MS and
     Krankenversicherungsverhaeltnis 0..1
 * entry[MessageHeader].resource only GEM_PR_MEDREQ_MessageHeader
+* entry[MessageHeader].resource 1..1
+* entry[MessageHeader].fullUrl 1..1
+* entry[MessageHeader].link 0..0
+* entry[MessageHeader].search 0..0
+* entry[MessageHeader].request 0..0
+* entry[MessageHeader].response 0..0
 * entry[Rezeptanforderung].resource only GEM_PR_ERP_MEDREQ_Prescription_ServiceRequest
+* entry[Rezeptanforderung].resource 1..1
+* entry[Rezeptanforderung].fullUrl 1..1
+* entry[Rezeptanforderung].link 0..0
+* entry[Rezeptanforderung].search 0..0
+* entry[Rezeptanforderung].request 0..0
+* entry[Rezeptanforderung].response 0..0
 * entry[Belieferungsanforderung].resource only GEM_PR_ERP_MEDREQ_Dispense_ServiceRequest
+* entry[Belieferungsanforderung].resource 1..1
+* entry[Belieferungsanforderung].fullUrl 1..1
+* entry[Belieferungsanforderung].link 0..0
+* entry[Belieferungsanforderung].search 0..0
+* entry[Belieferungsanforderung].request 0..0
+* entry[Belieferungsanforderung].response 0..0
 * entry[VerordnungAnfrage].resource only GEM_PR_ERP_MEDREQ_MedicationRequest
+* entry[VerordnungAnfrage].resource 1..1
+* entry[VerordnungAnfrage].fullUrl 1..1
+* entry[VerordnungAnfrage].link 0..0
+* entry[VerordnungAnfrage].search 0..0
+* entry[VerordnungAnfrage].request 0..0
+* entry[VerordnungAnfrage].response 0..0
 * entry[VerordnungArzneimittel].resource only $KBV_PR_ERP_Prescription
+* entry[VerordnungArzneimittel].resource 1..1
+* entry[VerordnungArzneimittel].fullUrl 1..1
+* entry[VerordnungArzneimittel].link 0..0
+* entry[VerordnungArzneimittel].search 0..0
+* entry[VerordnungArzneimittel].request 0..0
+* entry[VerordnungArzneimittel].response 0..0
 * entry[RezeptierdatenFreitextverordnung].resource only $KBV_PR_ERP_Medication_FreeText
+* entry[RezeptierdatenFreitextverordnung].resource 1..1
+* entry[RezeptierdatenFreitextverordnung].fullUrl 1..1
+* entry[RezeptierdatenFreitextverordnung].link 0..0
+* entry[RezeptierdatenFreitextverordnung].search 0..0
+* entry[RezeptierdatenFreitextverordnung].request 0..0
+* entry[RezeptierdatenFreitextverordnung].response 0..0
 * entry[RezeptierdatenRezepturverordnung].resource only $KBV_PR_ERP_Medication_Compounding
+* entry[RezeptierdatenRezepturverordnung].resource 1..1
+* entry[RezeptierdatenRezepturverordnung].fullUrl 1..1
+* entry[RezeptierdatenRezepturverordnung].link 0..0
+* entry[RezeptierdatenRezepturverordnung].search 0..0
+* entry[RezeptierdatenRezepturverordnung].request 0..0
+* entry[RezeptierdatenRezepturverordnung].response 0..0
 * entry[RezeptierdatenPZNVerordnung].resource only $KBV_PR_ERP_Medication_PZN
+* entry[RezeptierdatenPZNVerordnung].resource 1..1
+* entry[RezeptierdatenPZNVerordnung].fullUrl 1..1
+* entry[RezeptierdatenPZNVerordnung].link 0..0
+* entry[RezeptierdatenPZNVerordnung].search 0..0
+* entry[RezeptierdatenPZNVerordnung].request 0..0
+* entry[RezeptierdatenPZNVerordnung].response 0..0
 * entry[RezeptierdatenWirkstoffverordnung].resource only $KBV_PR_ERP_Medication_Ingredient
+* entry[RezeptierdatenWirkstoffverordnung].resource 1..1
+* entry[RezeptierdatenWirkstoffverordnung].fullUrl 1..1
+* entry[RezeptierdatenWirkstoffverordnung].link 0..0
+* entry[RezeptierdatenWirkstoffverordnung].search 0..0
+* entry[RezeptierdatenWirkstoffverordnung].request 0..0
+* entry[RezeptierdatenWirkstoffverordnung].response 0..0
 * entry[AbgabeInformationen].resource only GEM_PR_MEDREQ_Abgabeinformationen
+* entry[AbgabeInformationen].resource 1..1
+* entry[AbgabeInformationen].fullUrl 1..1
+* entry[AbgabeInformationen].link 0..0
+* entry[AbgabeInformationen].search 0..0
+* entry[AbgabeInformationen].request 0..0
+* entry[AbgabeInformationen].response 0..0
 * entry[Patient].resource only $KBV_PR_FOR_Patient
+* entry[Patient].resource 1..1
+* entry[Patient].fullUrl 1..1
+* entry[Patient].link 0..0
+* entry[Patient].search 0..0
+* entry[Patient].request 0..0
+* entry[Patient].response 0..0
 * entry[Practitioner].resource only $KBV_PR_FOR_Practitioner
+* entry[Practitioner].resource 1..1
+* entry[Practitioner].fullUrl 1..1
+* entry[Practitioner].link 0..0
+* entry[Practitioner].search 0..0
+* entry[Practitioner].request 0..0
+* entry[Practitioner].response 0..0
 * entry[Organization].resource only $KBV_PR_FOR_Organization
+* entry[Organization].resource 1..1
+* entry[Organization].fullUrl 1..1
+* entry[Organization].link 0..0
+* entry[Organization].search 0..0
+* entry[Organization].request 0..0
+* entry[Organization].response 0..0
 * entry[Krankenversicherungsverhaeltnis].resource only $KBV_PR_FOR_Coverage
+* entry[Krankenversicherungsverhaeltnis].resource 1..1
+* entry[Krankenversicherungsverhaeltnis].fullUrl 1..1
+* entry[Krankenversicherungsverhaeltnis].link 0..0
+* entry[Krankenversicherungsverhaeltnis].search 0..0
+* entry[Krankenversicherungsverhaeltnis].request 0..0
+* entry[Krankenversicherungsverhaeltnis].response 0..0
 
 
 Invariant: resolve-references-in-bundle

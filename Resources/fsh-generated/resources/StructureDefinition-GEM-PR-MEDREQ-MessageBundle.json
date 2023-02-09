@@ -87,6 +87,16 @@
         "sliceName": "MessageHeader"
       },
       {
+        "id": "Bundle.entry:MessageHeader.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:MessageHeader.fullUrl",
+        "path": "Bundle.entry.fullUrl",
+        "min": 1
+      },
+      {
         "id": "Bundle.entry:MessageHeader.resource",
         "path": "Bundle.entry.resource",
         "type": [
@@ -99,6 +109,21 @@
         ]
       },
       {
+        "id": "Bundle.entry:MessageHeader.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:MessageHeader.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:MessageHeader.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
         "id": "Bundle.entry:Rezeptanforderung",
         "path": "Bundle.entry",
         "sliceName": "Rezeptanforderung",
@@ -107,8 +132,19 @@
         "mustSupport": true
       },
       {
+        "id": "Bundle.entry:Rezeptanforderung.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:Rezeptanforderung.fullUrl",
+        "path": "Bundle.entry.fullUrl",
+        "min": 1
+      },
+      {
         "id": "Bundle.entry:Rezeptanforderung.resource",
         "path": "Bundle.entry.resource",
+        "min": 1,
         "type": [
           {
             "code": "ServiceRequest",
@@ -119,6 +155,21 @@
         ]
       },
       {
+        "id": "Bundle.entry:Rezeptanforderung.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:Rezeptanforderung.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:Rezeptanforderung.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
         "id": "Bundle.entry:Belieferungsanforderung",
         "path": "Bundle.entry",
         "sliceName": "Belieferungsanforderung",
@@ -127,8 +178,19 @@
         "mustSupport": true
       },
       {
+        "id": "Bundle.entry:Belieferungsanforderung.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:Belieferungsanforderung.fullUrl",
+        "path": "Bundle.entry.fullUrl",
+        "min": 1
+      },
+      {
         "id": "Bundle.entry:Belieferungsanforderung.resource",
         "path": "Bundle.entry.resource",
+        "min": 1,
         "type": [
           {
             "code": "ServiceRequest",
@@ -139,6 +201,21 @@
         ]
       },
       {
+        "id": "Bundle.entry:Belieferungsanforderung.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:Belieferungsanforderung.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:Belieferungsanforderung.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
         "id": "Bundle.entry:VerordnungAnfrage",
         "path": "Bundle.entry",
         "sliceName": "VerordnungAnfrage",
@@ -147,8 +224,19 @@
         "mustSupport": true
       },
       {
+        "id": "Bundle.entry:VerordnungAnfrage.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:VerordnungAnfrage.fullUrl",
+        "path": "Bundle.entry.fullUrl",
+        "min": 1
+      },
+      {
         "id": "Bundle.entry:VerordnungAnfrage.resource",
         "path": "Bundle.entry.resource",
+        "min": 1,
         "type": [
           {
             "code": "MedicationRequest",
@@ -159,6 +247,21 @@
         ]
       },
       {
+        "id": "Bundle.entry:VerordnungAnfrage.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:VerordnungAnfrage.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:VerordnungAnfrage.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
         "id": "Bundle.entry:VerordnungArzneimittel",
         "path": "Bundle.entry",
         "sliceName": "VerordnungArzneimittel",
@@ -167,8 +270,19 @@
         "mustSupport": true
       },
       {
+        "id": "Bundle.entry:VerordnungArzneimittel.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:VerordnungArzneimittel.fullUrl",
+        "path": "Bundle.entry.fullUrl",
+        "min": 1
+      },
+      {
         "id": "Bundle.entry:VerordnungArzneimittel.resource",
         "path": "Bundle.entry.resource",
+        "min": 1,
         "type": [
           {
             "code": "MedicationRequest",
@@ -179,6 +293,21 @@
         ]
       },
       {
+        "id": "Bundle.entry:VerordnungArzneimittel.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:VerordnungArzneimittel.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:VerordnungArzneimittel.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
         "id": "Bundle.entry:RezeptierdatenFreitextverordnung",
         "path": "Bundle.entry",
         "sliceName": "RezeptierdatenFreitextverordnung",
@@ -187,8 +316,19 @@
         "mustSupport": true
       },
       {
+        "id": "Bundle.entry:RezeptierdatenFreitextverordnung.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:RezeptierdatenFreitextverordnung.fullUrl",
+        "path": "Bundle.entry.fullUrl",
+        "min": 1
+      },
+      {
         "id": "Bundle.entry:RezeptierdatenFreitextverordnung.resource",
         "path": "Bundle.entry.resource",
+        "min": 1,
         "type": [
           {
             "code": "Medication",
@@ -199,6 +339,21 @@
         ]
       },
       {
+        "id": "Bundle.entry:RezeptierdatenFreitextverordnung.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:RezeptierdatenFreitextverordnung.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:RezeptierdatenFreitextverordnung.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
         "id": "Bundle.entry:RezeptierdatenRezepturverordnung",
         "path": "Bundle.entry",
         "sliceName": "RezeptierdatenRezepturverordnung",
@@ -207,8 +362,19 @@
         "mustSupport": true
       },
       {
+        "id": "Bundle.entry:RezeptierdatenRezepturverordnung.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:RezeptierdatenRezepturverordnung.fullUrl",
+        "path": "Bundle.entry.fullUrl",
+        "min": 1
+      },
+      {
         "id": "Bundle.entry:RezeptierdatenRezepturverordnung.resource",
         "path": "Bundle.entry.resource",
+        "min": 1,
         "type": [
           {
             "code": "Medication",
@@ -219,6 +385,21 @@
         ]
       },
       {
+        "id": "Bundle.entry:RezeptierdatenRezepturverordnung.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:RezeptierdatenRezepturverordnung.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:RezeptierdatenRezepturverordnung.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
         "id": "Bundle.entry:RezeptierdatenPZNVerordnung",
         "path": "Bundle.entry",
         "sliceName": "RezeptierdatenPZNVerordnung",
@@ -227,8 +408,19 @@
         "mustSupport": true
       },
       {
+        "id": "Bundle.entry:RezeptierdatenPZNVerordnung.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:RezeptierdatenPZNVerordnung.fullUrl",
+        "path": "Bundle.entry.fullUrl",
+        "min": 1
+      },
+      {
         "id": "Bundle.entry:RezeptierdatenPZNVerordnung.resource",
         "path": "Bundle.entry.resource",
+        "min": 1,
         "type": [
           {
             "code": "Medication",
@@ -239,6 +431,21 @@
         ]
       },
       {
+        "id": "Bundle.entry:RezeptierdatenPZNVerordnung.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:RezeptierdatenPZNVerordnung.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:RezeptierdatenPZNVerordnung.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
         "id": "Bundle.entry:RezeptierdatenWirkstoffverordnung",
         "path": "Bundle.entry",
         "sliceName": "RezeptierdatenWirkstoffverordnung",
@@ -247,8 +454,19 @@
         "mustSupport": true
       },
       {
+        "id": "Bundle.entry:RezeptierdatenWirkstoffverordnung.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:RezeptierdatenWirkstoffverordnung.fullUrl",
+        "path": "Bundle.entry.fullUrl",
+        "min": 1
+      },
+      {
         "id": "Bundle.entry:RezeptierdatenWirkstoffverordnung.resource",
         "path": "Bundle.entry.resource",
+        "min": 1,
         "type": [
           {
             "code": "Medication",
@@ -259,6 +477,21 @@
         ]
       },
       {
+        "id": "Bundle.entry:RezeptierdatenWirkstoffverordnung.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:RezeptierdatenWirkstoffverordnung.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:RezeptierdatenWirkstoffverordnung.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
         "id": "Bundle.entry:AbgabeInformationen",
         "path": "Bundle.entry",
         "sliceName": "AbgabeInformationen",
@@ -267,8 +500,19 @@
         "mustSupport": true
       },
       {
+        "id": "Bundle.entry:AbgabeInformationen.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:AbgabeInformationen.fullUrl",
+        "path": "Bundle.entry.fullUrl",
+        "min": 1
+      },
+      {
         "id": "Bundle.entry:AbgabeInformationen.resource",
         "path": "Bundle.entry.resource",
+        "min": 1,
         "type": [
           {
             "code": "MedicationDispense",
@@ -279,6 +523,21 @@
         ]
       },
       {
+        "id": "Bundle.entry:AbgabeInformationen.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:AbgabeInformationen.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:AbgabeInformationen.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
         "id": "Bundle.entry:Patient",
         "path": "Bundle.entry",
         "sliceName": "Patient",
@@ -287,8 +546,19 @@
         "mustSupport": true
       },
       {
+        "id": "Bundle.entry:Patient.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:Patient.fullUrl",
+        "path": "Bundle.entry.fullUrl",
+        "min": 1
+      },
+      {
         "id": "Bundle.entry:Patient.resource",
         "path": "Bundle.entry.resource",
+        "min": 1,
         "type": [
           {
             "code": "Patient",
@@ -299,6 +569,21 @@
         ]
       },
       {
+        "id": "Bundle.entry:Patient.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:Patient.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:Patient.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
         "id": "Bundle.entry:Practitioner",
         "path": "Bundle.entry",
         "sliceName": "Practitioner",
@@ -307,8 +592,19 @@
         "mustSupport": true
       },
       {
+        "id": "Bundle.entry:Practitioner.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:Practitioner.fullUrl",
+        "path": "Bundle.entry.fullUrl",
+        "min": 1
+      },
+      {
         "id": "Bundle.entry:Practitioner.resource",
         "path": "Bundle.entry.resource",
+        "min": 1,
         "type": [
           {
             "code": "Practitioner",
@@ -319,6 +615,21 @@
         ]
       },
       {
+        "id": "Bundle.entry:Practitioner.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:Practitioner.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:Practitioner.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
         "id": "Bundle.entry:Organization",
         "path": "Bundle.entry",
         "sliceName": "Organization",
@@ -327,8 +638,19 @@
         "mustSupport": true
       },
       {
+        "id": "Bundle.entry:Organization.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:Organization.fullUrl",
+        "path": "Bundle.entry.fullUrl",
+        "min": 1
+      },
+      {
         "id": "Bundle.entry:Organization.resource",
         "path": "Bundle.entry.resource",
+        "min": 1,
         "type": [
           {
             "code": "Organization",
@@ -339,6 +661,21 @@
         ]
       },
       {
+        "id": "Bundle.entry:Organization.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:Organization.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:Organization.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
         "id": "Bundle.entry:Krankenversicherungsverhaeltnis",
         "path": "Bundle.entry",
         "sliceName": "Krankenversicherungsverhaeltnis",
@@ -346,8 +683,19 @@
         "max": "1"
       },
       {
+        "id": "Bundle.entry:Krankenversicherungsverhaeltnis.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:Krankenversicherungsverhaeltnis.fullUrl",
+        "path": "Bundle.entry.fullUrl",
+        "min": 1
+      },
+      {
         "id": "Bundle.entry:Krankenversicherungsverhaeltnis.resource",
         "path": "Bundle.entry.resource",
+        "min": 1,
         "type": [
           {
             "code": "Coverage",
@@ -356,6 +704,21 @@
             ]
           }
         ]
+      },
+      {
+        "id": "Bundle.entry:Krankenversicherungsverhaeltnis.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:Krankenversicherungsverhaeltnis.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:Krankenversicherungsverhaeltnis.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
       }
     ]
   }
