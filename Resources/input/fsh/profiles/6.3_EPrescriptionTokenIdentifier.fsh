@@ -7,7 +7,7 @@ Description: "Identifier für den E-Rezept Token"
 * system 1..1 MS
 * system = "https://gematik.de/fhir/erp/sid/GEM_NS_EPrescriptionToken" (exactly)
 * value 1..1 MS
-//TODO: fix Expression * value[x].value obeys GEM-INV-E-Prescription-Regex
+//TODO: fix Expression * value obeys GEM-INV-E-Prescription-Regex
 
 Invariant: GEM-INV-E-Prescription-Regex
 Description: "Regex Invariante zur Validierung eines E-Rezept Tokens"
