@@ -78,7 +78,6 @@ Description: "ServiceRequest that is used to request a prescription from a pract
 * supportingInfo ^slicing.description = "Unterstützende Informationen zur Rezeptanforderung"
 * supportingInfo contains
 AuslieferndeApotheke 0..1 MS
-and MedikamentenReichweite 0..2 MS
 * supportingInfo[AuslieferndeApotheke] only Reference(GEM_PR_MEDREQ_Organization)
 * supportingInfo[AuslieferndeApotheke].type = "Organization"
 

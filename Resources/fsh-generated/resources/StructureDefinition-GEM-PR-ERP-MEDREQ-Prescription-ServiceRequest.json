@@ -308,14 +308,6 @@
         "patternUri": "Organization"
       },
       {
-        "id": "ServiceRequest.supportingInfo:MedikamentenReichweite",
-        "path": "ServiceRequest.supportingInfo",
-        "sliceName": "MedikamentenReichweite",
-        "min": 0,
-        "max": "2",
-        "mustSupport": true
-      },
-      {
         "id": "ServiceRequest.note",
         "path": "ServiceRequest.note",
         "short": "Weitere Angaben zur Rezeptanforderung",
