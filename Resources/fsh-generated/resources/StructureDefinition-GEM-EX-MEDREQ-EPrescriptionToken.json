@@ -45,14 +45,12 @@
         "path": "Extension.value[x]",
         "type": [
           {
-            "code": "Identifier"
+            "code": "Identifier",
+            "profile": [
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-EPrescriptionTokenIdentifier"
+            ]
           }
         ]
-      },
-      {
-        "id": "Extension.value[x].system",
-        "path": "Extension.value[x].system",
-        "fixedUri": "https://gematik.de/fhir/erp/sid/GEM_NS_EPrescriptionToken"
       }
     ]
   }
