@@ -164,7 +164,7 @@
       {
         "id": "ServiceRequest.intent",
         "path": "ServiceRequest.intent",
-        "patternCode": "order"
+        "fixedCode": "order"
       },
       {
         "id": "ServiceRequest.code",
@@ -313,21 +313,7 @@
         "sliceName": "MedikamentenReichweite",
         "min": 0,
         "max": "2",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-RemainingMedication"
-            ]
-          }
-        ],
         "mustSupport": true
-      },
-      {
-        "id": "ServiceRequest.supportingInfo:MedikamentenReichweite.type",
-        "path": "ServiceRequest.supportingInfo.type",
-        "min": 1,
-        "patternUri": "Observation"
       },
       {
         "id": "ServiceRequest.note",

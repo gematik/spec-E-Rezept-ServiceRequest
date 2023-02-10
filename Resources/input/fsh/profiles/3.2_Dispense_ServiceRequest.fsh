@@ -31,7 +31,7 @@ Description: "ServiceRequest that is used to initiate a dispense request for a p
 * status from GEM_VS_MEDREQ_RequestStatus
   * ^short = "Gibt den Bearbeitungsstand eines ServiceRequests an"
 
-* intent = #filler-order
+* intent = #filler-order (exactly)
 
 * code 1..1 MS
 * code from GEM_VS_MEDREQ_Service_Request_Code
@@ -58,9 +58,12 @@ Description: "ServiceRequest that is used to initiate a dispense request for a p
 * supportingInfo ^slicing.discriminator.path = "type"
 * supportingInfo ^slicing.rules = #open
 * supportingInfo ^slicing.description = "Unterstützende Informationen zur Rezeptanforderung"
-* supportingInfo contains AusstellenderArzt 1..1 MS
+* supportingInfo contains AusstellenderArzt 1..1 MS and AbgabeDaten 0..1 MS
 * supportingInfo[AusstellenderArzt] only Reference($KBV_PR_FOR_Practitioner)
-* supportingInfo[AusstellenderArzt].type = "Practitioner"
+* supportingInfo[AusstellenderArzt].type = "Practitioner" (exactly)
+// TODO: wenn status = erfüllt dann Abgabedaten vorhanden
+* supportingInfo[AbgabeDaten] only Reference($GEM_ERP_PR_MedicationDispense)
+* supportingInfo[AbgabeDaten].type = "MedicationDispense" (exactly)
 
 * note MS
   * ^short = "Weitere Angaben zur Rezeptanforderung"
@@ -89,3 +92,5 @@ Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
 * performer.identifier = Test-Apotheke-Identifier
 * supportingInfo[AusstellenderArzt] = Reference(Example-Practitioner)
 * supportingInfo[AusstellenderArzt].type = "Practitioner"
+
+//TODO Example for Dispense Fullfillment

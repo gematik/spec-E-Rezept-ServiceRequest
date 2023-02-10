@@ -151,7 +151,7 @@
       {
         "id": "ServiceRequest.intent",
         "path": "ServiceRequest.intent",
-        "patternCode": "filler-order"
+        "fixedCode": "filler-order"
       },
       {
         "id": "ServiceRequest.code",
@@ -259,7 +259,29 @@
         "id": "ServiceRequest.supportingInfo:AusstellenderArzt.type",
         "path": "ServiceRequest.supportingInfo.type",
         "min": 1,
-        "patternUri": "Practitioner"
+        "fixedUri": "Practitioner"
+      },
+      {
+        "id": "ServiceRequest.supportingInfo:AbgabeDaten",
+        "path": "ServiceRequest.supportingInfo",
+        "sliceName": "AbgabeDaten",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.supportingInfo:AbgabeDaten.type",
+        "path": "ServiceRequest.supportingInfo.type",
+        "min": 1,
+        "fixedUri": "MedicationDispense"
       },
       {
         "id": "ServiceRequest.note",

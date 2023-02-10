@@ -37,7 +37,7 @@ Description: "ServiceRequest that is used to request a prescription from a pract
 * status from GEM_VS_MEDREQ_RequestStatus
   * ^short = "Gibt den Bearbeitungsstand eines ServiceRequests an"
 
-* intent = #order
+* intent = #order (exactly)
 
 * code 1..1 MS
 * code from GEM_VS_MEDREQ_Service_Request_Code
@@ -67,6 +67,7 @@ Description: "ServiceRequest that is used to request a prescription from a pract
 * performer MS
 * performer only Reference($KBV_PR_FOR_Practitioner)
 
+// TODO: Wenn reasonCode dann auch .note
 * reasonCode from GEM_VS_MEDREQ_MedicationRequest_Reason
 
 * reasonReference only Reference(GEM_PR_ERP_MEDREQ_RemainingMedication)
@@ -80,8 +81,6 @@ AuslieferndeApotheke 0..1 MS
 and MedikamentenReichweite 0..2 MS
 * supportingInfo[AuslieferndeApotheke] only Reference(GEM_PR_MEDREQ_Organization)
 * supportingInfo[AuslieferndeApotheke].type = "Organization"
-* supportingInfo[MedikamentenReichweite] only Reference(GEM_PR_ERP_MEDREQ_RemainingMedication)
-* supportingInfo[MedikamentenReichweite].type = "Observation"
 
 * note MS
   * ^short = "Weitere Angaben zur Rezeptanforderung"
