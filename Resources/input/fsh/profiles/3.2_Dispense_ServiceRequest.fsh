@@ -6,7 +6,7 @@ Description: "ServiceRequest that is used to initiate a dispense request for a p
 * insert Meta (GEM-PR-ERP-MEDREQ-Dispense-ServiceRequest)
 
 * extension contains
-    GEM_EX_MEDREQ_EPrescriptionToken named EPrescriptionToken 1..1 MS
+    GEM_EX_MEDREQ_EPrescriptionToken named EPrescriptionToken 0..1 MS
 
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "system"
