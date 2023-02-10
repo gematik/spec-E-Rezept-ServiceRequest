@@ -6,11 +6,11 @@ Description: "Organization in MEDREQ Context"
 * insert Meta (GEM-PR-MEDREQ-Organization)
 
 * identifier contains KIMAdresse 1..1 MS and TIMAdresse 0..1
-* identifier[KIMAdresse] only GEM_PR_MEDREQ_KIM_Adresse
+* identifier[KIMAdresse] only GEM_PR_KIM_AdressIdentifier
 * identifier[KIMAdresse].type 1..1
 * identifier[KIMAdresse].type = https://gematik.de/fhir/directory/CodeSystem/EndpointDirectoryConnectionType#kim-2.0 (exactly)
 
-* identifier[TIMAdresse] only GEM_PR_MEDREQ_TIM_Adresse
+* identifier[TIMAdresse] only GEM_PR_TIM_AdressIdentifier
 * identifier[TIMAdresse].type 1..1
 * identifier[TIMAdresse].type = https://gematik.de/fhir/directory/CodeSystem/EndpointDirectoryConnectionType#tim
 

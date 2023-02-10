@@ -13,12 +13,12 @@ Description: "Basic Message Header for communication of FHIR Ressources with KIM
 //refernzpunkt display als Anzeigename
 * sender 1..1
 * sender.identifier 1..1 MS
-* sender.identifier only GEM_PR_MEDREQ_KIM_Adresse or GEM_PR_MEDREQ_TIM_Adresse
+* sender.identifier only GEM_PR_KIM_AdressIdentifier or GEM_PR_TIM_AdressIdentifier
 * sender.display 0..1 MS
   * ^short = "Anzeigename der KIM Adresse"
 * destination.receiver 1..1
 * destination.receiver.identifier 1..1 MS
-* destination.receiver.identifier only GEM_PR_MEDREQ_KIM_Adresse or GEM_PR_MEDREQ_TIM_Adresse
+* destination.receiver.identifier only GEM_PR_KIM_AdressIdentifier or GEM_PR_TIM_AdressIdentifier
 * destination.receiver.display 0..1 MS
   * ^short = "Anzeigename der KIM Adresse"
 * focus 1..*

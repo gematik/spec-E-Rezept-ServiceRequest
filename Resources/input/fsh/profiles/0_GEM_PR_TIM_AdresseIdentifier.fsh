@@ -1,4 +1,4 @@
-Profile: GEM_PR_MEDREQ_TIM_Adresse
+Profile: GEM_PR_TIM_AdressIdentifier
 Parent: Identifier
 Id: GEM-PR-MEDREQ-TIM-Adresse
 Title: "GEM PR MEDREQ TIM-Adresse"

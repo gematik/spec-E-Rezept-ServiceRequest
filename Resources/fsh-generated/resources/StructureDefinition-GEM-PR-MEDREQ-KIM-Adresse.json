@@ -3,7 +3,7 @@
   "id": "GEM-PR-MEDREQ-KIM-Adresse",
   "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-KIM-Adresse",
   "version": "1.0",
-  "name": "GEM_PR_MEDREQ_KIM_Adresse",
+  "name": "GEM_PR_KIM_AdressIdentifier",
   "title": "GEM PR MEDREQ KIM-Adresse",
   "status": "draft",
   "experimental": false,

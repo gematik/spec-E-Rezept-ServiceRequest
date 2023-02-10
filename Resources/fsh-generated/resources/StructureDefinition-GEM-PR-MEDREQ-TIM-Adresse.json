@@ -3,7 +3,7 @@
   "id": "GEM-PR-MEDREQ-TIM-Adresse",
   "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-TIM-Adresse",
   "version": "1.0",
-  "name": "GEM_PR_MEDREQ_TIM_Adresse",
+  "name": "GEM_PR_TIM_AdressIdentifier",
   "title": "GEM PR MEDREQ TIM-Adresse",
   "status": "draft",
   "experimental": false,
