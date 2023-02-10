@@ -58,14 +58,17 @@
       {
         "id": "MessageHeader.destination.receiver.identifier",
         "path": "MessageHeader.destination.receiver.identifier",
+        "min": 1,
         "type": [
           {
             "code": "Identifier",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-KIM-Adresse"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-KIM-Adresse",
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-TIM-Adresse"
             ]
           }
-        ]
+        ],
+        "mustSupport": true
       },
       {
         "id": "MessageHeader.destination.receiver.display",
@@ -81,14 +84,17 @@
       {
         "id": "MessageHeader.sender.identifier",
         "path": "MessageHeader.sender.identifier",
+        "min": 1,
         "type": [
           {
             "code": "Identifier",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-KIM-Adresse"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-KIM-Adresse",
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-TIM-Adresse"
             ]
           }
-        ]
+        ],
+        "mustSupport": true
       },
       {
         "id": "MessageHeader.sender.display",

@@ -52,7 +52,7 @@
       {
         "id": "Extension.value[x].system",
         "path": "Extension.value[x].system",
-        "patternUri": "https://gematik.de/fhir/erp/NamingSystem/GEM_NS_EPrescriptionToken"
+        "fixedUri": "https://gematik.de/fhir/erp/sid/GEM_NS_EPrescriptionToken"
       }
     ]
   }

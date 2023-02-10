@@ -4,7 +4,7 @@ Id: GEM-PR-MEDREQ-Abgabeinformationen
 Title: "GEM_PR_MEDREQ_Abgabeinformationen"
 Description: "Abgabeinformationen der Apotheke"
 * insert Meta (GEM-PR-MEDREQ-Abgabeinformationen)
-* insert MetaProfile (GEM-PR-MEDREQ-Abgabeinformationen)
+
 
 * performer.actor only Reference($KBV_PR_FOR_Organization)
 * authorizingPrescription.identifier only GEM_ERP_PR_PrescriptionId

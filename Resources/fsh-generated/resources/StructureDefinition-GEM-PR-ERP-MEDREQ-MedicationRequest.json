@@ -55,33 +55,6 @@
   "differential": {
     "element": [
       {
-        "id": "MedicationRequest.meta",
-        "path": "MedicationRequest.meta",
-        "min": 1
-      },
-      {
-        "id": "MedicationRequest.meta.versionId",
-        "path": "MedicationRequest.meta.versionId",
-        "max": "0"
-      },
-      {
-        "id": "MedicationRequest.meta.source",
-        "path": "MedicationRequest.meta.source",
-        "max": "0"
-      },
-      {
-        "id": "MedicationRequest.meta.profile",
-        "path": "MedicationRequest.meta.profile",
-        "min": 1,
-        "max": "1",
-        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-MedicationRequest"
-      },
-      {
-        "id": "MedicationRequest.meta.security",
-        "path": "MedicationRequest.meta.security",
-        "max": "0"
-      },
-      {
         "id": "MedicationRequest.extension:PriorPrescriptionID",
         "path": "MedicationRequest.extension",
         "sliceName": "PriorPrescriptionID",

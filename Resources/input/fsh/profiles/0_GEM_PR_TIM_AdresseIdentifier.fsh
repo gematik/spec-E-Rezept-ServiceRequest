@@ -4,7 +4,8 @@ Id: GEM-PR-MEDREQ-TIM-Adresse
 Title: "GEM PR MEDREQ TIM-Adresse"
 Description: "Identifier zur Angabe der TIM-Adresse"
 * insert Meta (GEM-PR-MEDREQ-TIM-Adresse)
-* system = $tim
+* system = $tim (exactly)
+* system 1..1 MS
 * value 1..1
   * ^example.valueString = "example@super-care.tim.telematik"
 

@@ -37,7 +37,9 @@
       {
         "id": "Identifier.system",
         "path": "Identifier.system",
-        "patternUri": "http://gematik.de/fhir/sid/TIM-Adresse"
+        "min": 1,
+        "fixedUri": "http://gematik.de/fhir/sid/TIM-Adresse",
+        "mustSupport": true
       },
       {
         "id": "Identifier.value",

@@ -55,33 +55,6 @@
   "differential": {
     "element": [
       {
-        "id": "ServiceRequest.meta",
-        "path": "ServiceRequest.meta",
-        "min": 1
-      },
-      {
-        "id": "ServiceRequest.meta.versionId",
-        "path": "ServiceRequest.meta.versionId",
-        "max": "0"
-      },
-      {
-        "id": "ServiceRequest.meta.source",
-        "path": "ServiceRequest.meta.source",
-        "max": "0"
-      },
-      {
-        "id": "ServiceRequest.meta.profile",
-        "path": "ServiceRequest.meta.profile",
-        "min": 1,
-        "max": "1",
-        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Dispense-ServiceRequest"
-      },
-      {
-        "id": "ServiceRequest.meta.security",
-        "path": "ServiceRequest.meta.security",
-        "max": "0"
-      },
-      {
         "id": "ServiceRequest.extension",
         "path": "ServiceRequest.extension",
         "min": 1
@@ -238,30 +211,6 @@
           }
         ],
         "mustSupport": true
-      },
-      {
-        "id": "ServiceRequest.performerType",
-        "path": "ServiceRequest.performerType",
-        "short": "Gibt an, wer den ServiceRequest erfüllen soll",
-        "comment": "Dient als Unterscheidungsmerkmal für die ServiceRequests.",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
-        "id": "ServiceRequest.performerType.coding",
-        "path": "ServiceRequest.performerType.coding",
-        "min": 1,
-        "max": "1"
-      },
-      {
-        "id": "ServiceRequest.performerType.coding.system",
-        "path": "ServiceRequest.performerType.coding.system",
-        "patternUri": "https://gematik.de/fhir/erpmedreqcom/GEM_VS_MEDREQ_PerformerType"
-      },
-      {
-        "id": "ServiceRequest.performerType.coding.code",
-        "path": "ServiceRequest.performerType.coding.code",
-        "patternCode": "beliefernde-apotheke"
       },
       {
         "id": "ServiceRequest.performer",

@@ -4,7 +4,7 @@ Title: "GEM EX MEDREQ E Prescription Token"
 Description: "This extension carries an eprescription token"
 * insert Meta (GEM-EX-MEDREQ-EPrescriptionToken)
 * value[x] only Identifier
-* value[x].system = "https://gematik.de/fhir/erp/NamingSystem/GEM_NS_EPrescriptionToken"
+* value[x].system = "https://gematik.de/fhir/erp/sid/GEM_NS_EPrescriptionToken" (exactly)
 //TODO: fix Expression * value[x].value obeys GEM-INV-E-Prescription-Regex
 
 Invariant: GEM-INV-E-Prescription-Regex
@@ -18,7 +18,7 @@ Usage: #definition
 Title: "GEM NS E Prescription Token"
 Description: "NamingSystem for Gematik E-Prescription Token"
 * name = "GEM_NS_EPrescriptionToken"
-* status = #active
+* status = #draft
 * kind = #identifier
 * date = "2023-02-01"
 * publisher = "gematik GmbH"
@@ -27,5 +27,5 @@ Description: "NamingSystem for Gematik E-Prescription Token"
 * responsible = "gematik GmbH"
 * description = "E-Rezept Token"
 * uniqueId.type = #uri
-* uniqueId.value = "https://gematik.de/fhir/erp/NamingSystem/GEM_NS_EPrescriptionToken"
+* uniqueId.value = "https://gematik.de/fhir/erp/sid/GEM_NS_EPrescriptionToken"
 * uniqueId.preferred = true

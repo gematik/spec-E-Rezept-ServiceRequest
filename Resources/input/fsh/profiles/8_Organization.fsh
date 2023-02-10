@@ -4,7 +4,6 @@ Id: GEM-PR-MEDREQ-Organization
 Title: "GEM ERP MEDREQ Organization"
 Description: "Organization in MEDREQ Context"
 * insert Meta (GEM-PR-MEDREQ-Organization)
-* insert MetaProfile (GEM-PR-MEDREQ-Organization)
 
 * identifier contains KIMAdresse 1..1 MS and TIMAdresse 0..1
 * identifier[KIMAdresse] only GEM_PR_MEDREQ_KIM_Adresse

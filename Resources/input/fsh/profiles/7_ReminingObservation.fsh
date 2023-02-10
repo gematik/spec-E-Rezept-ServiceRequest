@@ -4,7 +4,6 @@ Id: GEM-PR-ERP-MEDREQ-RemainingMedication
 Title: "GEM PR ERP MEDREQ Remaining Medication Observation "
 Description: "Describes how long the remaining medication will last"
 * insert Meta (GEM-PR-ERP-MEDREQ-RemainingMedication)
-* insert MetaProfile (GEM-PR-ERP-MEDREQ-RemainingMedication)
 
 * status = #final (exactly)
 

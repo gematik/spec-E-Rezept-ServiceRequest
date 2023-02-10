@@ -4,7 +4,6 @@ Id: GEM-PR-ERP-MEDREQ-Prescription-ServiceRequest
 Title: "GEM PR ERP MEDREQ Prescription Service Request"
 Description: "ServiceRequest that is used to request a prescription from a practitioner"
 * insert Meta (GEM-PR-ERP-MEDREQ-Prescription-ServiceRequest)
-* insert MetaProfile (GEM-PR-ERP-MEDREQ-Prescription-ServiceRequest)
 
 * extension contains
     GEM_EX_MEDREQ_EPrescriptionToken named EPrescriptionToken 0..1 MS
@@ -65,14 +64,6 @@ Description: "ServiceRequest that is used to request a prescription from a pract
 * requester 1..1 MS
 * requester only Reference(GEM_PR_MEDREQ_Organization)
 
-//TODO geht das hier schöner: ?
-* performerType 1..1 MS
-  * ^short = "Gibt an, wer den ServiceRequest erfüllen soll"
-  * ^comment = "Dient als Unterscheidungsmerkmal für die ServiceRequests."
-* performerType.coding 1..1
-* performerType.coding.system = "https://gematik.de/fhir/erpmedreqcom/GEM_VS_MEDREQ_PerformerType"
-* performerType.coding.code = #ausstellender-arzt
-
 * performer MS
 * performer only Reference($KBV_PR_FOR_Practitioner)
 
@@ -120,7 +111,6 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * occurrenceDateTime = "2023-02-01"
 * authoredOn = "2023-01-27"
 * requester = Reference(Example-HealthCareService-Organization)
-* performerType.coding.code = #ausstellender-arzt
 * performer.identifier = Hans-Topp-Glücklich-Identifier
 
 Instance: Response-Prescription-Request
@@ -128,7 +118,7 @@ InstanceOf: GEM_PR_ERP_MEDREQ_Prescription_ServiceRequest
 Usage: #inline
 Title: "Initial Prescription Request"
 Description: "ServiceRequest that is returned to the requester"
-* extension[EPrescriptionToken].valueIdentifier.system = "https://gematik.de/fhir/erp/NamingSystem/GEM_NS_EPrescriptionToken"
+* extension[EPrescriptionToken].valueIdentifier.system = "https://gematik.de/fhir/erp/sid/GEM_NS_EPrescriptionToken"
 * extension[EPrescriptionToken].valueIdentifier.value = "Task/160.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
 * identifier[0]
   * system = "https://gematik.de/GEM_NS_MEDREQ_RequestId"
@@ -144,5 +134,4 @@ Description: "ServiceRequest that is returned to the requester"
 * occurrenceDateTime = "2023-01-30" //update wann es tatsächlich ausgestellt wurde
 * authoredOn = "2023-01-27"
 * requester = Reference(Example-HealthCareService-Organization)
-* performerType.coding.code = #ausstellender-arzt
 * performer = Reference(Example-Practitioner)

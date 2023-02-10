@@ -32,6 +32,7 @@
         },
         "sender": {
           "identifier": {
+            "system": "http://gematik.de/fhir/sid/KIM-Adresse",
             "value": "pflegeheim.immergrün.arzt@sana-pflegeheime.kim.telematik"
           },
           "display": "Pflegeheim Immergrün"
@@ -40,6 +41,7 @@
           {
             "receiver": {
               "identifier": {
+                "system": "http://gematik.de/fhir/sid/KIM-Adresse",
                 "value": "hans@ytopp-gluecklich.kim.telematik"
               },
               "display": "Praxis Hans Topp-Glücklich"
@@ -103,16 +105,10 @@
         "requester": {
           "reference": "Organization/Example-HealthCareService-Organization"
         },
-        "performerType": {
-          "coding": [
-            {
-              "code": "ausstellender-arzt"
-            }
-          ]
-        },
         "performer": [
           {
             "identifier": {
+              "system": "http://gematik.de/fhir/sid/KIM-Adresse",
               "value": "hans@ytopp-gluecklich.kim.telematik"
             }
           }
@@ -311,6 +307,7 @@
                 }
               ]
             },
+            "system": "http://gematik.de/fhir/sid/KIM-Adresse",
             "value": "pflegeheim.immergrün.arzt@sana-pflegeheime.kim.telematik"
           },
           {

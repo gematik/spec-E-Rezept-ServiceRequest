@@ -55,33 +55,6 @@
   "differential": {
     "element": [
       {
-        "id": "MedicationDispense.meta",
-        "path": "MedicationDispense.meta",
-        "min": 1
-      },
-      {
-        "id": "MedicationDispense.meta.versionId",
-        "path": "MedicationDispense.meta.versionId",
-        "max": "0"
-      },
-      {
-        "id": "MedicationDispense.meta.source",
-        "path": "MedicationDispense.meta.source",
-        "max": "0"
-      },
-      {
-        "id": "MedicationDispense.meta.profile",
-        "path": "MedicationDispense.meta.profile",
-        "min": 1,
-        "max": "1",
-        "fixedCanonical": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-Abgabeinformationen"
-      },
-      {
-        "id": "MedicationDispense.meta.security",
-        "path": "MedicationDispense.meta.security",
-        "max": "0"
-      },
-      {
         "id": "MedicationDispense.performer.actor",
         "path": "MedicationDispense.performer.actor",
         "type": [

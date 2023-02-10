@@ -4,7 +4,6 @@ Id: GEM-PR-ERP-MEDREQ-Dispense-ServiceRequest
 Title: "GEM PR ERP MEDREQ Dispense Service Request"
 Description: "ServiceRequest that is used to initiate a dispense request for a pharmacy"
 * insert Meta (GEM-PR-ERP-MEDREQ-Dispense-ServiceRequest)
-* insert MetaProfile (GEM-PR-ERP-MEDREQ-Dispense-ServiceRequest)
 
 * extension contains
     GEM_EX_MEDREQ_EPrescriptionToken named EPrescriptionToken 1..1 MS
@@ -53,13 +52,6 @@ Description: "ServiceRequest that is used to initiate a dispense request for a p
 * requester 1..1 MS
 * requester only Reference(GEM_PR_MEDREQ_Organization)
 
-* performerType 1..1 MS
-  * ^short = "Gibt an, wer den ServiceRequest erfüllen soll"
-  * ^comment = "Dient als Unterscheidungsmerkmal für die ServiceRequests."
-* performerType.coding 1..1
-* performerType.coding.system = "https://gematik.de/fhir/erpmedreqcom/GEM_VS_MEDREQ_PerformerType"
-* performerType.coding.code = #beliefernde-apotheke
-
 * performer only Reference(GEM_PR_MEDREQ_Organization)
 
 * supportingInfo ^slicing.discriminator.type = #pattern
@@ -79,7 +71,7 @@ InstanceOf: GEM_PR_ERP_MEDREQ_Dispense_ServiceRequest
 Usage: #inline
 Title: "Initial Dispense Request"
 Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
-* extension[EPrescriptionToken].valueIdentifier.system = "https://gematik.de/fhir/erp/NamingSystem/GEM_NS_EPrescriptionToken"
+* extension[EPrescriptionToken].valueIdentifier.system = "https://gematik.de/fhir/erp/sid/GEM_NS_EPrescriptionToken"
 * extension[EPrescriptionToken].valueIdentifier.value = "Task/160.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
 * identifier[0]
   * system = "https://gematik.de/GEM_NS_MEDREQ_RequestId"
@@ -94,7 +86,6 @@ Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
 * occurrenceDateTime = "2023-02-01"
 * authoredOn = "2023-02-01"
 * requester = Reference(Example-HealthCareService-Organization)
-* performerType.coding.code = #beliefernde-apotheke
 * performer.identifier = Test-Apotheke-Identifier
 * supportingInfo[AusstellenderArzt] = Reference(Example-Practitioner)
 * supportingInfo[AusstellenderArzt].type = "Practitioner"

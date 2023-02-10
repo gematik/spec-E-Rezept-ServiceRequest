@@ -32,6 +32,7 @@
         },
         "sender": {
           "identifier": {
+            "system": "http://gematik.de/fhir/sid/KIM-Adresse",
             "value": "pflegeheim.immergrün.arzt@sana-pflegeheime.kim.telematik"
           },
           "display": "Pflegeheim Immergrün"
@@ -43,6 +44,7 @@
           {
             "receiver": {
               "identifier": {
+                "system": "http://gematik.de/fhir/sid/KIM-Adresse",
                 "value": "arbeitsplatz-1@test-apotheke.kim.telematik"
               },
               "display": "Test Apotheke"
@@ -67,7 +69,7 @@
           {
             "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-EX-MEDREQ-EPrescriptionToken",
             "valueIdentifier": {
-              "system": "https://gematik.de/fhir/erp/NamingSystem/GEM_NS_EPrescriptionToken",
+              "system": "https://gematik.de/fhir/erp/sid/GEM_NS_EPrescriptionToken",
               "value": "Task/160.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
             }
           }
@@ -109,16 +111,10 @@
         "requester": {
           "reference": "Organization/Example-HealthCareService-Organization"
         },
-        "performerType": {
-          "coding": [
-            {
-              "code": "beliefernde-apotheke"
-            }
-          ]
-        },
         "performer": [
           {
             "identifier": {
+              "system": "http://gematik.de/fhir/sid/KIM-Adresse",
               "value": "arbeitsplatz-1@test-apotheke.kim.telematik"
             }
           }

@@ -4,7 +4,8 @@ Id: GEM-PR-MEDREQ-KIM-Adresse
 Title: "GEM PR MEDREQ KIM-Adresse"
 Description: "Identifier zur Angabe der KIM-Adresse"
 * insert Meta (GEM-PR-MEDREQ-KIM-Adresse)
-* system = $kim
+* system = $kim (exactly)
+* system 1..1 MS
 * value 1..1
   * ^example.valueString = "example@super-care.kim.telematik"
 
