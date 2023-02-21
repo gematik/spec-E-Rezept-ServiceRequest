@@ -111,7 +111,8 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription"
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription",
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-MedicationRequest"
             ]
           }
         ],

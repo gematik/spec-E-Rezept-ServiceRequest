@@ -20,7 +20,7 @@ Description: "ServiceRequest that is used to initiate a dispense request for a p
 * basedOn 0..1 MS
   * ^short = "MedicationRequest, der von der Pflegeeinrichtung gewünscht wird oder vom Arzt erfüllt wurde."
   * ^comment = "Einem ServiceRequest ist genau ein MedicationRequest zugeordnet, sodass unabhängige Bearbeitungen möglich sind."
-* basedOn only Reference($KBV_PR_ERP_Prescription) //referenzierte Objekte im Bundle einfügen
+* basedOn only Reference($KBV_PR_ERP_Prescription or GEM_PR_ERP_MEDREQ_MedicationRequest)
 
 * requisition 1..1 MS
 * requisition only GEM_ERP_MEDREQ_PR_RequestGroupIdentifier

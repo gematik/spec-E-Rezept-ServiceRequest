@@ -1,8 +1,5 @@
-# Inhalt
-
-- [Inhalt](#inhalt)
-  - [Einführung](#Einführung)
-  - [Ablauf](#Ablauf)
+- [Einführung](#einführung)
+  - [Ablauf](#ablauf)
 
 # Einführung
 
@@ -10,7 +7,7 @@ Mit dem Konzept  _**Rezeptanforderung**_  soll eine Möglichkeit aufgezeigt werd
 
 Im Prozess der Rezeptanforderung wird in einer initialen Nachricht eines Rezeptanforderungs-Bundle sowie allen nachfolgenden Nachrichten genau ein E-Rezept adressiert. Die Nachrichten können über die jeweils enthaltene Vorgangs-ID durch die verarbeitenden System in Verbindung gebracht werden.
 
-# Ablauf
+## Ablauf
 
 Der Ablauf einer Rezeptanforderung wird nach der initial auslösenden Institution klassifiziert. Es wird unterschieden nach:
 
