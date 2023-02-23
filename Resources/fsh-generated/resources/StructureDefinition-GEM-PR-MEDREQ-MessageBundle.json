@@ -1,16 +1,6 @@
 {
   "resourceType": "StructureDefinition",
   "id": "GEM-PR-MEDREQ-MessageBundle",
-  "extension": [
-    {
-      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
-      "valueString": "Foundation.Other"
-    },
-    {
-      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
-      "valueCode": "not-classified"
-    }
-  ],
   "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-MessageBundle",
   "version": "1.0",
   "name": "GEM_PR_MEDREQ_MessageBundle",

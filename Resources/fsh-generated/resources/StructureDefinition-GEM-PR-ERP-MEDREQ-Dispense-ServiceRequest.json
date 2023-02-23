@@ -1,16 +1,6 @@
 {
   "resourceType": "StructureDefinition",
   "id": "GEM-PR-ERP-MEDREQ-Dispense-ServiceRequest",
-  "extension": [
-    {
-      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
-      "valueString": "Clinical.Care Provision"
-    },
-    {
-      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
-      "valueCode": "patient"
-    }
-  ],
   "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Dispense-ServiceRequest",
   "version": "1.0",
   "name": "GEM_PR_ERP_MEDREQ_Dispense_ServiceRequest",

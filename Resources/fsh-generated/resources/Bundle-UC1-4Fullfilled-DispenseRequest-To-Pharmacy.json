@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "id": "DispenseRequestToPharmacy",
+  "id": "UC1-4Fullfilled-DispenseRequest-To-Pharmacy",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-MessageBundle"
@@ -24,7 +24,7 @@
         },
         "focus": [
           {
-            "reference": "ServiceRequest/Initial-Dispense-Request"
+            "reference": "ServiceRequest/UC1-Initial-Dispense-Request"
           }
         ],
         "eventCoding": {
@@ -55,10 +55,10 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/ServiceRequest/Response-Prescription-Request",
+      "fullUrl": "http://medreq-test.de/ServiceRequest/UC1-Response-Prescription-Request",
       "resource": {
         "resourceType": "ServiceRequest",
-        "id": "Initial-Dispense-Request",
+        "id": "UC1-Initial-Dispense-Request",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Dispense-ServiceRequest"

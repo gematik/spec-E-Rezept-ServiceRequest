@@ -1,16 +1,6 @@
 {
   "resourceType": "StructureDefinition",
   "id": "GEM-PR-ERP-MEDREQ-Prescription-ServiceRequest",
-  "extension": [
-    {
-      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
-      "valueString": "Clinical.Care Provision"
-    },
-    {
-      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
-      "valueCode": "patient"
-    }
-  ],
   "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Prescription-ServiceRequest",
   "version": "1.0",
   "name": "GEM_PR_ERP_MEDREQ_Prescription_ServiceRequest",

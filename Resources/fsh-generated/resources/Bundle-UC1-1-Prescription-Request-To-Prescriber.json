@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "id": "PrescriptionRequestToPrescriber",
+  "id": "UC1-1-Prescription-Request-To-Prescriber",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-MessageBundle"
@@ -24,7 +24,7 @@
         },
         "focus": [
           {
-            "reference": "ServiceRequest/Initial-Prescription-Request"
+            "reference": "ServiceRequest/UC1-Initial-Prescription-Request"
           }
         ],
         "eventCoding": {
@@ -55,10 +55,10 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/ServiceRequest/Initial-Prescription-Request",
+      "fullUrl": "http://medreq-test.de/ServiceRequest/UC1-Initial-Prescription-Request",
       "resource": {
         "resourceType": "ServiceRequest",
-        "id": "Initial-Prescription-Request",
+        "id": "UC1-Initial-Prescription-Request",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Prescription-ServiceRequest"
