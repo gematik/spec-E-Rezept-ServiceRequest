@@ -1,10 +1,6 @@
 
-Instance: HealthCareService-to-Practitioner-MessageHeader
-InstanceOf: GEM_PR_MEDREQ_MessageHeader
-Usage: #inline
-Title: "HealthCareService-to-Practitioner-MessageHeader"
-Description: "Message Header from HealthCareService to Practitioner"
-* focus[+] = Reference(ServiceRequest/UC1-Initial-Prescription-Request)
+RuleSet: HealthCareService-to-Practitioner(SR)
+* focus[+] = Reference(ServiceRequest/"{SR}")
 * eventCoding = #eRezept;Rezeptanforderung;V1.0
 * sender.identifier = Pflegeheim-Immergrün-Identifier
 * sender.display = "Pflegeheim Immergrün"
@@ -13,12 +9,8 @@ Description: "Message Header from HealthCareService to Practitioner"
 * destination.endpoint = "klaus@test.de"
 * source.endpoint = "http://test-pflegeheim.de"
 
-Instance: Practitioner-to-HealthCareService-MessageHeader
-InstanceOf: GEM_PR_MEDREQ_MessageHeader
-Usage: #inline
-Title: "Practitioner-to-HealthCareService-MessageHeader"
-Description: "Message Header from Practitioner to HealthCareService"
-* focus[+] = Reference(ServiceRequest/UC1-Response-Prescription-Request)
+RuleSet: Practitioner-to-HealthCareService(SR)
+* focus[+] = Reference(ServiceRequest/"{SR}")
 * eventCoding = #eRezept;Rezeptanforderung;V1.0
 * sender.identifier = Hans-Topp-Glücklich-Identifier
 * sender.display = "Praxis Hans Topp-Glücklich"
@@ -27,12 +19,8 @@ Description: "Message Header from Practitioner to HealthCareService"
 * destination.receiver.display = "Pflegeheim Immergrün"
 * destination.endpoint = "http://test-pflegeheim.de"
 
-Instance: HealthCareService-to-Pharmacy-MessageHeader
-InstanceOf: GEM_PR_MEDREQ_MessageHeader
-Usage: #inline
-Title: "HealthCareService-to-Pharmacy-MessageHeader"
-Description: "Message Header from HealthCareService to Pharmacy"
-* focus[+] = Reference(ServiceRequest/UC1-Initial-Dispense-Request)
+RuleSet: HealthCareService-to-Pharmacy(SR)
+* focus[+] = Reference(ServiceRequest/"{SR}")
 * eventCoding = #eRezept;Rezeptanforderung;V1.0
 * sender.identifier = Pflegeheim-Immergrün-Identifier
 * sender.display = "Pflegeheim Immergrün"
@@ -41,12 +29,8 @@ Description: "Message Header from HealthCareService to Pharmacy"
 * destination.receiver.display = "Test Apotheke"
 * destination.endpoint = "http://test-apotheke.de"
 
-Instance: Pharmacy-to-HealthCareService-MessageHeader
-InstanceOf: GEM_PR_MEDREQ_MessageHeader
-Usage: #inline
-Title: "Pharmacy-to-HealthCareService-MessageHeader"
-Description: "Message Header from Pharmacy to HealthCareService"
-* focus[+] = Reference(ServiceRequest/UC1-Initial-Prescription-Request)
+RuleSet: Pharmacy-to-HealthCareService(SR)
+* focus[+] = Reference(ServiceRequest/"{SR}")
 * eventCoding = #eRezept;Rezeptanforderung;V1.0
 * sender.identifier = Test-Apotheke-Identifier
 * sender.display = "Test Apotheke"
@@ -55,31 +39,32 @@ Description: "Message Header from Pharmacy to HealthCareService"
 * destination.receiver.display = "Pflegeheim Immergrün"
 * destination.endpoint = "http://test-pflegeheim.de"
 
+RuleSet: Pharmacy-to-Practitioner(SR)
+* focus[+] = Reference(ServiceRequest/"{SR}")
+* eventCoding = #eRezept;Rezeptanforderung;V1.0
+* sender.identifier = Test-Apotheke-Identifier
+* sender.display = "Test Apotheke"
+* source.endpoint = "http://test-apotheke.de"
+* destination.receiver.identifier = Hans-Topp-Glücklich-Identifier
+* destination.receiver.display = "Praxis Hans Topp-Glücklich"
+* destination.endpoint = "klaus@test.de"
 
-Instance: Pharmacy-to-Practitioner-MessageHeader
+RuleSet: Practitioner-to-Pharmacy(SR)
+* focus[+] = Reference(ServiceRequest/"{SR}")
+* eventCoding = #eRezept;Rezeptanforderung;V1.0
+* sender.identifier = Hans-Topp-Glücklich-Identifier
+* sender.display = "Praxis Hans Topp-Glücklich"
+* source.endpoint = "http://test-practitioner.de"
+* destination.receiver.identifier = Test-Apotheke-Identifier
+* destination.receiver.display = "Test Apotheke"
+* destination.endpoint = "http://test-apotheke.de"
+
+
+/*
+Instance: UC4-Pharmacy-to-Practitioner-MessageHeader
 InstanceOf: GEM_PR_MEDREQ_MessageHeader
 Usage: #inline
 Title: "Pharmacy-to-Practitioner-MessageHeader"
 Description: "Message Header from Pharmacy to Practitioner"
-* focus[+] = Reference(ServiceRequest/UC1-Initial-Prescription-Request)
-* eventCoding = #eRezept;Rezeptanforderung;V1.0
-* sender.identifier = Test-Apotheke-Identifier
-* sender.display = "Test Apotheke"
-* source.endpoint = "http://test-apotheke.de"
-* destination.receiver.identifier = Hans-Topp-Glücklich-Identifier
-* destination.receiver.display = "Praxis Hans Topp-Glücklich"
-* destination.endpoint = "klaus@test.de"
-
-Instance: Practitioner-to-Pharmacy-MessageHeader
-InstanceOf: GEM_PR_MEDREQ_MessageHeader
-Usage: #inline
-Title: "Practitioner-to-Pharmacy-MessageHeader"
-Description: "Message Header from Practitioner to Pharmacy"
-* focus[+] = Reference(ServiceRequest/UC1-Response-Prescription-Request)
-* eventCoding = #eRezept;Rezeptanforderung;V1.0
-* sender.identifier = Hans-Topp-Glücklich-Identifier
-* sender.display = "Praxis Hans Topp-Glücklich"
-* source.endpoint = "http://test-practitioner.de"
-* destination.receiver.identifier = Test-Apotheke-Identifier
-* destination.receiver.display = "Test Apotheke"
-* destination.endpoint = "http://test-apotheke.de"
+* insert HealthCareService-to-Practitioner(UC1-Initial-Prescription-Request)
+*/

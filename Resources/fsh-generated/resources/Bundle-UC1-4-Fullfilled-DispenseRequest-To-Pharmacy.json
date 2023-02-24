@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "id": "UC1-3Dispense-Request-To-Pharmacy",
+  "id": "UC1-4-Fullfilled-DispenseRequest-To-Pharmacy",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-MessageBundle"
@@ -13,10 +13,10 @@
   },
   "entry": [
     {
-      "fullUrl": "http://medreq-test.de/MessageHeader/HealthCareService-to-Pharmacy-MessageHeader",
+      "fullUrl": "http://medreq-test.de/MessageHeader/UC1-Pharmacy-to-HealthCareService-MessageHeader",
       "resource": {
         "resourceType": "MessageHeader",
-        "id": "HealthCareService-to-Pharmacy-MessageHeader",
+        "id": "UC1-Pharmacy-to-HealthCareService-MessageHeader",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-MessageHeader"
@@ -24,7 +24,7 @@
         },
         "focus": [
           {
-            "reference": "ServiceRequest/UC1-Initial-Dispense-Request"
+            "reference": "ServiceRequest/\"UC1-Response-Dispense-Request\""
           }
         ],
         "eventCoding": {
@@ -37,28 +37,28 @@
           },
           "display": "Pflegeheim Immergrün"
         },
-        "source": {
-          "endpoint": "http://test-pflegeheim.de"
-        },
         "destination": [
           {
             "receiver": {
               "identifier": {
                 "system": "http://gematik.de/fhir/sid/KIM-Adresse",
-                "value": "arbeitsplatz-1@test-apotheke.kim.telematik"
+                "value": "hans@ytopp-gluecklich.kim.telematik"
               },
-              "display": "Test Apotheke"
+              "display": "Praxis Hans Topp-Glücklich"
             },
-            "endpoint": "http://test-apotheke.de"
+            "endpoint": "klaus@test.de"
           }
-        ]
+        ],
+        "source": {
+          "endpoint": "http://test-pflegeheim.de"
+        }
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/ServiceRequest/UC1-Response-Prescription-Request",
+      "fullUrl": "http://medreq-test.de/ServiceRequest/UC1-Response-Dispense-Request",
       "resource": {
         "resourceType": "ServiceRequest",
-        "id": "UC1-Initial-Dispense-Request",
+        "id": "UC1-Response-Dispense-Request",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Dispense-ServiceRequest"
@@ -69,6 +69,10 @@
           {
             "type": "Practitioner",
             "reference": "Practitioner/Example-Practitioner"
+          },
+          {
+            "type": "MedicationDispense",
+            "reference": "MedicationDispense/UC1-Medication-Dispense"
           }
         ],
         "extension": [
@@ -95,7 +99,7 @@
           "system": "https://gematik.de/GEM_NS_MEDREQ_RequestGroupId",
           "value": "GroupID-2"
         },
-        "status": "active",
+        "status": "completed",
         "code": {
           "coding": [
             {

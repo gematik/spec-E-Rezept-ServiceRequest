@@ -13,5 +13,6 @@ Beispielinstanzen finden sich unter ../examples
 Folgende UseCases sind beschrieben:
 UC1: Pflegeeinrichtung -> Arzt -> Pflegeeinrichtung -> Apotheke
 UC2: Pflegeeinrichtung -> Arzt -> Apotheke -> Pflegeeinrichtung
-UC3(parenterele Zubereitung): Apotheke -> Arzt -> Apotheke
+UC3: Pflegeeinrichtung -> Arzt -> Pflegeeinrichtung (Patient geht selbst zur Apotheke)
+UC4(parenterele Zubereitung): Apotheke -> Arzt -> Apotheke
 */
