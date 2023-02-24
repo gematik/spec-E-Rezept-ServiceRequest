@@ -71,3 +71,5 @@ Description: "Request sent to Pharmacy to request a dispense of the medication"
 * entry[=].resource = Example-Practitioner
 * entry[+].fullUrl = "http://medreq-test.de/Organization/Example-HealthCareService-Organization"
 * entry[=].resource = Example-HealthCareService-Organization
+* entry[+].fullUrl = "http://medreq-test.de/MedicationDispense/UC1-Medication-Dispense"
+* entry[=].resource = UC1-Medication-Dispense

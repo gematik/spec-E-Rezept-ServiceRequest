@@ -27,9 +27,6 @@
             "reference": "ServiceRequest/UC2-Response-Dispense-Request"
           }
         ],
-        "eventCoding": {
-          "code": "eRezept;Rezeptanforderung;V1.0"
-        },
         "sender": {
           "identifier": {
             "system": "http://gematik.de/fhir/sid/KIM-Adresse",
@@ -51,7 +48,10 @@
             },
             "endpoint": "http://test-pflegeheim.de"
           }
-        ]
+        ],
+        "eventCoding": {
+          "code": "eRezept_Rezeptanforderung"
+        }
       }
     },
     {
@@ -65,6 +65,13 @@
           ]
         },
         "intent": "filler-order",
+        "code": {
+          "coding": [
+            {
+              "code": "dispense-request"
+            }
+          ]
+        },
         "supportingInfo": [
           {
             "type": "Practitioner",
@@ -100,13 +107,6 @@
           "value": "GroupID-2"
         },
         "status": "completed",
-        "code": {
-          "coding": [
-            {
-              "code": "dispense-request"
-            }
-          ]
-        },
         "subject": {
           "reference": "Patient/Example-Patient"
         },
@@ -562,6 +562,132 @@
           {
             "system": "phone",
             "value": "0301234567"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://medreq-test.de/MedicationDispense/UC1-Medication-Dispense",
+      "resource": {
+        "resourceType": "MedicationDispense",
+        "id": "UC1-Medication-Dispense",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|1.2"
+          ]
+        },
+        "status": "completed",
+        "identifier": [
+          {
+            "system": "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
+            "value": "160.100.000.000.002.36",
+            "use": "official"
+          }
+        ],
+        "performer": [
+          {
+            "actor": {
+              "identifier": {
+                "system": "https://gematik.de/fhir/sid/telematik-id",
+                "value": "12345678901234567890"
+              }
+            }
+          }
+        ],
+        "contained": [
+          {
+            "resourceType": "Medication",
+            "id": "Example-Response-Medication",
+            "meta": {
+              "profile": [
+                "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.1.0"
+              ]
+            },
+            "extension": [
+              {
+                "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Medication_Type",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "http://snomed.info/sct",
+                      "version": "http://snomed.info/sct/900000000000207008/version/20220331",
+                      "code": "763158003",
+                      "display": "Medicinal product (product)"
+                    }
+                  ]
+                }
+              },
+              {
+                "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Category",
+                "valueCoding": {
+                  "code": "00",
+                  "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Category"
+                }
+              },
+              {
+                "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Vaccine",
+                "valueBoolean": false
+              },
+              {
+                "url": "http://fhir.de/StructureDefinition/normgroesse",
+                "valueCode": "N1"
+              }
+            ],
+            "code": {
+              "coding": [
+                {
+                  "system": "http://fhir.de/CodeSystem/ifa/pzn",
+                  "code": "08585997"
+                }
+              ],
+              "text": "Prospan® Hustensaft 100ml N1"
+            },
+            "form": {
+              "coding": [
+                {
+                  "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM",
+                  "code": "FLE"
+                }
+              ]
+            }
+          }
+        ],
+        "medicationReference": {
+          "reference": "#Example-Response-Medication"
+        },
+        "subject": {
+          "identifier": {
+            "system": "http://fhir.de/sid/gkv/kvid-10",
+            "value": "X123456789"
+          }
+        },
+        "whenHandedOver": "2020-04-16T13:44:27.957+00:00",
+        "dosageInstruction": [
+          {
+            "sequence": 1,
+            "text": "Eine Tablette täglich",
+            "timing": {
+              "repeat": {
+                "frequency": 1,
+                "period": 1,
+                "periodUnit": "d"
+              }
+            },
+            "doseAndRate": [
+              {
+                "type": {
+                  "coding": [
+                    {
+                      "code": "ordered"
+                    }
+                  ]
+                },
+                "doseQuantity": {
+                  "value": 1,
+                  "unit": "tablet"
+                }
+              }
+            ]
           }
         ]
       }

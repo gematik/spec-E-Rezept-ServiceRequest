@@ -59,7 +59,7 @@ Description: "Request sent to Pharmacy to request a dispense of the medication"
 * timestamp.value = "2023-02-01T13:28:17.239+02:00"
 * entry[0].fullUrl = "http://medreq-test.de/MessageHeader/UC1-HealthCareService-to-Pharmacy-MessageHeader"
 * entry[=].resource = UC1-HealthCareService-to-Pharmacy-MessageHeader
-* entry[+].fullUrl = "http://medreq-test.de/ServiceRequest/UC1-Initial-Dispense-Requestt"
+* entry[+].fullUrl = "http://medreq-test.de/ServiceRequest/UC1-Initial-Dispense-Request"
 * entry[=].resource = UC1-Initial-Dispense-Request
 * entry[+].fullUrl = "http://medreq-test.de/MedicationRequest/Example-Response-KBV-Prescription"
 * entry[=].resource = Example-Response-KBV-Prescription

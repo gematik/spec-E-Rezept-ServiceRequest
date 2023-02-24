@@ -40,7 +40,7 @@ Description: "ServiceRequest that is used to request a prescription from a pract
 * intent = #order (exactly)
 
 * code 1..1 MS
-* code from GEM_VS_MEDREQ_Service_Request_Code
+* code = #prescription-request (exactly)
   * ^short = "Gibt die Art des ServiceRequests an."
   * ^comment = "#prescription-request dient der Anfrage eines Rezeptes an einen Arzt. #pharmacy-delivery-request dient als ServiceRequest für eine Apotheke zur Belieferung"
 

@@ -27,9 +27,6 @@
             "reference": "ServiceRequest/UC2-Forward-Dispense-Request"
           }
         ],
-        "eventCoding": {
-          "code": "eRezept;Rezeptanforderung;V1.0"
-        },
         "sender": {
           "identifier": {
             "system": "http://gematik.de/fhir/sid/KIM-Adresse",
@@ -51,7 +48,10 @@
             },
             "endpoint": "http://test-apotheke.de"
           }
-        ]
+        ],
+        "eventCoding": {
+          "code": "eRezept_Rezeptanforderung"
+        }
       }
     },
     {
@@ -65,6 +65,13 @@
           ]
         },
         "intent": "filler-order",
+        "code": {
+          "coding": [
+            {
+              "code": "dispense-request"
+            }
+          ]
+        },
         "supportingInfo": [
           {
             "type": "Practitioner",
@@ -96,13 +103,6 @@
           "value": "GroupID-2"
         },
         "status": "active",
-        "code": {
-          "coding": [
-            {
-              "code": "dispense-request"
-            }
-          ]
-        },
         "subject": {
           "reference": "Patient/Example-Patient"
         },

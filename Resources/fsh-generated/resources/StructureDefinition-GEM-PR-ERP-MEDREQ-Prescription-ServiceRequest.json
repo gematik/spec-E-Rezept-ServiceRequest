@@ -162,11 +162,14 @@
         "short": "Gibt die Art des ServiceRequests an.",
         "comment": "#prescription-request dient der Anfrage eines Rezeptes an einen Arzt. #pharmacy-delivery-request dient als ServiceRequest für eine Apotheke zur Belieferung",
         "min": 1,
-        "mustSupport": true,
-        "binding": {
-          "strength": "required",
-          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/GEM-VS-MEDREQ-Service-Request-Code"
-        }
+        "fixedCodeableConcept": {
+          "coding": [
+            {
+              "code": "prescription-request"
+            }
+          ]
+        },
+        "mustSupport": true
       },
       {
         "id": "ServiceRequest.orderDetail",

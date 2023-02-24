@@ -12,7 +12,7 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * requisition[=].value = "GroupID-UC4"
 * status = #active
 * intent = #order
-* code = #parenteral-prescription-request
+* code = #prescription-request
 * subject = Reference(Patient/Example-Patient)
 * orderDetail.coding.code = #send-to-pharmacy
 * occurrenceDateTime = "2023-02-01"
@@ -26,7 +26,7 @@ Usage: #inline
 Title: "Fullfilled Prescription Request"
 Description: "ServiceRequest that is returned to the requester"
 * extension[EPrescriptionToken].valueIdentifier.system = "https://gematik.de/fhir/erp/sid/GEM_NS_EPrescriptionToken"
-* extension[EPrescriptionToken].valueIdentifier.value = "Task/160.100.000.000.004f.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
+* extension[EPrescriptionToken].valueIdentifier.value = "Task/160.100.000.000.004.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
 * identifier[0]
   * system = "https://gematik.de/GEM_NS_MEDREQ_RequestId"
   * value = "1"
@@ -35,7 +35,7 @@ Description: "ServiceRequest that is returned to the requester"
 * requisition[=].value = "GroupID-UC4"
 * status = #completed
 * intent = #order
-* code = #parenteral-prescription-request
+* code = #prescription-request
 * subject = Reference(Example-Patient)
 * orderDetail.coding.code = #send-to-pharmacy
 * occurrenceDateTime = "2023-01-30" //update wann es tatsächlich ausgestellt wurde

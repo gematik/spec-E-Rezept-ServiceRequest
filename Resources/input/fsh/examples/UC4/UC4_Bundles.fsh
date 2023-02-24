@@ -8,11 +8,11 @@ Description: "Request sent to Prescriber to get a Prescription"
 * timestamp.value = "2015-02-07T13:28:17.239+02:00"
 * entry[0].fullUrl = "http://medreq-test.de/MessageHeader/UC4-1-Pharmacy-to-Practitioner-MessageHeader"
 * entry[=].resource = UC4-1-Pharmacy-to-Practitioner-MessageHeader
-* entry[+].fullUrl = "http://medreq-test.de/ServiceRequest/UC2-Initial-Prescription-Request"
+* entry[+].fullUrl = "http://medreq-test.de/ServiceRequest/UC4-Initial-Prescription-Request"
 * entry[=].resource = UC4-Initial-Prescription-Request
-* entry[+].fullUrl = "http://medreq-test.de/MedicationRequest/Example-Initial-Medication-Request"
+* entry[+].fullUrl = "http://medreq-test.de/MedicationRequest/Example-Zyto-Medication-Request"
 * entry[=].resource = Example-Zyto-Medication-Request
-* entry[+].fullUrl = "http://medreq-test.de/Medication/Example-Initial-Medication"
+* entry[+].fullUrl = "http://medreq-test.de/Medication/Example-Zyto-Medication"
 * entry[=].resource = Example-Zyto-Medication
 * entry[+].fullUrl = "http://medreq-test.de/Patient/Example-Patient"
 * entry[=].resource = Example-Patient

@@ -27,9 +27,6 @@
             "reference": "ServiceRequest/UC1-Initial-Dispense-Request"
           }
         ],
-        "eventCoding": {
-          "code": "eRezept;Rezeptanforderung;V1.0"
-        },
         "sender": {
           "identifier": {
             "system": "http://gematik.de/fhir/sid/KIM-Adresse",
@@ -51,11 +48,14 @@
         ],
         "source": {
           "endpoint": "http://test-pflegeheim.de"
+        },
+        "eventCoding": {
+          "code": "eRezept_Rezeptanforderung"
         }
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/ServiceRequest/UC1-Initial-Dispense-Requestt",
+      "fullUrl": "http://medreq-test.de/ServiceRequest/UC1-Initial-Dispense-Request",
       "resource": {
         "resourceType": "ServiceRequest",
         "id": "UC1-Initial-Dispense-Request",
@@ -65,6 +65,13 @@
           ]
         },
         "intent": "filler-order",
+        "code": {
+          "coding": [
+            {
+              "code": "dispense-request"
+            }
+          ]
+        },
         "supportingInfo": [
           {
             "type": "Practitioner",
@@ -96,13 +103,6 @@
           "value": "GroupID-UC1"
         },
         "status": "active",
-        "code": {
-          "coding": [
-            {
-              "code": "dispense-request"
-            }
-          ]
-        },
         "subject": {
           "reference": "Patient/Example-Patient"
         },

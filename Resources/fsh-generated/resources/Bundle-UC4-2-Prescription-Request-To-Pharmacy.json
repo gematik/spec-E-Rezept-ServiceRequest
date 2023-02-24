@@ -27,9 +27,6 @@
             "reference": "ServiceRequest/UC4-Response-Prescription-Request"
           }
         ],
-        "eventCoding": {
-          "code": "eRezept;Rezeptanforderung;V1.0"
-        },
         "sender": {
           "identifier": {
             "system": "http://gematik.de/fhir/sid/KIM-Adresse",
@@ -51,7 +48,10 @@
             },
             "endpoint": "http://test-apotheke.de"
           }
-        ]
+        ],
+        "eventCoding": {
+          "code": "eRezept_ParenteraleErnaehrung"
+        }
       }
     },
     {
@@ -65,11 +65,18 @@
           ]
         },
         "intent": "order",
+        "code": {
+          "coding": [
+            {
+              "code": "prescription-request"
+            }
+          ]
+        },
         "extension": [
           {
             "valueIdentifier": {
               "system": "https://gematik.de/fhir/erp/sid/GEM_NS_EPrescriptionToken",
-              "value": "Task/160.100.000.000.004f.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
+              "value": "Task/160.100.000.000.004.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
             },
             "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-EX-MEDREQ-EPrescriptionToken"
           }
@@ -90,13 +97,6 @@
           "value": "GroupID-UC4"
         },
         "status": "completed",
-        "code": {
-          "coding": [
-            {
-              "code": "parenteral-prescription-request"
-            }
-          ]
-        },
         "subject": {
           "reference": "Patient/Example-Patient"
         },
@@ -526,7 +526,7 @@
               ]
             },
             "system": "https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR",
-            "value": "57634852"
+            "value": "581463872"
           }
         ],
         "address": [

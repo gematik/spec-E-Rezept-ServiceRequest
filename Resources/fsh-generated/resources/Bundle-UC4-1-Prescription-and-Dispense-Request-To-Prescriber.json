@@ -27,9 +27,6 @@
             "reference": "ServiceRequest/UC4-Initial-Prescription-Request"
           }
         ],
-        "eventCoding": {
-          "code": "eRezept;Rezeptanforderung;V1.0"
-        },
         "sender": {
           "identifier": {
             "system": "http://gematik.de/fhir/sid/KIM-Adresse",
@@ -51,11 +48,14 @@
             },
             "endpoint": "klaus@test.de"
           }
-        ]
+        ],
+        "eventCoding": {
+          "code": "eRezept_ParenteraleErnaehrung"
+        }
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/ServiceRequest/UC2-Initial-Prescription-Request",
+      "fullUrl": "http://medreq-test.de/ServiceRequest/UC4-Initial-Prescription-Request",
       "resource": {
         "resourceType": "ServiceRequest",
         "id": "UC4-Initial-Prescription-Request",
@@ -65,6 +65,13 @@
           ]
         },
         "intent": "order",
+        "code": {
+          "coding": [
+            {
+              "code": "prescription-request"
+            }
+          ]
+        },
         "identifier": [
           {
             "system": "https://gematik.de/GEM_NS_MEDREQ_RequestId",
@@ -81,13 +88,6 @@
           "value": "GroupID-UC4"
         },
         "status": "active",
-        "code": {
-          "coding": [
-            {
-              "code": "parenteral-prescription-request"
-            }
-          ]
-        },
         "subject": {
           "reference": "Patient/Example-Patient"
         },
@@ -116,7 +116,7 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/MedicationRequest/Example-Initial-Medication-Request",
+      "fullUrl": "http://medreq-test.de/MedicationRequest/Example-Zyto-Medication-Request",
       "resource": {
         "resourceType": "MedicationRequest",
         "id": "Example-Zyto-Medication-Request",
@@ -140,7 +140,7 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/Medication/Example-Initial-Medication",
+      "fullUrl": "http://medreq-test.de/Medication/Example-Zyto-Medication",
       "resource": {
         "resourceType": "Medication",
         "id": "Example-Zyto-Medication",
@@ -436,7 +436,7 @@
               ]
             },
             "system": "https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR",
-            "value": "57634852"
+            "value": "581463872"
           }
         ],
         "address": [

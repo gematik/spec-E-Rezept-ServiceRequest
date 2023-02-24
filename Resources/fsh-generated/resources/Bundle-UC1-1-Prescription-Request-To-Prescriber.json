@@ -27,9 +27,6 @@
             "reference": "ServiceRequest/UC1-Initial-Prescription-Request"
           }
         ],
-        "eventCoding": {
-          "code": "eRezept;Rezeptanforderung;V1.0"
-        },
         "sender": {
           "identifier": {
             "system": "http://gematik.de/fhir/sid/KIM-Adresse",
@@ -51,6 +48,9 @@
         ],
         "source": {
           "endpoint": "http://test-pflegeheim.de"
+        },
+        "eventCoding": {
+          "code": "eRezept_Rezeptanforderung"
         }
       }
     },
@@ -65,6 +65,13 @@
           ]
         },
         "intent": "order",
+        "code": {
+          "coding": [
+            {
+              "code": "prescription-request"
+            }
+          ]
+        },
         "identifier": [
           {
             "system": "https://gematik.de/GEM_NS_MEDREQ_RequestId",
@@ -81,13 +88,6 @@
           "value": "GroupID-UC1"
         },
         "status": "active",
-        "code": {
-          "coding": [
-            {
-              "code": "prescription-request"
-            }
-          ]
-        },
         "subject": {
           "reference": "Patient/Example-Patient"
         },

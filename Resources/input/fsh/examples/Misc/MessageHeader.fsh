@@ -1,7 +1,6 @@
 
 RuleSet: HealthCareService-to-Practitioner(SR)
 * focus[+] = Reference(ServiceRequest/{SR})
-* eventCoding = #eRezept;Rezeptanforderung;V1.0
 * sender.identifier = Pflegeheim-Immergrün-Identifier
 * sender.display = "Pflegeheim Immergrün"
 * destination.receiver.identifier = Hans-Topp-Glücklich-Identifier
@@ -11,7 +10,6 @@ RuleSet: HealthCareService-to-Practitioner(SR)
 
 RuleSet: Practitioner-to-HealthCareService(SR)
 * focus[+] = Reference(ServiceRequest/{SR})
-* eventCoding = #eRezept;Rezeptanforderung;V1.0
 * sender.identifier = Hans-Topp-Glücklich-Identifier
 * sender.display = "Praxis Hans Topp-Glücklich"
 * source.endpoint = "http://test-practitioner.de"
@@ -21,7 +19,6 @@ RuleSet: Practitioner-to-HealthCareService(SR)
 
 RuleSet: HealthCareService-to-Pharmacy(SR)
 * focus[+] = Reference(ServiceRequest/{SR})
-* eventCoding = #eRezept;Rezeptanforderung;V1.0
 * sender.identifier = Pflegeheim-Immergrün-Identifier
 * sender.display = "Pflegeheim Immergrün"
 * source.endpoint = "http://test-pflegeheim.de"
@@ -31,7 +28,6 @@ RuleSet: HealthCareService-to-Pharmacy(SR)
 
 RuleSet: Pharmacy-to-HealthCareService(SR)
 * focus[+] = Reference(ServiceRequest/{SR})
-* eventCoding = #eRezept;Rezeptanforderung;V1.0
 * sender.identifier = Test-Apotheke-Identifier
 * sender.display = "Test Apotheke"
 * source.endpoint = "http://test-apotheke.de"
@@ -41,7 +37,6 @@ RuleSet: Pharmacy-to-HealthCareService(SR)
 
 RuleSet: Pharmacy-to-Practitioner(SR)
 * focus[+] = Reference(ServiceRequest/{SR})
-* eventCoding = #eRezept;Rezeptanforderung;V1.0
 * sender.identifier = Test-Apotheke-Identifier
 * sender.display = "Test Apotheke"
 * source.endpoint = "http://test-apotheke.de"
@@ -51,7 +46,6 @@ RuleSet: Pharmacy-to-Practitioner(SR)
 
 RuleSet: Practitioner-to-Pharmacy(SR)
 * focus[+] = Reference(ServiceRequest/{SR})
-* eventCoding = #eRezept;Rezeptanforderung;V1.0
 * sender.identifier = Hans-Topp-Glücklich-Identifier
 * sender.display = "Praxis Hans Topp-Glücklich"
 * source.endpoint = "http://test-practitioner.de"
