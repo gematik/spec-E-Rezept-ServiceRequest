@@ -178,13 +178,6 @@
             "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-MedicationRequest"
           ]
         },
-        "dispenseRequest": {
-          "quantity": {
-            "system": "http://unitsofmeasure.org",
-            "code": "{Package}",
-            "value": 1
-          }
-        },
         "extension": [
           {
             "valueIdentifier": {
@@ -194,6 +187,13 @@
             "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-EX-MEDREQ-Prescription-Id"
           }
         ],
+        "dispenseRequest": {
+          "quantity": {
+            "system": "http://unitsofmeasure.org",
+            "code": "{Package}",
+            "value": 1
+          }
+        },
         "status": "active",
         "intent": "order",
         "medicationReference": {

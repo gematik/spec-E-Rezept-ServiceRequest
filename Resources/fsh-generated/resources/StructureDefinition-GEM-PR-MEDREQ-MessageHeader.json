@@ -30,7 +30,7 @@
   "kind": "resource",
   "abstract": false,
   "type": "MessageHeader",
-  "baseDefinition": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-KIM-MessageHeader",
+  "baseDefinition": "https://gematik.de/fhir/atf/StructureDefinition/GEM-PR-KIM-MessageHeader",
   "derivation": "constraint",
   "differential": {
     "element": [

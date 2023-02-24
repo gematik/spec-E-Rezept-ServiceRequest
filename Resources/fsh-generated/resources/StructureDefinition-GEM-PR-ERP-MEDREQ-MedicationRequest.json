@@ -206,7 +206,6 @@
       {
         "id": "MedicationRequest.dispenseRequest",
         "path": "MedicationRequest.dispenseRequest",
-        "min": 1,
         "mustSupport": true
       },
       {

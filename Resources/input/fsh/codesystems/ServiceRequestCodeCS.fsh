@@ -6,5 +6,4 @@ Description: "Codes to identify the type of ServiceRequest"
 
 * #prescription-request "Anfrage für ein Rezept"
 * #dispense-request "Anfrage für die Belieferung eines Rezepts"
-* #parenteral-preparation-request "Anfrage für Ausstellung eines Rezepts für parenterale Zubereitungen"
-* #parenteral-preparation-dispense "Anfrage für die Belieferung einer parenterale Zubereitung"
+* #parenteral-prescription-request "Anfrage für Ausstellung eines Rezepts für parenterale Zubereitungen"

@@ -18,15 +18,11 @@
       "display": "Anfrage für die Belieferung eines Rezepts"
     },
     {
-      "code": "parenteral-preparation-request",
+      "code": "parenteral-prescription-request",
       "display": "Anfrage für Ausstellung eines Rezepts für parenterale Zubereitungen"
-    },
-    {
-      "code": "parenteral-preparation-dispense",
-      "display": "Anfrage für die Belieferung einer parenterale Zubereitung"
     }
   ],
   "experimental": false,
   "publisher": "gematik GmbH",
-  "count": 4
+  "count": 3
 }

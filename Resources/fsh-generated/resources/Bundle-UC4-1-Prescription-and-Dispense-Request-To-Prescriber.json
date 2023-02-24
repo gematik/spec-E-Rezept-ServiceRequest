@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "id": "UC1-1-Prescription-Request-To-Prescriber",
+  "id": "UC4-1-Prescription-and-Dispense-Request-To-Prescriber",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-MessageBundle"
@@ -13,10 +13,10 @@
   },
   "entry": [
     {
-      "fullUrl": "http://medreq-test.de/MessageHeader/UC1-HealthCareService-to-Practitioner-MessageHeader",
+      "fullUrl": "http://medreq-test.de/MessageHeader/UC4-1-Pharmacy-to-Practitioner-MessageHeader",
       "resource": {
         "resourceType": "MessageHeader",
-        "id": "UC1-HealthCareService-to-Practitioner-MessageHeader",
+        "id": "UC4-1-Pharmacy-to-Practitioner-MessageHeader",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-MessageHeader"
@@ -24,7 +24,7 @@
         },
         "focus": [
           {
-            "reference": "ServiceRequest/UC1-Initial-Prescription-Request"
+            "reference": "ServiceRequest/UC4-Initial-Prescription-Request"
           }
         ],
         "eventCoding": {
@@ -33,9 +33,12 @@
         "sender": {
           "identifier": {
             "system": "http://gematik.de/fhir/sid/KIM-Adresse",
-            "value": "pflegeheim.immergrün.arzt@sana-pflegeheime.kim.telematik"
+            "value": "arbeitsplatz-1@test-apotheke.kim.telematik"
           },
-          "display": "Pflegeheim Immergrün"
+          "display": "Test Apotheke"
+        },
+        "source": {
+          "endpoint": "http://test-apotheke.de"
         },
         "destination": [
           {
@@ -48,17 +51,14 @@
             },
             "endpoint": "klaus@test.de"
           }
-        ],
-        "source": {
-          "endpoint": "http://test-pflegeheim.de"
-        }
+        ]
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/ServiceRequest/UC1-Initial-Prescription-Request",
+      "fullUrl": "http://medreq-test.de/ServiceRequest/UC2-Initial-Prescription-Request",
       "resource": {
         "resourceType": "ServiceRequest",
-        "id": "UC1-Initial-Prescription-Request",
+        "id": "UC4-Initial-Prescription-Request",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Prescription-ServiceRequest"
@@ -73,18 +73,18 @@
         ],
         "basedOn": [
           {
-            "reference": "MedicationRequest/Example-Initial-Medication-Request"
+            "reference": "MedicationRequest/Example-Zyto-Medication-Request"
           }
         ],
         "requisition": {
           "system": "https://gematik.de/GEM_NS_MEDREQ_RequestGroupId",
-          "value": "GroupID-UC1"
+          "value": "GroupID-UC4"
         },
         "status": "active",
         "code": {
           "coding": [
             {
-              "code": "prescription-request"
+              "code": "parenteral-prescription-request"
             }
           ]
         },
@@ -95,7 +95,7 @@
           {
             "coding": [
               {
-                "code": "return-to-requester"
+                "code": "send-to-pharmacy"
               }
             ]
           }
@@ -103,7 +103,7 @@
         "occurrenceDateTime": "2023-02-01",
         "authoredOn": "2023-01-27",
         "requester": {
-          "reference": "Organization/Example-HealthCareService-Organization"
+          "reference": "Organization/Example-Pharmacy-Organization"
         },
         "performer": [
           {
@@ -112,23 +112,6 @@
               "value": "hans@ytopp-gluecklich.kim.telematik"
             }
           }
-        ],
-        "reasonCode": [
-          {
-            "coding": [
-              {
-                "code": "medication-runs-out"
-              }
-            ]
-          }
-        ],
-        "reasonReference": [
-          {
-            "reference": "Observation/Medication-Runs-Out-Example-dateTime"
-          },
-          {
-            "reference": "Observation/Medication-Runs-Out-Example-Quantity"
-          }
         ]
       }
     },
@@ -136,44 +119,23 @@
       "fullUrl": "http://medreq-test.de/MedicationRequest/Example-Initial-Medication-Request",
       "resource": {
         "resourceType": "MedicationRequest",
-        "id": "Example-Initial-Medication-Request",
+        "id": "Example-Zyto-Medication-Request",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-MedicationRequest"
           ]
         },
-        "extension": [
-          {
-            "valueIdentifier": {
-              "system": "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
-              "value": "160.100.000.000.001.36"
-            },
-            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-EX-MEDREQ-Prescription-Id"
-          }
-        ],
-        "dispenseRequest": {
-          "quantity": {
-            "system": "http://unitsofmeasure.org",
-            "code": "{Package}",
-            "value": 1
-          }
-        },
         "status": "active",
         "intent": "order",
         "medicationReference": {
-          "reference": "Medication/Example-Initial-Medication"
+          "reference": "Medication/Example-Zyto-Medication"
         },
         "subject": {
           "reference": "Patient/Example-Patient"
         },
         "authoredOn": "2022-05-20",
-        "dosageInstruction": [
-          {
-            "text": "2mal tägl. 5ml"
-          }
-        ],
         "substitution": {
-          "allowedBoolean": true
+          "allowedBoolean": false
         }
       }
     },
@@ -181,10 +143,10 @@
       "fullUrl": "http://medreq-test.de/Medication/Example-Initial-Medication",
       "resource": {
         "resourceType": "Medication",
-        "id": "Example-Initial-Medication",
+        "id": "Example-Zyto-Medication",
         "meta": {
           "profile": [
-            "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.1.0"
+            "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_Compounding|1.1.0"
           ]
         },
         "extension": [
@@ -195,8 +157,8 @@
                 {
                   "system": "http://snomed.info/sct",
                   "version": "http://snomed.info/sct/900000000000207008/version/20220331",
-                  "code": "763158003",
-                  "display": "Medicinal product (product)"
+                  "code": "373873005:860781008=362943005",
+                  "display": "Pharmaceutical / biologic product (product) : Has product characteristic (attribute) = Manual method (qualifier value)"
                 }
               ]
             }
@@ -211,28 +173,62 @@
           {
             "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Vaccine",
             "valueBoolean": false
-          },
-          {
-            "url": "http://fhir.de/StructureDefinition/normgroesse",
-            "valueCode": "N1"
           }
         ],
         "code": {
           "coding": [
             {
-              "system": "http://fhir.de/CodeSystem/ifa/pzn",
-              "code": "08585997"
-            }
-          ],
-          "text": "Prospan® Hustensaft 100ml"
-        },
-        "form": {
-          "coding": [
-            {
-              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM",
-              "code": "FLE"
+              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Type",
+              "code": "rezeptur"
             }
           ]
+        },
+        "amount": {
+          "numerator": {
+            "extension": [
+              {
+                "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_PackagingSize",
+                "valueString": "500"
+              }
+            ],
+            "unit": "ml"
+          },
+          "denominator": {
+            "value": 1
+          }
+        },
+        "ingredient": [
+          {
+            "strength": {
+              "denominator": {
+                "value": 1
+              },
+              "numerator": {
+                "value": 180,
+                "unit": "mg"
+              }
+            },
+            "itemCodeableConcept": {
+              "text": "Etoposid"
+            }
+          },
+          {
+            "strength": {
+              "denominator": {
+                "value": 1
+              },
+              "numerator": {
+                "value": 500,
+                "unit": "ml"
+              }
+            },
+            "itemCodeableConcept": {
+              "text": "NaCl 0,9 %"
+            }
+          }
+        ],
+        "form": {
+          "text": "Infusionslösung"
         }
       }
     },
@@ -305,10 +301,101 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/Organization/Example-HealthCareService-Organization",
+      "fullUrl": "http://medreq-test.de/Practitioner/Example-Practitioner",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "Example-Practitioner",
+        "meta": {
+          "profile": [
+            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner|1.1.0"
+          ]
+        },
+        "name": [
+          {
+            "use": "official",
+            "family": "Topp-Glücklich",
+            "_family": {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+                  "valueString": "Topp-Glücklich"
+                }
+              ]
+            },
+            "given": [
+              "Hans"
+            ],
+            "prefix": [
+              "Dr. med."
+            ],
+            "_prefix": [
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier",
+                    "valueCode": "AC"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "qualification": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type",
+                  "code": "00"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Berufsbezeichnung",
+                  "code": "Berufsbezeichnung"
+                }
+              ],
+              "text": "Hausarzt"
+            }
+          }
+        ],
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "LANR"
+                }
+              ]
+            },
+            "system": "https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR",
+            "value": "838382202"
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "PRN"
+                }
+              ]
+            },
+            "system": "https://gematik.de/fhir/sid/telematik-id",
+            "value": "1-838382202"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://medreq-test.de/Organization/Example-Pharmacy-Organization",
       "resource": {
         "resourceType": "Organization",
-        "id": "Example-HealthCareService-Organization",
+        "id": "Example-Pharmacy-Organization",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-Organization"
@@ -325,7 +412,7 @@
               ]
             },
             "system": "http://gematik.de/fhir/sid/KIM-Adresse",
-            "value": "pflegeheim.immergrün.arzt@sana-pflegeheime.kim.telematik"
+            "value": "arbeitsplatz-1@test-apotheke.kim.telematik"
           },
           {
             "type": {
@@ -337,7 +424,7 @@
               ]
             },
             "system": "https://gematik.de/fhir/sid/telematik-id",
-            "value": "1-031234567"
+            "value": "1-57634852"
           },
           {
             "type": {
@@ -349,7 +436,7 @@
               ]
             },
             "system": "https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR",
-            "value": "031234567"
+            "value": "57634852"
           }
         ],
         "address": [
@@ -376,64 +463,13 @@
             "postalCode": "10623"
           }
         ],
-        "name": "Pflegeheim Immergrün",
+        "name": "Test Apotheke",
         "telecom": [
           {
             "system": "phone",
             "value": "0301234567"
           }
         ]
-      }
-    },
-    {
-      "fullUrl": "http://medreq-test.de/Observation/Medication-Runs-Out-Example-dateTime",
-      "resource": {
-        "resourceType": "Observation",
-        "id": "Medication-Runs-Out-Example-dateTime",
-        "meta": {
-          "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-RemainingMedication"
-          ]
-        },
-        "status": "final",
-        "subject": {
-          "reference": "Patient/Example-Patient"
-        },
-        "code": {
-          "coding": [
-            {
-              "code": "range-of-medication"
-            }
-          ]
-        },
-        "valueDateTime": "2023-01-31"
-      }
-    },
-    {
-      "fullUrl": "http://medreq-test.de/Observation/Medication-Runs-Out-Example-Quantity",
-      "resource": {
-        "resourceType": "Observation",
-        "id": "Medication-Runs-Out-Example-Quantity",
-        "meta": {
-          "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-RemainingMedication"
-          ]
-        },
-        "status": "final",
-        "subject": {
-          "reference": "Patient/Example-Patient"
-        },
-        "code": {
-          "coding": [
-            {
-              "code": "range-of-medication"
-            }
-          ]
-        },
-        "valueQuantity": {
-          "value": 7,
-          "unit": "stk"
-        }
       }
     }
   ],

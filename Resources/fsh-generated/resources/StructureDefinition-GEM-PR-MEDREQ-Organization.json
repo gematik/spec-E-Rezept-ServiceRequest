@@ -54,7 +54,7 @@
           {
             "code": "Identifier",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-KIM-Adresse"
+              "https://gematik.de/fhir/atf/StructureDefinition/GEM-PR-MEDREQ-KIM-Adresse"
             ]
           }
         ],
@@ -83,7 +83,7 @@
           {
             "code": "Identifier",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-TIM-Adresse"
+              "https://gematik.de/fhir/atf/StructureDefinition/GEM-PR-MEDREQ-TIM-Adresse"
             ]
           }
         ]
