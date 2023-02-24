@@ -17,4 +17,4 @@ InstanceOf: GEM_PR_MEDREQ_MessageHeader
 Usage: #inline
 Title: "Pharmacy-to-HealthCareService-MessageHeader"
 Description: "Message Header from Practitioner to Pharmacy"
-* insert Pharmacy-to-HealthCareService(UC2-3-Fullfilled-DispenseRequest-To-HealthCareService)
+* insert Pharmacy-to-HealthCareService(UC2-Response-Dispense-Request)

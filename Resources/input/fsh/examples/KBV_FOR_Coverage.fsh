@@ -1,6 +1,6 @@
 Instance: Response-Coverage
 InstanceOf: $KBV_PR_FOR_Coverage
-Usage: #example
+Usage: #inline
 * meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Coverage|1.1.0"
 * extension[BesonderePersonengruppe].url = "http://fhir.de/StructureDefinition/gkv/besondere-personengruppe"
 * extension[BesonderePersonengruppe].valueCoding = https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_PERSONENGRUPPE#00

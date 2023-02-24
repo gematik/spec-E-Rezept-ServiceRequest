@@ -4,8 +4,7 @@ Id: GEM-PR-KIM-MessageBundle
 Title: "GEM_PR_KIM_MessageBundle"
 Description: "Basic Bundle for communication of FHIR Ressources with KIM Messages"
 * ^status = #draft
-// TODO
-//* obeys resolve-references-in-bundle
+* obeys resolve-references-in-bundle
 
 //Slice für identifier
 * identifier 1..

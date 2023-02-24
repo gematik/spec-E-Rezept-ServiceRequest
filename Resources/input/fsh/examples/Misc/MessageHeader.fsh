@@ -1,6 +1,6 @@
 
 RuleSet: HealthCareService-to-Practitioner(SR)
-* focus[+] = Reference(ServiceRequest/"{SR}")
+* focus[+] = Reference(ServiceRequest/{SR})
 * eventCoding = #eRezept;Rezeptanforderung;V1.0
 * sender.identifier = Pflegeheim-Immergrün-Identifier
 * sender.display = "Pflegeheim Immergrün"
@@ -10,7 +10,7 @@ RuleSet: HealthCareService-to-Practitioner(SR)
 * source.endpoint = "http://test-pflegeheim.de"
 
 RuleSet: Practitioner-to-HealthCareService(SR)
-* focus[+] = Reference(ServiceRequest/"{SR}")
+* focus[+] = Reference(ServiceRequest/{SR})
 * eventCoding = #eRezept;Rezeptanforderung;V1.0
 * sender.identifier = Hans-Topp-Glücklich-Identifier
 * sender.display = "Praxis Hans Topp-Glücklich"
@@ -20,7 +20,7 @@ RuleSet: Practitioner-to-HealthCareService(SR)
 * destination.endpoint = "http://test-pflegeheim.de"
 
 RuleSet: HealthCareService-to-Pharmacy(SR)
-* focus[+] = Reference(ServiceRequest/"{SR}")
+* focus[+] = Reference(ServiceRequest/{SR})
 * eventCoding = #eRezept;Rezeptanforderung;V1.0
 * sender.identifier = Pflegeheim-Immergrün-Identifier
 * sender.display = "Pflegeheim Immergrün"
@@ -30,7 +30,7 @@ RuleSet: HealthCareService-to-Pharmacy(SR)
 * destination.endpoint = "http://test-apotheke.de"
 
 RuleSet: Pharmacy-to-HealthCareService(SR)
-* focus[+] = Reference(ServiceRequest/"{SR}")
+* focus[+] = Reference(ServiceRequest/{SR})
 * eventCoding = #eRezept;Rezeptanforderung;V1.0
 * sender.identifier = Test-Apotheke-Identifier
 * sender.display = "Test Apotheke"
@@ -40,7 +40,7 @@ RuleSet: Pharmacy-to-HealthCareService(SR)
 * destination.endpoint = "http://test-pflegeheim.de"
 
 RuleSet: Pharmacy-to-Practitioner(SR)
-* focus[+] = Reference(ServiceRequest/"{SR}")
+* focus[+] = Reference(ServiceRequest/{SR})
 * eventCoding = #eRezept;Rezeptanforderung;V1.0
 * sender.identifier = Test-Apotheke-Identifier
 * sender.display = "Test Apotheke"
@@ -50,7 +50,7 @@ RuleSet: Pharmacy-to-Practitioner(SR)
 * destination.endpoint = "klaus@test.de"
 
 RuleSet: Practitioner-to-Pharmacy(SR)
-* focus[+] = Reference(ServiceRequest/"{SR}")
+* focus[+] = Reference(ServiceRequest/{SR})
 * eventCoding = #eRezept;Rezeptanforderung;V1.0
 * sender.identifier = Hans-Topp-Glücklich-Identifier
 * sender.display = "Praxis Hans Topp-Glücklich"

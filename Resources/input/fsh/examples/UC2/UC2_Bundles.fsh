@@ -18,6 +18,8 @@ Description: "Request sent to Prescriber to get a Prescription"
 * entry[=].resource = Example-Initial-Medication
 * entry[+].fullUrl = "http://medreq-test.de/Patient/Example-Patient"
 * entry[=].resource = Example-Patient
+* entry[+].fullUrl = "http://medreq-test.de/Practitioner/Example-Practitioner"
+* entry[=].resource = Example-Practitioner
 * entry[+].fullUrl = "http://medreq-test.de/Organization/Example-HealthCareService-Organization"
 * entry[=].resource = Example-HealthCareService-Organization
 
@@ -32,8 +34,16 @@ Description: "Request sent to Pharmacy to request a dispense of the medication"
 * entry[=].resource = UC2-2-Practitioner-to-Pharmacy-MessageHeader
 * entry[+].fullUrl = "http://medreq-test.de/ServiceRequest/UC2-Forward-Dispense-Request"
 * entry[=].resource = UC2-Forward-Dispense-Request
+* entry[+].fullUrl = "http://medreq-test.de/MedicationRequest/Example-Response-KBV-Prescription"
+* entry[=].resource = Example-Response-KBV-Prescription
+* entry[+].fullUrl = "http://medreq-test.de/Medication/Example-Response-Medication"
+* entry[=].resource = Example-Response-Medication
+* entry[+].fullUrl = "http://medreq-test.de/Coverage/Response-Coverage"
+* entry[=].resource = Response-Coverage
 * entry[+].fullUrl = "http://medreq-test.de/Patient/Example-Patient"
 * entry[=].resource = Example-Patient
+* entry[+].fullUrl = "http://medreq-test.de/Practitioner/Example-Practitioner"
+* entry[=].resource = Example-Practitioner
 * entry[+].fullUrl = "http://medreq-test.de/Organization/Example-HealthCareService-Organization"
 * entry[=].resource = Example-HealthCareService-Organization
 
@@ -49,7 +59,15 @@ Description: "Request sent to Pharmacy to request a dispense of the medication"
 * entry[=].resource = UC2-3-Pharmacy-to-HealthCareService-MessageHeader
 * entry[+].fullUrl = "http://medreq-test.de/ServiceRequest/UC2-Response-Dispense-Request"
 * entry[=].resource = UC2-Response-Dispense-Request
+* entry[+].fullUrl = "http://medreq-test.de/MedicationRequest/Example-Response-KBV-Prescription"
+* entry[=].resource = Example-Response-KBV-Prescription
+* entry[+].fullUrl = "http://medreq-test.de/Medication/Example-Response-Medication"
+* entry[=].resource = Example-Response-Medication
+* entry[+].fullUrl = "http://medreq-test.de/Coverage/Response-Coverage"
+* entry[=].resource = Response-Coverage
 * entry[+].fullUrl = "http://medreq-test.de/Patient/Example-Patient"
 * entry[=].resource = Example-Patient
+* entry[+].fullUrl = "http://medreq-test.de/Practitioner/Example-Practitioner"
+* entry[=].resource = Example-Practitioner
 * entry[+].fullUrl = "http://medreq-test.de/Organization/Example-HealthCareService-Organization"
 * entry[=].resource = Example-HealthCareService-Organization

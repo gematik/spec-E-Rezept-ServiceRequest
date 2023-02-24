@@ -24,7 +24,7 @@
         },
         "focus": [
           {
-            "reference": "ServiceRequest/\"UC1-Initial-Prescription-Request\""
+            "reference": "ServiceRequest/UC1-Initial-Prescription-Request"
           }
         ],
         "eventCoding": {
@@ -68,7 +68,7 @@
         "identifier": [
           {
             "system": "https://gematik.de/GEM_NS_MEDREQ_RequestId",
-            "value": "012345"
+            "value": "1"
           }
         ],
         "basedOn": [
@@ -78,7 +78,7 @@
         ],
         "requisition": {
           "system": "https://gematik.de/GEM_NS_MEDREQ_RequestGroupId",
-          "value": "GroupID-2"
+          "value": "GroupID-UC1"
         },
         "status": "active",
         "code": {
@@ -111,6 +111,23 @@
               "system": "http://gematik.de/fhir/sid/KIM-Adresse",
               "value": "hans@ytopp-gluecklich.kim.telematik"
             }
+          }
+        ],
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "code": "medication-runs-out"
+              }
+            ]
+          }
+        ],
+        "reasonReference": [
+          {
+            "reference": "Observation/Medication-Runs-Out-Example-dateTime"
+          },
+          {
+            "reference": "Observation/Medication-Runs-Out-Example-Quantity"
           }
         ]
       }
@@ -366,6 +383,57 @@
             "value": "0301234567"
           }
         ]
+      }
+    },
+    {
+      "fullUrl": "http://medreq-test.de/Observation/Medication-Runs-Out-Example-dateTime",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Medication-Runs-Out-Example-dateTime",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-RemainingMedication"
+          ]
+        },
+        "status": "final",
+        "subject": {
+          "reference": "Patient/Example-Patient"
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "range-of-medication"
+            }
+          ]
+        },
+        "valueDateTime": "2023-01-31"
+      }
+    },
+    {
+      "fullUrl": "http://medreq-test.de/Observation/Medication-Runs-Out-Example-Quantity",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Medication-Runs-Out-Example-Quantity",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-RemainingMedication"
+          ]
+        },
+        "status": "final",
+        "subject": {
+          "reference": "Patient/Example-Patient"
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "range-of-medication"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 7,
+          "unit": "stk"
+        }
       }
     }
   ],

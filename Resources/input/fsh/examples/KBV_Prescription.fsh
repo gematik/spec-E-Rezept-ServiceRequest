@@ -17,7 +17,7 @@ Usage: #inline
 * subject = Reference(Patient/Example-Patient)
 * authoredOn = "2022-05-20"
 * requester = Reference(Practitioner/Example-Practitioner)
-* insurance = Reference(Coverage/Initial-Coverage)
+* insurance = Reference(Coverage/Response-Coverage)
 * dosageInstruction.extension[Dosierungskennzeichen].url = "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_DosageFlag"
 * dosageInstruction.extension[Dosierungskennzeichen].valueBoolean = true
 * dosageInstruction.text = "2mal tägl. 5ml"

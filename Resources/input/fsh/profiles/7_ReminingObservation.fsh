@@ -21,7 +21,7 @@ InstanceOf: GEM_PR_ERP_MEDREQ_RemainingMedication
 Usage: #inline
 Title: "Medication-Runs-Out-Example-dateTime"
 Description: "Simple example to show that Medication will last until dateTime"
-* subject.reference = "Example-Patient"
+* subject = Reference(Example-Patient)
 * code.coding.code = #range-of-medication
 * valueDateTime = "2023-01-31"
 
@@ -30,7 +30,7 @@ InstanceOf: GEM_PR_ERP_MEDREQ_RemainingMedication
 Usage: #inline
 Title: "Medication-Runs-Out-Example-Quantity"
 Description: "Simple example to show how many pieces of medication are left"
-* subject.reference = "Example-Patient"
+* subject = Reference(Example-Patient)
 * code.coding.code = #range-of-medication
 * valueQuantity
   * value = 7
