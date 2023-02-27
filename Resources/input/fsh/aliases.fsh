@@ -32,3 +32,4 @@ Alias: $GEM_PR_KIM_MessageBundle = https://gematik.de/fhir/atf/StructureDefiniti
 Alias: $GEM_PR_KIM_MessageHeader = https://gematik.de/fhir/atf/StructureDefinition/GEM-PR-KIM-MessageHeader
 Alias: $GEM_PR_KIM_AdressIdentifier = https://gematik.de/fhir/atf/StructureDefinition/GEM-PR-MEDREQ-KIM-Adresse
 Alias: $GEM_PR_TIM_AdressIdentifier = https://gematik.de/fhir/atf/StructureDefinition/GEM-PR-MEDREQ-TIM-Adresse
+Alias: $GEM_CS_KIM_Dienstkennung = https://gematik.de/fhir/atf/CodeSystem/GEM-CS-MEDREQ-KIM-Dienstkennung

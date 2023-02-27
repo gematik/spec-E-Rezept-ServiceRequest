@@ -6,7 +6,7 @@ Description: "Example MedicationDispense"
 * identifier.value = "160.100.000.000.002.36"
 * identifier.use = #official
 * contained[0] = Example-Response-Medication
-* status = #completed
+* status = RequestStatus#completed
 * medicationReference = Reference(Example-Response-Medication)
 
 * subject

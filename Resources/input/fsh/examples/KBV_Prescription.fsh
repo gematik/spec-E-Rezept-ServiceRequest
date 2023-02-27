@@ -11,8 +11,8 @@ Usage: #inline
 * extension[Mehrfachverordnung].url = "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Multiple_Prescription"
 * extension[Mehrfachverordnung].extension[Kennzeichen].url = "Kennzeichen"
 * extension[Mehrfachverordnung].extension[Kennzeichen].valueBoolean = false
-* status = #active
-* intent = #order
+* status = RequestStatus#active
+* intent = RequestIntent#order
 * medicationReference = Reference(Medication/Example-Response-Medication)
 * subject = Reference(Patient/Example-Patient)
 * authoredOn = "2022-05-20"

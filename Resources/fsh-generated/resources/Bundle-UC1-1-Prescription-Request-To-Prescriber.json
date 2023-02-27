@@ -50,7 +50,8 @@
           "endpoint": "http://test-pflegeheim.de"
         },
         "eventCoding": {
-          "code": "eRezept_Rezeptanforderung"
+          "code": "eRezept_Rezeptanforderung",
+          "system": "https://gematik.de/fhir/atf/CodeSystem/GEM-CS-MEDREQ-KIM-Dienstkennung"
         }
       }
     },
@@ -68,6 +69,7 @@
         "code": {
           "coding": [
             {
+              "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-ServiceRequest-Code",
               "code": "prescription-request"
             }
           ]
@@ -95,7 +97,8 @@
           {
             "coding": [
               {
-                "code": "return-to-requester"
+                "code": "return-to-requester",
+                "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-Prescription-Fullfillment-Type"
               }
             ]
           }
@@ -117,7 +120,8 @@
           {
             "coding": [
               {
-                "code": "medication-runs-out"
+                "code": "medication-runs-out",
+                "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-MedicationRequest-Reason"
               }
             ]
           }

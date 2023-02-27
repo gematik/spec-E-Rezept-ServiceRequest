@@ -10,16 +10,16 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * basedOn = Reference(Example-Initial-Medication-Request)
 * requisition[0].system = "https://gematik.de/GEM_NS_MEDREQ_RequestGroupId"
 * requisition[=].value = "GroupID-UC1"
-* status = #active
-* intent = #order
-* code = #prescription-request
+* status = RequestStatus#active
+* intent = RequestIntent#order
+* code = GEM_CS_MEDREQ_Service_Request_Code#prescription-request
 * subject = Reference(Patient/Example-Patient)
-* orderDetail.coding.code = #return-to-requester
+* orderDetail = GEM_CS_MEDREQ_Prescription_Fullfillment_Type#return-to-requester
 * occurrenceDateTime = "2023-02-01"
 * authoredOn = "2023-01-27"
 * requester = Reference(Example-HealthCareService-Organization)
 * performer.identifier = Hans-Topp-Glücklich-Identifier
-* reasonCode = #medication-runs-out
+* reasonCode = GEM_CS_MEDREQ_MedicationRequest_Reason#medication-runs-out
 * reasonReference[+] = Reference(Observation/Medication-Runs-Out-Example-dateTime)
 * reasonReference[+] = Reference(Observation/Medication-Runs-Out-Example-Quantity)
 
@@ -36,16 +36,16 @@ Description: "ServiceRequest that is returned to the requester"
 * basedOn = Reference(Example-Response-KBV-Prescription)
 * requisition[0].system = "https://gematik.de/GEM_NS_MEDREQ_RequestGroupId"
 * requisition[=].value = "GroupID-UC1"
-* status = #completed
-* intent = #order
-* code = #prescription-request
+* status = RequestStatus#completed
+* intent = RequestIntent#order
+* code = GEM_CS_MEDREQ_Service_Request_Code#prescription-request
 * subject = Reference(Example-Patient)
-* orderDetail.coding.code = #return-to-requester
+* orderDetail = GEM_CS_MEDREQ_Prescription_Fullfillment_Type#return-to-requester
 * occurrenceDateTime = "2023-01-30" //update wann es tatsächlich ausgestellt wurde
 * authoredOn = "2023-01-27"
 * requester = Reference(Example-HealthCareService-Organization)
 * performer = Reference(Example-Practitioner)
-* reasonCode = #medication-runs-out
+* reasonCode = GEM_CS_MEDREQ_MedicationRequest_Reason#medication-runs-out
 * reasonReference[+] = Reference(Observation/Medication-Runs-Out-Example-dateTime)
 * reasonReference[+] = Reference(Observation/Medication-Runs-Out-Example-Quantity)
 
@@ -64,9 +64,9 @@ Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
 * basedOn = Reference(Example-Response-KBV-Prescription)
 * requisition[0].system = "https://gematik.de/GEM_NS_MEDREQ_RequestGroupId"
 * requisition[=].value = "GroupID-UC1"
-* status = #active
-* intent = #filler-order
-* code = #dispense-request
+* status = RequestStatus#active
+* intent = RequestIntent#filler-order
+* code = GEM_CS_MEDREQ_Service_Request_Code#dispense-request
 * subject = Reference(Example-Patient)
 * occurrenceDateTime = "2023-02-01"
 * authoredOn = "2023-02-01"
@@ -88,9 +88,9 @@ Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
 * basedOn = Reference(Example-Response-KBV-Prescription)
 * requisition[0].system = "https://gematik.de/GEM_NS_MEDREQ_RequestGroupId"
 * requisition[=].value = "GroupID-UC1"
-* status = #completed
-* intent = #filler-order
-* code = #dispense-request
+* status = RequestStatus#completed
+* intent = RequestIntent#filler-order
+* code = GEM_CS_MEDREQ_Service_Request_Code#dispense-request
 * subject = Reference(Example-Patient)
 * occurrenceDateTime = "2023-02-01"
 * authoredOn = "2023-02-01"

@@ -10,7 +10,7 @@ Usage: #inline
 * extension[WOP].valueCoding = https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ITA_WOP#72
 * extension[Versichertenart].url = "http://fhir.de/StructureDefinition/gkv/versichertenart"
 * extension[Versichertenart].valueCoding = https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_VERSICHERTENSTATUS#3
-* status = #active
+* status = RequestStatus#active
 * type = http://fhir.de/CodeSystem/versicherungsart-de-basis#GKV
 * beneficiary = Reference(Patient/Example-Patient)
 * period.end = "2040-04-01"

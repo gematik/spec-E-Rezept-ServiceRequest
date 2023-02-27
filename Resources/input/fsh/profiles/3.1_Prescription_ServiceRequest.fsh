@@ -39,16 +39,21 @@ Description: "ServiceRequest that is used to request a prescription from a pract
 
 * intent = #order (exactly)
 
-* code 1..1 MS
-* code = #prescription-request (exactly)
+* code MS
   * ^short = "Gibt die Art des ServiceRequests an."
   * ^comment = "#prescription-request dient der Anfrage eines Rezeptes an einen Arzt. #pharmacy-delivery-request dient als ServiceRequest für eine Apotheke zur Belieferung"
+* code.coding 1..1 MS
+* code.coding.system 1..1
+* code.coding.system = "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-ServiceRequest-Code" (exactly)
+* code.coding.code 1..1
+* code.coding.code = #prescription-request (exactly)
 
 * subject MS
 * subject only Reference($KBV_PR_FOR_Patient)
 
 * orderDetail 1..1 MS
-* orderDetail from GEM_VS_MEDREQ_Prescription_Fullfillment_Type (required)
+* orderDetail.coding 1..1 MS
+* orderDetail.coding from GEM_VS_MEDREQ_Prescription_Fullfillment_Type
   * ^short = "Gibt an wie die Rezeptanfrage erfüllt werden soll."
   * ^comment = "Wenn das Rezept an eine Apotheke geht, muss ein entsprechender ServiceRequest im Bundle enthalten sein."
 

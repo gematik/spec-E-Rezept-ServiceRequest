@@ -33,10 +33,14 @@ Description: "ServiceRequest that is used to initiate a dispense request for a p
 
 * intent = #filler-order (exactly)
 
-* code 1..1 MS
-* code = #dispense-request (exactly)
+* code MS
   * ^short = "Gibt die Art des ServiceRequests an."
-  * ^comment = "TODO"
+  * ^comment = "#prescription-request dient der Anfrage eines Rezeptes an einen Arzt. #dispense-request dient als ServiceRequest für eine Apotheke zur Belieferung"
+* code.coding 1..1 MS
+* code.coding.system 1..1
+* code.coding.system = "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-ServiceRequest-Code" (exactly)
+* code.coding.code 1..1
+* code.coding.code = #dispense-request (exactly)
 
 * subject MS
 * subject only Reference($KBV_PR_FOR_Patient)

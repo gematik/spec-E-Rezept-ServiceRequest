@@ -143,16 +143,27 @@
         "id": "ServiceRequest.code",
         "path": "ServiceRequest.code",
         "short": "Gibt die Art des ServiceRequests an.",
-        "comment": "TODO",
-        "min": 1,
-        "fixedCodeableConcept": {
-          "coding": [
-            {
-              "code": "dispense-request"
-            }
-          ]
-        },
+        "comment": "#prescription-request dient der Anfrage eines Rezeptes an einen Arzt. #dispense-request dient als ServiceRequest für eine Apotheke zur Belieferung",
         "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.code.coding",
+        "path": "ServiceRequest.code.coding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.code.coding.system",
+        "path": "ServiceRequest.code.coding.system",
+        "min": 1,
+        "fixedUri": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-ServiceRequest-Code"
+      },
+      {
+        "id": "ServiceRequest.code.coding.code",
+        "path": "ServiceRequest.code.coding.code",
+        "min": 1,
+        "fixedCode": "dispense-request"
       },
       {
         "id": "ServiceRequest.subject",
