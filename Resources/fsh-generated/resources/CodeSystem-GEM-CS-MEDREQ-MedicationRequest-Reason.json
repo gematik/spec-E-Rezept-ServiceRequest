@@ -4,8 +4,8 @@
   "content": "complete",
   "name": "GEM_CS_MEDREQ_MedicationRequest_Reason",
   "id": "GEM-CS-MEDREQ-MedicationRequest-Reason",
-  "title": "GEM CS MEDREQ Medication Request Reason",
-  "description": "CodeSystem to state why medication is needed",
+  "title": "Grund der Medikamentenanfrage (CS)",
+  "description": "Liefert Codes für Gründe, warum Medikation angefragt wird",
   "version": "1.0",
   "url": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-MedicationRequest-Reason",
   "concept": [

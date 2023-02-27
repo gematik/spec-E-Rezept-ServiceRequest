@@ -4,8 +4,8 @@
   "content": "complete",
   "name": "GEM_CS_MEDREQ_Prescription_Fullfillment_Type",
   "id": "GEM-CS-MEDREQ-Prescription-Fullfillment-Type",
-  "title": "CodeSystem for PrescriptionFullfillmentType",
-  "description": "This type defines how the prescription will be delivered",
+  "title": "Zustelltyp der Rezeptanforderung (CS)",
+  "description": "Wird im Prescription_ServiceRequest genutzt um anzugeben wie mit dem Rezept weiter verfahren werden soll",
   "version": "1.0",
   "url": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-Prescription-Fullfillment-Type",
   "concept": [

@@ -4,8 +4,8 @@
   "content": "complete",
   "name": "GEM_CS_MEDREQ_Service_Request_Code",
   "id": "GEM-CS-MEDREQ-Service-Request-Code",
-  "title": "GEM CS MEDREQ Service Request Code",
-  "description": "Codes to identify the type of ServiceRequest",
+  "title": "Art des ServiceRequests (CS)",
+  "description": "Gibt an um welche Art von ServiceRequest es sich handelt und dient so der Identifizierung von ServiceRequests",
   "version": "1.0",
   "url": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-ServiceRequest-Code",
   "concept": [

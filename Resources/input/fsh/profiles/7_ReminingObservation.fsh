@@ -7,7 +7,7 @@ Description: "Describes how long the remaining medication will last"
 
 * status = #final (exactly)
 
-* code from GEM_VS_MEDREQ_MedicationRange
+* code from GEM_VS_MEDREQ_MedicationObservation
 * code.coding.code = #range-of-medication
 
 * subject 1..1
@@ -22,7 +22,7 @@ Usage: #inline
 Title: "Medication-Runs-Out-Example-dateTime"
 Description: "Simple example to show that Medication will last until dateTime"
 * subject = Reference(Example-Patient)
-* code = GEM_CS_MEDREQ_MedicationRange#range-of-medication
+* code = GEM_CS_MEDREQ_MedicationObservation#range-of-medication
 * valueDateTime = "2023-01-31"
 
 Instance: Medication-Runs-Out-Example-Quantity
@@ -31,7 +31,7 @@ Usage: #inline
 Title: "Medication-Runs-Out-Example-Quantity"
 Description: "Simple example to show how many pieces of medication are left"
 * subject = Reference(Example-Patient)
-* code = GEM_CS_MEDREQ_MedicationRange#range-of-medication
+* code = GEM_CS_MEDREQ_MedicationObservation#range-of-medication
 * valueQuantity
   * value = 7
   * unit = "stk"

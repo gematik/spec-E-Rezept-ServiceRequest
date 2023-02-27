@@ -1,7 +1,7 @@
 CodeSystem: GEM_CS_MEDREQ_Prescription_Fullfillment_Type
 Id: GEM-CS-MEDREQ-Prescription-Fullfillment-Type
-Title: "CodeSystem for PrescriptionFullfillmentType"
-Description: "This type defines how the prescription will be delivered"
+Title: "Zustelltyp der Rezeptanforderung (CS)"
+Description: "Wird im Prescription_ServiceRequest genutzt um anzugeben wie mit dem Rezept weiter verfahren werden soll"
 * insert MetaCodeSystem(GEM-CS-MEDREQ-Prescription-Fullfillment-Type)
 
 * #issue-prescription "Ausstellung des Rezeptes"

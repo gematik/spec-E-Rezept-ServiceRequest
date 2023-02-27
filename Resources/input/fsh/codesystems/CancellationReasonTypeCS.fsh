@@ -1,8 +1,8 @@
 CodeSystem: GEM_CS_MEDREQ_Cancellation_Reason_Type
 Id: GEM-CS-MEDREQ-Cancellation-Reason-Type
-Title: "CodeSystem for CancellationReasonType"
-Description: "Definition of reasons why a prescriptionRequest was cancelled"
+Title: "Abbruchgrund (CS)"
+Description: "Dieses CodeSystem beschreibt Gründe für das Stornieren einer Anfrage"
 * insert MetaCodeSystem(GEM-CS-MEDREQ-Cancellation-Reason-Type)
 
-* #InformationMissing "Informationen unvollständig"
-* #InformationenIncorrect "Informationen fehlerhaft"
+* #information-missing "Informationen unvollständig"
+* #information-incorrect "Informationen fehlerhaft"

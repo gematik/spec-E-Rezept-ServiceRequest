@@ -1,7 +1,7 @@
 ValueSet: GEM_VS_MEDREQ_RequestStatus
 Id: GEM-VS-MEDREQ-RequestStatus
-Title: "GEM VS MEDREQ Request Status"
-Description: "ValueSet to define the status of a request"
+Title: "Status des ServiceRequests"
+Description: "Auswahl an Codes um anzugeben welchen Status ein ServiceRequest hat"
 * insert MetaValueSet (GEM-VS-MEDREQ-RequestStatus)
 * include codes from system $Hl7_Request_Status
 * exclude $Hl7_Request_Status#draft

@@ -4,17 +4,17 @@
   "content": "complete",
   "name": "GEM_CS_MEDREQ_Cancellation_Reason_Type",
   "id": "GEM-CS-MEDREQ-Cancellation-Reason-Type",
-  "title": "CodeSystem for CancellationReasonType",
-  "description": "Definition of reasons why a prescriptionRequest was cancelled",
+  "title": "Abbruchgrund (CS)",
+  "description": "Dieses CodeSystem beschreibt Gründe für das Stornieren einer Anfrage",
   "version": "1.0",
   "url": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-Cancellation-Reason-Type",
   "concept": [
     {
-      "code": "InformationMissing",
+      "code": "information-missing",
       "display": "Informationen unvollständig"
     },
     {
-      "code": "InformationenIncorrect",
+      "code": "information-incorrect",
       "display": "Informationen fehlerhaft"
     }
   ],
