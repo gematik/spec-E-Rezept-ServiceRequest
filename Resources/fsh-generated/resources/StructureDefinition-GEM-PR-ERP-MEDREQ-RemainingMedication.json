@@ -4,7 +4,7 @@
   "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-RemainingMedication",
   "version": "1.0",
   "name": "GEM_PR_ERP_MEDREQ_RemainingMedication",
-  "title": "GEM PR ERP MEDREQ Remaining Medication Observation ",
+  "title": "GEM PR ERP MEDREQ Remaining Medication Observation",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",

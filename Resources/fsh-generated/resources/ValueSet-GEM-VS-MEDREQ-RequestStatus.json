@@ -12,14 +12,12 @@
   "compose": {
     "include": [
       {
-        "valueSet": [
-          "http://hl7.org/fhir/ValueSet/request-status"
-        ]
+        "system": "http://hl7.org/fhir/request-status"
       }
     ],
     "exclude": [
       {
-        "system": "http://hl7.org/fhir/ValueSet/request-status",
+        "system": "http://hl7.org/fhir/request-status",
         "concept": [
           {
             "code": "draft"

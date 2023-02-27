@@ -1,7 +1,7 @@
 Profile: GEM_PR_ERP_MEDREQ_RemainingMedication
 Parent: Observation
 Id: GEM-PR-ERP-MEDREQ-RemainingMedication
-Title: "GEM PR ERP MEDREQ Remaining Medication Observation "
+Title: "GEM PR ERP MEDREQ Remaining Medication Observation"
 Description: "Describes how long the remaining medication will last"
 * insert Meta (GEM-PR-ERP-MEDREQ-RemainingMedication)
 
@@ -22,7 +22,7 @@ Usage: #inline
 Title: "Medication-Runs-Out-Example-dateTime"
 Description: "Simple example to show that Medication will last until dateTime"
 * subject = Reference(Example-Patient)
-* code.coding.code = #range-of-medication
+* code = GEM_CS_MEDREQ_MedicationRange#range-of-medication
 * valueDateTime = "2023-01-31"
 
 Instance: Medication-Runs-Out-Example-Quantity
@@ -31,7 +31,7 @@ Usage: #inline
 Title: "Medication-Runs-Out-Example-Quantity"
 Description: "Simple example to show how many pieces of medication are left"
 * subject = Reference(Example-Patient)
-* code.coding.code = #range-of-medication
+* code = GEM_CS_MEDREQ_MedicationRange#range-of-medication
 * valueQuantity
   * value = 7
   * unit = "stk"

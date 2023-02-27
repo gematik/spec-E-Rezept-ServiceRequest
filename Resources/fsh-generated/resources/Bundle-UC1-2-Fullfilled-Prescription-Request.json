@@ -600,7 +600,8 @@
         "code": {
           "coding": [
             {
-              "code": "range-of-medication"
+              "code": "range-of-medication",
+              "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-MedicationRange"
             }
           ]
         },
@@ -624,7 +625,8 @@
         "code": {
           "coding": [
             {
-              "code": "range-of-medication"
+              "code": "range-of-medication",
+              "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-MedicationRange"
             }
           ]
         },

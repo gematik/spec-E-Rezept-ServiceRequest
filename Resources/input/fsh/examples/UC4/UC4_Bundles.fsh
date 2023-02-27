@@ -16,8 +16,6 @@ Description: "Request sent to Prescriber to get a Prescription"
 * entry[=].resource = Example-Zyto-Medication
 * entry[+].fullUrl = "http://medreq-test.de/Patient/Example-Patient"
 * entry[=].resource = Example-Patient
-* entry[+].fullUrl = "http://medreq-test.de/Practitioner/Example-Practitioner"
-* entry[=].resource = Example-Practitioner
 * entry[+].fullUrl = "http://medreq-test.de/Organization/Example-Pharmacy-Organization"
 * entry[=].resource = Example-Pharmacy-Organization
 
