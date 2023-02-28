@@ -5,6 +5,8 @@ Title: "GEM PR ERP MEDREQ Medication Request"
 Description: "Profile on the Medication Request that is to be sent"
 * insert Meta (GEM-PR-ERP-MEDREQ-MedicationRequest)
 
+* extension MS
+  * ^comment = "Falls die vorherige RezeptID bekannt ist, kann diese hier benannt werden"
 * extension contains
     GEM_EX_MEDREQ_Prescription_Id named PriorPrescriptionID 0..1
 

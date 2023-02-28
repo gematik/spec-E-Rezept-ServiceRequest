@@ -4,11 +4,11 @@
   "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-MessageBundle",
   "version": "1.0",
   "name": "GEM_PR_MEDREQ_MessageBundle",
-  "title": "GEM_PR_MEDREQ_MessageBundle",
+  "title": "Nachrichtenbundle",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "Basic Bundle for communication of FHIR Ressources with KIM Messages",
+  "description": "Bundle, was alle Informationen für die Anwendungsfälle bereit hält",
   "fhirVersion": "4.0.1",
   "mapping": [
     {

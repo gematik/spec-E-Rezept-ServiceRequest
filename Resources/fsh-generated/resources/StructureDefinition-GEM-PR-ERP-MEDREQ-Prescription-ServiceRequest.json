@@ -4,11 +4,11 @@
   "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Prescription-ServiceRequest",
   "version": "1.0",
   "name": "GEM_PR_ERP_MEDREQ_Prescription_ServiceRequest",
-  "title": "GEM PR ERP MEDREQ Prescription Service Request",
+  "title": "Rezeptanfrage",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "ServiceRequest that is used to request a prescription from a practitioner",
+  "description": "ServiceRequest, der genutzt wird um ein Rezept anzufragen",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -71,7 +71,7 @@
             }
           ],
           "rules": "open",
-          "description": "Defines identifiers that can be used for this context"
+          "description": "Definiert Identifier, die in einem Vorgang genutzt werden sollen"
         },
         "min": 1,
         "mustSupport": true
@@ -94,7 +94,7 @@
       {
         "id": "ServiceRequest.basedOn",
         "path": "ServiceRequest.basedOn",
-        "short": "MedicationRequest, der von der Pflegeeinrichtung gewünscht wird oder vom Arzt erfüllt wurde.",
+        "short": "Angefragter oder erfüllausgestellter MedicationRequest",
         "comment": "Einem ServiceRequest ist genau ein MedicationRequest zugeordnet, sodass unabhängige Bearbeitungen möglich sind.",
         "min": 1,
         "max": "1",
@@ -112,8 +112,8 @@
       {
         "id": "ServiceRequest.replaces",
         "path": "ServiceRequest.replaces",
-        "short": "Wenn eine Pflegeeinrichtung ihre alte Anfrage stornieren möchte und eine neue Stellt, kann hier das zu stornierende ServiceRequest angegeben werden.",
-        "comment": "Nur vom Requester zu nutzen, um eine alte Anfrage zu stornieren",
+        "short": "Angabe welcher ServiceRequest ersetzt werden soll",
+        "comment": "Nur vom Requester zu nutzen, um anzugeben welche Anfrage storniert wurde",
         "max": "1",
         "type": [
           {
@@ -145,6 +145,15 @@
         "id": "ServiceRequest.status",
         "path": "ServiceRequest.status",
         "short": "Gibt den Bearbeitungsstand eines ServiceRequests an",
+        "constraint": [
+          {
+            "key": "sr-1",
+            "severity": "error",
+            "human": "Wenn der Status auf 'completed' gesetzt ist, muss ein Token vorhanden sein",
+            "expression": "(status = 'completed') implies extension('GEM-EX-MEDREQ-EPrescriptionToken').exists()",
+            "source": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Prescription-ServiceRequest"
+          }
+        ],
         "mustSupport": true,
         "binding": {
           "strength": "required",
@@ -159,8 +168,8 @@
       {
         "id": "ServiceRequest.code",
         "path": "ServiceRequest.code",
-        "short": "Gibt die Art des ServiceRequests an.",
-        "comment": "#prescription-request dient der Anfrage eines Rezeptes an einen Arzt. #pharmacy-delivery-request dient als ServiceRequest für eine Apotheke zur Belieferung",
+        "short": "Gibt die Art des ServiceRequests an",
+        "comment": "#prescription-request dient der Anfrage eines Rezeptes an einen Arzt",
         "mustSupport": true
       },
       {
@@ -205,6 +214,7 @@
       {
         "id": "ServiceRequest.subject",
         "path": "ServiceRequest.subject",
+        "short": "Patient für den stellvertretend ein Rezept angefordert wird",
         "type": [
           {
             "code": "Reference",
@@ -230,7 +240,7 @@
       {
         "id": "ServiceRequest.authoredOn",
         "path": "ServiceRequest.authoredOn",
-        "short": "Datum der Erstellung des Anfrage",
+        "short": "Erstellungsdatum der Anfrage",
         "comment": "Wird initial angelegt und dann nicht mehr verändert.",
         "min": 1,
         "mustSupport": true
@@ -238,12 +248,14 @@
       {
         "id": "ServiceRequest.requester",
         "path": "ServiceRequest.requester",
+        "short": "Anfragende Einrichtung oder Arzt",
         "min": 1,
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-Organization"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-Organization",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner"
             ]
           }
         ],
@@ -252,6 +264,7 @@
       {
         "id": "ServiceRequest.performer",
         "path": "ServiceRequest.performer",
+        "short": "Arzt, der das Rezept ausstellen soll",
         "type": [
           {
             "code": "Reference",
@@ -265,6 +278,7 @@
       {
         "id": "ServiceRequest.reasonCode",
         "path": "ServiceRequest.reasonCode",
+        "short": "Code, der angibt, warum das Medikament angefragt wird",
         "binding": {
           "strength": "required",
           "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/GEM-VS-MEDREQ-MedicationRequest-Reason"

@@ -4,11 +4,11 @@
   "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-MessageHeader",
   "version": "1.0",
   "name": "GEM_PR_MEDREQ_MessageHeader",
-  "title": "GEM PR MEDREQ MessageHeader",
+  "title": "Nachrichten Header",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "Header for Messages Bundles used for Medication Request",
+  "description": "Header, welcher Informationen über Absender und Adressat enthält",
   "fhirVersion": "4.0.1",
   "mapping": [
     {

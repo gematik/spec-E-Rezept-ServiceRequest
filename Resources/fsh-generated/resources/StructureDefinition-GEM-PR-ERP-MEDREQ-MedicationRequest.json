@@ -45,6 +45,12 @@
   "differential": {
     "element": [
       {
+        "id": "MedicationRequest.extension",
+        "path": "MedicationRequest.extension",
+        "comment": "Falls die vorherige RezeptID bekannt ist, kann diese hier benannt werden",
+        "mustSupport": true
+      },
+      {
         "id": "MedicationRequest.extension:PriorPrescriptionID",
         "path": "MedicationRequest.extension",
         "sliceName": "PriorPrescriptionID",

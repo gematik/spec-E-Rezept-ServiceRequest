@@ -1,8 +1,8 @@
 Profile: GEM_PR_MEDREQ_MessageBundle
 Parent: $GEM_PR_KIM_MessageBundle
 Id: GEM-PR-MEDREQ-MessageBundle
-Title: "GEM_PR_MEDREQ_MessageBundle"
-Description: "Basic Bundle for communication of FHIR Ressources with KIM Messages"
+Title: "Nachrichtenbundle"
+Description: "Bundle, was alle Informationen für die Anwendungsfälle bereit hält"
 * insert Meta (GEM-PR-MEDREQ-MessageBundle)
 * entry[MessageHeader].resource only GEM_PR_MEDREQ_MessageHeader
 
