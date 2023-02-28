@@ -7,10 +7,11 @@ Description: "Describes how long the remaining medication will last"
 
 * status = #final (exactly)
 
+* code 1..1 MS
 * code from GEM_VS_MEDREQ_MedicationObservation
 * code.coding.code = #range-of-medication
 
-* subject 1..1
+* subject 1..1 MS
 * subject only Reference(Patient)
 
 * value[x] 1..1 MS

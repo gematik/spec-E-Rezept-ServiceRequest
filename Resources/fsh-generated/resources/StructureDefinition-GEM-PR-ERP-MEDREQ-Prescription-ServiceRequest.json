@@ -45,6 +45,12 @@
   "differential": {
     "element": [
       {
+        "id": "ServiceRequest.extension",
+        "path": "ServiceRequest.extension",
+        "comment": "Hier kann der E-Rezept Token für die Verarbeitung in einer Apotheke bereit gestellt werden",
+        "mustSupport": true
+      },
+      {
         "id": "ServiceRequest.extension:EPrescriptionToken",
         "path": "ServiceRequest.extension",
         "sliceName": "EPrescriptionToken",
@@ -279,6 +285,7 @@
         "id": "ServiceRequest.reasonCode",
         "path": "ServiceRequest.reasonCode",
         "short": "Code, der angibt, warum das Medikament angefragt wird",
+        "mustSupport": true,
         "binding": {
           "strength": "required",
           "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/GEM-VS-MEDREQ-MedicationRequest-Reason"
@@ -287,6 +294,7 @@
       {
         "id": "ServiceRequest.reasonReference",
         "path": "ServiceRequest.reasonReference",
+        "comment": "Wenn eine Referenz zum Grund angegeben wird muss auch ein menschen lesbarer Eintrag in .note hinzugefügt werden, falls Systeme die referenzierte Observation nicht verarbeiten können",
         "type": [
           {
             "code": "Reference",
@@ -308,7 +316,8 @@
           ],
           "rules": "open",
           "description": "Unterstützende Informationen zur Rezeptanforderung"
-        }
+        },
+        "mustSupport": true
       },
       {
         "id": "ServiceRequest.supportingInfo:AuslieferndeApotheke",

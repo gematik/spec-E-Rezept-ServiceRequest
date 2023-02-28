@@ -76,7 +76,8 @@
             }
           ],
           "rules": "closed"
-        }
+        },
+        "mustSupport": true
       },
       {
         "id": "MedicationRequest.medicationReference",
@@ -127,7 +128,8 @@
               "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient"
             ]
           }
-        ]
+        ],
+        "mustSupport": true
       },
       {
         "id": "MedicationRequest.subject.reference",
@@ -152,14 +154,17 @@
       {
         "id": "MedicationRequest.requester",
         "path": "MedicationRequest.requester",
+        "comment": "Anfragender Arzt/ Einrichung/ Apotheke für diesen MedicationRequest",
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
-              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner"
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner",
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-Organization"
             ]
           }
-        ]
+        ],
+        "mustSupport": true
       },
       {
         "id": "MedicationRequest.requester.type",

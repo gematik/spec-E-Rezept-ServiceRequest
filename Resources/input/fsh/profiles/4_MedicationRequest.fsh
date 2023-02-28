@@ -10,9 +10,11 @@ Description: "Profile on the Medication Request that is to be sent"
 * extension contains
     GEM_EX_MEDREQ_Prescription_Id named PriorPrescriptionID 0..1
 
+* medication[x] MS
 * medication[x] ^slicing.discriminator.type = #type
 * medication[x] ^slicing.discriminator.path = "$this"
 * medication[x] ^slicing.rules = #closed
+
 * medicationReference 1..1 MS
 * medicationReference only Reference($KBV_PR_ERP_Medication_FreeText or $KBV_PR_ERP_Medication_Compounding or $KBV_PR_ERP_Medication_PZN or $KBV_PR_ERP_Medication_Ingredient)
 * medicationReference ^sliceName = "medicationReference"
@@ -21,6 +23,7 @@ Description: "Profile on the Medication Request that is to be sent"
 * medicationReference.identifier 0..0
 * medicationReference.display 0..0
 
+* subject MS
 * subject only Reference($KBV_PR_FOR_Patient)
 * subject.type 0..0
 * subject.identifier 0..0
@@ -28,7 +31,9 @@ Description: "Profile on the Medication Request that is to be sent"
 
 * encounter 0..0
 
-* requester only Reference($KBV_PR_FOR_Practitioner)
+* requester MS
+  * ^comment = "Anfragender Arzt/ Einrichung/ Apotheke für diesen MedicationRequest"
+* requester only Reference($KBV_PR_FOR_Practitioner or GEM_PR_MEDREQ_Organization)
 * requester.type 0..0
 * requester.identifier 0..1
 * requester.reference 0..1

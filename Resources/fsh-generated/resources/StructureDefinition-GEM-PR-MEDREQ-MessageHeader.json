@@ -45,7 +45,8 @@
               "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Dispense-ServiceRequest"
             ]
           }
-        ]
+        ],
+        "mustSupport": true
       }
     ]
   }

@@ -57,6 +57,7 @@
       {
         "id": "Observation.code",
         "path": "Observation.code",
+        "mustSupport": true,
         "binding": {
           "strength": "required",
           "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/GEM-VS-MEDREQ-MedicationObservation"
@@ -78,7 +79,8 @@
               "http://hl7.org/fhir/StructureDefinition/Patient"
             ]
           }
-        ]
+        ],
+        "mustSupport": true
       },
       {
         "id": "Observation.value[x]",

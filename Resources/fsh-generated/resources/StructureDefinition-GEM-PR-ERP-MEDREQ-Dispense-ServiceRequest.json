@@ -45,6 +45,12 @@
   "differential": {
     "element": [
       {
+        "id": "ServiceRequest.extension",
+        "path": "ServiceRequest.extension",
+        "comment": "Hier kann der E-Rezept Token für die Belieferung der Apotheke bereit gestellt werden",
+        "mustSupport": true
+      },
+      {
         "id": "ServiceRequest.extension:EPrescriptionToken",
         "path": "ServiceRequest.extension",
         "sliceName": "EPrescriptionToken",
@@ -255,9 +261,10 @@
             }
           ],
           "rules": "open",
-          "description": "Unterstützende Informationen zur Rezeptanforderung"
+          "description": "Unterstützende Informationen zur Belieferung"
         },
-        "min": 1
+        "min": 1,
+        "mustSupport": true
       },
       {
         "id": "ServiceRequest.supportingInfo:AusstellenderArzt",
@@ -306,7 +313,7 @@
       {
         "id": "ServiceRequest.note",
         "path": "ServiceRequest.note",
-        "short": "Weitere Angaben zur Rezeptanforderung",
+        "short": "Weitere Angaben zur Belieferung",
         "comment": "Eventuell nicht spezifizierte Anwendungsfälle können hier im Freitext platziert werden",
         "mustSupport": true
       }

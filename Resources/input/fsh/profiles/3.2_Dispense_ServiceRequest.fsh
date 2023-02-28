@@ -5,6 +5,8 @@ Title: "Belieferungsanfrage"
 Description: "ServiceRequest, der genutzt wird um ein Rezept zu beliefern"
 * insert Meta (GEM-PR-ERP-MEDREQ-Dispense-ServiceRequest)
 
+* extension MS
+  * ^comment = "Hier kann der E-Rezept Token für die Belieferung der Apotheke bereit gestellt werden"
 * extension contains
     GEM_EX_MEDREQ_EPrescriptionToken named EPrescriptionToken 0..1 MS
 
@@ -70,7 +72,9 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept zu beliefern"
 * supportingInfo ^slicing.discriminator.type = #pattern
 * supportingInfo ^slicing.discriminator.path = "type"
 * supportingInfo ^slicing.rules = #open
-* supportingInfo ^slicing.description = "Unterstützende Informationen zur Rezeptanforderung"
+* supportingInfo ^slicing.description = "Unterstützende Informationen zur Belieferung"
+
+* supportingInfo MS
 * supportingInfo contains AusstellenderArzt 1..1 MS and AbgabeDaten 0..1 MS
 * supportingInfo[AusstellenderArzt] only Reference($KBV_PR_FOR_Practitioner)
 * supportingInfo[AusstellenderArzt].type = "Practitioner" (exactly)
@@ -79,5 +83,5 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept zu beliefern"
 * supportingInfo[AbgabeDaten].type = "MedicationDispense" (exactly)
 
 * note MS
-  * ^short = "Weitere Angaben zur Rezeptanforderung"
+  * ^short = "Weitere Angaben zur Belieferung"
   * ^comment = "Eventuell nicht spezifizierte Anwendungsfälle können hier im Freitext platziert werden"

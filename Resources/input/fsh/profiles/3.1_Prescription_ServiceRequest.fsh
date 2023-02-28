@@ -5,6 +5,8 @@ Title: "Rezeptanfrage"
 Description: "ServiceRequest, der genutzt wird um ein Rezept anzufragen"
 * insert Meta (GEM-PR-ERP-MEDREQ-Prescription-ServiceRequest)
 
+* extension MS
+  * ^comment = "Hier kann der E-Rezept Token für die Verarbeitung in einer Apotheke bereit gestellt werden"
 * extension contains
     GEM_EX_MEDREQ_EPrescriptionToken named EPrescriptionToken 0..1 MS
 
@@ -75,16 +77,20 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept anzufragen"
 * performer only Reference($KBV_PR_FOR_Practitioner)
   * ^short = "Arzt, der das Rezept ausstellen soll"
 
-// TODO: Wenn reasonCode dann auch .note
+// TODO: Wenn reasonReference dann auch .note
+* reasonCode MS
 * reasonCode from GEM_VS_MEDREQ_MedicationRequest_Reason
   * ^short = "Code, der angibt, warum das Medikament angefragt wird"
 
 * reasonReference only Reference(GEM_PR_ERP_MEDREQ_RemainingMedication)
+  * ^comment = "Wenn eine Referenz zum Grund angegeben wird muss auch ein menschen lesbarer Eintrag in .note hinzugefügt werden, falls Systeme die referenzierte Observation nicht verarbeiten können"
 
 * supportingInfo ^slicing.discriminator.type = #pattern
 * supportingInfo ^slicing.discriminator.path = "type"
 * supportingInfo ^slicing.rules = #open
 * supportingInfo ^slicing.description = "Unterstützende Informationen zur Rezeptanforderung"
+
+* supportingInfo MS
 * supportingInfo contains
 AuslieferndeApotheke 0..1 MS
 * supportingInfo[AuslieferndeApotheke] only Reference(GEM_PR_MEDREQ_Organization)
