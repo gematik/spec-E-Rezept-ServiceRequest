@@ -16,9 +16,33 @@
     {
       "code": "information-incorrect",
       "display": "Informationen fehlerhaft"
+    },
+    {
+      "code": "medication-stopped",
+      "display": "Medikament wurde abgesetzt"
+    },
+    {
+      "code": "medication-paused",
+      "display": "Medikament wurde pausiert"
+    },
+    {
+      "code": "medication-altered-dosage",
+      "display": "Dosierung wurde geaendert"
+    },
+    {
+      "code": "medication-occurrence-implausible",
+      "display": "Verordnungshäufigkeit nicht plausibel"
+    },
+    {
+      "code": "consultation-required",
+      "display": "Rücksprache ist notwendig"
+    },
+    {
+      "code": "successor-already-sent",
+      "display": "Folgerezept wurde bereits versendet"
     }
   ],
   "experimental": false,
   "publisher": "gematik GmbH",
-  "count": 2
+  "count": 8
 }

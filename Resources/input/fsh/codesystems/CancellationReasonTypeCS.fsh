@@ -6,3 +6,9 @@ Description: "Dieses CodeSystem beschreibt Gründe für das Stornieren einer Anf
 
 * #information-missing "Informationen unvollständig"
 * #information-incorrect "Informationen fehlerhaft"
+* #medication-stopped "Medikament wurde abgesetzt"
+* #medication-paused "Medikament wurde pausiert"
+* #medication-altered-dosage "Dosierung wurde geaendert"
+* #medication-occurrence-implausible "Verordnungshäufigkeit nicht plausibel"
+* #consultation-required "Rücksprache ist notwendig"
+* #successor-already-sent "Folgerezept wurde bereits versendet"

@@ -78,6 +78,12 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept anzufragen"
   * ^short = "Arzt, der das Rezept ausstellen soll"
 
 // TODO: Wenn reasonReference dann auch .note
+/*
+Invariant:   freetextorreasontype
+Description: "Choose providing of one of Freetext or Reasontype, but not both or none"
+Expression:  "(Bundle.entry.resource.extension('https://gematik.de/fhir/erpmedreqcom/StructureDefinition/FreeTextEX').exists().not() and Bundle.entry.resource.extension('https://gematik.de/fhir/erpmedreqcom/StructureDefinition/CancellationReasonTypeEX').exists()) or (Bundle.entry.resource.extension('https://gematik.de/fhir/erpmedreqcom/StructureDefinition/FreeTextEX').exists() and Bundle.entry.resource.extension('https://gematik.de/fhir/erpmedreqcom/StructureDefinition/CancellationReasonTypeEX').exists().not())"
+Severity:    #error
+*/
 * reasonCode MS
 * reasonCode from GEM_VS_MEDREQ_MedicationRequest_Reason
   * ^short = "Code, der angibt, warum das Medikament angefragt wird"
