@@ -18,3 +18,10 @@ Usage: #inline
 Title: "Test-Apotheke-Identifier"
 Description: "Beispiel Identifier für die ausführende Apotheke"
 * value = "arbeitsplatz-1@test-apotheke.kim.telematik"
+
+Instance: Test-Apotheke2-Identifier
+InstanceOf: $GEM_PR_KIM_AdressIdentifier
+Usage: #inline
+Title: "Test-Apotheke2-Identifier"
+Description: "Beispiel Identifier für die ausführende Apotheke"
+* value = "arbeitsplatz-1@test-apotheke-2.kim.telematik"

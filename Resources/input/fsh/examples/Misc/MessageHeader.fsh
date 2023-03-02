@@ -53,6 +53,23 @@ RuleSet: Practitioner-to-Pharmacy(SR)
 * destination.receiver.display = "Test Apotheke"
 * destination.endpoint = "http://test-apotheke.de"
 
+RuleSet: Pharmacy1-to-Pharmacy2(SR)
+* focus[+] = Reference(ServiceRequest/{SR})
+* sender.identifier = Test-Apotheke-Identifier
+* sender.display = "Test Apotheke"
+* source.endpoint = "http://test-apotheke.de"
+* destination.receiver.identifier = Test-Apotheke2-Identifier
+* destination.receiver.display = "Test Apotheke 2"
+* destination.endpoint = "http://test-apotheke-2.de"
+
+RuleSet: Pharmacy2-to-Pharmacy1(SR)
+* focus[+] = Reference(ServiceRequest/{SR})
+* sender.identifier = Test-Apotheke2-Identifier
+* sender.display = "Test Apotheke 2"
+* source.endpoint = "http://test-apotheke-2.de"
+* destination.receiver.identifier = Test-Apotheke-Identifier
+* destination.receiver.display = "Test Apotheke"
+* destination.endpoint = "http://test-apotheke.de"
 
 /*
 Instance: UC4-Pharmacy-to-Practitioner-MessageHeader
