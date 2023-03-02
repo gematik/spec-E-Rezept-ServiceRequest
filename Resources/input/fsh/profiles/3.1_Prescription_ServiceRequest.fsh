@@ -4,6 +4,7 @@ Id: GEM-PR-ERP-MEDREQ-Prescription-ServiceRequest
 Title: "Rezeptanfrage"
 Description: "ServiceRequest, der genutzt wird um ein Rezept anzufragen"
 * insert Meta (GEM-PR-ERP-MEDREQ-Prescription-ServiceRequest)
+* obeys sr-1 and sr-2
 
 * extension MS
   * ^comment = "Hier kann der E-Rezept Token für die Verarbeitung in einer Apotheke bereit gestellt werden"
@@ -77,13 +78,6 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept anzufragen"
 * performer only Reference($KBV_PR_FOR_Practitioner)
   * ^short = "Arzt, der das Rezept ausstellen soll"
 
-// TODO: Wenn reasonReference dann auch .note
-/*
-Invariant:   freetextorreasontype
-Description: "Choose providing of one of Freetext or Reasontype, but not both or none"
-Expression:  "(Bundle.entry.resource.extension('https://gematik.de/fhir/erpmedreqcom/StructureDefinition/FreeTextEX').exists().not() and Bundle.entry.resource.extension('https://gematik.de/fhir/erpmedreqcom/StructureDefinition/CancellationReasonTypeEX').exists()) or (Bundle.entry.resource.extension('https://gematik.de/fhir/erpmedreqcom/StructureDefinition/FreeTextEX').exists() and Bundle.entry.resource.extension('https://gematik.de/fhir/erpmedreqcom/StructureDefinition/CancellationReasonTypeEX').exists().not())"
-Severity:    #error
-*/
 * reasonCode MS
 * reasonCode from GEM_VS_MEDREQ_MedicationRequest_Reason
   * ^short = "Code, der angibt, warum das Medikament angefragt wird"
@@ -108,5 +102,10 @@ AuslieferndeApotheke 0..1 MS
 
 Invariant: sr-1
 Description: "Wenn der Status auf 'completed' gesetzt ist, muss ein Token vorhanden sein"
-Expression: "(status = 'completed') implies extension('GEM-EX-MEDREQ-EPrescriptionToken').exists()"
+Expression: "(status = 'completed') implies extension('https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-EX-MEDREQ-EPrescriptionToken').exists()"
+Severity: #error
+
+Invariant: sr-2
+Description: "Wenn eine .reasonReference angegeben ist, dann muss auch eine .note existieren"
+Expression: "reasonReference.exists() implies note.exists()"
 Severity: #error

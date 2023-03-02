@@ -45,6 +45,26 @@
   "differential": {
     "element": [
       {
+        "id": "ServiceRequest",
+        "path": "ServiceRequest",
+        "constraint": [
+          {
+            "key": "sr-1",
+            "severity": "error",
+            "human": "Wenn der Status auf 'completed' gesetzt ist, muss ein Token vorhanden sein",
+            "expression": "(status = 'completed') implies extension('https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-EX-MEDREQ-EPrescriptionToken').exists()",
+            "source": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Prescription-ServiceRequest"
+          },
+          {
+            "key": "sr-2",
+            "severity": "error",
+            "human": "Wenn eine .reasonReference angegeben ist, dann muss auch eine .note existieren",
+            "expression": "reasonReference.exists() implies note.exists()",
+            "source": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Prescription-ServiceRequest"
+          }
+        ]
+      },
+      {
         "id": "ServiceRequest.extension",
         "path": "ServiceRequest.extension",
         "comment": "Hier kann der E-Rezept Token für die Verarbeitung in einer Apotheke bereit gestellt werden",
@@ -156,7 +176,7 @@
             "key": "sr-1",
             "severity": "error",
             "human": "Wenn der Status auf 'completed' gesetzt ist, muss ein Token vorhanden sein",
-            "expression": "(status = 'completed') implies extension('GEM-EX-MEDREQ-EPrescriptionToken').exists()",
+            "expression": "(status = 'completed') implies extension('https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-EX-MEDREQ-EPrescriptionToken').exists()",
             "source": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Prescription-ServiceRequest"
           }
         ],
