@@ -114,6 +114,21 @@
         ]
       },
       {
+        "id": "ServiceRequest.identifier:predisId",
+        "path": "ServiceRequest.identifier",
+        "sliceName": "predisId",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-ERP-MEDREQ-PR-PreDisIdentifier"
+            ]
+          }
+        ]
+      },
+      {
         "id": "ServiceRequest.basedOn",
         "path": "ServiceRequest.basedOn",
         "short": "KBV Prescription, die von der Apotheke beliefert werden soll",

@@ -17,8 +17,9 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept zu beliefern"
 * identifier ^slicing.description = "Definiert Identifier, die in einem Vorgang genutzt werden sollen"
 
 * identifier 1..* MS
-* identifier contains requestId 1..1
+* identifier contains requestId 1..1 and predisId 0..1
 * identifier[requestId] only GEM_ERP_MEDREQ_PR_RequestIdentifier
+* identifier[predisId] only GEM_ERP_MEDREQ_PR_PreDisIdentifier
 
 * basedOn 0..1 MS
   * ^short = "KBV Prescription, die von der Apotheke beliefert werden soll"
