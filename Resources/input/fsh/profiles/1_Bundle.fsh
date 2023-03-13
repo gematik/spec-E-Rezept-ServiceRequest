@@ -16,3 +16,18 @@ UC3: Pflegeeinrichtung -> Arzt -> Pflegeeinrichtung (Patient geht selbst zur Apo
 UC4(parenterele Zubereitung): Apotheke -> Arzt -> Apotheke
 UC5 (Apothekenverbund): Apotheke -> Apotheke (E-Rezept mit Secret)
 */
+
+
+/*
+TODO
+Abbruch durch die Apotheke
+
+DispenseRequest wird vom PVS erstellt
+
+UC2:
+* PrescriptionRequest zum Arzt
+* PrescriptionRequest (complete, ohne Token) an Pflegeeinrichtung
+* DispenseRequest (da generiert, active, mit Token) an Apotheke
+* DispenseRequest (active ohne Token) an Pflegeeinrichtung
+* DispenseRequest (complete) an Pflegeeinrichtung
+*/
