@@ -1,0 +1,44 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "GEM-ERP-MEDREQ-PR-PreDisIdentifier",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-ERP-MEDREQ-PR-PreDisIdentifier",
+  "version": "1.0",
+  "name": "GEM_ERP_MEDREQ_PR_PreDisIdentifier",
+  "title": "GEM ERP MEDREQ PreDis Identifier",
+  "status": "draft",
+  "experimental": false,
+  "publisher": "gematik GmbH",
+  "description": "Identifier used to link Prescription and Dispense Request",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "servd",
+      "uri": "http://www.omg.org/spec/ServD/1.0/",
+      "name": "ServD"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "type": "Identifier",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Identifier",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Identifier.system",
+        "path": "Identifier.system",
+        "patternUri": "https://gematik.de/GEM_NS_MEDREQ_PreDisIdentifier"
+      }
+    ]
+  }
+}

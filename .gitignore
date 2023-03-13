@@ -1,3 +1,5 @@
 scripts/downloaded_validation_script.sh
 validation_results/**
 fhirpkg.lock.json
+*.vsix
+*.zip

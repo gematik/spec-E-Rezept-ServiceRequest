@@ -1,0 +1,44 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "GEM-ERP-MEDREQ-PR-RequestIdentifier",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-ERP-MEDREQ-PR-RequestIdentifier",
+  "version": "1.0",
+  "name": "GEM_ERP_MEDREQ_PR_RequestIdentifier",
+  "title": "GEM ERP MEDREQ Request Identifier",
+  "status": "draft",
+  "experimental": false,
+  "publisher": "gematik GmbH",
+  "description": "Identifier used to identify a single ServiceRequest in KIM Rezeptanforderung",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "servd",
+      "uri": "http://www.omg.org/spec/ServD/1.0/",
+      "name": "ServD"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "type": "Identifier",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Identifier",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Identifier.system",
+        "path": "Identifier.system",
+        "fixedUri": "https://gematik.de/GEM_NS_MEDREQ_RequestId"
+      }
+    ]
+  }
+}

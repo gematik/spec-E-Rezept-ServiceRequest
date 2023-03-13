@@ -1,0 +1,107 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "GEM-PR-MEDREQ-Organization",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-Organization",
+  "version": "1.0",
+  "name": "GEM_PR_MEDREQ_Organization",
+  "title": "GEM ERP MEDREQ Organization",
+  "status": "draft",
+  "experimental": false,
+  "publisher": "gematik GmbH",
+  "description": "Organization in MEDREQ Context",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "servd",
+      "uri": "http://www.omg.org/spec/ServD/1.0/",
+      "name": "ServD"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Organization",
+  "baseDefinition": "https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Organization.identifier",
+        "path": "Organization.identifier",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.identifier:KIMAdresse",
+        "path": "Organization.identifier",
+        "sliceName": "KIMAdresse",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "https://gematik.de/fhir/atf/StructureDefinition/GEM-PR-MEDREQ-KIM-Adresse"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.identifier:KIMAdresse.type",
+        "path": "Organization.identifier.type",
+        "min": 1,
+        "fixedCodeableConcept": {
+          "coding": [
+            {
+              "code": "kim-2.0",
+              "system": "https://gematik.de/fhir/directory/CodeSystem/EndpointDirectoryConnectionType"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Organization.identifier:TIMAdresse",
+        "path": "Organization.identifier",
+        "sliceName": "TIMAdresse",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "https://gematik.de/fhir/atf/StructureDefinition/GEM-PR-MEDREQ-TIM-Adresse"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Organization.identifier:TIMAdresse.type",
+        "path": "Organization.identifier.type",
+        "min": 1,
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "tim",
+              "system": "https://gematik.de/fhir/directory/CodeSystem/EndpointDirectoryConnectionType"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

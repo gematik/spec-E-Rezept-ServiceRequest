@@ -1,0 +1,52 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "GEM-PR-MEDREQ-EPrescriptionTokenIdentifier",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-EPrescriptionTokenIdentifier",
+  "version": "1.0",
+  "name": "GEM_PR_MEDREQ_EPrescriptionTokenIdentifier",
+  "title": "GEM PR MEDREQ E Prescription Token Identifier",
+  "status": "draft",
+  "experimental": false,
+  "publisher": "gematik GmbH",
+  "description": "Identifier für den E-Rezept Token",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "servd",
+      "uri": "http://www.omg.org/spec/ServD/1.0/",
+      "name": "ServD"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "type": "Identifier",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Identifier",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Identifier.system",
+        "path": "Identifier.system",
+        "min": 1,
+        "fixedUri": "https://gematik.de/fhir/erp/sid/GEM_NS_EPrescriptionToken",
+        "mustSupport": true
+      },
+      {
+        "id": "Identifier.value",
+        "path": "Identifier.value",
+        "min": 1,
+        "mustSupport": true
+      }
+    ]
+  }
+}
