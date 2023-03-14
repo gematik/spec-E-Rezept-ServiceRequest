@@ -16,7 +16,23 @@ Eine Pflegeeinrichtung benötigt eine Verordnung für ein Medikament. Diese frag
 
 Der Arzt übermittelt diese Informationen in Form des E-Rezept-Tokens (siehe [gemSpec_DM_eRp](https://fachportal.gematik.de/dokumentensuche?tx_gemcharacteristics_productlist%5BformIdentifier%5D=form-2849&tx_gemcharacteristics_productlist%5Btype%5D=ProdT&tx_gemcharacteristics_productlist%5Bproducttype%5D=107&tx_gemcharacteristics_productlist%5Bproducttypeversion%5D=75#c2849)) an die Pflegeeinrichtung ([3]).
 
-![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/gematik/spec-erezept-medicationrequest-communication/feature/implementation-guide/ImplementationGuide/puml/UC1_1.puml)
+```plantuml
+@startuml
+autonumber "<b>[0]"
+participant Pflegeeinrichtung as PE #LightBlue
+participant Arzt as A #LightGreen
+participant Fachdienst as FD #LightSalmon
+
+activate PE
+PE -> A++: <b>Prescription_ServiceRequest \n.status = active \n.basedOn = MEDREQ_Medication_Request
+A -> FD++: E-Rezept einstellen
+FD -> A--: Task(PrescriptionID, AccessCode)
+A -> PE--: <b>Prescription_ServiceRequest \n.status = completed \n.basedOn = KBV_Prescription \n.extension:EPrescriptionToken = E-Rezept Token
+PE -> PE: Speichern(E-Rezept Token)
+@enduml
+```
+
+![Anfrage zur Verordnung an den Arzt](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/gematik/spec-erezept-medicationrequest-communication/feature/implementation-guide/ImplementationGuide/puml/UC1_1.puml)
 
 ### Anfragen einer Abgabe durch eine Apotheke
 
