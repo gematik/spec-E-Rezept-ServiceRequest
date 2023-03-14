@@ -65,3 +65,16 @@ Folgende ID's zur Zuordnung sind zu verwenden.
 |ServiceRequest.requisition | VorgangsID, die sich über mehrere ServiceRequests erstreckt. Hier ist bei einem Vorgang, in dem mehrere Verordnungen angefragt werden allen ServiceRequests die selbe ID zu vergeben. |
 
 Anwendungsfälle können weitere Vorgaben zu ID's unter ServiceRequest.identifier enthalten. Diese sind in der entsprechenden Beschreibung zu finden.
+
+## Anwendungsfälle
+
+Mit den in diesem Projekt bereitgestellten Profilen sollen folgende Anwendungsfälle abgebildet werden können: 
+
+* {{pagelink:usecase_rezeptanforderung}}
+  * UC1: Verordnungs- und Dispensierungsanfrage durch den Pflegedienst
+  * UC2: Dispensierungsanfrage durch den Arzt
+  * UC3: Verordnungsanfrage durch den Pflegedienst, Patient löst Rezept selbst ein
+* {{pagelink:usecase_parenterale_zubereitung}}
+  * UC4: Parenterale Zubereitung
+* {{pagelink:usecase_forward_dispense}}
+  * UC5: Weitergabe eines Rezeptes zwischen Apotheken
