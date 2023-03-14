@@ -1,0 +1,54 @@
+@startuml
+
+
+skinparam maxMessageSize 300
+
+title Ablauf für Rezeptabgabe parenteraler Zubereitungen (Anforderungsquelle: Zytostatika-Programm)
+hide footbox
+autonumber
+
+box "Apotheke" #White
+    participant "Zytostatika-Programm" as Zytoprogramm
+    participant "Taxierungssoftware" as Taxierungssoftware
+end box
+
+box "LEI des Verordnenden" #White
+    participant "Primärsystem" as PS
+    actor "Verordnender \nLeistungserbringer" as Arzt
+end box
+
+legend bottom right
+    __Legende__
+    |<#PaleGreen> Ergebnis: Zubereitungs-/Medikamentabgabe|
+    |<#LightPink> Ergebnis: keine Zubereitungs-/Medikamentabgabe|
+    **lfd.Nr.** //Informationseinheit als Nachricht übermittelt//
+    **lfd.Nr.** **sonstige Aktivität**
+endlegend
+
+?-> Zytoprogramm: Start der \nZubereitung
+
+Zytoprogramm ->> Taxierungssoftware: Zubereitungsdaten
+
+Zytoprogramm ->> PS: //Rezeptanforderung//
+
+break #LightPink Stornierung notwendig
+    Zytoprogramm ->> PS: //Rezeptanforderung_Storno//
+    PS ->x PS: **Rezeptanforderung wird verworfen**
+    PS ->> Zytoprogramm: //Stornierungsquittung//
+end
+
+PS ->> PS: **Arbeitslisteneintrag erzeugen und vorhalten**
+
+PS ->> Arzt: **Rezeptanforderung präsentieren**
+return :Rezeptzustimmung ODER :Rezeptablehnung
+
+alt #PaleGreen Arzt stimmt Rezeptanforderung zu
+    ref over Arzt, PS #lightyellow
+        E-Rezept einstellen
+    end ref
+    PS ->> Zytoprogramm: //Rezeptanforderung_Rezeptuebermittlung//
+else #LightPink Arzt lehnt Rezeptanforderung ab
+    PS ->> Zytoprogramm: //Rezeptanforderung_Ablehnung//
+end
+
+@enduml

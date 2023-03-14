@@ -1,0 +1,158 @@
+@startuml
+
+scale max 4096 width
+
+skinparam rectangle {
+    roundCorner<<Concept>> 54
+}
+
+rectangle "Mapping: Rezeptanforderungen (fachlich)" <<Concept>> {
+    rectangle "Rezeptanforderung" as Rezeptanforderung #BUSINESS
+    note left of Rezeptanforderung
+        Anforderung einer Pflegeeinrichtung
+        oder einer Apotheke an eine verordnende
+        LEI mit der Bitte um Ausstellung
+        eines Rezepts
+        
+        __Rahmenbedingungen__
+        - nicht alle Informationen liegen in der Quelle Primärsystem zum
+          Zeitpunkt der Erstellung dieses Objektes vor
+
+        __KIM__
+        **X-KIM-Dienstkennung="E-Rezept;Rezeptanforderung;V1.0"**
+    end note 
+}
+
+
+
+rectangle "Mapping: Rezeptanforderungen Mappings (FHIR)" <<Concept>> {
+    rectangle "ungeprüft" {
+        rectangle "MedicationRequest.requester==Practitioner" as Practitioner <<Candidate>> #APPLICATION
+        rectangle "KBV_PR_FOR_Practitioner" as KBV_PR_FOR_Practitioner <<Candidate>> #APPLICATION
+        rectangle "KBV_PR_FOR_Patient" as KBV_PR_FOR_Patient <<Candidate>> #APPLICATION
+        rectangle "MedicationRequest.performer==Organization" as Organization <<Candidate>> #APPLICATION
+        rectangle "MedicationRequest \n(https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/81506)" as MedicationRequest <<Candidate>> #APPLICATION
+        rectangle "MedicationRequest.priority" as MedicationRequest_Priority <<Candidate>> #APPLICATION
+        rectangle "MedicationRequest.reasonCode" as MedicationRequest_Reasoncode <<Candidate>> #APPLICATION
+        rectangle "MedicationRequest.reasonReference" as MedicationRequest_Reasonreference <<Candidate>> #APPLICATION
+        rectangle "MedicationRequest.identifier" as MedicationRequest_Identifier <<Candidate>> #APPLICATION
+        rectangle "Medication.identifier" as Medication_Identifier <<Candidate>> #APPLICATION
+        rectangle "Medication.amount" as Medication_Amount <<Candidate>> #APPLICATION
+        rectangle "MedicationRequest.dosageInstruction" as MedicationRequest_dosage <<Candidate>> #APPLICATION
+        rectangle "MedicationRequest.basedOn" as MedicationRequest_basedon <<Candidate>> #APPLICATION
+    }
+}
+
+rectangle "geprüft und verworfen" {
+    rectangle "--KBV_PR_ERP_Bundle-- \n --(https://simplifier.net/erezept/kbvprerpbundle)--" as KBV_PR_ERP_Bundle #APPLICATION
+    rectangle "--KBV_PR_ERP_Prescription-- \n --(https://simplifier.net/erezept/kbvprerpbundle)--" as KBV_PR_ERP_Prescription #APPLICATION
+}
+
+
+card "Valider FHIR-Verordnungsdatensatz <font color=red>aka. Verordnungsdatensatz/Medicationrequest</font>" as FHIR_Verordnungsdatensatz {
+    rectangle "<font color=red>Vorgangsnummer</font>" as Vorgangsnummer
+    rectangle "<font color=red>Bezug auf altes Rezept</font>" as Vorrezept
+    rectangle "Präparat" as Praeparat
+    rectangle Dosierung
+    rectangle "Packungsgröße" as Packungsgroesse
+    card Patienteninformationen {
+        rectangle KVNR
+        rectangle "Name des Patienten" as Patientenname
+        rectangle Geburtstag
+    }
+    card "Arztdaten <font color=red>aka. Adressat der Rezeptanforderung</font>" as Arztinformationen {
+        rectangle "Arztinfo_1 [opt]" as Arztinfo_1 #LightSlateGrey
+        rectangle "Arztinfo_2 [opt]" as Arztinfo_2 #LightSlateGrey
+    }
+    note bottom of Arztinformationen
+        Zweck:
+        - richtiges Routing zum
+        Verordnenden im PVS
+        - Rechercheunterstützung durch
+        möglichst viele Infos
+        
+        <font color=red>Fragestellung:
+        <font color=red>- Anhand welcher Infos lässt sich
+        <font color=red>  ein Arzt eindeutig identifizieren
+    end note
+}
+
+rectangle "Begründung für Bedarf <font color=red>aka. Grund des Bedarfes</font>" as Bedarfsbegruendung
+note bottom of Bedarfsbegruendung
+    - nach Dosierung (Dauermedikation)
+    - nach Vitalwertmessung, z.B. Blutzucker
+    - nach Bedarfsorientierung, z.B. aufgrund von Schmerzen
+    - zusätzliche Freitextoption
+end note
+
+rectangle "Priorität <font color=red>aka. Dringlichkeit</font>" as Prioritaet
+note bottom of Prioritaet
+    Ist eine Standardanforderung,
+    nicht zu hinterfragen
+    ... als einfaches Flag möglich
+end note
+
+card "restliche Reichweite" as Restreichweite {
+    rectangle "Anzahl Resteinheiten [opt]" as Anzahl_Resteinheiten #LightSlateGrey
+    note bottom of Anzahl_Resteinheiten
+        Beauskunftet, wieviel ist aus der
+        aktuellen (Groß-)packung ganz aktuell
+        bzw. tagesaktuell noch übrig ist
+    end note
+
+    rectangle "Restreichweitendatum [opt]" as Restreichweitendatum #LightSlateGrey
+    note bottom of Restreichweitendatum
+        Beauskunftet die Überlegung, wielange die
+        aktuelle Verordnung noch reichen müsste
+    end note
+
+}
+note bottom of Restreichweite
+    - Wir können können nicht davon ausgehen,
+      dass jedes PS diese Infos berechnen kann
+      und daher existiert der explizite Wunsch,
+      diese mitzuliefern in der Nachricht
+    - Dient dem Arzt, die Notwendigkeit der
+      Rezeptausstellung einzuschätzen
+end note
+
+card "Rezeptempfänger <font color=red>aka. Adressat der Rezeptübermittlung/Selbstabholer</font>" as Rezeptempfaenger {
+    map Empfaengertyp {
+        Empfaengertyp => Pflegeheim|Pflegedienst|Apotheke|Patient<font color=red>|Selbstabholer</font>
+    }
+    note bottom of Empfaengertyp
+        Genau ein Wert aus dieser Liste
+    end note
+
+    rectangle "<font color=red>Telematik-ID" as Telematik_ID
+    note bottom of Telematik_ID
+        - eindeutige ID für die Auflösung des LE
+          oder dessen LEI über den VZD
+        - Substitut für "KIM-Adresse"
+    end note
+}
+
+Rezeptanforderung *-- FHIR_Verordnungsdatensatz
+Rezeptanforderung *-- Bedarfsbegruendung
+Rezeptanforderung o-- Prioritaet
+Rezeptanforderung o-- Restreichweite
+Rezeptanforderung *-- Rezeptempfaenger
+
+KBV_PR_ERP_Bundle -[#LightGray]-> FHIR_Verordnungsdatensatz: <font color=LightGray>does not match</font>
+KBV_PR_ERP_Prescription -[#LightGray]-> FHIR_Verordnungsdatensatz: <font color=LightGray>does not match</font>
+
+MedicationRequest_Priority -[#Red]-> Prioritaet: <font color=red>possibly matches</font>
+MedicationRequest_Reasoncode -[#Red]-> Bedarfsbegruendung: <font color=red>possibly matches
+MedicationRequest_Reasonreference -[#Red]-> Bedarfsbegruendung: <font color=red>possibly matches
+MedicationRequest_Identifier -[#Red]-> Vorgangsnummer: <font color=red>possibly matches
+MedicationRequest -[#Red]-> FHIR_Verordnungsdatensatz: <font color=red>possibly matches</font>
+Medication_Identifier -[#Red]-> Praeparat: <font color=red>possibly matches</font>
+Medication_Amount -[#Red]-> Packungsgroesse: <font color=red>possibly matches</font>
+MedicationRequest_dosage -[#Red]-> Dosierung: <font color=red>possibly matches</font>
+MedicationRequest_basedon -[#Red]-> Vorrezept: <font color=red>possibly matches</font>
+KBV_PR_FOR_Practitioner -[#Red]-> Arztinformationen: <font color=red>possibly matches</font>
+KBV_PR_FOR_Patient -[#Red]-> Patienteninformationen: <font color=red>possibly matches</font>
+Practitioner -[#Red]-> Arztinformationen: <font color=red>possibly matches</font>
+Organization -[#Red]-> Rezeptempfaenger: <font color=red>possibly matches</font>
+
+@enduml

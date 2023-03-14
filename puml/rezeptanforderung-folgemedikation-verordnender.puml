@@ -1,0 +1,117 @@
+@startuml
+
+skinparam sequence {
+    ArrowColor black
+    ActorBorderColor black
+    LifeLineBorderColor darkgray
+    LifeLineBackgroundColor #ffffc0
+
+    ParticipantBorderColor black
+    ParticipantBackgroundColor #ffffc0
+    ParticipantFontName Arial
+    ParticipantFontSize 14
+    ParticipantFontColor black
+
+    ActorBackgroundColor #ffffc0
+    ActorFontColor #303030
+    ActorFontSize 14
+    ActorFontName Arial
+    
+    BoxBorderColor gray
+}
+
+skinparam maxMessageSize 250
+title Rezeptanforderungen bei Folgemedikationen (z.B. Dauermedikation): (teil-)automatisierte Verarbeitung beim Verordnenden
+hide footbox
+autonumber
+
+actor "Mitarbeiter der \nLeistungserbringerinstitution" as MA_LEI
+actor "Verordnender Leistungserbringer" as Arzt
+participant "Primärsystem verordnender \nLeistungserbringerinstitution" as PS_Arzt
+participant "E-Rezept Fachdienst" as erpFD #APPLICATION
+participant "Verzeichnisdienst" as VZD #TECHNOLOGY
+participant "KIM \nClientmodul" as Kim_cm #TECHNOLOGY
+participant "KIM \nFachdienst" as Kim_fd #TECHNOLOGY
+
+group #LightYellow KIM Standardkommunikation
+    ref over Kim_cm, Kim_fd
+        KIM-Mail empfangen
+    end ref
+end 
+
+
+PS_Arzt -> Kim_cm++: Mails abrufen und X-KIM-Dienstkennung-Information auswerten()
+activate PS_Arzt
+return :Mails
+
+alt X-KIM-Dienstkennung="E-Rezept;Rezeptanforderung;V1.0"
+    PS_Arzt -> Kim_cm++: KIM-Mail extrahieren(KIM-Mail)
+    Kim_cm -> Kim_cm: MIME-Attachment dekodieren(KIM-Mail)
+    return :FHIR-Bundle "GEM_PR_ERP_MEDREQ_RequestBundle", <font color=red>:Nur-Text-Zusammenfassung</font>, :Absender
+
+
+    PS_Arzt -> PS_Arzt++: Rezeptanforderung in Zieldatenmodell transformieren(FHIR-Bundle "GEM_PR_ERP_MEDREQ_RequestBundle")
+    
+    
+    alt Rezept bestätigen
+        PS_Arzt -> Arzt++: Rezeptanforderung präsentieren(Rezeptanforderung)
+        return :Verordnung
+        
+        PS_Arzt -> erpFD++: E-Rezept erzeugen und einstellen(Verordnung)
+        ref over PS_Arzt, erpFD
+            UC E-Rezept bereitstellen
+        end ref
+        return :Task
+        PS_Arzt -> PS_Arzt: GEM_PR_ERP_MEDREQ_ResponseBundle generieren(<font color=red>Task.Verordnung</font>)
+
+    else Rezept ändern
+        PS_Arzt -> Arzt++:Rezeptanforderung präsentieren(Rezeptanforderung)
+        Arzt -> Arzt: Rezept ändern(Rezeptanforderung)
+        return :geänderte Verordnung
+
+        PS_Arzt -> erpFD++: E-Rezept erzeugen und einstellen(geänderte Verordnung)
+        ref over PS_Arzt, erpFD
+            UC E-Rezept bereitstellen
+        end ref
+        return :Task
+
+        PS_Arzt -> PS_Arzt: GEM_PR_ERP_MEDREQ_ResponseBundle generieren(<font color=red>Task.Verordnung</font>)
+
+    else Rezept ablehnen
+        PS_Arzt -> Arzt++:Rezeptanforderung präsentieren(Rezeptanforderung)
+        Arzt -> Arzt: Rezept ablehnen(Begründung)
+        return :Ablehnung
+
+        PS_Arzt -> PS_Arzt: GEM_PR_ERP_MEDREQ_CancellationBundle generieren(Ablehnung)
+
+    end
+
+    alt KIM-Adresse des Empfängers ermitteln
+        PS_Arzt -> VZD++: KIM-Adresse abfragen(Telematik-ID des Empfängers <font color=red>ODER Suchkriterien des Empfängers</font>)
+        return :gültige KIM-Adresse
+    else KIM-Adresse des Empfängers anhand Vorgängerverordnung abfragen
+        PS_Arzt -> VZD++: KIM-Adresse abfragen(Versicherter.<font color=red>Verordnung_Dispensierung(LATEST). Strukturierter_Verordnungsdatensatz.RequestingOrganization.identifier=Telematik-ID</font>)
+        return :gültige KIM-Adresse
+    else KIM-Adresse aus Bestandsdaten des PS übernehmen
+        PS_Arzt -> PS_Arzt: KIM-Adresse des Empfängers lokal ermitteln() ODER KIM-Adresse aus Anfragemail übernehmen(Absender)
+        return :gültige KIM-Adresse
+    end
+
+
+    alt TODO Fallunterscheidung
+    PS_Arzt -> PS_Arzt++: Mail-Body generieren(<font color=red>Nur-Text-Zusammenfassung</font>)
+    return :Mail-Body
+    PS_Arzt -> PS_Arzt++: Mail-MIME-Attachment generieren(<font color=red>ZUTREFFENDES_BUNDLE</font>)
+    return :Mail-Attachment
+
+    PS_Arzt -> PS_Arzt++: Mail generieren(Mail-Body, Mail-Attachment, gültige KIM-Adresse, X-KIM-Header-Information:=X-KIM-Dienstkennung="E-Rezept;Rezeptuebermittlung;V1.0")
+    return :KIM-Mail
+
+    PS_Arzt -> Kim_cm++: KIM-Mail senden mit <font color=red>ZUTREFFENDES_BUNDLE</font> als Payload(KIM-Mail)
+    end
+
+
+end
+
+
+@enduml

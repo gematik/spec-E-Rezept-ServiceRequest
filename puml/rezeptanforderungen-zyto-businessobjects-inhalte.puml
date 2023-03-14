@@ -1,0 +1,74 @@
+@startuml
+
+'top to bottom direction
+
+'skinparam linetype ortho
+hide circle
+hide methods
+
+class "Rezeptanforderung" as Rezeptanforderung #BUSINESS {
+    ..administrative Informationen..
+    #Vorgangs_ID
+    #Fall_ID
+    #Patienten_ID
+    #Prioritaet
+    #Adressat_der_Rezeptanforderung
+    #Adressat_der_Rezeptuebermittlung
+    #Patienteninformationen
+    #Vorheriges_Rezept
+    ..medizinische Informationen..
+    #Praeparat / Zubereitung
+    #Bedarfsbegruendung
+    ..ergänzende Informationen..
+    #Freitext
+}
+
+class "Rezeptanforderung_Storno" as Rezeptanforderung_Storno #BUSINESS {
+    ..administrative Informationen..
+    #Vorgangs_ID
+    #Fall_ID
+    #Patienten_ID
+    #Begruendung_der_Stornierung
+}
+
+class "Rezeptanforderung_Rezeptuebermittlung" as Rezeptanforderung_Rezeptuebermittlung #BUSINESS {
+    ..administrative Informationen..
+    #Vorgangs_ID
+    #Fall_ID
+    #Patienten_ID
+    #ERezept_Access_Code
+    #ERezept_Task_ID
+    ..medizinische Informationen..
+    #Strukturierter_Verordnungsdatensatz
+    #Hinweise_fuer_Empfaenger
+    ..ergänzende Informationen..
+    #Unstrukturierter_Dateianhang
+    #Freitext
+}
+
+class "Rezeptanforderung_Ablehnung" as Rezeptanforderung_Ablehnung #BUSINESS {
+    ..administrative Informationen..
+    #Vorgangs_ID
+    #Fall_ID
+    #Patienten_ID
+    ..medizinische Informationen..
+    #Ablehnungsgrund
+    ..ergänzende Informationen..
+    #Freitext
+}
+
+class "Stornierungsquittung" as Stornierungsquittung #BUSINESS {
+    ..administrative Informationen..
+    #Vorgangs_ID
+    #Fall_ID
+    #Patienten_ID
+    #Quittungstyp
+}
+
+
+Rezeptanforderung_Storno -up- Rezeptanforderung: revidiert >
+Rezeptanforderung_Ablehnung -up-  Rezeptanforderung: beantwortet >
+Rezeptanforderung_Rezeptuebermittlung -up- Rezeptanforderung: beantwortet >
+Stornierungsquittung -- Rezeptanforderung_Storno: beauskunftet >
+
+@enduml
