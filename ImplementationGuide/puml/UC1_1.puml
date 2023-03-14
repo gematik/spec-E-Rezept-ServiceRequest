@@ -1,0 +1,13 @@
+@startuml
+autonumber "<b>[0]"
+participant Pflegeeinrichtung as PE #LightBlue
+participant Arzt as A #LightGreen
+participant Fachdienst as FD #LightSalmon
+
+activate PE
+PE -> A++: <b>Prescription_ServiceRequest \n.status = active \n.basedOn = MEDREQ_Medication_Request
+A -> FD++: E-Rezept einstellen
+FD -> A--: Task(PrescriptionID, AccessCode)
+A -> PE--: <b>Prescription_ServiceRequest \n.status = completed \n.basedOn = KBV_Prescription \n.extension:EPrescriptionToken = E-Rezept Token
+PE -> PE: Speichern(E-Rezept Token)
+@enduml
