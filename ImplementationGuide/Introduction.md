@@ -38,6 +38,16 @@ ServiceRequest.basedOn referenziert die angefragte Medikation. Für den Fall, da
 
 Ein ServiceRequest soll dabei immer genau eine Verordnung beinhalten, bzw. referenzieren. Für jedes einzelne Präparat ist also ein ServiceRequest zu erstellen. Daher ist die Kardinalität für ServiceRequest.basedOn ..1.
 
+### Status der Anfrage
+Ein ServiceRequest spiegelt neben den fachlichen Informationen auch den Status des Vorgangs wieder. Über das Feld .status kann dargestellt werden, in welchem Zustand sich der Vorgang befindet.
+|Status|Bedeutung|
+|---|---|
+|active|Anfrage ist aktiv und muss noch bearbeitet werden|
+|revoked|Anfrage wurde von der zu bearbeitenden Partei abgewiesen|
+|completed|Anfrage wurde von der zu bearbeitenden Partei erfüllt|
+|entered-in-error|Anfrage wurde von der anfragenden Partei storniert|
+
+
 ## Allgemeine Festlegungen
 
 ### Anzahl von E-Rezepten pro Nachricht
