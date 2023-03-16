@@ -76,7 +76,7 @@
           {
             "code": "Extension",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-EX-MEDREQ-Secret"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/secret-ex"
             ]
           }
         ],
