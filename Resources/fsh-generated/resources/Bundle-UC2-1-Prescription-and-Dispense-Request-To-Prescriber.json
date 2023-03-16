@@ -98,7 +98,7 @@
             "coding": [
               {
                 "code": "send-to-pharmacy",
-                "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-Prescription-Fullfillment-Type"
+                "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/prescription-fullfillment-type-cs"
               }
             ]
           }
