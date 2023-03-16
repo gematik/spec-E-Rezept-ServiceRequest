@@ -5,4 +5,4 @@ Title: "Nachrichten Header"
 Description: "Header, welcher Informationen über Absender und Adressat enthält"
 * insert Meta (message-header-request-header)
 * focus MS
-* focus only Reference(GEM_PR_ERP_MEDREQ_Prescription_ServiceRequest or GEM_PR_ERP_MEDREQ_Dispense_ServiceRequest)
+* focus only Reference(ServiceRequestPrescriptionRequest or GEM_PR_ERP_MEDREQ_Dispense_ServiceRequest)

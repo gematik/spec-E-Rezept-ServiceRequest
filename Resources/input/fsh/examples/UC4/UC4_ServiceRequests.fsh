@@ -1,6 +1,6 @@
 // Prescription Service Requests
 Instance: UC4-Initial-Prescription-Request
-InstanceOf: GEM_PR_ERP_MEDREQ_Prescription_ServiceRequest
+InstanceOf: ServiceRequestPrescriptionRequest
 Usage: #inline
 Title: "Initial Prescription Request"
 Description: "This ServiceRequest is sent initially to the prescribing practitioner"
@@ -21,7 +21,7 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * performer.identifier = Hans-Topp-Glücklich-Identifier
 
 Instance: UC4-Response-Prescription-Request
-InstanceOf: GEM_PR_ERP_MEDREQ_Prescription_ServiceRequest
+InstanceOf: ServiceRequestPrescriptionRequest
 Usage: #inline
 Title: "Fullfilled Prescription Request"
 Description: "ServiceRequest that is returned to the requester"

@@ -62,7 +62,7 @@
         "id": "UC3-Response-Prescription-Request",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Prescription-ServiceRequest"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/service-request-prescription-request"
           ]
         },
         "intent": "order",

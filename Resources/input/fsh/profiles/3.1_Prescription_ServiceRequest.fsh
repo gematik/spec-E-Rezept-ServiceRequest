@@ -1,9 +1,9 @@
-Profile: GEM_PR_ERP_MEDREQ_Prescription_ServiceRequest
+Profile: ServiceRequestPrescriptionRequest
 Parent: ServiceRequest
-Id: GEM-PR-ERP-MEDREQ-Prescription-ServiceRequest
-Title: "Rezeptanfrage"
+Id: service-request-prescription-request
+Title: "Anfrage zum Ausstellen einer Verordnung"
 Description: "ServiceRequest, der genutzt wird um ein Rezept anzufragen"
-* insert Meta (GEM-PR-ERP-MEDREQ-Prescription-ServiceRequest)
+* insert Meta (service-request-prescription-request)
 * obeys sr-1 and sr-2
 
 * extension MS
@@ -27,7 +27,7 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept anzufragen"
 * basedOn only Reference(GEM_PR_ERP_MEDREQ_MedicationRequest or $KBV_PR_ERP_Prescription)
 
 * replaces 0..1 MS
-* replaces only Reference(GEM_PR_ERP_MEDREQ_Prescription_ServiceRequest)
+* replaces only Reference(ServiceRequestPrescriptionRequest)
   * ^short = "Angabe welcher ServiceRequest ersetzt werden soll"
   * ^comment = "Nur vom Requester zu nutzen, um anzugeben welche Anfrage storniert wurde"
 

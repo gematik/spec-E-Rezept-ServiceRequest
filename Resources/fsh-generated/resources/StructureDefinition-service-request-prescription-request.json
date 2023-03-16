@@ -1,10 +1,10 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "GEM-PR-ERP-MEDREQ-Prescription-ServiceRequest",
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Prescription-ServiceRequest",
+  "id": "service-request-prescription-request",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/service-request-prescription-request",
   "version": "1.0",
-  "name": "GEM_PR_ERP_MEDREQ_Prescription_ServiceRequest",
-  "title": "Rezeptanfrage",
+  "name": "ServiceRequestPrescriptionRequest",
+  "title": "Anfrage zum Ausstellen einer Verordnung",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
@@ -53,14 +53,14 @@
             "severity": "error",
             "human": "Wenn der Status auf 'completed' gesetzt ist, muss ein Token vorhanden sein",
             "expression": "(status = 'completed') implies extension('https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-EX-MEDREQ-EPrescriptionToken').exists()",
-            "source": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Prescription-ServiceRequest"
+            "source": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/service-request-prescription-request"
           },
           {
             "key": "sr-2",
             "severity": "error",
             "human": "Wenn eine .reasonReference angegeben ist, dann muss auch eine .note existieren",
             "expression": "reasonReference.exists() implies note.exists()",
-            "source": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Prescription-ServiceRequest"
+            "source": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/service-request-prescription-request"
           }
         ]
       },
@@ -160,7 +160,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Prescription-ServiceRequest"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/service-request-prescription-request"
             ]
           }
         ],
@@ -192,7 +192,7 @@
             "severity": "error",
             "human": "Wenn der Status auf 'completed' gesetzt ist, muss ein Token vorhanden sein",
             "expression": "(status = 'completed') implies extension('https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-EX-MEDREQ-EPrescriptionToken').exists()",
-            "source": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Prescription-ServiceRequest"
+            "source": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/service-request-prescription-request"
           }
         ],
         "mustSupport": true,

@@ -27,7 +27,7 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept zu beliefern"
 * basedOn only Reference($KBV_PR_ERP_Prescription)
 
 * replaces 0..1 MS
-* replaces only Reference(GEM_PR_ERP_MEDREQ_Prescription_ServiceRequest)
+* replaces only Reference(ServiceRequestPrescriptionRequest)
   * ^short = "Angabe welcher ServiceRequest ersetzt werden soll"
   * ^comment = "Nur vom Requester zu nutzen, um anzugeben welche Anfrage storniert wurde"
 
