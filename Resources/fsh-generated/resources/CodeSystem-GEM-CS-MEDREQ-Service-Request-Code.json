@@ -16,13 +16,9 @@
     {
       "code": "dispense-request",
       "display": "Anfrage für die Belieferung eines Rezepts"
-    },
-    {
-      "code": "parenteral-prescription-request",
-      "display": "Anfrage für Ausstellung eines Rezepts für parenterale Zubereitungen"
     }
   ],
   "experimental": false,
   "publisher": "gematik GmbH",
-  "count": 3
+  "count": 2
 }

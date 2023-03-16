@@ -6,4 +6,3 @@ Description: "Gibt an um welche Art von ServiceRequest es sich handelt und dient
 
 * #prescription-request "Anfrage für ein Rezept"
 * #dispense-request "Anfrage für die Belieferung eines Rezepts"
-* #parenteral-prescription-request "Anfrage für Ausstellung eines Rezepts für parenterale Zubereitungen"
