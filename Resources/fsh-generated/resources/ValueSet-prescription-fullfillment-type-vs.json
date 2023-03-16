@@ -1,12 +1,12 @@
 {
   "resourceType": "ValueSet",
   "status": "draft",
-  "name": "GEM_VS_MEDREQ_Prescription_Fullfillment_Type",
-  "id": "GEM-VS-MEDREQ-Prescription-Fullfillment-Type",
+  "name": "PrescriptionFullfillmentTypeVS",
+  "id": "prescription-fullfillment-type-vs",
   "title": "Zustelltyp der Rezeptanforderung (VS)",
   "description": "Wird im Prescription_ServiceRequest genutzt um anzugeben wie mit dem Rezept weiter verfahren werden soll",
   "version": "1.0",
-  "url": "https://gematik.de/fhir/erpmedreqcom/ValueSet/GEM-VS-MEDREQ-Prescription-Fullfillment-Type",
+  "url": "https://gematik.de/fhir/erpmedreqcom/ValueSet/prescription-fullfillment-type-vs",
   "experimental": false,
   "publisher": "gematik GmbH",
   "compose": {

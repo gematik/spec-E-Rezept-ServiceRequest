@@ -249,7 +249,7 @@
         "mustSupport": true,
         "binding": {
           "strength": "required",
-          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/GEM-VS-MEDREQ-Prescription-Fullfillment-Type"
+          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/prescription-fullfillment-type-vs"
         }
       },
       {

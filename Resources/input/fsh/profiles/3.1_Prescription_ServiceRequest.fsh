@@ -58,7 +58,7 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept anzufragen"
 
 * orderDetail 1..1 MS
 * orderDetail.coding 1..1 MS
-* orderDetail.coding from GEM_VS_MEDREQ_Prescription_Fullfillment_Type
+* orderDetail.coding from PrescriptionFullfillmentTypeVS
   * ^short = "Gibt an wie die Rezeptanfrage erfüllt werden soll."
   * ^comment = "Wenn das Rezept an eine Apotheke geht, muss ein entsprechender ServiceRequest im Bundle enthalten sein."
 
