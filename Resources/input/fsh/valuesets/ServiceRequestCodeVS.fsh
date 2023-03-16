@@ -1,4 +1,4 @@
-ValueSet: GEM_VS_MEDREQ_Service_Request_Code
+ValueSet: ServiceRequestCodeVS
 Id: GEM-VS-MEDREQ-Service-Request-Code
 Title: "Art des ServiceRequests (CS)"
 Description: "Gibt an um welche Art von ServiceRequest es sich handelt und dient so der Identifizierung von ServiceRequests"
