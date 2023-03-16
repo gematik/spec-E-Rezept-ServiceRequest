@@ -73,7 +73,7 @@ RuleSet: Pharmacy2-to-Pharmacy1(SR)
 
 /*
 Instance: UC4-Pharmacy-to-Practitioner-MessageHeader
-InstanceOf: GEM_PR_MEDREQ_MessageHeader
+InstanceOf: MessageHeaderRequestHeader
 Usage: #inline
 Title: "Pharmacy-to-Practitioner-MessageHeader"
 Description: "Message Header from Pharmacy to Practitioner"

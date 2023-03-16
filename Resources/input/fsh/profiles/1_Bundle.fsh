@@ -4,7 +4,7 @@ Id: bundle-message-container
 Title: "Nachichten Container"
 Description: "Bundle, was alle Ressourcen einer Nachricht enthält"
 * insert Meta (bundle-message-container)
-* entry[MessageHeader].resource only GEM_PR_MEDREQ_MessageHeader
+* entry[MessageHeader].resource only MessageHeaderRequestHeader
 
 /*
 Beispielinstanzen finden sich unter ../examples

@@ -1,5 +1,5 @@
 Instance: UC1-HealthCareService-to-Practitioner-MessageHeader
-InstanceOf: GEM_PR_MEDREQ_MessageHeader
+InstanceOf: MessageHeaderRequestHeader
 Usage: #inline
 Title: "HealthCareService-to-Practitioner-MessageHeader"
 Description: "Message Header from HealthCareService to Practitioner"
@@ -7,7 +7,7 @@ Description: "Message Header from HealthCareService to Practitioner"
 * eventCoding = $GEM_CS_KIM_Dienstkennung#eRezept_Rezeptanforderung
 
 Instance: UC1-Practitioner-to-HealthCareService-MessageHeader
-InstanceOf: GEM_PR_MEDREQ_MessageHeader
+InstanceOf: MessageHeaderRequestHeader
 Usage: #inline
 Title: "Practitioner-to-HealthCareService-MessageHeader"
 Description: "Message Header from Practitioner to HealthCareService"
@@ -15,7 +15,7 @@ Description: "Message Header from Practitioner to HealthCareService"
 * eventCoding = $GEM_CS_KIM_Dienstkennung#eRezept_Rezeptanforderung
 
 Instance: UC1-HealthCareService-to-Pharmacy-MessageHeader
-InstanceOf: GEM_PR_MEDREQ_MessageHeader
+InstanceOf: MessageHeaderRequestHeader
 Usage: #inline
 Title: "HealthCareService-to-Pharmacy-MessageHeader"
 Description: "Message Header from HealthCareService to Pharmacy"
@@ -23,7 +23,7 @@ Description: "Message Header from HealthCareService to Pharmacy"
 * eventCoding = $GEM_CS_KIM_Dienstkennung#eRezept_Rezeptanforderung
 
 Instance: UC1-Pharmacy-to-HealthCareService-MessageHeader
-InstanceOf: GEM_PR_MEDREQ_MessageHeader
+InstanceOf: MessageHeaderRequestHeader
 Usage: #inline
 Title: "Pharmacy-to-HealthCareService-MessageHeader"
 Description: "Message Header from Pharmacy to HealthCareService"
