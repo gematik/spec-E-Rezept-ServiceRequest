@@ -38,7 +38,7 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept anzufragen"
 
 * status MS
 * status obeys sr-1
-* status from GEM_VS_MEDREQ_RequestStatus
+* status from ServiceRequestStatusVS
   * ^short = "Gibt den Bearbeitungsstand eines ServiceRequests an"
 
 * intent = #order (exactly)

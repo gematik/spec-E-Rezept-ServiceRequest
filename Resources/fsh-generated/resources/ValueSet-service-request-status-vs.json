@@ -1,12 +1,12 @@
 {
   "resourceType": "ValueSet",
   "status": "draft",
-  "name": "GEM_VS_MEDREQ_RequestStatus",
-  "id": "GEM-VS-MEDREQ-RequestStatus",
+  "name": "ServiceRequestStatusVS",
+  "id": "service-request-status-vs",
   "title": "Status des ServiceRequests",
   "description": "Auswahl an Codes um anzugeben welchen Status ein ServiceRequest hat",
   "version": "1.0",
-  "url": "https://gematik.de/fhir/erpmedreqcom/ValueSet/GEM-VS-MEDREQ-RequestStatus",
+  "url": "https://gematik.de/fhir/erpmedreqcom/ValueSet/service-request-status-vs",
   "experimental": false,
   "publisher": "gematik GmbH",
   "compose": {

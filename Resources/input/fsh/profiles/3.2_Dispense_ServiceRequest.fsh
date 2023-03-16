@@ -37,7 +37,7 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept zu beliefern"
   * ^comment = "Ist als Fall- oder Vorgangs-ID zu verstehen, um nachverfolgen zu können zu welcher Anfrage der ServiceRequest gehört."
 
 * status MS
-* status from GEM_VS_MEDREQ_RequestStatus
+* status from ServiceRequestStatusVS
   * ^short = "Gibt den Bearbeitungsstand eines ServiceRequests an"
 
 * intent = #filler-order (exactly)

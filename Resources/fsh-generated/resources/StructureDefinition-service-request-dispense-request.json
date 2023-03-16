@@ -183,7 +183,7 @@
         "mustSupport": true,
         "binding": {
           "strength": "required",
-          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/GEM-VS-MEDREQ-RequestStatus"
+          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/service-request-status-vs"
         }
       },
       {
