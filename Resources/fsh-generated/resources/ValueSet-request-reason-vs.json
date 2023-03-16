@@ -15,7 +15,7 @@
         "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-MedicationRequest-Reason"
       },
       {
-        "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-Cancellation-Reason-Type"
+        "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/cancellation-reason-cs"
       }
     ]
   }

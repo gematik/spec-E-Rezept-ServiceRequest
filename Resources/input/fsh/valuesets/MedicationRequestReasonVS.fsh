@@ -4,7 +4,7 @@ Title: "Grund der Medikamentenanfrage (VS)"
 Description: "Liefert Codes für Gründe, warum Medikation angefragt wird"
 * insert MetaValueSet(request-reason-vs)
 * include codes from system GEM_CS_MEDREQ_MedicationRequest_Reason
-* include codes from system GEM_CS_MEDREQ_Cancellation_Reason_Type
+* include codes from system CancellationReasonCS
 
 ValueSet: MedicationObservationVS
 Id: medication-observation-vs
