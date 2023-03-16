@@ -23,7 +23,7 @@ Usage: #inline
 Title: "Medication-Runs-Out-Example-dateTime"
 Description: "Simple example to show that Medication will last until dateTime"
 * subject = Reference(Example-Patient)
-* code = GEM_CS_MEDREQ_MedicationObservation#range-of-medication
+* code = MedicationObservationCS#range-of-medication
 * valueDateTime = "2023-01-31"
 
 Instance: Medication-Runs-Out-Example-Quantity
@@ -32,7 +32,7 @@ Usage: #inline
 Title: "Medication-Runs-Out-Example-Quantity"
 Description: "Simple example to show how many pieces of medication are left"
 * subject = Reference(Example-Patient)
-* code = GEM_CS_MEDREQ_MedicationObservation#range-of-medication
+* code = MedicationObservationCS#range-of-medication
 * valueQuantity
   * value = 7
   * unit = "stk"

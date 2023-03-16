@@ -2,12 +2,12 @@
   "resourceType": "CodeSystem",
   "status": "draft",
   "content": "complete",
-  "name": "GEM_CS_MEDREQ_MedicationObservation",
-  "id": "GEM-CS-MEDREQ-MedicationObservation",
+  "name": "MedicationObservationCS",
+  "id": "medication-observation-cs",
   "title": "Angabe zur Medikamentenbeobachtung (CS)",
   "description": "Gibt Arten der Beobachtungen zum Status eines Medikaments an",
   "version": "1.0",
-  "url": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-MedicationObservation",
+  "url": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/medication-observation-cs",
   "concept": [
     {
       "code": "range-of-medication",

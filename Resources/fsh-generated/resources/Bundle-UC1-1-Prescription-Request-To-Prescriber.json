@@ -121,7 +121,7 @@
             "coding": [
               {
                 "code": "medication-runs-out",
-                "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-MedicationRequest-Reason"
+                "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/medication-request-reason-cs"
               }
             ]
           }
@@ -412,7 +412,7 @@
           "coding": [
             {
               "code": "range-of-medication",
-              "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-MedicationObservation"
+              "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/medication-observation-cs"
             }
           ]
         },
@@ -437,7 +437,7 @@
           "coding": [
             {
               "code": "range-of-medication",
-              "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-MedicationObservation"
+              "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/medication-observation-cs"
             }
           ]
         },

@@ -12,7 +12,7 @@
   "compose": {
     "include": [
       {
-        "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-MedicationObservation"
+        "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/medication-observation-cs"
       }
     ]
   }
