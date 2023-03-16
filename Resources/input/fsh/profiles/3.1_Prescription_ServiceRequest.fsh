@@ -24,7 +24,7 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept anzufragen"
 * basedOn 1..1 MS
   * ^short = "Angefragter oder erfüllausgestellter MedicationRequest"
   * ^comment = "Einem ServiceRequest ist genau ein MedicationRequest zugeordnet, sodass unabhängige Bearbeitungen möglich sind."
-* basedOn only Reference(GEM_PR_ERP_MEDREQ_MedicationRequest or $KBV_PR_ERP_Prescription)
+* basedOn only Reference(MedicationRequestRequestedMedication or $KBV_PR_ERP_Prescription)
 
 * replaces 0..1 MS
 * replaces only Reference(ServiceRequestPrescriptionRequest)

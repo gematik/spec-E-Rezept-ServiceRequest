@@ -1,14 +1,14 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "GEM-PR-ERP-MEDREQ-MedicationRequest",
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-MedicationRequest",
+  "id": "medication-request-requested-medication",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/medication-request-requested-medication",
   "version": "1.0",
-  "name": "GEM_PR_ERP_MEDREQ_MedicationRequest",
-  "title": "GEM PR ERP MEDREQ Medication Request",
+  "name": "MedicationRequestRequestedMedication",
+  "title": "Angefragte Medication",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "Profile on the Medication Request that is to be sent",
+  "description": "Medizinische und pharmazeutische Angaben zur Rezeptanfrage",
   "fhirVersion": "4.0.1",
   "mapping": [
     {

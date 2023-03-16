@@ -125,7 +125,7 @@
         "id": "Example-Zyto-Medication-Request",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-MedicationRequest"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/medication-request-requested-medication"
           ]
         },
         "status": "active",
