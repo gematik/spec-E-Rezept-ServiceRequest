@@ -134,7 +134,7 @@
               "system": "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
               "value": "160.100.000.000.001.36"
             },
-            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-EX-MEDREQ-Prescription-Id"
+            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/prescription-id-ex"
           }
         ],
         "dispenseRequest": {

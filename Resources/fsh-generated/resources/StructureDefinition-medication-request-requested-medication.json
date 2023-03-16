@@ -60,7 +60,7 @@
           {
             "code": "Extension",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-EX-MEDREQ-Prescription-Id"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/prescription-id-ex"
             ]
           }
         ]

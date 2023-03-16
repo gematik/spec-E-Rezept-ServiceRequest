@@ -8,7 +8,7 @@ Description: "Medizinische und pharmazeutische Angaben zur Rezeptanfrage"
 * extension MS
   * ^comment = "Falls die vorherige RezeptID bekannt ist, kann diese hier benannt werden"
 * extension contains
-    GEM_EX_MEDREQ_Prescription_Id named PriorPrescriptionID 0..1
+    PrescriptionIdEx named PriorPrescriptionID 0..1
 
 * medication[x] MS
 * medication[x] ^slicing.discriminator.type = #type
