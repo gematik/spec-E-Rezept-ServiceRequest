@@ -47,8 +47,8 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept anzufragen"
   * ^short = "Gibt die Art des ServiceRequests an"
   * ^comment = "#prescription-request dient der Anfrage eines Rezeptes an einen Arzt"
 * code.coding 1..1 MS
+* code.coding from ServiceRequestTypeVS
 * code.coding.system 1..1
-* code.coding.system = "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-ServiceRequest-Code" (exactly)
 * code.coding.code 1..1
 * code.coding.code = #prescription-request (exactly)
 

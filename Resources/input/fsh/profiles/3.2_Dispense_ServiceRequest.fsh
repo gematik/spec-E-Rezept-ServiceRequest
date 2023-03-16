@@ -46,8 +46,8 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept zu beliefern"
   * ^short = "Gibt die Art des ServiceRequests an."
   * ^comment = "#dispense-request dient als ServiceRequest für eine Apotheke zur Belieferung eines Rezeptes"
 * code.coding 1..1 MS
+* code.coding from ServiceRequestTypeVS
 * code.coding.system 1..1
-* code.coding.system = "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-ServiceRequest-Code" (exactly)
 * code.coding.code 1..1
 * code.coding.code = #dispense-request (exactly)
 

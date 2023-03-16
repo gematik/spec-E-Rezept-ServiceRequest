@@ -78,8 +78,8 @@
         "code": {
           "coding": [
             {
-              "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-ServiceRequest-Code",
-              "code": "prescription-request"
+              "code": "prescription-request",
+              "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/service-request-type-cs"
             }
           ]
         },

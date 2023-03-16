@@ -1,12 +1,12 @@
 {
   "resourceType": "ValueSet",
   "status": "draft",
-  "name": "ServiceRequestCodeVS",
-  "id": "GEM-VS-MEDREQ-Service-Request-Code",
-  "title": "Art des ServiceRequests (CS)",
+  "name": "ServiceRequestTypeVS",
+  "id": "service-request-type-vs",
+  "title": "Art des ServiceRequests (VS)",
   "description": "Gibt an um welche Art von ServiceRequest es sich handelt und dient so der Identifizierung von ServiceRequests",
   "version": "1.0",
-  "url": "https://gematik.de/fhir/erpmedreqcom/ValueSet/GEM-VS-MEDREQ-Service-Request-Code",
+  "url": "https://gematik.de/fhir/erpmedreqcom/ValueSet/service-request-type-vs",
   "experimental": false,
   "publisher": "gematik GmbH",
   "compose": {

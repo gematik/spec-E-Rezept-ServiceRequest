@@ -88,8 +88,8 @@
         "code": {
           "coding": [
             {
-              "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-ServiceRequest-Code",
-              "code": "dispense-request"
+              "code": "dispense-request",
+              "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/service-request-type-cs"
             }
           ]
         },
