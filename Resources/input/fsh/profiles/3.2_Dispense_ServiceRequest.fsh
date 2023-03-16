@@ -19,7 +19,7 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept zu beliefern"
 * identifier 1..* MS
 * identifier contains requestId 1..1 and predisId 0..1
 * identifier[requestId] only IdentifierRequestIdentifier
-* identifier[predisId] only GEM_ERP_MEDREQ_PR_PreDisIdentifier
+* identifier[predisId] only IdentifierPreDisIdentifier
 
 * basedOn 0..1 MS
   * ^short = "KBV Prescription, die von der Apotheke beliefert werden soll"

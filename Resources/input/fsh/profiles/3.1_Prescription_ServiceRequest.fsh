@@ -19,7 +19,7 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept anzufragen"
 * identifier 1..* MS
 * identifier contains requestId 1..1 and predisId 0..1
 * identifier[requestId] only IdentifierRequestIdentifier
-* identifier[predisId] only GEM_ERP_MEDREQ_PR_PreDisIdentifier
+* identifier[predisId] only IdentifierPreDisIdentifier
 
 * basedOn 1..1 MS
   * ^short = "Angefragter oder erfüllausgestellter MedicationRequest"

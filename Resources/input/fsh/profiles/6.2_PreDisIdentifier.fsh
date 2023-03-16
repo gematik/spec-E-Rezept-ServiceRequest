@@ -1,7 +1,7 @@
-Profile: GEM_ERP_MEDREQ_PR_PreDisIdentifier
+Profile: IdentifierPreDisIdentifier
 Parent: Identifier
-Id: GEM-ERP-MEDREQ-PR-PreDisIdentifier
+Id: identifier-pre-dis-identifier
 Title: "GEM ERP MEDREQ PreDis Identifier"
 Description: "Identifier used to link Prescription and Dispense Request"
-* insert Meta (GEM-ERP-MEDREQ-PR-PreDisIdentifier)
-* system = "https://gematik.de/GEM_NS_MEDREQ_PreDisIdentifier"
+* insert Meta (identifier-pre-dis-identifier)
+* system = "https://gematik.de/fhir/medreq/sid/NamingSystemPreDisIdentifier"

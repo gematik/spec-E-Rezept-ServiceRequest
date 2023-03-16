@@ -3,7 +3,7 @@
   "id": "GEM-ERP-MEDREQ-PR-PreDisIdentifier",
   "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-ERP-MEDREQ-PR-PreDisIdentifier",
   "version": "1.0",
-  "name": "GEM_ERP_MEDREQ_PR_PreDisIdentifier",
+  "name": "IdentifierPreDisIdentifier",
   "title": "GEM ERP MEDREQ PreDis Identifier",
   "status": "draft",
   "experimental": false,
@@ -37,7 +37,7 @@
       {
         "id": "Identifier.system",
         "path": "Identifier.system",
-        "patternUri": "https://gematik.de/GEM_NS_MEDREQ_PreDisIdentifier"
+        "patternUri": "https://gematik.de/fhir/medreq/sid/NamingSystemPreDisIdentifier"
       }
     ]
   }
