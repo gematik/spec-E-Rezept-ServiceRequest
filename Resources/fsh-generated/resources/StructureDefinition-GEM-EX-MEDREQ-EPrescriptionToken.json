@@ -48,7 +48,7 @@
           {
             "code": "Identifier",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-EPrescriptionTokenIdentifier"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/identifier-eprescription-token"
             ]
           }
         ],

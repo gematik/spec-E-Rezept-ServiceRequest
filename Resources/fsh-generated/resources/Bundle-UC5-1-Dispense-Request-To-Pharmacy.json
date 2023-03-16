@@ -74,7 +74,7 @@
         "extension": [
           {
             "valueIdentifier": {
-              "system": "https://gematik.de/fhir/erp/sid/GEM_NS_EPrescriptionToken",
+              "system": "https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken",
               "value": "Task/160.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
             },
             "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-EX-MEDREQ-EPrescriptionToken"

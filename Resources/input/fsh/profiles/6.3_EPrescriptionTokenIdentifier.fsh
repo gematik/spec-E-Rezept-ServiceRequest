@@ -1,25 +1,25 @@
-Profile: GEM_PR_MEDREQ_EPrescriptionTokenIdentifier
+Profile: IdentifierEPrescriptionToken
 Parent: Identifier
-Id: GEM-PR-MEDREQ-EPrescriptionTokenIdentifier
-Title: "GEM PR MEDREQ E Prescription Token Identifier"
-Description: "Identifier für den E-Rezept Token"
-* insert Meta (GEM-PR-MEDREQ-EPrescriptionTokenIdentifier)
+Id: identifier-eprescription-token
+Title: "Identifier für ein E-Rezept-Token"
+Description: "Identifier, der ein E-Rezept-Token enthält"
+* insert Meta (identifier-eprescription-token)
 * system 1..1 MS
-* system = "https://gematik.de/fhir/erp/sid/GEM_NS_EPrescriptionToken" (exactly)
+* system = "https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken" (exactly)
 * value 1..1 MS
-//TODO: fix Expression * value obeys GEM-INV-E-Prescription-Regex
+//TODO: fix Expression * value obeys Id-1-E-Prescription-Token
 
-Invariant: GEM-INV-E-Prescription-Regex
+Invariant: Id-1-E-Prescription-Token
 Description: "Regex Invariante zur Validierung eines E-Rezept Tokens"
 Expression: "$this.toString().matches('^Task/[0-9]{3}.[0-9]{3}.[0-9]{3}.[0-9]{3}.[0-9]{3}.[0-9]{2}/$accept?ac=[A-Za-z0-9]+$')"
 Severity: #error
 
-Instance: GEM-NS-E-Prescription-Token
+Instance: NamingSystemEPrescriptionToken
 InstanceOf: NamingSystem
 Usage: #definition
-Title: "GEM NS E Prescription Token"
-Description: "NamingSystem for Gematik E-Prescription Token"
-* name = "GEM_NS_EPrescriptionToken"
+Title: "E-Rezept-Token NamingSystem"
+Description: "NamingSystem zur Angabe eines E-Rezept-Tokens"
+* name = "NamingSystemEPrescriptionToken"
 * status = #draft
 * kind = #identifier
 * date = "2023-02-01"
@@ -27,7 +27,7 @@ Description: "NamingSystem for Gematik E-Prescription Token"
 * contact.telecom.system = #url
 * contact.telecom.value = "https://www.gematik.de/"
 * responsible = "gematik GmbH"
-* description = "E-Rezept Token"
+* description = "NamingSystem zur Angabe eines E-Rezept-Tokens"
 * uniqueId.type = #uri
-* uniqueId.value = "https://gematik.de/fhir/erp/sid/GEM_NS_EPrescriptionToken"
+* uniqueId.value = "https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken" //fhir/erp da es irgendwann in dieses Repo migrieren soll
 * uniqueId.preferred = true

@@ -25,7 +25,7 @@ InstanceOf: ServiceRequestPrescriptionRequest
 Usage: #inline
 Title: "Fullfilled Prescription Request"
 Description: "ServiceRequest that is returned to the requester"
-* extension[EPrescriptionToken].valueIdentifier.system = "https://gematik.de/fhir/erp/sid/GEM_NS_EPrescriptionToken"
+* extension[EPrescriptionToken].valueIdentifier.system = "https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken"
 * extension[EPrescriptionToken].valueIdentifier.value = "Task/160.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
 * identifier[0]
   * system = "https://gematik.de/fhir/medreq/sid/NamingSystemRequestIdentifier"
@@ -71,7 +71,7 @@ InstanceOf: ServiceRequestDispenseRequest
 Usage: #inline
 Title: "Dispense Request Forwarded to Pharmacy"
 Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
-* extension[EPrescriptionToken].valueIdentifier.system = "https://gematik.de/fhir/erp/sid/GEM_NS_EPrescriptionToken"
+* extension[EPrescriptionToken].valueIdentifier.system = "https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken"
 * extension[EPrescriptionToken].valueIdentifier.value = "Task/160.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
 * identifier[0]
   * system = "https://gematik.de/fhir/medreq/sid/NamingSystemRequestIdentifier"
@@ -96,7 +96,7 @@ InstanceOf: ServiceRequestDispenseRequest
 Usage: #inline
 Title: "Dispense Request back to HealthCareService"
 Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
-* extension[EPrescriptionToken].valueIdentifier.system = "https://gematik.de/fhir/erp/sid/GEM_NS_EPrescriptionToken"
+* extension[EPrescriptionToken].valueIdentifier.system = "https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken"
 * extension[EPrescriptionToken].valueIdentifier.value = "Task/160.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
 * identifier[0]
   * system = "https://gematik.de/fhir/medreq/sid/NamingSystemRequestIdentifier"

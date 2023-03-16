@@ -123,7 +123,7 @@
           {
             "code": "Identifier",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-ERP-MEDREQ-PR-PreDisIdentifier"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/identifier-pre-dis-identifier"
             ]
           }
         ]
