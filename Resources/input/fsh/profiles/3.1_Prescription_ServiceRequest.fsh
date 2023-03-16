@@ -72,7 +72,7 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept anzufragen"
 
 
 * requester 1..1 MS
-* requester only Reference(GEM_PR_MEDREQ_Organization or $KBV_PR_FOR_Practitioner)
+* requester only Reference(OrganizationWithKIMAdress or $KBV_PR_FOR_Practitioner)
   * ^short = "Anfragende Einrichtung oder Arzt"
 
 * performer MS
@@ -94,7 +94,7 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept anzufragen"
 * supportingInfo MS
 * supportingInfo contains
 AuslieferndeApotheke 0..1 MS
-* supportingInfo[AuslieferndeApotheke] only Reference(GEM_PR_MEDREQ_Organization)
+* supportingInfo[AuslieferndeApotheke] only Reference(OrganizationWithKIMAdress)
 * supportingInfo[AuslieferndeApotheke].type = "Organization"
 
 * note MS

@@ -260,7 +260,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-Organization",
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/organization-with-kim-adress",
               "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner"
             ]
           }
@@ -275,7 +275,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-Organization"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/organization-with-kim-adress"
             ]
           }
         ],

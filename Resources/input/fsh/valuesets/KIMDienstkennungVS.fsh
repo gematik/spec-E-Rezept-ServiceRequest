@@ -1,7 +1,7 @@
-ValueSet: GEM_PR_MEDREQ_KIM_Dienstkennung
-Id: GEM-PR-MEDREQ-KIM-Dienstkennung
-Title: "GEM PR MEDREQ KIM Dienstkennung"
-Description: "Dienstkennungen für E-Rezept Rezeptanforderung"
+ValueSet: KIMDienstkennungVS
+Id: kim-dienstkennung-vs
+Title: "E-Rezept KIM-Dienstkennung"
+Description: "Dienstkennungen zur Angabe eines Anwendungsfalls der E-Rezept Kommunikation"
 * $GEM_CS_KIM_Dienstkennung#eRezept_Rezeptanforderung_Rezeptanfrage_an_Sender_zurueck "Anfrage an einen Arzt ein Rezept auszustellen und das Rezept an den Sender zurück zu schicken" // Empfänger schickt das Rezept zurück
 * $GEM_CS_KIM_Dienstkennung#eRezept_Rezeptanforderung_Rezeptanfrage_nur_Ausstellen "Anfrage an einen Arzt ein Rezept auszustellen" // Empfänger schickt das Rezept zurück
 * $GEM_CS_KIM_Dienstkennung#eRezept_Rezeptanforderung_Rezeptanfrage_weiterleiten_an_Apotheke "Anfrage an einen Arzt ein Rezept auszustellen und das Rezept an die Apotheke weiterzuleiten" // Sender schickt auch einen DispenseRequest mit, der weitergeleitet werden soll

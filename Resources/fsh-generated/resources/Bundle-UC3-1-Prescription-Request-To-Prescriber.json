@@ -297,7 +297,7 @@
         "id": "Example-HealthCareService-Organization",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-Organization"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/organization-with-kim-adress"
           ]
         },
         "identifier": [

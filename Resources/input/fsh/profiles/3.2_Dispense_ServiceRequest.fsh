@@ -64,11 +64,11 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept zu beliefern"
   * ^comment = "Wird initial angelegt und dann nicht mehr verändert."
 
 * requester 1..1 MS
-* requester only Reference(GEM_PR_MEDREQ_Organization or $KBV_PR_FOR_Practitioner)
+* requester only Reference(OrganizationWithKIMAdress or $KBV_PR_FOR_Practitioner)
   * ^short = "Anfragende Einrichtung oder Arzt"
 
 * performer MS
-* performer only Reference(GEM_PR_MEDREQ_Organization)
+* performer only Reference(OrganizationWithKIMAdress)
   * ^short = "Apotheke, die das Rezept beliefern soll"
 
 * supportingInfo ^slicing.discriminator.type = #pattern

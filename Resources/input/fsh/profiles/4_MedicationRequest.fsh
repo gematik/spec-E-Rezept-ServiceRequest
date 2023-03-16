@@ -33,7 +33,7 @@ Description: "Medizinische und pharmazeutische Angaben zur Rezeptanfrage"
 
 * requester MS
   * ^comment = "Anfragender Arzt/ Einrichung/ Apotheke für diesen MedicationRequest"
-* requester only Reference($KBV_PR_FOR_Practitioner or GEM_PR_MEDREQ_Organization)
+* requester only Reference($KBV_PR_FOR_Practitioner or OrganizationWithKIMAdress)
 * requester.type 0..0
 * requester.identifier 0..1
 * requester.reference 0..1
