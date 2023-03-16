@@ -17,7 +17,7 @@ Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
 * requisition[=].value = "GroupID-UC5"
 * status = RequestStatus#active
 * intent = RequestIntent#filler-order
-* code = GEM_CS_MEDREQ_Service_Request_Code#dispense-request
+* code = ServiceRequestTypeCS#dispense-request
 * subject = Reference(Example-Patient)
 * occurrenceDateTime = "2023-02-01"
 * authoredOn = "2023-02-01"
@@ -39,7 +39,7 @@ Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
 * requisition[=].value = "GroupID-UC5"
 * status = RequestStatus#completed
 * intent = RequestIntent#filler-order
-* code = GEM_CS_MEDREQ_Service_Request_Code#dispense-request
+* code = ServiceRequestTypeCS#dispense-request
 * subject = Reference(Example-Patient)
 * occurrenceDateTime = "2023-02-01"
 * authoredOn = "2023-02-01"

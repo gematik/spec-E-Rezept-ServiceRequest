@@ -12,7 +12,7 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * requisition[=].value = "GroupID-UC4"
 * status = RequestStatus#active
 * intent = RequestIntent#order
-* code = GEM_CS_MEDREQ_Service_Request_Code#prescription-request
+* code = ServiceRequestTypeCS#prescription-request
 * subject = Reference(Patient/Example-Patient)
 * orderDetail = PrescriptionFullfillmentTypeCS#send-to-pharmacy
 * occurrenceDateTime = "2023-02-01"
@@ -35,7 +35,7 @@ Description: "ServiceRequest that is returned to the requester"
 * requisition[=].value = "GroupID-UC4"
 * status = RequestStatus#completed
 * intent = RequestIntent#order
-* code = GEM_CS_MEDREQ_Service_Request_Code#prescription-request
+* code = ServiceRequestTypeCS#prescription-request
 * subject = Reference(Example-Patient)
 * orderDetail = PrescriptionFullfillmentTypeCS#send-to-pharmacy
 * occurrenceDateTime = "2023-01-30" //update wann es tatsächlich ausgestellt wurde
