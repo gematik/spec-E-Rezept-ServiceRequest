@@ -78,7 +78,7 @@
               "system": "https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken",
               "value": "false/token"
             },
-            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-EX-MEDREQ-EPrescriptionToken"
+            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/eprescription-token-ex"
           }
         ],
         "code": {

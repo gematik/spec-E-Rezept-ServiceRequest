@@ -80,7 +80,7 @@
           {
             "code": "Extension",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-EX-MEDREQ-EPrescriptionToken"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/eprescription-token-ex"
             ]
           }
         ],

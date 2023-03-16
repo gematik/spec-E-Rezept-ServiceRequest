@@ -9,7 +9,7 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept anzufragen"
 * extension MS
   * ^comment = "Hier kann der E-Rezept Token für die Verarbeitung in einer Apotheke bereit gestellt werden"
 * extension contains
-    GEM_EX_MEDREQ_EPrescriptionToken named EPrescriptionToken 0..1 MS
+    EPrescriptionTokenEX named EPrescriptionToken 0..1 MS
 
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "system"

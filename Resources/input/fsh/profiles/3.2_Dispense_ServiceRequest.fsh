@@ -8,7 +8,7 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept zu beliefern"
 * extension MS
   * ^comment = "Hier kann der E-Rezept Token für die Belieferung der Apotheke bereit gestellt werden"
 * extension contains
-    GEM_EX_MEDREQ_EPrescriptionToken named EPrescriptionToken 0..1 MS and //muss 0..1 sein für den Fall, dass die Pflegeeinrichtung den DispenseRequest an den Arzt schickt, der es dann zur Apotheke weiterleitet
+    EPrescriptionTokenEX named EPrescriptionToken 0..1 MS and //muss 0..1 sein für den Fall, dass die Pflegeeinrichtung den DispenseRequest an den Arzt schickt, der es dann zur Apotheke weiterleitet
     GEM_EX_MEDREQ_Secret named Secret 0..1 MS
 
 * identifier ^slicing.discriminator.type = #pattern
