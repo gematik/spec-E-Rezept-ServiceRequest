@@ -86,7 +86,7 @@
           }
         ],
         "requisition": {
-          "system": "https://gematik.de/GEM_NS_MEDREQ_RequestGroupId",
+          "system": "https://gematik.de/fhir/medreq/sid/NamingSystemProcedureIdentifier",
           "value": "GroupID-UC1"
         },
         "status": "active",

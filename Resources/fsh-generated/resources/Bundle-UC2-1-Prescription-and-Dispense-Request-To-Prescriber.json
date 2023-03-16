@@ -86,7 +86,7 @@
           }
         ],
         "requisition": {
-          "system": "https://gematik.de/GEM_NS_MEDREQ_RequestGroupId",
+          "system": "https://gematik.de/fhir/medreq/sid/NamingSystemProcedureIdentifier",
           "value": "GroupID-2"
         },
         "status": "active",
@@ -150,7 +150,7 @@
           }
         ],
         "requisition": {
-          "system": "https://gematik.de/GEM_NS_MEDREQ_RequestGroupId",
+          "system": "https://gematik.de/fhir/medreq/sid/NamingSystemProcedureIdentifier",
           "value": "GroupID-2"
         },
         "status": "active",

@@ -176,7 +176,7 @@
           {
             "code": "Identifier",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-ERP-MEDREQ-PR-RequestGroupIdentifier"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/identifier-procedure-identifier"
             ]
           }
         ],

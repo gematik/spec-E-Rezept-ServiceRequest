@@ -1,14 +1,14 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "GEM-ERP-MEDREQ-PR-RequestGroupIdentifier",
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-ERP-MEDREQ-PR-RequestGroupIdentifier",
+  "id": "identifier-procedure-identifier",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/identifier-procedure-identifier",
   "version": "1.0",
-  "name": "GEM_ERP_MEDREQ_PR_RequestGroupIdentifier",
-  "title": "GEM ERP MEDREQ Request Group Identifier",
+  "name": "IdentifierProcedureIdentifier",
+  "title": "Identifier für ServiceRequests eines Vorgangs",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "Identifier used to identify a group of ServiceRequests that were triggered in a single operation",
+  "description": "Dieser Identifier wird genutzt, ServiceRequests eines Vorgangs zu identifizieren",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -37,7 +37,7 @@
       {
         "id": "Identifier.system",
         "path": "Identifier.system",
-        "patternUri": "https://gematik.de/GEM_NS_MEDREQ_RequestGroupId"
+        "patternUri": "https://gematik.de/fhir/medreq/sid/NamingSystemProcedureIdentifier"
       }
     ]
   }

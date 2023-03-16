@@ -8,7 +8,7 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
   * system = "https://gematik.de/GEM_NS_MEDREQ_RequestId"
   * value = "1"
 * basedOn = Reference(Example-Zyto-Medication-Request)
-* requisition[0].system = "https://gematik.de/GEM_NS_MEDREQ_RequestGroupId"
+* requisition[0].system = "https://gematik.de/fhir/medreq/sid/NamingSystemProcedureIdentifier"
 * requisition[=].value = "GroupID-UC4"
 * status = RequestStatus#active
 * intent = RequestIntent#order
@@ -31,7 +31,7 @@ Description: "ServiceRequest that is returned to the requester"
   * system = "https://gematik.de/GEM_NS_MEDREQ_RequestId"
   * value = "1"
 * basedOn = Reference(Example-Response-KBV-Prescription)
-* requisition[0].system = "https://gematik.de/GEM_NS_MEDREQ_RequestGroupId"
+* requisition[0].system = "https://gematik.de/fhir/medreq/sid/NamingSystemProcedureIdentifier"
 * requisition[=].value = "GroupID-UC4"
 * status = RequestStatus#completed
 * intent = RequestIntent#order

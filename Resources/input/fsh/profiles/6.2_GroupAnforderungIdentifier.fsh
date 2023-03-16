@@ -1,7 +1,7 @@
-Profile: GEM_ERP_MEDREQ_PR_RequestGroupIdentifier
+Profile: IdentifierProcedureIdentifier
 Parent: Identifier
-Id: GEM-ERP-MEDREQ-PR-RequestGroupIdentifier
-Title: "GEM ERP MEDREQ Request Group Identifier"
-Description: "Identifier used to identify a group of ServiceRequests that were triggered in a single operation"
-* insert Meta (GEM-ERP-MEDREQ-PR-RequestGroupIdentifier)
-* system = "https://gematik.de/GEM_NS_MEDREQ_RequestGroupId"
+Id: identifier-procedure-identifier
+Title: "Identifier für ServiceRequests eines Vorgangs"
+Description: "Dieser Identifier wird genutzt, ServiceRequests eines Vorgangs zu identifizieren"
+* insert Meta (identifier-procedure-identifier)
+* system = "https://gematik.de/fhir/medreq/sid/NamingSystemProcedureIdentifier"

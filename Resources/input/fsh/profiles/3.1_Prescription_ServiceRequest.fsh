@@ -32,7 +32,7 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept anzufragen"
   * ^comment = "Nur vom Requester zu nutzen, um anzugeben welche Anfrage storniert wurde"
 
 * requisition 1..1 MS
-* requisition only GEM_ERP_MEDREQ_PR_RequestGroupIdentifier
+* requisition only IdentifierProcedureIdentifier
   * ^short = "Identifier des Vorgangs. Alle ServiceRequests innerhalb eines Vorgangs erhalten die gleiche ID."
   * ^comment = "Ist als Fall oder VorgangsID zu verstehen, um nachverfolgen zu können zu welcher Anfrage der ServiceRequest gehört."
 

@@ -13,7 +13,7 @@ Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
   * system = "https://gematik.de/GEM_NS_MEDREQ_RequestId"
   * value = "1"
 * basedOn = Reference(Example-Response-KBV-Prescription)
-* requisition[0].system = "https://gematik.de/GEM_NS_MEDREQ_RequestGroupId"
+* requisition[0].system = "https://gematik.de/fhir/medreq/sid/NamingSystemProcedureIdentifier"
 * requisition[=].value = "GroupID-UC5"
 * status = RequestStatus#active
 * intent = RequestIntent#filler-order
@@ -35,7 +35,7 @@ Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
   * system = "https://gematik.de/GEM_NS_MEDREQ_RequestId"
   * value = "1"
 * basedOn = Reference(Example-Response-KBV-Prescription)
-* requisition[0].system = "https://gematik.de/GEM_NS_MEDREQ_RequestGroupId"
+* requisition[0].system = "https://gematik.de/fhir/medreq/sid/NamingSystemProcedureIdentifier"
 * requisition[=].value = "GroupID-UC5"
 * status = RequestStatus#completed
 * intent = RequestIntent#filler-order
