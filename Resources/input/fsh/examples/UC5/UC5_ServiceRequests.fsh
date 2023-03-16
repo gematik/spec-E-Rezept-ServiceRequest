@@ -1,7 +1,7 @@
 // Dispense Service Requests
 
 Instance: UC5-Initial-Dispense-Request
-InstanceOf: GEM_PR_ERP_MEDREQ_Dispense_ServiceRequest
+InstanceOf: ServiceRequestDispenseRequest
 Usage: #inline
 Title: "Initial Dispense Request"
 Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
@@ -25,7 +25,7 @@ Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
 * performer.identifier = Test-Apotheke2-Identifier
 
 Instance: UC5-Response-Dispense-Request
-InstanceOf: GEM_PR_ERP_MEDREQ_Dispense_ServiceRequest
+InstanceOf: ServiceRequestDispenseRequest
 Usage: #inline
 Title: "Initial Dispense Request"
 Description: "This ServiceRequest is sent initially to the dispensing pharmacy"

@@ -54,7 +54,7 @@ Description: "ServiceRequest that is returned to the requester"
 // Dispense Service Requests
 
 Instance: UC1-Initial-Dispense-Request
-InstanceOf: GEM_PR_ERP_MEDREQ_Dispense_ServiceRequest
+InstanceOf: ServiceRequestDispenseRequest
 Usage: #inline
 Title: "Initial Dispense Request"
 Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
@@ -79,7 +79,7 @@ Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
 * supportingInfo[AusstellenderArzt].type = "Practitioner"
 
 Instance: UC1-Response-Dispense-Request
-InstanceOf: GEM_PR_ERP_MEDREQ_Dispense_ServiceRequest
+InstanceOf: ServiceRequestDispenseRequest
 Usage: #inline
 Title: "Initial Dispense Request"
 Description: "This ServiceRequest is sent initially to the dispensing pharmacy"

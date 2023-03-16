@@ -42,7 +42,7 @@
             "code": "Reference",
             "targetProfile": [
               "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/service-request-prescription-request",
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Dispense-ServiceRequest"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/service-request-dispense-request"
             ]
           }
         ],

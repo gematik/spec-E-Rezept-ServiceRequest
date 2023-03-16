@@ -46,7 +46,7 @@ Description: "ServiceRequest that is returned to the requester"
 // Dispense Service Requests
 
 Instance: UC2-Initial-Dispense-Request
-InstanceOf: GEM_PR_ERP_MEDREQ_Dispense_ServiceRequest
+InstanceOf: ServiceRequestDispenseRequest
 Usage: #inline
 Title: "Initial Dispense Request"
 Description: "This ServiceRequest is sent initially to the practitioner"
@@ -67,7 +67,7 @@ Description: "This ServiceRequest is sent initially to the practitioner"
 * supportingInfo[AusstellenderArzt].type = "Practitioner"
 
 Instance: UC2-Forward-Dispense-Request
-InstanceOf: GEM_PR_ERP_MEDREQ_Dispense_ServiceRequest
+InstanceOf: ServiceRequestDispenseRequest
 Usage: #inline
 Title: "Dispense Request Forwarded to Pharmacy"
 Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
@@ -92,7 +92,7 @@ Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
 
 
 Instance: UC2-Response-Dispense-Request
-InstanceOf: GEM_PR_ERP_MEDREQ_Dispense_ServiceRequest
+InstanceOf: ServiceRequestDispenseRequest
 Usage: #inline
 Title: "Dispense Request back to HealthCareService"
 Description: "This ServiceRequest is sent initially to the dispensing pharmacy"

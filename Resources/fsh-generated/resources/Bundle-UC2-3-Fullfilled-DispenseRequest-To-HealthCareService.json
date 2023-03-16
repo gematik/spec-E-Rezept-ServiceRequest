@@ -62,7 +62,7 @@
         "id": "UC2-Response-Dispense-Request",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Dispense-ServiceRequest"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/service-request-dispense-request"
           ]
         },
         "intent": "filler-order",

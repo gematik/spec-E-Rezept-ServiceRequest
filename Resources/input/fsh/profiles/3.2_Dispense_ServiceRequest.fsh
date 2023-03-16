@@ -1,9 +1,9 @@
-Profile: GEM_PR_ERP_MEDREQ_Dispense_ServiceRequest
+Profile: ServiceRequestDispenseRequest
 Parent: ServiceRequest
-Id: GEM-PR-ERP-MEDREQ-Dispense-ServiceRequest
-Title: "Belieferungsanfrage"
+Id: service-request-dispense-request
+Title: "Anfrage zum Beliefern einer Verordnung"
 Description: "ServiceRequest, der genutzt wird um ein Rezept zu beliefern"
-* insert Meta (GEM-PR-ERP-MEDREQ-Dispense-ServiceRequest)
+* insert Meta (service-request-dispense-request)
 
 * extension MS
   * ^comment = "Hier kann der E-Rezept Token für die Belieferung der Apotheke bereit gestellt werden"
