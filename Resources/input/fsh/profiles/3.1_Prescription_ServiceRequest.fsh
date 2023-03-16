@@ -80,7 +80,7 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept anzufragen"
   * ^short = "Arzt, der das Rezept ausstellen soll"
 
 * reasonCode MS
-* reasonCode from GEM_VS_MEDREQ_MedicationRequest_Reason
+* reasonCode from RequestReasonVS
   * ^short = "Code, der angibt, warum das Medikament angefragt wird"
 
 * reasonReference only Reference(ObservationRemainingMedication)

@@ -8,7 +8,7 @@ Description: "Diese Observation beschreibt wie lange oder wie viel einer Medikat
 * status = #final (exactly)
 
 * code 1..1 MS
-* code from GEM_VS_MEDREQ_MedicationObservation
+* code from MedicationObservationVS
 * code.coding.code = #range-of-medication
 
 * subject 1..1 MS

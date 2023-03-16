@@ -1,12 +1,12 @@
 {
   "resourceType": "ValueSet",
   "status": "draft",
-  "name": "GEM_VS_MEDREQ_MedicationObservation",
-  "id": "GEM-VS-MEDREQ-MedicationObservation",
+  "name": "MedicationObservationVS",
+  "id": "medication-observation-vs",
   "title": "Angabe zur Medikamentenbeobachtung (VS)",
   "description": "Gibt Arten der Beobachtungen zum Status eines Medikaments an",
   "version": "1.0",
-  "url": "https://gematik.de/fhir/erpmedreqcom/ValueSet/GEM-VS-MEDREQ-MedicationObservation",
+  "url": "https://gematik.de/fhir/erpmedreqcom/ValueSet/medication-observation-vs",
   "experimental": false,
   "publisher": "gematik GmbH",
   "compose": {
