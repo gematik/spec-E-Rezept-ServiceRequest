@@ -1,9 +1,9 @@
-Profile: GEM_PR_MEDREQ_MessageBundle
+Profile: BundleMessageContainer
 Parent: $GEM_PR_KIM_MessageBundle
-Id: GEM-PR-MEDREQ-MessageBundle
-Title: "Nachrichtenbundle"
-Description: "Bundle, was alle Informationen für die Anwendungsfälle bereit hält"
-* insert Meta (GEM-PR-MEDREQ-MessageBundle)
+Id: bundle-message-container
+Title: "Nachichten Container"
+Description: "Bundle, was alle Ressourcen einer Nachricht enthält"
+* insert Meta (bundle-message-container)
 * entry[MessageHeader].resource only GEM_PR_MEDREQ_MessageHeader
 
 /*

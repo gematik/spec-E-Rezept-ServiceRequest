@@ -3,7 +3,7 @@
   "id": "UC1-3-Dispense-Request-To-Pharmacy",
   "meta": {
     "profile": [
-      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-MessageBundle"
+      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/bundle-message-container"
     ]
   },
   "type": "message",

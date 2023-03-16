@@ -3,7 +3,7 @@
   "id": "UC1-2-Fullfilled-Prescription-Request",
   "meta": {
     "profile": [
-      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-MessageBundle"
+      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/bundle-message-container"
     ]
   },
   "type": "message",

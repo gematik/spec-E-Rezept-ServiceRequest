@@ -1,14 +1,14 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "GEM-PR-MEDREQ-MessageBundle",
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-MessageBundle",
+  "id": "bundle-message-container",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/bundle-message-container",
   "version": "1.0",
-  "name": "GEM_PR_MEDREQ_MessageBundle",
-  "title": "Nachrichtenbundle",
+  "name": "BundleMessageContainer",
+  "title": "Nachichten Container",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "Bundle, was alle Informationen für die Anwendungsfälle bereit hält",
+  "description": "Bundle, was alle Ressourcen einer Nachricht enthält",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
