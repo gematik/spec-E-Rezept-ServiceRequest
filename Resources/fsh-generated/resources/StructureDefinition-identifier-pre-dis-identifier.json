@@ -4,11 +4,11 @@
   "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/identifier-pre-dis-identifier",
   "version": "1.0",
   "name": "IdentifierPreDisIdentifier",
-  "title": "GEM ERP MEDREQ PreDis Identifier",
+  "title": "Prescription und Dispense Request Identifier",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "Identifier used to link Prescription and Dispense Request",
+  "description": "Identifier wird genutzt, um einen Prescription und Dispense Requests der selben Rezeptanfrage zu verknüpfen",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
