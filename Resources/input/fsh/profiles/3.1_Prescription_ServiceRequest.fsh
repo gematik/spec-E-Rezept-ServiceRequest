@@ -83,7 +83,7 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept anzufragen"
 * reasonCode from GEM_VS_MEDREQ_MedicationRequest_Reason
   * ^short = "Code, der angibt, warum das Medikament angefragt wird"
 
-* reasonReference only Reference(GEM_PR_ERP_MEDREQ_RemainingMedication)
+* reasonReference only Reference(ObservationRemainingMedication)
   * ^comment = "Wenn eine Referenz zum Grund angegeben wird muss auch ein menschen lesbarer Eintrag in .note hinzugefügt werden, falls Systeme die referenzierte Observation nicht verarbeiten können"
 
 * supportingInfo ^slicing.discriminator.type = #pattern

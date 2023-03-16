@@ -334,7 +334,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-RemainingMedication"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/observation-remaining-medication"
             ]
           }
         ]

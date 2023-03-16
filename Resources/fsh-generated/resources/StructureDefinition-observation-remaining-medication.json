@@ -1,14 +1,14 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "GEM-PR-ERP-MEDREQ-RemainingMedication",
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-RemainingMedication",
+  "id": "observation-remaining-medication",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/observation-remaining-medication",
   "version": "1.0",
-  "name": "GEM_PR_ERP_MEDREQ_RemainingMedication",
-  "title": "GEM PR ERP MEDREQ Remaining Medication Observation",
+  "name": "ObservationRemainingMedication",
+  "title": "Verbleibende Medikamentenreichweite",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "Describes how long the remaining medication will last",
+  "description": "Diese Observation beschreibt wie lange oder wie viel einer Medikation noch vorhanden ist",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
