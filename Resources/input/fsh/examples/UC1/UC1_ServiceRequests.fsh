@@ -5,7 +5,7 @@ Usage: #inline
 Title: "Initial Prescription Request"
 Description: "This ServiceRequest is sent initially to the prescribing practitioner"
 * identifier[0]
-  * system = "https://gematik.de/GEM_NS_MEDREQ_RequestId"
+  * system = "https://gematik.de/fhir/medreq/sid/NamingSystemRequestIdentifier"
   * value = "1"
 * basedOn = Reference(Example-Initial-Medication-Request)
 * requisition[0].system = "https://gematik.de/fhir/medreq/sid/NamingSystemProcedureIdentifier"
@@ -32,7 +32,7 @@ Description: "ServiceRequest that is returned to the requester"
 * extension[EPrescriptionToken].valueIdentifier.system = "https://gematik.de/fhir/erp/sid/GEM_NS_EPrescriptionToken"
 * extension[EPrescriptionToken].valueIdentifier.value = "Task/160.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
 * identifier[0]
-  * system = "https://gematik.de/GEM_NS_MEDREQ_RequestId"
+  * system = "https://gematik.de/fhir/medreq/sid/NamingSystemRequestIdentifier"
   * value = "1"
 * basedOn = Reference(Example-Response-KBV-Prescription)
 * requisition[0].system = "https://gematik.de/fhir/medreq/sid/NamingSystemProcedureIdentifier"
@@ -62,7 +62,7 @@ Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
 //* extension[EPrescriptionToken].valueIdentifier.value = "Task/160.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
 * extension[EPrescriptionToken].valueIdentifier.value = "false/token"
 * identifier[0]
-  * system = "https://gematik.de/GEM_NS_MEDREQ_RequestId"
+  * system = "https://gematik.de/fhir/medreq/sid/NamingSystemRequestIdentifier"
   * value = "2"
 * basedOn = Reference(Example-Response-KBV-Prescription)
 * requisition[0].system = "https://gematik.de/fhir/medreq/sid/NamingSystemProcedureIdentifier"
@@ -86,7 +86,7 @@ Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
 * extension[EPrescriptionToken].valueIdentifier.system = "https://gematik.de/fhir/erp/sid/GEM_NS_EPrescriptionToken"
 * extension[EPrescriptionToken].valueIdentifier.value = "Task/160.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
 * identifier[0]
-  * system = "https://gematik.de/GEM_NS_MEDREQ_RequestId"
+  * system = "https://gematik.de/fhir/medreq/sid/NamingSystemRequestIdentifier"
   * value = "2"
 * basedOn = Reference(Example-Response-KBV-Prescription)
 * requisition[0].system = "https://gematik.de/fhir/medreq/sid/NamingSystemProcedureIdentifier"

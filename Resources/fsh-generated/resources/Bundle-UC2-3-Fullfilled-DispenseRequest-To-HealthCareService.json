@@ -95,7 +95,7 @@
         },
         "identifier": [
           {
-            "system": "https://gematik.de/GEM_NS_MEDREQ_RequestId",
+            "system": "https://gematik.de/fhir/medreq/sid/NamingSystemRequestIdentifier",
             "value": "012345"
           }
         ],
