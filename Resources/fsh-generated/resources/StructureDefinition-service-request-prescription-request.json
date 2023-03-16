@@ -112,7 +112,7 @@
           {
             "code": "Identifier",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-ERP-MEDREQ-PR-RequestIdentifier"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/identifier-request-identifier"
             ]
           }
         ]

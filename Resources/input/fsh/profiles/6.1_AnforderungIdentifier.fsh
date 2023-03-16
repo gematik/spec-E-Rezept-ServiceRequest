@@ -1,7 +1,7 @@
-Profile: GEM_ERP_MEDREQ_PR_RequestIdentifier
+Profile: IdentifierRequestIdentifier
 Parent: Identifier
-Id: GEM-ERP-MEDREQ-PR-RequestIdentifier
+Id: identifier-request-identifier
 Title: "GEM ERP MEDREQ Request Identifier"
 Description: "Identifier used to identify a single ServiceRequest in KIM Rezeptanforderung"
-* insert Meta (GEM-ERP-MEDREQ-PR-RequestIdentifier)
+* insert Meta (identifier-request-identifier)
 * system = "https://gematik.de/GEM_NS_MEDREQ_RequestId" (exactly)
