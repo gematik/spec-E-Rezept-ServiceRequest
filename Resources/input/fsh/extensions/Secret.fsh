@@ -5,4 +5,4 @@ Description: "This extension carries a secret for pharmacies"
 // TODO: Add Context
 * insert Meta (GEM-EX-MEDREQ-Secret)
 * value[x] 1..1 MS
-* value[x] only GEM_PR_MEDREQ_SecretIdentifier
+* value[x] only IdentifierSecret
