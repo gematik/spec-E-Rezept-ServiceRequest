@@ -3,7 +3,7 @@
   "id": "medication-request-requested-medication",
   "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/medication-request-requested-medication",
   "version": "1.0",
-  "name": "MedicationRequestRequestedMedication",
+  "name": "MedicationRequestPrescriptionRequest",
   "title": "Angefragte Medication",
   "status": "draft",
   "experimental": false,

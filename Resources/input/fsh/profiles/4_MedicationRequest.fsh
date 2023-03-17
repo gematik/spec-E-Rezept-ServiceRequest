@@ -1,4 +1,4 @@
-Profile: MedicationRequestRequestedMedication
+Profile: MedicationRequestPrescriptionRequest
 Parent: MedicationRequest
 Id: medication-request-requested-medication
 Title: "Angefragte Medication"
@@ -65,7 +65,7 @@ Description: "Medizinische und pharmazeutische Angaben zur Rezeptanfrage"
 * substitution 0..1
 
 Instance: Example-Initial-Medication-Request
-InstanceOf: MedicationRequestRequestedMedication
+InstanceOf: MedicationRequestPrescriptionRequest
 Usage: #inline
 * extension[PriorPrescriptionID].valueIdentifier
   * system = "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"
@@ -97,7 +97,7 @@ Usage: #inline
 * form = https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM#FLE
 
 Instance: Example-Zyto-Medication-Request
-InstanceOf: MedicationRequestRequestedMedication
+InstanceOf: MedicationRequestPrescriptionRequest
 Usage: #inline
 * status = #active
 * intent = #order
