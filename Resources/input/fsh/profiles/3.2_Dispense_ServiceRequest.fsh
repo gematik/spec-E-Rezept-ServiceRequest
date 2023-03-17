@@ -1,15 +1,15 @@
-Profile: GEM_PR_ERP_MEDREQ_Dispense_ServiceRequest
+Profile: ServiceRequestDispenseRequest
 Parent: ServiceRequest
-Id: GEM-PR-ERP-MEDREQ-Dispense-ServiceRequest
-Title: "Belieferungsanfrage"
+Id: service-request-dispense-request
+Title: "Anfrage zum Beliefern einer Verordnung"
 Description: "ServiceRequest, der genutzt wird um ein Rezept zu beliefern"
-* insert Meta (GEM-PR-ERP-MEDREQ-Dispense-ServiceRequest)
+* insert Meta (service-request-dispense-request)
 
 * extension MS
   * ^comment = "Hier kann der E-Rezept Token für die Belieferung der Apotheke bereit gestellt werden"
 * extension contains
-    GEM_EX_MEDREQ_EPrescriptionToken named EPrescriptionToken 0..1 MS and //muss 0..1 sein für den Fall, dass die Pflegeeinrichtung den DispenseRequest an den Arzt schickt, der es dann zur Apotheke weiterleitet
-    GEM_EX_MEDREQ_Secret named Secret 0..1 MS
+    EPrescriptionTokenEX named EPrescriptionToken 0..1 MS and //muss 0..1 sein für den Fall, dass die Pflegeeinrichtung den DispenseRequest an den Arzt schickt, der es dann zur Apotheke weiterleitet
+    SecretEx named Secret 0..1 MS
 
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "system"
@@ -18,8 +18,8 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept zu beliefern"
 
 * identifier 1..* MS
 * identifier contains requestId 1..1 and predisId 0..1
-* identifier[requestId] only GEM_ERP_MEDREQ_PR_RequestIdentifier
-* identifier[predisId] only GEM_ERP_MEDREQ_PR_PreDisIdentifier
+* identifier[requestId] only IdentifierRequestIdentifier
+* identifier[predisId] only IdentifierPreDisIdentifier
 
 * basedOn 0..1 MS
   * ^short = "KBV Prescription, die von der Apotheke beliefert werden soll"
@@ -27,17 +27,17 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept zu beliefern"
 * basedOn only Reference($KBV_PR_ERP_Prescription)
 
 * replaces 0..1 MS
-* replaces only Reference(GEM_PR_ERP_MEDREQ_Prescription_ServiceRequest)
+* replaces only Reference(ServiceRequestPrescriptionRequest)
   * ^short = "Angabe welcher ServiceRequest ersetzt werden soll"
   * ^comment = "Nur vom Requester zu nutzen, um anzugeben welche Anfrage storniert wurde"
 
 * requisition 1..1 MS
-* requisition only GEM_ERP_MEDREQ_PR_RequestGroupIdentifier
+* requisition only IdentifierProcedureIdentifier
   * ^short = "Identifier des Vorgangs. Alle ServiceRequests innerhalb eines Vorgangs erhalten die gleiche ID."
   * ^comment = "Ist als Fall- oder Vorgangs-ID zu verstehen, um nachverfolgen zu können zu welcher Anfrage der ServiceRequest gehört."
 
 * status MS
-* status from GEM_VS_MEDREQ_RequestStatus
+* status from ServiceRequestStatusVS
   * ^short = "Gibt den Bearbeitungsstand eines ServiceRequests an"
 
 * intent = #filler-order (exactly)
@@ -46,8 +46,8 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept zu beliefern"
   * ^short = "Gibt die Art des ServiceRequests an."
   * ^comment = "#dispense-request dient als ServiceRequest für eine Apotheke zur Belieferung eines Rezeptes"
 * code.coding 1..1 MS
+* code.coding from ServiceRequestTypeVS
 * code.coding.system 1..1
-* code.coding.system = "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-ServiceRequest-Code" (exactly)
 * code.coding.code 1..1
 * code.coding.code = #dispense-request (exactly)
 
@@ -64,11 +64,11 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept zu beliefern"
   * ^comment = "Wird initial angelegt und dann nicht mehr verändert."
 
 * requester 1..1 MS
-* requester only Reference(GEM_PR_MEDREQ_Organization or $KBV_PR_FOR_Practitioner)
+* requester only Reference(OrganizationWithKIMAdress or $KBV_PR_FOR_Practitioner)
   * ^short = "Anfragende Einrichtung oder Arzt"
 
 * performer MS
-* performer only Reference(GEM_PR_MEDREQ_Organization)
+* performer only Reference(OrganizationWithKIMAdress)
   * ^short = "Apotheke, die das Rezept beliefern soll"
 
 * supportingInfo ^slicing.discriminator.type = #pattern

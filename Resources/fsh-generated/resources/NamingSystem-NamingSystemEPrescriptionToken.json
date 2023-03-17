@@ -1,7 +1,7 @@
 {
   "resourceType": "NamingSystem",
-  "id": "GEM-NS-E-Prescription-Token",
-  "name": "GEM_NS_EPrescriptionToken",
+  "id": "NamingSystemEPrescriptionToken",
+  "name": "NamingSystemEPrescriptionToken",
   "status": "draft",
   "kind": "identifier",
   "date": "2023-02-01",
@@ -17,11 +17,11 @@
     }
   ],
   "responsible": "gematik GmbH",
-  "description": "E-Rezept Token",
+  "description": "NamingSystem zur Angabe eines E-Rezept-Tokens",
   "uniqueId": [
     {
       "type": "uri",
-      "value": "https://gematik.de/fhir/erp/sid/GEM_NS_EPrescriptionToken",
+      "value": "https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken",
       "preferred": true
     }
   ]

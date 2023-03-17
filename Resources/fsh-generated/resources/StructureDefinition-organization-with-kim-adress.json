@@ -1,14 +1,14 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "GEM-PR-MEDREQ-Organization",
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-Organization",
+  "id": "organization-with-kim-adress",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/organization-with-kim-adress",
   "version": "1.0",
-  "name": "GEM_PR_MEDREQ_Organization",
-  "title": "GEM ERP MEDREQ Organization",
+  "name": "OrganizationWithKIMAdress",
+  "title": "Organisation mit KIM-Addresse",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "Organization in MEDREQ Context",
+  "description": "Organisation die genutzt werden kann, um eine KIM-Addresse mit anzugeben",
   "fhirVersion": "4.0.1",
   "mapping": [
     {

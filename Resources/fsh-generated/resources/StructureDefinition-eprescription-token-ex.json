@@ -1,14 +1,14 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "GEM-EX-MEDREQ-Secret",
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-EX-MEDREQ-Secret",
+  "id": "eprescription-token-ex",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/eprescription-token-ex",
   "version": "1.0",
-  "name": "GEM_EX_MEDREQ_Secret",
-  "title": "GEM EX MEDREQ Secret",
+  "name": "EPrescriptionTokenEX",
+  "title": "E-Rezept-Token Extension",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "This extension carries a secret for pharmacies",
+  "description": "Diese Extension dient der Angabe eines E-Rezept Tokens",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -38,7 +38,7 @@
       {
         "id": "Extension.url",
         "path": "Extension.url",
-        "fixedUri": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-EX-MEDREQ-Secret"
+        "fixedUri": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/eprescription-token-ex"
       },
       {
         "id": "Extension.value[x]",
@@ -48,7 +48,7 @@
           {
             "code": "Identifier",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-SecretIdentifier"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/identifier-eprescription-token"
             ]
           }
         ],

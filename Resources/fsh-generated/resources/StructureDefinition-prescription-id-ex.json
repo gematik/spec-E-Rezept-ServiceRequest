@@ -1,14 +1,13 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "GEM-EX-MEDREQ-EPrescriptionToken",
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-EX-MEDREQ-EPrescriptionToken",
+  "id": "prescription-id-ex",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/prescription-id-ex",
   "version": "1.0",
-  "name": "GEM_EX_MEDREQ_EPrescriptionToken",
-  "title": "GEM EX MEDREQ E Prescription Token",
+  "name": "PrescriptionIdEx",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "This extension carries an eprescription token",
+  "description": "Extension for Prescription ID",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -38,21 +37,19 @@
       {
         "id": "Extension.url",
         "path": "Extension.url",
-        "fixedUri": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-EX-MEDREQ-EPrescriptionToken"
+        "fixedUri": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/prescription-id-ex"
       },
       {
         "id": "Extension.value[x]",
         "path": "Extension.value[x]",
-        "min": 1,
         "type": [
           {
             "code": "Identifier",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-EPrescriptionTokenIdentifier"
+              "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PrescriptionId"
             ]
           }
-        ],
-        "mustSupport": true
+        ]
       }
     ]
   }

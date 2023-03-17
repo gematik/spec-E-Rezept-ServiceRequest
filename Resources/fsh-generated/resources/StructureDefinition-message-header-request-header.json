@@ -1,9 +1,9 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "GEM-PR-MEDREQ-MessageHeader",
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-MessageHeader",
+  "id": "message-header-request-header",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/message-header-request-header",
   "version": "1.0",
-  "name": "GEM_PR_MEDREQ_MessageHeader",
+  "name": "MessageHeaderRequestHeader",
   "title": "Nachrichten Header",
   "status": "draft",
   "experimental": false,
@@ -41,8 +41,8 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Prescription-ServiceRequest",
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Dispense-ServiceRequest"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/service-request-prescription-request",
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/service-request-dispense-request"
             ]
           }
         ],

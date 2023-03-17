@@ -1,6 +1,6 @@
 
 Instance: UC2-1-Prescription-and-Dispense-Request-To-Prescriber
-InstanceOf: GEM_PR_MEDREQ_MessageBundle
+InstanceOf: BundleMessageContainer
 Usage: #example
 Title: "Medication Request To Prescriber"
 Description: "Request sent to Prescriber to get a Prescription"
@@ -24,7 +24,7 @@ Description: "Request sent to Prescriber to get a Prescription"
 * entry[=].resource = Example-HealthCareService-Organization
 
 Instance: UC2-2-Dispense-Request-To-Pharmacy
-InstanceOf: GEM_PR_MEDREQ_MessageBundle
+InstanceOf: BundleMessageContainer
 Usage: #example
 Title: "DispenseRequestToPharmacy"
 Description: "Request sent to Pharmacy to request a dispense of the medication"
@@ -49,7 +49,7 @@ Description: "Request sent to Pharmacy to request a dispense of the medication"
 
 
 Instance: UC2-3-Fullfilled-DispenseRequest-To-HealthCareService
-InstanceOf: GEM_PR_MEDREQ_MessageBundle
+InstanceOf: BundleMessageContainer
 Usage: #example
 Title: "DispenseRequestToPharmacy"
 Description: "Request sent to Pharmacy to request a dispense of the medication"

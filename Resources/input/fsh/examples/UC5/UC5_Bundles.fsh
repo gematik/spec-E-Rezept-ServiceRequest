@@ -1,5 +1,5 @@
 Instance: UC5-1-Dispense-Request-To-Pharmacy
-InstanceOf: GEM_PR_MEDREQ_MessageBundle
+InstanceOf: BundleMessageContainer
 Usage: #example
 Title: "DispenseRequestToPharmacy"
 Description: "Request sent to Pharmacy to request a dispense of the medication"
@@ -13,7 +13,7 @@ Description: "Request sent to Pharmacy to request a dispense of the medication"
 * entry[=].resource = Example-Patient
 
 Instance: UC5-2-Fullfilled-DispenseRequest-To-Pharmacy
-InstanceOf: GEM_PR_MEDREQ_MessageBundle
+InstanceOf: BundleMessageContainer
 Usage: #example
 Title: "DispenseRequestToPharmacy"
 Description: "Request sent to Pharmacy to request a dispense of the medication"

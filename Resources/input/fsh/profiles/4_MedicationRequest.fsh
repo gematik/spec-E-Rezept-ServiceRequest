@@ -1,14 +1,14 @@
-Profile: GEM_PR_ERP_MEDREQ_MedicationRequest
+Profile: MedicationRequestPrescriptionRequest
 Parent: MedicationRequest
-Id: GEM-PR-ERP-MEDREQ-MedicationRequest
-Title: "GEM PR ERP MEDREQ Medication Request"
-Description: "Profile on the Medication Request that is to be sent"
-* insert Meta (GEM-PR-ERP-MEDREQ-MedicationRequest)
+Id: medication-request-requested-medication
+Title: "Angefragte Medication"
+Description: "Medizinische und pharmazeutische Angaben zur Rezeptanfrage"
+* insert Meta (medication-request-requested-medication)
 
 * extension MS
   * ^comment = "Falls die vorherige RezeptID bekannt ist, kann diese hier benannt werden"
 * extension contains
-    GEM_EX_MEDREQ_Prescription_Id named PriorPrescriptionID 0..1
+    PrescriptionIdEx named PriorPrescriptionID 0..1
 
 * medication[x] MS
 * medication[x] ^slicing.discriminator.type = #type
@@ -33,7 +33,7 @@ Description: "Profile on the Medication Request that is to be sent"
 
 * requester MS
   * ^comment = "Anfragender Arzt/ Einrichung/ Apotheke für diesen MedicationRequest"
-* requester only Reference($KBV_PR_FOR_Practitioner or GEM_PR_MEDREQ_Organization)
+* requester only Reference($KBV_PR_FOR_Practitioner or OrganizationWithKIMAdress)
 * requester.type 0..0
 * requester.identifier 0..1
 * requester.reference 0..1
@@ -65,7 +65,7 @@ Description: "Profile on the Medication Request that is to be sent"
 * substitution 0..1
 
 Instance: Example-Initial-Medication-Request
-InstanceOf: GEM_PR_ERP_MEDREQ_MedicationRequest
+InstanceOf: MedicationRequestPrescriptionRequest
 Usage: #inline
 * extension[PriorPrescriptionID].valueIdentifier
   * system = "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"
@@ -97,7 +97,7 @@ Usage: #inline
 * form = https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM#FLE
 
 Instance: Example-Zyto-Medication-Request
-InstanceOf: GEM_PR_ERP_MEDREQ_MedicationRequest
+InstanceOf: MedicationRequestPrescriptionRequest
 Usage: #inline
 * status = #active
 * intent = #order

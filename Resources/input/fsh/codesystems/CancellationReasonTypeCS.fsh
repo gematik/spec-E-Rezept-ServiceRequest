@@ -1,8 +1,8 @@
-CodeSystem: GEM_CS_MEDREQ_Cancellation_Reason_Type
-Id: GEM-CS-MEDREQ-Cancellation-Reason-Type
+CodeSystem: CancellationReasonCS
+Id: cancellation-reason-cs
 Title: "Abbruchgrund (CS)"
 Description: "Dieses CodeSystem beschreibt Gründe für das Stornieren einer Anfrage"
-* insert MetaCodeSystem(GEM-CS-MEDREQ-Cancellation-Reason-Type)
+* insert MetaCodeSystem(cancellation-reason-cs)
 
 * #information-missing "Informationen unvollständig"
 * #information-incorrect "Informationen fehlerhaft"

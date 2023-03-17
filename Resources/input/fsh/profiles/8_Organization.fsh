@@ -1,9 +1,9 @@
-Profile: GEM_PR_MEDREQ_Organization
+Profile: OrganizationWithKIMAdress
 Parent: $KBV_PR_Base_Organization
-Id: GEM-PR-MEDREQ-Organization
-Title: "GEM ERP MEDREQ Organization"
-Description: "Organization in MEDREQ Context"
-* insert Meta (GEM-PR-MEDREQ-Organization)
+Id: organization-with-kim-adress
+Title: "Organisation mit KIM-Addresse"
+Description: "Organisation die genutzt werden kann, um eine KIM-Addresse mit anzugeben"
+* insert Meta (organization-with-kim-adress)
 
 * identifier MS
 * identifier contains KIMAdresse 1..1 MS and TIMAdresse 0..1
@@ -16,7 +16,7 @@ Description: "Organization in MEDREQ Context"
 * identifier[TIMAdresse].type = https://gematik.de/fhir/directory/CodeSystem/EndpointDirectoryConnectionType#tim
 
 Instance: Example-HealthCareService-Organization
-InstanceOf: GEM_PR_MEDREQ_Organization
+InstanceOf: OrganizationWithKIMAdress
 Usage: #inline
 * identifier[Telematik-ID].type = http://terminology.hl7.org/CodeSystem/v2-0203#PRN
 * identifier[Telematik-ID].system = "https://gematik.de/fhir/sid/telematik-id"
@@ -39,7 +39,7 @@ Usage: #inline
 * address[Strassenanschrift].postalCode = "10623"
 
 Instance: Example-Pharmacy-Organization
-InstanceOf: GEM_PR_MEDREQ_Organization
+InstanceOf: OrganizationWithKIMAdress
 Usage: #inline
 * identifier[Telematik-ID].type = http://terminology.hl7.org/CodeSystem/v2-0203#PRN
 * identifier[Telematik-ID].system = "https://gematik.de/fhir/sid/telematik-id"
