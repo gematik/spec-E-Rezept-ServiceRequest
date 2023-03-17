@@ -1,12 +1,12 @@
 {
   "resourceType": "ValueSet",
   "status": "active",
-  "name": "GEM_PR_MEDREQ_KIM_Dienstkennung",
-  "id": "GEM-PR-MEDREQ-KIM-Dienstkennung",
-  "title": "GEM PR MEDREQ KIM Dienstkennung",
-  "description": "Dienstkennungen für E-Rezept Rezeptanforderung",
+  "name": "KIMDienstkennungVS",
+  "id": "kim-dienstkennung-vs",
+  "title": "E-Rezept KIM-Dienstkennung",
+  "description": "Dienstkennungen zur Angabe eines Anwendungsfalls der E-Rezept Kommunikation",
   "version": "0.9",
-  "url": "https://gematik.de/fhir/erpmedreqcom/ValueSet/GEM-PR-MEDREQ-KIM-Dienstkennung",
+  "url": "https://gematik.de/fhir/erpmedreqcom/ValueSet/kim-dienstkennung-vs",
   "compose": {
     "include": [
       {

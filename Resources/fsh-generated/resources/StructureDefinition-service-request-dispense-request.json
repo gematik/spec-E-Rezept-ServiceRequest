@@ -1,14 +1,14 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "GEM-PR-ERP-MEDREQ-Prescription-ServiceRequest",
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Prescription-ServiceRequest",
+  "id": "service-request-dispense-request",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/service-request-dispense-request",
   "version": "1.0",
-  "name": "GEM_PR_ERP_MEDREQ_Prescription_ServiceRequest",
-  "title": "Rezeptanfrage",
+  "name": "ServiceRequestDispenseRequest",
+  "title": "Anfrage zum Beliefern einer Verordnung",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "ServiceRequest, der genutzt wird um ein Rezept anzufragen",
+  "description": "ServiceRequest, der genutzt wird um ein Rezept zu beliefern",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -45,29 +45,9 @@
   "differential": {
     "element": [
       {
-        "id": "ServiceRequest",
-        "path": "ServiceRequest",
-        "constraint": [
-          {
-            "key": "sr-1",
-            "severity": "error",
-            "human": "Wenn der Status auf 'completed' gesetzt ist, muss ein Token vorhanden sein",
-            "expression": "(status = 'completed') implies extension('https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-EX-MEDREQ-EPrescriptionToken').exists()",
-            "source": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Prescription-ServiceRequest"
-          },
-          {
-            "key": "sr-2",
-            "severity": "error",
-            "human": "Wenn eine .reasonReference angegeben ist, dann muss auch eine .note existieren",
-            "expression": "reasonReference.exists() implies note.exists()",
-            "source": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Prescription-ServiceRequest"
-          }
-        ]
-      },
-      {
         "id": "ServiceRequest.extension",
         "path": "ServiceRequest.extension",
-        "comment": "Hier kann der E-Rezept Token für die Verarbeitung in einer Apotheke bereit gestellt werden",
+        "comment": "Hier kann der E-Rezept Token für die Belieferung der Apotheke bereit gestellt werden",
         "mustSupport": true
       },
       {
@@ -80,7 +60,23 @@
           {
             "code": "Extension",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-EX-MEDREQ-EPrescriptionToken"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/eprescription-token-ex"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.extension:Secret",
+        "path": "ServiceRequest.extension",
+        "sliceName": "Secret",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/secret-ex"
             ]
           }
         ],
@@ -112,7 +108,7 @@
           {
             "code": "Identifier",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-ERP-MEDREQ-PR-RequestIdentifier"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/identifier-request-identifier"
             ]
           }
         ]
@@ -127,7 +123,7 @@
           {
             "code": "Identifier",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-ERP-MEDREQ-PR-PreDisIdentifier"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/identifier-pre-dis-identifier"
             ]
           }
         ]
@@ -135,15 +131,13 @@
       {
         "id": "ServiceRequest.basedOn",
         "path": "ServiceRequest.basedOn",
-        "short": "Angefragter oder erfüllausgestellter MedicationRequest",
+        "short": "KBV Prescription, die von der Apotheke beliefert werden soll",
         "comment": "Einem ServiceRequest ist genau ein MedicationRequest zugeordnet, sodass unabhängige Bearbeitungen möglich sind.",
-        "min": 1,
         "max": "1",
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-MedicationRequest",
               "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription"
             ]
           }
@@ -160,7 +154,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Prescription-ServiceRequest"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/service-request-prescription-request"
             ]
           }
         ],
@@ -170,13 +164,13 @@
         "id": "ServiceRequest.requisition",
         "path": "ServiceRequest.requisition",
         "short": "Identifier des Vorgangs. Alle ServiceRequests innerhalb eines Vorgangs erhalten die gleiche ID.",
-        "comment": "Ist als Fall oder VorgangsID zu verstehen, um nachverfolgen zu können zu welcher Anfrage der ServiceRequest gehört.",
+        "comment": "Ist als Fall- oder Vorgangs-ID zu verstehen, um nachverfolgen zu können zu welcher Anfrage der ServiceRequest gehört.",
         "min": 1,
         "type": [
           {
             "code": "Identifier",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-ERP-MEDREQ-PR-RequestGroupIdentifier"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/identifier-procedure-identifier"
             ]
           }
         ],
@@ -186,31 +180,22 @@
         "id": "ServiceRequest.status",
         "path": "ServiceRequest.status",
         "short": "Gibt den Bearbeitungsstand eines ServiceRequests an",
-        "constraint": [
-          {
-            "key": "sr-1",
-            "severity": "error",
-            "human": "Wenn der Status auf 'completed' gesetzt ist, muss ein Token vorhanden sein",
-            "expression": "(status = 'completed') implies extension('https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-EX-MEDREQ-EPrescriptionToken').exists()",
-            "source": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Prescription-ServiceRequest"
-          }
-        ],
         "mustSupport": true,
         "binding": {
           "strength": "required",
-          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/GEM-VS-MEDREQ-RequestStatus"
+          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/service-request-status-vs"
         }
       },
       {
         "id": "ServiceRequest.intent",
         "path": "ServiceRequest.intent",
-        "fixedCode": "order"
+        "fixedCode": "filler-order"
       },
       {
         "id": "ServiceRequest.code",
         "path": "ServiceRequest.code",
-        "short": "Gibt die Art des ServiceRequests an",
-        "comment": "#prescription-request dient der Anfrage eines Rezeptes an einen Arzt",
+        "short": "Gibt die Art des ServiceRequests an.",
+        "comment": "#dispense-request dient als ServiceRequest für eine Apotheke zur Belieferung eines Rezeptes",
         "mustSupport": true
       },
       {
@@ -218,44 +203,27 @@
         "path": "ServiceRequest.code.coding",
         "min": 1,
         "max": "1",
-        "mustSupport": true
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/service-request-type-vs"
+        }
       },
       {
         "id": "ServiceRequest.code.coding.system",
         "path": "ServiceRequest.code.coding.system",
-        "min": 1,
-        "fixedUri": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-ServiceRequest-Code"
+        "min": 1
       },
       {
         "id": "ServiceRequest.code.coding.code",
         "path": "ServiceRequest.code.coding.code",
         "min": 1,
-        "fixedCode": "prescription-request"
-      },
-      {
-        "id": "ServiceRequest.orderDetail",
-        "path": "ServiceRequest.orderDetail",
-        "min": 1,
-        "max": "1",
-        "mustSupport": true
-      },
-      {
-        "id": "ServiceRequest.orderDetail.coding",
-        "path": "ServiceRequest.orderDetail.coding",
-        "short": "Gibt an wie die Rezeptanfrage erfüllt werden soll.",
-        "comment": "Wenn das Rezept an eine Apotheke geht, muss ein entsprechender ServiceRequest im Bundle enthalten sein.",
-        "min": 1,
-        "max": "1",
-        "mustSupport": true,
-        "binding": {
-          "strength": "required",
-          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/GEM-VS-MEDREQ-Prescription-Fullfillment-Type"
-        }
+        "fixedCode": "dispense-request"
       },
       {
         "id": "ServiceRequest.subject",
         "path": "ServiceRequest.subject",
-        "short": "Patient für den stellvertretend ein Rezept angefordert wird",
+        "short": "Patient für den stellvertretend ein Rezept beliefert werden soll",
         "type": [
           {
             "code": "Reference",
@@ -269,7 +237,7 @@
       {
         "id": "ServiceRequest.occurrence[x]",
         "path": "ServiceRequest.occurrence[x]",
-        "short": "Gibt das Datum an, an dem das Rezept ausgestellt werden soll",
+        "short": "Gibt das Datum an, an dem das Medikament ausgeliefert werden soll",
         "min": 1,
         "type": [
           {
@@ -295,7 +263,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-Organization",
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/organization-with-kim-adress",
               "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner"
             ]
           }
@@ -305,39 +273,16 @@
       {
         "id": "ServiceRequest.performer",
         "path": "ServiceRequest.performer",
-        "short": "Arzt, der das Rezept ausstellen soll",
+        "short": "Apotheke, die das Rezept beliefern soll",
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
-              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/organization-with-kim-adress"
             ]
           }
         ],
         "mustSupport": true
-      },
-      {
-        "id": "ServiceRequest.reasonCode",
-        "path": "ServiceRequest.reasonCode",
-        "short": "Code, der angibt, warum das Medikament angefragt wird",
-        "mustSupport": true,
-        "binding": {
-          "strength": "required",
-          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/GEM-VS-MEDREQ-MedicationRequest-Reason"
-        }
-      },
-      {
-        "id": "ServiceRequest.reasonReference",
-        "path": "ServiceRequest.reasonReference",
-        "comment": "Wenn eine Referenz zum Grund angegeben wird muss auch ein menschen lesbarer Eintrag in .note hinzugefügt werden, falls Systeme die referenzierte Observation nicht verarbeiten können",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-RemainingMedication"
-            ]
-          }
-        ]
       },
       {
         "id": "ServiceRequest.supportingInfo",
@@ -350,36 +295,59 @@
             }
           ],
           "rules": "open",
-          "description": "Unterstützende Informationen zur Rezeptanforderung"
+          "description": "Unterstützende Informationen zur Belieferung"
         },
+        "min": 1,
         "mustSupport": true
       },
       {
-        "id": "ServiceRequest.supportingInfo:AuslieferndeApotheke",
+        "id": "ServiceRequest.supportingInfo:AusstellenderArzt",
         "path": "ServiceRequest.supportingInfo",
-        "sliceName": "AuslieferndeApotheke",
-        "min": 0,
+        "sliceName": "AusstellenderArzt",
+        "min": 1,
         "max": "1",
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-Organization"
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner"
             ]
           }
         ],
         "mustSupport": true
       },
       {
-        "id": "ServiceRequest.supportingInfo:AuslieferndeApotheke.type",
+        "id": "ServiceRequest.supportingInfo:AusstellenderArzt.type",
         "path": "ServiceRequest.supportingInfo.type",
         "min": 1,
-        "patternUri": "Organization"
+        "fixedUri": "Practitioner"
+      },
+      {
+        "id": "ServiceRequest.supportingInfo:AbgabeDaten",
+        "path": "ServiceRequest.supportingInfo",
+        "sliceName": "AbgabeDaten",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.supportingInfo:AbgabeDaten.type",
+        "path": "ServiceRequest.supportingInfo.type",
+        "min": 1,
+        "fixedUri": "MedicationDispense"
       },
       {
         "id": "ServiceRequest.note",
         "path": "ServiceRequest.note",
-        "short": "Weitere Angaben zur Rezeptanforderung",
+        "short": "Weitere Angaben zur Belieferung",
         "comment": "Eventuell nicht spezifizierte Anwendungsfälle können hier im Freitext platziert werden",
         "mustSupport": true
       }

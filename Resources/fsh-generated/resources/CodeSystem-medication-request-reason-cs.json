@@ -2,12 +2,12 @@
   "resourceType": "CodeSystem",
   "status": "draft",
   "content": "complete",
-  "name": "GEM_CS_MEDREQ_MedicationRequest_Reason",
-  "id": "GEM-CS-MEDREQ-MedicationRequest-Reason",
+  "name": "MedicationRequestReasonCS",
+  "id": "medication-request-reason-cs",
   "title": "Grund der Medikamentenanfrage (CS)",
   "description": "Liefert Codes für Gründe, warum Medikation angefragt wird",
   "version": "1.0",
-  "url": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-MedicationRequest-Reason",
+  "url": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/medication-request-reason-cs",
   "concept": [
     {
       "code": "medication-runs-out",

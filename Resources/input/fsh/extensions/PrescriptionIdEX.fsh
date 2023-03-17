@@ -1,5 +1,5 @@
-Extension: GEM_EX_MEDREQ_Prescription_Id
-Id: GEM-EX-MEDREQ-Prescription-Id
+Extension: PrescriptionIdEx
+Id: prescription-id-ex
 Description: "Extension for Prescription ID"
-* insert Meta (GEM-EX-MEDREQ-Prescription-Id)
+* insert Meta (prescription-id-ex)
 * value[x] only GEM_ERP_PR_PrescriptionId

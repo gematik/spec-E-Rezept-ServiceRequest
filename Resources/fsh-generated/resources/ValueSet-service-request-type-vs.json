@@ -1,0 +1,19 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "ServiceRequestTypeVS",
+  "id": "service-request-type-vs",
+  "title": "Art des ServiceRequests (VS)",
+  "description": "Gibt an um welche Art von ServiceRequest es sich handelt und dient so der Identifizierung von ServiceRequests",
+  "version": "1.0",
+  "url": "https://gematik.de/fhir/erpmedreqcom/ValueSet/service-request-type-vs",
+  "experimental": false,
+  "publisher": "gematik GmbH",
+  "compose": {
+    "include": [
+      {
+        "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/service-request-type-cs"
+      }
+    ]
+  }
+}

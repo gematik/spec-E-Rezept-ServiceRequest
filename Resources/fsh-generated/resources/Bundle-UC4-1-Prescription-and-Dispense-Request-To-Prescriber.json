@@ -3,7 +3,7 @@
   "id": "UC4-1-Prescription-and-Dispense-Request-To-Prescriber",
   "meta": {
     "profile": [
-      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-MessageBundle"
+      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/bundle-message-container"
     ]
   },
   "type": "message",
@@ -19,7 +19,7 @@
         "id": "UC4-1-Pharmacy-to-Practitioner-MessageHeader",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-MessageHeader"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/message-header-request-header"
           ]
         },
         "focus": [
@@ -62,21 +62,21 @@
         "id": "UC4-Initial-Prescription-Request",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Prescription-ServiceRequest"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/service-request-prescription-request"
           ]
         },
         "intent": "order",
         "code": {
           "coding": [
             {
-              "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-ServiceRequest-Code",
-              "code": "prescription-request"
+              "code": "prescription-request",
+              "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/service-request-type-cs"
             }
           ]
         },
         "identifier": [
           {
-            "system": "https://gematik.de/GEM_NS_MEDREQ_RequestId",
+            "system": "https://gematik.de/fhir/medreq/sid/NamingSystemRequestIdentifier",
             "value": "1"
           }
         ],
@@ -86,7 +86,7 @@
           }
         ],
         "requisition": {
-          "system": "https://gematik.de/GEM_NS_MEDREQ_RequestGroupId",
+          "system": "https://gematik.de/fhir/medreq/sid/NamingSystemProcedureIdentifier",
           "value": "GroupID-UC4"
         },
         "status": "active",
@@ -98,7 +98,7 @@
             "coding": [
               {
                 "code": "send-to-pharmacy",
-                "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-Prescription-Fullfillment-Type"
+                "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/prescription-fullfillment-type-cs"
               }
             ]
           }
@@ -125,7 +125,7 @@
         "id": "Example-Zyto-Medication-Request",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-MedicationRequest"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/medication-request-requested-medication"
           ]
         },
         "status": "active",
@@ -310,7 +310,7 @@
         "id": "Example-Pharmacy-Organization",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-Organization"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/organization-with-kim-adress"
           ]
         },
         "identifier": [

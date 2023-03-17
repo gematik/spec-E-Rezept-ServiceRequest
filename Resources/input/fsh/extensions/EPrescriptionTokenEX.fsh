@@ -1,8 +1,8 @@
-Extension: GEM_EX_MEDREQ_EPrescriptionToken
-Id: GEM-EX-MEDREQ-EPrescriptionToken
-Title: "GEM EX MEDREQ E Prescription Token"
-Description: "This extension carries an eprescription token"
+Extension: EPrescriptionTokenEX
+Id: eprescription-token-ex
+Title: "E-Rezept-Token Extension"
+Description: "Diese Extension dient der Angabe eines E-Rezept Tokens"
 // TODO: Add Context
-* insert Meta (GEM-EX-MEDREQ-EPrescriptionToken)
+* insert Meta (eprescription-token-ex)
 * value[x] 1..1 MS
-* value[x] only GEM_PR_MEDREQ_EPrescriptionTokenIdentifier
+* value[x] only IdentifierEPrescriptionToken

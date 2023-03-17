@@ -3,7 +3,7 @@
   "id": "UC2-1-Prescription-and-Dispense-Request-To-Prescriber",
   "meta": {
     "profile": [
-      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-MessageBundle"
+      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/bundle-message-container"
     ]
   },
   "type": "message",
@@ -19,7 +19,7 @@
         "id": "UC2-1-HealthCareService-to-Practitioner-MessageHeader",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-MessageHeader"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/message-header-request-header"
           ]
         },
         "focus": [
@@ -62,21 +62,21 @@
         "id": "UC2-Initial-Prescription-Request",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Prescription-ServiceRequest"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/service-request-prescription-request"
           ]
         },
         "intent": "order",
         "code": {
           "coding": [
             {
-              "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-ServiceRequest-Code",
-              "code": "prescription-request"
+              "code": "prescription-request",
+              "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/service-request-type-cs"
             }
           ]
         },
         "identifier": [
           {
-            "system": "https://gematik.de/GEM_NS_MEDREQ_RequestId",
+            "system": "https://gematik.de/fhir/medreq/sid/NamingSystemRequestIdentifier",
             "value": "012345"
           }
         ],
@@ -86,7 +86,7 @@
           }
         ],
         "requisition": {
-          "system": "https://gematik.de/GEM_NS_MEDREQ_RequestGroupId",
+          "system": "https://gematik.de/fhir/medreq/sid/NamingSystemProcedureIdentifier",
           "value": "GroupID-2"
         },
         "status": "active",
@@ -98,7 +98,7 @@
             "coding": [
               {
                 "code": "send-to-pharmacy",
-                "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-Prescription-Fullfillment-Type"
+                "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/prescription-fullfillment-type-cs"
               }
             ]
           }
@@ -125,7 +125,7 @@
         "id": "UC2-Initial-Dispense-Request",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-Dispense-ServiceRequest"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/service-request-dispense-request"
           ]
         },
         "intent": "filler-order",
@@ -138,19 +138,19 @@
         "code": {
           "coding": [
             {
-              "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-ServiceRequest-Code",
-              "code": "dispense-request"
+              "code": "dispense-request",
+              "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/service-request-type-cs"
             }
           ]
         },
         "identifier": [
           {
-            "system": "https://gematik.de/GEM_NS_MEDREQ_RequestId",
+            "system": "https://gematik.de/fhir/medreq/sid/NamingSystemRequestIdentifier",
             "value": "012345"
           }
         ],
         "requisition": {
-          "system": "https://gematik.de/GEM_NS_MEDREQ_RequestGroupId",
+          "system": "https://gematik.de/fhir/medreq/sid/NamingSystemProcedureIdentifier",
           "value": "GroupID-2"
         },
         "status": "active",
@@ -179,7 +179,7 @@
         "id": "Example-Initial-Medication-Request",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-ERP-MEDREQ-MedicationRequest"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/medication-request-requested-medication"
           ]
         },
         "extension": [
@@ -188,7 +188,7 @@
               "system": "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
               "value": "160.100.000.000.001.36"
             },
-            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-EX-MEDREQ-Prescription-Id"
+            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/prescription-id-ex"
           }
         ],
         "dispenseRequest": {
@@ -442,7 +442,7 @@
         "id": "Example-HealthCareService-Organization",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-PR-MEDREQ-Organization"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/organization-with-kim-adress"
           ]
         },
         "identifier": [

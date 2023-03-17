@@ -1,0 +1,22 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "RequestReasonVS",
+  "id": "request-reason-vs",
+  "title": "Grund der Medikamentenanfrage (VS)",
+  "description": "Liefert Codes für Gründe, warum Medikation angefragt wird",
+  "version": "1.0",
+  "url": "https://gematik.de/fhir/erpmedreqcom/ValueSet/request-reason-vs",
+  "experimental": false,
+  "publisher": "gematik GmbH",
+  "compose": {
+    "include": [
+      {
+        "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/medication-request-reason-cs"
+      },
+      {
+        "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/cancellation-reason-cs"
+      }
+    ]
+  }
+}

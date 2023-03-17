@@ -2,12 +2,12 @@
   "resourceType": "CodeSystem",
   "status": "draft",
   "content": "complete",
-  "name": "GEM_CS_MEDREQ_Cancellation_Reason_Type",
-  "id": "GEM-CS-MEDREQ-Cancellation-Reason-Type",
+  "name": "CancellationReasonCS",
+  "id": "cancellation-reason-cs",
   "title": "Abbruchgrund (CS)",
   "description": "Dieses CodeSystem beschreibt Gründe für das Stornieren einer Anfrage",
   "version": "1.0",
-  "url": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/GEM-CS-MEDREQ-Cancellation-Reason-Type",
+  "url": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/cancellation-reason-cs",
   "concept": [
     {
       "code": "information-missing",

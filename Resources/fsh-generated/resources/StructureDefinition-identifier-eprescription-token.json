@@ -1,14 +1,14 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "GEM-ERP-MEDREQ-PR-RequestGroupIdentifier",
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-ERP-MEDREQ-PR-RequestGroupIdentifier",
+  "id": "identifier-eprescription-token",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/identifier-eprescription-token",
   "version": "1.0",
-  "name": "GEM_ERP_MEDREQ_PR_RequestGroupIdentifier",
-  "title": "GEM ERP MEDREQ Request Group Identifier",
+  "name": "IdentifierEPrescriptionToken",
+  "title": "Identifier für ein E-Rezept-Token",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "Identifier used to identify a group of ServiceRequests that were triggered in a single operation",
+  "description": "Identifier, der ein E-Rezept-Token enthält",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -37,7 +37,15 @@
       {
         "id": "Identifier.system",
         "path": "Identifier.system",
-        "patternUri": "https://gematik.de/GEM_NS_MEDREQ_RequestGroupId"
+        "min": 1,
+        "fixedUri": "https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken",
+        "mustSupport": true
+      },
+      {
+        "id": "Identifier.value",
+        "path": "Identifier.value",
+        "min": 1,
+        "mustSupport": true
       }
     ]
   }
