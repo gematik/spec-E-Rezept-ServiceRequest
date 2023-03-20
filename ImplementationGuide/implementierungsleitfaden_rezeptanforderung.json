@@ -28,7 +28,14 @@
         {
           "nameUrl": "ImplementationGuide/markdown/UebergreifendeFestlegungen/UebergreifendeFestlegungen.md",
           "title": "Übergreifende Festlegungen",
-          "generation": "markdown"
+          "generation": "markdown",
+          "page": [
+            {
+              "nameUrl": "ImplementationGuide/markdown/UebergreifendeFestlegungen/Transportmedium.md",
+              "title": "Transportmedium",
+              "generation": "markdown"
+            }
+          ]
         },
         {
           "nameUrl": "ImplementationGuide/markdown/Ressourcen.md",
