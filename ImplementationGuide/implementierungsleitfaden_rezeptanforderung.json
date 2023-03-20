@@ -14,7 +14,23 @@
       "nameUrl": "ImplementationGuide/markdown/Introduction.md",
       "title": "Einführung",
       "generation": "markdown",
-      "page": []
+      "page": [
+        {
+          "nameUrl": "ImplementationGuide/markdown/ReleaseNotes.md",
+          "title": "Release Notes",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "ImplementationGuide/markdown/Motivation.md",
+          "title": "Motivation",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "ImplementationGuide/markdown/Ressourcen.md",
+          "title": "Datenobjekte",
+          "generation": "markdown"
+        }
+      ]
     }
   }
 }
