@@ -26,6 +26,11 @@
           "generation": "markdown"
         },
         {
+          "nameUrl": "ImplementationGuide/markdown/UebergreifendeFestlegungen/UebergreifendeFestlegungen.md",
+          "title": "Übergreifende Festlegungen",
+          "generation": "markdown"
+        },
+        {
           "nameUrl": "ImplementationGuide/markdown/Ressourcen.md",
           "title": "Datenobjekte",
           "generation": "markdown"
