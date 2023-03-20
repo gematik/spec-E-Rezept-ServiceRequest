@@ -1,0 +1,20 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "ig-prescription-request",
+  "url": "https://gematik.de/fhir/erpmedreqcom/ImplementationGuide/ig-prescription-request",
+  "version": "1.0.0",
+  "name": "Implementierungsleitfaden Rezeptanforderung",
+  "status": "draft",
+  "date": "01.03.2023",
+  "publisher": "gematik GmbH",
+  "fhirVersion": ["4.0.1"],
+  "packageId": "de.gematik.erpmedreqcom",
+  "definition": {
+    "page": {
+      "nameUrl": "ImplementationGuide/markdown/Introduction.md",
+      "title": "Einführung",
+      "generation": "markdown",
+      "page": []
+    }
+  }
+}
