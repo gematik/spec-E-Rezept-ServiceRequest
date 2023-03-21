@@ -44,6 +44,11 @@
               "nameUrl": "ImplementationGuide/markdown/UebergreifendeFestlegungen/MustSupport.md",
               "title": "Must Support Flags",
               "generation": "markdown"
+            },
+            {
+              "nameUrl": "ImplementationGuide/markdown/UebergreifendeFestlegungen/FileFormat.md",
+              "title": "Dateiformat",
+              "generation": "markdown"
             }
           ]
         },
