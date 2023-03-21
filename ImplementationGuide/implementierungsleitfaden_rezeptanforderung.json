@@ -53,8 +53,13 @@
           ]
         },
         {
-          "nameUrl": "ImplementationGuide/markdown/Ressourcen.md",
+          "nameUrl": "ImplementationGuide/markdown/Datenobjekte/Datenobjekte.md",
           "title": "Datenobjekte",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "ImplementationGuide/markdown/Codes/Codes.md",
+          "title": "Codes",
           "generation": "markdown"
         }
       ]
