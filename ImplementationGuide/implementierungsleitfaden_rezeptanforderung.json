@@ -31,8 +31,18 @@
           "generation": "markdown",
           "page": [
             {
+              "nameUrl": "ImplementationGuide/markdown/UebergreifendeFestlegungen/Methodik.md",
+              "title": "Methodik",
+              "generation": "markdown"
+            },
+            {
               "nameUrl": "ImplementationGuide/markdown/UebergreifendeFestlegungen/Transportmedium.md",
               "title": "Transportmedium",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "ImplementationGuide/markdown/UebergreifendeFestlegungen/MustSupport.md",
+              "title": "Must Support Flags",
               "generation": "markdown"
             }
           ]
