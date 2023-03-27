@@ -120,6 +120,38 @@
                   "generation": "markdown"
                 }
               ]
+            },
+            {
+              "nameUrl": "ImplementationGuide/markdown/Datenobjekte/MedicationRequest/MedicationRequest.md",
+              "title": "Rezeptanforderung",
+              "generation": "markdown",
+              "page": [
+                {
+                  "nameUrl": "ImplementationGuide/markdown/Datenobjekte/MedicationRequest/Motivation.md",
+                  "title": "Motivation",
+                  "generation": "markdown"
+                },
+                {
+                  "nameUrl": "ImplementationGuide/markdown/Datenobjekte/MedicationRequest/Kompatibilitaet.md",
+                  "title": "Kompatibilität",
+                  "generation": "markdown"
+                },
+                {
+                  "nameUrl": "ImplementationGuide/markdown/Datenobjekte/MedicationRequest/Profil.md",
+                  "title": "Profil",
+                  "generation": "markdown"
+                },
+                {
+                  "nameUrl": "ImplementationGuide/markdown/Datenobjekte/MedicationRequest/MustSupport.md",
+                  "title": "Anmerkungen zu MustSupport Feldern",
+                  "generation": "markdown"
+                },
+                {
+                  "nameUrl": "ImplementationGuide/markdown/Datenobjekte/MedicationRequest/Beispiel.md",
+                  "title": "Beispiel",
+                  "generation": "markdown"
+                }
+              ]
             }
           ]
         },
