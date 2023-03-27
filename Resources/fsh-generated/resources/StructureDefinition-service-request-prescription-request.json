@@ -67,7 +67,8 @@
       {
         "id": "ServiceRequest.extension",
         "path": "ServiceRequest.extension",
-        "comment": "Hier kann der E-Rezept Token für die Verarbeitung in einer Apotheke bereit gestellt werden",
+        "short": "Hier kann der E-Rezept Token für die Verarbeitung in einer Apotheke bereit gestellt werden",
+        "comment": "Der Token hat die Form '/Task/{PrescriptionID}/$accept?ac={AccessCode}. Siehe [gemSpec_DM_eRp](https://fachportal.gematik.de/fachportal-import/files/gemSpec_DM_eRp_V1.5.0.pdf)'",
         "mustSupport": true
       },
       {
@@ -96,9 +97,9 @@
               "path": "system"
             }
           ],
-          "rules": "open",
-          "description": "Definiert Identifier, die in einem Vorgang genutzt werden sollen"
+          "rules": "open"
         },
+        "short": "Definiert Identifier, die in einem Vorgang genutzt werden sollen",
         "min": 1,
         "mustSupport": true
       },
@@ -210,7 +211,7 @@
         "id": "ServiceRequest.code",
         "path": "ServiceRequest.code",
         "short": "Gibt die Art des ServiceRequests an",
-        "comment": "#prescription-request dient der Anfrage eines Rezeptes an einen Arzt",
+        "comment": "#prescription-request dient der Verordnungsanfrage eines Rezeptes an einen Arzt",
         "mustSupport": true
       },
       {

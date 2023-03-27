@@ -17,7 +17,7 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept anzufragen"
 * identifier ^slicing.rules = #open
 
 * identifier 1..* MS
-* ^short = "Definiert Identifier, die in einem Vorgang genutzt werden sollen"
+  * ^short = "Definiert Identifier, die in einem Vorgang genutzt werden sollen"
 * identifier contains requestId 1..1 and predisId 0..1
 * identifier[requestId] only IdentifierRequestIdentifier
 * identifier[predisId] only IdentifierPreDisIdentifier
