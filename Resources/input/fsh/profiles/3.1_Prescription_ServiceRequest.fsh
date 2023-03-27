@@ -7,16 +7,17 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept anzufragen"
 * obeys sr-1 and sr-2
 
 * extension MS
-  * ^comment = "Hier kann der E-Rezept Token für die Verarbeitung in einer Apotheke bereit gestellt werden"
+  * ^short = "Hier kann der E-Rezept Token für die Verarbeitung in einer Apotheke bereit gestellt werden"
+  * ^comment = "Der Token hat die Form '/Task/{PrescriptionID}/$accept?ac={AccessCode}. Siehe [gemSpec_DM_eRp](https://fachportal.gematik.de/fachportal-import/files/gemSpec_DM_eRp_V1.5.0.pdf)'"
 * extension contains
     EPrescriptionTokenEX named EPrescriptionToken 0..1 MS
 
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
-* identifier ^slicing.description = "Definiert Identifier, die in einem Vorgang genutzt werden sollen"
 
 * identifier 1..* MS
+* ^short = "Definiert Identifier, die in einem Vorgang genutzt werden sollen"
 * identifier contains requestId 1..1 and predisId 0..1
 * identifier[requestId] only IdentifierRequestIdentifier
 * identifier[predisId] only IdentifierPreDisIdentifier
@@ -45,7 +46,7 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept anzufragen"
 
 * code MS
   * ^short = "Gibt die Art des ServiceRequests an"
-  * ^comment = "#prescription-request dient der Anfrage eines Rezeptes an einen Arzt"
+  * ^comment = "#prescription-request dient der Verordnungsanfrage eines Rezeptes an einen Arzt"
 * code.coding 1..1 MS
 * code.coding from ServiceRequestTypeVS
 * code.coding.system 1..1
