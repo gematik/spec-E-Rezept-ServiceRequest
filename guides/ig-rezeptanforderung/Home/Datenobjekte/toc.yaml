@@ -1,0 +1,8 @@
+- name: Index
+  filename: Index.page.md
+- name: Verordnungsanfrage
+  filename: Dispense_ServiceRequest
+- name: Belieferungsanfrage
+  filename: Prescription_ServiceRequest
+- name: Rezeptanforderung
+  filename: MedicationRequest

@@ -1,21 +1,13 @@
----
-topic: introduction
----
-# Einführung
+## {{page:title}}
 
-Mit dem Konzept  "Kommunikation für das E-Rezept"  soll eine Möglichkeit aufgezeigt werden, wie Nachrichten im Kontext des E-Rezepts dezentral zwischen den Beteiligten angefragt, versendet und empfangen werden können. Die Nachrichten werden dabei strukturiert als FHIR-Bundles übermittelt. Als sicheres Verfahren zur Übermittlung ist die TI-Anwendung "Kommunikation im Medizinwesen" (KIM) vorgesehen. Grundsätzlich sind auch andere Verfahren, bspw. zukünftig der TI-Messenger, denkbar. Dabei ist das Transportmedium unabhängig von den Ressourcen, die übermittelt werden.
-Daher setzen die Ressourcen in diesem Projekt auf das [App-Transport-Framework](https://simplifier.net/app-transport-framework/) auf. Für weitere Informationen und Funktionsweise steht dort ein entsprechender [Implementation Guide](https://simplifier.net/app-transport-framework/~guides) zur Verfügung.
-
-## Konzept
 
 ### Message Konzept
 Aus dem App-Transport-Framework werden die Ressourcen "Bundle" und "MessageHeader" genutzt, um einerseits alle Ressourcen zu übermitteln, als auch Informationen über Sender und Empfänger zu halten.
-Die EventCodes, die für MessageHeader.eventCode zulässig sind, ergeben sich aus dem ValueSet {{link:https://simplifier.net/erezept-medicationrequest-communication/gem-pr-medreq-kim-dienstkennung}}. Der EventCode gibt sowohl den Anwendungsfall, sowie auch die jeweilige Anfrage innerhalb eines Anwendungsfalles an. 
+Die EventCodes, die für MessageHeader.eventCode zulässig sind, ergeben sich aus dem ValueSet {{link:https://simplifier.net/erezept-medicationrequest-communication/gem-pr-medreq-kim-dienstkennung}}. Der EventCode gibt sowohl den Anwendungsfall, sowie auch die jeweilige Anfrage innerhalb eines Anwendungsfalles an.
 
-In der folgenden Tabelle sind die zu verwendenden Codes aufgelistet: 
+In der folgenden Tabelle sind die zu verwendenden Codes aufgelistet:
 
-@
-```
+@```
 
 from GEM_PR_MEDREQ_KIM_Dienstkennung
 select compose.include.concept
@@ -26,11 +18,11 @@ select compose.include.concept
 
 Grundlegend basieren alle Anwendungsfälle in diesem Projekt auf [Service-Request Ressourcen](http://hl7.org/fhir/R4/servicerequest.html). Dies soll eine Anfrage an einen anderen Leistungserbringer (LE) widerspiegeln. Derzeit sind zwei Service Requests in diesem Projekt abgebildet:
 
-* Prescription_ServiceRequest {{pagelink:prescription_servicerequest}} (Dient der Anfrage zum Ausstellen einer Verordnung)    
+* Prescription_ServiceRequest {{pagelink:prescription_servicerequest}} (Dient der Anfrage zum Ausstellen einer Verordnung)
 * Dispense_ServiceRequest {{pagelink:dispense_servicerequest}} (Dient der Anfrage zum Beliefern einer Verordnung)
 
-Dieser ServiceRequest bildet ähnlich wie die Task Ressource im E-Rezept die Trägerressource über die alle relevanten Informationen für den Vorgang referenziert werden. Daher wird jeder ServiceRequest, der sich im Bundle befindet, unter MessageHeader.focus referenziert. 
-Dieser ServiceRequest soll stets weitergereicht und mit Informationen angereichert werden. 
+Dieser ServiceRequest bildet ähnlich wie die Task Ressource im E-Rezept die Trägerressource über die alle relevanten Informationen für den Vorgang referenziert werden. Daher wird jeder ServiceRequest, der sich im Bundle befindet, unter MessageHeader.focus referenziert.
+Dieser ServiceRequest soll stets weitergereicht und mit Informationen angereichert werden.
 
 ### Zuordnung von Anfrage und Angefragtem Präparat
 
@@ -68,7 +60,7 @@ Anwendungsfälle können weitere Vorgaben zu ID's unter ServiceRequest.identifie
 
 ## Anwendungsfälle
 
-Mit den in diesem Projekt bereitgestellten Profilen sollen folgende Anwendungsfälle abgebildet werden können: 
+Mit den in diesem Projekt bereitgestellten Profilen sollen folgende Anwendungsfälle abgebildet werden können:
 
 * {{pagelink:usecase_rezeptanforderung}}
   * UC1: Verordnungs- und Dispensierungsanfrage durch den Pflegedienst

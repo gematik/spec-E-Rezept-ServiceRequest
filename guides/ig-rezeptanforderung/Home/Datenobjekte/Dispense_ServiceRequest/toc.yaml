@@ -1,0 +1,13 @@
+- name: Index
+  filename: Index.page.md
+- name: Motivation
+  filename: Motivation.page.md
+- name: Kompatibilität
+  filename: Kompatibilitaet.page.md
+- name: Profil
+  filename: Profil.page.md
+- name: Must Support Feldern
+  filename: MustSupport.page.md
+- name: Beispiel
+  filename: Beispiel.page.md
+
