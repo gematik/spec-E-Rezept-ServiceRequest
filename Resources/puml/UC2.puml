@@ -1,4 +1,4 @@
-@startuml
+@startuml UC2
 autonumber "<b>[0]"
 participant Pflegeeinrichtung as PE #LightBlue
 participant Arzt as A #LightYellow

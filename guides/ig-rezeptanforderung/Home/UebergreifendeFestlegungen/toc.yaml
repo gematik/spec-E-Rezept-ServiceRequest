@@ -8,3 +8,5 @@
   filename: Must-Support.page.md
 - name: Transportmedium
   filename: Transportmedium.page.md
+- name: Verwendung der Ressourcen
+  filename: Ressource-Usage.page.md

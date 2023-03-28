@@ -1,4 +1,4 @@
-@startuml
+@startuml UC4
 autonumber "<b>[0]"
 participant Apotheke as AP #LightGreen
 participant Arzt as A #LightYellow
