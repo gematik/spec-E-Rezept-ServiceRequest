@@ -2,6 +2,8 @@
   filename: Index.page.md
 - name: Einführung
   filename: Einfuehrung
+- name: Anwendungsfälle
+  filename: Anwendungsfaelle
 - name: Release Notes
   filename: Release-Notes.page.md
 - name: Motivation

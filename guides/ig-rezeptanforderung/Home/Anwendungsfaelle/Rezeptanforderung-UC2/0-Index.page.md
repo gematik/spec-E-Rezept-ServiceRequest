@@ -9,15 +9,13 @@ Anschließend werden die zu verwendenden Ressourcen angegeben.
 
 Beispiele für diesen Anwendungsfall befinden sich im [Simplifier Projekt](https://simplifier.net/erezept-medicationrequest-communication/~resources?category=Example&exampletype=Bundle&sortBy=RankScore_desc). Beispiele für diesen Anwendungsfall sind benannt nach "UC1-...", "UC2-...", "UC3-..."
 
-## Fachliche Kurzbeschreibung UC3
 
-In diesen Anwendungsfall fragt die Pflegeeinrichtung einen Arzt an eine Verordnung auszustellen (**[1]**). 
+## Fachliche Kurzbeschreibung UC2
 
-Der Arzt stellt die Verordnung im E-Rezept Fachdienst ein (**[2]**) und informiert die Pflegeeinrichtung, dass die Bearbeitung abgeschlossen ist (**[3]**).
+In diesem Anwendungsfall soll der Verordnende den Dispense_ServiceRequest an die Apotheke weiterleiten, ohne dass die Pflegeeinrichtung das selbst tun muss.
+Das PVS generiert dabei den Dispense_ServiceRequest und stellt diesen mit den nötigen Informationen an die Apotheke aus. Die Apotheke informiert die Pflegeeinrichtung über der Erhalt der Anfrage und benachrichtig die Pflegeeinrichtung wenn die Dispensierung erfolgt ist.
 
-Der Patient kann nun die Verordnung in der Apotheke via E-Rezept App oder eGK in der Apotheke einlösen.
+{{render:guides/ig-rezeptanforderung/images/puml_images/UC2.png}}
 
-![Sequenzdiagramm zu UC3](../../../../images/puml_images/UC3.png)
 
-## Beschreibung der FHIR-Ressourcen
 
