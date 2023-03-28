@@ -8,5 +8,5 @@
   filename: Rezeptanforderung-UC3
 - name: Parenterale Zubereitung
   filename: Parenterale-Zubereitung
-- name: Klärfall
-  filename: Klaerfall
+#- name: Klärfall
+#  filename: Klaerfall Einkommentieren wenn FHIR Spezifikationen vorliegen

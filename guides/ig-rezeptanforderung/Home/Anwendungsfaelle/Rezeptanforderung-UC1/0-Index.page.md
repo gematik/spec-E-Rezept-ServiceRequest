@@ -9,7 +9,7 @@ Für eine detaillierte Beschreibung dient das FeatureDokument "KIM-Nachrichten f
 
 {{index:current}}
 
-Beispiele für diesen Anwendungsfall befinden sich im [Simplifier Projekt](https://simplifier.net/erezept-medicationrequest-communication/~resources?category=Example&exampletype=Bundle&sortBy=RankScore_desc). Beispiele für diesen Anwendungsfall sind benannt nach "UC1-...", "UC2-...", "UC3-..."
+
 
 ## Fachliche Kurzbeschreibung UC1
 
