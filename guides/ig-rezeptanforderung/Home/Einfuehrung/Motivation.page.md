@@ -2,10 +2,8 @@
 
 Mit dem E-Rezept hat die gematik ein Produkt auf den Weg gebracht, was dazu beiträgt die Verordnung, Abgabe und Abrechnung von Rezepten zu digitalisieren. Der gesamte Ablauf der Verordnung ist über den zentralen E-Rezept Fachdienst gelöst.
 
-Um einen dezentralen Weg zur Kommunikation über E-Rezepte für Anwender der TI zu ermöglichen ist diese FHIR-Spezifikation veröffentlicht.
+Bisher steht kein strukturierter, dezentraler Weg der Kommunikation für E-Rezepte zur Verfügung. Diese Spezifikation soll dazu beitragen, dass Leistungserbringer im deutschen Gesundheitswesen strukturiert Informationen über E-Rezepte austauschen können.
 
-## Bedarf an dezentraler Kommunikation
+Anwendungsfälle sind bspw, die Anforderung von Rezepten von Pflegeeinrichtungen oder inhaltliche Klärung von Verordnungen zwischen Arzt und Apotheke.
 
-Im E-Rezept sind verschiedene Kommunikationswege von Nöten, bzw. hilfreich, die es Leistungserbringern ermöglichen sich über Verordnungen abseits des E-Rezept Fachdienstes auszutauschen.
-
-//TODO...
+Diese Spezifikation soll einen Beitrag dazu liefern den Versorgungsprozess für die Leistungserbringer zu vereinfachen und zu beschleunigen.

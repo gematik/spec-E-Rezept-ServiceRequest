@@ -1,6 +1,12 @@
 - name: Index
   filename: Index.page.md
-- name: Rezeptanforderung
-  filename: Rezeptanforderung.page.md
+- name: Rezeptanforderung (Einlösen über Anfragenden)
+  filename: Rezeptanforderung-UC1
+- name: Rezeptanforderung (Einlösen über Verordnendenm)
+  filename: Rezeptanforderung-UC2
+- name: Rezeptanforderung (Einlösen durch Versicherten)
+  filename: Rezeptanforderung-UC3
 - name: Parenterale Zubereitung
-  filename: Parenterale-Zubereitung.page.md
+  filename: Parenterale-Zubereitung
+- name: Klärfall
+  filename: Klaerfall
