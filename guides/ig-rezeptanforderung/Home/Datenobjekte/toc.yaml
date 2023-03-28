@@ -1,8 +1,8 @@
 - name: Index
   filename: Index.page.md
-- name: Verordnungsanfrage
-  filename: Dispense_ServiceRequest
-- name: Belieferungsanfrage
+- name: Rezeptanfrage [(ServiceRequest)](http://hl7.org/fhir/R4/servicerequest.html)
   filename: Prescription_ServiceRequest
-- name: Rezeptanforderung
+- name: Belieferungssanfrage [(ServiceRequest)](http://hl7.org/fhir/R4/servicerequest.html)
+  filename: Dispense_ServiceRequest
+- name: Rezeptanforderung [(MedicationRequest)](http://hl7.org/fhir/R4/medicationrequest.html)
   filename: MedicationRequest

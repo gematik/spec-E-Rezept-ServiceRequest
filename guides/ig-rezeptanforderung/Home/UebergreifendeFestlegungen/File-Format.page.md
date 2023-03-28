@@ -1,4 +1,4 @@
-# Dateiformat
+# {{page-title}}
 
 Der FHIR-Standard beschreibt drei verschiedene [Repräsentationsformate](http://hl7.org/fhir/formats.html#wire): XML, JSON und RDF (Turtle).
 

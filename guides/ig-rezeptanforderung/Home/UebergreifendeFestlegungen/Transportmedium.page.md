@@ -1,4 +1,4 @@
-# Transportmedium
+# {{page-title}}
 
 Generell sind die hier spezifizierten FHIR Ressourcen unabhängig vom gewählten Transportmedium. Dennoch basiert diese FHIR Spezifikation auf dem [App-Transport-Framework](https://simplifier.net/app-transport-framework/~guides) der gematik.
 

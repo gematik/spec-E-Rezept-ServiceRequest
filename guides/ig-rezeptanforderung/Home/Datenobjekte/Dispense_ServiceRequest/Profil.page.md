@@ -1,4 +1,4 @@
-## Profil
+## {{page-title}}
 
 Die folgende FHIR Ressource stellt eine Anfrage an eine abgebende LEI dar. Diese muss den E-Rezept Token enthalten, um die Dispensierung zu vollziehen.
 

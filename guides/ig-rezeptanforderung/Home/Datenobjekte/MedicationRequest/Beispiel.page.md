@@ -1,4 +1,4 @@
-## Beispiel
+## {{page-title}}
 
 Valides Beispiel einer Verordnungsanfrage:
 

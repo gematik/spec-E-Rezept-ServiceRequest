@@ -1,4 +1,4 @@
-# Motivation
+## {{page-title}}
 
 Mit dem E-Rezept hat die gematik ein Produkt auf den Weg gebracht, was dazu beiträgt die Verordnung, Abgabe und Abrechnung von Rezepten zu digitalisieren. Der gesamte Ablauf der Verordnung ist über den zentralen E-Rezept Fachdienst gelöst.
 

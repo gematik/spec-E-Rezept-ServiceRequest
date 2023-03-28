@@ -2,7 +2,7 @@
 topic: usecase_rezeptanforderung
 ---
 
-# Anwendungsfall Rezeptanforderung (UC1, UC2, UC3)
+## {{page-title}}
 Diese Seite beschreibt kurz die fachliche Beschreibung einer "Rezeptanforderung". Für eine detaillierte Beschreibung dient das FeatureDokument "KIM-Nachrichten für das E-Rezept" (gemF_eRp_KIM) //TODO: Link.
 
 Anschließend werden die zu verwendenden Ressourcen angegeben. 

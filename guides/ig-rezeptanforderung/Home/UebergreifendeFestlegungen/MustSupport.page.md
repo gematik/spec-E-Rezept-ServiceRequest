@@ -1,4 +1,4 @@
-# Must Support Flags
+# {{page-title}}
 
 Felder der FHIR-Spezifikation, die mit "Must Support" (MS) geflaggt sind, SOLLEN derart umgesetzt werden, dass die Inhalte dem Nutzer sichtbar gemacht werden und wo nötig auch bearbeitbar sind.
 

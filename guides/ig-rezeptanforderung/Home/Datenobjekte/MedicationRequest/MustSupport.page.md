@@ -1,5 +1,4 @@
-## Anmerkungen zu MustSupport Feldern
-
+## {{page-title}}
 ### `MedicationRequest.extension:PrescriptionIdEx`
 
 Der MedicationRequest kann eine PrescriptionId eines bereits ausgestellten Rezepts enthalten.
