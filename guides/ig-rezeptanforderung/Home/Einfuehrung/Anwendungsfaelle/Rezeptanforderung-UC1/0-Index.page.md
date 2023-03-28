@@ -3,7 +3,10 @@ topic: usecase_rezeptanforderung
 ---
 
 ## {{page-title}}
-Diese Seite beschreibt kurz die fachliche Beschreibung einer "Rezeptanforderung". Für eine detaillierte Beschreibung dient das FeatureDokument "KIM-Nachrichten für das E-Rezept" (gemF_eRp_KIM) //TODO: Link.
+
+Diese Seite beschreibt fachlich den Anwendungsfall "Rezeptanforderung". 
+Für eine detaillierte Beschreibung dient das FeatureDokument "KIM-Nachrichten für das E-Rezept" (gemF_eRp_KIM) //TODO: Link.
+
 
 Anschließend werden die zu verwendenden Ressourcen angegeben. 
 
@@ -29,10 +32,7 @@ Die Apotheke kann nun im letzten Schritt die Verarbeitung der Anfrage und die Be
 
 ## Fachliche Kurzbeschreibung UC2
 
-In diesem Anwendungsfall soll der Verordnende den Dispense_ServiceRequest an die Apotheke weiterleiten, ohne dass die Pflegeeinrichtung das selbst tun muss.
-Das PVS generiert dabei den Dispense_ServiceRequest und stellt diesen mit den nötigen Informationen an die Apotheke aus. Die Apotheke informiert die Pflegeeinrichtung über der Erhalt der Anfrage und benachrichtig die Pflegeeinrichtung wenn die Dispensierung erfolgt ist.
 
-![Sequenzdiagramm zu UC2](../puml/images/UC2.png)
 
 ## Fachliche Kurzbeschreibung UC3
 
