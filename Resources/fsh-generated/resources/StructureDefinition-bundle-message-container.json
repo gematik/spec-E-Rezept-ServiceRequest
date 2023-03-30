@@ -35,7 +35,7 @@
   "kind": "resource",
   "abstract": false,
   "type": "Bundle",
-  "baseDefinition": "https://gematik.de/fhir/atf/StructureDefinition/GEM-PR-KIM-MessageBundle",
+  "baseDefinition": "https://gematik.de/fhir/atf/StructureDefinition/bundle-app-transport-framework",
   "derivation": "constraint",
   "differential": {
     "element": [

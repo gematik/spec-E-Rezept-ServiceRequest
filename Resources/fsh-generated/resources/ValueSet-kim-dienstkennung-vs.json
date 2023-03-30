@@ -10,7 +10,7 @@
   "compose": {
     "include": [
       {
-        "system": "https://gematik.de/fhir/atf/CodeSystem/GEM-CS-MEDREQ-KIM-Dienstkennung",
+        "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs",
         "concept": [
           {
             "code": "eRezept_Rezeptanforderung_Rezeptanfrage_an_Sender_zurueck",

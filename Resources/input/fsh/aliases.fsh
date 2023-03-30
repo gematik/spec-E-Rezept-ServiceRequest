@@ -28,8 +28,8 @@ Alias: $HL7_Intent_VS = http://hl7.org/fhir/ValueSet/request-intent
 Alias: $DAV-EX-ERP-Rezeptaenderung = http://fhir.abda.de/eRezeptAbgabedaten/StructureDefinition/DAV-EX-ERP-Rezeptaenderung
 
 Alias: $GEM_ERP_PR_MedicationDispense = https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense
-Alias: $GEM_PR_KIM_MessageBundle = https://gematik.de/fhir/atf/StructureDefinition/GEM-PR-KIM-MessageBundle
-Alias: $GEM_PR_KIM_MessageHeader = https://gematik.de/fhir/atf/StructureDefinition/GEM-PR-KIM-MessageHeader
-Alias: $GEM_PR_KIM_AdressIdentifier = https://gematik.de/fhir/atf/StructureDefinition/GEM-PR-MEDREQ-KIM-Adresse
-Alias: $GEM_PR_TIM_AdressIdentifier = https://gematik.de/fhir/atf/StructureDefinition/GEM-PR-MEDREQ-TIM-Adresse
-Alias: $GEM_CS_KIM_Dienstkennung = https://gematik.de/fhir/atf/CodeSystem/GEM-CS-MEDREQ-KIM-Dienstkennung
+Alias: $GEM_PR_KIM_MessageBundle = https://gematik.de/fhir/atf/StructureDefinition/bundle-app-transport-framework
+Alias: $GEM_PR_KIM_MessageHeader = https://gematik.de/fhir/atf/StructureDefinition/message-header-app-transport
+Alias: $GEM_PR_KIM_AdressIdentifier = https://gematik.de/fhir/atf/StructureDefinition/identifier-address-kim
+Alias: $GEM_PR_TIM_AdressIdentifier = https://gematik.de/fhir/atf/StructureDefinition/identifier-address-tim
+Alias: $GEM_CS_KIM_Dienstkennung = https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs
