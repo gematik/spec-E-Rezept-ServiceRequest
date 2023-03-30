@@ -152,22 +152,6 @@
         "mustSupport": true
       },
       {
-        "id": "ServiceRequest.replaces",
-        "path": "ServiceRequest.replaces",
-        "short": "Angabe welcher ServiceRequest ersetzt werden soll",
-        "comment": "Nur vom Requester zu nutzen, um anzugeben welche Anfrage storniert wurde",
-        "max": "1",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/service-request-prescription-request"
-            ]
-          }
-        ],
-        "mustSupport": true
-      },
-      {
         "id": "ServiceRequest.requisition",
         "path": "ServiceRequest.requisition",
         "short": "Identifier des Vorgangs. Alle ServiceRequests innerhalb eines Vorgangs erhalten die gleiche ID.",
