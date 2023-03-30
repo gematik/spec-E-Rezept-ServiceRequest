@@ -26,11 +26,6 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept anzufragen"
   * ^comment = "Einem ServiceRequest ist genau ein MedicationRequest zugeordnet, sodass unabhängige Bearbeitungen möglich sind."
 * basedOn only Reference(MedicationRequestPrescriptionRequest or $KBV_PR_ERP_Prescription)
 
-* replaces 0..1 MS
-* replaces only Reference(ServiceRequestPrescriptionRequest)
-  * ^short = "Angabe welcher ServiceRequest ersetzt werden soll"
-  * ^comment = "Nur vom Requester zu nutzen, um anzugeben welche Anfrage storniert wurde"
-
 * requisition 1..1 MS
 * requisition only IdentifierProcedureIdentifier
   * ^short = "Identifier des Vorgangs. Alle ServiceRequests innerhalb eines Vorgangs erhalten die gleiche ID."
