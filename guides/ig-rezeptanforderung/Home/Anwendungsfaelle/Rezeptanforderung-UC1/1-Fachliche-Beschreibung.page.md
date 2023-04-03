@@ -5,3 +5,4 @@ Dieser kann nun das Token an eine Apotheke seiner Wahl übermitteln, die daraufh
 
 Eine detaillierte fachliche Beschreibung ist hier zu finden [gemF_eRp_KIM](//TODO).
 
+Ein Mapping der fachlichen Informationseinheiten des Featuredokuments zu den Profilen findet sich unten.
