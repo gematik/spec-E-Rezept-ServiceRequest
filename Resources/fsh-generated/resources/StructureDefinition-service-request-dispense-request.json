@@ -67,22 +67,6 @@
         "mustSupport": true
       },
       {
-        "id": "ServiceRequest.extension:Secret",
-        "path": "ServiceRequest.extension",
-        "sliceName": "Secret",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/secret-ex"
-            ]
-          }
-        ],
-        "mustSupport": true
-      },
-      {
         "id": "ServiceRequest.identifier",
         "path": "ServiceRequest.identifier",
         "slicing": {
