@@ -1,5 +1,21 @@
 ## {{page-title}}
 
+Die Must Support Felder in diesem Profil dienen auch zur Identifikation der Informationen, die zur Verarbeitung dieser Ressource notwendig sind. Zur erfolgreichen Übermittlung und Verarbeitung einer Verordnungsanfrage MÜSSEN die Felder befüllt und ausgelesen werden können.
+
+### Liste der Must Support Felder mit Beschreibungen
+
+In dieser Tabelle sind alle MustSupport Felder und deren Beschreibungen aufgeführt:
+
+@```
+
+from StructureDefinition
+where name = 'ServiceRequestDispenseRequest'
+for differential.element
+    where mustSupport = true
+    select id, short, comment
+
+```
+
 ### `.extension:EPrescriptionTokenEX`
 
 Das schreibende System MUSS dieses Feld korrekt befüllen können, um den Token für den Empfänger nutzbar zu machen.
