@@ -35,6 +35,12 @@
       "identity": "quick",
       "uri": "http://siframework.org/cqf",
       "name": "Quality Improvement and Clinical Knowledge (QUICK)"
+    },
+    {
+      "identity": "prescription-request-mapping",
+      "name": "Prescription Request Mapping",
+      "uri": "gemF_eRp_KIM#3.1.1 Fachliche Information",
+      "comment": "Mapping für fachliche Informationseinheiten des Feature Dokuments"
     }
   ],
   "kind": "resource",
@@ -62,19 +68,25 @@
             "expression": "reasonReference.exists() implies note.exists()",
             "source": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/service-request-prescription-request"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "prescription-request-mapping",
+            "map": "ServiceRequest"
+          }
         ]
       },
       {
         "id": "ServiceRequest.extension",
         "path": "ServiceRequest.extension",
-        "short": "Hier kann der E-Rezept Token für die Verarbeitung in einer Apotheke bereit gestellt werden",
-        "comment": "Der Token hat die Form '/Task/{PrescriptionID}/$accept?ac={AccessCode}. Siehe [gemSpec_DM_eRp](https://fachportal.gematik.de/fachportal-import/files/gemSpec_DM_eRp_V1.5.0.pdf)'",
         "mustSupport": true
       },
       {
         "id": "ServiceRequest.extension:EPrescriptionToken",
         "path": "ServiceRequest.extension",
         "sliceName": "EPrescriptionToken",
+        "short": "Hier kann der E-Rezept Token für die Verarbeitung in einer Apotheke bereit gestellt werden",
+        "comment": "Der Token hat die Form '/Task/{PrescriptionID}/$accept?ac={AccessCode}. Siehe [gemSpec_DM_eRp](https://fachportal.gematik.de/fachportal-import/files/gemSpec_DM_eRp_V1.5.0.pdf)'",
         "min": 0,
         "max": "1",
         "type": [
@@ -99,7 +111,7 @@
           ],
           "rules": "open"
         },
-        "short": "Definiert Identifier, die in einem Vorgang genutzt werden sollen",
+        "short": "Definiert Identifier, die in diesem Profil genutzt werden sollen",
         "min": 1,
         "mustSupport": true
       },
@@ -107,6 +119,8 @@
         "id": "ServiceRequest.identifier:requestId",
         "path": "ServiceRequest.identifier",
         "sliceName": "requestId",
+        "short": "Identifier, der eineindeutig einen ServiceRequest referenziert.",
+        "comment": "Zur Referenzierung und Zuordnung von ServiceRequest, bspw. wenn ein ServiceRequest einen anderen ersetzen soll, ist es wichtig diese Zuordnung mit dem Identifier treffen zu können. Kann beispielsweise über eine UUID abgebildet werden.",
         "min": 1,
         "max": "1",
         "type": [
@@ -122,6 +136,9 @@
         "id": "ServiceRequest.identifier:predisId",
         "path": "ServiceRequest.identifier",
         "sliceName": "predisId",
+        "short": "Identifier, der einen Prescription- und einen Dispenserequest verbindet.",
+        "definition": "In einigen Anwendungsfällen werden bedarf es der Information welche Verordnungsanfrage zu welcher Belieferungsanfrage gehört. Wenn bspw. ein Medikament angefragt wird möchte man verfolgen können welche die dazugehörige Belieferungsanfrage ist. Hierzu dient der predisIdentifier, der ein Paar von ServiceRequest**Prescription**Request und ServiceRequest**Dispense**Request zusammengehörig identifiziert.\n\nDas implementierende System muss in der Lage sein diese Verknüpfung herzustellen als auch zu lesen.",
+        "comment": "Kann beispielsweise über eine UUID abgebildet werden.",
         "min": 0,
         "max": "1",
         "type": [
@@ -137,6 +154,7 @@
         "id": "ServiceRequest.basedOn",
         "path": "ServiceRequest.basedOn",
         "short": "Angefragter oder erfüllausgestellter MedicationRequest",
+        "definition": "Dieses Feld referenziert den zugrundeliegenden MedicationRequest, der die medizinischen Informationen zur Rezeptanfrage enthält. Wenn die Rezeptanfrage gestellt wird KANN das Profil MedicationRequestPrescriptionRequest genutzt werden.\nWenn die Verordnung erstellt wurde ist der entsprechende KBV_PR_ERP_Bundle-Verordnungsdatensatz zu referenzieren.",
         "comment": "Einem ServiceRequest ist genau ein MedicationRequest zugeordnet, sodass unabhängige Bearbeitungen möglich sind.",
         "min": 1,
         "max": "1",
@@ -149,13 +167,19 @@
             ]
           }
         ],
-        "mustSupport": true
+        "mustSupport": true,
+        "mapping": [
+          {
+            "identity": "prescription-request-mapping",
+            "map": "Praeparat"
+          }
+        ]
       },
       {
         "id": "ServiceRequest.requisition",
         "path": "ServiceRequest.requisition",
         "short": "Identifier des Vorgangs. Alle ServiceRequests innerhalb eines Vorgangs erhalten die gleiche ID.",
-        "comment": "Ist als Fall oder VorgangsID zu verstehen, um nachverfolgen zu können zu welcher Anfrage der ServiceRequest gehört.",
+        "comment": "Ist als Fall oder VorgangsID zu verstehen (siehe Mapping), um nachverfolgen zu können zu welcher Anfrage der ServiceRequest gehört.",
         "min": 1,
         "type": [
           {
@@ -165,12 +189,19 @@
             ]
           }
         ],
-        "mustSupport": true
+        "mustSupport": true,
+        "mapping": [
+          {
+            "identity": "prescription-request-mapping",
+            "map": "Vorgangs_ID"
+          }
+        ]
       },
       {
         "id": "ServiceRequest.status",
         "path": "ServiceRequest.status",
         "short": "Gibt den Bearbeitungsstand eines ServiceRequests an",
+        "comment": "Bei Statusänderung wird dieser Wert überschrieben",
         "constraint": [
           {
             "key": "sr-1",
@@ -192,10 +223,20 @@
         "fixedCode": "order"
       },
       {
+        "id": "ServiceRequest.priority",
+        "path": "ServiceRequest.priority",
+        "mapping": [
+          {
+            "identity": "prescription-request-mapping",
+            "map": "Prioritaet"
+          }
+        ]
+      },
+      {
         "id": "ServiceRequest.code",
         "path": "ServiceRequest.code",
         "short": "Gibt die Art des ServiceRequests an",
-        "comment": "#prescription-request dient der Verordnungsanfrage eines Rezeptes an einen Arzt",
+        "comment": "#prescription-request definiert diesen ServiceRequest als Verordnungsanfrage eines Rezeptes an einen Arzt",
         "mustSupport": true
       },
       {
@@ -252,13 +293,19 @@
             ]
           }
         ],
-        "mustSupport": true
+        "mustSupport": true,
+        "mapping": [
+          {
+            "identity": "prescription-request-mapping",
+            "map": "Pateiteninformationen"
+          }
+        ]
       },
       {
         "id": "ServiceRequest.occurrence[x]",
         "path": "ServiceRequest.occurrence[x]",
         "short": "Gibt das Datum an, an dem das Rezept ausgestellt werden soll",
-        "min": 1,
+        "comment": "Kann von vom Anfragenden genutzt werden um die zeitliche Dringlichkeit deutlich zu machen",
         "type": [
           {
             "code": "dateTime"
@@ -277,7 +324,8 @@
       {
         "id": "ServiceRequest.requester",
         "path": "ServiceRequest.requester",
-        "short": "Anfragende Einrichtung oder Arzt",
+        "short": "Anfragende Einrichtung oder Practitioner",
+        "comment": "Die KIM-Adresse ist bereits im MessageHeader hinterlegt. Daher ist die präferierte Angabe einen KBV_PR_FOR_Practitioner zu hinterlegen.",
         "min": 1,
         "type": [
           {
@@ -288,7 +336,13 @@
             ]
           }
         ],
-        "mustSupport": true
+        "mustSupport": true,
+        "mapping": [
+          {
+            "identity": "prescription-request-mapping",
+            "map": "Adressat_der_Rezeptuebermittlung"
+          }
+        ]
       },
       {
         "id": "ServiceRequest.performer",
@@ -302,21 +356,35 @@
             ]
           }
         ],
-        "mustSupport": true
+        "mustSupport": true,
+        "mapping": [
+          {
+            "identity": "prescription-request-mapping",
+            "map": "Adressat_der_Rezeptanforderung"
+          }
+        ]
       },
       {
         "id": "ServiceRequest.reasonCode",
         "path": "ServiceRequest.reasonCode",
-        "short": "Code, der angibt, warum das Medikament angefragt wird",
+        "short": "Code, der angibt, warum eine Verordnung angefragt wird",
+        "comment": "Wird auch genutzt, um bei einer Stornierung anzugeben, warum der Vorgang abgebrochen wurde",
         "mustSupport": true,
         "binding": {
           "strength": "required",
           "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/request-reason-vs"
-        }
+        },
+        "mapping": [
+          {
+            "identity": "prescription-request-mapping",
+            "map": "Bedarfsbegruendung (Code)"
+          }
+        ]
       },
       {
         "id": "ServiceRequest.reasonReference",
         "path": "ServiceRequest.reasonReference",
+        "short": "Verweis auf eine Observation Ressource, die angibt, wie lange die akutelle Medikation noch reicht",
         "comment": "Wenn eine Referenz zum Grund angegeben wird muss auch ein menschen lesbarer Eintrag in .note hinzugefügt werden, falls Systeme die referenzierte Observation nicht verarbeiten können",
         "type": [
           {
@@ -324,6 +392,16 @@
             "targetProfile": [
               "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/observation-remaining-medication"
             ]
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "prescription-request-mapping",
+            "map": "Bedarfsbegruendung (Observation)"
+          },
+          {
+            "identity": "prescription-request-mapping",
+            "map": "Restreichweite"
           }
         ]
       },
@@ -369,7 +447,13 @@
         "path": "ServiceRequest.note",
         "short": "Weitere Angaben zur Rezeptanforderung",
         "comment": "Eventuell nicht spezifizierte Anwendungsfälle können hier im Freitext platziert werden",
-        "mustSupport": true
+        "mustSupport": true,
+        "mapping": [
+          {
+            "identity": "prescription-request-mapping",
+            "map": "Freitext"
+          }
+        ]
       }
     ]
   }
