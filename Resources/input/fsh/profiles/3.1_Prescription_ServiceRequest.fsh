@@ -10,15 +10,15 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept anzufragen"
 * extension contains
     EPrescriptionTokenEX named EPrescriptionToken 0..1 MS
 * extension[EPrescriptionTokenEX]
-  * ^short = "Hier kann der E-Rezept Token für die Verarbeitung in einer Apotheke bereit gestellt werden"
-  * ^comment = "Der Token hat die Form '/Task/{PrescriptionID}/$accept?ac={AccessCode}. Siehe [gemSpec_DM_eRp](https://fachportal.gematik.de/fachportal-import/files/gemSpec_DM_eRp_V1.5.0.pdf)'"
+  * ^short = "Hier kann der E-Rezept Token für die Verarbeitung in einer Apotheke bereit gestellt werden."
+  * ^comment = "Der Token hat die Form '/Task/{PrescriptionID}/$accept?ac={AccessCode}. Siehe [gemSpec_DM_eRp](https://fachportal.gematik.de/fachportal-import/files/gemSpec_DM_eRp_V1.5.0.pdf)'."
 
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
 
 * identifier 1..* MS
-  * ^short = "Definiert Identifier, die in diesem Profil genutzt werden sollen"
+  * ^short = "Definiert Identifier, die in diesem Profil genutzt werden sollen."
 * identifier contains requestId 1..1 and predisId 0..1
 * identifier[requestId] only IdentifierRequestIdentifier
   * ^short = "Identifier, der eineindeutig einen ServiceRequest referenziert."
@@ -31,7 +31,7 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept anzufragen"
 Das implementierende System muss in der Lage sein diese Verknüpfung herzustellen als auch zu lesen."
 
 * basedOn 1..1 MS
-  * ^short = "Angefragter oder erfüllausgestellter MedicationRequest"
+  * ^short = "Angefragter oder erfüllausgestellter MedicationRequest."
   * ^comment = "Einem ServiceRequest ist genau ein MedicationRequest zugeordnet, sodass unabhängige Bearbeitungen möglich sind."
   * ^definition = "Dieses Feld referenziert den zugrundeliegenden MedicationRequest, der die medizinischen Informationen zur Rezeptanfrage enthält. Wenn die Rezeptanfrage gestellt wird KANN das Profil MedicationRequestPrescriptionRequest genutzt werden.
 Wenn die Verordnung erstellt wurde ist der entsprechende KBV_PR_ERP_Bundle-Verordnungsdatensatz zu referenzieren."
@@ -45,23 +45,23 @@ Wenn die Verordnung erstellt wurde ist der entsprechende KBV_PR_ERP_Bundle-Veror
 * status MS
 * status obeys sr-1
 * status from ServiceRequestStatusVS
-  * ^short = "Gibt den Bearbeitungsstand eines ServiceRequests an"
-  * ^comment = "Bei Statusänderung wird dieser Wert überschrieben"
+  * ^short = "Gibt den Bearbeitungsstand eines ServiceRequests an."
+  * ^comment = "Bei Statusänderung wird dieser Wert überschrieben."
 
 * intent = #order (exactly)
 
 * code MS
-  * ^short = "Gibt die Art des ServiceRequests an"
-  * ^comment = "#prescription-request definiert diesen ServiceRequest als Verordnungsanfrage eines Rezeptes an einen Arzt"
+  * ^short = "Gibt die Art des ServiceRequests an."
 * code.coding 1..1 MS
 * code.coding from ServiceRequestTypeVS
 * code.coding.system 1..1
 * code.coding.code 1..1
 * code.coding.code = #prescription-request (exactly)
+  * ^comment = "#prescription-request definiert diesen ServiceRequest als Verordnungsanfrage eines Rezeptes an einen Arzt."
 
 * subject MS
 * subject only Reference($KBV_PR_FOR_Patient)
-  * ^short = "Patient für den stellvertretend ein Rezept angefordert wird"
+  * ^short = "Patient für den stellvertretend ein Rezept angefordert wird."
 
 * orderDetail 1..1 MS
 * orderDetail.coding 1..1 MS
@@ -71,31 +71,31 @@ Wenn die Verordnung erstellt wurde ist der entsprechende KBV_PR_ERP_Bundle-Veror
 
 * occurrence[x] 0..1 MS
 * occurrence[x] only dateTime
-  * ^short = "Gibt das Datum an, an dem das Rezept ausgestellt werden soll"
-  * ^comment = "Kann von vom Anfragenden genutzt werden um die zeitliche Dringlichkeit deutlich zu machen"
+  * ^short = "Gibt das Datum an, an dem das Rezept ausgestellt werden soll."
+  * ^comment = "Kann von vom Anfragenden genutzt werden um die zeitliche Dringlichkeit deutlich zu machen."
 
 * authoredOn 1..1 MS
-  * ^short = "Erstellungsdatum der Anfrage"
+  * ^short = "Erstellungsdatum der Anfrage."
   * ^comment = "Wird initial angelegt und dann nicht mehr verändert."
 
 
 * requester 1..1 MS
 * requester only Reference(OrganizationWithKIMAdress or $KBV_PR_FOR_Practitioner)
-  * ^short = "Anfragende Einrichtung oder Practitioner"
+  * ^short = "Anfragende Einrichtung oder Practitioner."
   * ^comment = "Die KIM-Adresse ist bereits im MessageHeader hinterlegt. Daher ist die präferierte Angabe einen KBV_PR_FOR_Practitioner zu hinterlegen."
 
 * performer MS
 * performer only Reference($KBV_PR_FOR_Practitioner)
-  * ^short = "Arzt, der das Rezept ausstellen soll"
+  * ^short = "Arzt, der das Rezept ausstellen soll."
 
 * reasonCode MS
 * reasonCode from RequestReasonVS
-  * ^short = "Code, der angibt, warum eine Verordnung angefragt wird"
-  * ^comment = "Wird auch genutzt, um bei einer Stornierung anzugeben, warum der Vorgang abgebrochen wurde"
+  * ^short = "Code, der angibt, warum eine Verordnung angefragt wird."
+  * ^comment = "Wird auch genutzt, um bei einer Stornierung anzugeben, warum der Vorgang abgebrochen wurde."
 
 * reasonReference only Reference(ObservationRemainingMedication)
-  * ^short = "Verweis auf eine Observation Ressource, die angibt, wie lange die akutelle Medikation noch reicht"
-  * ^comment = "Wenn eine Referenz zum Grund angegeben wird muss auch ein menschen lesbarer Eintrag in .note hinzugefügt werden, falls Systeme die referenzierte Observation nicht verarbeiten können"
+  * ^short = "Verweis auf eine Observation Ressource, die angibt, wie lange die akutelle Medikation noch reicht."
+  * ^comment = "Wenn eine Referenz zum Grund angegeben wird muss auch ein menschen lesbarer Eintrag in .note hinzugefügt werden, falls Systeme die referenzierte Observation nicht verarbeiten können."
 
 * supportingInfo ^slicing.discriminator.type = #pattern
 * supportingInfo ^slicing.discriminator.path = "type"
@@ -109,8 +109,8 @@ AuslieferndeApotheke 0..1 MS
 * supportingInfo[AuslieferndeApotheke].type = "Organization"
 
 * note MS
-  * ^short = "Weitere Angaben zur Rezeptanforderung"
-  * ^comment = "Eventuell nicht spezifizierte Anwendungsfälle können hier im Freitext platziert werden"
+  * ^short = "Weitere Angaben zur Rezeptanforderung."
+  * ^comment = "Eventuell nicht spezifizierte Anwendungsfälle können hier im Freitext platziert werden."
 
 Invariant: sr-1
 Description: "Wenn der Status auf 'completed' gesetzt ist, muss ein Token vorhanden sein"

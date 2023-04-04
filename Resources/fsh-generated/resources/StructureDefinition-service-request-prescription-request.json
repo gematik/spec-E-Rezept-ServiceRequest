@@ -38,9 +38,21 @@
     },
     {
       "identity": "prescription-request-mapping",
-      "name": "Prescription Request Mapping",
+      "name": "Prescription Request Mapping (Rezeptanforderung)",
       "uri": "gemF_eRp_KIM#3.1.1 Fachliche Information",
-      "comment": "Mapping für fachliche Informationseinheiten des Feature Dokuments"
+      "comment": "Mapping für fachliche Informationseinheiten der Verordnungsanfrage des Feature Dokuments"
+    },
+    {
+      "identity": "prescription-request-mapping-storno",
+      "name": "Prescription Request Mapping (Rezeptanforderung_Storno)",
+      "uri": "gemF_eRp_KIM#3.1.1 Fachliche Information",
+      "comment": "Mapping für fachliche Informationseinheiten des Stornos einer Verordnungsanfrage des Feature Dokuments"
+    },
+    {
+      "identity": "prescription-request-mapping-reject",
+      "name": "Prescription Request Mapping (Rezeptanforderung_Ablehnung)",
+      "uri": "gemF_eRp_KIM#3.1.1 Fachliche Information",
+      "comment": "Mapping für fachliche Informationseinheiten der Ablehnung einer Verordnungsanfrage des Feature Dokuments"
     }
   ],
   "kind": "resource",
@@ -73,6 +85,14 @@
           {
             "identity": "prescription-request-mapping",
             "map": "ServiceRequest"
+          },
+          {
+            "identity": "prescription-request-mapping-storno",
+            "map": "ServiceRequest"
+          },
+          {
+            "identity": "prescription-request-mapping-reject",
+            "map": "ServiceRequest"
           }
         ]
       },
@@ -85,8 +105,8 @@
         "id": "ServiceRequest.extension:EPrescriptionToken",
         "path": "ServiceRequest.extension",
         "sliceName": "EPrescriptionToken",
-        "short": "Hier kann der E-Rezept Token für die Verarbeitung in einer Apotheke bereit gestellt werden",
-        "comment": "Der Token hat die Form '/Task/{PrescriptionID}/$accept?ac={AccessCode}. Siehe [gemSpec_DM_eRp](https://fachportal.gematik.de/fachportal-import/files/gemSpec_DM_eRp_V1.5.0.pdf)'",
+        "short": "Hier kann der E-Rezept Token für die Verarbeitung in einer Apotheke bereit gestellt werden.",
+        "comment": "Der Token hat die Form '/Task/{PrescriptionID}/$accept?ac={AccessCode}. Siehe [gemSpec_DM_eRp](https://fachportal.gematik.de/fachportal-import/files/gemSpec_DM_eRp_V1.5.0.pdf)'.",
         "min": 0,
         "max": "1",
         "type": [
@@ -111,7 +131,7 @@
           ],
           "rules": "open"
         },
-        "short": "Definiert Identifier, die in diesem Profil genutzt werden sollen",
+        "short": "Definiert Identifier, die in diesem Profil genutzt werden sollen.",
         "min": 1,
         "mustSupport": true
       },
@@ -153,7 +173,7 @@
       {
         "id": "ServiceRequest.basedOn",
         "path": "ServiceRequest.basedOn",
-        "short": "Angefragter oder erfüllausgestellter MedicationRequest",
+        "short": "Angefragter oder erfüllausgestellter MedicationRequest.",
         "definition": "Dieses Feld referenziert den zugrundeliegenden MedicationRequest, der die medizinischen Informationen zur Rezeptanfrage enthält. Wenn die Rezeptanfrage gestellt wird KANN das Profil MedicationRequestPrescriptionRequest genutzt werden.\nWenn die Verordnung erstellt wurde ist der entsprechende KBV_PR_ERP_Bundle-Verordnungsdatensatz zu referenzieren.",
         "comment": "Einem ServiceRequest ist genau ein MedicationRequest zugeordnet, sodass unabhängige Bearbeitungen möglich sind.",
         "min": 1,
@@ -194,14 +214,22 @@
           {
             "identity": "prescription-request-mapping",
             "map": "Vorgangs_ID"
+          },
+          {
+            "identity": "prescription-request-mapping-storno",
+            "map": "Vorgangs_ID"
+          },
+          {
+            "identity": "prescription-request-mapping-reject",
+            "map": "Vorgangs_ID"
           }
         ]
       },
       {
         "id": "ServiceRequest.status",
         "path": "ServiceRequest.status",
-        "short": "Gibt den Bearbeitungsstand eines ServiceRequests an",
-        "comment": "Bei Statusänderung wird dieser Wert überschrieben",
+        "short": "Gibt den Bearbeitungsstand eines ServiceRequests an.",
+        "comment": "Bei Statusänderung wird dieser Wert überschrieben.",
         "constraint": [
           {
             "key": "sr-1",
@@ -235,8 +263,7 @@
       {
         "id": "ServiceRequest.code",
         "path": "ServiceRequest.code",
-        "short": "Gibt die Art des ServiceRequests an",
-        "comment": "#prescription-request definiert diesen ServiceRequest als Verordnungsanfrage eines Rezeptes an einen Arzt",
+        "short": "Gibt die Art des ServiceRequests an.",
         "mustSupport": true
       },
       {
@@ -258,6 +285,7 @@
       {
         "id": "ServiceRequest.code.coding.code",
         "path": "ServiceRequest.code.coding.code",
+        "comment": "#prescription-request definiert diesen ServiceRequest als Verordnungsanfrage eines Rezeptes an einen Arzt.",
         "min": 1,
         "fixedCode": "prescription-request"
       },
@@ -284,7 +312,7 @@
       {
         "id": "ServiceRequest.subject",
         "path": "ServiceRequest.subject",
-        "short": "Patient für den stellvertretend ein Rezept angefordert wird",
+        "short": "Patient für den stellvertretend ein Rezept angefordert wird.",
         "type": [
           {
             "code": "Reference",
@@ -304,8 +332,8 @@
       {
         "id": "ServiceRequest.occurrence[x]",
         "path": "ServiceRequest.occurrence[x]",
-        "short": "Gibt das Datum an, an dem das Rezept ausgestellt werden soll",
-        "comment": "Kann von vom Anfragenden genutzt werden um die zeitliche Dringlichkeit deutlich zu machen",
+        "short": "Gibt das Datum an, an dem das Rezept ausgestellt werden soll.",
+        "comment": "Kann von vom Anfragenden genutzt werden um die zeitliche Dringlichkeit deutlich zu machen.",
         "type": [
           {
             "code": "dateTime"
@@ -316,7 +344,7 @@
       {
         "id": "ServiceRequest.authoredOn",
         "path": "ServiceRequest.authoredOn",
-        "short": "Erstellungsdatum der Anfrage",
+        "short": "Erstellungsdatum der Anfrage.",
         "comment": "Wird initial angelegt und dann nicht mehr verändert.",
         "min": 1,
         "mustSupport": true
@@ -324,7 +352,7 @@
       {
         "id": "ServiceRequest.requester",
         "path": "ServiceRequest.requester",
-        "short": "Anfragende Einrichtung oder Practitioner",
+        "short": "Anfragende Einrichtung oder Practitioner.",
         "comment": "Die KIM-Adresse ist bereits im MessageHeader hinterlegt. Daher ist die präferierte Angabe einen KBV_PR_FOR_Practitioner zu hinterlegen.",
         "min": 1,
         "type": [
@@ -347,7 +375,7 @@
       {
         "id": "ServiceRequest.performer",
         "path": "ServiceRequest.performer",
-        "short": "Arzt, der das Rezept ausstellen soll",
+        "short": "Arzt, der das Rezept ausstellen soll.",
         "type": [
           {
             "code": "Reference",
@@ -367,8 +395,8 @@
       {
         "id": "ServiceRequest.reasonCode",
         "path": "ServiceRequest.reasonCode",
-        "short": "Code, der angibt, warum eine Verordnung angefragt wird",
-        "comment": "Wird auch genutzt, um bei einer Stornierung anzugeben, warum der Vorgang abgebrochen wurde",
+        "short": "Code, der angibt, warum eine Verordnung angefragt wird.",
+        "comment": "Wird auch genutzt, um bei einer Stornierung anzugeben, warum der Vorgang abgebrochen wurde.",
         "mustSupport": true,
         "binding": {
           "strength": "required",
@@ -378,14 +406,22 @@
           {
             "identity": "prescription-request-mapping",
             "map": "Bedarfsbegruendung (Code)"
+          },
+          {
+            "identity": "prescription-request-mapping-storno",
+            "map": "Begründung der Stornierung"
+          },
+          {
+            "identity": "prescription-request-mapping-reject",
+            "map": "Ablehnungsgrund"
           }
         ]
       },
       {
         "id": "ServiceRequest.reasonReference",
         "path": "ServiceRequest.reasonReference",
-        "short": "Verweis auf eine Observation Ressource, die angibt, wie lange die akutelle Medikation noch reicht",
-        "comment": "Wenn eine Referenz zum Grund angegeben wird muss auch ein menschen lesbarer Eintrag in .note hinzugefügt werden, falls Systeme die referenzierte Observation nicht verarbeiten können",
+        "short": "Verweis auf eine Observation Ressource, die angibt, wie lange die akutelle Medikation noch reicht.",
+        "comment": "Wenn eine Referenz zum Grund angegeben wird muss auch ein menschen lesbarer Eintrag in .note hinzugefügt werden, falls Systeme die referenzierte Observation nicht verarbeiten können.",
         "type": [
           {
             "code": "Reference",
@@ -445,12 +481,16 @@
       {
         "id": "ServiceRequest.note",
         "path": "ServiceRequest.note",
-        "short": "Weitere Angaben zur Rezeptanforderung",
-        "comment": "Eventuell nicht spezifizierte Anwendungsfälle können hier im Freitext platziert werden",
+        "short": "Weitere Angaben zur Rezeptanforderung.",
+        "comment": "Eventuell nicht spezifizierte Anwendungsfälle können hier im Freitext platziert werden.",
         "mustSupport": true,
         "mapping": [
           {
             "identity": "prescription-request-mapping",
+            "map": "Freitext"
+          },
+          {
+            "identity": "prescription-request-mapping-reject",
             "map": "Freitext"
           }
         ]
