@@ -38,19 +38,19 @@
     },
     {
       "identity": "prescription-request-mapping",
-      "name": "Prescription Request Mapping (Rezeptanforderung)",
+      "name": "Prescription Request Mapping",
       "uri": "gemF_eRp_KIM#3.1.1 Fachliche Information",
       "comment": "Mapping für fachliche Informationseinheiten der Verordnungsanfrage des Feature Dokuments"
     },
     {
       "identity": "prescription-request-mapping-storno",
-      "name": "Prescription Request Mapping (Rezeptanforderung_Storno)",
+      "name": "Prescription Request Mapping",
       "uri": "gemF_eRp_KIM#3.1.1 Fachliche Information",
       "comment": "Mapping für fachliche Informationseinheiten des Stornos einer Verordnungsanfrage des Feature Dokuments"
     },
     {
       "identity": "prescription-request-mapping-reject",
-      "name": "Prescription Request Mapping (Rezeptanforderung_Ablehnung)",
+      "name": "Prescription Request Mapping",
       "uri": "gemF_eRp_KIM#3.1.1 Fachliche Information",
       "comment": "Mapping für fachliche Informationseinheiten der Ablehnung einer Verordnungsanfrage des Feature Dokuments"
     }
@@ -84,15 +84,15 @@
         "mapping": [
           {
             "identity": "prescription-request-mapping",
-            "map": "ServiceRequest"
+            "map": "Rezeptanforderung"
           },
           {
             "identity": "prescription-request-mapping-storno",
-            "map": "ServiceRequest"
+            "map": "Rezeptanforderung_Storno"
           },
           {
             "identity": "prescription-request-mapping-reject",
-            "map": "ServiceRequest"
+            "map": "Rezeptanforderung_Ablehnung"
           }
         ]
       },
