@@ -42,6 +42,8 @@
       {
         "id": "Identifier.value",
         "path": "Identifier.value",
+        "short": "String, der einen Vorgang eindeutig referenziert.",
+        "comment": "Es wird empfohlen eine UUID zu verwenden.",
         "min": 1,
         "mustSupport": true
       }

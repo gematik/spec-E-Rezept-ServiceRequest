@@ -9,13 +9,16 @@ Description: "Diese Observation beschreibt wie lange oder wie viel einer Medikat
 
 * code 1..1 MS
 * code from MedicationObservationVS
-* code.coding.code = #range-of-medication
+* code.coding.code = #range-of-medication (exactly)
+  * ^short = "Identifiziert diese Observation als eine Angabe der Restreichweite einer Medikation"
 
 * subject 1..1 MS
 * subject only Reference(Patient)
+  * ^short = "Referenz des Patienten, der die Medikation erhält"
 
 * value[x] 1..1 MS
 * value[x] only Quantity or dateTime
+  * ^short = "Angabe der Restreichweite in Menge oder Datum, an dem die Medikation ausläuft"
 
 Instance: Medication-Runs-Out-Example-dateTime
 InstanceOf: ObservationRemainingMedication
