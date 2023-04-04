@@ -1,3 +1,3 @@
 ## {{page-title}}
 
-{{index:current}}
+In den Unterkapiteln werden die verwendeten Identifier beschrieben.

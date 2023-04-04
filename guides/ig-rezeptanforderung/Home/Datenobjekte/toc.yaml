@@ -6,3 +6,9 @@
   filename: Dispense_ServiceRequest
 - name: Angefragte Medikation (MedicationRequest)
   filename: MedicationRequest
+- name: Message Header
+  filename: MessageHeader
+- name: Organisation mit KIM-Addresse
+  filename: Organization
+- name: Angabe zur Medikamentenreichweite
+  filename: RemainingObservation

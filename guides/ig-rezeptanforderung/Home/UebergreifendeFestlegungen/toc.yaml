@@ -5,7 +5,7 @@
 - name: Dateiformat
   filename: File-Format.page.md
 - name: Must Support
-  filename: Must-Support.page.md
+  filename: MustSupport.page.md
 - name: Transportmedium
   filename: Transportmedium.page.md
 - name: Verwendung der Ressourcen
