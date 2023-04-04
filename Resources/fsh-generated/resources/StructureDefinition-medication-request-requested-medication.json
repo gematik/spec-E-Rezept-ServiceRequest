@@ -35,6 +35,12 @@
       "identity": "v2",
       "uri": "http://hl7.org/v2",
       "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "medication-request-mapping",
+      "name": "Medication Request Mapping (Strukturierter_Verordnungsdatensatz)",
+      "uri": "gemF_eRp_KIM#3.1.1 Fachliche Information",
+      "comment": "Mapping für fachliche Informationseinheiten der angefragten Medikation des Feature Dokuments"
     }
   ],
   "kind": "resource",
@@ -45,6 +51,16 @@
   "differential": {
     "element": [
       {
+        "id": "MedicationRequest",
+        "path": "MedicationRequest",
+        "mapping": [
+          {
+            "identity": "medication-request-mapping",
+            "map": "MedicationRequest"
+          }
+        ]
+      },
+      {
         "id": "MedicationRequest.extension",
         "path": "MedicationRequest.extension",
         "comment": "Falls die vorherige RezeptID bekannt ist, kann diese hier benannt werden",
@@ -54,6 +70,9 @@
         "id": "MedicationRequest.extension:PriorPrescriptionID",
         "path": "MedicationRequest.extension",
         "sliceName": "PriorPrescriptionID",
+        "short": "Angabe einer vorherigen PrescriptionID, die der angeforderten Medikation entspricht.",
+        "definition": "\nDer MedicationRequest kann eine PrescriptionId eines bereits ausgestellten Rezepts enthalten.\n\nDas schreibende System KANN bei Kenntnis einer vorherigen Rezept-Id diese im MedicationRequest angeben.\n\nDas empfangende System MUSS bei vorliegen dieser ID in der Lage sein nach der vorherigen Verordnung zu suchen und dem Nutzer die Möglichkeit geben die Inhalte darzustellen und zu vergleichen.\n",
+        "comment": "Ist in der Form xxx.xxx.xxx.xxx.xxx.xx anzugeben.",
         "min": 0,
         "max": "1",
         "type": [
@@ -62,6 +81,13 @@
             "profile": [
               "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/prescription-id-ex"
             ]
+          }
+        ],
+        "mustSupport": true,
+        "mapping": [
+          {
+            "identity": "medication-request-mapping",
+            "map": "Vorheriges_Rezept"
           }
         ]
       },
@@ -154,7 +180,8 @@
       {
         "id": "MedicationRequest.requester",
         "path": "MedicationRequest.requester",
-        "comment": "Anfragender Arzt/ Einrichung/ Apotheke für diesen MedicationRequest",
+        "short": "Anfragender Arzt/ Einrichung/ Apotheke für diesen MedicationRequest",
+        "comment": "Ist hier optional anzugeben, da es schon im ServiceRequest angegeben werden muss",
         "type": [
           {
             "code": "Reference",
@@ -199,6 +226,8 @@
       {
         "id": "MedicationRequest.insurance",
         "path": "MedicationRequest.insurance",
+        "short": "Versicherungsstatus des Patienten, für den die Medikation angefragt wird",
+        "comment": "Falls diese Information schon bekannt ist, kann sie optional hier angegeben werden",
         "max": "1",
         "type": [
           {
