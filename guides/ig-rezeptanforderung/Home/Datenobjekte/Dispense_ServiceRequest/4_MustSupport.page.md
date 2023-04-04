@@ -1,7 +1,14 @@
 ## {{page-title}}
 
-### `ServiceRequest.extension:EPrescriptionTokenEX`
+Die folgende FHIR Ressource stellt eine Anfrage an eine verordnende LEI dar. Enthalten sein muss eine strukturelle angabe der angefragten Medikation.
 
-Das schreibende System MUSS dieses Feld korrekt befüllen können, um den Token für den Empfänger nutzbar zu machen.
+{{tree:https://gematik.de/fhir/erpmedreqcom/StructureDefinition/service-request-dispense-request, diff}}
 
-Ein empfangendes System MUSS dieses Token lesen, verarbeiten und dem Nutzer darstellen können. Das AVS MUSS es ermöglichen den Token in das System zu übernehmen und einen Vorgang anzulegen.
+Folgende Felder sind entsprechend zu befüllen, bzw. können befüllt werden:
+
+@```
+from StructureDefinition
+where name = 'ServiceRequestDispenseRequest'
+for differential.element
+    select id, short, comment
+```

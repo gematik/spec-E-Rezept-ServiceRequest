@@ -1,9 +1,14 @@
 ## {{page-title}}
 
-Die folgende FHIR Ressource stellt eine Anfrage an eine abgebende LEI dar. Diese muss den E-Rezept Token enthalten, um die Dispensierung zu vollziehen.
-
-Nachdem der Vorgang seitens der Apotheke abgeschlossen ist, werden die Abgabeinformationen an den Anfragenden zurück geschickt, damit dieser über den erfolgreichen Abschluss der Anfrage informiert ist.
+Die folgende FHIR Ressource stellt eine Anfrage an eine verordnende LEI dar. Enthalten sein muss eine strukturelle angabe der angefragten Medikation.
 
 {{tree:https://gematik.de/fhir/erpmedreqcom/StructureDefinition/service-request-prescription-request, diff}}
 
-Folgende Felder 
+Folgende Felder sind entsprechend zu befüllen, bzw. können befüllt werden:
+
+@```
+from StructureDefinition
+where name = 'ServiceRequestPrescriptionRequest'
+for differential.element
+    select id, short, comment
+```
