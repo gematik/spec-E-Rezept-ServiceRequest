@@ -50,7 +50,7 @@
           "endpoint": "http://test-pflegeheim.de"
         },
         "eventCoding": {
-          "code": "eRezept_Rezeptanforderung",
+          "code": "eRezept_Rezeptanforderung;Abgabeanfrage",
           "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
         }
       }
