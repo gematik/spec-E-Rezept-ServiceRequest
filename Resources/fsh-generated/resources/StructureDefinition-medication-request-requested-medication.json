@@ -56,7 +56,7 @@
         "mapping": [
           {
             "identity": "medication-request-mapping",
-            "map": "MedicationRequest"
+            "map": "Rezeptanforderung_medizinische_Informationen"
           }
         ]
       },
@@ -103,7 +103,13 @@
           ],
           "rules": "closed"
         },
-        "mustSupport": true
+        "mustSupport": true,
+        "mapping": [
+          {
+            "identity": "medication-request-mapping",
+            "map": "Paeparat"
+          }
+        ]
       },
       {
         "id": "MedicationRequest.medicationReference",

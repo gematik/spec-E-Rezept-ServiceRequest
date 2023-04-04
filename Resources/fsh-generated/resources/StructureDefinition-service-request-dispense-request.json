@@ -38,19 +38,19 @@
     },
     {
       "identity": "dispense-request-mapping",
-      "name": "Dispense Request Mapping (Rezeptanforderung_Rezeptuebermittlung)",
+      "name": "Dispense Request Mapping für Rezeptübermittlung",
       "uri": "gemF_eRp_KIM#3.1.1 Fachliche Information",
       "comment": "Mapping für fachliche Informationseinheiten der Belieferungsanfrage des Feature Dokuments"
     },
     {
       "identity": "dispense-request-mapping-storno",
-      "name": "Dispense Request Mapping (Rezeptanforderung_Rezeptuebermittlung_Storno)",
+      "name": "Dispense Request Mapping für Storno",
       "uri": "gemF_eRp_KIM#3.1.1 Fachliche Information",
       "comment": "Mapping für fachliche Informationseinheiten des Stornos einer Belieferungsanfrage des Feature Dokuments"
     },
     {
       "identity": "dispense-request-mapping-reject",
-      "name": "Dispense Request Mapping (Rezeptanforderung_Rezeptuebermittlung_Ablehnung)",
+      "name": "Dispense Request Mapping für Ablehnung",
       "uri": "gemF_eRp_KIM#3.1.1 Fachliche Information",
       "comment": "Mapping für fachliche Informationseinheiten der Ablehnung einer Belieferungsanfrage des Feature Dokuments"
     }
@@ -68,15 +68,15 @@
         "mapping": [
           {
             "identity": "dispense-request-mapping",
-            "map": "ServiceRequest"
+            "map": "Rezeptanforderung_Rezeptuebermittlung"
           },
           {
             "identity": "dispense-request-mapping-storno",
-            "map": "ServiceRequest"
+            "map": "Rezeptanforderung_Rezeptuebermittlung_Storno"
           },
           {
             "identity": "dispense-request-mapping-reject",
-            "map": "ServiceRequest"
+            "map": "Rezeptanforderung_Rezeptuebermittlung_Ablehnung"
           }
         ]
       },
