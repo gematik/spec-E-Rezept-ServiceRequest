@@ -8,7 +8,17 @@ Description: "Medizinische und pharmazeutische Angaben zur Rezeptanfrage"
 * extension MS
   * ^comment = "Falls die vorherige RezeptID bekannt ist, kann diese hier benannt werden"
 * extension contains
-    PrescriptionIdEx named PriorPrescriptionID 0..1
+    PrescriptionIdEx named PriorPrescriptionID 0..1 MS
+* extension[PriorPrescriptionID]
+  * ^short = "Angabe einer vorherigen PrescriptionID, die der angeforderten Medikation entspricht."
+  * ^comment = "Ist in der Form xxx.xxx.xxx.xxx.xxx.xx anzugeben."
+  * ^definition = "
+Der MedicationRequest kann eine PrescriptionId eines bereits ausgestellten Rezepts enthalten.
+
+Das schreibende System KANN bei Kenntnis einer vorherigen Rezept-Id diese im MedicationRequest angeben.
+
+Das empfangende System MUSS bei vorliegen dieser ID in der Lage sein nach der vorherigen Verordnung zu suchen und dem Nutzer die Möglichkeit geben die Inhalte darzustellen und zu vergleichen.
+"
 
 * medication[x] MS
 * medication[x] ^slicing.discriminator.type = #type
@@ -32,7 +42,8 @@ Description: "Medizinische und pharmazeutische Angaben zur Rezeptanfrage"
 * encounter 0..0
 
 * requester MS
-  * ^comment = "Anfragender Arzt/ Einrichung/ Apotheke für diesen MedicationRequest"
+  * ^short = "Anfragender Arzt/ Einrichung/ Apotheke für diesen MedicationRequest"
+  * ^comment = "Ist hier optional anzugeben, da es schon im ServiceRequest angegeben werden muss"
 * requester only Reference($KBV_PR_FOR_Practitioner or OrganizationWithKIMAdress)
 * requester.type 0..0
 * requester.identifier 0..1
@@ -46,6 +57,8 @@ Description: "Medizinische und pharmazeutische Angaben zur Rezeptanfrage"
 
 // Wenn eine Coverage genutzt wird, kann es auch gleich die richtige sein
 * insurance only Reference($KBV_PR_FOR_Coverage)
+  * ^short = "Versicherungsstatus des Patienten, für den die Medikation angefragt wird"
+  * ^comment = "Falls diese Information schon bekannt ist, kann sie optional hier angegeben werden"
 * insurance 0..1
 
 * dosageInstruction 0..1
