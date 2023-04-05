@@ -16,9 +16,13 @@
     {
       "code": "dispense-request",
       "display": "Anfrage für die Belieferung eines Rezepts"
+    },
+    {
+      "code": "clearing-request",
+      "display": "Anfrage zur Klärung eines Rezepts"
     }
   ],
   "experimental": false,
   "publisher": "gematik GmbH",
-  "count": 2
+  "count": 3
 }

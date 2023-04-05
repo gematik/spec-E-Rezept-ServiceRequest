@@ -1,0 +1,41 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "ClearingReasonVS",
+  "id": "clearing-reason-vs",
+  "title": "Grund des Klärfalls",
+  "description": "Auswahl an Codes um anzugeben welchen Status ein ServiceRequest hat",
+  "version": "1.0",
+  "url": "https://gematik.de/fhir/erpmedreqcom/ValueSet/clearing-reason-vs",
+  "experimental": false,
+  "publisher": "gematik GmbH",
+  "compose": {
+    "include": [
+      {
+        "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/cancellation-reason-cs"
+      }
+    ],
+    "exclude": [
+      {
+        "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/cancellation-reason-cs",
+        "concept": [
+          {
+            "code": "medication-stopped"
+          },
+          {
+            "code": "medication-paused"
+          },
+          {
+            "code": "medication-altered-dosage"
+          },
+          {
+            "code": "medication-occurrence-implausible"
+          },
+          {
+            "code": "successor-already-sent"
+          }
+        ]
+      }
+    ]
+  }
+}

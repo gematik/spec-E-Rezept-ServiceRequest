@@ -6,3 +6,4 @@ Description: "Gibt an um welche Art von ServiceRequest es sich handelt und dient
 
 * #prescription-request "Anfrage für ein Rezept"
 * #dispense-request "Anfrage für die Belieferung eines Rezepts"
+* #clearing-request "Anfrage zur Klärung eines Rezepts"

@@ -1,0 +1,76 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "annotation-clearing",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/annotation-clearing",
+  "version": "1.0",
+  "name": "AnnotationClearing",
+  "title": "Annotation Clearing",
+  "status": "draft",
+  "experimental": false,
+  "publisher": "gematik GmbH",
+  "description": "Eintrag für einen Klärfall",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "type": "Annotation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Annotation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Annotation.author[x]",
+        "path": "Annotation.author[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Annotation.authorReference",
+        "path": "Annotation.authorReference",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner",
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/organization-with-kim-adress"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Annotation.time",
+        "path": "Annotation.time",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Annotation.text",
+        "path": "Annotation.text",
+        "mustSupport": true
+      }
+    ]
+  }
+}
