@@ -37,7 +37,7 @@
       "name": "HL7 v2 Mapping"
     },
     {
-      "identity": "medication-request-mapping",
+      "identity": "Rezeptanforderung-medizinische-Informationen",
       "name": "Medication Request Mapping (Strukturierter_Verordnungsdatensatz)",
       "uri": "gemF_eRp_KIM#3.1.1 Fachliche Information",
       "comment": "Mapping für fachliche Informationseinheiten der angefragten Medikation des Feature Dokuments"
@@ -55,7 +55,7 @@
         "path": "MedicationRequest",
         "mapping": [
           {
-            "identity": "medication-request-mapping",
+            "identity": "Rezeptanforderung-medizinische-Informationen",
             "map": "Rezeptanforderung_medizinische_Informationen"
           }
         ]
@@ -86,7 +86,7 @@
         "mustSupport": true,
         "mapping": [
           {
-            "identity": "medication-request-mapping",
+            "identity": "Rezeptanforderung-medizinische-Informationen",
             "map": "Vorheriges_Rezept"
           }
         ]
@@ -106,7 +106,7 @@
         "mustSupport": true,
         "mapping": [
           {
-            "identity": "medication-request-mapping",
+            "identity": "Rezeptanforderung-medizinische-Informationen",
             "map": "Paeparat"
           }
         ]
