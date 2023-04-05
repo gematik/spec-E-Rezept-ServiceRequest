@@ -4,6 +4,8 @@
   filename: Prescription_ServiceRequest
 - name: Anfrage zum Beliefern einer Verordnung (ServiceRequest)
   filename: Dispense_ServiceRequest
+- name: Anfrage zum Klären einer Verordnung (ServiceRequest)
+  filename: Clearing_ServiceRequest
 - name: Angefragte Medikation (MedicationRequest)
   filename: MedicationRequest
 - name: Message Header
@@ -12,3 +14,5 @@
   filename: Organization
 - name: Angabe zur Medikamentenreichweite
   filename: RemainingObservation
+- name: Annotation einer Klärung
+  filename: Clearing_Annotation

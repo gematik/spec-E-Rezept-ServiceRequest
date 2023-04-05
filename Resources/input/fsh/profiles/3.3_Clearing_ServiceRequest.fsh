@@ -5,6 +5,8 @@ Title: "Anfrage zum Ausstellen einer Verordnung"
 Description: "ServiceRequest, der genutzt wird um ein Rezept anzufragen"
 * insert Meta (service-request-clearing-request)
 
+* meta.lastUpdated 1..1 MS
+
 * extension MS
 * extension contains
     EPrescriptionTokenEX named EPrescriptionToken 0..1 MS
