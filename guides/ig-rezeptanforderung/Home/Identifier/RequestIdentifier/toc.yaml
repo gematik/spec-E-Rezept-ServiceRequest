@@ -1,0 +1,6 @@
+- name: Index
+  filename: 0_Index.page.md
+- name: Motivation
+  filename: 1_Motivation.page.md
+- name: Profil
+  filename: 2_Profil.page.md

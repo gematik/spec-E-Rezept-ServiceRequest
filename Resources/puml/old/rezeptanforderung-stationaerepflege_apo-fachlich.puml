@@ -1,0 +1,49 @@
+@startuml
+
+
+skinparam maxMessageSize 200
+
+box "Rezeptmanagement" #White
+    actor Apotheke
+end box
+actor "Pflegeeinrichtung \n(stationär)" as Pflegeeinrichtung
+actor "Verordnender \nLeistungserbringer" as Arztpraxis
+
+title Rezeptanforderungen durch (Rahmenvertrags-)Apotheken (fachliche Sicht)
+hide footbox
+autonumber
+
+legend bottom right
+    __Legende__
+    |<#PaleGreen> Ergebnis: Medikamentabgabe|
+    |<#LightPink> Ergebnis: keine Medikamentabgabe|
+    **lfd.Nr.** //Informationseinheit als Nachricht übermittelt//
+    **lfd.Nr.** **sonstige Aktivität**
+endlegend
+
+hnote over Apotheke, Pflegeeinrichtung
+    Vorbedingung:
+    Rahmenvertrag zwischen Apotheke & 
+    Pflegedienst nach §12a ApoG
+end hnote
+
+Apotheke o-> Apotheke: **Auslöseereignis, z.B.** \n**Reichweitenende**
+Apotheke ->> Arztpraxis: //Rezeptanforderung//
+
+opt #LightPink Stornierung
+    Apotheke ->> Arztpraxis: //Rezeptanforderung_Storno//
+    Arztpraxis ->x Arztpraxis: **Rezeptanforderung wird verworfen**
+end
+
+alt Rezeptanforderung liegt vor beim Verordnenden
+    alt #PaleGreen Arzt ist einverstanden 
+        Arztpraxis ->> Apotheke: //Rezeptanforderung_Rezeptuebermittlung//
+        Apotheke ->> Pflegeeinrichtung: **Medikamentabgabe/-auslieferung**
+        Apotheke ->> Pflegeeinrichtung: //Verordnung_Dispensierung//
+
+    else #LightPink Arzt lehnt ab
+        Arztpraxis ->> Apotheke: //Rezeptanforderung_Ablehnung//
+    end
+end
+
+@enduml

@@ -1,0 +1,69 @@
+@startuml
+
+'top to bottom direction
+
+'skinparam linetype ortho
+hide circle
+hide methods
+
+class "Rezeptanforderung" as Rezeptanforderung #BUSINESS {
+    ..administrative Informationen..
+    #Vorgangs_ID
+    #Prioritaet
+    #Adressat_der_Rezeptanforderung
+    #Adressat_der_Rezeptuebermittlung
+    #Patienteninformationen
+    #Vorheriges_Rezept
+    ..medizinische Informationen..
+    #Praeparat
+    #Bedarfsbegruendung
+    #Restreichweite
+    ..ergänzende Informationen..
+    #Freitext
+}
+
+class "Rezeptanforderung_Storno" as Rezeptanforderung_Storno #BUSINESS {
+    ..administrative Informationen..
+    #Vorgangs_ID
+    #Begruendung_der_Stornierung
+}
+
+class "Rezeptanforderung_Rezeptuebermittlung" as Rezeptanforderung_Rezeptuebermittlung #BUSINESS {
+    ..administrative Informationen..
+    #Vorgangs_ID
+    #ERezept_Access_Code
+    #ERezept_Task_ID
+    #Veraenderungskennzeichen_zur_\nUrsprungsanforderung
+    ..medizinische Informationen..
+    #Strukturierter_Verordnungsdatensatz
+    #Hinweise_fuer_Empfaenger
+    ..ergänzende Informationen..
+    #Unstrukturierter_Dateianhang
+    #Freitext
+}
+
+class "Rezeptanforderung_Ablehnung" as Rezeptanforderung_Ablehnung #BUSINESS {
+    ..administrative Informationen..
+    #Vorgangs_ID
+    ..medizinische Informationen..
+    #Ablehnungsgrund
+    ..ergänzende Informationen..
+    #Freitext
+}
+
+class "Verordnung_Dispensierung" as Verordnung_Dispensierung #BUSINESS {
+    ..administrative Informationen..
+    #Vorgangs_ID
+    ..medizinische Informationen..
+    #Strukturierter_Verordnungsdatensatz
+    #Strukturierter_Dispensierungsdatensatz
+
+}
+
+Rezeptanforderung_Storno -up- Rezeptanforderung: revidiert >
+Rezeptanforderung_Ablehnung -up-  Rezeptanforderung: beantwortet >
+Rezeptanforderung_Rezeptuebermittlung -up- Rezeptanforderung: beantwortet >
+'Verordnung_Dispensierung -left- Rezeptanforderung: aggregiert >
+Verordnung_Dispensierung -- Rezeptanforderung_Rezeptuebermittlung: aggregiert >
+
+@enduml

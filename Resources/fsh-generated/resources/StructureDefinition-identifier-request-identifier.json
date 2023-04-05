@@ -38,6 +38,14 @@
         "id": "Identifier.system",
         "path": "Identifier.system",
         "fixedUri": "https://gematik.de/fhir/medreq/sid/NamingSystemRequestIdentifier"
+      },
+      {
+        "id": "Identifier.value",
+        "path": "Identifier.value",
+        "short": "String, der den ServiceRequest eindeutig referenziert.",
+        "comment": "Es wird empfohlen eine UUID zu verwenden.",
+        "min": 1,
+        "mustSupport": true
       }
     ]
   }

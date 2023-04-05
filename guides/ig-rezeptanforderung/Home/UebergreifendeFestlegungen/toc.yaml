@@ -1,0 +1,12 @@
+- name: Index
+  filename: Index.page.md
+- name: Methodik
+  filename: Methodik.page.md
+- name: Dateiformat
+  filename: File-Format.page.md
+- name: Must Support
+  filename: MustSupport.page.md
+- name: Transportmedium
+  filename: Transportmedium.page.md
+- name: Verwendung der Ressourcen
+  filename: Ressource-Usage.page.md

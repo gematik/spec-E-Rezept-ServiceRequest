@@ -1,0 +1,70 @@
+@startuml
+
+skinparam rectangle {
+    roundCorner<<Concept>> 54
+}
+
+
+
+rectangle "Mapping: Rezeptanforderung_Rezeptübermittlung (fachlich)" <<Concept>> {
+    rectangle "Rezeptanforderung_Rezeptübermittlung" as Rezeptanforderung_Rezeptuebermittlung #BUSINESS
+}
+
+rectangle "Mapping: Rezeptanforderung_Rezeptübermittlung (FHIR)" <<Concept>> {
+    rectangle "KBV_PR_ERP_Bundle \n(https://simplifier.net/erezept/kbvprerpbundle)" as KBV_PR_ERP_Bundle #APPLICATION
+}
+
+
+'rectangle "Mapping: Rezeptanforderung_Rezeptübermittlung (übrige)" <<Concept>> {}
+
+card "Valider FHIR-Verordnungsdatensatz [opt] (unsigniert)" as FHIR_Verordnungsdatensatz  {
+     rectangle Präparat
+     rectangle Dosierung
+     rectangle Packungsgröße
+     card Patienteninformationen {
+         rectangle KVNR
+         rectangle "Name des Patienten" as Patientenname
+         rectangle Geburtstag
+     }
+     card Arztinformationen {
+         rectangle "Adressinformation der LEI des Arztes" as Arzt_Adresse
+         rectangle "Arztinfo_1 [opt]" as Arztinfo_1
+         rectangle "Arztinfo_2 [opt]" as Arztinfo_2
+     }
+}
+note right of FHIR_Verordnungsdatensatz
+    Dient der Übernahme in die Dokumentation
+    des PS der Pflegeeinrichtung und kann als
+    Grundlage für ein Folgerezept dienen.
+end note
+
+rectangle "Nachrichten-ID der Rezeptanforderung" as Nachrichten_ID
+
+rectangle "E-Rezept-Token" as Erezept_Token
+
+rectangle "Freitext mit Hinweisen an Empfänger" as Empfaengerhinweise
+
+rectangle "Kennzeichen der Verordnungsveränderung" as Verordnungsaenderungskennzeichen
+
+card Verordnungsinhalte  {
+     rectangle "Rezeptzeilen mit PZN" as Rezeptzeilen
+     rectangle Dosierung
+}
+
+card "Anhänge" as Anhaenge {
+    rectangle "angepasste Einnahmehinweise [opt]" as Einnahmehinweise #LightSlateGrey
+    rectangle "angepasster Medikationsplan [opt]" as Medikationsplan  #LightSlateGrey
+}
+
+Rezeptanforderung_Rezeptuebermittlung *-left- Nachrichten_ID
+Rezeptanforderung_Rezeptuebermittlung *-- Erezept_Token
+Rezeptanforderung_Rezeptuebermittlung *-- Empfaengerhinweise
+Rezeptanforderung_Rezeptuebermittlung *-- Verordnungsaenderungskennzeichen
+Rezeptanforderung_Rezeptuebermittlung *-- Verordnungsinhalte
+Rezeptanforderung_Rezeptuebermittlung o-- FHIR_Verordnungsdatensatz
+Rezeptanforderung_Rezeptuebermittlung o-right- Anhaenge
+
+KBV_PR_ERP_Bundle --> FHIR_Verordnungsdatensatz: matches
+
+
+@enduml
