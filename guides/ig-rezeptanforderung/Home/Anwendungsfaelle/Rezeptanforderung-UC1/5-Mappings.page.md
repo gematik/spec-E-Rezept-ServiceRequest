@@ -1,21 +1,21 @@
 ## {{page-title}}
 
+### ServiceRequestPrescriptionRequest Mappings
+
 @```
 from StructureDefinition
+where name = 'ServiceRequestPrescriptionRequest'
 for differential.element
-    group by mapping.identity
-    select id, join mapping { Fachliche_Informationseinheit: map  }
+    select id, join mapping { Feld: map, Fachliche_Informationseinheit: identity }
+    order by Fachliche_Informationseinheit
 ```
 
-  {
-            "identity": "dispense-request-mapping",
-            "map": "ServiceRequest"
-          },
-          {
-            "identity": "dispense-request-mapping-storno",
-            "map": "ServiceRequest"
-          },
-          {
-            "identity": "dispense-request-mapping-reject",
-            "map": "ServiceRequest"
-          }
+### MedicationRequestPrescriptionRequest Mappings
+
+@```
+from StructureDefinition
+where name = 'MedicationRequestPrescriptionRequest'
+for differential.element
+    select id, join mapping { Feld: map, Fachliche_Informationseinheit: identity }
+    order by Fachliche_Informationseinheit
+```
