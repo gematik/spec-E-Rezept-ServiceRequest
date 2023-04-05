@@ -1,0 +1,31 @@
+@startuml UC5
+autonumber "<b>[0]"
+participant Apotheke as AP #LightGreen
+participant Arzt as A #LightYellow
+
+activate AP
+
+group Apotheke initiert Klärung
+AP -> A++: <b>Clearing_ServiceRequest \n.status = active \n<b>MessageHeader\neventCode = eRezept_Klaerfall;Anfrage
+end
+
+loop solange Klärung nicht herbeigeführt (status = active)
+A <-> AP: <b>Clearing_ServiceRequest \n.status = active \n<b>MessageHeader\neventCode = eRezept_Klaerfall;Anfrage
+end
+
+alt#LightGreen Arzt sieht Fall geklärt
+
+alt #LightGreen Arzt stellt neues Rezept aus
+A -> AP: <b>Clearing_ServiceRequest \n.status = completed \n.extension[EPrescriptionToken] = E-Rezept-Token \n<b>MessageHeader\neventCode = eRezept_Klaerfall;Anfragebesaetigung
+else #LightGoldenRodYellow Arzt stellt kein neues Rezept aus
+A -> AP: <b>Clearing_ServiceRequest \n.status = completed \n<b>MessageHeader\neventCode = eRezept_Klaerfall;Anfragebesaetigung
+end
+alt Apotheke akzeptiert Klärung
+AP -> A: <b>Clearing_ServiceRequest \n.status = completed \n<b>MessageHeader\neventCode = eRezept_Klaerfall;Anfragebestaetigung
+deactivate A
+else #IndianRed Apotheke akzeptiert die Klärung nicht
+AP -> A++: <b>Clearing_ServiceRequest \n.status = active \n<b>MessageHeader\neventCode = eRezept_Klaerfall;Anfrage
+
+deactivate A
+end
+@enduml
