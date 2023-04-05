@@ -1,12 +1,8 @@
 - name: Index
   filename: Index.page.md
-- name: Rezeptanforderung (Einlösen über Anfragenden)
-  filename: Rezeptanforderung-UC1
-- name: Rezeptanforderung (Einlösen über Verordnendenm)
-  filename: Rezeptanforderung-UC2
-- name: Rezeptanforderung (Einlösen durch Versicherten)
-  filename: Rezeptanforderung-UC3
+- name: Rezeptanforderung
+  filename: 1_Rezeptanforderung
 - name: Parenterale Zubereitung
-  filename: Parenterale-Zubereitung
+  filename: 2_Parenterale-Zubereitung
 #- name: Klärfall
-#  filename: Klaerfall Einkommentieren wenn FHIR Spezifikationen vorliegen
+#  filename: 3_Klaerfall Einkommentieren wenn FHIR Spezifikationen vorliegen
