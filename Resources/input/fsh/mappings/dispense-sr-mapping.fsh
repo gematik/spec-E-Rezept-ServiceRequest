@@ -1,7 +1,7 @@
 Mapping: ServiceRequestDispenseRequest
 Source: ServiceRequestDispenseRequest
 Target: "gemF_eRp_KIM#3.1.1 Fachliche Information"
-Id: dispense-request-mapping
+Id: Rezeptanforderung-Rezeptuebermittlung
 Title: "Dispense Request Mapping für Rezeptübermittlung"
 Description: "Mapping für fachliche Informationseinheiten der Belieferungsanfrage des Feature Dokuments"
 * -> "Rezeptanforderung_Rezeptuebermittlung"
@@ -16,17 +16,17 @@ Description: "Mapping für fachliche Informationseinheiten der Belieferungsanfra
 Mapping: ServiceRequestDispenseRequestStorno
 Source: ServiceRequestDispenseRequest
 Target: "gemF_eRp_KIM#3.1.1 Fachliche Information"
-Id: dispense-request-mapping-storno
+Id: Rezeptanforderung-Rezeptuebermittlung-Storno
 Title: "Dispense Request Mapping für Storno"
 Description: "Mapping für fachliche Informationseinheiten des Stornos einer Belieferungsanfrage des Feature Dokuments"
 * -> "Rezeptanforderung_Rezeptuebermittlung_Storno"
 * requisition -> "Vorgangs_ID"
 * reasonCode -> "Begründung der Stornierung"
 
-Mapping: ServiceRequestDispenseRequestReject
+Mapping: ServiceRequestDispenseRequestAblehnung
 Source: ServiceRequestDispenseRequest
 Target: "gemF_eRp_KIM#3.1.1 Fachliche Information"
-Id: dispense-request-mapping-reject
+Id: Rezeptanforderung-Rezeptuebermittlung-Ablehnung
 Title: "Dispense Request Mapping für Ablehnung"
 Description: "Mapping für fachliche Informationseinheiten der Ablehnung einer Belieferungsanfrage des Feature Dokuments"
 * -> "Rezeptanforderung_Rezeptuebermittlung_Ablehnung"

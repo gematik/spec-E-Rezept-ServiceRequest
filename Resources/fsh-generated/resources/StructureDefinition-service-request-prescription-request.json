@@ -37,19 +37,19 @@
       "name": "Quality Improvement and Clinical Knowledge (QUICK)"
     },
     {
-      "identity": "prescription-request-mapping",
+      "identity": "Rezeptanforderung",
       "name": "Prescription Request Mapping",
       "uri": "gemF_eRp_KIM#3.1.1 Fachliche Information",
       "comment": "Mapping für fachliche Informationseinheiten der Verordnungsanfrage des Feature Dokuments"
     },
     {
-      "identity": "prescription-request-mapping-storno",
+      "identity": "Rezeptanforderung-Storno",
       "name": "Prescription Request Mapping",
       "uri": "gemF_eRp_KIM#3.1.1 Fachliche Information",
       "comment": "Mapping für fachliche Informationseinheiten des Stornos einer Verordnungsanfrage des Feature Dokuments"
     },
     {
-      "identity": "prescription-request-mapping-reject",
+      "identity": "Rezeptanforderung-Ablehnung",
       "name": "Prescription Request Mapping",
       "uri": "gemF_eRp_KIM#3.1.1 Fachliche Information",
       "comment": "Mapping für fachliche Informationseinheiten der Ablehnung einer Verordnungsanfrage des Feature Dokuments"
@@ -83,15 +83,15 @@
         ],
         "mapping": [
           {
-            "identity": "prescription-request-mapping",
+            "identity": "Rezeptanforderung",
             "map": "Rezeptanforderung"
           },
           {
-            "identity": "prescription-request-mapping-storno",
+            "identity": "Rezeptanforderung-Storno",
             "map": "Rezeptanforderung_Storno"
           },
           {
-            "identity": "prescription-request-mapping-reject",
+            "identity": "Rezeptanforderung-Ablehnung",
             "map": "Rezeptanforderung_Ablehnung"
           }
         ]
@@ -190,7 +190,7 @@
         "mustSupport": true,
         "mapping": [
           {
-            "identity": "prescription-request-mapping",
+            "identity": "Rezeptanforderung",
             "map": "Praeparat"
           }
         ]
@@ -212,15 +212,15 @@
         "mustSupport": true,
         "mapping": [
           {
-            "identity": "prescription-request-mapping",
+            "identity": "Rezeptanforderung",
             "map": "Vorgangs_ID"
           },
           {
-            "identity": "prescription-request-mapping-storno",
+            "identity": "Rezeptanforderung-Storno",
             "map": "Vorgangs_ID"
           },
           {
-            "identity": "prescription-request-mapping-reject",
+            "identity": "Rezeptanforderung-Ablehnung",
             "map": "Vorgangs_ID"
           }
         ]
@@ -255,7 +255,7 @@
         "path": "ServiceRequest.priority",
         "mapping": [
           {
-            "identity": "prescription-request-mapping",
+            "identity": "Rezeptanforderung",
             "map": "Prioritaet"
           }
         ]
@@ -324,7 +324,7 @@
         "mustSupport": true,
         "mapping": [
           {
-            "identity": "prescription-request-mapping",
+            "identity": "Rezeptanforderung",
             "map": "Pateiteninformationen"
           }
         ]
@@ -367,7 +367,7 @@
         "mustSupport": true,
         "mapping": [
           {
-            "identity": "prescription-request-mapping",
+            "identity": "Rezeptanforderung",
             "map": "Adressat_der_Rezeptuebermittlung"
           }
         ]
@@ -387,7 +387,7 @@
         "mustSupport": true,
         "mapping": [
           {
-            "identity": "prescription-request-mapping",
+            "identity": "Rezeptanforderung",
             "map": "Adressat_der_Rezeptanforderung"
           }
         ]
@@ -404,15 +404,15 @@
         },
         "mapping": [
           {
-            "identity": "prescription-request-mapping",
+            "identity": "Rezeptanforderung",
             "map": "Bedarfsbegruendung (Code)"
           },
           {
-            "identity": "prescription-request-mapping-storno",
+            "identity": "Rezeptanforderung-Storno",
             "map": "Begründung der Stornierung"
           },
           {
-            "identity": "prescription-request-mapping-reject",
+            "identity": "Rezeptanforderung-Ablehnung",
             "map": "Ablehnungsgrund"
           }
         ]
@@ -432,11 +432,11 @@
         ],
         "mapping": [
           {
-            "identity": "prescription-request-mapping",
+            "identity": "Rezeptanforderung",
             "map": "Bedarfsbegruendung (Observation)"
           },
           {
-            "identity": "prescription-request-mapping",
+            "identity": "Rezeptanforderung",
             "map": "Restreichweite"
           }
         ]
@@ -486,11 +486,11 @@
         "mustSupport": true,
         "mapping": [
           {
-            "identity": "prescription-request-mapping",
+            "identity": "Rezeptanforderung",
             "map": "Freitext"
           },
           {
-            "identity": "prescription-request-mapping-reject",
+            "identity": "Rezeptanforderung-Ablehnung",
             "map": "Freitext"
           }
         ]
