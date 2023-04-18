@@ -2,6 +2,7 @@ ValueSet: KIMDienstkennungVS
 Id: kim-dienstkennung-vs
 Title: "E-Rezept KIM-Dienstkennung"
 Description: "Dienstkennungen zur Angabe eines Anwendungsfalls der E-Rezept Kommunikation"
+* insert MetaValueSet(kim-dienstkennung-vs)
 * $GEM_CS_KIM_Dienstkennung#eRezept_Rezeptanforderung;Rezeptanfrage "Anfrage an einen Arzt ein Rezept auszustellen"
 * $GEM_CS_KIM_Dienstkennung#eRezept_Rezeptanforderung;Rezeptanfrage_Storno "Abbruch der Rezeptanfrage"
 * $GEM_CS_KIM_Dienstkennung#eRezept_Rezeptanforderung;Rezeptbestaetigung "Bestätigung und übermittlung eines ausgestellten Rezeptes"

@@ -9,7 +9,7 @@ Description: "Mapping für fachliche Informationseinheiten der Verordnungsanfrag
 * priority -> "Prioritaet"
 * performer -> "Adressat_der_Rezeptanforderung"
 * requester -> "Adressat_der_Rezeptuebermittlung"
-* subject -> "Pateiteninformationen"
+* subject -> "Patienteninformationen"
 * basedOn -> "Praeparat"
 * reasonCode -> "Bedarfsbegruendung (Code)"
 * reasonReference -> "Bedarfsbegruendung (Observation)"
