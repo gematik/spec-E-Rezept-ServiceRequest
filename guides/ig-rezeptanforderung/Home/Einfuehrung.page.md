@@ -11,7 +11,7 @@ Aus dem App-Transport-Framework werden die Ressourcen "Bundle" und "MessageHeade
 ### Verwendung von EventCodes (MessageHeader.eventCode)
 
 In dieser Spezifikation dient der EventCode sowohl der Identifikation des Anwendungsfalles, sowie des Transportweges innerhalb des Anwendungsfalls. So gibt z.B. der Code `eRezept_Rezeptanforderung;Rezeptanfrage` an, dass es sich um den Anwendungsfall "Rezeptanforderung", sowie über eine initiale "Rezeptanfrage" eines Anfragenden an einen Verordnenden handelt.
-Die für diese Spezifikation zulässigen EventCodes sind in {{link:https://gematik.de/fhir/erpmedreqcom/ValueSet/kim-dienstkennung-vs}} aufgelistet und beschrieben.
+Die für diese Spezifikation zulässigen EventCodes sind in ValueSet {{link:https://gematik.de/fhir/erpmedreqcom/ValueSet/service-identifier-vs}} aufgelistet und beschrieben.
 
 Die in diesem Implementierungsleitfaden beschriebenen Anwendungsfälle enthalten jeweils auch eine Angabe, welcher EventCode zu nutzen ist.
 
@@ -52,12 +52,12 @@ Ein Service Request soll dabei immer auf genau eine medizinsiche Information bez
 
 Somit enthält eine KIM-Nachricht einen ServiceRequest mit einem MedicationRequest.
 
-## Motivation
+## Motivation und Hintergrund
 
 Mit dem E-Rezept hat die gematik ein Produkt auf den Weg gebracht, was dazu beiträgt die Verordnung, Abgabe und Abrechnung von Rezepten zu digitalisieren. Der gesamte Ablauf der Verordnung ist über den zentralen E-Rezept Fachdienst gelöst.
 
 Bisher steht kein strukturierter, dezentraler Weg der Kommunikation für E-Rezepte zur Verfügung. Diese Spezifikation soll dazu beitragen, dass Leistungserbringer im deutschen Gesundheitswesen strukturiert Informationen über E-Rezepte austauschen können.
 
-Anwendungsfälle sind bspw, die Anforderung von Rezepten von Pflegeeinrichtungen oder inhaltliche Klärung von Verordnungen zwischen Arzt und Apotheke.
+Anwendungsfälle sind bspw., die Anforderung von Rezepten von Pflegeeinrichtungen oder inhaltliche Klärung von Verordnungen zwischen Arzt und Apotheke.
 
 Diese Spezifikation soll einen Beitrag dazu liefern den Versorgungsprozess für die Leistungserbringer zu vereinfachen und zu beschleunigen.
