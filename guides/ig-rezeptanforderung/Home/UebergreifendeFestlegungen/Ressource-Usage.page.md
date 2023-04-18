@@ -14,4 +14,6 @@ Alle Ressourcen, die ein .note Feld enthalten und mit MS geflaggt sind, sind in 
 
 ### Einbetten des E-Rezept-Tokens (ServiceRequest.extension[EPrescriptionToken])
 
-Wenn Informationen zu einem E-Rezept in einem ServiceRequest eingebettet werden sind `PrescriptionID` und `AccessCode` zu übertragen. Dies soll nach dem Format eines E-Rezept-Tokens geschehen (siehe [gemSpec_DM_eRp](https://fachportal.gematik.de/dokumentensuche?tx_gemcharacteristics_productlist%5BformIdentifier%5D=form-2849&tx_gemcharacteristics_productlist%5Btype%5D=ProdT&tx_gemcharacteristics_productlist%5Bproducttype%5D=107&tx_gemcharacteristics_productlist%5Bproducttypeversion%5D=75#c2849)).
+Wenn Informationen zu einem E-Rezept in einem ServiceRequest eingebettet werden, sind `PrescriptionID` und `AccessCode` zu übertragen. Dies soll nach dem Format eines E-Rezept-Tokens geschehen (siehe [gemSpec_DM_eRp](https://fachportal.gematik.de/dokumentensuche?tx_gemcharacteristics_productlist%5BformIdentifier%5D=form-2849&tx_gemcharacteristics_productlist%5Btype%5D=ProdT&tx_gemcharacteristics_productlist%5Bproducttype%5D=107&tx_gemcharacteristics_productlist%5Bproducttypeversion%5D=75#c2849)).
+
+Dieses Datenformat wird bereits in der Apotheke genutzt, wenn ein 2D-Code eines E-Rezeptes ausgelesen wird. Daher minimiert es den Implementierungsaufwand, wenn dieses Format beibehalten wird.
