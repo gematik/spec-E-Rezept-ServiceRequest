@@ -1,4 +1,6 @@
-## {{page-title}}
+# {{page-title}}
+
+## Konzept
 
 ### Message Konzept
 
@@ -49,3 +51,13 @@ ServiceRequest.basedOn referenziert die zu behandelnde Medikation, bzw. Rezeptan
 Ein Service Request soll dabei immer auf genau eine medizinsiche Information beziehen. Wenn also z.B. ein Rezept angefragt wird, dann referenziert ServiceRequest.basedOn genau einen MedicationRequest. So ist für jeden MedicationRequest also ein ServiceRequest zu erstellen. Entsprechend ist die Kardinalität für ServiceRequest.basedOn ..1.
 
 Somit enthält eine KIM-Nachricht einen ServiceRequest mit einem MedicationRequest.
+
+## Motivation
+
+Mit dem E-Rezept hat die gematik ein Produkt auf den Weg gebracht, was dazu beiträgt die Verordnung, Abgabe und Abrechnung von Rezepten zu digitalisieren. Der gesamte Ablauf der Verordnung ist über den zentralen E-Rezept Fachdienst gelöst.
+
+Bisher steht kein strukturierter, dezentraler Weg der Kommunikation für E-Rezepte zur Verfügung. Diese Spezifikation soll dazu beitragen, dass Leistungserbringer im deutschen Gesundheitswesen strukturiert Informationen über E-Rezepte austauschen können.
+
+Anwendungsfälle sind bspw, die Anforderung von Rezepten von Pflegeeinrichtungen oder inhaltliche Klärung von Verordnungen zwischen Arzt und Apotheke.
+
+Diese Spezifikation soll einen Beitrag dazu liefern den Versorgungsprozess für die Leistungserbringer zu vereinfachen und zu beschleunigen.

@@ -1,7 +1,7 @@
 - name: Index
   filename: Index.page.md
 - name: Einführung
-  filename: Einfuehrung
+  filename: Einfuehrung.page.md
 - name: Anwendungsfälle
   filename: Anwendungsfaelle
 - name: Release Notes
