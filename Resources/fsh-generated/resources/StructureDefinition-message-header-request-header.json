@@ -48,7 +48,7 @@
         ],
         "binding": {
           "strength": "required",
-          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/kim-dienstkennung-vs"
+          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/service-identifier-vs"
         }
       },
       {

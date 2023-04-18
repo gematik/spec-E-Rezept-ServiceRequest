@@ -1,12 +1,14 @@
 {
   "resourceType": "ValueSet",
-  "status": "active",
-  "name": "KIMDienstkennungVS",
-  "id": "kim-dienstkennung-vs",
+  "status": "draft",
+  "name": "ServiceIdentifierVS",
+  "id": "service-identifier-vs",
   "title": "E-Rezept KIM-Dienstkennung",
   "description": "Dienstkennungen zur Angabe eines Anwendungsfalls der E-Rezept Kommunikation",
-  "version": "0.9",
-  "url": "https://gematik.de/fhir/erpmedreqcom/ValueSet/kim-dienstkennung-vs",
+  "version": "1.0",
+  "url": "https://gematik.de/fhir/erpmedreqcom/ValueSet/service-identifier-vs",
+  "experimental": false,
+  "publisher": "gematik GmbH",
   "compose": {
     "include": [
       {
