@@ -1,7 +1,7 @@
 ValueSet: ServiceIdentifierVS
 Id: service-identifier-vs
-Title: "E-Rezept KIM-Dienstkennung"
-Description: "Dienstkennungen zur Angabe eines Anwendungsfalls der E-Rezept Kommunikation"
+Title: "Kennung des Anwendungsfalls"
+Description: "Kennungen zur Angabe eines Anwendungsfalls der E-Rezept Kommunikation"
 * insert MetaValueSet(service-identifier-vs)
 * $GEM_CS_KIM_Dienstkennung#eRezept_Rezeptanforderung;Rezeptanfrage "Anfrage an einen Arzt ein Rezept auszustellen"
 * $GEM_CS_KIM_Dienstkennung#eRezept_Rezeptanforderung;Rezeptanfrage_Storno "Abbruch der Rezeptanfrage"
