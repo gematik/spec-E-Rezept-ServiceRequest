@@ -1,10 +1,4 @@
 - name: Festlegungen zu Identifiern
   filename: Identifier-Festlegungen.page.md
-- name: Request Identifier
-  filename: RequestIdentifier
-- name: Vorgangs Identifier
-  filename: GroupIdentifier
-- name: PreDis Identifier
-  filename: PreDisIdentifier
-- name: E-Rezept-Token Identifier
-  filename: EPrescriptionTokenIdentifier
+- name: Identifier
+  filename: identifier.page.md
