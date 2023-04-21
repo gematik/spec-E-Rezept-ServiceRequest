@@ -3,3 +3,4 @@ validation_results/**
 fhirpkg.lock.json
 *.vsix
 *.zip
+out/

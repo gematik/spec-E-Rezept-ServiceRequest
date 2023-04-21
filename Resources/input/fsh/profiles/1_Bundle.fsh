@@ -14,7 +14,6 @@ UC1: Pflegeeinrichtung -> Arzt -> Pflegeeinrichtung -> Apotheke
 UC2: Pflegeeinrichtung -> Arzt -> Apotheke -> Pflegeeinrichtung
 UC3: Pflegeeinrichtung -> Arzt -> Pflegeeinrichtung (Patient geht selbst zur Apotheke)
 UC4(parenterele Zubereitung): Apotheke -> Arzt -> Apotheke
-UC5 (Apothekenverbund): Apotheke -> Apotheke (E-Rezept mit Secret)
 */
 
 

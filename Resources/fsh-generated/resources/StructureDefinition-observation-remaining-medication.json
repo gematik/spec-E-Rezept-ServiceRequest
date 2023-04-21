@@ -66,11 +66,13 @@
       {
         "id": "Observation.code.coding.code",
         "path": "Observation.code.coding.code",
-        "patternCode": "range-of-medication"
+        "short": "Identifiziert diese Observation als eine Angabe der Restreichweite einer Medikation",
+        "fixedCode": "range-of-medication"
       },
       {
         "id": "Observation.subject",
         "path": "Observation.subject",
+        "short": "Referenz des Patienten, der die Medikation erhält",
         "min": 1,
         "type": [
           {
@@ -85,6 +87,7 @@
       {
         "id": "Observation.value[x]",
         "path": "Observation.value[x]",
+        "short": "Angabe der Restreichweite in Menge oder Datum, an dem die Medikation ausläuft",
         "min": 1,
         "type": [
           {

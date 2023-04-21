@@ -35,8 +35,27 @@
   "differential": {
     "element": [
       {
+        "id": "MessageHeader.eventCoding",
+        "path": "MessageHeader.eventCoding",
+        "short": "Der EventCode, der angibt in welchem Anwendungsfall und welchem Übertragungsweg die Kommunikation gerade geschieht",
+        "comment": "Für weitere Informationen siehe [ATF-ImplementationGuide](https://simplifier.net/app-transport-framework/~guides)",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/service-identifier-vs"
+        }
+      },
+      {
         "id": "MessageHeader.focus",
         "path": "MessageHeader.focus",
+        "short": "Angabe des ServiceRequests, der die wesentlichen Informationen zu einem gegebenen Anwendungsfall enthält.",
+        "comment": "Da eine Anfrage genau eine Medikation adressieren soll, ist auch entsprechend ein ServiceRequest anzugeben.",
         "type": [
           {
             "code": "Reference",

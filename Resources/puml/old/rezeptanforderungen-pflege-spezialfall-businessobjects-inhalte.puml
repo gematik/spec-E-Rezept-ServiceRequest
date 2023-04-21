@@ -1,0 +1,46 @@
+@startuml
+
+'top to bottom direction
+
+'skinparam linetype ortho
+hide circle
+hide methods
+
+'object "Fachliche \nInformationseinheit" as Businessobject #BUSINESS
+
+class "Rezeptanforderung" as Rezeptanforderung #BUSINESS {
+    ..administrative Informationen..
+    #Vorgangs_ID
+    #Prioritaet
+    #Adressat_der_Rezeptanforderung
+    #Adressat_der_Rezeptuebermittlung
+    #Patienteninformationen
+    #Vorheriges_Rezept
+    ..medizinische Informationen..
+    #Praeparat
+    #Bedarfsbegruendung
+    #Restreichweite
+    ..ergänzende Informationen..
+    #Freitext
+}
+
+
+class "Rezeptanforderung_Storno" as Rezeptanforderung_Storno #BUSINESS {
+    ..administrative Informationen..
+    #Vorgangs-ID
+    #Begründung der Stornierung
+}
+
+class "Rezeptanforderung_Ablehnung" as Rezeptanforderung_Ablehnung #BUSINESS {
+    ..administrative Informationen..
+    #Vorgangs-ID
+    ..medizinische Informationen..
+    #Ablehnungsgrund
+    ..ergänzende Informationen..
+    #Freitext
+}
+
+Rezeptanforderung_Storno -up- Rezeptanforderung: revidiert >
+Rezeptanforderung_Ablehnung -up-  Rezeptanforderung: beantwortet >
+
+@enduml

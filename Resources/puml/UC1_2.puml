@@ -1,0 +1,11 @@
+@startuml UC1_2
+autonumber 6 "<b>[0]"
+participant Pflegeeinrichtung as PE #LightBlue
+participant Apotheke as A #LightGreen
+participant "E-Rezept\nFachdienst" as FD #LightSalmon
+
+activate PE
+PE -> A++: <b>Rezeptanforderung_Rezeptuebermittlung \n<i>ServiceRequestDispenseRequest \n.status = active \n.basedOn = KBV_PR_ERP_Prescription \n.extension:EPrescriptionToken = E-Rezept Token
+A <-> FD: E-Rezept einlösen
+A -> PE--: <b>Dispense_ServiceRequest \n<i>ServiceRequestDispenseRequest \n.status = completed \n.basedOn = KBV_Prescription \n.extension:EPrescriptionToken = E-Rezept Token
+@enduml

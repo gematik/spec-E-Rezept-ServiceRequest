@@ -4,7 +4,7 @@ Usage: #inline
 Title: "HealthCareService-to-Practitioner-MessageHeader"
 Description: "Message Header from HealthCareService to Practitioner"
 * insert HealthCareService-to-Practitioner(UC3-Initial-Prescription-Request)
-* eventCoding = $GEM_CS_KIM_Dienstkennung#eRezept_Rezeptanforderung
+* eventCoding = $GEM_CS_KIM_Dienstkennung#eRezept_Rezeptanforderung;Rezeptanfrage
 
 Instance: UC3-Practitioner-to-HealthCareService-MessageHeader
 InstanceOf: MessageHeaderRequestHeader
@@ -12,4 +12,4 @@ Usage: #inline
 Title: "Practitioner-to-HealthCareService-MessageHeader"
 Description: "Message Header from Practitioner to HealthCareService"
 * insert HealthCareService-to-Practitioner(UC3-Response-Prescription-Request)
-* eventCoding = $GEM_CS_KIM_Dienstkennung#eRezept_Rezeptanforderung
+* eventCoding = $GEM_CS_KIM_Dienstkennung#eRezept_Rezeptanforderung;Rezeptbestaetigung

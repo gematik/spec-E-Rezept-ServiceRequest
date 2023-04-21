@@ -1,0 +1,78 @@
+@startuml
+
+
+skinparam maxMessageSize 300
+
+title Allgemeiner Flow für Zytostatika-Rezeptabgabe
+hide footbox
+autonumber
+
+
+participant "Zytostatika-Programm" as Zytoprogramm
+participant "Taxierungssoftware \n(Apotheke)" as Taxierungssoftware
+participant "Primärsystem" as PS
+participant "E-Rezept \nFachdienst" as erpFD
+actor "Verordnender \nLeistungserbringer" as Arzt
+
+?-> Zytoprogramm: Start der \nZubereitung
+
+Zytoprogramm ->> Taxierungssoftware: Zubereitungsdaten
+note right
+    <font color=red>TODO Klärung:</font>
+    Zubereitungsdaten ebenfalls als
+    FHIR-Nachricht über KIM oder
+    proprietäre (vorhandene) Schnittstelle?
+end note
+
+alt Trigger: Taxierungssoftware
+    Taxierungssoftware ->> PS: Rezeptanforderung/"Request Bundle"
+else Trigger: Zytoprogramm
+    Zytoprogramm ->> PS: Rezeptanforderung/"Request Bundle"
+    note left
+        dies ist der Regelfall
+    end note
+end
+
+opt Stornierung notwendig
+    alt Rezeptanforderer ist Taxierungssoftware
+        Taxierungssoftware ->> PS: Rezeptanforderung_Storno/"Cancellation Bundle"
+    else Rezeptanforderer ist Zytostatika-Programm
+        Zytoprogramm ->> PS: Rezeptanforderung_Storno/"Cancellation Bundle"
+    end
+    note right
+        Storno grundsätzlich sinnvoll:
+        Stornoquittung (accept/reject) sinnvoll
+        für das anfordernde System, 
+        damit es ggf. eine neue Rezeptanforderung
+        nach Stornoquittung senden kann
+    end note
+end
+
+PS ->> PS: Arbeitslisteneintrag erzeugen und vorhalten
+
+PS ->> Arzt: Rezeptanforderung präsentieren
+return :Rezeptzustimmung ODER :Rezeptablehnung
+
+note over Zytoprogramm, Taxierungssoftware
+    Antwort auf die Rezeptanforderung geht stets
+    an den Absender der Rezeptanforderung
+end note
+
+alt Arzt stimmt Rezeptanforderung zu
+    ref over Arzt, PS, erpFD #lightyellow
+        E-Rezept einstellen
+    end ref
+    alt Rezeptanforderer ist Taxierungssoftware
+        PS ->> Taxierungssoftware: Rezeptübermittlung/"Response Bundle"
+    else Rezeptanforderer ist Zytostatika-Programm
+        PS ->> Zytoprogramm: Rezeptübermittlung/"Response Bundle"
+    end
+else Arzt lehnt Rezeptanforderung ab
+    alt Rezeptanforderer ist Taxierungssoftware
+        PS ->> Taxierungssoftware: Rezeptablehnung übermitteln/"Cancellation Bundle"
+    else Rezeptanforderer ist Zytostatika-Programm
+        PS ->> Zytoprogramm: Rezeptablehnung übermitteln/"Cancellation Bundle"
+    end
+end
+
+@enduml

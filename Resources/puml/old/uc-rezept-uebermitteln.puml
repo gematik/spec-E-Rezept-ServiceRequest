@@ -1,0 +1,93 @@
+@startuml
+
+skinparam sequence {
+    ArrowColor black
+    ActorBorderColor black
+    LifeLineBorderColor darkgray
+    LifeLineBackgroundColor #ffffc0
+
+    ParticipantBorderColor black
+    ParticipantBackgroundColor #ffffc0
+    ParticipantFontName Arial
+    ParticipantFontSize 14
+    ParticipantFontColor black
+
+    ActorBackgroundColor #ffffc0
+    ActorFontColor #303030
+    ActorFontSize 14
+    ActorFontName Arial
+    
+    BoxBorderColor gray
+}
+
+skinparam maxMessageSize 250
+title Rezept zu einer Rezeptanforderung übermitteln durch LEI des Verordnenden
+hide footbox
+autonumber
+
+actor "Verordnender Leistungserbringer" as Arzt #BUSINESS
+participant "Primärsystem verordnender \nLeistungserbringerinstitution" as PS_Arzt #BUSINESS
+participant "E-Rezept \nFachdienst" as erpFD #BUSINESS
+participant "KIM \nClientmodul" as Kim_cm #TECHNOLOGY
+participant "KIM \nFachdienst" as Kim_fd #TECHNOLOGY
+
+Arzt -> PS_Arzt++: Rezeptanforderung bearbeiten()
+
+PS_Arzt -> Arzt++: Vorgang präsentieren(Vorgang, Medikationsabweichung)
+    note right
+        Präsentation z.B. in
+       Form einer Signaturliste
+    end note
+
+alt LE entscheidet: keine Modifikation notwendig
+    Arzt -> Arzt: vorliegender Rezeptanforderung zustimmen(Rezeptanforderung)
+        note right
+            Zustimmung z.B. aufgrund einer festgestellten Übereinstimmung der 
+            Dauermedikation mit der Rezeptanforderung (Medikationsabweichung = NULL)
+        end note
+    Arzt --> PS_Arzt++: :Rezeptanforderung, :Zustimmung
+
+else LE entscheidet: Modifikation notwendig
+    Arzt -> Arzt: vorliegende Rezeptanforderung anpassen(Rezeptanforderung)
+    Arzt --> PS_Arzt: :angepasste Rezeptanforderung
+end
+
+deactivate Arzt
+
+ref over Arzt, PS_Arzt, erpFD #lightyellow
+    E-Rezept einstellen
+end ref
+
+
+alt Vorgang.GEM_PR_ERP_MEDREQ_RequestBundle.\nGEM_PR_ERP_MEDREQ_MedicationRequest.\nextension:PrescriptionDeliveryType=RequestingOrganisation
+    PS_Arzt -> PS_Arzt++: KIM-Adresse des Empfängers übernehmen(Vorgang.GEM_PR_ERP_MEDREQ_RequestBundle. GEM_PR_ERP_MEDREQ_Organization[Bundle.entry=RequestingOrganization]. telecom.value)
+    return :gültige KIM-Adresse
+else Vorgang.GEM_PR_ERP_MEDREQ_RequestBundle.\nGEM_PR_ERP_MEDREQ_MedicationRequest.\nextension:PrescriptionDeliveryType=DispensingOrganisation
+    PS_Arzt -> PS_Arzt++: KIM-Adresse des Empfängers übernehmen(Vorgang.GEM_PR_ERP_MEDREQ_RequestBundle. GEM_PR_ERP_MEDREQ_Organization[Bundle.entry=DispensingOrganization]. telecom.value)
+    return :gültige KIM-Adresse
+else Vorgang.GEM_PR_ERP_MEDREQ_RequestBundle.\nGEM_PR_ERP_MEDREQ_MedicationRequest.\nextension:PrescriptionDeliveryType=SelfPickup
+    PS_Arzt -x PS_Arzt: Ablauf abbrechen und Rezeptvorgang schließen()
+end
+
+
+PS_Arzt -> PS_Arzt++: FHIR-Bundle "GEM_PR_ERP_MEDREQ_ResponseBundle" generieren(Rezept_ID)
+return :GEM_PR_ERP_MEDREQ_ResponseBundle
+
+
+PS_Arzt -> PS_Arzt++: Mail-MIME-Attachment generieren(GEM_PR_ERP_MEDREQ_ResponseBundle)
+return :Mail-Attachment
+
+PS_Arzt -> PS_Arzt++: Mail generieren(Mail-Attachment, gültige KIM-Adresse, X-KIM-Header-Information:= X-KIM-Dienstkennung="E-Rezept;Rezeptanforderung_Rezeptuebermittlung;V1.0")
+return :KIM-Mail
+
+PS_Arzt -> Kim_cm++#TECHNOLOGY: KIM-Mail senden mit "GEM_PR_ERP_MEDREQ_ResponseBundle" als Payload(KIM-Mail)
+
+group #LightYellow KIM Standardkommunikation
+ref over Kim_cm, Kim_fd #lightyellow
+    KIM-Mail senden
+end ref
+
+return :Status
+end group
+
+@enduml

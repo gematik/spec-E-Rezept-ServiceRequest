@@ -1,0 +1,60 @@
+@startuml
+
+skinparam sequence {
+    ArrowColor black
+    ActorBorderColor black
+    LifeLineBorderColor darkgray
+    LifeLineBackgroundColor #ffffc0
+
+    ParticipantBorderColor black
+    ParticipantBackgroundColor #ffffc0
+    ParticipantFontName Arial
+    ParticipantFontSize 14
+    ParticipantFontColor black
+
+    ActorBackgroundColor #ffffc0
+    ActorFontColor #303030
+    ActorFontSize 14
+    ActorFontName Arial
+
+    BoxBorderColor gray
+}
+
+skinparam maxMessageSize 300
+title Empfangen von Verordnungs- und Dispensierinformationen einer \nerfolgreichen Rezeptanforderung durch eine Pflegeeinrichtung
+hide footbox
+autonumber
+
+participant "Primärsystem der \nPflegeeinrichtung" as PS #BUSINESS
+participant "KIM \nClientmodul" as Kim_cm #TECHNOLOGY
+participant "KIM \nFachdienst" as Kim_fd #TECHNOLOGY
+
+
+activate PS
+PS -> Kim_cm++#TECHNOLOGY: neue Mail (periodisch) abrufen()
+
+group #LightYellow KIM Standardkommunikation
+    ref over Kim_cm, Kim_fd
+        KIM-Mail empfangen
+    end ref
+end 
+
+return :KIM-Mail
+
+PS -> PS: X-KIM-Header-Information auswerten(KIM-Mail)
+
+
+alt X-KIM-Dienstkennung="E-Rezept;Verordnung_Dispensierung;V1.0"
+
+    PS -> PS++: Mail Payload extrahieren(KIM-Mail)
+    PS -> PS: MIME-Attachment dekodieren(KIM-Mail)
+    return :FHIR-Bundle "GEM_PR_ERP_MEDREQ_DispenseInformationBundle"
+
+    PS -> PS++: Informationen extrahieren(FHIR-Bundle "GEM_PR_ERP_MEDREQ_DispenseInformationBundle")
+    return :Vorgangs_ID, :Verordnungsdatensatz, :Dispensierungsdatensatz 
+
+    PS -> PS: Rezeptvorgang aktualisieren und schließen(Vorgangs_ID, Verordnungsdatensatz, Dispensierungsdatensatz)
+    
+end
+
+@enduml
