@@ -1,9 +1,9 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "identifier-request-identifier",
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/identifier-request-identifier",
+  "id": "erp-service-request-request-identifier",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-request-identifier",
   "version": "1.0",
-  "name": "IdentifierRequestIdentifier",
+  "name": "ERPServiceRequestRequestIdentifier",
   "title": "Identifier für einzelne ServiceRequest",
   "status": "draft",
   "experimental": false,

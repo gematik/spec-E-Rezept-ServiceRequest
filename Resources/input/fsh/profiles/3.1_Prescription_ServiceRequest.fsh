@@ -20,7 +20,7 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept anzufragen"
 * identifier 1..* MS
   * ^short = "Definiert Identifier, die in diesem Profil genutzt werden sollen."
 * identifier contains requestId 1..1 and predisId 0..1
-* identifier[requestId] only IdentifierRequestIdentifier
+* identifier[requestId] only ERPServiceRequestRequestIdentifier
   * ^short = "Identifier, der eineindeutig einen ServiceRequest referenziert."
   * ^comment = "Zur Referenzierung und Zuordnung von ServiceRequest, bspw. wenn ein ServiceRequest einen anderen ersetzen soll, ist es wichtig diese Zuordnung mit dem Identifier treffen zu können. Kann beispielsweise über eine UUID abgebildet werden."
 * identifier[predisId] only IdentifierPreDisIdentifier

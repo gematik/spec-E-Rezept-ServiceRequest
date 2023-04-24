@@ -10,14 +10,14 @@ Dieses Vorgehen soll Systeme dabei unterstützen Informationen zu Vorgängen kor
 
 ### Profil
 
-{{tree:https://gematik.de/fhir/erpmedreqcom/StructureDefinition/identifier-request-identifier, diff}}
+{{tree:https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-request-identifier, diff}}
 
 Folgende Felder sind entsprechend zu befüllen, bzw. können befüllt werden:
 
 @```
 
 from StructureDefinition
-where name = 'IdentifierRequestIdentifier'
+where name = 'ERPServiceRequestRequestIdentifier'
 for differential.element
     select id, short, comment
 
