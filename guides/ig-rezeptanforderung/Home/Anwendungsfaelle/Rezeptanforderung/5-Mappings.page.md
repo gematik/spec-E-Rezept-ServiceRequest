@@ -26,12 +26,12 @@ for differential.element
 
 ```
 
-### ServiceRequestDispenseRequest Mappings
+### ERPServiceRequestDispenseRequest Mappings
 
 @```
 
 from StructureDefinition
-where name = 'ServiceRequestDispenseRequest'
+where name = 'ERPServiceRequestDispenseRequest'
 for differential.element
     select id, join mapping { Feld: map, Fachliche_Informationseinheit: identity }
     order by Fachliche_Informationseinheit

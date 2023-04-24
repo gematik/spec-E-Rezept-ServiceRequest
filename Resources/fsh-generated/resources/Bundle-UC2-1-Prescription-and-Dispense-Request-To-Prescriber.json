@@ -125,7 +125,7 @@
         "id": "UC2-Initial-Dispense-Request",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/service-request-dispense-request"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-dispense-request"
           ]
         },
         "intent": "filler-order",

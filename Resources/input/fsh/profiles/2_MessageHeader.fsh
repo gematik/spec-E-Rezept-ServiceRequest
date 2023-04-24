@@ -5,7 +5,7 @@ Title: "ERP Service Request Request Header"
 Description: "Header, welcher Informationen über Absender und Adressat enthält"
 * insert Meta (erp-service-request-request-header)
 * focus MS
-* focus only Reference(ERPServiceRequestPrescriptionRequest or ServiceRequestDispenseRequest)
+* focus only Reference(ERPServiceRequestPrescriptionRequest or ERPServiceRequestDispenseRequest)
   * ^short = "Angabe des ServiceRequests, der die wesentlichen Informationen zu einem gegebenen Anwendungsfall enthält."
   * ^comment = "Da eine Anfrage genau eine Medikation adressieren soll, ist auch entsprechend ein ServiceRequest anzugeben."
 * eventCoding from ServiceIdentifierVS (required)

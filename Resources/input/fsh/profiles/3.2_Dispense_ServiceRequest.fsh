@@ -1,9 +1,9 @@
-Profile: ServiceRequestDispenseRequest
+Profile: ERPServiceRequestDispenseRequest
 Parent: ServiceRequest
-Id: service-request-dispense-request
-Title: "Anfrage zum Beliefern einer Verordnung"
+Id: erp-service-request-dispense-request
+Title: "ERP Service Request Dispense Request"
 Description: "ServiceRequest, der genutzt wird um ein Rezept zu beliefern"
-* insert Meta (service-request-dispense-request)
+* insert Meta (erp-service-request-dispense-request)
 
 * extension MS
 * extension contains
