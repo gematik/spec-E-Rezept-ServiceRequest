@@ -3,7 +3,7 @@
   "id": "UC1-1-Prescription-Request-To-Prescriber",
   "meta": {
     "profile": [
-      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/bundle-message-container"
+      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erpservice-request-message-container"
     ]
   },
   "type": "message",

@@ -3,7 +3,7 @@
   "id": "UC2-3-Fullfilled-DispenseRequest-To-HealthCareService",
   "meta": {
     "profile": [
-      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/bundle-message-container"
+      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erpservice-request-message-container"
     ]
   },
   "type": "message",

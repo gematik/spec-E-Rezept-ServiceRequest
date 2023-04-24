@@ -1,9 +1,9 @@
-Profile: BundleMessageContainer
+Profile: ERPServiceRequestMessageContainer
 Parent: $GEM_PR_ATF_MessageBundle
-Id: bundle-message-container
-Title: "Nachichten Container"
+Id: erpservice-request-message-container
+Title: "ERP Service Request Message Container"
 Description: "Bundle, was alle Ressourcen einer Nachricht enthält"
-* insert Meta (bundle-message-container)
+* insert Meta (erpservice-request-message-container)
 * entry[MessageHeader].resource only MessageHeaderRequestHeader
 
 /*
