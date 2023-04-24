@@ -4,7 +4,7 @@
   "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-remaining-medication",
   "version": "1.0",
   "name": "ERPServiceRequestRemainingMedication",
-  "title": "Verbleibende Medikamentenreichweite",
+  "title": "ERP Service Request Remaining Medication",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",

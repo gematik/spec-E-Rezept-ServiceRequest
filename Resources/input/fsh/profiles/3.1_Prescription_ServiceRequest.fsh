@@ -80,7 +80,7 @@ Wenn die Verordnung erstellt wurde ist der entsprechende KBV_PR_ERP_Bundle-Veror
 
 
 * requester 1..1 MS
-* requester only Reference(OrganizationWithKIMAdress or $KBV_PR_FOR_Practitioner)
+* requester only Reference(ERPServiceRequestOrganization or $KBV_PR_FOR_Practitioner)
   * ^short = "Anfragende Einrichtung oder Practitioner."
   * ^comment = "Die KIM-Adresse ist bereits im MessageHeader hinterlegt. Daher ist die präferierte Angabe einen KBV_PR_FOR_Practitioner zu hinterlegen."
 
@@ -105,7 +105,7 @@ Wenn die Verordnung erstellt wurde ist der entsprechende KBV_PR_ERP_Bundle-Veror
 * supportingInfo MS
 * supportingInfo contains
 AuslieferndeApotheke 0..1 MS
-* supportingInfo[AuslieferndeApotheke] only Reference(OrganizationWithKIMAdress)
+* supportingInfo[AuslieferndeApotheke] only Reference(ERPServiceRequestOrganization)
 * supportingInfo[AuslieferndeApotheke].type = "Organization"
 
 * note MS

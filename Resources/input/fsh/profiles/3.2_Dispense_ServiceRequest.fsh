@@ -66,12 +66,12 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept zu beliefern"
   * ^comment = "Wird initial angelegt und dann nicht mehr verändert."
 
 * requester 1..1 MS
-* requester only Reference(OrganizationWithKIMAdress or $KBV_PR_FOR_Practitioner)
+* requester only Reference(ERPServiceRequestOrganization or $KBV_PR_FOR_Practitioner)
   * ^short = "Anfragende Einrichtung oder Arzt."
   * ^comment = "Falls das System des Verordnenden dieses Profil erstellt muss hier die Einrichtung/ Person angegeben werden, die die Verordnungsanfrage gestellt hat."
 
 * performer MS
-* performer only Reference(OrganizationWithKIMAdress)
+* performer only Reference(ERPServiceRequestOrganization)
   * ^short = "Apotheke, die das E-Rezept beliefern soll."
 
 * supportingInfo ^slicing.discriminator.type = #pattern

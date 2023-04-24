@@ -44,7 +44,7 @@ Das empfangende System MUSS bei vorliegen dieser ID in der Lage sein nach der vo
 * requester MS
   * ^short = "Anfragender Arzt/ Einrichung/ Apotheke für diesen MedicationRequest"
   * ^comment = "Ist hier optional anzugeben, da es schon im ServiceRequest angegeben werden muss"
-* requester only Reference($KBV_PR_FOR_Practitioner or OrganizationWithKIMAdress)
+* requester only Reference($KBV_PR_FOR_Practitioner or ERPServiceRequestOrganization)
 * requester.type 0..0
 * requester.identifier 0..1
 * requester.reference 0..1

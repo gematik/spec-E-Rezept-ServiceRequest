@@ -359,7 +359,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/organization-with-kim-adress",
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-organization",
               "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner"
             ]
           }
@@ -466,7 +466,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/organization-with-kim-adress"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-organization"
             ]
           }
         ],
