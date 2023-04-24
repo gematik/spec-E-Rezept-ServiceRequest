@@ -4,7 +4,7 @@
   "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-request-identifier",
   "version": "1.0",
   "name": "ERPServiceRequestRequestIdentifier",
-  "title": "Identifier für einzelne ServiceRequest",
+  "title": "ERP Service Request Request Identifier",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",

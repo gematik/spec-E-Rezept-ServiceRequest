@@ -595,7 +595,7 @@
         "id": "Medication-Runs-Out-Example-dateTime",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/observation-remaining-medication"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-remaining-medication"
           ]
         },
         "status": "final",
@@ -620,7 +620,7 @@
         "id": "Medication-Runs-Out-Example-Quantity",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/observation-remaining-medication"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-remaining-medication"
           ]
         },
         "status": "final",

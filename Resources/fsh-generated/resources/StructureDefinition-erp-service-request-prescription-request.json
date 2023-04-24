@@ -165,7 +165,7 @@
           {
             "code": "Identifier",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/identifier-pre-dis-identifier"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-pre-dis-identifier"
             ]
           }
         ]
@@ -426,7 +426,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/observation-remaining-medication"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-remaining-medication"
             ]
           }
         ],

@@ -1,9 +1,9 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "observation-remaining-medication",
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/observation-remaining-medication",
+  "id": "erp-service-request-remaining-medication",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-remaining-medication",
   "version": "1.0",
-  "name": "ObservationRemainingMedication",
+  "name": "ERPServiceRequestRemainingMedication",
   "title": "Verbleibende Medikamentenreichweite",
   "status": "draft",
   "experimental": false,

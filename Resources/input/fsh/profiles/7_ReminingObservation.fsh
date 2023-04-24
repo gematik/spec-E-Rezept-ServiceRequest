@@ -1,9 +1,9 @@
-Profile: ObservationRemainingMedication
+Profile: ERPServiceRequestRemainingMedication
 Parent: Observation
-Id: observation-remaining-medication
-Title: "Verbleibende Medikamentenreichweite"
+Id: erp-service-request-remaining-medication
+Title: "ERP Service Request Remaining Medication"
 Description: "Diese Observation beschreibt wie lange oder wie viel einer Medikation noch vorhanden ist"
-* insert Meta (observation-remaining-medication)
+* insert Meta (erp-service-request-remaining-medication)
 
 * status = #final (exactly)
 
@@ -21,7 +21,7 @@ Description: "Diese Observation beschreibt wie lange oder wie viel einer Medikat
   * ^short = "Angabe der Restreichweite in Menge oder Datum, an dem die Medikation ausläuft"
 
 Instance: Medication-Runs-Out-Example-dateTime
-InstanceOf: ObservationRemainingMedication
+InstanceOf: ERPServiceRequestRemainingMedication
 Usage: #inline
 Title: "Medication-Runs-Out-Example-dateTime"
 Description: "Simple example to show that Medication will last until dateTime"
@@ -30,7 +30,7 @@ Description: "Simple example to show that Medication will last until dateTime"
 * valueDateTime = "2023-01-31"
 
 Instance: Medication-Runs-Out-Example-Quantity
-InstanceOf: ObservationRemainingMedication
+InstanceOf: ERPServiceRequestRemainingMedication
 Usage: #inline
 Title: "Medication-Runs-Out-Example-Quantity"
 Description: "Simple example to show how many pieces of medication are left"
