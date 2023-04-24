@@ -1,5 +1,5 @@
 Profile: BundleMessageContainer
-Parent: $GEM_PR_KIM_MessageBundle
+Parent: $GEM_PR_ATF_MessageBundle
 Id: bundle-message-container
 Title: "Nachichten Container"
 Description: "Bundle, was alle Ressourcen einer Nachricht enthält"

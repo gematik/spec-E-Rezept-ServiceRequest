@@ -1,5 +1,5 @@
 Profile: MessageHeaderRequestHeader
-Parent: $GEM_PR_KIM_MessageHeader
+Parent: $GEM_PR_ATF_MessageHeader
 Id: message-header-request-header
 Title: "Nachrichten Header"
 Description: "Header, welcher Informationen über Absender und Adressat enthält"
