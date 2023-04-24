@@ -148,7 +148,7 @@
         "id": "Example-Initial-Medication-Request",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/medication-request-requested-medication"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-medication-request"
           ]
         },
         "extension": [

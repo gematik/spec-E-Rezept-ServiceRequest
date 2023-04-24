@@ -1,9 +1,9 @@
-Profile: MedicationRequestPrescriptionRequest
+Profile: ERPServiceRequestMedicationRequest
 Parent: MedicationRequest
-Id: medication-request-requested-medication
-Title: "Angefragte Medication"
+Id: erp-service-request-medication-request
+Title: "ERP Service Request Medication Request"
 Description: "Medizinische und pharmazeutische Angaben zur Rezeptanfrage"
-* insert Meta (medication-request-requested-medication)
+* insert Meta (erp-service-request-medication-request)
 
 * extension MS
   * ^comment = "Falls die vorherige RezeptID bekannt ist, kann diese hier benannt werden"
@@ -78,7 +78,7 @@ Das empfangende System MUSS bei vorliegen dieser ID in der Lage sein nach der vo
 * substitution 0..1
 
 Instance: Example-Initial-Medication-Request
-InstanceOf: MedicationRequestPrescriptionRequest
+InstanceOf: ERPServiceRequestMedicationRequest
 Usage: #inline
 * extension[PriorPrescriptionID].valueIdentifier
   * system = "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"
@@ -110,7 +110,7 @@ Usage: #inline
 * form = https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM#FLE
 
 Instance: Example-Zyto-Medication-Request
-InstanceOf: MedicationRequestPrescriptionRequest
+InstanceOf: ERPServiceRequestMedicationRequest
 Usage: #inline
 * status = #active
 * intent = #order

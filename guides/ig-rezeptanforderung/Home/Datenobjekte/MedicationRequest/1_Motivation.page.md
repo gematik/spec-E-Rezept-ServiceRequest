@@ -2,7 +2,7 @@
 
 Als Anfragender möchte ich angeben können, welche Medikation ich für einen Patienten anfragen möchte. Eine Einrichtung/ Person, die eine Verordnung anfragt nutzt dieses Profil, um strukturiert anzugeben, welche Medikation benötigt wird.
 
-Hierzu muss in einem ERPServiceRequestPrescriptionRequest ein MedicationRequestPrescriptionRequest mit angegeben werden. Dieser enthält die medizinische Information, die der Verordnende benötigt, um ein entsprechendes Rezept auszustellen.
+Hierzu muss in einem ERPServiceRequestPrescriptionRequest ein ERPServiceRequestMedicationRequest mit angegeben werden. Dieser enthält die medizinische Information, die der Verordnende benötigt, um ein entsprechendes Rezept auszustellen.
 
 Die anzugebende Medication entspricht dabei den [KBV Medication's](https://simplifier.net/erezept/~resources?text=medication&category=Profile&sortBy=RankScore_desc), damit das PVS daraus eine Verordnung erstellen kann.
 

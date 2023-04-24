@@ -33,9 +33,9 @@ Das implementierende System muss in der Lage sein diese Verknüpfung herzustelle
 * basedOn 1..1 MS
   * ^short = "Angefragter oder erfüllausgestellter MedicationRequest."
   * ^comment = "Einem ServiceRequest ist genau ein MedicationRequest zugeordnet, sodass unabhängige Bearbeitungen möglich sind."
-  * ^definition = "Dieses Feld referenziert den zugrundeliegenden MedicationRequest, der die medizinischen Informationen zur Rezeptanfrage enthält. Wenn die Rezeptanfrage gestellt wird KANN das Profil MedicationRequestPrescriptionRequest genutzt werden.
+  * ^definition = "Dieses Feld referenziert den zugrundeliegenden MedicationRequest, der die medizinischen Informationen zur Rezeptanfrage enthält. Wenn die Rezeptanfrage gestellt wird KANN das Profil ERPServiceRequestMedicationRequest genutzt werden.
 Wenn die Verordnung erstellt wurde ist der entsprechende KBV_PR_ERP_Bundle-Verordnungsdatensatz zu referenzieren."
-* basedOn only Reference(MedicationRequestPrescriptionRequest or $KBV_PR_ERP_Prescription)
+* basedOn only Reference(ERPServiceRequestMedicationRequest or $KBV_PR_ERP_Prescription)
 
 * requisition 1..1 MS
 * requisition only IdentifierProcedureIdentifier

@@ -14,11 +14,11 @@ for differential.element
 
 ```
 
-### MedicationRequestPrescriptionRequest Mappings
+### ERPServiceRequestMedicationRequest Mappings
 
 @```
 from StructureDefinition
-where name = 'MedicationRequestPrescriptionRequest'
+where name = 'ERPServiceRequestMedicationRequest'
 for differential.element
     select id, join mapping { Feld: map, Fachliche_Informationseinheit: identity }
     order by Fachliche_Informationseinheit
