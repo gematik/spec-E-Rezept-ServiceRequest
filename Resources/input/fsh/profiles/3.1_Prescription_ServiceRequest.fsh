@@ -1,9 +1,9 @@
-Profile: ServiceRequestPrescriptionRequest
+Profile: ERPServiceRequestPrescriptionRequest
 Parent: ServiceRequest
-Id: service-request-prescription-request
-Title: "Anfrage zum Ausstellen einer Verordnung"
+Id: erp-service-request-prescription-request
+Title: "ERP Service Request Prescription Request"
 Description: "ServiceRequest, der genutzt wird um ein Rezept anzufragen"
-* insert Meta (service-request-prescription-request)
+* insert Meta (erp-service-request-prescription-request)
 * obeys sr-1 and sr-2
 
 * extension MS
