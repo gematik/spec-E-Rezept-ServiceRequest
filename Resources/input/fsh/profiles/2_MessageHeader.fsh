@@ -1,9 +1,9 @@
-Profile: MessageHeaderRequestHeader
+Profile: ERPServiceRequestRequestHeader
 Parent: $GEM_PR_ATF_MessageHeader
-Id: message-header-request-header
-Title: "Nachrichten Header"
+Id: erp-service-request-request-header
+Title: "ERP Service Request Request Header"
 Description: "Header, welcher Informationen über Absender und Adressat enthält"
-* insert Meta (message-header-request-header)
+* insert Meta (erp-service-request-request-header)
 * focus MS
 * focus only Reference(ServiceRequestPrescriptionRequest or ServiceRequestDispenseRequest)
   * ^short = "Angabe des ServiceRequests, der die wesentlichen Informationen zu einem gegebenen Anwendungsfall enthält."

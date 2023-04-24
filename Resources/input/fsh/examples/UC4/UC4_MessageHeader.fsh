@@ -1,5 +1,5 @@
 Instance: UC4-1-Pharmacy-to-Practitioner-MessageHeader
-InstanceOf: MessageHeaderRequestHeader
+InstanceOf: ERPServiceRequestRequestHeader
 Usage: #inline
 Title: "TODO"
 Description: "TODO"
@@ -7,7 +7,7 @@ Description: "TODO"
 * eventCoding = $GEM_CS_ATF_ServiceIdentifier#eRezept_ParenteraleErnaehrung;Rezeptanfrage
 
 Instance: UC4-2-Practitioner-to-Pharmacy-MessageHeader
-InstanceOf: MessageHeaderRequestHeader
+InstanceOf: ERPServiceRequestRequestHeader
 Usage: #inline
 Title: "Practitioner-to-Pharmacy-MessageHeader"
 Description: "Message Header from Practitioner to Pharmacy"

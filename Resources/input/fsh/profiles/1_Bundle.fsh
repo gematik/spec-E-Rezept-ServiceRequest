@@ -1,10 +1,10 @@
 Profile: ERPServiceRequestMessageContainer
 Parent: $GEM_PR_ATF_MessageBundle
-Id: erpservice-request-message-container
+Id: erp-service-request-message-container
 Title: "ERP Service Request Message Container"
 Description: "Bundle, was alle Ressourcen einer Nachricht enthält"
-* insert Meta (erpservice-request-message-container)
-* entry[MessageHeader].resource only MessageHeaderRequestHeader
+* insert Meta (erp-service-request-message-container)
+* entry[MessageHeader].resource only ERPServiceRequestRequestHeader
 
 /*
 Beispielinstanzen finden sich unter ../examples

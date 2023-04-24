@@ -1,5 +1,5 @@
 Instance: UC2-1-HealthCareService-to-Practitioner-MessageHeader
-InstanceOf: MessageHeaderRequestHeader
+InstanceOf: ERPServiceRequestRequestHeader
 Usage: #inline
 Title: "HealthCareService-to-Practitioner-MessageHeader"
 Description: "Message Header from HealthCareService to Practitioner"
@@ -7,7 +7,7 @@ Description: "Message Header from HealthCareService to Practitioner"
 * eventCoding = $GEM_CS_ATF_ServiceIdentifier#eRezept_Rezeptanforderung;Rezeptanfrage
 
 Instance: UC2-2-Practitioner-to-Pharmacy-MessageHeader
-InstanceOf: MessageHeaderRequestHeader
+InstanceOf: ERPServiceRequestRequestHeader
 Usage: #inline
 Title: "Practitioner-to-Pharmacy-MessageHeader"
 Description: "Message Header from Practitioner to Pharmacy"
@@ -15,7 +15,7 @@ Description: "Message Header from Practitioner to Pharmacy"
 * eventCoding = $GEM_CS_ATF_ServiceIdentifier#eRezept_Rezeptanforderung;Abgabeanfrage
 
 Instance: UC2-3-Pharmacy-to-HealthCareService-MessageHeader
-InstanceOf: MessageHeaderRequestHeader
+InstanceOf: ERPServiceRequestRequestHeader
 Usage: #inline
 Title: "Pharmacy-to-HealthCareService-MessageHeader"
 Description: "Message Header from Practitioner to Pharmacy"

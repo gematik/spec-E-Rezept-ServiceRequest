@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "erpservice-request-message-container",
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erpservice-request-message-container",
+  "id": "erp-service-request-message-container",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-message-container",
   "version": "1.0",
   "name": "ERPServiceRequestMessageContainer",
   "title": "ERP Service Request Message Container",
@@ -51,7 +51,7 @@
           {
             "code": "MessageHeader",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/message-header-request-header"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-request-header"
             ]
           }
         ]
