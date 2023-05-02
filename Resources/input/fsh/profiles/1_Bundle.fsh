@@ -18,10 +18,6 @@ UC4(parenterele Zubereitung): Apotheke -> Arzt -> Apotheke
 
 
 /*
-TODO
-Abbruch durch die Apotheke
-
-DispenseRequest wird vom PVS erstellt
 
 UC2:
 * PrescriptionRequest zum Arzt

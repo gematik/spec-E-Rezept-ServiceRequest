@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "id": "UC1-3-Dispense-Request-To-Pharmacy",
+  "id": "UC1-Storno-3-Cancellation-Of-Dispense-Requester",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/bundle-message-container"
@@ -13,10 +13,10 @@
   },
   "entry": [
     {
-      "fullUrl": "http://medreq-test.de/MessageHeader/UC1-HealthCareService-to-Pharmacy-MessageHeader",
+      "fullUrl": "http://medreq-test.de/MessageHeader/UC1-HealthCareService-to-Pharmacy-MessageHeader-Storno",
       "resource": {
         "resourceType": "MessageHeader",
-        "id": "UC1-HealthCareService-to-Pharmacy-MessageHeader",
+        "id": "UC1-HealthCareService-to-Pharmacy-MessageHeader-Storno",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/message-header-request-header"
@@ -24,7 +24,7 @@
         },
         "focus": [
           {
-            "reference": "ServiceRequest/UC1-Initial-Dispense-Request"
+            "reference": "ServiceRequest/UC1-Cancelled-Dispense-Request"
           }
         ],
         "sender": {
@@ -50,16 +50,16 @@
           "endpoint": "http://test-pflegeheim.de"
         },
         "eventCoding": {
-          "code": "eRezept_Rezeptanforderung;Abgabeanfrage",
+          "code": "eRezept_Rezeptanforderung;Abgabeanfrage_Storno",
           "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
         }
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/ServiceRequest/UC1-Initial-Dispense-Request",
+      "fullUrl": "http://medreq-test.de/ServiceRequest/UC1-Cancelled-Dispense-Request",
       "resource": {
         "resourceType": "ServiceRequest",
-        "id": "UC1-Initial-Dispense-Request",
+        "id": "UC1-Cancelled-Dispense-Request",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/service-request-dispense-request"
@@ -104,7 +104,7 @@
           "system": "https://gematik.de/fhir/medreq/sid/NamingSystemProcedureIdentifier",
           "value": "GroupID-UC1"
         },
-        "status": "active",
+        "status": "revoked",
         "subject": {
           "reference": "Patient/Example-Patient"
         },
