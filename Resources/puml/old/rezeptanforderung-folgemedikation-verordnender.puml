@@ -16,7 +16,7 @@ skinparam sequence {
     ActorFontColor #303030
     ActorFontSize 14
     ActorFontName Arial
-    
+
     BoxBorderColor gray
 }
 
@@ -28,7 +28,7 @@ autonumber
 actor "Mitarbeiter der \nLeistungserbringerinstitution" as MA_LEI
 actor "Verordnender Leistungserbringer" as Arzt
 participant "Primärsystem verordnender \nLeistungserbringerinstitution" as PS_Arzt
-participant "E-Rezept Fachdienst" as erpFD #APPLICATION
+participant "E-Rezept-Fachdienst" as erpFD #APPLICATION
 participant "Verzeichnisdienst" as VZD #TECHNOLOGY
 participant "KIM \nClientmodul" as Kim_cm #TECHNOLOGY
 participant "KIM \nFachdienst" as Kim_fd #TECHNOLOGY
@@ -37,7 +37,7 @@ group #LightYellow KIM Standardkommunikation
     ref over Kim_cm, Kim_fd
         KIM-Mail empfangen
     end ref
-end 
+end
 
 
 PS_Arzt -> Kim_cm++: Mails abrufen und X-KIM-Dienstkennung-Information auswerten()
@@ -51,12 +51,12 @@ alt X-KIM-Dienstkennung="E-Rezept;Rezeptanforderung;V1.0"
 
 
     PS_Arzt -> PS_Arzt++: Rezeptanforderung in Zieldatenmodell transformieren(FHIR-Bundle "GEM_PR_ERP_MEDREQ_RequestBundle")
-    
-    
+
+
     alt Rezept bestätigen
         PS_Arzt -> Arzt++: Rezeptanforderung präsentieren(Rezeptanforderung)
         return :Verordnung
-        
+
         PS_Arzt -> erpFD++: E-Rezept erzeugen und einstellen(Verordnung)
         ref over PS_Arzt, erpFD
             UC E-Rezept bereitstellen

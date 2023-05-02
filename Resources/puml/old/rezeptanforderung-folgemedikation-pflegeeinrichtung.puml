@@ -30,7 +30,7 @@ participant "Primärsystem der \nPflegeeinrichtung oder AVS" as PS #BUSINESS
 participant "Verzeichnisdienst" as VZD #TECHNOLOGY
 participant "KIM \nClientmodul" as Kim_cm #TECHNOLOGY
 participant "KIM \nFachdienst" as Kim_fd #TECHNOLOGY
-participant "E-Rezept Fachdienst" as erpFD #APPLICATION
+participant "E-Rezept-Fachdienst" as erpFD #APPLICATION
 
 PS o-> PS: versicherten- und medikationsbezogenes Auslöseereignis, z.B. \nReichweitenende, Bedarfsfeststellung
 
@@ -54,7 +54,7 @@ else KIM-Adresse des Empfängers anhand Vorgängerverordnung abfragen
 else KIM-Adresse aus Bestandsdaten des PS übernehmen
     PS -> PS++: KIM-Adresse des Empfängers lokal ermitteln
     return :gültige KIM-Adresse
-    
+
 end
 
 PS -> PS++: Rezeptanforderung generieren(NEW Vorgangs_ID, Verordnungsinhalt)
@@ -69,7 +69,7 @@ opt Freigabeverfahren durch Mitarbeiter
         MA -> MA: Verordnungsinhalt prüfen
         MA -> MA: Korrektur vornehmen
         return :Verordnungsinhalt_korrigiert
-    end 
+    end
 end
 
 PS -> PS: Rezeptanforderung konfigurieren(Prioritaet, Adressat_der_Rezeptanforderung, Adressat_der_Rezeptuebermittlung, Patienteninformationen, Rezept_ID, Bedarfsbegruendung, Restreichweite)

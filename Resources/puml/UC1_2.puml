@@ -2,7 +2,7 @@
 autonumber 6 "<b>[0]"
 participant Pflegeeinrichtung as PE #LightBlue
 participant Apotheke as A #LightGreen
-participant "E-Rezept\nFachdienst" as FD #LightSalmon
+participant "E-Rezept-Fachdienst" as FD #LightSalmon
 
 activate PE
 PE -> A++: <b>Rezeptanforderung_Rezeptuebermittlung \n<i>ERPServiceRequestDispenseRequest \n.status = active \n.basedOn = KBV_PR_ERP_Prescription \n.extension:EPrescriptionToken = E-Rezept Token

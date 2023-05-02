@@ -3,8 +3,8 @@
 - name: Fachliche Beschreibung
   filename: 1-Fachliche-Beschreibung.page.md
 - name: Rezeptanforderung
-  filename: 2.1-Anfragender-an-Verordnenden.page.md
-- name: Rezeptanforderung_Rezeptuebermittlung
+  filename: 2.1-Anfrage-an-Verordnenden.page.md
+- name: Bestätigung der Rezeptanforderung
   filename: 2.2-Verordnender-an-Anfragenden.page.md
 - name: Beispiele
   filename: 4-Beispiele.page.md

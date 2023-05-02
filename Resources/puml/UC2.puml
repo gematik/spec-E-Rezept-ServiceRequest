@@ -3,7 +3,7 @@ autonumber "<b>[0]"
 participant Pflegeeinrichtung as PE #LightBlue
 participant Arzt as A #LightYellow
 participant Apotheke as AP #LightGreen
-participant "E-Rezept\nFachdienst" as FD #LightSalmon
+participant "E-Rezept-Fachdienst" as FD #LightSalmon
 
 activate PE
 PE -> A++: <b>Prescription_ServiceRequest \n.status = active \n.basedOn = MEDREQ_Medication_Request
