@@ -93,6 +93,10 @@
           {
             "system": "https://gematik.de/fhir/medreq/sid/NamingSystemRequestIdentifier",
             "value": "2"
+          },
+          {
+            "system": "https://gematik.de/fhir/medreq/sid/NamingSystemPreDisIdentifier",
+            "value": "PreDis-1"
           }
         ],
         "basedOn": [

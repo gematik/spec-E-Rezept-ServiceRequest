@@ -65,22 +65,6 @@
       {
         "id": "ServiceRequest",
         "path": "ServiceRequest",
-        "constraint": [
-          {
-            "key": "sr-1",
-            "severity": "error",
-            "human": "Wenn der Status auf 'completed' gesetzt ist, muss ein Token vorhanden sein",
-            "expression": "(status = 'completed') implies extension('https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-EX-MEDREQ-EPrescriptionToken').exists()",
-            "source": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/service-request-prescription-request"
-          },
-          {
-            "key": "sr-2",
-            "severity": "error",
-            "human": "Wenn eine .reasonReference angegeben ist, dann muss auch eine .note existieren",
-            "expression": "reasonReference.exists() implies note.exists()",
-            "source": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/service-request-prescription-request"
-          }
-        ],
         "mapping": [
           {
             "identity": "Rezeptanforderung",
@@ -230,15 +214,6 @@
         "path": "ServiceRequest.status",
         "short": "Gibt den Bearbeitungsstand eines ServiceRequests an.",
         "comment": "Bei Statusänderung wird dieser Wert überschrieben.",
-        "constraint": [
-          {
-            "key": "sr-1",
-            "severity": "error",
-            "human": "Wenn der Status auf 'completed' gesetzt ist, muss ein Token vorhanden sein",
-            "expression": "(status = 'completed') implies extension('https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-EX-MEDREQ-EPrescriptionToken').exists()",
-            "source": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/service-request-prescription-request"
-          }
-        ],
         "mustSupport": true,
         "binding": {
           "strength": "required",

@@ -7,6 +7,8 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * identifier[0]
   * system = "https://gematik.de/fhir/medreq/sid/NamingSystemRequestIdentifier"
   * value = "1"
+* identifier[+].system = "https://gematik.de/fhir/medreq/sid/NamingSystemPreDisIdentifier"
+* identifier[=].value = "PreDis-1"
 * basedOn = Reference(Example-Initial-Medication-Request)
 * requisition[0].system = "https://gematik.de/fhir/medreq/sid/NamingSystemProcedureIdentifier"
 * requisition[=].value = "GroupID-UC1"
@@ -34,6 +36,8 @@ Description: "ServiceRequest that is returned to the requester"
 * identifier[0]
   * system = "https://gematik.de/fhir/medreq/sid/NamingSystemRequestIdentifier"
   * value = "1"
+* identifier[+].system = "https://gematik.de/fhir/medreq/sid/NamingSystemPreDisIdentifier"
+* identifier[=].value = "PreDis-1"
 * basedOn = Reference(Example-Response-KBV-Prescription)
 * requisition[0].system = "https://gematik.de/fhir/medreq/sid/NamingSystemProcedureIdentifier"
 * requisition[=].value = "GroupID-UC1"
@@ -63,6 +67,8 @@ Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
 * identifier[0]
   * system = "https://gematik.de/fhir/medreq/sid/NamingSystemRequestIdentifier"
   * value = "2"
+* identifier[+].system = "https://gematik.de/fhir/medreq/sid/NamingSystemPreDisIdentifier"
+* identifier[=].value = "PreDis-1"
 * basedOn = Reference(Example-Response-KBV-Prescription)
 * requisition[0].system = "https://gematik.de/fhir/medreq/sid/NamingSystemProcedureIdentifier"
 * requisition[=].value = "GroupID-UC1"
@@ -87,6 +93,8 @@ Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
 * identifier[0]
   * system = "https://gematik.de/fhir/medreq/sid/NamingSystemRequestIdentifier"
   * value = "2"
+* identifier[+].system = "https://gematik.de/fhir/medreq/sid/NamingSystemPreDisIdentifier"
+* identifier[=].value = "PreDis-1"
 * basedOn = Reference(Example-Response-KBV-Prescription)
 * requisition[0].system = "https://gematik.de/fhir/medreq/sid/NamingSystemProcedureIdentifier"
 * requisition[=].value = "GroupID-UC1"
