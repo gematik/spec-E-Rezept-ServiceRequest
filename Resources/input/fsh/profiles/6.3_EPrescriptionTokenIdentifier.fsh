@@ -1,9 +1,9 @@
-Profile: IdentifierEPrescriptionToken
+Profile: ERPServiceRequestEPrescriptionToken
 Parent: Identifier
-Id: identifier-eprescription-token
-Title: "Identifier für ein E-Rezept-Token"
+Id: erp-service-request-eprescription-token
+Title: "ERP Service Request EPrescription Token"
 Description: "Identifier, der ein E-Rezept-Token enthält"
-* insert Meta (identifier-eprescription-token)
+* insert Meta (erp-service-request-eprescription-token)
 * system 1..1 MS
 * system = "https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken" (exactly)
 * value 1..1 MS

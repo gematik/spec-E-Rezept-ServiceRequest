@@ -1,6 +1,6 @@
 // Prescription Service Requests
 Instance: UC1-Initial-Prescription-Request
-InstanceOf: ServiceRequestPrescriptionRequest
+InstanceOf: ERPServiceRequestPrescriptionRequest
 Usage: #inline
 Title: "Initial Prescription Request"
 Description: "This ServiceRequest is sent initially to the prescribing practitioner"
@@ -25,7 +25,7 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * note[+].text = "Medikament läuft am 31.01.2023 aus. Es sind noch 7 stk übrig. "
 
 Instance: UC1-Response-Prescription-Request
-InstanceOf: ServiceRequestPrescriptionRequest
+InstanceOf: ERPServiceRequestPrescriptionRequest
 Usage: #inline
 Title: "Initial Prescription Request"
 Description: "ServiceRequest that is returned to the requester"
@@ -54,7 +54,7 @@ Description: "ServiceRequest that is returned to the requester"
 // Dispense Service Requests
 
 Instance: UC1-Initial-Dispense-Request
-InstanceOf: ServiceRequestDispenseRequest
+InstanceOf: ERPServiceRequestDispenseRequest
 Usage: #inline
 Title: "Initial Dispense Request"
 Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
@@ -79,7 +79,7 @@ Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
 * supportingInfo[AusstellenderArzt].type = "Practitioner"
 
 Instance: UC1-Response-Dispense-Request
-InstanceOf: ServiceRequestDispenseRequest
+InstanceOf: ERPServiceRequestDispenseRequest
 Usage: #inline
 Title: "Initial Dispense Request"
 Description: "This ServiceRequest is sent initially to the dispensing pharmacy"

@@ -48,7 +48,7 @@
           {
             "code": "Identifier",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/identifier-eprescription-token"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-eprescription-token"
             ]
           }
         ],

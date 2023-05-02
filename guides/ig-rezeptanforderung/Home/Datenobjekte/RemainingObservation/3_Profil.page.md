@@ -1,12 +1,12 @@
 ## {{page-title}}
 
-{{tree:https://gematik.de/fhir/erpmedreqcom/StructureDefinition/observation-remaining-medication, diff}}
+{{tree:https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-remaining-medication, diff}}
 
 Folgende Felder sind entsprechend zu befüllen, bzw. können befüllt werden:
 
 @```
 from StructureDefinition
-where name = 'ObservationRemainingMedication'
+where name = 'ERPServiceRequestRemainingMedication'
 for differential.element
     select id, short, comment
 ```

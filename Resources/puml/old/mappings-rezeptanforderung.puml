@@ -18,7 +18,7 @@ rectangle "Mapping: Rezeptanforderungen (fachlich)" <<Concept>> {
         - nicht alle Informationen liegen in der Quelle Primärsystem zum
           Zeitpunkt der Erstellung dieses Objektes vor
 
-        __KIM__
+        __ATF__
         **X-KIM-Dienstkennung="E-Rezept;Rezeptanforderung;V1.0"**
     end note 
 }

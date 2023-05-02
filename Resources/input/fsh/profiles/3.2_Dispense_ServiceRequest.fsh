@@ -1,9 +1,9 @@
-Profile: ServiceRequestDispenseRequest
+Profile: ERPServiceRequestDispenseRequest
 Parent: ServiceRequest
-Id: service-request-dispense-request
-Title: "Anfrage zum Beliefern einer Verordnung"
+Id: erp-service-request-dispense-request
+Title: "ERP Service Request Dispense Request"
 Description: "ServiceRequest, der genutzt wird um ein Rezept zu beliefern"
-* insert Meta (service-request-dispense-request)
+* insert Meta (erp-service-request-dispense-request)
 
 * extension MS
 * extension contains
@@ -19,10 +19,10 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept zu beliefern"
 
 * identifier 1..* MS
 * identifier contains requestId 1..1 and predisId 0..1
-* identifier[requestId] only IdentifierRequestIdentifier
+* identifier[requestId] only ERPServiceRequestRequestIdentifier
   * ^short = "Identifier, der eineindeutig einen ServiceRequest referenziert."
   * ^comment = "Zur Referenzierung und Zuordnung von ServiceRequest, bspw. wenn ein ServiceRequest einen anderen ersetzen soll, ist es wichtig diese Zuordnung mit dem Identifier treffen zu können. Kann beispielsweise über eine UUID abgebildet werden."
-* identifier[predisId] only IdentifierPreDisIdentifier
+* identifier[predisId] only ERPServiceRequestPreDisIdentifier
   * ^short = "Identifier, der einen Prescription- und einen Dispenserequest verbindet."
   * ^comment = "Kann beispielsweise über eine UUID abgebildet werden."
   * ^definition = "In einigen Anwendungsfällen werden bedarf es der Information welche Verordnungsanfrage zu welcher Belieferungsanfrage gehört. Wenn bspw. ein Medikament angefragt wird möchte man verfolgen können welche die dazugehörige Belieferungsanfrage ist. Hierzu dient der predisIdentifier, der ein Paar von ServiceRequest**Prescription**Request und ServiceRequest**Dispense**Request zusammengehörig identifiziert."
@@ -33,7 +33,7 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept zu beliefern"
 * basedOn only Reference($KBV_PR_ERP_Prescription)
 
 * requisition 1..1 MS
-* requisition only IdentifierProcedureIdentifier
+* requisition only ERPServiceRequestProcedureIdentifier
   * ^short = "Identifier des Vorgangs. Alle ServiceRequests innerhalb eines Vorgangs erhalten die gleiche ID."
   * ^comment = "Ist als Fall- oder Vorgangs-ID zu verstehen, um nachverfolgen zu können zu welcher Anfrage der ServiceRequest gehört."
 
@@ -66,12 +66,12 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept zu beliefern"
   * ^comment = "Wird initial angelegt und dann nicht mehr verändert."
 
 * requester 1..1 MS
-* requester only Reference(OrganizationWithKIMAdress or $KBV_PR_FOR_Practitioner)
+* requester only Reference(ERPServiceRequestOrganization or $KBV_PR_FOR_Practitioner)
   * ^short = "Anfragende Einrichtung oder Arzt."
   * ^comment = "Falls das System des Verordnenden dieses Profil erstellt muss hier die Einrichtung/ Person angegeben werden, die die Verordnungsanfrage gestellt hat."
 
 * performer MS
-* performer only Reference(OrganizationWithKIMAdress)
+* performer only Reference(ERPServiceRequestOrganization)
   * ^short = "Apotheke, die das E-Rezept beliefern soll."
 
 * supportingInfo ^slicing.discriminator.type = #pattern
