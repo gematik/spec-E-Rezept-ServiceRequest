@@ -1,7 +1,7 @@
-Profile: IdentifierProcedureIdentifier
+Profile: ERPServiceRequestProcedureIdentifier
 Parent: Identifier
 Id: identifier-procedure-identifier
-Title: "Identifier für ServiceRequests eines Vorgangs"
+Title: "ERP Service Request Procedure Identifier"
 Description: "Dieser Identifier wird genutzt, ServiceRequests eines Vorgangs zu identifizieren"
 * insert Meta (identifier-procedure-identifier)
 * value 1..1 MS

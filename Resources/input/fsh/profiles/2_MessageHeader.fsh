@@ -1,11 +1,11 @@
-Profile: MessageHeaderRequestHeader
-Parent: $GEM_PR_KIM_MessageHeader
-Id: message-header-request-header
-Title: "Nachrichten Header"
+Profile: ERPServiceRequestRequestHeader
+Parent: $GEM_PR_ATF_MessageHeader
+Id: erp-service-request-request-header
+Title: "ERP Service Request Request Header"
 Description: "Header, welcher Informationen über Absender und Adressat enthält"
-* insert Meta (message-header-request-header)
+* insert Meta (erp-service-request-request-header)
 * focus MS
-* focus only Reference(ServiceRequestPrescriptionRequest or ServiceRequestDispenseRequest)
+* focus only Reference(ERPServiceRequestPrescriptionRequest or ERPServiceRequestDispenseRequest)
   * ^short = "Angabe des ServiceRequests, der die wesentlichen Informationen zu einem gegebenen Anwendungsfall enthält."
   * ^comment = "Da eine Anfrage genau eine Medikation adressieren soll, ist auch entsprechend ein ServiceRequest anzugeben."
 * eventCoding from ServiceIdentifierVS (required)

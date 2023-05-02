@@ -1,10 +1,10 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "medication-request-requested-medication",
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/medication-request-requested-medication",
+  "id": "erp-service-request-medication-request",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-medication-request",
   "version": "1.0",
-  "name": "MedicationRequestPrescriptionRequest",
-  "title": "Angefragte Medication",
+  "name": "ERPServiceRequestMedicationRequest",
+  "title": "ERP Service Request Medication Request",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
@@ -193,7 +193,7 @@
             "code": "Reference",
             "targetProfile": [
               "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner",
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/organization-with-kim-adress"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-organization"
             ]
           }
         ],

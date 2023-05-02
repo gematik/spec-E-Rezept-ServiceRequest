@@ -10,14 +10,14 @@ Dieses Vorgehen soll Systeme dabei unterstützen Informationen zu Vorgängen kor
 
 ### Profil
 
-{{tree:https://gematik.de/fhir/erpmedreqcom/StructureDefinition/identifier-request-identifier, diff}}
+{{tree:https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-request-identifier, diff}}
 
 Folgende Felder sind entsprechend zu befüllen, bzw. können befüllt werden:
 
 @```
 
 from StructureDefinition
-where name = 'IdentifierRequestIdentifier'
+where name = 'ERPServiceRequestRequestIdentifier'
 for differential.element
     select id, short, comment
 
@@ -44,7 +44,7 @@ Folgende Felder sind entsprechend zu befüllen, bzw. können befüllt werden:
 @```
 
 from StructureDefinition
-where name = 'IdentifierProcedureIdentifier'
+where name = 'ERPServiceRequestProcedureIdentifier'
 for differential.element
     where exists(comment | short)
     select id, short, comment
@@ -65,14 +65,14 @@ Nachdem der Verordnende das E-Rezept-Token übermittelt hat wird dann die Belief
 
 ### Profil
 
-{{tree:https://gematik.de/fhir/erpmedreqcom/StructureDefinition/identifier-pre-dis-identifier, diff}}
+{{tree:https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-pre-dis-identifier, diff}}
 
 Folgende Felder sind entsprechend zu befüllen, bzw. können befüllt werden:
 
 @```
 
 from StructureDefinition
-where name = 'IdentifierPreDisIdentifier'
+where name = 'ERPServiceRequestPreDisIdentifier'
 for differential.element
     where exists(comment | short)
     select id, short, comment

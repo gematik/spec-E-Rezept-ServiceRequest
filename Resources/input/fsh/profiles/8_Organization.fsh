@@ -1,9 +1,9 @@
-Profile: OrganizationWithKIMAdress
+Profile: ERPServiceRequestOrganization
 Parent: $KBV_PR_Base_Organization
-Id: organization-with-kim-adress
-Title: "Organisation mit KIM-Addresse"
+Id: erp-service-request-organization
+Title: "ERP Service Request Organization"
 Description: "Organisation die genutzt werden kann, um eine KIM-Addresse mit anzugeben"
-* insert Meta (organization-with-kim-adress)
+* insert Meta (erp-service-request-organization)
 
 * identifier MS
 * identifier contains KIMAdresse 1..1 MS and TIMAdresse 0..1
@@ -16,7 +16,7 @@ Description: "Organisation die genutzt werden kann, um eine KIM-Addresse mit anz
 * identifier[TIMAdresse].type = https://gematik.de/fhir/directory/CodeSystem/EndpointDirectoryConnectionType#tim
 
 Instance: Example-HealthCareService-Organization
-InstanceOf: OrganizationWithKIMAdress
+InstanceOf: ERPServiceRequestOrganization
 Usage: #inline
 * identifier[Telematik-ID].type = http://terminology.hl7.org/CodeSystem/v2-0203#PRN
 * identifier[Telematik-ID].system = "https://gematik.de/fhir/sid/telematik-id"
@@ -39,7 +39,7 @@ Usage: #inline
 * address[Strassenanschrift].postalCode = "10623"
 
 Instance: Example-Pharmacy-Organization
-InstanceOf: OrganizationWithKIMAdress
+InstanceOf: ERPServiceRequestOrganization
 Usage: #inline
 * identifier[Telematik-ID].type = http://terminology.hl7.org/CodeSystem/v2-0203#PRN
 * identifier[Telematik-ID].system = "https://gematik.de/fhir/sid/telematik-id"

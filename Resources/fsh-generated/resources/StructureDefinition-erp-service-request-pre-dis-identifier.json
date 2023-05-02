@@ -1,14 +1,14 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "identifier-request-identifier",
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/identifier-request-identifier",
+  "id": "erp-service-request-pre-dis-identifier",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-pre-dis-identifier",
   "version": "1.0",
-  "name": "IdentifierRequestIdentifier",
-  "title": "Identifier für einzelne ServiceRequest",
+  "name": "ERPServiceRequestPreDisIdentifier",
+  "title": "ERP Service Request Pre Dis Identifier",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "Dieser Identifier wird genutzt, um einen einzelnen ServiceRequest zu identifizieren",
+  "description": "Identifier wird genutzt, um einen Prescription und Dispense Requests der selben Rezeptanfrage zu verknüpfen",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -37,12 +37,12 @@
       {
         "id": "Identifier.system",
         "path": "Identifier.system",
-        "fixedUri": "https://gematik.de/fhir/medreq/sid/NamingSystemRequestIdentifier"
+        "patternUri": "https://gematik.de/fhir/medreq/sid/NamingSystemPreDisIdentifier"
       },
       {
         "id": "Identifier.value",
         "path": "Identifier.value",
-        "short": "String, der den ServiceRequest eindeutig referenziert.",
+        "short": "String, der eine Verordnungs- und Belieferunsanfrage zu einem gleichen Medikament referenziert.",
         "comment": "Es wird empfohlen eine UUID zu verwenden.",
         "min": 1,
         "mustSupport": true

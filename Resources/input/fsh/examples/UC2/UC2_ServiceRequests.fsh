@@ -1,6 +1,6 @@
 // Prescription Service Requests
 Instance: UC2-Initial-Prescription-Request
-InstanceOf: ServiceRequestPrescriptionRequest
+InstanceOf: ERPServiceRequestPrescriptionRequest
 Usage: #inline
 Title: "Initial Prescription Request"
 Description: "This ServiceRequest is sent initially to the prescribing practitioner"
@@ -21,7 +21,7 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * performer.identifier = Hans-Topp-Glücklich-Identifier
 
 Instance: UC2-Forward-Prescription-Request
-InstanceOf: ServiceRequestPrescriptionRequest
+InstanceOf: ERPServiceRequestPrescriptionRequest
 Usage: #inline
 Title: "Fullfilled Prescription Request"
 Description: "ServiceRequest that is returned to the requester"
@@ -46,7 +46,7 @@ Description: "ServiceRequest that is returned to the requester"
 // Dispense Service Requests
 
 Instance: UC2-Initial-Dispense-Request
-InstanceOf: ServiceRequestDispenseRequest
+InstanceOf: ERPServiceRequestDispenseRequest
 Usage: #inline
 Title: "Initial Dispense Request"
 Description: "This ServiceRequest is sent initially to the practitioner"
@@ -67,7 +67,7 @@ Description: "This ServiceRequest is sent initially to the practitioner"
 * supportingInfo[AusstellenderArzt].type = "Practitioner"
 
 Instance: UC2-Forward-Dispense-Request
-InstanceOf: ServiceRequestDispenseRequest
+InstanceOf: ERPServiceRequestDispenseRequest
 Usage: #inline
 Title: "Dispense Request Forwarded to Pharmacy"
 Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
@@ -92,7 +92,7 @@ Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
 
 
 Instance: UC2-Response-Dispense-Request
-InstanceOf: ServiceRequestDispenseRequest
+InstanceOf: ERPServiceRequestDispenseRequest
 Usage: #inline
 Title: "Dispense Request back to HealthCareService"
 Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
