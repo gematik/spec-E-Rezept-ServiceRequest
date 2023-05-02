@@ -1,6 +1,6 @@
 ## {{page-title}}
 
-Diese Seite beschreibt die fachliche Beschreibung einer "Parenterale Zubereitung". Für eine detaillierte Beschreibung dient das FeatureDokument "KIM-Nachrichten für das E-Rezept" (gemF_eRp_KIM) //TODO: Link.
+Diese Seite beschreibt die fachliche Beschreibung des Anwendungsfalls "Rezeptanforderung für Parenterale Zubereitung". Für eine detaillierte Beschreibung dient das FeatureDokument "KIM-Nachrichten für das E-Rezept" (gemF_eRp_KIM) //TODO: Link.
 
 In diesem Sonderfall einer Rezeptanforderung initiiert eine Apotheke nach dem Start der Zubereitung einer parenteralen Zubereitung die Rezeptanforderung (**[1]**).
 
