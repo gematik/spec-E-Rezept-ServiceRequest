@@ -91,7 +91,7 @@
         },
         "identifier": [
           {
-            "system": "https://gematik.de/fhir/medreq/sid/NamingSystemRequestIdentifier",
+            "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier",
             "value": "2"
           }
         ],
@@ -101,7 +101,7 @@
           }
         ],
         "requisition": {
-          "system": "https://gematik.de/fhir/medreq/sid/NamingSystemProcedureIdentifier",
+          "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
           "value": "GroupID-UC1"
         },
         "status": "revoked",

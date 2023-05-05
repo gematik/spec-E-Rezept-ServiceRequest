@@ -37,7 +37,7 @@
       {
         "id": "Identifier.system",
         "path": "Identifier.system",
-        "fixedUri": "https://gematik.de/fhir/medreq/sid/NamingSystemRequestIdentifier"
+        "fixedUri": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier"
       },
       {
         "id": "Identifier.value",

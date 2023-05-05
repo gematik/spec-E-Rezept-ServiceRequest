@@ -37,7 +37,7 @@
       {
         "id": "Identifier.system",
         "path": "Identifier.system",
-        "patternUri": "https://gematik.de/fhir/medreq/sid/NamingSystemProcedureIdentifier"
+        "patternUri": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier"
       },
       {
         "id": "Identifier.value",

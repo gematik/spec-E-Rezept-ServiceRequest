@@ -95,7 +95,7 @@
         },
         "identifier": [
           {
-            "system": "https://gematik.de/fhir/medreq/sid/NamingSystemRequestIdentifier",
+            "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier",
             "value": "012345"
           }
         ],
@@ -105,7 +105,7 @@
           }
         ],
         "requisition": {
-          "system": "https://gematik.de/fhir/medreq/sid/NamingSystemProcedureIdentifier",
+          "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
           "value": "GroupID-2"
         },
         "status": "completed",

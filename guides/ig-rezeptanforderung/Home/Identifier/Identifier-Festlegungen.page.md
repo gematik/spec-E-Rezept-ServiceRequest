@@ -13,6 +13,6 @@ Im Anwendungsfall {{pagelink:Home/Anwendungsfaelle/Parenterale-Zubereitung}} sin
 
 |Fachliche Beschreibung|.identifier.system|
 |---|---|
-|Patienten-ID für die Verwendung in einer Taxierungssoftware|"https://gematik.de/fhir/medreq/sid/patient-id"|
-|Fall-ID für die Verwendung in einer Taxierungssoftware|"https://gematik.de/fhir/medreq/sid/case-id"|
-|Vorgangs-ID für die Verwendung in einer Taxierungssoftware, abweichend von .requisition|"https://gematik.de/fhir/medreq/sid/process-id"|
+|Patienten-ID für die Verwendung in einer Taxierungssoftware|"https://gematik.de/fhir/erp-servicerequest/sid/patient-id"|
+|Fall-ID für die Verwendung in einer Taxierungssoftware|"https://gematik.de/fhir/erp-servicerequest/sid/case-id"|
+|Vorgangs-ID für die Verwendung in einer Taxierungssoftware, abweichend von .requisition|"https://gematik.de/fhir/erp-servicerequest/sid/process-id"|

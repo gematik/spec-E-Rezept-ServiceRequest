@@ -7,4 +7,4 @@ Description: "Identifier wird genutzt, um einen Prescription und Dispense Reques
 * value 1..1 MS
   * ^short = "String, der eine Verordnungs- und Belieferunsanfrage zu einem gleichen Medikament referenziert."
   * ^comment = "Es wird empfohlen eine UUID zu verwenden."
-* system = "https://gematik.de/fhir/medreq/sid/NamingSystemPreDisIdentifier"
+* system = "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemPreDisIdentifier"

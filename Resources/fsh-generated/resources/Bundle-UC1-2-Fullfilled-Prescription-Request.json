@@ -85,11 +85,11 @@
         },
         "identifier": [
           {
-            "system": "https://gematik.de/fhir/medreq/sid/NamingSystemRequestIdentifier",
+            "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier",
             "value": "1"
           },
           {
-            "system": "https://gematik.de/fhir/medreq/sid/NamingSystemPreDisIdentifier",
+            "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemPreDisIdentifier",
             "value": "PreDis-1"
           }
         ],
@@ -99,7 +99,7 @@
           }
         ],
         "requisition": {
-          "system": "https://gematik.de/fhir/medreq/sid/NamingSystemProcedureIdentifier",
+          "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
           "value": "GroupID-UC1"
         },
         "status": "completed",
