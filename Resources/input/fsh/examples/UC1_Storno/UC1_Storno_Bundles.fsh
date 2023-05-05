@@ -1,5 +1,5 @@
 Instance: UC1-Storno-1-Cancellation-Of-Prescription-Requester
-InstanceOf: BundleMessageContainer
+InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
 Title: "Cancelled Medication Request To Prescriber"
 Description: "Cancellationrequest sent to Prescriber to get a Prescription"
@@ -23,7 +23,7 @@ Description: "Cancellationrequest sent to Prescriber to get a Prescription"
 * entry[=].resource = Medication-Runs-Out-Example-Quantity
 
 Instance: UC1-Storno-2-Cancellation-Of-Prescriber
-InstanceOf: BundleMessageContainer
+InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
 Title: "Fullfilled Prescription Request"
 Description: "Response sent from Practitioner back to HealthCareService"
@@ -47,7 +47,7 @@ Description: "Response sent from Practitioner back to HealthCareService"
 * entry[=].resource = Medication-Runs-Out-Example-Quantity
 
 Instance: UC1-Storno-3-Cancellation-Of-Dispense-Requester
-InstanceOf: BundleMessageContainer
+InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
 Title: "DispenseRequestToPharmacy"
 Description: "Request sent to Pharmacy to request a dispense of the medication"
@@ -71,7 +71,7 @@ Description: "Request sent to Pharmacy to request a dispense of the medication"
 * entry[=].resource = Example-HealthCareService-Organization
 
 Instance: UC1-Storno-4-Cancellation-Of-Dispenser
-InstanceOf: BundleMessageContainer
+InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
 Title: "DispenseRequestToPharmacy"
 Description: "Request sent to Pharmacy to request a dispense of the medication"

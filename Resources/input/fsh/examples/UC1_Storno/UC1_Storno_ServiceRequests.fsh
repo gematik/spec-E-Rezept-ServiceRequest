@@ -1,6 +1,6 @@
 // Prescription Service Requests
 Instance: UC1-Cancelled-Prescription-Request
-InstanceOf: ServiceRequestPrescriptionRequest
+InstanceOf: ERPServiceRequestPrescriptionRequest
 Usage: #inline
 Title: "Initial Prescription Request"
 Description: "This ServiceRequest is sent initially to the prescribing practitioner"
@@ -27,7 +27,7 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 // Dispense Service Requests
 
 Instance: UC1-Cancelled-Dispense-Request
-InstanceOf: ServiceRequestDispenseRequest
+InstanceOf: ERPServiceRequestDispenseRequest
 Usage: #inline
 Title: "Initial Dispense Request"
 Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
