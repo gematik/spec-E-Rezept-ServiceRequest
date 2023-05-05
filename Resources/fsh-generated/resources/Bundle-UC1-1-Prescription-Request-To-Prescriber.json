@@ -13,7 +13,7 @@
   },
   "entry": [
     {
-      "fullUrl": "http://medreq-test.de/MessageHeader/UC1-HealthCareService-to-Practitioner-MessageHeader",
+      "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/UC1-HealthCareService-to-Practitioner-MessageHeader",
       "resource": {
         "resourceType": "MessageHeader",
         "id": "UC1-HealthCareService-to-Practitioner-MessageHeader",
@@ -56,7 +56,7 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/ServiceRequest/UC1-Initial-Prescription-Request",
+      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/UC1-Initial-Prescription-Request",
       "resource": {
         "resourceType": "ServiceRequest",
         "id": "UC1-Initial-Prescription-Request",
@@ -146,7 +146,7 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/MedicationRequest/Example-Initial-Medication-Request",
+      "fullUrl": "http://erp-servicerequest-test.de/MedicationRequest/Example-Initial-Medication-Request",
       "resource": {
         "resourceType": "MedicationRequest",
         "id": "Example-Initial-Medication-Request",
@@ -191,7 +191,7 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/Medication/Example-Initial-Medication",
+      "fullUrl": "http://erp-servicerequest-test.de/Medication/Example-Initial-Medication",
       "resource": {
         "resourceType": "Medication",
         "id": "Example-Initial-Medication",
@@ -250,7 +250,7 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/Patient/Example-Patient",
+      "fullUrl": "http://erp-servicerequest-test.de/Patient/Example-Patient",
       "resource": {
         "resourceType": "Patient",
         "id": "Example-Patient",
@@ -318,7 +318,7 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/Organization/Example-HealthCareService-Organization",
+      "fullUrl": "http://erp-servicerequest-test.de/Organization/Example-HealthCareService-Organization",
       "resource": {
         "resourceType": "Organization",
         "id": "Example-HealthCareService-Organization",
@@ -399,7 +399,7 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/Observation/Medication-Runs-Out-Example-dateTime",
+      "fullUrl": "http://erp-servicerequest-test.de/Observation/Medication-Runs-Out-Example-dateTime",
       "resource": {
         "resourceType": "Observation",
         "id": "Medication-Runs-Out-Example-dateTime",
@@ -424,7 +424,7 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/Observation/Medication-Runs-Out-Example-Quantity",
+      "fullUrl": "http://erp-servicerequest-test.de/Observation/Medication-Runs-Out-Example-Quantity",
       "resource": {
         "resourceType": "Observation",
         "id": "Medication-Runs-Out-Example-Quantity",

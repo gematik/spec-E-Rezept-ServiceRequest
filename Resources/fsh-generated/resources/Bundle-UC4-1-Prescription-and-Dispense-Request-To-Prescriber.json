@@ -13,7 +13,7 @@
   },
   "entry": [
     {
-      "fullUrl": "http://medreq-test.de/MessageHeader/UC4-1-Pharmacy-to-Practitioner-MessageHeader",
+      "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/UC4-1-Pharmacy-to-Practitioner-MessageHeader",
       "resource": {
         "resourceType": "MessageHeader",
         "id": "UC4-1-Pharmacy-to-Practitioner-MessageHeader",
@@ -56,7 +56,7 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/ServiceRequest/UC4-Initial-Prescription-Request",
+      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/UC4-Initial-Prescription-Request",
       "resource": {
         "resourceType": "ServiceRequest",
         "id": "UC4-Initial-Prescription-Request",
@@ -119,7 +119,7 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/MedicationRequest/Example-Zyto-Medication-Request",
+      "fullUrl": "http://erp-servicerequest-test.de/MedicationRequest/Example-Zyto-Medication-Request",
       "resource": {
         "resourceType": "MedicationRequest",
         "id": "Example-Zyto-Medication-Request",
@@ -143,7 +143,7 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/Medication/Example-Zyto-Medication",
+      "fullUrl": "http://erp-servicerequest-test.de/Medication/Example-Zyto-Medication",
       "resource": {
         "resourceType": "Medication",
         "id": "Example-Zyto-Medication",
@@ -236,7 +236,7 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/Patient/Example-Patient",
+      "fullUrl": "http://erp-servicerequest-test.de/Patient/Example-Patient",
       "resource": {
         "resourceType": "Patient",
         "id": "Example-Patient",
@@ -304,7 +304,7 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/Organization/Example-Pharmacy-Organization",
+      "fullUrl": "http://erp-servicerequest-test.de/Organization/Example-Pharmacy-Organization",
       "resource": {
         "resourceType": "Organization",
         "id": "Example-Pharmacy-Organization",

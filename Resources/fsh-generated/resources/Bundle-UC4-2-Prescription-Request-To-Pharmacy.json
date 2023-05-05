@@ -13,7 +13,7 @@
   },
   "entry": [
     {
-      "fullUrl": "http://medreq-test.de/MessageHeader/UC4-2-Practitioner-to-Pharmacy-MessageHeader",
+      "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/UC4-2-Practitioner-to-Pharmacy-MessageHeader",
       "resource": {
         "resourceType": "MessageHeader",
         "id": "UC4-2-Practitioner-to-Pharmacy-MessageHeader",
@@ -56,7 +56,7 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/ServiceRequest/UC4-Response-Prescription-Request",
+      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/UC4-Response-Prescription-Request",
       "resource": {
         "resourceType": "ServiceRequest",
         "id": "UC4-Response-Prescription-Request",
@@ -125,7 +125,7 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/MedicationRequest/Example-Response-KBV-Prescription",
+      "fullUrl": "http://erp-servicerequest-test.de/MedicationRequest/Example-Response-KBV-Prescription",
       "resource": {
         "resourceType": "MedicationRequest",
         "id": "Example-Response-KBV-Prescription",
@@ -201,7 +201,7 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/Medication/Example-Response-Medication",
+      "fullUrl": "http://erp-servicerequest-test.de/Medication/Example-Response-Medication",
       "resource": {
         "resourceType": "Medication",
         "id": "Example-Response-Medication",
@@ -260,7 +260,7 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/Coverage/Response-Coverage",
+      "fullUrl": "http://erp-servicerequest-test.de/Coverage/Response-Coverage",
       "resource": {
         "resourceType": "Coverage",
         "id": "Response-Coverage",
@@ -326,7 +326,7 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/Patient/Example-Patient",
+      "fullUrl": "http://erp-servicerequest-test.de/Patient/Example-Patient",
       "resource": {
         "resourceType": "Patient",
         "id": "Example-Patient",
@@ -394,7 +394,7 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/Practitioner/Example-Practitioner",
+      "fullUrl": "http://erp-servicerequest-test.de/Practitioner/Example-Practitioner",
       "resource": {
         "resourceType": "Practitioner",
         "id": "Example-Practitioner",
@@ -485,7 +485,7 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/Organization/Example-Pharmacy-Organization",
+      "fullUrl": "http://erp-servicerequest-test.de/Organization/Example-Pharmacy-Organization",
       "resource": {
         "resourceType": "Organization",
         "id": "Example-Pharmacy-Organization",
