@@ -38,7 +38,8 @@ end
 
 alt Rezeptanforderung liegt vor beim Verordnenden
     alt #PaleGreen Arzt ist einverstanden 
-        Arztpraxis ->> Versicherter: **Rezeptübergabe**
+        Arztpraxis ->> Pflegeeinrichtung: Rezeptanforderung_Bestätigung
+        Pflegeeinrichtung --> Versicherter: opt. Benachrichtigung über Ausstellung des E-Rezepts
         Versicherter ->> Apotheke: **Medikamentabholung gg. Rezeptvorlage**
         note left
             möglich via
@@ -47,7 +48,7 @@ alt Rezeptanforderung liegt vor beim Verordnenden
               3. Papierausdruck
         end note
     else #LightPink Arzt lehnt ab
-        Arztpraxis ->> Pflegeeinrichtung: //Rezeptanforderung_Ablehnung//
+        Arztpraxis ->> Pflegeeinrichtung: //Rezeptanforderung_Storno//
     end
 end
 

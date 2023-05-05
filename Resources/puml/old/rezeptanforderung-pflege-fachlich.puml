@@ -37,15 +37,15 @@ end
 alt Rezeptanforderung liegt vor beim Verordnenden
     alt #PaleGreen Arzt ist einverstanden 
         alt Direktübermittlungswunsch bei Pflegeeinrichtung
-        Arztpraxis ->> Apotheke: //Rezeptanforderung_Rezeptuebermittlung//
+        Arztpraxis ->> Apotheke: //Dispensieranforderung_Rezeptübermittlung//
         else Pflegeeinrichtung entscheidet selbst über Übermittlung
-        Arztpraxis ->> Pflegeeinrichtung: //Rezeptanforderung_Rezeptuebermittlung//
-        Pflegeeinrichtung ->> Apotheke: //Rezeptanforderung_Rezeptuebermittlung//
+        Arztpraxis ->> Pflegeeinrichtung: //Rezeptanforderung_Bestätigung//
+        Pflegeeinrichtung ->> Apotheke: //Dispensieranforderung_Rezeptübermittlung//
         end
         Apotheke ->> Pflegeeinrichtung: **Medikamentbelieferung**
-        Apotheke ->> Pflegeeinrichtung: //Verordnung_Dispensierung//
+        Apotheke ->> Pflegeeinrichtung: //Dispensieranforderung_Bestätigung//
     else #LightPink Arzt lehnt ab
-        Arztpraxis ->> Pflegeeinrichtung: //Rezeptanforderung_Ablehnung//
+        Arztpraxis ->> Pflegeeinrichtung: //Rezeptanforderung_Storno//
     end
 end
 

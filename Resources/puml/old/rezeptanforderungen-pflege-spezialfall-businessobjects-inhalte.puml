@@ -31,16 +31,6 @@ class "Rezeptanforderung_Storno" as Rezeptanforderung_Storno #BUSINESS {
     #Begründung der Stornierung
 }
 
-class "Rezeptanforderung_Ablehnung" as Rezeptanforderung_Ablehnung #BUSINESS {
-    ..administrative Informationen..
-    #Vorgangs-ID
-    ..medizinische Informationen..
-    #Ablehnungsgrund
-    ..ergänzende Informationen..
-    #Freitext
-}
-
 Rezeptanforderung_Storno -up- Rezeptanforderung: revidiert >
-Rezeptanforderung_Ablehnung -up-  Rezeptanforderung: beantwortet >
 
 @enduml

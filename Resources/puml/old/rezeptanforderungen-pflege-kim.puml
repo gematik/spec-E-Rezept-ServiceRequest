@@ -10,9 +10,8 @@ class "Fachliche \nInformationseinheit" as Businessobject #BUSINESS
 
 class "Rezeptanforderung" as Rezeptanforderung #BUSINESS
 class "Rezeptanforderung_Storno" as Rezeptanforderung_Storno #BUSINESS
-class "Rezeptanforderung_Rezeptuebermittlung" as Rezeptanforderung_Rezeptuebermittlung #BUSINESS
-class "Rezeptanforderung_Ablehnung" as Rezeptanforderung_Ablehnung #BUSINESS
-class "Verordnung_Dispensierung" as Verordnung_Dispensierung #BUSINESS
+class "Rezeptanforderung_Bestätigung" as Rezeptanforderung_Bestätigung #BUSINESS
+class "Dispensieranforderung_Rezeptübermittlung" as Dispensieranforderung_Rezeptübermittlung #BUSINESS
 
 class "FHIR-Bundle" as Fhirbundle #APPLICATION
 class "KIM-Nachricht" as KIMNachricht #TECHNOLOGY
@@ -25,19 +24,20 @@ class "Verordnung" as Medication
 class "Versicherter" as Versicherter
 class "Dispensierung" as Dispensierung
 
-Rezeptanforderung_Rezeptuebermittlung -left|> Businessobject: ist eine
+Rezeptanforderung_Bestätigung -left|> Businessobject: ist eine
 Rezeptanforderung -down|> Businessobject: ist eine
 Rezeptanforderung_Storno -left|> Businessobject: ist eine
-Rezeptanforderung_Ablehnung -down|> Businessobject: ist eine
-Verordnung_Dispensierung -|> Businessobject: ist eine
+Rezeptanforderung_Storno -down|> Businessobject: ist eine
+Dispensieranforderung_Rezeptübermittlung -|> Businessobject: ist eine
 
 Rezeptanforderung -up- "1..1" Versicherter: bezieht sich auf >
 Rezeptanforderung_Storno -- "1..1" Rezeptanforderung: revidiert >
-Rezeptanforderung_Ablehnung -- "1..1" Rezeptanforderung: beantwortet >
-Rezeptanforderung_Rezeptuebermittlung -- "1..1" Rezeptanforderung: beantwortet >
-Rezeptanforderung_Rezeptuebermittlung -- "1..1" ERezepttoken: enthält >
-Verordnung_Dispensierung -- "1..1" Dispensierung: enthält >
-Verordnung_Dispensierung -- "1..1" Rezeptanforderung_Rezeptuebermittlung: aggregiert >
+Rezeptanforderung_Storno -- "1..1" Rezeptanforderung: beantwortet >
+Rezeptanforderung_Bestätigung -- "1..1" Rezeptanforderung: beantwortet >
+Rezeptanforderung_Bestätigung -- "1..1" ERezepttoken: enthält >
+Dispensieranforderung_Rezeptübermittlung -- "1..1" ERezepttoken: enthält >
+Dispensieranforderung_Rezeptübermittlung -- "1..1" Dispensierung: enthält >
+Dispensieranforderung_Rezeptübermittlung -- "1..1" Rezeptanforderung_Bestätigung: aggregiert >
 ERezepttoken -right- "1..1" ERezept: referenziert auf >
 ERezept -right- "1..1" Medication: enthält >
 
