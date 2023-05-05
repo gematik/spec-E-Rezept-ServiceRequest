@@ -11,7 +11,7 @@ Aus dem App-Transport-Framework werden die Ressourcen "Bundle" und "MessageHeade
 ### Verwendung von EventCodes (MessageHeader.eventCode)
 
 In dieser Spezifikation dient der EventCode sowohl der Identifikation des Anwendungsfalles, sowie des Transportweges innerhalb des Anwendungsfalls. So gibt z.B. der Code `eRezept_Rezeptanforderung;Rezeptanfrage` an, dass es sich um den Anwendungsfall "Rezeptanforderung", sowie über eine initiale "Rezeptanfrage" eines Anfragenden an einen Verordnenden handelt.
-Die für diese Spezifikation zulässigen EventCodes sind in ValueSet {{link:https://gematik.de/fhir/erpmedreqcom/ValueSet/service-identifier-vs}} aufgelistet und beschrieben.
+Die für diese Spezifikation zulässigen EventCodes sind in ValueSet {{link:https://gematik.de/fhir/erp-servicerequest/ValueSet/service-identifier-vs}} aufgelistet und beschrieben.
 
 Die in diesem Implementierungsleitfaden beschriebenen Anwendungsfälle enthalten jeweils auch eine Angabe, welcher EventCode zu nutzen ist.
 

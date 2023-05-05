@@ -6,7 +6,7 @@ Die Profilierung ist allerdings nicht so eng, da in der anfragenden Pflegeeinric
 
 Das schreibende System übermittelt mit dieser Medikationsanfrage dem Verordnenden die Informationen zur gewünschten Medikation.
 
-{{tree:https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-medication-request, diff}}
+{{tree:https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request, diff}}
 
 Folgende Felder sind entsprechend zu befüllen, bzw. können befüllt werden:
 

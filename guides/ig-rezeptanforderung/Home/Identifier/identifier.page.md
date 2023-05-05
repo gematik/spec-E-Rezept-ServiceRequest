@@ -10,7 +10,7 @@ Dieses Vorgehen soll Systeme dabei unterstützen Informationen zu Vorgängen kor
 
 ### Profil
 
-{{tree:https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-request-identifier, diff}}
+{{tree:https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-identifier, diff}}
 
 Folgende Felder sind entsprechend zu befüllen, bzw. können befüllt werden:
 
@@ -37,7 +37,7 @@ Bspw. erstellt im Anwendungsfall {{pagelink:Home/Anwendungsfaelle/Rezeptanforder
 
 ### Profil
 
-{{tree:https://gematik.de/fhir/erpmedreqcom/StructureDefinition/identifier-procedure-identifier, diff}}
+{{tree:https://gematik.de/fhir/erp-servicerequest/StructureDefinition/identifier-procedure-identifier, diff}}
 
 Folgende Felder sind entsprechend zu befüllen, bzw. können befüllt werden:
 
@@ -65,7 +65,7 @@ Nachdem der Verordnende das E-Rezept-Token übermittelt hat wird dann die Belief
 
 ### Profil
 
-{{tree:https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-pre-dis-identifier, diff}}
+{{tree:https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-pre-dis-identifier, diff}}
 
 Folgende Felder sind entsprechend zu befüllen, bzw. können befüllt werden:
 
