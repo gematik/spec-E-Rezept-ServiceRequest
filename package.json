@@ -1,5 +1,5 @@
 {
-  "name": "de.gematik.erpmedreqcom",
+  "name": "de.gematik.erp-servicerequest",
   "version": "1.0.0",
   "description": "Ressourcen zur Rezeptanforderung eines E-Rezeptes",
   "fhirVersions": [
