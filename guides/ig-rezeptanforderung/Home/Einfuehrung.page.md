@@ -61,3 +61,17 @@ Bisher steht kein strukturierter, dezentraler Weg der Kommunikation für E-Rezep
 Anwendungsfälle sind bspw., die Anforderung von Rezepten von Pflegeeinrichtungen oder inhaltliche Klärung von Verordnungen zwischen Arzt und Apotheke.
 
 Diese Spezifikation soll einen Beitrag dazu liefern den Versorgungsprozess für die Leistungserbringer zu vereinfachen und zu beschleunigen.
+
+## Beispiele
+
+Beispielinstanzen sind im [Simplifier-Projekt](https://simplifier.net/erezept-medicationrequest-communication/~resources?category=Example&exampletype=Bundle&sortBy=RankScore_desc) zu finden.
+
+Folgende UseCases sind mit entsprechenden Beispielen beschrieben:
+
+UC1: Pflegeeinrichtung -> Arzt -> Pflegeeinrichtung -> Apotheke
+UC2: Pflegeeinrichtung -> Arzt -> Apotheke -> Pflegeeinrichtung
+UC3: Pflegeeinrichtung -> Arzt -> Pflegeeinrichtung (Patient geht selbst zur Apotheke)
+UC4(parenterale Zubereitung): Apotheke -> Arzt -> Apotheke
+
+Die Beispiele tragen jeweils das Präfix zum entsprechenden UseCase und der entsprechenden Sequenz. Bsp: UC1-3-* ist ein Beispiel, was UC1 zugeordnet ist und den dritten Schritt in der Abfolge entspricht.
+Für UC1 gibt es auch Storno Beispiele.

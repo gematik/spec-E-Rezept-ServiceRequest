@@ -7,6 +7,8 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * identifier[0]
   * system = "https://gematik.de/fhir/medreq/sid/NamingSystemRequestIdentifier"
   * value = "1"
+* identifier[+].system = "https://gematik.de/fhir/medreq/sid/NamingSystemPreDisIdentifier"
+* identifier[=].value = "PreDis-1"
 * basedOn = Reference(Example-Initial-Medication-Request)
 * requisition[0].system = "https://gematik.de/fhir/medreq/sid/NamingSystemProcedureIdentifier"
 * requisition[=].value = "GroupID-UC1"
@@ -34,6 +36,8 @@ Description: "ServiceRequest that is returned to the requester"
 * identifier[0]
   * system = "https://gematik.de/fhir/medreq/sid/NamingSystemRequestIdentifier"
   * value = "1"
+* identifier[+].system = "https://gematik.de/fhir/medreq/sid/NamingSystemPreDisIdentifier"
+* identifier[=].value = "PreDis-1"
 * basedOn = Reference(Example-Response-KBV-Prescription)
 * requisition[0].system = "https://gematik.de/fhir/medreq/sid/NamingSystemProcedureIdentifier"
 * requisition[=].value = "GroupID-UC1"
@@ -59,11 +63,12 @@ Usage: #inline
 Title: "Initial Dispense Request"
 Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
 * extension[EPrescriptionToken].valueIdentifier.system = "https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken"
-//* extension[EPrescriptionToken].valueIdentifier.value = "Task/160.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
-* extension[EPrescriptionToken].valueIdentifier.value = "false/token"
+* extension[EPrescriptionToken].valueIdentifier.value = "Task/160.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
 * identifier[0]
   * system = "https://gematik.de/fhir/medreq/sid/NamingSystemRequestIdentifier"
   * value = "2"
+* identifier[+].system = "https://gematik.de/fhir/medreq/sid/NamingSystemPreDisIdentifier"
+* identifier[=].value = "PreDis-1"
 * basedOn = Reference(Example-Response-KBV-Prescription)
 * requisition[0].system = "https://gematik.de/fhir/medreq/sid/NamingSystemProcedureIdentifier"
 * requisition[=].value = "GroupID-UC1"
@@ -88,6 +93,8 @@ Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
 * identifier[0]
   * system = "https://gematik.de/fhir/medreq/sid/NamingSystemRequestIdentifier"
   * value = "2"
+* identifier[+].system = "https://gematik.de/fhir/medreq/sid/NamingSystemPreDisIdentifier"
+* identifier[=].value = "PreDis-1"
 * basedOn = Reference(Example-Response-KBV-Prescription)
 * requisition[0].system = "https://gematik.de/fhir/medreq/sid/NamingSystemProcedureIdentifier"
 * requisition[=].value = "GroupID-UC1"

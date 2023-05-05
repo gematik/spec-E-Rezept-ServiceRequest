@@ -9,12 +9,6 @@ Description: "Identifier, der ein E-Rezept-Token enthält"
 * value 1..1 MS
   * ^short = "Angabe des E-Rezept-Tokens"
   * ^comment = "Der Token hat die Form '/Task/{PrescriptionID}/$accept?ac={AccessCode}. Siehe [gemSpec_DM_eRp](https://fachportal.gematik.de/fachportal-import/files/gemSpec_DM_eRp_V1.5.0.pdf)'."
-//TODO: fix Expression * value obeys Id-1-E-Prescription-Token
-
-Invariant: Id-1-E-Prescription-Token
-Description: "Regex Invariante zur Validierung eines E-Rezept Tokens"
-Expression: "$this.toString().matches('^Task/[0-9]{3}.[0-9]{3}.[0-9]{3}.[0-9]{3}.[0-9]{3}.[0-9]{2}/$accept?ac=[A-Za-z0-9]+$')"
-Severity: #error
 
 Instance: NamingSystemEPrescriptionToken
 InstanceOf: NamingSystem

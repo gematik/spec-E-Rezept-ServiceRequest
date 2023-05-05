@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "id": "UC1-2-Fullfilled-Prescription-Request",
+  "id": "UC1-Storno-4-Cancellation-Of-Dispenser",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-message-container"
@@ -9,14 +9,14 @@
   "type": "message",
   "identifier": {
     "system": "urn:ietf:rfc:3986",
-    "value": "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
+    "value": "urn:uuid:c80f6c55-92f8-4518-ba66-cb193da09336"
   },
   "entry": [
     {
-      "fullUrl": "http://medreq-test.de/MessageHeader/UC1-Practitioner-to-HealthCareService-MessageHeader",
+      "fullUrl": "http://medreq-test.de/MessageHeader/UC1-Pharmacy-to-HealthCareService-MessageHeader-Storno",
       "resource": {
         "resourceType": "MessageHeader",
-        "id": "UC1-Practitioner-to-HealthCareService-MessageHeader",
+        "id": "UC1-Pharmacy-to-HealthCareService-MessageHeader-Storno",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-request-header"
@@ -24,7 +24,7 @@
         },
         "focus": [
           {
-            "reference": "ServiceRequest/UC1-Response-Prescription-Request"
+            "reference": "ServiceRequest/UC1-Cancelled-Dispense-Request"
           }
         ],
         "sender": {
@@ -50,22 +50,28 @@
           "endpoint": "http://test-pflegeheim.de"
         },
         "eventCoding": {
-          "code": "eRezept_Rezeptanforderung;Rezeptbestaetigung",
+          "code": "eRezept_Rezeptanforderung;Abgabeanfrage_Storno",
           "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
         }
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/ServiceRequest/UC1-Response-Prescription-Request",
+      "fullUrl": "http://medreq-test.de/ServiceRequest/UC1-Cancelled-Dispense-Request",
       "resource": {
         "resourceType": "ServiceRequest",
-        "id": "UC1-Response-Prescription-Request",
+        "id": "UC1-Cancelled-Dispense-Request",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/service-request-prescription-request"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-dispense-request"
           ]
         },
-        "intent": "order",
+        "intent": "filler-order",
+        "supportingInfo": [
+          {
+            "type": "Practitioner",
+            "reference": "Practitioner/Example-Practitioner"
+          }
+        ],
         "extension": [
           {
             "valueIdentifier": {
@@ -78,7 +84,7 @@
         "code": {
           "coding": [
             {
-              "code": "prescription-request",
+              "code": "dispense-request",
               "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/service-request-type-cs"
             }
           ]
@@ -86,11 +92,7 @@
         "identifier": [
           {
             "system": "https://gematik.de/fhir/medreq/sid/NamingSystemRequestIdentifier",
-            "value": "1"
-          },
-          {
-            "system": "https://gematik.de/fhir/medreq/sid/NamingSystemPreDisIdentifier",
-            "value": "PreDis-1"
+            "value": "2"
           }
         ],
         "basedOn": [
@@ -102,51 +104,21 @@
           "system": "https://gematik.de/fhir/medreq/sid/NamingSystemProcedureIdentifier",
           "value": "GroupID-UC1"
         },
-        "status": "completed",
+        "status": "revoked",
         "subject": {
           "reference": "Patient/Example-Patient"
         },
-        "orderDetail": [
-          {
-            "coding": [
-              {
-                "code": "return-to-requester",
-                "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/prescription-fullfillment-type-cs"
-              }
-            ]
-          }
-        ],
-        "occurrenceDateTime": "2023-01-30",
-        "authoredOn": "2023-01-27",
+        "occurrenceDateTime": "2023-02-01",
+        "authoredOn": "2023-02-01",
         "requester": {
           "reference": "Organization/Example-HealthCareService-Organization"
         },
         "performer": [
           {
-            "reference": "Practitioner/Example-Practitioner"
-          }
-        ],
-        "reasonCode": [
-          {
-            "coding": [
-              {
-                "code": "medication-runs-out",
-                "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/medication-request-reason-cs"
-              }
-            ]
-          }
-        ],
-        "reasonReference": [
-          {
-            "reference": "Observation/Medication-Runs-Out-Example-dateTime"
-          },
-          {
-            "reference": "Observation/Medication-Runs-Out-Example-Quantity"
-          }
-        ],
-        "note": [
-          {
-            "text": "Medikament läuft am 31.01.2023 aus. Es sind noch 7 stk übrig. "
+            "identifier": {
+              "system": "http://gematik.de/fhir/sid/KIM-Adresse",
+              "value": "arbeitsplatz-1@test-apotheke.kim.telematik"
+            }
           }
         ]
       }
@@ -287,6 +259,221 @@
       }
     },
     {
+      "fullUrl": "http://medreq-test.de/Coverage/Response-Coverage",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "Response-Coverage",
+        "meta": {
+          "profile": [
+            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Coverage|1.1.0"
+          ]
+        },
+        "status": "active",
+        "extension": [
+          {
+            "url": "http://fhir.de/StructureDefinition/gkv/besondere-personengruppe",
+            "valueCoding": {
+              "code": "00",
+              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_PERSONENGRUPPE"
+            }
+          },
+          {
+            "url": "http://fhir.de/StructureDefinition/gkv/dmp-kennzeichen",
+            "valueCoding": {
+              "code": "00",
+              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DMP"
+            }
+          },
+          {
+            "url": "http://fhir.de/StructureDefinition/gkv/wop",
+            "valueCoding": {
+              "code": "72",
+              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ITA_WOP"
+            }
+          },
+          {
+            "url": "http://fhir.de/StructureDefinition/gkv/versichertenart",
+            "valueCoding": {
+              "code": "3",
+              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_VERSICHERTENSTATUS"
+            }
+          }
+        ],
+        "payor": [
+          {
+            "identifier": {
+              "system": "http://fhir.de/sid/arge-ik/iknr",
+              "value": "108416214"
+            },
+            "display": "AOK Bayern Die Gesundh."
+          }
+        ],
+        "type": {
+          "coding": [
+            {
+              "code": "GKV",
+              "system": "http://fhir.de/CodeSystem/versicherungsart-de-basis"
+            }
+          ]
+        },
+        "beneficiary": {
+          "reference": "Patient/Example-Patient"
+        },
+        "period": {
+          "end": "2040-04-01"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://medreq-test.de/Patient/Example-Patient",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "Example-Patient",
+        "meta": {
+          "profile": [
+            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
+          ]
+        },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
+                  "code": "GKV"
+                }
+              ]
+            },
+            "system": "http://fhir.de/sid/gkv/kvid-10",
+            "value": "X234567890"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Königsstein",
+            "_family": {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+                  "valueString": "Königsstein"
+                }
+              ]
+            },
+            "given": [
+              "Ludger"
+            ]
+          }
+        ],
+        "address": [
+          {
+            "type": "both",
+            "line": [
+              "Musterstr. 1"
+            ],
+            "_line": [
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                    "valueString": "1"
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                    "valueString": "Musterstr."
+                  }
+                ]
+              }
+            ],
+            "city": "Berlin",
+            "postalCode": "10623"
+          }
+        ],
+        "birthDate": "1935-06-22"
+      }
+    },
+    {
+      "fullUrl": "http://medreq-test.de/Organization/Example-HealthCareService-Organization",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "Example-HealthCareService-Organization",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-organization"
+          ]
+        },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "code": "kim-2.0",
+                  "system": "https://gematik.de/fhir/directory/CodeSystem/EndpointDirectoryConnectionType"
+                }
+              ]
+            },
+            "system": "http://gematik.de/fhir/sid/KIM-Adresse",
+            "value": "pflegeheim.immergrün.arzt@sana-pflegeheime.kim.telematik"
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "PRN"
+                }
+              ]
+            },
+            "system": "https://gematik.de/fhir/sid/telematik-id",
+            "value": "1-031234567"
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "BSNR"
+                }
+              ]
+            },
+            "system": "https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR",
+            "value": "031234567"
+          }
+        ],
+        "address": [
+          {
+            "type": "both",
+            "line": [
+              "Musterstr. 2"
+            ],
+            "_line": [
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                    "valueString": "2"
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                    "valueString": "Musterstr."
+                  }
+                ]
+              }
+            ],
+            "city": "Berlin",
+            "postalCode": "10623"
+          }
+        ],
+        "name": "Pflegeheim Immergrün",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "0301234567"
+          }
+        ]
+      }
+    },
+    {
       "fullUrl": "http://medreq-test.de/Practitioner/Example-Practitioner",
       "resource": {
         "resourceType": "Practitioner",
@@ -378,275 +565,133 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/Patient/Example-Patient",
+      "fullUrl": "http://medreq-test.de/MedicationDispense/UC1-Medication-Dispense",
       "resource": {
-        "resourceType": "Patient",
-        "id": "Example-Patient",
+        "resourceType": "MedicationDispense",
+        "id": "UC1-Medication-Dispense",
         "meta": {
           "profile": [
-            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
+            "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|1.2"
           ]
         },
+        "status": "completed",
         "identifier": [
           {
-            "type": {
-              "coding": [
-                {
-                  "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
-                  "code": "GKV"
-                }
-              ]
-            },
-            "system": "http://fhir.de/sid/gkv/kvid-10",
-            "value": "X234567890"
+            "system": "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
+            "value": "160.100.000.000.002.36",
+            "use": "official"
           }
         ],
-        "name": [
+        "performer": [
           {
-            "use": "official",
-            "family": "Königsstein",
-            "_family": {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
-                  "valueString": "Königsstein"
-                }
+            "actor": {
+              "identifier": {
+                "system": "https://gematik.de/fhir/sid/telematik-id",
+                "value": "12345678901234567890"
+              }
+            }
+          }
+        ],
+        "contained": [
+          {
+            "resourceType": "Medication",
+            "id": "Example-Response-Medication",
+            "meta": {
+              "profile": [
+                "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.1.0"
               ]
             },
-            "given": [
-              "Ludger"
+            "extension": [
+              {
+                "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Medication_Type",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "http://snomed.info/sct",
+                      "version": "http://snomed.info/sct/900000000000207008/version/20220331",
+                      "code": "763158003",
+                      "display": "Medicinal product (product)"
+                    }
+                  ]
+                }
+              },
+              {
+                "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Category",
+                "valueCoding": {
+                  "code": "00",
+                  "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Category"
+                }
+              },
+              {
+                "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Vaccine",
+                "valueBoolean": false
+              },
+              {
+                "url": "http://fhir.de/StructureDefinition/normgroesse",
+                "valueCode": "N1"
+              }
+            ],
+            "code": {
+              "coding": [
+                {
+                  "system": "http://fhir.de/CodeSystem/ifa/pzn",
+                  "code": "08585997"
+                }
+              ],
+              "text": "Prospan® Hustensaft 100ml N1"
+            },
+            "form": {
+              "coding": [
+                {
+                  "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM",
+                  "code": "FLE"
+                }
+              ]
+            }
+          }
+        ],
+        "medicationReference": {
+          "reference": "#Example-Response-Medication"
+        },
+        "subject": {
+          "identifier": {
+            "system": "http://fhir.de/sid/gkv/kvid-10",
+            "value": "X123456789"
+          }
+        },
+        "whenHandedOver": "2020-04-16T13:44:27.957+00:00",
+        "dosageInstruction": [
+          {
+            "sequence": 1,
+            "text": "Eine Tablette täglich",
+            "timing": {
+              "repeat": {
+                "frequency": 1,
+                "period": 1,
+                "periodUnit": "d"
+              }
+            },
+            "doseAndRate": [
+              {
+                "type": {
+                  "coding": [
+                    {
+                      "code": "ordered"
+                    }
+                  ]
+                },
+                "doseQuantity": {
+                  "value": 1,
+                  "unit": "tablet"
+                }
+              }
             ]
           }
-        ],
-        "address": [
-          {
-            "type": "both",
-            "line": [
-              "Musterstr. 1"
-            ],
-            "_line": [
-              {
-                "extension": [
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-                    "valueString": "1"
-                  },
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-                    "valueString": "Musterstr."
-                  }
-                ]
-              }
-            ],
-            "city": "Berlin",
-            "postalCode": "10623"
-          }
-        ],
-        "birthDate": "1935-06-22"
-      }
-    },
-    {
-      "fullUrl": "http://medreq-test.de/Coverage/Response-Coverage",
-      "resource": {
-        "resourceType": "Coverage",
-        "id": "Response-Coverage",
-        "meta": {
-          "profile": [
-            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Coverage|1.1.0"
-          ]
-        },
-        "status": "active",
-        "extension": [
-          {
-            "url": "http://fhir.de/StructureDefinition/gkv/besondere-personengruppe",
-            "valueCoding": {
-              "code": "00",
-              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_PERSONENGRUPPE"
-            }
-          },
-          {
-            "url": "http://fhir.de/StructureDefinition/gkv/dmp-kennzeichen",
-            "valueCoding": {
-              "code": "00",
-              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DMP"
-            }
-          },
-          {
-            "url": "http://fhir.de/StructureDefinition/gkv/wop",
-            "valueCoding": {
-              "code": "72",
-              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ITA_WOP"
-            }
-          },
-          {
-            "url": "http://fhir.de/StructureDefinition/gkv/versichertenart",
-            "valueCoding": {
-              "code": "3",
-              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_VERSICHERTENSTATUS"
-            }
-          }
-        ],
-        "payor": [
-          {
-            "identifier": {
-              "system": "http://fhir.de/sid/arge-ik/iknr",
-              "value": "108416214"
-            },
-            "display": "AOK Bayern Die Gesundh."
-          }
-        ],
-        "type": {
-          "coding": [
-            {
-              "code": "GKV",
-              "system": "http://fhir.de/CodeSystem/versicherungsart-de-basis"
-            }
-          ]
-        },
-        "beneficiary": {
-          "reference": "Patient/Example-Patient"
-        },
-        "period": {
-          "end": "2040-04-01"
-        }
-      }
-    },
-    {
-      "fullUrl": "http://medreq-test.de/Organization/Example-HealthCareService-Organization",
-      "resource": {
-        "resourceType": "Organization",
-        "id": "Example-HealthCareService-Organization",
-        "meta": {
-          "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-organization"
-          ]
-        },
-        "identifier": [
-          {
-            "type": {
-              "coding": [
-                {
-                  "code": "kim-2.0",
-                  "system": "https://gematik.de/fhir/directory/CodeSystem/EndpointDirectoryConnectionType"
-                }
-              ]
-            },
-            "system": "http://gematik.de/fhir/sid/KIM-Adresse",
-            "value": "pflegeheim.immergrün.arzt@sana-pflegeheime.kim.telematik"
-          },
-          {
-            "type": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-                  "code": "PRN"
-                }
-              ]
-            },
-            "system": "https://gematik.de/fhir/sid/telematik-id",
-            "value": "1-031234567"
-          },
-          {
-            "type": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-                  "code": "BSNR"
-                }
-              ]
-            },
-            "system": "https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR",
-            "value": "031234567"
-          }
-        ],
-        "address": [
-          {
-            "type": "both",
-            "line": [
-              "Musterstr. 2"
-            ],
-            "_line": [
-              {
-                "extension": [
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-                    "valueString": "2"
-                  },
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-                    "valueString": "Musterstr."
-                  }
-                ]
-              }
-            ],
-            "city": "Berlin",
-            "postalCode": "10623"
-          }
-        ],
-        "name": "Pflegeheim Immergrün",
-        "telecom": [
-          {
-            "system": "phone",
-            "value": "0301234567"
-          }
         ]
-      }
-    },
-    {
-      "fullUrl": "http://medreq-test.de/Observation/Medication-Runs-Out-Example-dateTime",
-      "resource": {
-        "resourceType": "Observation",
-        "id": "Medication-Runs-Out-Example-dateTime",
-        "meta": {
-          "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-remaining-medication"
-          ]
-        },
-        "status": "final",
-        "subject": {
-          "reference": "Patient/Example-Patient"
-        },
-        "code": {
-          "coding": [
-            {
-              "code": "range-of-medication",
-              "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/medication-observation-cs"
-            }
-          ]
-        },
-        "valueDateTime": "2023-01-31"
-      }
-    },
-    {
-      "fullUrl": "http://medreq-test.de/Observation/Medication-Runs-Out-Example-Quantity",
-      "resource": {
-        "resourceType": "Observation",
-        "id": "Medication-Runs-Out-Example-Quantity",
-        "meta": {
-          "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-remaining-medication"
-          ]
-        },
-        "status": "final",
-        "subject": {
-          "reference": "Patient/Example-Patient"
-        },
-        "code": {
-          "coding": [
-            {
-              "code": "range-of-medication",
-              "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/medication-observation-cs"
-            }
-          ]
-        },
-        "valueQuantity": {
-          "value": 7,
-          "unit": "stk"
-        }
       }
     }
   ],
   "_timestamp": {
-    "value": "2023-01-30T13:28:17.239+02:00"
+    "value": "2023-02-01T13:28:17.239+02:00"
   }
 }

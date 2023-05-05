@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "id": "UC2-1-Prescription-and-Dispense-Request-To-Prescriber",
+  "id": "UC1-Storno-3-Cancellation-Of-Dispense-Requester",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-message-container"
@@ -9,14 +9,14 @@
   "type": "message",
   "identifier": {
     "system": "urn:ietf:rfc:3986",
-    "value": "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
+    "value": "urn:uuid:c80f6c55-92f8-4518-ba66-cb193da09336"
   },
   "entry": [
     {
-      "fullUrl": "http://medreq-test.de/MessageHeader/UC2-1-HealthCareService-to-Practitioner-MessageHeader",
+      "fullUrl": "http://medreq-test.de/MessageHeader/UC1-HealthCareService-to-Pharmacy-MessageHeader-Storno",
       "resource": {
         "resourceType": "MessageHeader",
-        "id": "UC2-1-HealthCareService-to-Practitioner-MessageHeader",
+        "id": "UC1-HealthCareService-to-Pharmacy-MessageHeader-Storno",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-request-header"
@@ -24,7 +24,7 @@
         },
         "focus": [
           {
-            "reference": "ServiceRequest/UC2-Initial-Prescription-Request"
+            "reference": "ServiceRequest/UC1-Cancelled-Dispense-Request"
           }
         ],
         "sender": {
@@ -50,79 +50,16 @@
           "endpoint": "http://test-pflegeheim.de"
         },
         "eventCoding": {
-          "code": "eRezept_Rezeptanforderung;Rezeptanfrage",
+          "code": "eRezept_Rezeptanforderung;Abgabeanfrage_Storno",
           "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
         }
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/ServiceRequest/UC2-Initial-Prescription-Request",
+      "fullUrl": "http://medreq-test.de/ServiceRequest/UC1-Cancelled-Dispense-Request",
       "resource": {
         "resourceType": "ServiceRequest",
-        "id": "UC2-Initial-Prescription-Request",
-        "meta": {
-          "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/service-request-prescription-request"
-          ]
-        },
-        "intent": "order",
-        "code": {
-          "coding": [
-            {
-              "code": "prescription-request",
-              "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/service-request-type-cs"
-            }
-          ]
-        },
-        "identifier": [
-          {
-            "system": "https://gematik.de/fhir/medreq/sid/NamingSystemRequestIdentifier",
-            "value": "012345"
-          }
-        ],
-        "basedOn": [
-          {
-            "reference": "MedicationRequest/Example-Initial-Medication-Request"
-          }
-        ],
-        "requisition": {
-          "system": "https://gematik.de/fhir/medreq/sid/NamingSystemProcedureIdentifier",
-          "value": "GroupID-2"
-        },
-        "status": "active",
-        "subject": {
-          "reference": "Patient/Example-Patient"
-        },
-        "orderDetail": [
-          {
-            "coding": [
-              {
-                "code": "send-to-pharmacy",
-                "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/prescription-fullfillment-type-cs"
-              }
-            ]
-          }
-        ],
-        "occurrenceDateTime": "2023-02-01",
-        "authoredOn": "2023-01-27",
-        "requester": {
-          "reference": "Organization/Example-HealthCareService-Organization"
-        },
-        "performer": [
-          {
-            "identifier": {
-              "system": "http://gematik.de/fhir/sid/KIM-Adresse",
-              "value": "hans@ytopp-gluecklich.kim.telematik"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "http://medreq-test.de/ServiceRequest/UC2-Initial-Dispense-Request",
-      "resource": {
-        "resourceType": "ServiceRequest",
-        "id": "UC2-Initial-Dispense-Request",
+        "id": "UC1-Cancelled-Dispense-Request",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-dispense-request"
@@ -133,6 +70,15 @@
           {
             "type": "Practitioner",
             "reference": "Practitioner/Example-Practitioner"
+          }
+        ],
+        "extension": [
+          {
+            "valueIdentifier": {
+              "system": "https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken",
+              "value": "Task/160.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
+            },
+            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/eprescription-token-ex"
           }
         ],
         "code": {
@@ -146,14 +92,19 @@
         "identifier": [
           {
             "system": "https://gematik.de/fhir/medreq/sid/NamingSystemRequestIdentifier",
-            "value": "012345"
+            "value": "2"
+          }
+        ],
+        "basedOn": [
+          {
+            "reference": "MedicationRequest/Example-Response-KBV-Prescription"
           }
         ],
         "requisition": {
           "system": "https://gematik.de/fhir/medreq/sid/NamingSystemProcedureIdentifier",
-          "value": "GroupID-2"
+          "value": "GroupID-UC1"
         },
-        "status": "active",
+        "status": "revoked",
         "subject": {
           "reference": "Patient/Example-Patient"
         },
@@ -173,22 +124,41 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/MedicationRequest/Example-Initial-Medication-Request",
+      "fullUrl": "http://medreq-test.de/MedicationRequest/Example-Response-KBV-Prescription",
       "resource": {
         "resourceType": "MedicationRequest",
-        "id": "Example-Initial-Medication-Request",
+        "id": "Example-Response-KBV-Prescription",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-medication-request"
+            "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription|1.1.0"
           ]
         },
+        "status": "active",
+        "intent": "order",
         "extension": [
           {
-            "valueIdentifier": {
-              "system": "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
-              "value": "160.100.000.000.001.36"
-            },
-            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/prescription-id-ex"
+            "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_EmergencyServicesFee",
+            "valueBoolean": false
+          },
+          {
+            "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_BVG",
+            "valueBoolean": false
+          },
+          {
+            "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Multiple_Prescription",
+            "extension": [
+              {
+                "url": "Kennzeichen",
+                "valueBoolean": false
+              }
+            ]
+          },
+          {
+            "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_StatusCoPayment",
+            "valueCoding": {
+              "code": "1",
+              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_StatusCoPayment"
+            }
           }
         ],
         "dispenseRequest": {
@@ -198,18 +168,30 @@
             "value": 1
           }
         },
-        "status": "active",
-        "intent": "order",
+        "dosageInstruction": [
+          {
+            "extension": [
+              {
+                "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_DosageFlag",
+                "valueBoolean": true
+              }
+            ],
+            "text": "2mal tägl. 5ml"
+          }
+        ],
         "medicationReference": {
-          "reference": "Medication/Example-Initial-Medication"
+          "reference": "Medication/Example-Response-Medication"
         },
         "subject": {
           "reference": "Patient/Example-Patient"
         },
         "authoredOn": "2022-05-20",
-        "dosageInstruction": [
+        "requester": {
+          "reference": "Practitioner/Example-Practitioner"
+        },
+        "insurance": [
           {
-            "text": "2mal tägl. 5ml"
+            "reference": "Coverage/Response-Coverage"
           }
         ],
         "substitution": {
@@ -218,10 +200,10 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/Medication/Example-Initial-Medication",
+      "fullUrl": "http://medreq-test.de/Medication/Example-Response-Medication",
       "resource": {
         "resourceType": "Medication",
-        "id": "Example-Initial-Medication",
+        "id": "Example-Response-Medication",
         "meta": {
           "profile": [
             "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.1.0"
@@ -264,7 +246,7 @@
               "code": "08585997"
             }
           ],
-          "text": "Prospan® Hustensaft 100ml"
+          "text": "Prospan® Hustensaft 100ml N1"
         },
         "form": {
           "coding": [
@@ -273,6 +255,72 @@
               "code": "FLE"
             }
           ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://medreq-test.de/Coverage/Response-Coverage",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "Response-Coverage",
+        "meta": {
+          "profile": [
+            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Coverage|1.1.0"
+          ]
+        },
+        "status": "active",
+        "extension": [
+          {
+            "url": "http://fhir.de/StructureDefinition/gkv/besondere-personengruppe",
+            "valueCoding": {
+              "code": "00",
+              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_PERSONENGRUPPE"
+            }
+          },
+          {
+            "url": "http://fhir.de/StructureDefinition/gkv/dmp-kennzeichen",
+            "valueCoding": {
+              "code": "00",
+              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DMP"
+            }
+          },
+          {
+            "url": "http://fhir.de/StructureDefinition/gkv/wop",
+            "valueCoding": {
+              "code": "72",
+              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ITA_WOP"
+            }
+          },
+          {
+            "url": "http://fhir.de/StructureDefinition/gkv/versichertenart",
+            "valueCoding": {
+              "code": "3",
+              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_VERSICHERTENSTATUS"
+            }
+          }
+        ],
+        "payor": [
+          {
+            "identifier": {
+              "system": "http://fhir.de/sid/arge-ik/iknr",
+              "value": "108416214"
+            },
+            "display": "AOK Bayern Die Gesundh."
+          }
+        ],
+        "type": {
+          "coding": [
+            {
+              "code": "GKV",
+              "system": "http://fhir.de/CodeSystem/versicherungsart-de-basis"
+            }
+          ]
+        },
+        "beneficiary": {
+          "reference": "Patient/Example-Patient"
+        },
+        "period": {
+          "end": "2040-04-01"
         }
       }
     },
@@ -518,6 +566,6 @@
     }
   ],
   "_timestamp": {
-    "value": "2015-02-07T13:28:17.239+02:00"
+    "value": "2023-02-01T13:28:17.239+02:00"
   }
 }

@@ -62,7 +62,7 @@
         "id": "UC1-Initial-Prescription-Request",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-prescription-request"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/service-request-prescription-request"
           ]
         },
         "intent": "order",
@@ -78,6 +78,10 @@
           {
             "system": "https://gematik.de/fhir/medreq/sid/NamingSystemRequestIdentifier",
             "value": "1"
+          },
+          {
+            "system": "https://gematik.de/fhir/medreq/sid/NamingSystemPreDisIdentifier",
+            "value": "PreDis-1"
           }
         ],
         "basedOn": [

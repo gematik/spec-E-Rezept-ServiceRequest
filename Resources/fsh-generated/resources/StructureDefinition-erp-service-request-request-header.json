@@ -60,7 +60,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-prescription-request",
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/service-request-prescription-request",
               "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-dispense-request"
             ]
           }

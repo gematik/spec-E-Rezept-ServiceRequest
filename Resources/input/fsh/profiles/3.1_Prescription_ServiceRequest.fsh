@@ -3,8 +3,7 @@ Parent: ServiceRequest
 Id: erp-service-request-prescription-request
 Title: "ERP Service Request Prescription Request"
 Description: "ServiceRequest, der genutzt wird um ein Rezept anzufragen"
-* insert Meta (erp-service-request-prescription-request)
-* obeys sr-1 and sr-2
+* insert Meta (service-request-prescription-request)
 
 * extension MS
 * extension contains
@@ -43,7 +42,6 @@ Wenn die Verordnung erstellt wurde ist der entsprechende KBV_PR_ERP_Bundle-Veror
   * ^comment = "Ist als Fall oder VorgangsID zu verstehen (siehe Mapping), um nachverfolgen zu können zu welcher Anfrage der ServiceRequest gehört."
 
 * status MS
-* status obeys sr-1
 * status from ServiceRequestStatusVS
   * ^short = "Gibt den Bearbeitungsstand eines ServiceRequests an."
   * ^comment = "Bei Statusänderung wird dieser Wert überschrieben."
@@ -111,13 +109,3 @@ AuslieferndeApotheke 0..1 MS
 * note MS
   * ^short = "Weitere Angaben zur Rezeptanforderung."
   * ^comment = "Eventuell nicht spezifizierte Anwendungsfälle können hier im Freitext platziert werden."
-
-Invariant: sr-1
-Description: "Wenn der Status auf 'completed' gesetzt ist, muss ein Token vorhanden sein"
-Expression: "(status = 'completed') implies extension('https://gematik.de/fhir/erpmedreqcom/StructureDefinition/GEM-EX-MEDREQ-EPrescriptionToken').exists()"
-Severity: #error
-
-Invariant: sr-2
-Description: "Wenn eine .reasonReference angegeben ist, dann muss auch eine .note existieren"
-Expression: "reasonReference.exists() implies note.exists()"
-Severity: #error
