@@ -50,7 +50,7 @@
           }
         ],
         "eventCoding": {
-          "code": "eRezept_ParenteraleErnaehrung;Rezeptbestaetigung",
+          "code": "eRezept_ParenteraleZubereitung;Rezeptbestaetigung",
           "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
         }
       }
