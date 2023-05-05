@@ -3,7 +3,7 @@
   "id": "UC1-Storno-1-Cancellation-Of-Prescription-Requester",
   "meta": {
     "profile": [
-      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-message-container"
+      "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
     ]
   },
   "type": "message",
@@ -19,7 +19,7 @@
         "id": "UC1-HealthCareService-to-Practitioner-MessageHeader-Storno",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-request-header"
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
           ]
         },
         "focus": [
@@ -62,7 +62,7 @@
         "id": "UC1-Cancelled-Prescription-Request",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/service-request-prescription-request"
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/service-request-prescription-request"
           ]
         },
         "intent": "order",
@@ -70,7 +70,7 @@
           "coding": [
             {
               "code": "prescription-request",
-              "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/service-request-type-cs"
+              "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
             }
           ]
         },
@@ -98,7 +98,7 @@
             "coding": [
               {
                 "code": "return-to-requester",
-                "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/prescription-fullfillment-type-cs"
+                "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/prescription-fullfillment-type-cs"
               }
             ]
           }
@@ -121,7 +121,7 @@
             "coding": [
               {
                 "code": "medication-runs-out",
-                "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/medication-request-reason-cs"
+                "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-request-reason-cs"
               }
             ]
           }
@@ -148,7 +148,7 @@
         "id": "Example-Initial-Medication-Request",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-medication-request"
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request"
           ]
         },
         "extension": [
@@ -157,7 +157,7 @@
               "system": "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
               "value": "160.100.000.000.001.36"
             },
-            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/prescription-id-ex"
+            "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/prescription-id-ex"
           }
         ],
         "dispenseRequest": {
@@ -320,7 +320,7 @@
         "id": "Example-HealthCareService-Organization",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-organization"
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
           ]
         },
         "identifier": [
@@ -401,7 +401,7 @@
         "id": "Medication-Runs-Out-Example-dateTime",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-remaining-medication"
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-remaining-medication"
           ]
         },
         "status": "final",
@@ -412,7 +412,7 @@
           "coding": [
             {
               "code": "range-of-medication",
-              "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/medication-observation-cs"
+              "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-observation-cs"
             }
           ]
         },
@@ -426,7 +426,7 @@
         "id": "Medication-Runs-Out-Example-Quantity",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-remaining-medication"
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-remaining-medication"
           ]
         },
         "status": "final",
@@ -437,7 +437,7 @@
           "coding": [
             {
               "code": "range-of-medication",
-              "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/medication-observation-cs"
+              "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-observation-cs"
             }
           ]
         },

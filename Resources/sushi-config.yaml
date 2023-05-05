@@ -1,4 +1,4 @@
-canonical: https://gematik.de/fhir/erpmedreqcom
+canonical: https://gematik.de/fhir/erp-servicerequest
 fhirVersion: 4.0.1
 applyExtensionMetadataToRoot: false
 FSHOnly: true

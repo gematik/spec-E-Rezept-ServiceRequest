@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
   "id": "erp-service-request-dispense-request",
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-dispense-request",
+  "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request",
   "version": "1.0",
   "name": "ERPServiceRequestDispenseRequest",
   "title": "ERP Service Request Dispense Request",
@@ -97,7 +97,7 @@
           {
             "code": "Extension",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/eprescription-token-ex"
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex"
             ]
           }
         ],
@@ -141,7 +141,7 @@
           {
             "code": "Identifier",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-request-identifier"
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-identifier"
             ]
           }
         ]
@@ -159,7 +159,7 @@
           {
             "code": "Identifier",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-pre-dis-identifier"
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-pre-dis-identifier"
             ]
           }
         ]
@@ -200,7 +200,7 @@
           {
             "code": "Identifier",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/identifier-procedure-identifier"
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/identifier-procedure-identifier"
             ]
           }
         ],
@@ -228,7 +228,7 @@
         "mustSupport": true,
         "binding": {
           "strength": "required",
-          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/service-request-status-vs"
+          "valueSet": "https://gematik.de/fhir/erp-servicerequest/ValueSet/service-request-status-vs"
         }
       },
       {
@@ -250,7 +250,7 @@
         "mustSupport": true,
         "binding": {
           "strength": "required",
-          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/service-request-type-vs"
+          "valueSet": "https://gematik.de/fhir/erp-servicerequest/ValueSet/service-request-type-vs"
         }
       },
       {
@@ -309,7 +309,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-organization",
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization",
               "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner"
             ]
           }
@@ -324,7 +324,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-organization"
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
             ]
           }
         ],

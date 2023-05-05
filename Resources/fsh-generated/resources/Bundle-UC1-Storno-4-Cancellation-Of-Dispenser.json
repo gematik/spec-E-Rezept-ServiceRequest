@@ -3,7 +3,7 @@
   "id": "UC1-Storno-4-Cancellation-Of-Dispenser",
   "meta": {
     "profile": [
-      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-message-container"
+      "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
     ]
   },
   "type": "message",
@@ -19,7 +19,7 @@
         "id": "UC1-Pharmacy-to-HealthCareService-MessageHeader-Storno",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-request-header"
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
           ]
         },
         "focus": [
@@ -62,7 +62,7 @@
         "id": "UC1-Cancelled-Dispense-Request",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-dispense-request"
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"
           ]
         },
         "intent": "filler-order",
@@ -78,14 +78,14 @@
               "system": "https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken",
               "value": "Task/160.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
             },
-            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/eprescription-token-ex"
+            "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex"
           }
         ],
         "code": {
           "coding": [
             {
               "code": "dispense-request",
-              "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/service-request-type-cs"
+              "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
             }
           ]
         },
@@ -399,7 +399,7 @@
         "id": "Example-HealthCareService-Organization",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-organization"
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
           ]
         },
         "identifier": [

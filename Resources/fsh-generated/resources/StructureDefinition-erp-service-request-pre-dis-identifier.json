@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
   "id": "erp-service-request-pre-dis-identifier",
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-pre-dis-identifier",
+  "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-pre-dis-identifier",
   "version": "1.0",
   "name": "ERPServiceRequestPreDisIdentifier",
   "title": "ERP Service Request Pre Dis Identifier",

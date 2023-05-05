@@ -7,7 +7,7 @@
   "title": "Grund der Medikamentenanfrage (CS)",
   "description": "Liefert Codes für Gründe, warum Medikation angefragt wird",
   "version": "1.0",
-  "url": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/medication-request-reason-cs",
+  "url": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-request-reason-cs",
   "concept": [
     {
       "code": "medication-runs-out",

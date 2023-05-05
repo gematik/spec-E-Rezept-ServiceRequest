@@ -6,7 +6,7 @@
   "title": "Status des ServiceRequests",
   "description": "Auswahl an Codes um anzugeben welchen Status ein ServiceRequest hat",
   "version": "1.0",
-  "url": "https://gematik.de/fhir/erpmedreqcom/ValueSet/service-request-status-vs",
+  "url": "https://gematik.de/fhir/erp-servicerequest/ValueSet/service-request-status-vs",
   "experimental": false,
   "publisher": "gematik GmbH",
   "compose": {
