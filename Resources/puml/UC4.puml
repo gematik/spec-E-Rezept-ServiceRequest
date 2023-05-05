@@ -1,13 +1,13 @@
 @startuml UC4
 autonumber "<b>[0]"
-participant Apotheke as AP #LightGreen
-participant Arzt as A #LightYellow
-participant "E-Rezept\nFachdienst" as FD #LightSalmon
+participant "Herstellung- / Taxierungssoftware, AVS" as AP #LightGreen
+participant PVS as A #LightYellow
+participant "E-Rezept-Fachdienst" as FD #LightSalmon
 
-activate PE
-AP -> A++: <b>Prescription_ServiceRequest \n.status = active \n.basedOn = MEDREQ_Medication_Request \n<b>MessageHeader\neventCode = eRezept_ParenteraleErnaehrung_Rezeptanfrage
+AP -> A++: <b>Prescription_ServiceRequest \n.status = active \n.basedOn = MEDREQ_Medication_Request \n<b>MessageHeader\neventCode = eRezept_ParenteraleZubereitung;Rezeptanfrage
 A -> FD++: E-Rezept einstellen
 FD -> A--: Task(PrescriptionID, AccessCode)
-A -> AP--: <b>Prescription_ServiceRequest \n.status = completed \n.basedOn = KBV_Prescription \n.extension:EPrescriptionToken = E-Rezept Token\n<b>MessageHeader\neventCode = eRezept_ParenteraleErnaehrung_Rezeptbestaetigung
+A -> AP--: <b>Prescription_ServiceRequest \n.status = completed \n.basedOn = KBV_Prescription \n.extension:EPrescriptionToken = E-Rezept Token\n<b>MessageHeader\neventCode = eRezept_ParenteraleZubereitung;Rezeptbestaetigung
 AP <-> FD: E-Rezept einlösen
+
 @enduml

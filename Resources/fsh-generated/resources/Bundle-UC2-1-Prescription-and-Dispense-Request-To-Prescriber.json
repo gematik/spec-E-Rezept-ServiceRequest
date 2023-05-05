@@ -3,7 +3,7 @@
   "id": "UC2-1-Prescription-and-Dispense-Request-To-Prescriber",
   "meta": {
     "profile": [
-      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/bundle-message-container"
+      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-message-container"
     ]
   },
   "type": "message",
@@ -19,7 +19,7 @@
         "id": "UC2-1-HealthCareService-to-Practitioner-MessageHeader",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/message-header-request-header"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-request-header"
           ]
         },
         "focus": [
@@ -62,7 +62,7 @@
         "id": "UC2-Initial-Prescription-Request",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/service-request-prescription-request"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-prescription-request"
           ]
         },
         "intent": "order",
@@ -125,7 +125,7 @@
         "id": "UC2-Initial-Dispense-Request",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/service-request-dispense-request"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-dispense-request"
           ]
         },
         "intent": "filler-order",
@@ -179,7 +179,7 @@
         "id": "Example-Initial-Medication-Request",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/medication-request-requested-medication"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-medication-request"
           ]
         },
         "extension": [
@@ -442,7 +442,7 @@
         "id": "Example-HealthCareService-Organization",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/organization-with-kim-adress"
+            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-organization"
           ]
         },
         "identifier": [

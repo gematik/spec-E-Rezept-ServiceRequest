@@ -1,10 +1,10 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "service-request-dispense-request",
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/service-request-dispense-request",
+  "id": "erp-service-request-dispense-request",
+  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-dispense-request",
   "version": "1.0",
-  "name": "ServiceRequestDispenseRequest",
-  "title": "Anfrage zum Beliefern einer Verordnung",
+  "name": "ERPServiceRequestDispenseRequest",
+  "title": "ERP Service Request Dispense Request",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
@@ -141,7 +141,7 @@
           {
             "code": "Identifier",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/identifier-request-identifier"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-request-identifier"
             ]
           }
         ]
@@ -159,7 +159,7 @@
           {
             "code": "Identifier",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/identifier-pre-dis-identifier"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-pre-dis-identifier"
             ]
           }
         ]
@@ -309,7 +309,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/organization-with-kim-adress",
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-organization",
               "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner"
             ]
           }
@@ -324,7 +324,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/organization-with-kim-adress"
+              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-organization"
             ]
           }
         ],

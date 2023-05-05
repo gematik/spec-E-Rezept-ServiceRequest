@@ -1,7 +1,7 @@
-Profile: ServiceRequestPrescriptionRequest
+Profile: ERPServiceRequestPrescriptionRequest
 Parent: ServiceRequest
-Id: service-request-prescription-request
-Title: "Anfrage zum Ausstellen einer Verordnung"
+Id: erp-service-request-prescription-request
+Title: "ERP Service Request Prescription Request"
 Description: "ServiceRequest, der genutzt wird um ein Rezept anzufragen"
 * insert Meta (service-request-prescription-request)
 
@@ -19,10 +19,10 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept anzufragen"
 * identifier 1..* MS
   * ^short = "Definiert Identifier, die in diesem Profil genutzt werden sollen."
 * identifier contains requestId 1..1 and predisId 0..1
-* identifier[requestId] only IdentifierRequestIdentifier
+* identifier[requestId] only ERPServiceRequestRequestIdentifier
   * ^short = "Identifier, der eineindeutig einen ServiceRequest referenziert."
   * ^comment = "Zur Referenzierung und Zuordnung von ServiceRequest, bspw. wenn ein ServiceRequest einen anderen ersetzen soll, ist es wichtig diese Zuordnung mit dem Identifier treffen zu können. Kann beispielsweise über eine UUID abgebildet werden."
-* identifier[predisId] only IdentifierPreDisIdentifier
+* identifier[predisId] only ERPServiceRequestPreDisIdentifier
   * ^short = "Identifier, der einen Prescription- und einen Dispenserequest verbindet."
   * ^comment = "Kann beispielsweise über eine UUID abgebildet werden."
   * ^definition = "In einigen Anwendungsfällen werden bedarf es der Information welche Verordnungsanfrage zu welcher Belieferungsanfrage gehört. Wenn bspw. ein Medikament angefragt wird möchte man verfolgen können welche die dazugehörige Belieferungsanfrage ist. Hierzu dient der predisIdentifier, der ein Paar von ServiceRequest**Prescription**Request und ServiceRequest**Dispense**Request zusammengehörig identifiziert.
@@ -32,12 +32,12 @@ Das implementierende System muss in der Lage sein diese Verknüpfung herzustelle
 * basedOn 1..1 MS
   * ^short = "Angefragter oder erfüllausgestellter MedicationRequest."
   * ^comment = "Einem ServiceRequest ist genau ein MedicationRequest zugeordnet, sodass unabhängige Bearbeitungen möglich sind."
-  * ^definition = "Dieses Feld referenziert den zugrundeliegenden MedicationRequest, der die medizinischen Informationen zur Rezeptanfrage enthält. Wenn die Rezeptanfrage gestellt wird KANN das Profil MedicationRequestPrescriptionRequest genutzt werden.
+  * ^definition = "Dieses Feld referenziert den zugrundeliegenden MedicationRequest, der die medizinischen Informationen zur Rezeptanfrage enthält. Wenn die Rezeptanfrage gestellt wird KANN das Profil ERPServiceRequestMedicationRequest genutzt werden.
 Wenn die Verordnung erstellt wurde ist der entsprechende KBV_PR_ERP_Bundle-Verordnungsdatensatz zu referenzieren."
-* basedOn only Reference(MedicationRequestPrescriptionRequest or $KBV_PR_ERP_Prescription)
+* basedOn only Reference(ERPServiceRequestMedicationRequest or $KBV_PR_ERP_Prescription)
 
 * requisition 1..1 MS
-* requisition only IdentifierProcedureIdentifier
+* requisition only ERPServiceRequestProcedureIdentifier
   * ^short = "Identifier des Vorgangs. Alle ServiceRequests innerhalb eines Vorgangs erhalten die gleiche ID."
   * ^comment = "Ist als Fall oder VorgangsID zu verstehen (siehe Mapping), um nachverfolgen zu können zu welcher Anfrage der ServiceRequest gehört."
 
@@ -78,7 +78,7 @@ Wenn die Verordnung erstellt wurde ist der entsprechende KBV_PR_ERP_Bundle-Veror
 
 
 * requester 1..1 MS
-* requester only Reference(OrganizationWithKIMAdress or $KBV_PR_FOR_Practitioner)
+* requester only Reference(ERPServiceRequestOrganization or $KBV_PR_FOR_Practitioner)
   * ^short = "Anfragende Einrichtung oder Practitioner."
   * ^comment = "Die KIM-Adresse ist bereits im MessageHeader hinterlegt. Daher ist die präferierte Angabe einen KBV_PR_FOR_Practitioner zu hinterlegen."
 
@@ -91,7 +91,7 @@ Wenn die Verordnung erstellt wurde ist der entsprechende KBV_PR_ERP_Bundle-Veror
   * ^short = "Code, der angibt, warum eine Verordnung angefragt wird."
   * ^comment = "Wird auch genutzt, um bei einer Stornierung anzugeben, warum der Vorgang abgebrochen wurde."
 
-* reasonReference only Reference(ObservationRemainingMedication)
+* reasonReference only Reference(ERPServiceRequestRemainingMedication)
   * ^short = "Verweis auf eine Observation Ressource, die angibt, wie lange die akutelle Medikation noch reicht."
   * ^comment = "Wenn eine Referenz zum Grund angegeben wird muss auch ein menschen lesbarer Eintrag in .note hinzugefügt werden, falls Systeme die referenzierte Observation nicht verarbeiten können."
 
@@ -103,7 +103,7 @@ Wenn die Verordnung erstellt wurde ist der entsprechende KBV_PR_ERP_Bundle-Veror
 * supportingInfo MS
 * supportingInfo contains
 AuslieferndeApotheke 0..1 MS
-* supportingInfo[AuslieferndeApotheke] only Reference(OrganizationWithKIMAdress)
+* supportingInfo[AuslieferndeApotheke] only Reference(ERPServiceRequestOrganization)
 * supportingInfo[AuslieferndeApotheke].type = "Organization"
 
 * note MS

@@ -1,5 +1,5 @@
 Instance: UC1-1-Prescription-Request-To-Prescriber
-InstanceOf: BundleMessageContainer
+InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
 Title: "Medication Request To Prescriber"
 Description: "Request sent to Prescriber to get a Prescription"
@@ -23,7 +23,7 @@ Description: "Request sent to Prescriber to get a Prescription"
 * entry[=].resource = Medication-Runs-Out-Example-Quantity
 
 Instance: UC1-2-Fullfilled-Prescription-Request
-InstanceOf: BundleMessageContainer
+InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
 Title: "Fullfilled Prescription Request"
 Description: "Response sent from Practitioner back to HealthCareService"
@@ -51,7 +51,7 @@ Description: "Response sent from Practitioner back to HealthCareService"
 * entry[=].resource = Medication-Runs-Out-Example-Quantity
 
 Instance: UC1-3-Dispense-Request-To-Pharmacy
-InstanceOf: BundleMessageContainer
+InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
 Title: "DispenseRequestToPharmacy"
 Description: "Request sent to pharmacy to request a dispense of the medication"
@@ -75,7 +75,7 @@ Description: "Request sent to pharmacy to request a dispense of the medication"
 * entry[=].resource = Example-HealthCareService-Organization
 
 Instance: UC1-4-Fullfilled-DispenseRequest-To-Pharmacy
-InstanceOf: BundleMessageContainer
+InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
 Title: "DispenseRequestToPharmacy"
 Description: "Response sent from pharmacy to requester"

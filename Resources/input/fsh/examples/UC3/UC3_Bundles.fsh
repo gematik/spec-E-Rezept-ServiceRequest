@@ -1,5 +1,5 @@
 Instance: UC3-1-Prescription-Request-To-Prescriber
-InstanceOf: BundleMessageContainer
+InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
 Title: "Medication Request To Prescriber"
 Description: "Request sent to Prescriber to get a Prescription"
@@ -19,7 +19,7 @@ Description: "Request sent to Prescriber to get a Prescription"
 * entry[=].resource = Example-HealthCareService-Organization
 
 Instance: UC3-2-Fullfilled-Prescription-Request
-InstanceOf: BundleMessageContainer
+InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
 Title: "Fullfilled Prescription Request"
 Description: "Response sent from Practitioner back to HealthCareService"
