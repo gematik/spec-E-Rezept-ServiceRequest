@@ -1,6 +1,6 @@
 Mapping: MedicationRequestMapping
 Source: ERPServiceRequestMedicationRequest
-Target: "gemF_eRp_KIM#3.1.1 Fachliche Information"
+Target: "gemF_eRp_KIM#3.1.1-Fachliche-Information"
 Id: Rezeptanforderung-medizinische-Informationen
 Title: "Medication Request Mapping (Strukturierter_Verordnungsdatensatz)"
 Description: "Mapping für fachliche Informationseinheiten der angefragten Medikation des Feature Dokuments"

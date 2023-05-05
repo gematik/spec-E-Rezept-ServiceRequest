@@ -1,6 +1,6 @@
 Mapping: ERPServiceRequestPrescriptionRequest
 Source: ERPServiceRequestPrescriptionRequest
-Target: "gemF_eRp_KIM#3.1.1 Fachliche Information"
+Target: "gemF_eRp_KIM#3.1.1-Fachliche-Information"
 Id: Rezeptanforderung
 Title: "Prescription Request Mapping"
 Description: "Mapping für fachliche Informationseinheiten der Verordnungsanfrage des Feature Dokuments"
@@ -18,7 +18,7 @@ Description: "Mapping für fachliche Informationseinheiten der Verordnungsanfrag
 
 Mapping: ERPServiceRequestPrescriptionRequestStorno
 Source: ERPServiceRequestPrescriptionRequest
-Target: "gemF_eRp_KIM#3.1.1 Fachliche Information"
+Target: "gemF_eRp_KIM#3.1.1-Fachliche-Information"
 Id: Rezeptanforderung-Storno
 Title: "Prescription Request Mapping"
 Description: "Mapping für fachliche Informationseinheiten des Stornos einer Verordnungsanfrage des Feature Dokuments"
@@ -28,7 +28,7 @@ Description: "Mapping für fachliche Informationseinheiten des Stornos einer Ver
 
 Mapping: ERPServiceRequestPrescriptionRequestAblehnung
 Source: ERPServiceRequestPrescriptionRequest
-Target: "gemF_eRp_KIM#3.1.1 Fachliche Information"
+Target: "gemF_eRp_KIM#3.1.1-Fachliche-Information"
 Id: Rezeptanforderung-Ablehnung
 Title: "Prescription Request Mapping"
 Description: "Mapping für fachliche Informationseinheiten der Ablehnung einer Verordnungsanfrage des Feature Dokuments"

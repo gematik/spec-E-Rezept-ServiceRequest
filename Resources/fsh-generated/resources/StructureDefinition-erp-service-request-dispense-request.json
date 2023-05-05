@@ -39,19 +39,19 @@
     {
       "identity": "Rezeptanforderung-Rezeptuebermittlung",
       "name": "Dispense Request Mapping für Rezeptübermittlung",
-      "uri": "gemF_eRp_KIM#3.1.1 Fachliche Information",
+      "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
       "comment": "Mapping für fachliche Informationseinheiten der Belieferungsanfrage des Feature Dokuments"
     },
     {
       "identity": "Rezeptanforderung-Rezeptuebermittlung-Storno",
       "name": "Dispense Request Mapping für Storno",
-      "uri": "gemF_eRp_KIM#3.1.1 Fachliche Information",
+      "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
       "comment": "Mapping für fachliche Informationseinheiten des Stornos einer Belieferungsanfrage des Feature Dokuments"
     },
     {
       "identity": "Rezeptanforderung-Rezeptuebermittlung-Ablehnung",
       "name": "Dispense Request Mapping für Ablehnung",
-      "uri": "gemF_eRp_KIM#3.1.1 Fachliche Information",
+      "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
       "comment": "Mapping für fachliche Informationseinheiten der Ablehnung einer Belieferungsanfrage des Feature Dokuments"
     }
   ],

@@ -39,19 +39,19 @@
     {
       "identity": "Rezeptanforderung",
       "name": "Prescription Request Mapping",
-      "uri": "gemF_eRp_KIM#3.1.1 Fachliche Information",
+      "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
       "comment": "Mapping für fachliche Informationseinheiten der Verordnungsanfrage des Feature Dokuments"
     },
     {
       "identity": "Rezeptanforderung-Storno",
       "name": "Prescription Request Mapping",
-      "uri": "gemF_eRp_KIM#3.1.1 Fachliche Information",
+      "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
       "comment": "Mapping für fachliche Informationseinheiten des Stornos einer Verordnungsanfrage des Feature Dokuments"
     },
     {
       "identity": "Rezeptanforderung-Ablehnung",
       "name": "Prescription Request Mapping",
-      "uri": "gemF_eRp_KIM#3.1.1 Fachliche Information",
+      "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
       "comment": "Mapping für fachliche Informationseinheiten der Ablehnung einer Verordnungsanfrage des Feature Dokuments"
     }
   ],
