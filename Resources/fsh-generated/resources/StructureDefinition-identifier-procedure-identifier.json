@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
   "id": "identifier-procedure-identifier",
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/identifier-procedure-identifier",
+  "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/identifier-procedure-identifier",
   "version": "1.0",
   "name": "ERPServiceRequestProcedureIdentifier",
   "title": "ERP Service Request Procedure Identifier",
@@ -37,7 +37,7 @@
       {
         "id": "Identifier.system",
         "path": "Identifier.system",
-        "patternUri": "https://gematik.de/fhir/medreq/sid/NamingSystemProcedureIdentifier"
+        "patternUri": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier"
       },
       {
         "id": "Identifier.value",

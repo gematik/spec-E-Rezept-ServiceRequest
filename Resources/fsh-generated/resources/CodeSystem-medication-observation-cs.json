@@ -7,7 +7,7 @@
   "title": "Angabe zur Medikamentenbeobachtung (CS)",
   "description": "Gibt Arten der Beobachtungen zum Status eines Medikaments an",
   "version": "1.0",
-  "url": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/medication-observation-cs",
+  "url": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-observation-cs",
   "concept": [
     {
       "code": "range-of-medication",

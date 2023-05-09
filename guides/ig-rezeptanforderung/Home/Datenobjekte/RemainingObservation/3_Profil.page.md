@@ -1,6 +1,6 @@
 ## {{page-title}}
 
-{{tree:https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-remaining-medication, diff}}
+{{tree:https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-remaining-medication, diff}}
 
 Folgende Felder sind entsprechend zu befüllen, bzw. können befüllt werden:
 

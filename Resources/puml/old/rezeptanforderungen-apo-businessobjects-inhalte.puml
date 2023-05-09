@@ -9,16 +9,23 @@ hide methods
 class "Rezeptanforderung" as Rezeptanforderung #BUSINESS {
     ..administrative Informationen..
     #Vorgangs_ID
-    #Fall_ID
-    #Patienten_ID
     #Prioritaet
     #Adressat_der_Rezeptanforderung
     #Adressat_der_Rezeptuebermittlung
     #Patienteninformationen
     #Vorheriges_Rezept
     ..medizinische Informationen..
-    #Praeparat / Zubereitung
+    #Praeparat
     #Bedarfsbegruendung
+    #Restreichweite
+    ..ergänzende Informationen..
+    #Freitext
+}
+
+class "Rezeptanforderung_Storno" as Rezeptanforderung_Storno #BUSINESS {
+    ..administrative Informationen..
+    #Vorgangs_ID
+    #Begruendung_der_Stornierung
     ..ergänzende Informationen..
     #Freitext
 }
@@ -26,29 +33,25 @@ class "Rezeptanforderung" as Rezeptanforderung #BUSINESS {
 class "Rezeptanforderung_Bestätigung" as Rezeptanforderung_Bestätigung #BUSINESS {
     ..administrative Informationen..
     #Vorgangs_ID
-    #Fall_ID
-    #Patienten_ID
     #ERezept_Access_Code
     #ERezept_Task_ID
+    #Veraenderungskennzeichen_zur_\nUrsprungsanforderung
     ..medizinische Informationen..
     #Strukturierter_Verordnungsdatensatz
     #Hinweise_fuer_Empfaenger
     ..ergänzende Informationen..
-    #Unstrukturierter_Dateianhang
     #Freitext
 }
 
-class "Rezeptanforderung_Storno" as Rezeptanforderung_Storno #BUSINESS {
+class "Dispensieranforderung_Bestätigung" as Dispensieranforderung_Bestätigung #BUSINESS {
     ..administrative Informationen..
     #Vorgangs_ID
-    #Fall_ID
-    #Patienten_ID
+    #ERezept_Access_Code
+    #ERezept_Task_ID
     ..medizinische Informationen..
-    #Begruendung_der_Stornierung
-    ..ergänzende Informationen..
-    #Freitext
+    #Strukturierter_Verordnungsdatensatz
+    #Strukturierter_Dispensierungsdatensatz
 }
-
 
 Rezeptanforderung_Storno -up- Rezeptanforderung: revidiert >
 Rezeptanforderung_Bestätigung -up- Rezeptanforderung: beantwortet >

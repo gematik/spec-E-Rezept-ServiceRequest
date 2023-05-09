@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
   "id": "erp-service-request-remaining-medication",
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-remaining-medication",
+  "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-remaining-medication",
   "version": "1.0",
   "name": "ERPServiceRequestRemainingMedication",
   "title": "ERP Service Request Remaining Medication",
@@ -60,7 +60,7 @@
         "mustSupport": true,
         "binding": {
           "strength": "required",
-          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/medication-observation-vs"
+          "valueSet": "https://gematik.de/fhir/erp-servicerequest/ValueSet/medication-observation-vs"
         }
       },
       {

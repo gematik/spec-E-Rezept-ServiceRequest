@@ -3,13 +3,12 @@
 
 skinparam maxMessageSize 300
 
-title Ablauf für Rezeptabgabe parenteraler Zubereitungen (Anforderungsquelle: Taxierungssoftware)
+title Ablauf für Rezeptabgabe parenteraler Zubereitungen
 hide footbox
 autonumber
 
 box "Apotheke" #White
-    participant "Zytostatika-Programm" as Zytoprogramm
-    participant "Taxierungssoftware" as Taxierungssoftware
+    participant "Taxierungssoftware, Zytostatika-Programm" as AVS
 end box
 
 box "LEI des Verordnenden" #White
@@ -25,16 +24,16 @@ legend bottom right
     **lfd.Nr.** **sonstige Aktivität**
 endlegend
 
-?-> Zytoprogramm: Start der \nZubereitung
+?-> AVS: Start der \nZubereitung
 
-Zytoprogramm ->> Taxierungssoftware: Zubereitungsdaten
+AVS ->> AVS: Zubereitungsdaten
 
-Taxierungssoftware ->> PS: //Rezeptanforderung//
+AVS ->> PS: //Rezeptanforderung//
 
 break #LightPink Stornierung notwendig
-    Taxierungssoftware ->> PS: //Rezeptanforderung_Storno//
+    AVS ->> PS: //Rezeptanforderung_Storno//
     PS ->x PS: **Rezeptanforderung wird verworfen**
-    PS ->> Taxierungssoftware: //Stornierungsquittung//
+    PS ->> AVS: //Rezeptanforderung_Storno//
 end
 
 PS ->> PS: **Arbeitslisteneintrag erzeugen und vorhalten**
@@ -46,9 +45,9 @@ alt #PaleGreen Arzt stimmt Rezeptanforderung zu
     ref over Arzt, PS #lightyellow
         E-Rezept einstellen
     end ref
-    PS ->> Taxierungssoftware: //Rezeptanforderung_Rezeptuebermittlung//
+    PS ->> AVS: //Rezeptanforderung_Bestätigung//
 else #LightPink Arzt lehnt Rezeptanforderung ab
-    PS ->> Taxierungssoftware: //Rezeptanforderung_Ablehnung//
+    PS ->> AVS: //Rezeptanforderung_Storno//
 
 end
 

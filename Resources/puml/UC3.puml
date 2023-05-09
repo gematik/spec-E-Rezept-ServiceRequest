@@ -5,7 +5,7 @@ participant Arzt as A #LightYellow
 participant "E-Rezept-Fachdienst" as FD #LightSalmon
 
 activate PE
-PE -> A++: <b>Prescription_ServiceRequest \n.status = active \n.basedOn = MEDREQ_Medication_Request
+PE -> A++: <b>Prescription_ServiceRequest \n.status = active \n.basedOn = ERPServiceRequestMedicationRequest
 A <-> FD: E-Rezept einstellen
 A -> PE--: <b>Prescription_ServiceRequest \n.status = completed \n.basedOn = KBV_Prescription
 @enduml

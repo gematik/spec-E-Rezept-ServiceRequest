@@ -10,3 +10,5 @@
   filename: Transportmedium.page.md
 - name: Verwendung der Ressourcen
   filename: Ressource-Usage.page.md
+- name: Hinweis zu den Beispielen
+  filename: Examples.page.md

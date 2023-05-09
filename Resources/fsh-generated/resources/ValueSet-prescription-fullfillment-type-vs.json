@@ -6,13 +6,13 @@
   "title": "Zustelltyp der Rezeptanforderung (VS)",
   "description": "Wird im Prescription_ServiceRequest genutzt um anzugeben wie mit dem Rezept weiter verfahren werden soll",
   "version": "1.0",
-  "url": "https://gematik.de/fhir/erpmedreqcom/ValueSet/prescription-fullfillment-type-vs",
+  "url": "https://gematik.de/fhir/erp-servicerequest/ValueSet/prescription-fullfillment-type-vs",
   "experimental": false,
   "publisher": "gematik GmbH",
   "compose": {
     "include": [
       {
-        "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/prescription-fullfillment-type-cs"
+        "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/prescription-fullfillment-type-cs"
       }
     ]
   }

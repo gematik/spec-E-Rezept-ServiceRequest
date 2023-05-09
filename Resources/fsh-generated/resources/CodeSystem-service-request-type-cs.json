@@ -7,7 +7,7 @@
   "title": "Art des ServiceRequests (CS)",
   "description": "Gibt an um welche Art von ServiceRequest es sich handelt und dient so der Identifizierung von ServiceRequests",
   "version": "1.0",
-  "url": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/service-request-type-cs",
+  "url": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs",
   "concept": [
     {
       "code": "prescription-request",

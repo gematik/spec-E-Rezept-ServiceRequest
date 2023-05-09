@@ -7,4 +7,4 @@ Description: "Dieser Identifier wird genutzt, um einen einzelnen ServiceRequest 
 * value 1..1 MS
   * ^short = "String, der den ServiceRequest eindeutig referenziert."
   * ^comment = "Es wird empfohlen eine UUID zu verwenden."
-* system = "https://gematik.de/fhir/medreq/sid/NamingSystemRequestIdentifier" (exactly)
+* system = "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier" (exactly)

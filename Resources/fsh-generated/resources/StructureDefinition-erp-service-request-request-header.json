@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
   "id": "erp-service-request-request-header",
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-request-header",
+  "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header",
   "version": "1.0",
   "name": "ERPServiceRequestRequestHeader",
   "title": "ERP Service Request Request Header",
@@ -48,7 +48,7 @@
         ],
         "binding": {
           "strength": "required",
-          "valueSet": "https://gematik.de/fhir/erpmedreqcom/ValueSet/service-identifier-vs"
+          "valueSet": "https://gematik.de/fhir/erp-servicerequest/ValueSet/service-identifier-vs"
         }
       },
       {
@@ -60,8 +60,8 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/service-request-prescription-request",
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-dispense-request"
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/service-request-prescription-request",
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"
             ]
           }
         ],

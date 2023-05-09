@@ -3,7 +3,7 @@
   "id": "UC2-1-Prescription-and-Dispense-Request-To-Prescriber",
   "meta": {
     "profile": [
-      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-message-container"
+      "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
     ]
   },
   "type": "message",
@@ -13,13 +13,13 @@
   },
   "entry": [
     {
-      "fullUrl": "http://medreq-test.de/MessageHeader/UC2-1-HealthCareService-to-Practitioner-MessageHeader",
+      "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/UC2-1-HealthCareService-to-Practitioner-MessageHeader",
       "resource": {
         "resourceType": "MessageHeader",
         "id": "UC2-1-HealthCareService-to-Practitioner-MessageHeader",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-request-header"
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
           ]
         },
         "focus": [
@@ -56,13 +56,13 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/ServiceRequest/UC2-Initial-Prescription-Request",
+      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/UC2-Initial-Prescription-Request",
       "resource": {
         "resourceType": "ServiceRequest",
         "id": "UC2-Initial-Prescription-Request",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/service-request-prescription-request"
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/service-request-prescription-request"
           ]
         },
         "intent": "order",
@@ -70,13 +70,13 @@
           "coding": [
             {
               "code": "prescription-request",
-              "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/service-request-type-cs"
+              "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
             }
           ]
         },
         "identifier": [
           {
-            "system": "https://gematik.de/fhir/medreq/sid/NamingSystemRequestIdentifier",
+            "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier",
             "value": "012345"
           }
         ],
@@ -86,7 +86,7 @@
           }
         ],
         "requisition": {
-          "system": "https://gematik.de/fhir/medreq/sid/NamingSystemProcedureIdentifier",
+          "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
           "value": "GroupID-2"
         },
         "status": "active",
@@ -98,7 +98,7 @@
             "coding": [
               {
                 "code": "send-to-pharmacy",
-                "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/prescription-fullfillment-type-cs"
+                "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/prescription-fullfillment-type-cs"
               }
             ]
           }
@@ -119,13 +119,13 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/ServiceRequest/UC2-Initial-Dispense-Request",
+      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/UC2-Initial-Dispense-Request",
       "resource": {
         "resourceType": "ServiceRequest",
         "id": "UC2-Initial-Dispense-Request",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-dispense-request"
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"
           ]
         },
         "intent": "filler-order",
@@ -139,18 +139,18 @@
           "coding": [
             {
               "code": "dispense-request",
-              "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/service-request-type-cs"
+              "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
             }
           ]
         },
         "identifier": [
           {
-            "system": "https://gematik.de/fhir/medreq/sid/NamingSystemRequestIdentifier",
+            "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier",
             "value": "012345"
           }
         ],
         "requisition": {
-          "system": "https://gematik.de/fhir/medreq/sid/NamingSystemProcedureIdentifier",
+          "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
           "value": "GroupID-2"
         },
         "status": "active",
@@ -173,13 +173,13 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/MedicationRequest/Example-Initial-Medication-Request",
+      "fullUrl": "http://erp-servicerequest-test.de/MedicationRequest/Example-Initial-Medication-Request",
       "resource": {
         "resourceType": "MedicationRequest",
         "id": "Example-Initial-Medication-Request",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-medication-request"
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request"
           ]
         },
         "extension": [
@@ -188,7 +188,7 @@
               "system": "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
               "value": "160.100.000.000.001.36"
             },
-            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/prescription-id-ex"
+            "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/prescription-id-ex"
           }
         ],
         "dispenseRequest": {
@@ -218,7 +218,7 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/Medication/Example-Initial-Medication",
+      "fullUrl": "http://erp-servicerequest-test.de/Medication/Example-Initial-Medication",
       "resource": {
         "resourceType": "Medication",
         "id": "Example-Initial-Medication",
@@ -277,7 +277,7 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/Patient/Example-Patient",
+      "fullUrl": "http://erp-servicerequest-test.de/Patient/Example-Patient",
       "resource": {
         "resourceType": "Patient",
         "id": "Example-Patient",
@@ -345,7 +345,7 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/Practitioner/Example-Practitioner",
+      "fullUrl": "http://erp-servicerequest-test.de/Practitioner/Example-Practitioner",
       "resource": {
         "resourceType": "Practitioner",
         "id": "Example-Practitioner",
@@ -436,13 +436,13 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/Organization/Example-HealthCareService-Organization",
+      "fullUrl": "http://erp-servicerequest-test.de/Organization/Example-HealthCareService-Organization",
       "resource": {
         "resourceType": "Organization",
         "id": "Example-HealthCareService-Organization",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-organization"
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
           ]
         },
         "identifier": [

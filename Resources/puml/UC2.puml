@@ -6,7 +6,7 @@ participant Apotheke as AP #LightGreen
 participant "E-Rezept-Fachdienst" as FD #LightSalmon
 
 activate PE
-PE -> A++: <b>Prescription_ServiceRequest \n.status = active \n.basedOn = MEDREQ_Medication_Request
+PE -> A++: <b>Prescription_ServiceRequest \n.status = active \n.basedOn = ERPServiceRequestMedicationRequest
 A -> FD++: E-Rezept einstellen
 FD -> A--: Task(PrescriptionID, AccessCode)
 A -> PE: <b>Prescription_ServiceRequest \n.status = completed \n.basedOn = KBV_Prescription

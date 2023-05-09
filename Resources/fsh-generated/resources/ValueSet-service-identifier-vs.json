@@ -6,7 +6,7 @@
   "title": "Kennung des Anwendungsfalls",
   "description": "Kennungen zur Angabe eines Anwendungsfalls der E-Rezept Kommunikation",
   "version": "1.0",
-  "url": "https://gematik.de/fhir/erpmedreqcom/ValueSet/service-identifier-vs",
+  "url": "https://gematik.de/fhir/erp-servicerequest/ValueSet/service-identifier-vs",
   "experimental": false,
   "publisher": "gematik GmbH",
   "compose": {
@@ -39,15 +39,15 @@
             "display": "Bestätigung der Erfüllung und Abgabe eines Medikamentes"
           },
           {
-            "code": "eRezept_ParenteraleErnaehrung;Rezeptanfrage",
+            "code": "eRezept_ParenteraleZubereitung;Rezeptanfrage",
             "display": "Rezeptanfrage für eine parenterale Zubereitung"
           },
           {
-            "code": "eRezept_ParenteraleErnaehrung;Rezeptanfrage_Storno",
+            "code": "eRezept_ParenteraleZubereitung;Rezeptanfrage_Storno",
             "display": "Abbruch der Rezeptanfrage für eine parenterale Zubereitung"
           },
           {
-            "code": "eRezept_ParenteraleErnaehrung;Rezeptbestaetigung",
+            "code": "eRezept_ParenteraleZubereitung;Rezeptbestaetigung",
             "display": "Bestätigung und übermittlung eines ausgestellten Rezeptes für eine parenterale Zubereitung"
           }
         ]

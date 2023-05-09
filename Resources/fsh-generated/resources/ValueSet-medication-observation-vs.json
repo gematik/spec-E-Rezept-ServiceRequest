@@ -6,13 +6,13 @@
   "title": "Angabe zur Medikamentenbeobachtung (VS)",
   "description": "Gibt Arten der Beobachtungen zum Status eines Medikaments an",
   "version": "1.0",
-  "url": "https://gematik.de/fhir/erpmedreqcom/ValueSet/medication-observation-vs",
+  "url": "https://gematik.de/fhir/erp-servicerequest/ValueSet/medication-observation-vs",
   "experimental": false,
   "publisher": "gematik GmbH",
   "compose": {
     "include": [
       {
-        "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/medication-observation-cs"
+        "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-observation-cs"
       }
     ]
   }

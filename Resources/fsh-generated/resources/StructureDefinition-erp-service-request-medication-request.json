@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
   "id": "erp-service-request-medication-request",
-  "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-medication-request",
+  "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request",
   "version": "1.0",
   "name": "ERPServiceRequestMedicationRequest",
   "title": "ERP Service Request Medication Request",
@@ -39,7 +39,7 @@
     {
       "identity": "Rezeptanforderung-medizinische-Informationen",
       "name": "Medication Request Mapping (Strukturierter_Verordnungsdatensatz)",
-      "uri": "gemF_eRp_KIM#3.1.1 Fachliche Information",
+      "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
       "comment": "Mapping für fachliche Informationseinheiten der angefragten Medikation des Feature Dokuments"
     }
   ],
@@ -79,7 +79,7 @@
           {
             "code": "Extension",
             "profile": [
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/prescription-id-ex"
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/prescription-id-ex"
             ]
           }
         ],
@@ -193,7 +193,7 @@
             "code": "Reference",
             "targetProfile": [
               "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner",
-              "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-organization"
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
             ]
           }
         ],

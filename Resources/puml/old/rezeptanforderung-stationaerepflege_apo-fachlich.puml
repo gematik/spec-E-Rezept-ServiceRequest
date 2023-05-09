@@ -37,12 +37,12 @@ end
 
 alt Rezeptanforderung liegt vor beim Verordnenden
     alt #PaleGreen Arzt ist einverstanden 
-        Arztpraxis ->> Apotheke: //Rezeptanforderung_Rezeptuebermittlung//
+        Arztpraxis ->> Apotheke: //Rezeptanforderung_Rezeptübermittlung//
         Apotheke ->> Pflegeeinrichtung: **Medikamentabgabe/-auslieferung**
-        Apotheke ->> Pflegeeinrichtung: //Verordnung_Dispensierung//
+        Apotheke ->> Pflegeeinrichtung: //Dispensieranforderung_Bestätigung//
 
     else #LightPink Arzt lehnt ab
-        Arztpraxis ->> Apotheke: //Rezeptanforderung_Ablehnung//
+        Arztpraxis ->> Apotheke: //Rezeptanforderung_Storno//
     end
 end
 

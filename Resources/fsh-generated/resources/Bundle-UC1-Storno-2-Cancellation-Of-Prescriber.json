@@ -3,7 +3,7 @@
   "id": "UC1-Storno-2-Cancellation-Of-Prescriber",
   "meta": {
     "profile": [
-      "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-message-container"
+      "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
     ]
   },
   "type": "message",
@@ -13,13 +13,13 @@
   },
   "entry": [
     {
-      "fullUrl": "http://medreq-test.de/MessageHeader/UC1-Practitioner-to-HealthCareService-MessageHeader-Storno",
+      "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/UC1-Practitioner-to-HealthCareService-MessageHeader-Storno",
       "resource": {
         "resourceType": "MessageHeader",
         "id": "UC1-Practitioner-to-HealthCareService-MessageHeader-Storno",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-request-header"
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
           ]
         },
         "focus": [
@@ -56,13 +56,13 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/ServiceRequest/UC1-Cancelled-Prescription-Request",
+      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/UC1-Cancelled-Prescription-Request",
       "resource": {
         "resourceType": "ServiceRequest",
         "id": "UC1-Cancelled-Prescription-Request",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/service-request-prescription-request"
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/service-request-prescription-request"
           ]
         },
         "intent": "order",
@@ -70,13 +70,13 @@
           "coding": [
             {
               "code": "prescription-request",
-              "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/service-request-type-cs"
+              "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
             }
           ]
         },
         "identifier": [
           {
-            "system": "https://gematik.de/fhir/medreq/sid/NamingSystemRequestIdentifier",
+            "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier",
             "value": "1"
           }
         ],
@@ -86,7 +86,7 @@
           }
         ],
         "requisition": {
-          "system": "https://gematik.de/fhir/medreq/sid/NamingSystemProcedureIdentifier",
+          "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
           "value": "GroupID-UC1"
         },
         "status": "revoked",
@@ -98,7 +98,7 @@
             "coding": [
               {
                 "code": "return-to-requester",
-                "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/prescription-fullfillment-type-cs"
+                "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/prescription-fullfillment-type-cs"
               }
             ]
           }
@@ -121,7 +121,7 @@
             "coding": [
               {
                 "code": "medication-runs-out",
-                "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/medication-request-reason-cs"
+                "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-request-reason-cs"
               }
             ]
           }
@@ -142,13 +142,13 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/MedicationRequest/Example-Initial-Medication-Request",
+      "fullUrl": "http://erp-servicerequest-test.de/MedicationRequest/Example-Initial-Medication-Request",
       "resource": {
         "resourceType": "MedicationRequest",
         "id": "Example-Initial-Medication-Request",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-medication-request"
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request"
           ]
         },
         "extension": [
@@ -157,7 +157,7 @@
               "system": "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
               "value": "160.100.000.000.001.36"
             },
-            "url": "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/prescription-id-ex"
+            "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/prescription-id-ex"
           }
         ],
         "dispenseRequest": {
@@ -187,7 +187,7 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/Medication/Example-Initial-Medication",
+      "fullUrl": "http://erp-servicerequest-test.de/Medication/Example-Initial-Medication",
       "resource": {
         "resourceType": "Medication",
         "id": "Example-Initial-Medication",
@@ -246,7 +246,7 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/Patient/Example-Patient",
+      "fullUrl": "http://erp-servicerequest-test.de/Patient/Example-Patient",
       "resource": {
         "resourceType": "Patient",
         "id": "Example-Patient",
@@ -314,13 +314,13 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/Organization/Example-HealthCareService-Organization",
+      "fullUrl": "http://erp-servicerequest-test.de/Organization/Example-HealthCareService-Organization",
       "resource": {
         "resourceType": "Organization",
         "id": "Example-HealthCareService-Organization",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-organization"
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
           ]
         },
         "identifier": [
@@ -395,13 +395,13 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/Observation/Medication-Runs-Out-Example-dateTime",
+      "fullUrl": "http://erp-servicerequest-test.de/Observation/Medication-Runs-Out-Example-dateTime",
       "resource": {
         "resourceType": "Observation",
         "id": "Medication-Runs-Out-Example-dateTime",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-remaining-medication"
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-remaining-medication"
           ]
         },
         "status": "final",
@@ -412,7 +412,7 @@
           "coding": [
             {
               "code": "range-of-medication",
-              "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/medication-observation-cs"
+              "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-observation-cs"
             }
           ]
         },
@@ -420,13 +420,13 @@
       }
     },
     {
-      "fullUrl": "http://medreq-test.de/Observation/Medication-Runs-Out-Example-Quantity",
+      "fullUrl": "http://erp-servicerequest-test.de/Observation/Medication-Runs-Out-Example-Quantity",
       "resource": {
         "resourceType": "Observation",
         "id": "Medication-Runs-Out-Example-Quantity",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erpmedreqcom/StructureDefinition/erp-service-request-remaining-medication"
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-remaining-medication"
           ]
         },
         "status": "final",
@@ -437,7 +437,7 @@
           "coding": [
             {
               "code": "range-of-medication",
-              "system": "https://gematik.de/fhir/erpmedreqcom/CodeSystem/medication-observation-cs"
+              "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-observation-cs"
             }
           ]
         },
