@@ -3,6 +3,7 @@ import os
 
 class Communicator:
     def send(self, receiver: str, messageType: str, message: str):
+        print(f"Sende '{messageType}' an '{receiver}'")
         self.write_result_ressource(receiver, messageType, message)
 
     def write_result_ressource(self, folder: str, file_name: str, ressource: str):

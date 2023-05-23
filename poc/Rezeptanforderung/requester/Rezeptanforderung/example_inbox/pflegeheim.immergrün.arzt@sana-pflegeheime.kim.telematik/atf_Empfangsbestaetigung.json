@@ -1,0 +1,93 @@
+{
+    "id": "933f0e63-8b92-4976-8a43-ff36cd2fb80d",
+    "meta": {
+        "profile": [
+            "https://gematik.de/fhir/atf/StructureDefinition/bundle-app-transport-framework"
+        ]
+    },
+    "entry": [
+        {
+            "fullUrl": "urn:uuid:aa8e0e7f-1110-4343-9db3-639379020f01",
+            "resource": {
+                "id": "aa8e0e7f-1110-4343-9db3-639379020f01",
+                "meta": {
+                    "profile": [
+                        "https://gematik.de/fhir/atf/StructureDefinition/message-header-app-transport"
+                    ]
+                },
+                "destination": [
+                    {
+                        "endpoint": "https://ps_solutions.com/jira_helpdesk",
+                        "receiver": {
+                            "display": "Pflegeheim Immergr\u00fcn",
+                            "identifier": {
+                                "system": "http://gematik.de/fhir/sid/KIM-Adresse",
+                                "value": "pflegeheim.immergr\u00fcn.arzt@sana-pflegeheime.kim.telematik"
+                            }
+                        }
+                    }
+                ],
+                "eventCoding": {
+                    "code": "atf;Empfangsbestaetigung",
+                    "display": "Empfangsbest\u00e4tigung und Auskunft \u00fcber FHIR Interpretierbarkeit der Nachricht",
+                    "system": "https://gematik.de/fhir/atf/CodeSystem/operation-identifier-cs"
+                },
+                "focus": [
+                    {
+                        "reference": "urn:uuid:5c46677e-8f22-49a7-98f1-c55e9ec7fe1a"
+                    }
+                ],
+                "sender": {
+                    "display": "Praxis Dr. Hasenbein",
+                    "identifier": {
+                        "system": "http://gematik.de/fhir/sid/KIM-Adresse",
+                        "value": "hasenbein@gluecklich.kim.telematik"
+                    }
+                },
+                "source": {
+                    "contact": {
+                        "system": "email",
+                        "value": "issues@praxisfix-deltacare.de"
+                    },
+                    "endpoint": "https://deltacare.de/praxisfix/issues",
+                    "name": "DeltaCare Inc.",
+                    "software": "PraxisFix",
+                    "version": "1.3.2"
+                },
+                "resourceType": "MessageHeader"
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:5c46677e-8f22-49a7-98f1-c55e9ec7fe1a",
+            "resource": {
+                "id": "5c46677e-8f22-49a7-98f1-c55e9ec7fe1a",
+                "meta": {
+                    "profile": [
+                        "https://gematik.de/fhir/atf/StructureDefinition/atf-operation-outcome"
+                    ]
+                },
+                "extension": [
+                    {
+                        "url": "https://gematik.de/fhir/atf/StructureDefinition/atf-message-id-ex",
+                        "valueString": "5bcc0417-0f17-4471-be9a-385cad3bca76"
+                    }
+                ],
+                "issue": [
+                    {
+                        "code": "processing",
+                        "diagnostics": "Die empfangene Nachricht mit dem eRezept_Rezeptanforderung;Rezeptanfrage kann nicht verarbeitet werden, da der Use-Case nicht unterst\u00fctzt wird.",
+                        "severity": "error"
+                    }
+                ],
+                "resourceType": "OperationOutcome"
+            }
+        }
+    ],
+    "identifier": {
+        "system": "urn:ietf:rfc:3986",
+        "value": "urn:uuid:933f0e63-8b92-4976-8a43-ff36cd2fb80d"
+    },
+    "timestamp": "2023-05-23T20:16:00.601520+00:00",
+    "type": "message",
+    "resourceType": "Bundle"
+}

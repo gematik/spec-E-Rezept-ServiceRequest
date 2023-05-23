@@ -16,7 +16,7 @@ class MessageContainerCreator:
     def __init__(self) -> None:
         pass
 
-    def create_prescriptionRequest_bundle(
+    def create_prescription_request(
         message_id: str,
         sender: ReferenceType,
         source: MessageHeaderSource,

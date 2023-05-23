@@ -9,20 +9,37 @@ from datetime import datetime
 
 class ServiceRequestCreator:
     @staticmethod
+    def create_coding(system: str, code: str) -> Coding:
+        return Coding(system=system, code=code)
+
+    @staticmethod
+    def create_identifier(system: str, value: str) -> Identifier:
+        return Identifier(system=system, value=value)
+
+    @staticmethod
+    def create_reference(ref: str = None, identifier: Identifier = None) -> Reference:
+        return Reference(reference=ref, identifier=identifier)
+
+    @staticmethod
     def create_service_request(
-        request_id: str,
-        preDis_id: str,
-        medication_request_reference: str,
-        vorgangs_id: str,
-        patient_reference: str,
-        requester_reference: str,
-        performer_identifier: str,
+        status: str,
+        order_detail_code: str,
+        identifiers: dict[str, str],
+        references: dict[str, str or Identifier],
         reason_code: str,
         reason_references: list[str],
         note_text: str,
     ) -> ServiceRequest:
+        identifier_instances = [
+            ServiceRequestCreator.create_identifier(system, value)
+            for system, value in identifiers.items()
+        ]
+        reference_instances = [
+            ServiceRequestCreator.create_reference(ref=ref) for ref in reason_references
+        ]
+
         service_request = ServiceRequest(
-            id=request_id,
+            id=identifiers["request"],
             meta=Meta(
                 profile=[
                     "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/service-request-prescription-request"
@@ -31,61 +48,49 @@ class ServiceRequestCreator:
             intent="order",
             code=CodeableConcept(
                 coding=[
-                    Coding(
-                        code="prescription-request",
+                    ServiceRequestCreator.create_coding(
                         system="https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs",
+                        code="prescription-request",
                     )
                 ]
             ),
-            identifier=[
-                Identifier(
-                    system="https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier",
-                    value=request_id,
-                ),
-                Identifier(
-                    system="https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemPreDisIdentifier",
-                    value=preDis_id,
-                ),
+            identifier=identifier_instances,
+            basedOn=[
+                ServiceRequestCreator.create_reference(ref=references["based_on"])
             ],
-            basedOn=[Reference(reference=medication_request_reference)],
-            requisition=Identifier(
+            requisition=ServiceRequestCreator.create_identifier(
                 system="https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
-                value=vorgangs_id,
+                value=identifiers["vorgangs"],
             ),
-            status="active",
-            subject=Reference(reference=patient_reference),
+            status=status,
+            subject=ServiceRequestCreator.create_reference(ref=references["patient"]),
             orderDetail=[
                 CodeableConcept(
                     coding=[
-                        Coding(
-                            code="return-to-requester",
+                        ServiceRequestCreator.create_coding(
                             system="https://gematik.de/fhir/erp-servicerequest/CodeSystem/prescription-fullfillment-type-cs",
+                            code=order_detail_code,
                         )
                     ]
                 )
             ],
             occurrenceDateTime=datetime.now().isoformat(),
             authoredOn=datetime.now().isoformat(),
-            requester=Reference(reference=requester_reference),
-            performer=[
-                Reference(
-                    identifier=Identifier(
-                        system="http://gematik.de/fhir/sid/KIM-Adresse",
-                        value=performer_identifier,
-                    )
-                )
-            ],
+            requester=ServiceRequestCreator.create_reference(
+                ref=references["requester"]
+            ),
+            performer=[Reference(identifier=references["performer"])],
             reasonCode=[
                 CodeableConcept(
                     coding=[
-                        Coding(
-                            code=reason_code,
+                        ServiceRequestCreator.create_coding(
                             system="https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-request-reason-cs",
+                            code=reason_code,
                         )
                     ]
                 )
             ],
-            reasonReference=[Reference(reference=ref) for ref in reason_references],
+            reasonReference=reference_instances,
             note=[{"text": note_text}],
         )
 
