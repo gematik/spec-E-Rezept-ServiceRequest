@@ -30,7 +30,7 @@ Description: "ServiceRequest, der genutzt wird um ein Rezept anzufragen"
 Das implementierende System muss in der Lage sein diese Verknüpfung herzustellen als auch zu lesen."
 
 * basedOn 1..1 MS
-  * ^short = "Angefragter oder erfüllausgestellter MedicationRequest."
+  * ^short = "Angefragter oder erfüllter MedicationRequest."
   * ^comment = "Einem ServiceRequest ist genau ein MedicationRequest zugeordnet, sodass unabhängige Bearbeitungen möglich sind."
   * ^definition = "Dieses Feld referenziert den zugrundeliegenden MedicationRequest, der die medizinischen Informationen zur Rezeptanfrage enthält. Wenn die Rezeptanfrage gestellt wird KANN das Profil ERPServiceRequestMedicationRequest genutzt werden.
 Wenn die Verordnung erstellt wurde ist der entsprechende KBV_PR_ERP_Bundle-Verordnungsdatensatz zu referenzieren."
