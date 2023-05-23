@@ -6,7 +6,6 @@ from ressource_creators.prescription_request_creator import (
     PrescriptionRequestCreator,
 )
 
-
 from app_transport_framework_library.models.message_to_send import MessageToSend
 from app_transport_framework_library.models.bundle_focus_content import (
     BundleFocusContent,
@@ -17,21 +16,15 @@ from app_transport_framework_library.models.empfangsbestaetigung import (
 
 from app_transport_framework_library.atf_bundle_processor import ATF_BundleProcessor
 
-communicator = Communicator()
+
 
 
 def on_new_message_to_send(message_to_send: MessageToSend):
     communicator.send(
         message_to_send.receiver,
         message_to_send.message_type,
-        message_to_send.atf_bundle.json(indent=4),
+        message_to_send.atf_bundle,
     )
-    if message_to_send.receiver == kim_address_arzt:
-        processor_arztpraxis.process_bundle(message_to_send.atf_bundle)
-    elif message_to_send.receiver == kim_address_pflegeeinrichtung:
-        processor_pflegeeinrichtung.process_bundle(
-            message_to_send.atf_bundle
-        )
 
 
 def on_received_Empfangsbestaetigung(empfangsbestaetigung: Empfangsbestaetigung):
@@ -54,11 +47,8 @@ def on_focus_Ressource_to_process_arztpraxis(bundle_content: BundleFocusContent)
 
 
 # initialise ATF for Pflegeeinrichtung
-kim_address_pflegeeinrichtung = (
-    "pflegeheim.immergrün.arzt@sana-pflegeheime.kim.telematik"
-)
 sender_pflegeeinrichtung = ParticipantsCreator.create_sender(
-    kim_address_pflegeeinrichtung, "Pflegeheim Immergrün"
+    "pflegeheim.immergrün.arzt@sana-pflegeheime.kim.telematik", "Pflegeheim Immergrün"
 )
 software_pflegeeinrichtung = ParticipantsCreator.create_source(
     "PSSolutions",
@@ -85,7 +75,7 @@ destination_arzt = ParticipantsCreator.create_destinations(
 
 # initialise ATF for Arztpraxis
 sender_arztpraxis = ParticipantsCreator.create_sender(
-    "hasenbein@gluecklich.kim.telematik", "Praxis Dr. Hasenbein"
+    kim_address_arzt, "Praxis Dr. Hasenbein"
 )
 software_arztpraxis = ParticipantsCreator.create_source(
     "DeltaCare Inc.",
@@ -103,14 +93,17 @@ processor_arztpraxis.focus_Ressource_to_process_event.subscribe(
     on_focus_Ressource_to_process_arztpraxis
 )
 
+# initialise Communicator which acts as connector between the processor to simulate a message transfer
+communicator = Communicator([processor_arztpraxis,processor_pflegeeinrichtung] )
+
 # UC1_1 Rezeptanforderung wird von Pflegeeinrichtung gestellt und eine Rezeptbestätigung durch den Arzt erwartet
 prescription_request = PrescriptionRequestCreator.create_prescription_request(
     sender_pflegeeinrichtung, software_pflegeeinrichtung, destination_arzt
 )
 
 communicator.send(
-    receiver="practitioner@gluecklich.kim.telematik",
+    receiver=kim_address_arzt,
     messageType=f"eRezept_Rezeptanforderung;Rezeptanfrage",
-    message=prescription_request.json(indent=4),
+    message_bundle=prescription_request,
 )
-processor_arztpraxis.process_bundle(prescription_request)
+#processor_arztpraxis.process_bundle(prescription_request)
