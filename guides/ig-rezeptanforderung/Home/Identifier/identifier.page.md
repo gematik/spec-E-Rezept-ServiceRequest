@@ -33,7 +33,7 @@ Diese Vorgangs-ID wird vom schreibenden System vergeben und ist von den anderen 
 
 Falls ein anderes System als das ursprünglich anfragende einen neuen ServiceRequest erstellt, ist die Vorgangs-ID von vorhandenen ServiceRequests zu übernehmen.
 
-Bspw. erstellt im Anwendungsfall {{pagelink:Home/Anwendungsfaelle/Rezeptanforderung-UC1}}, wenn `ServiceRequest.orderDetail.code = #send-to-pharmacy` gesetzt ist, das PVS die Belieferungsanfrage. Hier ist also die selbe Vorgangs-ID aus `ServiceRequest.requisition` aus der Verordnungsanfrage in die Belieferungsanfrage zu übernehmen.
+Bspw. erstellt im Anwendungsfall {{pagelink:Home/Anwendungsfaelle/Rezeptanforderung}}, wenn `ServiceRequest.orderDetail.code = #send-to-pharmacy` gesetzt ist, das PVS die Belieferungsanfrage. Hier ist also die selbe Vorgangs-ID aus `ServiceRequest.requisition` aus der Verordnungsanfrage in die Belieferungsanfrage zu übernehmen.
 
 ### Profil
 
@@ -60,7 +60,7 @@ Dieser Identifier wird in `ServiceRequest.identifier[predisId]` verwendet, um ei
 
 Insbesondere wenn der Vorgang und die Erstellung der beiden Anfragen zeitversetzt erfolgt ist es für Systeme dann hilfreich diese Verknüpfung herzustellen und den Verlauf der Anfrage zu einem Medikament dann festzustellen.
 
-Beispielsweise erstellt im Anwendungsfall {{pagelink:Home/Anwendungsfaelle/Rezeptanforderung-UC1}} das anfragende System zunächst nur die Verordnungsanfrage.
+Beispielsweise erstellt im Anwendungsfall {{pagelink:Home/Anwendungsfaelle/Rezeptanforderung}} das anfragende System zunächst nur die Verordnungsanfrage.
 Nachdem der Verordnende das E-Rezept-Token übermittelt hat wird dann die Belieferungsanfrage zum gleichen Medikament gestellt. Diese erhält die gleiche predisId wie die Verordnungsanfrage. So kann bspw. der Status zur Anfrage eines Medikaments besser verfolgt werden.
 
 ### Profil
