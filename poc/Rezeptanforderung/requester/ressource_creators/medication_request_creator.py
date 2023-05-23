@@ -19,7 +19,7 @@ class MedicationRequestCreator:
         substitution_allowed: bool,
     ) -> MedicationRequest:
         medication_request = MedicationRequest(
-            id=str(uuid4),
+            id=str(uuid4()).replace("-", ""),
             meta=Meta(
                 profile=[
                     "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request"

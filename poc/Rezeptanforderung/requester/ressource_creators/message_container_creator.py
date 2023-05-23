@@ -41,7 +41,7 @@ class MessageContainerCreator:
             )
         ]
 
-        resources.append(additional_bundle_entries)
+        resources.extend(additional_bundle_entries)
 
         bundle = MessageBundleCreator.create_message_bundle(
             message_header=message_header, resources=resources

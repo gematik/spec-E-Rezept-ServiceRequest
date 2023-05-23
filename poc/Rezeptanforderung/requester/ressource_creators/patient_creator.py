@@ -1,4 +1,4 @@
-import uuid
+from uuid import uuid4
 from fhir.resources.patient import Patient
 from fhir.resources.extension import Extension
 from fhir.resources.identifier import Identifier
@@ -6,6 +6,8 @@ from fhir.resources.humanname import HumanName
 from fhir.resources.coding import Coding
 from fhir.resources.address import Address
 from fhir.resources.meta import Meta
+from fhir.resources.codeableconcept import CodeableConcept
+from fhir.resources.fhirprimitiveextension import FHIRPrimitiveExtension
 
 
 class PatientCreator:
@@ -21,6 +23,15 @@ class PatientCreator:
         postal_code: str,
         birth_date: str,
     ) -> Patient:
+        identifier_type = CodeableConcept(
+            coding=[
+                Coding(
+                    system="http://fhir.de/CodeSystem/identifier-type-de-basis",
+                    code=identifier_type_code,
+                ),
+            ],
+        )
+
         patient = Patient(
             id=patient_id,
             meta=Meta(
@@ -30,10 +41,7 @@ class PatientCreator:
             ),
             identifier=[
                 Identifier(
-                    type=Coding(
-                        system="http://fhir.de/CodeSystem/identifier-type-de-basis",
-                        code=identifier_type_code,
-                    ),
+                    type=identifier_type,
                     system="http://fhir.de/sid/gkv/kvid-10",
                     value=kvnr,
                 )
@@ -42,14 +50,6 @@ class PatientCreator:
                 HumanName(
                     use="official",
                     family=family_name,
-                    _family=Extension(
-                        extension=[
-                            Extension(
-                                url="http://hl7.org/fhir/StructureDefinition/humanname-own-name",
-                                valueString=family_name,
-                            )
-                        ]
-                    ),
                     given=[given_name],
                 )
             ],
@@ -57,18 +57,20 @@ class PatientCreator:
                 Address(
                     type="both",
                     line=[address_line],
-                    _line=Extension(
-                        extension=[
-                            Extension(
-                                url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-                                valueString=address_line.split(" ")[1],
-                            ),
-                            Extension(
-                                url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-                                valueString=address_line.split(" ")[0],
-                            ),
-                        ]
-                    ),
+                    _line=[
+                        FHIRPrimitiveExtension(
+                            extension=[
+                                Extension(
+                                    url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                                    valueString=address_line.split(" ")[1],
+                                ),
+                                Extension(
+                                    url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                                    valueString=address_line.split(" ")[0],
+                                ),
+                            ]
+                        )
+                    ],
                     city=city,
                     postalCode=postal_code,
                 )
@@ -81,7 +83,7 @@ class PatientCreator:
     @staticmethod
     def get_example_patient():
         return PatientCreator.create_patient(
-            patient_id=str(uuid),
+            patient_id=str(uuid4()),
             identifier_type_code="GKV",
             kvnr="X234567890",
             family_name="Königsstein",

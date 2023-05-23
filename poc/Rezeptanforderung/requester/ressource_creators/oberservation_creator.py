@@ -18,20 +18,25 @@ class ObservationCreator:
         value_quantity=None,
         unit=None,
     ):
-        observation = Observation.construct()
+        observation = Observation(
+            status="final",
+            code=CodeableConcept(
+                coding=[
+                    Coding(
+                        system=obs_system,
+                        code=obs_code,
+                    )
+                ]
+            ),
+        )
         observation.id = id
         observation.meta = {
             "profile": [
                 "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-remaining-medication"
             ]
         }
-        observation.status = "final"
         observation.subject = Reference.construct()
         observation.subject.reference = patient_ref
-        observation.code = CodeableConcept.construct()
-        observation.code.coding = [Coding.construct()]
-        observation.code.coding[0].system = obs_system
-        observation.code.coding[0].code = obs_code
 
         if value_date_time:
             observation.valueDateTime = value_date_time
