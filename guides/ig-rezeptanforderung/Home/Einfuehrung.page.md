@@ -68,10 +68,10 @@ Beispielinstanzen sind im [Simplifier-Projekt](https://simplifier.net/erezept-me
 
 Folgende UseCases sind mit entsprechenden Beispielen beschrieben:
 
-UC1: Pflegeeinrichtung -> Arzt -> Pflegeeinrichtung -> Apotheke
-UC2: Pflegeeinrichtung -> Arzt -> Apotheke -> Pflegeeinrichtung
-UC3: Pflegeeinrichtung -> Arzt -> Pflegeeinrichtung (Patient geht selbst zur Apotheke)
-UC4(parenterale Zubereitung): Apotheke -> Arzt -> Apotheke
+* UC1: Pflegeeinrichtung -> Arzt -> Pflegeeinrichtung -> Apotheke
+* UC2: Pflegeeinrichtung -> Arzt -> Apotheke -> Pflegeeinrichtung
+* UC3: Pflegeeinrichtung -> Arzt -> Pflegeeinrichtung (Patient geht selbst zur Apotheke)
+* UC4(parenterale Zubereitung): Apotheke -> Arzt -> Apotheke
 
 Die Beispiele tragen jeweils das Präfix zum entsprechenden UseCase und der entsprechenden Sequenz. Bsp: UC1-3-* ist ein Beispiel, was UC1 zugeordnet ist und den dritten Schritt in der Abfolge entspricht.
 Für UC1 gibt es auch Storno Beispiele.

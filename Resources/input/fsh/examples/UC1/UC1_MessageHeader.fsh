@@ -1,6 +1,6 @@
 Instance: UC1-HealthCareService-to-Practitioner-MessageHeader
 InstanceOf: ERPServiceRequestRequestHeader
-Usage: #inline
+Usage: #example
 Title: "HealthCareService-to-Practitioner-MessageHeader"
 Description: "Message Header from HealthCareService to Practitioner"
 * insert HealthCareService-to-Practitioner(UC1-Initial-Prescription-Request)

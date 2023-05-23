@@ -22,7 +22,7 @@ Description: "Diese Observation beschreibt wie lange oder wie viel einer Medikat
 
 Instance: Medication-Runs-Out-Example-dateTime
 InstanceOf: ERPServiceRequestRemainingMedication
-Usage: #inline
+Usage: #example
 Title: "Medication-Runs-Out-Example-dateTime"
 Description: "Simple example to show that Medication will last until dateTime"
 * subject = Reference(Example-Patient)
@@ -31,7 +31,7 @@ Description: "Simple example to show that Medication will last until dateTime"
 
 Instance: Medication-Runs-Out-Example-Quantity
 InstanceOf: ERPServiceRequestRemainingMedication
-Usage: #inline
+Usage: #example
 Title: "Medication-Runs-Out-Example-Quantity"
 Description: "Simple example to show how many pieces of medication are left"
 * subject = Reference(Example-Patient)

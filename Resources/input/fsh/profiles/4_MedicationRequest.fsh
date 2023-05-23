@@ -79,7 +79,7 @@ Das empfangende System MUSS bei vorliegen dieser ID in der Lage sein nach der vo
 
 Instance: Example-Initial-Medication-Request
 InstanceOf: ERPServiceRequestMedicationRequest
-Usage: #inline
+Usage: #example
 * extension[PriorPrescriptionID].valueIdentifier
   * system = "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"
   * value = "160.100.000.000.001.36"
