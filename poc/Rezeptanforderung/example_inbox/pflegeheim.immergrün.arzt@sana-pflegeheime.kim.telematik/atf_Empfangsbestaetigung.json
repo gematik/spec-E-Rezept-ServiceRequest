@@ -1,5 +1,5 @@
 {
-    "id": "3a568e2e-8413-4def-81db-447bb061afec",
+    "id": "47129912-325d-45d4-b9f6-072f2424a5e8",
     "meta": {
         "profile": [
             "https://gematik.de/fhir/atf/StructureDefinition/bundle-app-transport-framework"
@@ -7,9 +7,9 @@
     },
     "entry": [
         {
-            "fullUrl": "urn:uuid:942359d4-e7ab-4f05-b373-7b6e2def8a1b",
+            "fullUrl": "urn:uuid:98c35b4c-c449-4028-b473-532a69371a00",
             "resource": {
-                "id": "942359d4-e7ab-4f05-b373-7b6e2def8a1b",
+                "id": "98c35b4c-c449-4028-b473-532a69371a00",
                 "meta": {
                     "profile": [
                         "https://gematik.de/fhir/atf/StructureDefinition/message-header-app-transport"
@@ -19,22 +19,22 @@
                     {
                         "endpoint": "https://ps_solutions.com/jira_helpdesk",
                         "receiver": {
-                            "display": "Pflegeheim Immergr\u00fcn",
+                            "display": "Pflegeheim Immergrün",
                             "identifier": {
                                 "system": "http://gematik.de/fhir/sid/KIM-Adresse",
-                                "value": "pflegeheim.immergr\u00fcn.arzt@sana-pflegeheime.kim.telematik"
+                                "value": "pflegeheim.immergrün.arzt@sana-pflegeheime.kim.telematik"
                             }
                         }
                     }
                 ],
                 "eventCoding": {
                     "code": "atf;Empfangsbestaetigung",
-                    "display": "Empfangsbest\u00e4tigung und Auskunft \u00fcber FHIR Interpretierbarkeit der Nachricht",
+                    "display": "Empfangsbestätigung und Auskunft über FHIR Interpretierbarkeit der Nachricht",
                     "system": "https://gematik.de/fhir/atf/CodeSystem/operation-identifier-cs"
                 },
                 "focus": [
                     {
-                        "reference": "urn:uuid:b93aa3b2-43bd-4f30-8699-efd6d67f9868"
+                        "reference": "urn:uuid:d1a407fd-1d4b-4029-91c6-44fffbccd345"
                     }
                 ],
                 "sender": {
@@ -58,9 +58,9 @@
             }
         },
         {
-            "fullUrl": "urn:uuid:b93aa3b2-43bd-4f30-8699-efd6d67f9868",
+            "fullUrl": "urn:uuid:d1a407fd-1d4b-4029-91c6-44fffbccd345",
             "resource": {
-                "id": "b93aa3b2-43bd-4f30-8699-efd6d67f9868",
+                "id": "d1a407fd-1d4b-4029-91c6-44fffbccd345",
                 "meta": {
                     "profile": [
                         "https://gematik.de/fhir/atf/StructureDefinition/atf-operation-outcome"
@@ -69,14 +69,14 @@
                 "extension": [
                     {
                         "url": "https://gematik.de/fhir/atf/StructureDefinition/atf-message-id-ex",
-                        "valueString": "df802186-7f7f-4fbf-be6e-3025e5366b40"
+                        "valueString": "03e0e881-3dd5-4336-af1e-94c930fcc67d"
                     }
                 ],
                 "issue": [
                     {
-                        "code": "processing",
-                        "diagnostics": "Die empfangene Nachricht mit dem eRezept_Rezeptanforderung;Rezeptanfrage kann nicht verarbeitet werden, da der Use-Case nicht unterst\u00fctzt wird.",
-                        "severity": "error"
+                        "code": "informational",
+                        "diagnostics": "Rezeptanfrage erfolgreich entgegengenommen",
+                        "severity": "information"
                     }
                 ],
                 "resourceType": "OperationOutcome"
@@ -85,9 +85,9 @@
     ],
     "identifier": {
         "system": "urn:ietf:rfc:3986",
-        "value": "urn:uuid:3a568e2e-8413-4def-81db-447bb061afec"
+        "value": "urn:uuid:47129912-325d-45d4-b9f6-072f2424a5e8"
     },
-    "timestamp": "2023-05-23T21:17:06.737129+00:00",
+    "timestamp": "2023-05-24T22:08:45.317665+00:00",
     "type": "message",
     "resourceType": "Bundle"
 }
