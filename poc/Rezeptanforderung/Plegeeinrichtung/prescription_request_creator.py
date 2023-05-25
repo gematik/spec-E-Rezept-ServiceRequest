@@ -10,8 +10,10 @@ from Plegeeinrichtung.organization_creator import OrganizationCreator
 from Plegeeinrichtung.patient_creator import PatientCreator
 from Plegeeinrichtung.medication_creator import MedicationCreator
 from Plegeeinrichtung.medication_request_creator import MedicationRequestCreator
-from Plegeeinrichtung.service_request_creator import ServiceRequestCreator
+
 from Plegeeinrichtung.message_container_creator import MessageContainerCreator
+from ressource_creators.service_request_creator import ServiceRequestCreator
+
 
 class PrescriptionRequestCreator:
     @staticmethod

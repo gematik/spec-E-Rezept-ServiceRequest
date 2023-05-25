@@ -1,5 +1,5 @@
 {
-    "id": "f8fa7981-ca53-4c6d-a56e-b8aa05aa99d8",
+    "id": "edf5e2a9-2a59-4990-9eb2-5b0388f318db",
     "meta": {
         "profile": [
             "https://gematik.de/fhir/atf/StructureDefinition/bundle-app-transport-framework"
@@ -7,9 +7,9 @@
     },
     "entry": [
         {
-            "fullUrl": "urn:uuid:9b6432e5-01c4-423d-8b83-8df22e8cfe05",
+            "fullUrl": "urn:uuid:f4804c73-4a19-44cb-a804-af0bd4f0576b",
             "resource": {
-                "id": "9b6432e5-01c4-423d-8b83-8df22e8cfe05",
+                "id": "f4804c73-4a19-44cb-a804-af0bd4f0576b",
                 "meta": {
                     "profile": [
                         "https://gematik.de/fhir/atf/StructureDefinition/message-header-app-transport"
@@ -19,22 +19,22 @@
                     {
                         "endpoint": "https://ps_solutions.com/jira_helpdesk",
                         "receiver": {
-                            "display": "Pflegeheim ImmergrÃ¼n",
+                            "display": "Pflegeheim Immergrün",
                             "identifier": {
                                 "system": "http://gematik.de/fhir/sid/KIM-Adresse",
-                                "value": "pflegeheim.immergrÃ¼n.arzt@sana-pflegeheime.kim.telematik"
+                                "value": "pflegeheim.immergrün.arzt@sana-pflegeheime.kim.telematik"
                             }
                         }
                     }
                 ],
                 "eventCoding": {
                     "code": "atf;Empfangsbestaetigung",
-                    "display": "EmpfangsbestÃ¤tigung und Auskunft Ã¼ber FHIR Interpretierbarkeit der Nachricht",
+                    "display": "Empfangsbestätigung und Auskunft über FHIR Interpretierbarkeit der Nachricht",
                     "system": "https://gematik.de/fhir/atf/CodeSystem/operation-identifier-cs"
                 },
                 "focus": [
                     {
-                        "reference": "urn:uuid:2d9fec19-3186-4259-a5f5-5ef9310a52f4"
+                        "reference": "urn:uuid:1f59395c-a643-4121-8e36-2be9b5278cc5"
                     }
                 ],
                 "sender": {
@@ -58,9 +58,9 @@
             }
         },
         {
-            "fullUrl": "urn:uuid:2d9fec19-3186-4259-a5f5-5ef9310a52f4",
+            "fullUrl": "urn:uuid:1f59395c-a643-4121-8e36-2be9b5278cc5",
             "resource": {
-                "id": "2d9fec19-3186-4259-a5f5-5ef9310a52f4",
+                "id": "1f59395c-a643-4121-8e36-2be9b5278cc5",
                 "meta": {
                     "profile": [
                         "https://gematik.de/fhir/atf/StructureDefinition/atf-operation-outcome"
@@ -69,7 +69,7 @@
                 "extension": [
                     {
                         "url": "https://gematik.de/fhir/atf/StructureDefinition/atf-message-id-ex",
-                        "valueString": "08ece274-b81b-4f3d-a770-b47775c14196"
+                        "valueString": "1069b5e3-daab-49bb-80fd-c677362b7ee0"
                     }
                 ],
                 "issue": [
@@ -85,9 +85,9 @@
     ],
     "identifier": {
         "system": "urn:ietf:rfc:3986",
-        "value": "urn:uuid:f8fa7981-ca53-4c6d-a56e-b8aa05aa99d8"
+        "value": "urn:uuid:edf5e2a9-2a59-4990-9eb2-5b0388f318db"
     },
-    "timestamp": "2023-05-25T11:17:06.951457+00:00",
+    "timestamp": "2023-05-25T22:04:35.688665+00:00",
     "type": "message",
     "resourceType": "Bundle"
 }

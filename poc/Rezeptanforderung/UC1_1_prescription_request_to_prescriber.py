@@ -1,4 +1,3 @@
-
 from app_transport_framework_library.atf_bundle_processor import ATF_BundleProcessor
 from example_helper.participants_mock import ParticipantsCreator
 from example_helper.communication_mock import ICommunicator
@@ -18,10 +17,8 @@ from app_transport_framework_library.models.empfangsbestaetigung import (
 
 from app_transport_framework_library.atf_bundle_processor import ATF_BundleProcessor
 from Plegeeinrichtung.prescription_request_creator import PrescriptionRequestCreator
-from AVS.rezeptanfrage_atf_validator import RezeptanfrageValidator
-
-
-
+from AVS.use_case_validators.rezeptanfrage_atf_validator import RezeptanfrageValidator
+from AVS.use_case_handlers.rezeptanfrage_handler import RezeptanfrageHandler
 
 
 class Primärsystem:
@@ -35,9 +32,11 @@ class Primärsystem:
         processor = ATF_BundleProcessor(sender, software)
         processor.message_to_send_event.subscribe(self.on_new_message_to_send)
         processor.received_Empfangsbestaetigung_event.subscribe(
-            self.on_received_Empfangsbestaetigung)
+            self.on_received_Empfangsbestaetigung
+        )
         processor.focus_Ressource_to_process_event.subscribe(
-            self.on_focus_Ressource_to_process)
+            self.on_focus_Ressource_to_process
+        )
         return processor
 
     def on_new_message_to_send(self, message_to_send: MessageToSend):
@@ -47,7 +46,9 @@ class Primärsystem:
             message_to_send.atf_bundle,
         )
 
-    def on_received_Empfangsbestaetigung(self, empfangsbestaetigung: Empfangsbestaetigung):
+    def on_received_Empfangsbestaetigung(
+        self, empfangsbestaetigung: Empfangsbestaetigung
+    ):
         pass
 
     def on_focus_Ressource_to_process(self, bundle_content):
@@ -55,24 +56,29 @@ class Primärsystem:
 
 
 class Pflegeeinrichtung(Primärsystem):
-    def on_received_Empfangsbestaetigung(self, empfangsbestaetigung):
+    def on_received_Empfangsbestaetigung(
+        self, empfangsbestaetigung: Empfangsbestaetigung
+    ):
         print(
             f"'{empfangsbestaetigung.receiver}' received Empfangsbestaetigung for '{empfangsbestaetigung.message_id}' from '{empfangsbestaetigung.sender}'"
         )
-        print(empfangsbestaetigung.details.json(indent=4).encode().decode(
-            'unicode_escape'))
+        print(
+            empfangsbestaetigung.details.json(indent=4)
+            .encode()
+            .decode("unicode_escape")
+        )
 
-    def on_focus_Ressource_to_process(self, bundle_content):
+    def on_focus_Ressource_to_process(self, bundle_content: BundleFocusContent):
         print(f"Processing Bundle with focus on '{bundle_content.code}'")
         if bundle_content.code == "eRezept_Rezeptanforderung;Rezeptbestaetigung":
             print("Pflegeinrichtung hat Rezeptbestaetigung erhalten.")
 
 
 class Arztpraxis(Primärsystem):
-    def on_focus_Ressource_to_process(self, bundle_content):
+    def on_focus_Ressource_to_process(self, bundle_content: BundleFocusContent):
         print(f"Processing Bundle with focus on '{bundle_content.code}'")
         if bundle_content.code == "eRezept_Rezeptanforderung;Rezeptanfrage":
-            print("Arztpraxis hat Rezeptanforderung erhalten.")
+            RezeptanfrageHandler().handle(bundle_content)
 
 
 communicator = FileSystemCommunicator([])
@@ -88,7 +94,11 @@ software_pflegeeinrichtung = ParticipantsCreator.create_source(
     "https://ps_solutions.com/jira_helpdesk",
 )
 pflegeeinrichtung = Pflegeeinrichtung(
-    "Pflegeeinrichtung", communicator, sender_pflegeeinrichtung, software_pflegeeinrichtung)
+    "Pflegeeinrichtung",
+    communicator,
+    sender_pflegeeinrichtung,
+    software_pflegeeinrichtung,
+)
 
 kim_address_arzt = "hasenbein@gluecklich.kim.telematik"
 sender_arztpraxis = ParticipantsCreator.create_sender(
@@ -106,18 +116,20 @@ destination_arzt = ParticipantsCreator.create_destinations(
     kim_address_arzt, "Praxis Dr. Hasenbein", "https://unknown.endpoint.de"
 )
 
-arztpraxis = Arztpraxis("Praxis Dr. Hasenbein", communicator,
-                        sender_arztpraxis, software_arztpraxis)
-
+arztpraxis = Arztpraxis(
+    "Praxis Dr. Hasenbein", communicator, sender_arztpraxis, software_arztpraxis
+)
 
 
 arztpraxis.processor.register_use_case_handler(
-    "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs", "eRezept_Rezeptanforderung;Rezeptanfrage", RezeptanfrageValidator(sender_arztpraxis, software_arztpraxis))
+    "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs",
+    "eRezept_Rezeptanforderung;Rezeptanfrage",
+    RezeptanfrageValidator(sender_arztpraxis, software_arztpraxis),
+)
 
 
 # add processors to the communicator
-communicator.processors.extend(
-    [pflegeeinrichtung.processor, arztpraxis.processor])
+communicator.processors.extend([pflegeeinrichtung.processor, arztpraxis.processor])
 
 # UC1_1 Rezeptanforderung wird von Pflegeeinrichtung gestellt und eine Rezeptbestätigung durch den Arzt erwartet
 prescription_request = PrescriptionRequestCreator.create_prescription_request(

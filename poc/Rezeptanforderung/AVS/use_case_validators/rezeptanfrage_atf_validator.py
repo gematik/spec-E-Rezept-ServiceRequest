@@ -1,11 +1,11 @@
-from app_transport_framework_library.base_use_case_handler import BaseUseCaseHandler
+from app_transport_framework_library.base_use_case_validator import BaseUseCaseValidator
 from fhir.resources.operationoutcome import  OperationOutcomeIssue
 from fhir.resources.servicerequest import ServiceRequest
 from fhir.resources.bundle import Bundle, BundleEntry
 from fhir.resources.messageheader import MessageHeader
 from typing import List, Tuple
 
-class RezeptanfrageValidator(BaseUseCaseHandler):
+class RezeptanfrageValidator(BaseUseCaseValidator):
 
     def resolve_reference(self, reference_str: str, bundle: Bundle):
         for entry in bundle.entry:
