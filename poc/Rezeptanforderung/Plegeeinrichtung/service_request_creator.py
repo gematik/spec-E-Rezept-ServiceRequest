@@ -5,6 +5,7 @@ from fhir.resources.identifier import Identifier
 from fhir.resources.reference import Reference
 from fhir.resources.codeableconcept import CodeableConcept
 from datetime import datetime
+from typing import Dict, List, Union
 
 
 class ServiceRequestCreator:
@@ -24,10 +25,10 @@ class ServiceRequestCreator:
     def create_service_request(
         status: str,
         order_detail_code: str,
-        identifiers: dict[str, str],
-        references: dict[str, str or Identifier],
+        identifiers: Dict[str, str],
+        references: Dict[str, Union[str,Identifier]],
         reason_code: str,
-        reason_references: list[str],
+        reason_references: List[str],
         note_text: str,
     ) -> ServiceRequest:
         identifier_instances = [

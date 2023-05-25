@@ -18,7 +18,7 @@ from app_transport_framework_library.models.empfangsbestaetigung import (
 
 from app_transport_framework_library.atf_bundle_processor import ATF_BundleProcessor
 from Plegeeinrichtung.prescription_request_creator import PrescriptionRequestCreator
-from AVS.rezeptanfrage_handler import RezeptanfrageHandler
+from AVS.rezeptanfrage_atf_validator import RezeptanfrageValidator
 
 
 
@@ -28,7 +28,7 @@ class Primärsystem:
     def __init__(self, name: str, communicator: ICommunicator, sender, software):
         self.name = name
         self.communicator = communicator
-        
+
         self.processor = self.initialize_processor(sender, software)
 
     def initialize_processor(self, sender, software):
@@ -112,7 +112,7 @@ arztpraxis = Arztpraxis("Praxis Dr. Hasenbein", communicator,
 
 
 arztpraxis.processor.register_use_case_handler(
-    "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs", "eRezept_Rezeptanforderung;Rezeptanfrage", RezeptanfrageHandler(sender_arztpraxis, software_arztpraxis))
+    "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs", "eRezept_Rezeptanforderung;Rezeptanfrage", RezeptanfrageValidator(sender_arztpraxis, software_arztpraxis))
 
 
 # add processors to the communicator

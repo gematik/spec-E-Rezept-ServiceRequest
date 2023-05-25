@@ -5,7 +5,7 @@ from fhir.resources.bundle import Bundle, BundleEntry
 from fhir.resources.messageheader import MessageHeader
 from typing import List, Tuple
 
-class RezeptanfrageHandler(BaseUseCaseHandler):
+class RezeptanfrageValidator(BaseUseCaseHandler):
 
     def resolve_reference(self, reference_str: str, bundle: Bundle):
         for entry in bundle.entry:
@@ -14,7 +14,6 @@ class RezeptanfrageHandler(BaseUseCaseHandler):
         return None
 
     def handle(self, message_header: MessageHeader, bundle: Bundle) -> Tuple[List[BundleEntry], List[OperationOutcomeIssue]]:
-        print("geschafft!")
         self.bundleEntries = []
         self.issues = []
         message_header = self.get_ressource_by_type(bundle, MessageHeader)
