@@ -13,7 +13,7 @@ from fhir.resources.reference import Reference
 
 class MedicationRequestConverter:
 
-    def convert_to_KBV_PR_ERP_Prescription(self, medication_request: MedicationRequest, medication_reference: str, dosage_instruction_text: str, requester_reference: str, insurance_reference: str, substitution_allowed) -> MedicationRequest:
+    def convert_to_KBV_PR_ERP_Prescription(self, medication_request: MedicationRequest, dosage_instruction_text: str, medication_id: str, requester_id: str, insurance_id: str, substitution_allowed) -> MedicationRequest:
         kbv_prescription = medication_request.copy()
         kbv_prescription = MedicationRequest.construct(
             id=str(uuid4()),
@@ -24,12 +24,12 @@ class MedicationRequestConverter:
             ),
             status="active",
             intent="order",
-            medicationReference=Reference(reference=medication_reference),
-            requester=Reference(reference=requester_reference),
+            medicationReference=Reference(reference=medication_id),
+            requester=Reference(reference=requester_id),
             dosageInstruction=[Dosage(text=dosage_instruction_text)],
             authoredOn=str(date.today()),
             substitution={'allowedBoolean': substitution_allowed},
-            insurance=[Reference(reference=insurance_reference)]
+            insurance=[Reference(reference=insurance_id)]
         )
 
         if kbv_prescription.dosageInstruction[0].extension is None:
@@ -72,9 +72,6 @@ class MedicationRequestConverter:
         )
         return kbv_prescription
 
-    def get_example_conversion(self, medication_request):
+    def get_example_conversion(self, medication_request: MedicationRequest, medication_id: str, requester_id: str, insurance_id: str):
         dosage_instruction_text = "2mal tägl. 5ml"
-        medication_reference = "Medication/Example-Response-Medication"
-        requester_reference = "Practitioner/Example-Practitioner"
-        insurance_reference = "Coverage/Response-Coverage"
-        return self.convert_to_KBV_PR_ERP_Prescription(medication_request, medication_reference, dosage_instruction_text, requester_reference, insurance_reference, True)
+        return self.convert_to_KBV_PR_ERP_Prescription(medication_request, dosage_instruction_text, medication_id, requester_id, insurance_id, True)

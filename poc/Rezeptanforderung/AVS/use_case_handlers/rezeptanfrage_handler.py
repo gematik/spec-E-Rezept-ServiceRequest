@@ -7,9 +7,12 @@ from fhir.resources.servicerequest import ServiceRequest
 from fhir.resources.extension import Extension
 from fhir.resources.identifier import Identifier
 from fhir.resources.medication import Medication
+from fhir.resources.medicationrequest import MedicationRequest
 from example_helper.fachdienst_mock import FachdienstMock
-from AVS.medication_prescription_converter import MedicationRequestConverter
-from AVS.practitioner_creator import PractitionerCreator
+from AVS.ressource_creators.medication_prescription_converter import MedicationRequestConverter
+from AVS.ressource_creators.practitioner_creator import PractitionerCreator
+from AVS.ressource_creators.coverage_creator import CoverageCreator
+from fhir.resources.reference import Reference
 
 
 class RezeptanfrageHandler:
@@ -17,13 +20,18 @@ class RezeptanfrageHandler:
         self.fachdienst_mock = FachdienstMock()
         self.medication_request_converter = MedicationRequestConverter()
         self.practitioner = PractitionerCreator().get_example_practitioner()
+        self.coverage_creator = CoverageCreator()
 
-    def handle(self, bundle_focus_content: BundleFocusContent):
+    def handle(self, bundle_focus_content: BundleFocusContent) -> BundleFocusContent:
         service_request: ServiceRequest = self.get_ressource_by_type(
             bundle_focus_content.bundle_entries, ServiceRequest
         )
         delivery_type = self.get_order_detail_code(service_request.orderDetail)
-        medication: ServiceRequest = self.get_ressource_by_type(
+        medication_request: MedicationRequest = self.get_ressource_by_type(
+            bundle_focus_content.bundle_entries, MedicationRequest
+        )
+
+        medication: Medication = self.get_ressource_by_type(
             bundle_focus_content.bundle_entries, Medication
         )
 
@@ -31,11 +39,15 @@ class RezeptanfrageHandler:
             self.handle_issue_prescription(service_request)
 
         elif delivery_type == 'return-to-requester':
-            service_request = self.handle_return_to_requester(service_request)
+            coverage = self.coverage_creator.get_example_coverage()
             kbv_prescription = self.medication_request_converter.get_example_conversion(
-                medication)
-            # print(kbv_prescription.json(indent=4))
-            print(self.practitioner)
+                medication_request,medication.id, self.practitioner.id, coverage.id)
+            print(kbv_prescription.json(indent=4))
+
+            response_service_request = self.handle_return_to_requester(service_request)
+            response_service_request.basedOn = [Reference(reference=kbv_prescription.id)]
+
+
 
         elif delivery_type == 'send-to-pharmacy':
             self.handle_send_to_pharmacy(service_request)
@@ -64,6 +76,7 @@ class RezeptanfrageHandler:
                 )
             )
         )
+
         return service_request
 
         # .basedOn = KBV_PR_ERP_Prescription (ersetzt den initialen MedicationRequest)
