@@ -1,35 +1,25 @@
 Mapping: ERPServiceRequestDispenseRequest
 Source: ERPServiceRequestDispenseRequest
 Target: "gemF_eRp_KIM#3.1.1-Fachliche-Information"
-Id: Rezeptanforderung-Rezeptuebermittlung
-Title: "Dispense Request Mapping für Rezeptübermittlung"
+Id: Dispensieranforderung-Rezeptuebermittlung
+Title: "Dispensieranforderung_Rezeptuebermittlung"
 Description: "Mapping für fachliche Informationseinheiten der Belieferungsanfrage des Feature Dokuments"
-* -> "Rezeptanforderung_Rezeptuebermittlung"
+* -> "Dispensieranforderung_Rezeptuebermittlung"
 * extension[EPrescriptionToken] -> "ERezept_Access_Code"
 * extension[EPrescriptionToken] -> "ERezept_Task_ID"
-* basedOn -> "Veraenderungskennzeichen_zur_Ursprungsanforderung"
 * basedOn -> "Strukturierter_Verordnungsdatensatz"
 * requisition -> "Vorgangs_ID"
 * note -> "Hinweise_fuer_Empfänger"
 * note -> "Freitext"
 
-Mapping: ERPServiceRequestDispenseRequestStorno
+Mapping: ERPServiceRequestDispenseRequestApproval
 Source: ERPServiceRequestDispenseRequest
 Target: "gemF_eRp_KIM#3.1.1-Fachliche-Information"
-Id: Rezeptanforderung-Rezeptuebermittlung-Storno
-Title: "Dispense Request Mapping für Storno"
-Description: "Mapping für fachliche Informationseinheiten des Stornos einer Belieferungsanfrage des Feature Dokuments"
-* -> "Rezeptanforderung_Rezeptuebermittlung_Storno"
+Id: Dispensieranforderung-Bestaetigung
+Title: "Dispensieranforderung_Bestätigung"
+Description: "Mapping für fachliche Informationseinheiten der Belieferungsanfrage des Feature Dokuments"
+* -> "Dispensieranforderung_Bestätigung"
 * requisition -> "Vorgangs_ID"
-* reasonCode -> "Begründung der Stornierung"
-
-Mapping: ERPServiceRequestDispenseRequestAblehnung
-Source: ERPServiceRequestDispenseRequest
-Target: "gemF_eRp_KIM#3.1.1-Fachliche-Information"
-Id: Rezeptanforderung-Rezeptuebermittlung-Ablehnung
-Title: "Dispense Request Mapping für Ablehnung"
-Description: "Mapping für fachliche Informationseinheiten der Ablehnung einer Belieferungsanfrage des Feature Dokuments"
-* -> "Rezeptanforderung_Rezeptuebermittlung_Ablehnung"
-* requisition -> "Vorgangs_ID"
-* reasonCode -> "Ablehnungsgrund"
+* supportingInfo[AbgabeDaten] -> "Strukturierter_Dispensierungsdatensatz"
+* note -> "Hinweise_fuer_Empfänger"
 * note -> "Freitext"

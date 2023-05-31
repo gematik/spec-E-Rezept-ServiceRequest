@@ -45,10 +45,7 @@ class "Rezeptanforderung_Bestätigung" as Rezeptanforderung_Bestätigung #BUSINE
 class "Dispensieranforderung_Bestätigung" as Dispensieranforderung_Bestätigung #BUSINESS {
     ..administrative Informationen..
     #Vorgangs_ID
-    #ERezept_Access_Code
-    #ERezept_Task_ID
     ..medizinische Informationen..
-    #Strukturierter_Verordnungsdatensatz
     #Strukturierter_Dispensierungsdatensatz
 }
 

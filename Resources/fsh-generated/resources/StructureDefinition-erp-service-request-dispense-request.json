@@ -37,22 +37,16 @@
       "name": "Quality Improvement and Clinical Knowledge (QUICK)"
     },
     {
-      "identity": "Rezeptanforderung-Rezeptuebermittlung",
-      "name": "Dispense Request Mapping für Rezeptübermittlung",
+      "identity": "Dispensieranforderung-Rezeptuebermittlung",
+      "name": "Dispensieranforderung_Rezeptuebermittlung",
       "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
       "comment": "Mapping für fachliche Informationseinheiten der Belieferungsanfrage des Feature Dokuments"
     },
     {
-      "identity": "Rezeptanforderung-Rezeptuebermittlung-Storno",
-      "name": "Dispense Request Mapping für Storno",
+      "identity": "Dispensieranforderung-Bestaetigung",
+      "name": "Dispensieranforderung_Bestätigung",
       "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
-      "comment": "Mapping für fachliche Informationseinheiten des Stornos einer Belieferungsanfrage des Feature Dokuments"
-    },
-    {
-      "identity": "Rezeptanforderung-Rezeptuebermittlung-Ablehnung",
-      "name": "Dispense Request Mapping für Ablehnung",
-      "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
-      "comment": "Mapping für fachliche Informationseinheiten der Ablehnung einer Belieferungsanfrage des Feature Dokuments"
+      "comment": "Mapping für fachliche Informationseinheiten der Belieferungsanfrage des Feature Dokuments"
     }
   ],
   "kind": "resource",
@@ -67,16 +61,12 @@
         "path": "ServiceRequest",
         "mapping": [
           {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung",
-            "map": "Rezeptanforderung_Rezeptuebermittlung"
+            "identity": "Dispensieranforderung-Rezeptuebermittlung",
+            "map": "Dispensieranforderung_Rezeptuebermittlung"
           },
           {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung-Storno",
-            "map": "Rezeptanforderung_Rezeptuebermittlung_Storno"
-          },
-          {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung-Ablehnung",
-            "map": "Rezeptanforderung_Rezeptuebermittlung_Ablehnung"
+            "identity": "Dispensieranforderung-Bestaetigung",
+            "map": "Dispensieranforderung_Bestätigung"
           }
         ]
       },
@@ -104,11 +94,11 @@
         "mustSupport": true,
         "mapping": [
           {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung",
+            "identity": "Dispensieranforderung-Rezeptuebermittlung",
             "map": "ERezept_Access_Code"
           },
           {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung",
+            "identity": "Dispensieranforderung-Rezeptuebermittlung",
             "map": "ERezept_Task_ID"
           }
         ]
@@ -181,11 +171,7 @@
         "mustSupport": true,
         "mapping": [
           {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung",
-            "map": "Veraenderungskennzeichen_zur_Ursprungsanforderung"
-          },
-          {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung",
+            "identity": "Dispensieranforderung-Rezeptuebermittlung",
             "map": "Strukturierter_Verordnungsdatensatz"
           }
         ]
@@ -207,15 +193,11 @@
         "mustSupport": true,
         "mapping": [
           {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung",
+            "identity": "Dispensieranforderung-Rezeptuebermittlung",
             "map": "Vorgangs_ID"
           },
           {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung-Storno",
-            "map": "Vorgangs_ID"
-          },
-          {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung-Ablehnung",
+            "identity": "Dispensieranforderung-Bestaetigung",
             "map": "Vorgangs_ID"
           }
         ]
@@ -331,20 +313,6 @@
         "mustSupport": true
       },
       {
-        "id": "ServiceRequest.reasonCode",
-        "path": "ServiceRequest.reasonCode",
-        "mapping": [
-          {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung-Storno",
-            "map": "Begründung der Stornierung"
-          },
-          {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung-Ablehnung",
-            "map": "Ablehnungsgrund"
-          }
-        ]
-      },
-      {
         "id": "ServiceRequest.supportingInfo",
         "path": "ServiceRequest.supportingInfo",
         "slicing": {
@@ -398,7 +366,13 @@
             ]
           }
         ],
-        "mustSupport": true
+        "mustSupport": true,
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Bestaetigung",
+            "map": "Strukturierter_Dispensierungsdatensatz"
+          }
+        ]
       },
       {
         "id": "ServiceRequest.supportingInfo:AbgabeDaten.type",
@@ -416,15 +390,19 @@
         "mustSupport": true,
         "mapping": [
           {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung",
+            "identity": "Dispensieranforderung-Rezeptuebermittlung",
             "map": "Hinweise_fuer_Empfänger"
           },
           {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung",
+            "identity": "Dispensieranforderung-Rezeptuebermittlung",
             "map": "Freitext"
           },
           {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung-Ablehnung",
+            "identity": "Dispensieranforderung-Bestaetigung",
+            "map": "Hinweise_fuer_Empfänger"
+          },
+          {
+            "identity": "Dispensieranforderung-Bestaetigung",
             "map": "Freitext"
           }
         ]
