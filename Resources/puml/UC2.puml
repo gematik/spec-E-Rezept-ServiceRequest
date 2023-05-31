@@ -6,12 +6,12 @@ participant Apotheke as AP #LightGreen
 participant "E-Rezept-Fachdienst" as FD #LightSalmon
 
 activate PE
-PE -> A++: <b>Rezeptanforderung\nPrescription_ServiceRequest \n.status = active \n.basedOn = ERPServiceRequestMedicationRequest
+PE -> A++: <b>Rezeptanforderung\n <i>ERPServiceRequestPrescriptionRequest  \n.status = active \n.basedOn = ERPServiceRequestMedicationRequest
 A -> FD++: E-Rezept einstellen
 FD -> A--: Task(PrescriptionID, AccessCode)
-A -> PE: <b>Rezeptanforderung_Bestätigung (ohne Token)\nPrescription_ServiceRequest \n.status = completed \n.basedOn = KBV_Prescription
-A -> AP--++: <b>Dispensieranforderung_Rezeptübermittlung\nDispense_ServiceRequest \n.status = active \n.basedOn = KBV_Prescription \n.extension:EPrescriptionToken = E-Rezept Token
-AP -> PE: <b>Dispensieranforderung_Rezeptübermittlung (ohne E-Rezept-Token)\nDispense_ServiceRequest \n.status = active \n.basedOn = KBV_Prescription
+A -> PE: <b>Rezeptanforderung_Bestätigung (ohne Token)\n <i>ERPServiceRequestPrescriptionRequest  \n.status = completed \n.basedOn = KBV_Prescription
+A -> AP--++: <b>Dispensieranforderung_Rezeptübermittlung\n <i>ERPServiceRequestDispenseRequest  \n.status = active \n.basedOn = KBV_Prescription \n.extension:EPrescriptionToken = E-Rezept Token
+AP -> PE: <b>Dispensieranforderung_Rezeptübermittlung (ohne E-Rezept-Token)\n <i>ERPServiceRequestDispenseRequest  \n.status = active \n.basedOn = KBV_Prescription
 AP <-> FD: E-Rezept einlösen
-AP -> PE--: <b>Dispensieranforderung_Bestätigung\nDispense_ServiceRequest \n.status = completed \n.basedOn = KBV_Prescription \n.extension:EPrescriptionToken = E-Rezept Token
+AP -> PE--: <b>Dispensieranforderung_Bestätigung\n <i>ERPServiceRequestDispenseRequest  \n.status = completed \n.basedOn = KBV_Prescription \n.extension:EPrescriptionToken = E-Rezept Token
 @enduml

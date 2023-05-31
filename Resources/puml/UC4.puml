@@ -4,10 +4,10 @@ participant "Herstellung- / Taxierungssoftware, AVS" as AP #LightGreen
 participant PVS as A #LightYellow
 participant "E-Rezept-Fachdienst" as FD #LightSalmon
 
-AP -> A++: <b>Prescription_ServiceRequest \n.status = active \n.basedOn = ERPServiceRequestMedicationRequest \n<b>MessageHeader\neventCode = eRezept_ParenteraleZubereitung;Rezeptanfrage
+AP -> A++: <b>Rezeptanforderung \n <i>ERPServiceRequestPrescriptionRequest \n.status = active \n.basedOn = ERPServiceRequestMedicationRequest \n<b>MessageHeader\neventCode = eRezept_ParenteraleZubereitung;Rezeptanfrage
 A -> FD++: E-Rezept einstellen
 FD -> A--: Task(PrescriptionID, AccessCode)
-A -> AP--: <b>Prescription_ServiceRequest \n.status = completed \n.basedOn = KBV_Prescription \n.extension:EPrescriptionToken = E-Rezept Token\n<b>MessageHeader\neventCode = eRezept_ParenteraleZubereitung;Rezeptbestaetigung
+A -> AP--: <b>Rezeptanforderung_Bestätigung \n <i>ERPServiceRequestPrescriptionRequest  \n.status = completed \n.basedOn = KBV_Prescription \n.extension:EPrescriptionToken = E-Rezept Token\n<b>MessageHeader\neventCode = eRezept_ParenteraleZubereitung;Rezeptbestaetigung
 AP <-> FD: E-Rezept einlösen
 
 @enduml
