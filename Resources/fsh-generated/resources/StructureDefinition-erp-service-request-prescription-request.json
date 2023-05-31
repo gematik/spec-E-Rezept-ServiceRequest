@@ -38,19 +38,25 @@
     },
     {
       "identity": "Rezeptanforderung",
-      "name": "Prescription Request Mapping",
+      "name": "Rezeptanforderung",
+      "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
+      "comment": "Mapping für fachliche Informationseinheiten der Verordnungsanfrage des Feature Dokuments"
+    },
+    {
+      "identity": "Rezeptanforderung-Bestaetigung",
+      "name": "Rezeptanforderung_Bestätigung",
       "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
       "comment": "Mapping für fachliche Informationseinheiten der Verordnungsanfrage des Feature Dokuments"
     },
     {
       "identity": "Rezeptanforderung-Storno",
-      "name": "Prescription Request Mapping",
+      "name": "Rezeptanforderung_Storno (Anfragender)",
       "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
       "comment": "Mapping für fachliche Informationseinheiten des Stornos einer Verordnungsanfrage des Feature Dokuments"
     },
     {
       "identity": "Rezeptanforderung-Ablehnung",
-      "name": "Prescription Request Mapping",
+      "name": "Rezeptanforderung_Storno (Verordnender)",
       "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
       "comment": "Mapping für fachliche Informationseinheiten der Ablehnung einer Verordnungsanfrage des Feature Dokuments"
     }
@@ -71,12 +77,16 @@
             "map": "Rezeptanforderung"
           },
           {
+            "identity": "Rezeptanforderung-Bestaetigung",
+            "map": "Rezeptanforderung_Bestätigung"
+          },
+          {
             "identity": "Rezeptanforderung-Storno",
             "map": "Rezeptanforderung_Storno"
           },
           {
             "identity": "Rezeptanforderung-Ablehnung",
-            "map": "Rezeptanforderung_Ablehnung"
+            "map": "Rezeptanforderung_Storno"
           }
         ]
       },
@@ -101,7 +111,17 @@
             ]
           }
         ],
-        "mustSupport": true
+        "mustSupport": true,
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung",
+            "map": "ERezept_Task_ID"
+          },
+          {
+            "identity": "Rezeptanforderung-Bestaetigung",
+            "map": "ERezept_Access_Code"
+          }
+        ]
       },
       {
         "id": "ServiceRequest.identifier",
@@ -176,6 +196,10 @@
           {
             "identity": "Rezeptanforderung",
             "map": "Praeparat"
+          },
+          {
+            "identity": "Rezeptanforderung-Bestaetigung",
+            "map": "Strukturierter_Verordnungsdatensatz"
           }
         ]
       },
@@ -197,6 +221,10 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung",
+            "map": "Vorgangs_ID"
+          },
+          {
+            "identity": "Rezeptanforderung-Bestaetigung",
             "map": "Vorgangs_ID"
           },
           {
@@ -462,6 +490,14 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung",
+            "map": "Freitext"
+          },
+          {
+            "identity": "Rezeptanforderung-Bestaetigung",
+            "map": "Hinweise_fuer_Empfaenger"
+          },
+          {
+            "identity": "Rezeptanforderung-Bestaetigung",
             "map": "Freitext"
           },
           {
