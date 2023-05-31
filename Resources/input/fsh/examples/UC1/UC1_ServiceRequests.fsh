@@ -50,9 +50,6 @@ Description: "ServiceRequest that is returned to the requester"
 * authoredOn = "2023-01-27"
 * requester = Reference(Example-HealthCareService-Organization)
 * performer = Reference(Example-Practitioner)
-* reasonCode = MedicationRequestReasonCS#medication-runs-out
-* reasonReference[+] = Reference(Observation/Medication-Runs-Out-Example-dateTime)
-* reasonReference[+] = Reference(Observation/Medication-Runs-Out-Example-Quantity)
 * note[+].text = "Medikament läuft am 31.01.2023 aus. Es sind noch 7 stk übrig. "
 
 // Dispense Service Requests
