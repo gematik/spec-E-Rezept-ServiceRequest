@@ -126,24 +126,6 @@
             "reference": "Practitioner/Example-Practitioner"
           }
         ],
-        "reasonCode": [
-          {
-            "coding": [
-              {
-                "code": "medication-runs-out",
-                "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-request-reason-cs"
-              }
-            ]
-          }
-        ],
-        "reasonReference": [
-          {
-            "reference": "Observation/Medication-Runs-Out-Example-dateTime"
-          },
-          {
-            "reference": "Observation/Medication-Runs-Out-Example-Quantity"
-          }
-        ],
         "note": [
           {
             "text": "Medikament läuft am 31.01.2023 aus. Es sind noch 7 stk übrig. "
@@ -590,59 +572,6 @@
             "value": "0301234567"
           }
         ]
-      }
-    },
-    {
-      "fullUrl": "http://erp-servicerequest-test.de/Observation/Medication-Runs-Out-Example-dateTime",
-      "resource": {
-        "resourceType": "Observation",
-        "id": "Medication-Runs-Out-Example-dateTime",
-        "meta": {
-          "profile": [
-            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-remaining-medication"
-          ]
-        },
-        "status": "final",
-        "subject": {
-          "reference": "Patient/Example-Patient"
-        },
-        "code": {
-          "coding": [
-            {
-              "code": "range-of-medication",
-              "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-observation-cs"
-            }
-          ]
-        },
-        "valueDateTime": "2023-01-31"
-      }
-    },
-    {
-      "fullUrl": "http://erp-servicerequest-test.de/Observation/Medication-Runs-Out-Example-Quantity",
-      "resource": {
-        "resourceType": "Observation",
-        "id": "Medication-Runs-Out-Example-Quantity",
-        "meta": {
-          "profile": [
-            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-remaining-medication"
-          ]
-        },
-        "status": "final",
-        "subject": {
-          "reference": "Patient/Example-Patient"
-        },
-        "code": {
-          "coding": [
-            {
-              "code": "range-of-medication",
-              "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-observation-cs"
-            }
-          ]
-        },
-        "valueQuantity": {
-          "value": 7,
-          "unit": "stk"
-        }
       }
     }
   ],

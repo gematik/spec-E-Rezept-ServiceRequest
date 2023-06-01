@@ -5,7 +5,7 @@ participant Apotheke as A #LightGreen
 participant "E-Rezept-Fachdienst" as FD #LightSalmon
 
 activate PE
-PE -> A++: <b>Rezeptanforderung_Rezeptuebermittlung \n<i>ERPServiceRequestDispenseRequest \n.status = active \n.basedOn = KBV_PR_ERP_Prescription \n.extension:EPrescriptionToken = E-Rezept Token
+PE -> A++: <b>Dispensieranforderung_Rezeptuebermittlung \n<i>ERPServiceRequestDispenseRequest \n.status = active \n.basedOn = KBV_PR_ERP_Prescription \n.extension:EPrescriptionToken = E-Rezept Token
 A <-> FD: E-Rezept einlösen
-A -> PE--: <b>Dispense_ServiceRequest \n<i>ERPServiceRequestDispenseRequest \n.status = completed \n.basedOn = KBV_Prescription \n.extension:EPrescriptionToken = E-Rezept Token
+A -> PE--: <b>Dispensieranforderung_Bestätigung \n<i>ERPServiceRequestDispenseRequest \n.status = completed \n.basedOn = KBV_Prescription \n.extension:EPrescriptionToken = E-Rezept Token
 @enduml
