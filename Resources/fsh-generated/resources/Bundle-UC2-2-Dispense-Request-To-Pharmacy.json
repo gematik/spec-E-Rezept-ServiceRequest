@@ -35,7 +35,14 @@
           "display": "Praxis Hans Topp-Glücklich"
         },
         "source": {
-          "endpoint": "http://test-practitioner.de"
+          "endpoint": "http://practitioner.endpoint",
+          "name": "Practitioner-Source",
+          "software": "Practitioner-Software",
+          "version": "1.0.0",
+          "contact": {
+            "system": "email",
+            "value": "info@practitioner.email"
+          }
         },
         "destination": [
           {
