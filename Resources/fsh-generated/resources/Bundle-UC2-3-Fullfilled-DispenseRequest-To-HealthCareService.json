@@ -35,7 +35,14 @@
           "display": "Test Apotheke"
         },
         "source": {
-          "endpoint": "http://test-apotheke.de"
+          "endpoint": "http://pharmacy.endpoint",
+          "name": "Pharmacy-Source",
+          "software": "Pharmacy-Software",
+          "version": "1.0.0",
+          "contact": {
+            "system": "email",
+            "value": "info@pharmacy.email"
+          }
         },
         "destination": [
           {

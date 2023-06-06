@@ -47,7 +47,14 @@
           }
         ],
         "source": {
-          "endpoint": "http://test-pflegeheim.de"
+          "endpoint": "http://practitioner.endpoint",
+          "name": "Practitioner-Source",
+          "software": "Practitioner-Software",
+          "version": "1.0.0",
+          "contact": {
+            "system": "email",
+            "value": "info@practitioner.email"
+          }
         },
         "eventCoding": {
           "code": "eRezept_Rezeptanforderung;Rezeptanfrage_Storno",
