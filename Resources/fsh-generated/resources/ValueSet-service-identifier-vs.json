@@ -5,10 +5,10 @@
   "id": "service-identifier-vs",
   "title": "Kennung des Anwendungsfalls",
   "description": "Kennungen zur Angabe eines Anwendungsfalls der E-Rezept Kommunikation",
-  "version": "1.0",
   "url": "https://gematik.de/fhir/erp-servicerequest/ValueSet/service-identifier-vs",
   "experimental": false,
   "publisher": "gematik GmbH",
+  "version": "1.0",
   "compose": {
     "include": [
       {
