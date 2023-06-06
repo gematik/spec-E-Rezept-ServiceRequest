@@ -6,7 +6,6 @@
   "id": "prescription-fullfillment-type-cs",
   "title": "Zustelltyp der Rezeptanforderung (CS)",
   "description": "Wird im Prescription_ServiceRequest genutzt um anzugeben wie mit dem Rezept weiter verfahren werden soll",
-  "version": "1.0",
   "url": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/prescription-fullfillment-type-cs",
   "concept": [
     {
@@ -24,5 +23,6 @@
   ],
   "experimental": false,
   "publisher": "gematik GmbH",
+  "version": "1.0",
   "count": 3
 }

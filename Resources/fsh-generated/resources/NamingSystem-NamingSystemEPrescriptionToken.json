@@ -1,6 +1,7 @@
 {
   "resourceType": "NamingSystem",
   "id": "NamingSystemEPrescriptionToken",
+  "description": "NamingSystem zur Angabe eines E-Rezept-Tokens",
   "name": "NamingSystemEPrescriptionToken",
   "status": "draft",
   "kind": "identifier",
@@ -17,7 +18,6 @@
     }
   ],
   "responsible": "gematik GmbH",
-  "description": "NamingSystem zur Angabe eines E-Rezept-Tokens",
   "uniqueId": [
     {
       "type": "uri",
