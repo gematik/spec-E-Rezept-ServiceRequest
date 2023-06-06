@@ -73,10 +73,6 @@
           ]
         },
         "intent": "filler-order",
-        "requisition": {
-          "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
-          "value": "GroupID-2"
-        },
         "supportingInfo": [
           {
             "type": "Practitioner",
@@ -111,6 +107,10 @@
             "reference": "MedicationRequest/Example-Response-KBV-Prescription"
           }
         ],
+        "requisition": {
+          "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
+          "value": "GroupID-2"
+        },
         "status": "active",
         "subject": {
           "reference": "Patient/Example-Patient"
@@ -276,15 +276,6 @@
           ]
         },
         "status": "active",
-        "payor": [
-          {
-            "identifier": {
-              "system": "http://fhir.de/sid/arge-ik/iknr",
-              "value": "108416214"
-            },
-            "display": "AOK Bayern Die Gesundh."
-          }
-        ],
         "extension": [
           {
             "url": "http://fhir.de/StructureDefinition/gkv/besondere-personengruppe",
@@ -313,6 +304,15 @@
               "code": "3",
               "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_VERSICHERTENSTATUS"
             }
+          }
+        ],
+        "payor": [
+          {
+            "identifier": {
+              "system": "http://fhir.de/sid/arge-ik/iknr",
+              "value": "108416214"
+            },
+            "display": "AOK Bayern Die Gesundh."
           }
         ],
         "type": {
