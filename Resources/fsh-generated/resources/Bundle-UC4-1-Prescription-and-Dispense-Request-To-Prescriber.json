@@ -73,6 +73,10 @@
           ]
         },
         "intent": "order",
+        "requisition": {
+          "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
+          "value": "GroupID-UC4"
+        },
         "code": {
           "coding": [
             {
@@ -92,10 +96,6 @@
             "reference": "MedicationRequest/Example-Zyto-Medication-Request"
           }
         ],
-        "requisition": {
-          "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
-          "value": "GroupID-UC4"
-        },
         "status": "active",
         "subject": {
           "reference": "Patient/Example-Patient"
@@ -194,6 +194,9 @@
           ]
         },
         "amount": {
+          "denominator": {
+            "value": 1
+          },
           "numerator": {
             "extension": [
               {
@@ -202,9 +205,6 @@
               }
             ],
             "unit": "ml"
-          },
-          "denominator": {
-            "value": 1
           }
         },
         "ingredient": [
