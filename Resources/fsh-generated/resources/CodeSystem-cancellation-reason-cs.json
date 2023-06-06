@@ -6,6 +6,7 @@
   "id": "cancellation-reason-cs",
   "title": "Abbruchgrund (CS)",
   "description": "Dieses CodeSystem beschreibt Gründe für das Stornieren einer Anfrage",
+  "version": "1.0",
   "url": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/cancellation-reason-cs",
   "concept": [
     {
@@ -43,6 +44,5 @@
   ],
   "experimental": false,
   "publisher": "gematik GmbH",
-  "version": "1.0",
   "count": 8
 }

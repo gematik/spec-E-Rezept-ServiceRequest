@@ -73,10 +73,6 @@
           ]
         },
         "intent": "order",
-        "requisition": {
-          "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
-          "value": "GroupID-UC1"
-        },
         "code": {
           "coding": [
             {
@@ -100,6 +96,10 @@
             "reference": "MedicationRequest/Example-Initial-Medication-Request"
           }
         ],
+        "requisition": {
+          "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
+          "value": "GroupID-UC1"
+        },
         "status": "active",
         "subject": {
           "reference": "Patient/Example-Patient"

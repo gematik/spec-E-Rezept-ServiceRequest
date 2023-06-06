@@ -112,9 +112,8 @@
         ]
       },
       {
-        "id": "MedicationRequest.medication[x]:medicationReference",
-        "path": "MedicationRequest.medication[x]",
-        "sliceName": "medicationReference",
+        "id": "MedicationRequest.medicationReference",
+        "path": "MedicationRequest.medicationReference",
         "min": 1,
         "max": "1",
         "type": [
@@ -131,24 +130,24 @@
         "mustSupport": true
       },
       {
-        "id": "MedicationRequest.medication[x]:medicationReference.reference",
-        "path": "MedicationRequest.medication[x].reference",
+        "id": "MedicationRequest.medicationReference.reference",
+        "path": "MedicationRequest.medicationReference.reference",
         "min": 1,
         "mustSupport": true
       },
       {
-        "id": "MedicationRequest.medication[x]:medicationReference.type",
-        "path": "MedicationRequest.medication[x].type",
+        "id": "MedicationRequest.medicationReference.type",
+        "path": "MedicationRequest.medicationReference.type",
         "max": "0"
       },
       {
-        "id": "MedicationRequest.medication[x]:medicationReference.identifier",
-        "path": "MedicationRequest.medication[x].identifier",
+        "id": "MedicationRequest.medicationReference.identifier",
+        "path": "MedicationRequest.medicationReference.identifier",
         "max": "0"
       },
       {
-        "id": "MedicationRequest.medication[x]:medicationReference.display",
-        "path": "MedicationRequest.medication[x].display",
+        "id": "MedicationRequest.medicationReference.display",
+        "path": "MedicationRequest.medicationReference.display",
         "max": "0"
       },
       {

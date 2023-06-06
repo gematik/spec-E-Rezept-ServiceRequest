@@ -35,23 +35,8 @@
   "differential": {
     "element": [
       {
-        "id": "MessageHeader.event[x]",
-        "path": "MessageHeader.event[x]",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "type",
-              "path": "$this"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
-        }
-      },
-      {
-        "id": "MessageHeader.event[x]:eventCoding",
-        "path": "MessageHeader.event[x]",
-        "sliceName": "eventCoding",
+        "id": "MessageHeader.eventCoding",
+        "path": "MessageHeader.eventCoding",
         "short": "Der EventCode, der angibt in welchem Anwendungsfall und welchem Übertragungsweg die Kommunikation gerade geschieht",
         "comment": "Für weitere Informationen siehe [ATF-ImplementationGuide](https://simplifier.net/app-transport-framework/~guides)",
         "min": 0,

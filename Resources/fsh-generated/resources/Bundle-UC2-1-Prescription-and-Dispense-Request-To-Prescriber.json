@@ -73,10 +73,6 @@
           ]
         },
         "intent": "order",
-        "requisition": {
-          "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
-          "value": "GroupID-2"
-        },
         "code": {
           "coding": [
             {
@@ -96,6 +92,10 @@
             "reference": "MedicationRequest/Example-Initial-Medication-Request"
           }
         ],
+        "requisition": {
+          "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
+          "value": "GroupID-2"
+        },
         "status": "active",
         "subject": {
           "reference": "Patient/Example-Patient"
@@ -136,10 +136,6 @@
           ]
         },
         "intent": "filler-order",
-        "requisition": {
-          "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
-          "value": "GroupID-2"
-        },
         "supportingInfo": [
           {
             "type": "Practitioner",
@@ -160,6 +156,10 @@
             "value": "012345"
           }
         ],
+        "requisition": {
+          "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
+          "value": "GroupID-2"
+        },
         "status": "active",
         "subject": {
           "reference": "Patient/Example-Patient"
