@@ -92,7 +92,7 @@ Description: "Response sent from Practitioner back to HealthCareService"
 * entry[=].resource = Example-Pharmacy-Organization
 
 
-Instance: UC2-3-Fullfilled-DispenseRequest-To-HealthCareService
+Instance: UC2-5-Fullfilled-DispenseRequest-To-HealthCareService
 InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
 Title: "Fulfilled Dispense info to HealthCareService"

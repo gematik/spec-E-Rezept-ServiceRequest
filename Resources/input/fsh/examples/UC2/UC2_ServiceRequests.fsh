@@ -61,7 +61,7 @@ Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
 * subject = Reference(Example-Patient)
 * occurrenceDateTime = "2023-02-01"
 * authoredOn = "2023-02-01"
-* requester = Reference(Example-HealthCareService-Organization)
+* requester = Reference(Example-Pharmacy-Organization)
 * performer.identifier = Test-Apotheke-Identifier
 * supportingInfo[AusstellenderArzt] = Reference(Example-Practitioner)
 * supportingInfo[AusstellenderArzt].type = "Practitioner"

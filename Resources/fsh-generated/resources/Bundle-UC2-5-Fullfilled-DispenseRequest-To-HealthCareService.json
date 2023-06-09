@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "id": "UC2-3-Fullfilled-DispenseRequest-To-HealthCareService",
+  "id": "UC2-5-Fullfilled-DispenseRequest-To-HealthCareService",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
@@ -113,7 +113,7 @@
         "occurrenceDateTime": "2023-02-01",
         "authoredOn": "2023-02-01",
         "requester": {
-          "reference": "Organization/Example-HealthCareService-Organization"
+          "reference": "Organization/Example-Pharmacy-Organization"
         },
         "performer": [
           {
