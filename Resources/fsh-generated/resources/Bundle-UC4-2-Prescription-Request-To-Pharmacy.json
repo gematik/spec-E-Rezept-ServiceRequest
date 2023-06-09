@@ -35,14 +35,14 @@
           "display": "Praxis Hans Topp-Glücklich"
         },
         "source": {
-          "endpoint": "http://practitioner.endpoint",
           "name": "Practitioner-Source",
           "software": "Practitioner-Software",
           "version": "1.0.0",
           "contact": {
             "system": "email",
             "value": "info@practitioner.email"
-          }
+          },
+          "endpoint": "http://practitioner.endpoint"
         },
         "destination": [
           {
@@ -113,7 +113,7 @@
           {
             "coding": [
               {
-                "code": "send-to-pharmacy",
+                "code": "return-to-requester",
                 "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/prescription-fullfillment-type-cs"
               }
             ]

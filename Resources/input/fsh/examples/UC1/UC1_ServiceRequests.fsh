@@ -85,8 +85,6 @@ InstanceOf: ERPServiceRequestDispenseRequest
 Usage: #inline
 Title: "Initial Dispense Request"
 Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
-* extension[EPrescriptionToken].valueIdentifier.system = "https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken"
-* extension[EPrescriptionToken].valueIdentifier.value = "Task/160.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
 * identifier[0]
   * system = "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier"
   * value = "2"

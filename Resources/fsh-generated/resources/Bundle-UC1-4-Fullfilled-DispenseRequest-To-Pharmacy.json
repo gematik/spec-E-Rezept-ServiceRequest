@@ -47,14 +47,14 @@
           }
         ],
         "source": {
-          "endpoint": "http://pharmacy.endpoint",
-          "name": "Pharmacy-Source",
-          "software": "Pharmacy-Software",
+          "name": "HealthCare-Source",
+          "software": "HealthCare-Software",
           "version": "1.0.0",
           "contact": {
             "system": "email",
-            "value": "info@pharmacy.email"
-          }
+            "value": "info@healthcare.email"
+          },
+          "endpoint": "http://healthcare.endpoint"
         },
         "eventCoding": {
           "code": "eRezept_Rezeptanforderung;Abgabebestaetigung",
@@ -85,15 +85,6 @@
           {
             "type": "MedicationDispense",
             "reference": "MedicationDispense/UC1-Medication-Dispense"
-          }
-        ],
-        "extension": [
-          {
-            "valueIdentifier": {
-              "system": "https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken",
-              "value": "Task/160.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
-            },
-            "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex"
           }
         ],
         "code": {

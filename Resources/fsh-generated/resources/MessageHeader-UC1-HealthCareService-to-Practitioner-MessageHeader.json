@@ -31,14 +31,14 @@
     }
   ],
   "source": {
-    "endpoint": "http://healthcare.endpoint",
     "name": "HealthCare-Source",
     "software": "HealthCare-Software",
     "version": "1.0.0",
     "contact": {
       "system": "email",
       "value": "info@healthcare.email"
-    }
+    },
+    "endpoint": "http://healthcare.endpoint"
   },
   "eventCoding": {
     "code": "eRezept_Rezeptanforderung;Rezeptanfrage",

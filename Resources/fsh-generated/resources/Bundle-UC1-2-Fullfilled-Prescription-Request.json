@@ -47,14 +47,14 @@
           }
         ],
         "source": {
-          "endpoint": "http://practitioner.endpoint",
-          "name": "Practitioner-Source",
-          "software": "Practitioner-Software",
+          "name": "HealthCare-Source",
+          "software": "HealthCare-Software",
           "version": "1.0.0",
           "contact": {
             "system": "email",
-            "value": "info@practitioner.email"
-          }
+            "value": "info@healthcare.email"
+          },
+          "endpoint": "http://healthcare.endpoint"
         },
         "eventCoding": {
           "code": "eRezept_Rezeptanforderung;Rezeptbestaetigung",

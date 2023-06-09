@@ -14,7 +14,7 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * intent = RequestIntent#order
 * code = ServiceRequestTypeCS#prescription-request
 * subject = Reference(Patient/Example-Patient)
-* orderDetail = PrescriptionFullfillmentTypeCS#send-to-pharmacy
+* orderDetail = PrescriptionFullfillmentTypeCS#return-to-requester
 * occurrenceDateTime = "2023-02-01"
 * authoredOn = "2023-01-27"
 * requester = Reference(Example-Pharmacy-Organization)
@@ -37,7 +37,7 @@ Description: "ServiceRequest that is returned to the requester"
 * intent = RequestIntent#order
 * code = ServiceRequestTypeCS#prescription-request
 * subject = Reference(Example-Patient)
-* orderDetail = PrescriptionFullfillmentTypeCS#send-to-pharmacy
+* orderDetail = PrescriptionFullfillmentTypeCS#return-to-requester
 * occurrenceDateTime = "2023-01-30" //update wann es tatsächlich ausgestellt wurde
 * authoredOn = "2023-01-27"
 * requester = Reference(Example-Pharmacy-Organization)

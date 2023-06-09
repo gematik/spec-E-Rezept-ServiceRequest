@@ -47,14 +47,14 @@
           }
         ],
         "source": {
-          "endpoint": "http://pharmacy.endpoint",
           "name": "Pharmacy-Source",
           "software": "Pharmacy-Software",
           "version": "1.0.0",
           "contact": {
             "system": "email",
             "value": "info@pharmacy.email"
-          }
+          },
+          "endpoint": "http://pharmacy.endpoint"
         },
         "eventCoding": {
           "code": "eRezept_Rezeptanforderung;Abgabeanfrage_Storno",

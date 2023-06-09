@@ -20,7 +20,7 @@ InstanceOf: ERPServiceRequestRequestHeader
 Usage: #inline
 Title: "Practitioner-to-HealthCareService-MessageHeader"
 Description: "Message Header from Practitioner to HealthCareService"
-* insert Practitioner-to-Pharmacy(UC2-Forward-Dispense-Request) //Das ist korrekt, Pflegeeinrichtung ist Proxy
+* insert Practitioner-to-Pharmacy(UC2-Response-Prescription-Request) //Das ist korrekt, Pflegeeinrichtung ist Proxy
 * eventCoding = $GEM_CS_ATF_ServiceIdentifier#eRezept_Rezeptanforderung;Rezeptbestaetigung
 
 Instance: UC2-4-HealthCareService-to-Pharmacy-MessageHeader
@@ -28,10 +28,10 @@ InstanceOf: ERPServiceRequestRequestHeader
 Usage: #inline
 Title: "HealthCareService-to-Pharmacy-MessageHeader"
 Description: "Message Header from HealthCareService to Pharmacy"
-* insert Practitioner-to-Pharmacy(UC2-Forward-Dispense-Request)
+* insert Practitioner-to-Pharmacy(UC2-Response-Prescription-Request)
 * eventCoding = $GEM_CS_ATF_ServiceIdentifier#eRezept_Rezeptanforderung;Rezeptbestaetigung
 
-Instance: UC2-3-Pharmacy-to-HealthCareService-MessageHeader
+Instance: UC2-5-Pharmacy-to-HealthCareService-MessageHeader
 InstanceOf: ERPServiceRequestRequestHeader
 Usage: #inline
 Title: "Pharmacy-to-HealthCareService-MessageHeader"
