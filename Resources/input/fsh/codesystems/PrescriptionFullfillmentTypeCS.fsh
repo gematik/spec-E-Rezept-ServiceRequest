@@ -6,4 +6,3 @@ Description: "Wird im Prescription_ServiceRequest genutzt um anzugeben wie mit d
 
 * #issue-prescription "Ausstellung des Rezeptes"
 * #return-to-requester "Ausstellung des Rezeptes und Übermittlung an die anfragende Organisation"
-* #send-to-pharmacy "Weiterleiten des Rezeptes an die ausliefernde Apotheke"

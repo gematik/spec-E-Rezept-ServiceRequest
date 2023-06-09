@@ -15,14 +15,10 @@
     {
       "code": "return-to-requester",
       "display": "Ausstellung des Rezeptes und Übermittlung an die anfragende Organisation"
-    },
-    {
-      "code": "send-to-pharmacy",
-      "display": "Weiterleiten des Rezeptes an die ausliefernde Apotheke"
     }
   ],
   "experimental": false,
   "publisher": "gematik GmbH",
   "version": "1.0",
-  "count": 3
+  "count": 2
 }
