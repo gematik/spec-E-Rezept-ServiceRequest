@@ -12,6 +12,7 @@ class "Rezeptanforderung" as Rezeptanforderung #BUSINESS {
     #Prioritaet
     #Adressat_der_Rezeptanforderung
     #Adressat_der_Rezeptuebermittlung
+    #Ausliefernde_Apotheke
     #Patienteninformationen
     #Vorheriges_Rezept
     ..medizinische Informationen..
