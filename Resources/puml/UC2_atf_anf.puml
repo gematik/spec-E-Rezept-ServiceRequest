@@ -1,0 +1,28 @@
+@startuml
+
+card "Message Bundle Rezeptanforderung" {
+
+card card2 [
+    Service Request
+    ===
+    .status = #active
+    .requester = heimversorgende Apotheke
+    .performer = Verordnender
+]
+
+card card1 [
+    Message Header
+    ===
+    .eventCoding.code = #eRezept_Rezeptanforderung;Rezeptanfrage
+    .destination = Verordnender
+    .sender = heimversorgende Apotheke
+]
+
+collections Ressourcen
+
+}
+
+card1 -[hidden]down- card2
+card2 -[hidden]down- Ressourcen
+
+@enduml
