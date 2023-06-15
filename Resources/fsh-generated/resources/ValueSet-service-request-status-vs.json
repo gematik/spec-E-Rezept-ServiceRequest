@@ -4,7 +4,7 @@
   "name": "ServiceRequestStatusVS",
   "id": "service-request-status-vs",
   "title": "Status des ServiceRequests",
-  "description": "Auswahl an Codes um anzugeben welchen Status ein ServiceRequest hat",
+  "description": "Selection of codes to indicate the status of a ServiceRequest",
   "url": "https://gematik.de/fhir/erp-servicerequest/ValueSet/service-request-status-vs",
   "experimental": false,
   "publisher": "gematik GmbH",

@@ -1,13 +1,13 @@
 CodeSystem: MedicationRequestReasonCS
 Id: medication-request-reason-cs
-Title: "Grund der Medikamentenanfrage (CS)"
-Description: "Liefert Codes für Gründe, warum Medikation angefragt wird"
+Title: "Reason for medication request (CS)"
+Description: "Provides codes for reasons why medication is requested"
 * insert MetaCodeSystem(medication-request-reason-cs)
 * #medication-runs-out "Medikation geht zu neige"
 
 CodeSystem: MedicationObservationCS
 Id: medication-observation-cs
-Title: "Angabe zur Medikamentenbeobachtung (CS)"
-Description: "Gibt Arten der Beobachtungen zum Status eines Medikaments an"
+Title: "Information on medication monitoring (CS)"
+Description: "Specifies types of observations on the status of a drug"
 * insert MetaCodeSystem(medication-observation-cs)
-* #range-of-medication "Angabe der Restreichweite des Medikaments"
+* #range-of-medication "Indication of the remaining range of the drug"
