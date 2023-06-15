@@ -18,11 +18,11 @@
     },
     {
       "code": "medication-stopped",
-      "display": "drug was discontinued"
+      "display": "Medication was discontinued"
     },
     {
       "code": "medication-paused",
-      "display": "Drug has been paused"
+      "display": "Medication has been paused"
     },
     {
       "code": "medication-altered-dosage",

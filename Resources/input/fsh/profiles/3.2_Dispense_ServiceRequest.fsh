@@ -25,7 +25,7 @@ Description: "ServiceRequest that is used to supply a recipe"
 * identifier[predisId] only ERPServiceRequestPreDisIdentifier
   * ^short = "Identifier that connects a prescription and a dispensing request."
   * ^comment = "Can be mapped via a UUID, for example."
-  * ^definition = "In some applications, it is necessary to know which prescription request belongs to which delivery request. If, for example, a drug is requested, you want to be able to track which is the corresponding delivery request. The predisIdentifier is used for this purpose, which identifies a pair of ServiceRequest**Prescription**Request and ServiceRequest**Dispense**Request together."
+  * ^definition = "In some applications, it is necessary to know which prescription request belongs to which delivery request. If, for example, a medication is requested, you want to be able to track which is the corresponding delivery request. The predisIdentifier is used for this purpose, which identifies a pair of ServiceRequest**Prescription**Request and ServiceRequest**Dispense**Request together."
 
 * basedOn 0..1 MS
   * ^short = "KBV Prescription to be supplied by the pharmacy."
@@ -59,7 +59,7 @@ Description: "ServiceRequest that is used to supply a recipe"
 
 * occurrence[x] 1..1 MS
 * occurrence[x] only dateTime
-  * ^short = "Indicates the date when the drug should be delivered."
+  * ^short = "Indicates the date when the medication should be delivered."
 
 * authoredOn 1..1 MS
   * ^short = "Creation date of the request."

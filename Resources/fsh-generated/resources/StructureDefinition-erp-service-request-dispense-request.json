@@ -141,7 +141,7 @@
         "path": "ServiceRequest.identifier",
         "sliceName": "predisId",
         "short": "Identifier that connects a prescription and a dispensing request.",
-        "definition": "In some applications, it is necessary to know which prescription request belongs to which delivery request. If, for example, a drug is requested, you want to be able to track which is the corresponding delivery request. The predisIdentifier is used for this purpose, which identifies a pair of ServiceRequest**Prescription**Request and ServiceRequest**Dispense**Request together.",
+        "definition": "In some applications, it is necessary to know which prescription request belongs to which delivery request. If, for example, a medication is requested, you want to be able to track which is the corresponding delivery request. The predisIdentifier is used for this purpose, which identifies a pair of ServiceRequest**Prescription**Request and ServiceRequest**Dispense**Request together.",
         "comment": "Can be mapped via a UUID, for example.",
         "min": 0,
         "max": "1",
@@ -264,7 +264,7 @@
       {
         "id": "ServiceRequest.occurrence[x]",
         "path": "ServiceRequest.occurrence[x]",
-        "short": "Indicates the date when the drug should be delivered.",
+        "short": "Indicates the date when the medication should be delivered.",
         "min": 1,
         "type": [
           {
