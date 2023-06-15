@@ -7,14 +7,12 @@ title Ablauf für Rezeptabgabe parenteraler Zubereitungen
 hide footbox
 autonumber
 
-box "Apotheke" #White
-    participant "Taxierungssoftware, Zytostatika-Programm" as AVS
-end box
 
-box "LEI des Verordnenden" #White
-    participant "Primärsystem" as PS
-    actor "Verordnender \nLeistungserbringer" as Arzt
-end box
+actor "Apotheke\n(Taxierungssoftware, Zytostatika-Programm)" as AVS
+actor "Verordnender \nLeistungserbringer" as Arzt
+
+participant "Primärsystem" as Arzt
+
 
 legend bottom right
     __Legende__
@@ -28,26 +26,21 @@ endlegend
 
 AVS ->> AVS: Zubereitungsdaten
 
-AVS ->> PS: //Rezeptanforderung//
+AVS ->> Arzt: //Rezeptanforderung//
 
 break #LightPink Stornierung notwendig
-    AVS ->> PS: //Rezeptanforderung_Storno//
-    PS ->x PS: **Rezeptanforderung wird verworfen**
-    PS ->> AVS: //Rezeptanforderung_Storno//
+    AVS ->> Arzt: //Rezeptanforderung_Storno//
+    Arzt ->x Arzt: **Rezeptanforderung wird verworfen**
+    Arzt ->> AVS: //Rezeptanforderung_Storno//
 end
 
-PS ->> PS: **Arbeitslisteneintrag erzeugen und vorhalten**
-
-PS ->> Arzt: **Rezeptanforderung präsentieren**
-return :Rezeptzustimmung ODER :Rezeptablehnung
-
 alt #PaleGreen Arzt stimmt Rezeptanforderung zu
-    ref over Arzt, PS #lightyellow
+    ref over Arzt, Arzt #lightyellow
         E-Rezept einstellen
     end ref
-    PS ->> AVS: //Rezeptanforderung_Bestätigung//
+    Arzt ->> AVS: //Rezeptanforderung_Bestätigung//
 else #LightPink Arzt lehnt Rezeptanforderung ab
-    PS ->> AVS: //Rezeptanforderung_Storno//
+    Arzt ->> AVS: //Rezeptanforderung_Storno//
 
 end
 
