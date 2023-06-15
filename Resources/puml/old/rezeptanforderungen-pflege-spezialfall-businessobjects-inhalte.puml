@@ -24,6 +24,16 @@ class "Rezeptanforderung" as Rezeptanforderung #BUSINESS {
     #Freitext
 }
 
+class "Rezeptanforderung_Bestätigung" as Rezeptanforderung_Bestätigung #BUSINESS {
+    ..administrative Informationen..
+    #Vorgangs_ID
+    ..medizinische Informationen..
+    #Strukturierter_Verordnungsdatensatz
+    #Hinweise_fuer_Empfaenger
+    ..ergänzende Informationen..
+    #Freitext
+}
+
 
 class "Rezeptanforderung_Storno" as Rezeptanforderung_Storno #BUSINESS {
     ..administrative Informationen..
@@ -32,5 +42,6 @@ class "Rezeptanforderung_Storno" as Rezeptanforderung_Storno #BUSINESS {
 }
 
 Rezeptanforderung_Storno -up- Rezeptanforderung: revidiert >
+Rezeptanforderung_Bestätigung -left- Rezeptanforderung: beantwortet >
 
 @enduml
