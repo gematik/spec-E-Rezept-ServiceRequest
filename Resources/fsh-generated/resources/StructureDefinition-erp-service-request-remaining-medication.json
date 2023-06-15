@@ -8,7 +8,7 @@
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "Diese Observation beschreibt wie lange oder wie viel einer Medikation noch vorhanden ist",
+  "description": "This observation describes how long or how much of a medication is left",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -66,13 +66,13 @@
       {
         "id": "Observation.code.coding.code",
         "path": "Observation.code.coding.code",
-        "short": "Identifiziert diese Observation als eine Angabe der Restreichweite einer Medikation",
+        "short": "Identifies this observation as an indication of the remaining range of a medication",
         "fixedCode": "range-of-medication"
       },
       {
         "id": "Observation.subject",
         "path": "Observation.subject",
-        "short": "Referenz des Patienten, der die Medikation erhält",
+        "short": "Reference of the patient receiving the medication",
         "min": 1,
         "type": [
           {
@@ -87,7 +87,7 @@
       {
         "id": "Observation.value[x]",
         "path": "Observation.value[x]",
-        "short": "Angabe der Restreichweite in Menge oder Datum, an dem die Medikation ausläuft",
+        "short": "Indication of the remaining range in quantity or date on which the medication expires",
         "min": 1,
         "type": [
           {

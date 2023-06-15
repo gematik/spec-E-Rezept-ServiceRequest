@@ -2,22 +2,22 @@ Profile: ERPServiceRequestMedicationRequest
 Parent: MedicationRequest
 Id: erp-service-request-medication-request
 Title: "ERP Service Request Medication Request"
-Description: "Medizinische und pharmazeutische Angaben zur Rezeptanfrage"
+Description: "Medical and pharmaceutical information for the prescription request"
 * insert Meta (erp-service-request-medication-request)
 
 * extension MS
-  * ^comment = "Falls die vorherige RezeptID bekannt ist, kann diese hier benannt werden"
+  * ^comment = "If the previous recipe ID is known, it can be named here"
 * extension contains
     PrescriptionIdEx named PriorPrescriptionID 0..1 MS
 * extension[PriorPrescriptionID]
-  * ^short = "Angabe einer vorherigen PrescriptionID, die der angeforderten Medikation entspricht."
-  * ^comment = "Ist in der Form xxx.xxx.xxx.xxx.xxx.xx anzugeben."
+  * ^short = "Provide a previous PrescriptionID that corresponds to the requested medication."
+  * ^comment = "Must be given in the form xxx.xxx.xxx.xxx.xxx.xx."
   * ^definition = "
-Der MedicationRequest kann eine PrescriptionId eines bereits ausgestellten Rezepts enthalten.
+The MedicationRequest can contain a PrescriptionId of a prescription that has already been issued.
 
-Das schreibende System KANN bei Kenntnis einer vorherigen Rezept-Id diese im MedicationRequest angeben.
+If a previous prescription ID is known, the writing system MAY indicate this in the medication request.
 
-Das empfangende System MUSS bei vorliegen dieser ID in der Lage sein nach der vorherigen Verordnung zu suchen und dem Nutzer die Möglichkeit geben die Inhalte darzustellen und zu vergleichen.
+If this ID is available, the receiving system MUST be able to search for the previous regulation and give the user the opportunity to display and compare the content.
 "
 
 * medication[x] MS
@@ -42,8 +42,8 @@ Das empfangende System MUSS bei vorliegen dieser ID in der Lage sein nach der vo
 * encounter 0..0
 
 * requester MS
-  * ^short = "Anfragender Arzt/ Einrichung/ Apotheke für diesen MedicationRequest"
-  * ^comment = "Ist hier optional anzugeben, da es schon im ServiceRequest angegeben werden muss"
+  * ^short = "Requesting doctor/facility/pharmacy for this MedicationRequest"
+  * ^comment = "Is optional to specify here, since it must already be specified in the ServiceRequest"
 * requester only Reference($KBV_PR_FOR_Practitioner or ERPServiceRequestOrganization)
 * requester.type 0..0
 * requester.identifier 0..1
@@ -57,8 +57,8 @@ Das empfangende System MUSS bei vorliegen dieser ID in der Lage sein nach der vo
 
 // Wenn eine Coverage genutzt wird, kann es auch gleich die richtige sein
 * insurance only Reference($KBV_PR_FOR_Coverage)
-  * ^short = "Versicherungsstatus des Patienten, für den die Medikation angefragt wird"
-  * ^comment = "Falls diese Information schon bekannt ist, kann sie optional hier angegeben werden"
+  * ^short = "Insurance status of the patient for whom the medication is requested"
+  * ^comment = "If this information is already known, it can optionally be given here"
 * insurance 0..1
 
 * dosageInstruction 0..1
@@ -66,8 +66,8 @@ Das empfangende System MUSS bei vorliegen dieser ID in der Lage sein nach der vo
 * dispenseRequest 0..1 MS
 * dispenseRequest.quantity 1..1 MS
 * dispenseRequest.quantity.value 1..1 MS
-* dispenseRequest.quantity.value ^short = "Anzahl der verordneten Packungen"
-* dispenseRequest.quantity.value ^definition = "Anzahl der verordneten Packungen"
+* dispenseRequest.quantity.value ^short = "Number of packs prescribed"
+* dispenseRequest.quantity.value ^definition = "Number of packs prescribed"
 * dispenseRequest.quantity.unit 0..0
 * dispenseRequest.quantity.system 1..1 MS
 * dispenseRequest.quantity.system = $UNITSOFMEASURE (exactly)

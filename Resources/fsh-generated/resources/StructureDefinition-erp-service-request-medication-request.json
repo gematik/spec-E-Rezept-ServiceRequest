@@ -8,7 +8,7 @@
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "Medizinische und pharmazeutische Angaben zur Rezeptanfrage",
+  "description": "Medical and pharmaceutical information for the prescription request",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -63,16 +63,16 @@
       {
         "id": "MedicationRequest.extension",
         "path": "MedicationRequest.extension",
-        "comment": "Falls die vorherige RezeptID bekannt ist, kann diese hier benannt werden",
+        "comment": "If the previous recipe ID is known, it can be named here",
         "mustSupport": true
       },
       {
         "id": "MedicationRequest.extension:PriorPrescriptionID",
         "path": "MedicationRequest.extension",
         "sliceName": "PriorPrescriptionID",
-        "short": "Angabe einer vorherigen PrescriptionID, die der angeforderten Medikation entspricht.",
-        "definition": "\nDer MedicationRequest kann eine PrescriptionId eines bereits ausgestellten Rezepts enthalten.\n\nDas schreibende System KANN bei Kenntnis einer vorherigen Rezept-Id diese im MedicationRequest angeben.\n\nDas empfangende System MUSS bei vorliegen dieser ID in der Lage sein nach der vorherigen Verordnung zu suchen und dem Nutzer die Möglichkeit geben die Inhalte darzustellen und zu vergleichen.\n",
-        "comment": "Ist in der Form xxx.xxx.xxx.xxx.xxx.xx anzugeben.",
+        "short": "Provide a previous PrescriptionID that corresponds to the requested medication.",
+        "definition": "\nThe MedicationRequest can contain a PrescriptionId of a prescription that has already been issued.\n\nIf a previous prescription ID is known, the writing system MAY indicate this in the medication request.\n\nIf this ID is available, the receiving system MUST be able to search for the previous regulation and give the user the opportunity to display and compare the content.\n",
+        "comment": "Must be given in the form xxx.xxx.xxx.xxx.xxx.xx.",
         "min": 0,
         "max": "1",
         "type": [
@@ -187,8 +187,8 @@
       {
         "id": "MedicationRequest.requester",
         "path": "MedicationRequest.requester",
-        "short": "Anfragender Arzt/ Einrichung/ Apotheke für diesen MedicationRequest",
-        "comment": "Ist hier optional anzugeben, da es schon im ServiceRequest angegeben werden muss",
+        "short": "Requesting doctor/facility/pharmacy for this MedicationRequest",
+        "comment": "Is optional to specify here, since it must already be specified in the ServiceRequest",
         "type": [
           {
             "code": "Reference",
@@ -233,8 +233,8 @@
       {
         "id": "MedicationRequest.insurance",
         "path": "MedicationRequest.insurance",
-        "short": "Versicherungsstatus des Patienten, für den die Medikation angefragt wird",
-        "comment": "Falls diese Information schon bekannt ist, kann sie optional hier angegeben werden",
+        "short": "Insurance status of the patient for whom the medication is requested",
+        "comment": "If this information is already known, it can optionally be given here",
         "max": "1",
         "type": [
           {
@@ -264,8 +264,8 @@
       {
         "id": "MedicationRequest.dispenseRequest.quantity.value",
         "path": "MedicationRequest.dispenseRequest.quantity.value",
-        "short": "Anzahl der verordneten Packungen",
-        "definition": "Anzahl der verordneten Packungen",
+        "short": "Number of packs prescribed",
+        "definition": "Number of packs prescribed",
         "min": 1,
         "mustSupport": true
       },

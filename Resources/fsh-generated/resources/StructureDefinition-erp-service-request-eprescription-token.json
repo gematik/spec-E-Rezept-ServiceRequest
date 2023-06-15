@@ -8,7 +8,7 @@
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "Identifier, der ein E-Rezept-Token enthält",
+  "description": "Identifier containing an e-prescription token",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -44,8 +44,8 @@
       {
         "id": "Identifier.value",
         "path": "Identifier.value",
-        "short": "Angabe des E-Rezept-Tokens",
-        "comment": "Der Token hat die Form '/Task/{PrescriptionID}/$accept?ac={AccessCode}. Siehe [gemSpec_DM_eRp](https://fachportal.gematik.de/fachportal-import/files/gemSpec_DM_eRp_V1.5.0.pdf)'.",
+        "short": "Specification of the e-prescription token",
+        "comment": "The token is of the form '/Task/{PrescriptionID}/$accept?ac={AccessCode}. See [gemSpec_DM_eRp](https://fachportal.gematik.de/fachportal-import/files/gemSpec_DM_eRp_V1.5.0.pdf)'.",
         "min": 1,
         "mustSupport": true
       }

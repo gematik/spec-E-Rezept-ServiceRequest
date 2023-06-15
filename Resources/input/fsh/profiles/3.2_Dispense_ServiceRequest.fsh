@@ -2,95 +2,95 @@ Profile: ERPServiceRequestDispenseRequest
 Parent: ServiceRequest
 Id: erp-service-request-dispense-request
 Title: "ERP Service Request Dispense Request"
-Description: "ServiceRequest, der genutzt wird um ein Rezept zu beliefern"
+Description: "ServiceRequest that is used to supply a recipe"
 * insert Meta (erp-service-request-dispense-request)
 
 * extension MS
 * extension contains
     EPrescriptionTokenEX named EPrescriptionToken 0..1 MS //muss 0..1 sein für den Fall, dass die Pflegeeinrichtung den DispenseRequest an den Arzt schickt, der es dann zur Apotheke weiterleitet
 * extension[EPrescriptionToken]
-  * ^short = "Hier kann der E-Rezept Token für die Belieferung der Apotheke bereit gestellt werden."
-  * ^comment = "Der Token hat die Form '/Task/{PrescriptionID}/$accept?ac={AccessCode}. Siehe [gemSpec_DM_eRp](https://fachportal.gematik.de/fachportal-import/files/gemSpec_DM_eRp_V1.5.0.pdf)'."
+  * ^short = "The e-prescription token for delivery to the pharmacy can be provided here."
+  * ^comment = "The token is of the form '/Task/{PrescriptionID}/$accept?ac={AccessCode}. See [gemSpec_DM_eRp](https://fachportal.gematik.de/fachportal-import/files/gemSpec_DM_eRp_V1.5.0.pdf)'."
 
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
-* identifier ^slicing.description = "Definiert Identifier, die in einem Vorgang genutzt werden sollen"
+* identifier ^slicing.description = "Defines identifiers to be used in a process"
 
 * identifier 1..* MS
 * identifier contains requestId 1..1 and predisId 0..1
 * identifier[requestId] only ERPServiceRequestRequestIdentifier
-  * ^short = "Identifier, der eineindeutig einen ServiceRequest referenziert."
-  * ^comment = "Zur Referenzierung und Zuordnung von ServiceRequest, bspw. wenn ein ServiceRequest einen anderen ersetzen soll, ist es wichtig diese Zuordnung mit dem Identifier treffen zu können. Kann beispielsweise über eine UUID abgebildet werden."
+  * ^short = "Identifier that uniquely references a ServiceRequest."
+  * ^comment = "For referencing and assignment of ServiceRequest, e.g. if one ServiceRequest is to replace another, it is important to be able to make this assignment with the identifier. Can be mapped via a UUID, for example."
 * identifier[predisId] only ERPServiceRequestPreDisIdentifier
-  * ^short = "Identifier, der einen Prescription- und einen Dispenserequest verbindet."
-  * ^comment = "Kann beispielsweise über eine UUID abgebildet werden."
-  * ^definition = "In einigen Anwendungsfällen werden bedarf es der Information welche Verordnungsanfrage zu welcher Belieferungsanfrage gehört. Wenn bspw. ein Medikament angefragt wird möchte man verfolgen können welche die dazugehörige Belieferungsanfrage ist. Hierzu dient der predisIdentifier, der ein Paar von ServiceRequest**Prescription**Request und ServiceRequest**Dispense**Request zusammengehörig identifiziert."
+  * ^short = "Identifier that connects a prescription and a dispensing request."
+  * ^comment = "Can be mapped via a UUID, for example."
+  * ^definition = "In some applications, it is necessary to know which prescription request belongs to which delivery request. If, for example, a drug is requested, you want to be able to track which is the corresponding delivery request. The predisIdentifier is used for this purpose, which identifies a pair of ServiceRequest**Prescription**Request and ServiceRequest**Dispense**Request together."
 
 * basedOn 0..1 MS
-  * ^short = "KBV Prescription, die von der Apotheke beliefert werden soll."
-  * ^comment = "Einem ServiceRequest ist genau ein MedicationRequest zugeordnet, sodass unabhängige Bearbeitungen möglich sind."
+  * ^short = "KBV Prescription to be supplied by the pharmacy."
+  * ^comment = "Exactly one MedicationRequest is assigned to a ServiceRequest, so that independent processing is possible."
 * basedOn only Reference($KBV_PR_ERP_Prescription)
 
 * requisition 1..1 MS
 * requisition only ERPServiceRequestProcedureIdentifier
-  * ^short = "Identifier des Vorgangs. Alle ServiceRequests innerhalb eines Vorgangs erhalten die gleiche ID."
-  * ^comment = "Ist als Fall- oder Vorgangs-ID zu verstehen, um nachverfolgen zu können zu welcher Anfrage der ServiceRequest gehört."
+  * ^short = "Identifier of the process. All ServiceRequests within a process receive the same ID."
+  * ^comment = "Is to be understood as a case or process ID in order to be able to track which request the ServiceRequest belongs to."
 
 * status MS
 * status from ServiceRequestStatusVS
-  * ^short = "Gibt den Bearbeitungsstand eines ServiceRequests an."
-  * ^comment = "Bei Statusänderung wird dieser Wert überschrieben."
+  * ^short = "Indicates the processing status of a service request."
+  * ^comment = "If the status changes, this value is overwritten."
 
 * intent = #filler-order (exactly)
 
 * code MS
-  * ^short = "Gibt die Art des ServiceRequests an."
+  * ^short = "Indicates the type of service request."
 * code.coding 1..1 MS
 * code.coding from ServiceRequestTypeVS
 * code.coding.system 1..1
 * code.coding.code 1..1
 * code.coding.code = #dispense-request (exactly)
-  * ^comment = "#dispense-request dient als ServiceRequest für eine Apotheke zur Belieferung eines Rezeptes."
+  * ^comment = "#dispense-request serves as a service request for a pharmacy to deliver a prescription."
 
 * subject MS
 * subject only Reference($KBV_PR_FOR_Patient)
-  * ^short = "Patient für den stellvertretend ein Rezept beliefert werden soll."
+  * ^short = "Patient for whom a prescription is to be delivered."
 
 * occurrence[x] 1..1 MS
 * occurrence[x] only dateTime
-  * ^short = "Gibt das Datum an, an dem das Medikament ausgeliefert werden soll."
+  * ^short = "Indicates the date when the drug should be delivered."
 
 * authoredOn 1..1 MS
-  * ^short = "Erstellungsdatum der Anfrage."
-  * ^comment = "Wird initial angelegt und dann nicht mehr verändert."
+  * ^short = "Creation date of the request."
+  * ^comment = "Is initially created and then no longer changed."
 
 * requester 1..1 MS
 * requester only Reference(ERPServiceRequestOrganization or $KBV_PR_FOR_Practitioner)
-  * ^short = "Anfragende Einrichtung oder Arzt."
-  * ^comment = "Falls das System des Verordnenden dieses Profil erstellt muss hier die Einrichtung/ Person angegeben werden, die die Verordnungsanfrage gestellt hat."
+  * ^short = "Inquiring institution or doctor."
+  * ^comment = "If the prescriber's system creates this profile, the institution/person who made the prescription request must be specified here."
 
 * performer MS
 * performer only Reference(ERPServiceRequestOrganization)
-  * ^short = "Apotheke, die das E-Rezept beliefern soll."
+  * ^short = "Pharmacy that is to deliver the e-prescription."
 
 * supportingInfo ^slicing.discriminator.type = #pattern
 * supportingInfo ^slicing.discriminator.path = "type"
 * supportingInfo ^slicing.rules = #open
-* supportingInfo ^slicing.description = "Unterstützende Informationen zur Belieferung"
+* supportingInfo ^slicing.description = "Supporting information about delivery"
 
 * supportingInfo MS
 * supportingInfo contains AusstellenderArzt 1..1 MS and AbgabeDaten 0..1 MS
 * supportingInfo[AusstellenderArzt] only Reference($KBV_PR_FOR_Practitioner)
 * supportingInfo[AusstellenderArzt].type = "Practitioner" (exactly)
-  * ^short = "Arzt, der die Verordnung ausgestellt hat."
-  * ^comment = "Falls es Rückfragen zur Verordnung gibt kann die Apotheke diese Informationen nutzen, um sich mit einem Verordnenden in Verbindung zu setzen."
+  * ^short = "Doctor who issued the prescription."
+  * ^comment = "If there are any questions about the prescription, the pharmacy can use this information to get in touch with a prescriber."
 // TODO: wenn status = erfüllt dann Abgabedaten vorhanden
 * supportingInfo[AbgabeDaten] only Reference($GEM_ERP_PR_MedicationDispense)
 * supportingInfo[AbgabeDaten].type = "MedicationDispense" (exactly)
-  * ^short = "Abgabedaten, die auch an den E-Rezept-Fachdienst gesendet werden."
-  * ^comment = "Daduruch kann die anfragende Einrichtung/ Person nachvollziehen, welche Medikamente tatsächlich beliefert werden."
+  * ^short = "Delivery data that is also sent to the e-prescription specialist service."
+  * ^comment = "In this way, the inquiring facility/person can understand which medications are actually supplied."
   
 * note MS
-  * ^short = "Weitere Angaben zur Belieferung."
-  * ^comment = "Eventuell nicht spezifizierte Anwendungsfälle können hier im Freitext platziert werden."
+  * ^short = "Further information on delivery."
+  * ^comment = "Any use cases that are not specified can be placed here in free text."

@@ -2,7 +2,7 @@ Profile: ERPServiceRequestOrganization
 Parent: $KBV_PR_Base_Organization
 Id: erp-service-request-organization
 Title: "ERP Service Request Organization"
-Description: "Organisation die genutzt werden kann, um eine KIM-Addresse mit anzugeben"
+Description: "Organization that can be used to specify a KIM address"
 * insert Meta (erp-service-request-organization)
 
 * identifier MS

@@ -8,7 +8,7 @@
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "Dieser Identifier wird genutzt, um einen einzelnen ServiceRequest zu identifizieren",
+  "description": "This identifier is used to identify a single ServiceRequest",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -42,8 +42,8 @@
       {
         "id": "Identifier.value",
         "path": "Identifier.value",
-        "short": "String, der den ServiceRequest eindeutig referenziert.",
-        "comment": "Es wird empfohlen eine UUID zu verwenden.",
+        "short": "String that uniquely references the ServiceRequest.",
+        "comment": "It is recommended to use a UUID.",
         "min": 1,
         "mustSupport": true
       }
