@@ -40,25 +40,25 @@
       "identity": "Rezeptanforderung",
       "name": "Rezeptanforderung",
       "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
-      "comment": "Mapping für fachliche Informationseinheiten der Verordnungsanfrage des Feature Dokuments"
+      "comment": "Mapping for 'fachliche Informationseinheiten' of the 'Verordnungsanfrage' of the feature document"
     },
     {
       "identity": "Rezeptanforderung-Bestaetigung",
       "name": "Rezeptanforderung_Bestätigung",
       "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
-      "comment": "Mapping für fachliche Informationseinheiten der Verordnungsanfrage des Feature Dokuments"
+      "comment": "Mapping for 'fachliche Informationseinheiten' of the 'Verordnungsanfrage' of the feature document"
     },
     {
       "identity": "Rezeptanforderung-Storno",
       "name": "Rezeptanforderung_Storno (Anfragender)",
       "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
-      "comment": "Mapping für fachliche Informationseinheiten des Stornos einer Verordnungsanfrage des Feature Dokuments"
+      "comment": "Mapping for 'fachliche Informationseinheiten' of the cancellation of a 'Verordnungsanfrage' of the feature document"
     },
     {
       "identity": "Rezeptanforderung-Ablehnung",
       "name": "Rezeptanforderung_Storno (Verordnender)",
       "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
-      "comment": "Mapping für fachliche Informationseinheiten der Ablehnung einer Verordnungsanfrage des Feature Dokuments"
+      "comment": "Mapping for 'fachliche Informationseinheiten' of the refusal of a 'Verordnungsanfrage' of the feature document"
     }
   ],
   "kind": "resource",

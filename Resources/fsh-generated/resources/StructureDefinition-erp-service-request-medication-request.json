@@ -40,7 +40,7 @@
       "identity": "Rezeptanforderung-medizinische-Informationen",
       "name": "Medication Request Mapping (Strukturierter_Verordnungsdatensatz)",
       "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
-      "comment": "Mapping für fachliche Informationseinheiten der angefragten Medikation des Feature Dokuments"
+      "comment": "Mapping for 'fachliche Informationseineit' of the requested medication of the feature document"
     }
   ],
   "kind": "resource",

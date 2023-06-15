@@ -40,13 +40,13 @@
       "identity": "Dispensieranforderung-Rezeptuebermittlung",
       "name": "Dispensieranforderung_Rezeptuebermittlung",
       "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
-      "comment": "Mapping für fachliche Informationseinheiten der Belieferungsanfrage des Feature Dokuments"
+      "comment": "Mapping for 'fachliche Informationseineit' of the 'Belieferungsanfrage' of the feature document"
     },
     {
       "identity": "Dispensieranforderung-Bestaetigung",
       "name": "Dispensieranforderung_Bestätigung",
       "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
-      "comment": "Mapping für fachliche Informationseinheiten der Belieferungsanfrage des Feature Dokuments"
+      "comment": "Mapping for 'fachliche Informationseineit' of the 'Belieferungsanfrage' of the feature document"
     }
   ],
   "kind": "resource",
