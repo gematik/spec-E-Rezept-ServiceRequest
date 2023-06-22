@@ -1,4 +1,4 @@
-- name: Rezeptanforderung
+- name: Rezeptanforderung in der Pflege
   filename: 0-Index.page.md
 - name: Fachliche Beschreibung
   filename: 1-Fachliche-Beschreibung.page.md
