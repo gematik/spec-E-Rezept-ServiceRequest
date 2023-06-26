@@ -44,7 +44,7 @@
     },
     {
       "identity": "Rezeptanforderung-Bestaetigung",
-      "name": "Rezeptanforderung_Bestätigung",
+      "name": "Rezeptanforderung_Rezeptübermittlung",
       "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
       "comment": "Mapping für fachliche Informationseinheiten der Verordnungsanfrage des Feature Dokuments"
     },
@@ -78,7 +78,7 @@
           },
           {
             "identity": "Rezeptanforderung-Bestaetigung",
-            "map": "Rezeptanforderung_Bestätigung"
+            "map": "Rezeptanforderung_Rezeptübermittlung"
           },
           {
             "identity": "Rezeptanforderung-Storno",
