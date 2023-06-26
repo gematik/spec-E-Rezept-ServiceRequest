@@ -36,7 +36,7 @@ end
 
 alt #PaleGreen Arzt ist einverstanden 
     
-    Arztpraxis ->> Pflegeeinrichtung: //Rezeptanforderung_Bestätigung//
+    Arztpraxis ->> Pflegeeinrichtung: //Rezeptanforderung_Rezeptübermittlung//
     Pflegeeinrichtung ->> Apotheke: //Dispensieranforderung_Rezeptübermittlung//
     
     Apotheke ->> Pflegeeinrichtung: //Dispensieranforderung_Bestätigung//

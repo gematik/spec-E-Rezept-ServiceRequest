@@ -38,7 +38,7 @@ end
 
 alt Rezeptanforderung liegt vor beim Verordnenden
     alt #PaleGreen Arzt ist einverstanden 
-        Arztpraxis ->> Pflegeeinrichtung: Rezeptanforderung_Bestätigung
+        Arztpraxis ->> Pflegeeinrichtung: Rezeptanforderung_Rezeptübermittlung
         Pflegeeinrichtung --> Versicherter: opt. Benachrichtigung über Ausstellung des E-Rezepts
         Versicherter ->> Apotheke: **Medikamentabholung gg. Rezeptvorlage**
         note left

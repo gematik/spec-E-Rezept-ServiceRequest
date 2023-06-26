@@ -38,7 +38,7 @@ alt #PaleGreen Arzt stimmt Rezeptanforderung zu
     ref over Arzt, Arzt #lightyellow
         E-Rezept einstellen
     end ref
-    Arzt ->> AVS: //Rezeptanforderung_Bestätigung//
+    Arzt ->> AVS: //Rezeptanforderung_Rezeptübermittlung//
 else #LightPink Arzt lehnt Rezeptanforderung ab
     Arzt ->> AVS: //Rezeptanforderung_Storno//
 
