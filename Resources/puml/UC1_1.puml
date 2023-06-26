@@ -8,6 +8,6 @@ activate PE
 PE -> A++: <b>Rezeptanforderung \n<i>ERPServiceRequestPrescriptionRequest \n.status = #active \n.basedOn = ERPServiceRequestMedicationRequest
 A -> FD++: E-Rezept einstellen
 FD -> A--: Task(PrescriptionID, AccessCode)
-A -> PE--: <b>Rezeptanforderung_Rezeptübermittlung\n<i>ERPServiceRequestPrescriptionRequest \n.status = #completed \n.basedOn = KBV_PR_ERP_Prescription \n.extension:EPrescriptionToken = E-Rezept Token
+A -> PE--: <b>Rezeptanforderung_Rezeptübermittlung\n<i>ERPServiceRequestPrescriptionRequest \n.status = #completed \n.basedOn = KBV_PR_ERP_Prescription \n.extension:EPrescriptionToken = E-Rezept Token ( <i>opt.</i>)
 PE -> PE: Speichern(E-Rezept Token)
 @enduml
