@@ -9,7 +9,7 @@ WICHTIG: Wenn ein Objekt (z.B. ein ServiceRequest) bearbeitet, modifiziert und d
 
 ### Anwendungsfall Parenterale Zubereitung
 
-Im Anwendungsfall {{pagelink:Home/Anwendungsfaelle/Parenterale-Zubereitung}} sind folgende Identifier zu verwenden:
+Im Anwendungsfall {{pagelink:Home/Anwendungsfaelle/2_Parenterale-Zubereitung}} sind folgende Identifier zu verwenden:
 
 |Fachliche Beschreibung|.identifier.system|
 |---|---|

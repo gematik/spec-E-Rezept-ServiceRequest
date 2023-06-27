@@ -10,7 +10,7 @@ class "Fachliche \nInformationseinheit" as Businessobject #BUSINESS
 
 class "Rezeptanforderung" as Rezeptanforderung #BUSINESS
 class "Rezeptanforderung_Storno" as Rezeptanforderung_Storno #BUSINESS
-class "Rezeptanforderung_Bestätigung" as Rezeptanforderung_Bestätigung #BUSINESS
+class "Rezeptanforderung_Rezeptübermittlung" as Rezeptanforderung_Rezeptübermittlung #BUSINESS
 class "Dispensieranforderung_Rezeptübermittlung" as Dispensieranforderung_Rezeptübermittlung #BUSINESS
 
 class "FHIR-Bundle" as Fhirbundle #APPLICATION
@@ -24,7 +24,7 @@ class "Verordnung" as Medication
 class "Versicherter" as Versicherter
 class "Dispensierung" as Dispensierung
 
-Rezeptanforderung_Bestätigung -left|> Businessobject: ist eine
+Rezeptanforderung_Rezeptübermittlung -left|> Businessobject: ist eine
 Rezeptanforderung -down|> Businessobject: ist eine
 Rezeptanforderung_Storno -left|> Businessobject: ist eine
 Rezeptanforderung_Storno -down|> Businessobject: ist eine
@@ -33,11 +33,11 @@ Dispensieranforderung_Rezeptübermittlung -|> Businessobject: ist eine
 Rezeptanforderung -up- "1..1" Versicherter: bezieht sich auf >
 Rezeptanforderung_Storno -- "1..1" Rezeptanforderung: revidiert >
 Rezeptanforderung_Storno -- "1..1" Rezeptanforderung: beantwortet >
-Rezeptanforderung_Bestätigung -- "1..1" Rezeptanforderung: beantwortet >
-Rezeptanforderung_Bestätigung -- "1..1" ERezepttoken: enthält >
+Rezeptanforderung_Rezeptübermittlung -- "1..1" Rezeptanforderung: beantwortet >
+Rezeptanforderung_Rezeptübermittlung -- "1..1" ERezepttoken: enthält >
 Dispensieranforderung_Rezeptübermittlung -- "1..1" ERezepttoken: enthält >
 Dispensieranforderung_Rezeptübermittlung -- "1..1" Dispensierung: enthält >
-Dispensieranforderung_Rezeptübermittlung -- "1..1" Rezeptanforderung_Bestätigung: aggregiert >
+Dispensieranforderung_Rezeptübermittlung -- "1..1" Rezeptanforderung_Rezeptübermittlung: aggregiert >
 ERezepttoken -right- "1..1" ERezept: referenziert auf >
 ERezept -right- "1..1" Medication: enthält >
 

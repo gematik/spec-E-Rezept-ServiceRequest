@@ -1,0 +1,28 @@
+@startuml
+
+card "Message Bundle Rezeptbestätigung" {
+
+card card2 [
+    Service Request
+    ===
+    .status = #completed
+    .requester = heimversorgende Apotheke
+    .performer = Verordnender
+]
+
+card card1 [
+    Message Header
+    ===
+    .eventCoding.code = #eRezept_Rezeptanforderung;Rezeptbestaetigung
+    .destination = heimversorgende Apotheke
+    .sender = Verordnender
+]
+
+collections Ressourcen
+
+}
+
+card1 -[hidden]down- card2
+card2 -[hidden]down- Ressourcen
+
+@enduml

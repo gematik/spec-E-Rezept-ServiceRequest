@@ -27,22 +27,26 @@ hnote over Apotheke, Pflegeeinrichtung
     Pflegedienst nach §12a ApoG
 end hnote
 
-Apotheke o-> Apotheke: **Auslöseereignis, z.B.** \n**Reichweitenende**
-Apotheke ->> Arztpraxis: //Rezeptanforderung//
+Apotheke ->> Pflegeeinrichtung: //Rezeptanforderung//
+Pflegeeinrichtung ->> Arztpraxis: //Rezeptanforderung//
 
 opt #LightPink Stornierung
-    Apotheke ->> Arztpraxis: //Rezeptanforderung_Storno//
+    Apotheke ->> Pflegeeinrichtung: //Rezeptanforderung_Storno//
+    Pflegeeinrichtung ->> Arztpraxis: //Rezeptanforderung_Storno//
+
     Arztpraxis ->x Arztpraxis: **Rezeptanforderung wird verworfen**
 end
 
 alt Rezeptanforderung liegt vor beim Verordnenden
     alt #PaleGreen Arzt ist einverstanden 
-        Arztpraxis ->> Apotheke: //Rezeptanforderung_Rezeptübermittlung//
-        Apotheke ->> Pflegeeinrichtung: **Medikamentabgabe/-auslieferung**
+        Arztpraxis ->> Pflegeeinrichtung: //Rezeptanforderung_Rezeptübermittlung//
+        Pflegeeinrichtung ->> Apotheke: //Rezeptanforderung_Rezeptübermittlung//
         Apotheke ->> Pflegeeinrichtung: //Dispensieranforderung_Bestätigung//
+        Apotheke ->> Pflegeeinrichtung: **Medikamentabgabe/-auslieferung**
 
     else #LightPink Arzt lehnt ab
-        Arztpraxis ->> Apotheke: //Rezeptanforderung_Storno//
+        Arztpraxis ->> Pflegeeinrichtung: //Rezeptanforderung_Storno//
+        Pflegeeinrichtung ->> Apotheke: //Rezeptanforderung_Storno//
     end
 end
 
