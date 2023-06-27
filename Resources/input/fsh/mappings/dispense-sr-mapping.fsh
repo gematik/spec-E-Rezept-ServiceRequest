@@ -2,9 +2,9 @@ Mapping: ERPServiceRequestDispenseRequest
 Source: ERPServiceRequestDispenseRequest
 Target: "gemF_eRp_KIM#3.1.1-Fachliche-Information"
 Id: Dispensieranforderung-Rezeptuebermittlung
-Title: "Dispensieranforderung_Rezeptuebermittlung"
-Description: "Mapping für fachliche Informationseinheiten der Belieferungsanfrage des Feature Dokuments"
-* -> "Dispensieranforderung_Rezeptuebermittlung"
+Title: "Dispensieranforderung_Rezeptübermittlung"
+Description: "Mapping for 'fachliche Informationseineit' of the 'Belieferungsanfrage' of the feature document"
+* -> "Dispensieranforderung_Rezeptübermittlung"
 * extension[EPrescriptionToken] -> "ERezept_Access_Code"
 * extension[EPrescriptionToken] -> "ERezept_Task_ID"
 * basedOn -> "Strukturierter_Verordnungsdatensatz"
@@ -17,7 +17,7 @@ Source: ERPServiceRequestDispenseRequest
 Target: "gemF_eRp_KIM#3.1.1-Fachliche-Information"
 Id: Dispensieranforderung-Bestaetigung
 Title: "Dispensieranforderung_Bestätigung"
-Description: "Mapping für fachliche Informationseinheiten der Belieferungsanfrage des Feature Dokuments"
+Description: "Mapping for 'fachliche Informationseineit' of the 'Belieferungsanfrage' of the feature document"
 * -> "Dispensieranforderung_Bestätigung"
 * requisition -> "Vorgangs_ID"
 * supportingInfo[AbgabeDaten] -> "Strukturierter_Dispensierungsdatensatz"

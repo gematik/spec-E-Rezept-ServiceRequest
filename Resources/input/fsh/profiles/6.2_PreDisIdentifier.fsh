@@ -2,9 +2,9 @@ Profile: ERPServiceRequestPreDisIdentifier
 Parent: Identifier
 Id: erp-service-request-pre-dis-identifier
 Title: "ERP Service Request Pre Dis Identifier"
-Description: "Identifier wird genutzt, um einen Prescription und Dispense Requests der selben Rezeptanfrage zu verknüpfen"
+Description: "Identifier is used to link a prescription and dispense requests of the same prescription request"
 * insert Meta (erp-service-request-pre-dis-identifier)
 * value 1..1 MS
-  * ^short = "String, der eine Verordnungs- und Belieferunsanfrage zu einem gleichen Medikament referenziert."
-  * ^comment = "Es wird empfohlen eine UUID zu verwenden."
+  * ^short = "String that references a prescription and delivery request for the same drug."
+  * ^comment = "It is recommended to use a UUID."
 * system = "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemPreDisIdentifier"

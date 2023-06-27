@@ -1,14 +1,14 @@
 CodeSystem: CancellationReasonCS
 Id: cancellation-reason-cs
-Title: "Abbruchgrund (CS)"
-Description: "Dieses CodeSystem beschreibt Gründe für das Stornieren einer Anfrage"
+Title: "Cancellation Reason (CS)"
+Description: "This code system describes reasons for canceling a request"
 * insert MetaCodeSystem(cancellation-reason-cs)
 
-* #information-missing "Informationen unvollständig"
-* #information-incorrect "Informationen fehlerhaft"
-* #medication-stopped "Medikament wurde abgesetzt"
-* #medication-paused "Medikament wurde pausiert"
-* #medication-altered-dosage "Dosierung wurde geaendert"
-* #medication-occurrence-implausible "Verordnungshäufigkeit nicht plausibel"
-* #consultation-required "Rücksprache ist notwendig"
-* #successor-already-sent "Folgerezept wurde bereits versendet"
+* #information-missing "Information incomplete"
+* #information-incorrect "information incorrect"
+* #medication-stopped "Medication was discontinued"
+* #medication-paused "Medication has been paused"
+* #medication-altered-dosage "Dosage has been changed"
+* #medication-occurrence-implausible "Prescription frequency not plausible"
+* #consultation-required "Consultation is necessary"
+* #successor-already-sent "Follow-up prescription has already been sent"

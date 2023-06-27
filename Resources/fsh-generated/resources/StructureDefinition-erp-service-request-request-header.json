@@ -8,7 +8,7 @@
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "Header, welcher Informationen über Absender und Adressat enthält",
+  "description": "Header containing information about the sender and addressee",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -52,8 +52,8 @@
         "id": "MessageHeader.event[x]:eventCoding",
         "path": "MessageHeader.event[x]",
         "sliceName": "eventCoding",
-        "short": "Der EventCode, der angibt in welchem Anwendungsfall und welchem Übertragungsweg die Kommunikation gerade geschieht",
-        "comment": "Für weitere Informationen siehe [ATF-ImplementationGuide](https://simplifier.net/app-transport-framework/~guides)",
+        "short": "The event code that indicates in which application and which transmission path the communication is currently taking place",
+        "comment": "For more information see [ATF ImplementationGuide](https://simplifier.net/app-transport-framework/~guides)",
         "min": 0,
         "max": "1",
         "type": [
@@ -69,8 +69,8 @@
       {
         "id": "MessageHeader.focus",
         "path": "MessageHeader.focus",
-        "short": "Angabe des ServiceRequests, der die wesentlichen Informationen zu einem gegebenen Anwendungsfall enthält.",
-        "comment": "Da eine Anfrage genau eine Medikation adressieren soll, ist auch entsprechend ein ServiceRequest anzugeben.",
+        "short": "Specification of the ServiceRequest that contains the essential information for a given use case.",
+        "comment": "Since a request should address exactly one medication, a ServiceRequest must also be specified accordingly.",
         "type": [
           {
             "code": "Reference",

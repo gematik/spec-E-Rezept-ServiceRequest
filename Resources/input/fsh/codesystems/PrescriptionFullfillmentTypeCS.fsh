@@ -1,8 +1,8 @@
 CodeSystem: PrescriptionFullfillmentTypeCS
 Id: prescription-fullfillment-type-cs
-Title: "Zustelltyp der Rezeptanforderung (CS)"
-Description: "Wird im Prescription_ServiceRequest genutzt um anzugeben wie mit dem Rezept weiter verfahren werden soll"
+Title: "Delivery type of prescription request (CS)"
+Description: "Is used in the Prescription_ServiceRequest to indicate how the prescription should be processed"
 * insert MetaCodeSystem(prescription-fullfillment-type-cs)
 
-* #issue-prescription "Ausstellung des Rezeptes"
-* #return-to-requester "Ausstellung des Rezeptes und Übermittlung an die anfragende Organisation"
+* #issue-prescription "Issue of the prescription"
+* #return-to-requester "Issue of the prescription and transmission to the requesting organization"

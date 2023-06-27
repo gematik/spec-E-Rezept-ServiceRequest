@@ -4,41 +4,41 @@
   "content": "complete",
   "name": "CancellationReasonCS",
   "id": "cancellation-reason-cs",
-  "title": "Abbruchgrund (CS)",
-  "description": "Dieses CodeSystem beschreibt Gründe für das Stornieren einer Anfrage",
+  "title": "Cancellation Reason (CS)",
+  "description": "This code system describes reasons for canceling a request",
   "url": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/cancellation-reason-cs",
   "concept": [
     {
       "code": "information-missing",
-      "display": "Informationen unvollständig"
+      "display": "Information incomplete"
     },
     {
       "code": "information-incorrect",
-      "display": "Informationen fehlerhaft"
+      "display": "information incorrect"
     },
     {
       "code": "medication-stopped",
-      "display": "Medikament wurde abgesetzt"
+      "display": "Medication was discontinued"
     },
     {
       "code": "medication-paused",
-      "display": "Medikament wurde pausiert"
+      "display": "Medication has been paused"
     },
     {
       "code": "medication-altered-dosage",
-      "display": "Dosierung wurde geaendert"
+      "display": "Dosage has been changed"
     },
     {
       "code": "medication-occurrence-implausible",
-      "display": "Verordnungshäufigkeit nicht plausibel"
+      "display": "Prescription frequency not plausible"
     },
     {
       "code": "consultation-required",
-      "display": "Rücksprache ist notwendig"
+      "display": "Consultation is necessary"
     },
     {
       "code": "successor-already-sent",
-      "display": "Folgerezept wurde bereits versendet"
+      "display": "Follow-up prescription has already been sent"
     }
   ],
   "experimental": false,

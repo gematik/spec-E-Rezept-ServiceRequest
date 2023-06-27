@@ -1,7 +1,7 @@
 {
   "resourceType": "NamingSystem",
   "id": "NamingSystemEPrescriptionToken",
-  "description": "NamingSystem zur Angabe eines E-Rezept-Tokens",
+  "description": "NamingSystem for specifying an e-prescription token",
   "name": "NamingSystemEPrescriptionToken",
   "status": "draft",
   "kind": "identifier",
