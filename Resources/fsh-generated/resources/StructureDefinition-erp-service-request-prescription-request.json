@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
   "id": "erp-service-request-prescription-request",
-  "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request",
+  "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/service-request-prescription-request",
   "version": "1.0",
   "name": "ERPServiceRequestPrescriptionRequest",
   "title": "ERP Service Request Prescription Request",
@@ -44,7 +44,7 @@
     },
     {
       "identity": "Rezeptanforderung-Bestaetigung",
-      "name": "Rezeptanforderung_Rezeptübermittlung",
+      "name": "Rezeptanforderung_Bestätigung",
       "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
       "comment": "Mapping for 'fachliche Informationseinheiten' of the 'Verordnungsanfrage' of the feature document"
     },
@@ -78,7 +78,7 @@
           },
           {
             "identity": "Rezeptanforderung-Bestaetigung",
-            "map": "Rezeptanforderung_Rezeptübermittlung"
+            "map": "Rezeptanforderung_Bestätigung"
           },
           {
             "identity": "Rezeptanforderung-Storno",

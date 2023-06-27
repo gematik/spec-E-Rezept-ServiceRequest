@@ -10,15 +10,11 @@
   "concept": [
     {
       "code": "issue-prescription",
-      "display": "Exhibition of the recipe"
+      "display": "Ausstellung des Rezeptes"
     },
     {
       "code": "return-to-requester",
-      "display": "Issue of the prescription and transmission to the requesting organization"
-    },
-    {
-      "code": "send-to-pharmacy",
-      "display": "Forwarding the prescription to the delivering pharmacy"
+      "display": "Ausstellung des Rezeptes und Übermittlung an die anfragende Organisation"
     }
   ],
   "experimental": false,
