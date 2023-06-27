@@ -16,13 +16,13 @@ Description: "Mapping for 'fachliche Informationseinheiten' of the 'Verordnungsa
 * reasonReference -> "Restreichweite"
 * note -> "Freitext"
 
-Mapping: ERPServiceRequestPrescriptionRequestBestaetigung
+Mapping: ERPServiceRequestPrescriptionRequestRezeptuebermittlung
 Source: ERPServiceRequestPrescriptionRequest
 Target: "gemF_eRp_KIM#3.1.1-Fachliche-Information"
-Id: Rezeptanforderung-Bestaetigung
-Title: "Rezeptanforderung_Bestätigung"
+Id: Rezeptanforderung-Rezeptuebermittlung
+Title: "Rezeptanforderung_Rezeptübermittlung"
 Description: "Mapping for 'fachliche Informationseinheiten' of the 'Verordnungsanfrage' of the feature document"
-* -> "Rezeptanforderung_Bestätigung"
+* -> "Rezeptanforderung_Rezeptübermittlung"
 * extension[EPrescriptionTokenEX] -> "ERezept_Task_ID"
 * extension[EPrescriptionTokenEX] -> "ERezept_Access_Code"
 * requisition -> "Vorgangs_ID"

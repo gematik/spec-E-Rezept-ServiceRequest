@@ -4,5 +4,5 @@ Title: "Delivery type of prescription request (CS)"
 Description: "Is used in the Prescription_ServiceRequest to indicate how the prescription should be processed"
 * insert MetaCodeSystem(prescription-fullfillment-type-cs)
 
-* #issue-prescription "Ausstellung des Rezeptes"
-* #return-to-requester "Ausstellung des Rezeptes und Übermittlung an die anfragende Organisation"
+* #issue-prescription "Issue of the prescription"
+* #return-to-requester "Issue of the prescription and transmission to the requesting organization"

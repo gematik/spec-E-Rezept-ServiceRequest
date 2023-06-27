@@ -107,7 +107,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-medizinische-Informationen",
-            "map": "Paeparat"
+            "map": "Praeparat"
           }
         ]
       },

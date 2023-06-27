@@ -43,7 +43,7 @@
       "comment": "Mapping for 'fachliche Informationseinheiten' of the 'Verordnungsanfrage' of the feature document"
     },
     {
-      "identity": "Rezeptanforderung-Bestaetigung",
+      "identity": "Rezeptanforderung-Rezeptuebermittlung",
       "name": "Rezeptanforderung_Rezeptübermittlung",
       "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
       "comment": "Mapping for 'fachliche Informationseinheiten' of the 'Verordnungsanfrage' of the feature document"
@@ -77,7 +77,7 @@
             "map": "Rezeptanforderung"
           },
           {
-            "identity": "Rezeptanforderung-Bestaetigung",
+            "identity": "Rezeptanforderung-Rezeptuebermittlung",
             "map": "Rezeptanforderung_Rezeptübermittlung"
           },
           {
@@ -114,11 +114,11 @@
         "mustSupport": true,
         "mapping": [
           {
-            "identity": "Rezeptanforderung-Bestaetigung",
+            "identity": "Rezeptanforderung-Rezeptuebermittlung",
             "map": "ERezept_Task_ID"
           },
           {
-            "identity": "Rezeptanforderung-Bestaetigung",
+            "identity": "Rezeptanforderung-Rezeptuebermittlung",
             "map": "ERezept_Access_Code"
           }
         ]
@@ -198,7 +198,7 @@
             "map": "Praeparat"
           },
           {
-            "identity": "Rezeptanforderung-Bestaetigung",
+            "identity": "Rezeptanforderung-Rezeptuebermittlung",
             "map": "Strukturierter_Verordnungsdatensatz"
           }
         ]
@@ -224,7 +224,7 @@
             "map": "Vorgangs_ID"
           },
           {
-            "identity": "Rezeptanforderung-Bestaetigung",
+            "identity": "Rezeptanforderung-Rezeptuebermittlung",
             "map": "Vorgangs_ID"
           },
           {
@@ -493,11 +493,11 @@
             "map": "Freitext"
           },
           {
-            "identity": "Rezeptanforderung-Bestaetigung",
+            "identity": "Rezeptanforderung-Rezeptuebermittlung",
             "map": "Hinweise_fuer_Empfaenger"
           },
           {
-            "identity": "Rezeptanforderung-Bestaetigung",
+            "identity": "Rezeptanforderung-Rezeptuebermittlung",
             "map": "Freitext"
           },
           {

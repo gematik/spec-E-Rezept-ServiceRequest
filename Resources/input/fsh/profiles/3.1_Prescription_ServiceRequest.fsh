@@ -3,7 +3,7 @@ Parent: ServiceRequest
 Id: erp-service-request-prescription-request
 Title: "ERP Service Request Prescription Request"
 Description: "ServiceRequest, which is used to request a recipe"
-* insert Meta (service-request-prescription-request)
+* insert Meta (erp-service-request-prescription-request)
 
 * extension MS
 * extension contains
