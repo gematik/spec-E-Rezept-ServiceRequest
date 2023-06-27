@@ -10,7 +10,7 @@
   "concept": [
     {
       "code": "prescription-request",
-      "display": "request for a prescription"
+      "display": "Request for a prescription"
     },
     {
       "code": "dispense-request",
