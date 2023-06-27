@@ -69,7 +69,7 @@
         "id": "UC1-Initial-Prescription-Request",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/service-request-prescription-request"
           ]
         },
         "intent": "order",
