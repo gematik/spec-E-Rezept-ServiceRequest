@@ -30,7 +30,7 @@ class "Rezeptanforderung_Storno" as Rezeptanforderung_Storno #BUSINESS {
     #Freitext
 }
 
-class "Rezeptanforderung_Bestätigung" as Rezeptanforderung_Bestätigung #BUSINESS {
+class "Rezeptanforderung_Rezeptübermittlung" as Rezeptanforderung_Rezeptübermittlung #BUSINESS {
     ..administrative Informationen..
     #Vorgangs_ID
     #ERezept_Access_Code
@@ -49,6 +49,9 @@ class "Dispensieranforderung_Rezeptübermittlung" as Dispensieranforderung_Rezep
     #ERezept_Task_ID
     ..medizinische Informationen..
     #Strukturierter_Verordnungsdatensatz
+    #Hinweise_fuer_Empfaenger
+    ..ergänzende Informationen..
+    #Freitext
 }
 
 class "Dispensieranforderung_Bestätigung" as Dispensieranforderung_Bestätigung #BUSINESS {
@@ -56,11 +59,13 @@ class "Dispensieranforderung_Bestätigung" as Dispensieranforderung_Bestätigung
     #Vorgangs_ID
     ..medizinische Informationen..
     #Strukturierter_Dispensierungsdatensatz
+    ..ergänzende Informationen..
+    #Freitext
 }
 
 Rezeptanforderung_Storno -up- Rezeptanforderung: revidiert >
-Rezeptanforderung_Bestätigung -up- Rezeptanforderung: beantwortet >
+Rezeptanforderung_Rezeptübermittlung -up- Rezeptanforderung: beantwortet >
 Dispensieranforderung_Bestätigung -- Dispensieranforderung_Rezeptübermittlung: beantwortet >
-Dispensieranforderung_Rezeptübermittlung -- Rezeptanforderung_Bestätigung: bezieht sich auf >
+Dispensieranforderung_Rezeptübermittlung -- Rezeptanforderung_Rezeptübermittlung: bezieht sich auf >
 
 @enduml

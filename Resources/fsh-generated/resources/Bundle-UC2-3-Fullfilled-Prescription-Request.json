@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "id": "UC2-1-Prescription-and-Dispense-Request-To-Prescriber",
+  "id": "UC2-3-Fullfilled-Prescription-Request",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
@@ -13,10 +13,10 @@
   },
   "entry": [
     {
-      "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/UC2-1-HealthCareService-to-Practitioner-MessageHeader",
+      "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/UC2-3-Practitioner-to-HealthCareService-MessageHeader",
       "resource": {
         "resourceType": "MessageHeader",
-        "id": "UC2-1-HealthCareService-to-Practitioner-MessageHeader",
+        "id": "UC2-3-Practitioner-to-HealthCareService-MessageHeader",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
@@ -24,52 +24,52 @@
         },
         "focus": [
           {
-            "reference": "ServiceRequest/UC2-Initial-Prescription-Request"
+            "reference": "ServiceRequest/UC2-Response-Prescription-Request"
           }
         ],
         "sender": {
           "identifier": {
             "system": "http://gematik.de/fhir/sid/KIM-Adresse",
-            "value": "pflegeheim.immergrün.arzt@sana-pflegeheime.kim.telematik"
+            "value": "hans@ytopp-gluecklich.kim.telematik"
           },
-          "display": "Pflegeheim Immergrün"
+          "display": "Praxis Hans Topp-Glücklich"
+        },
+        "source": {
+          "name": "Practitioner-Source",
+          "software": "Practitioner-Software",
+          "version": "1.0.0",
+          "contact": {
+            "system": "email",
+            "value": "info@practitioner.email"
+          },
+          "endpoint": "http://practitioner.endpoint"
         },
         "destination": [
           {
             "receiver": {
               "identifier": {
                 "system": "http://gematik.de/fhir/sid/KIM-Adresse",
-                "value": "hans@ytopp-gluecklich.kim.telematik"
+                "value": "arbeitsplatz-1@test-apotheke.kim.telematik"
               },
-              "display": "Praxis Hans Topp-Glücklich"
+              "display": "Test Apotheke"
             },
-            "endpoint": "klaus@test.de"
+            "endpoint": "http://test-apotheke.de"
           }
         ],
-        "source": {
-          "endpoint": "http://healthcare.endpoint",
-          "name": "HealthCare-Source",
-          "software": "HealthCare-Software",
-          "version": "1.0.0",
-          "contact": {
-            "system": "email",
-            "value": "info@healthcare.email"
-          }
-        },
         "eventCoding": {
-          "code": "eRezept_Rezeptanforderung;Rezeptanfrage",
+          "code": "eRezept_Rezeptanforderung;Rezeptbestaetigung",
           "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
         }
       }
     },
     {
-      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/UC2-Initial-Prescription-Request",
+      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/UC2-Response-Prescription-Request",
       "resource": {
         "resourceType": "ServiceRequest",
-        "id": "UC2-Initial-Prescription-Request",
+        "id": "UC2-Response-Prescription-Request",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/service-request-prescription-request"
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
           ]
         },
         "intent": "order",
@@ -77,6 +77,15 @@
           "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
           "value": "GroupID-2"
         },
+        "extension": [
+          {
+            "valueIdentifier": {
+              "system": "https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken",
+              "value": "Task/160.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
+            },
+            "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex"
+          }
+        ],
         "code": {
           "coding": [
             {
@@ -88,15 +97,15 @@
         "identifier": [
           {
             "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier",
-            "value": "012345"
+            "value": "req-1"
           }
         ],
         "basedOn": [
           {
-            "reference": "MedicationRequest/Example-Initial-Medication-Request"
+            "reference": "MedicationRequest/Example-Response-KBV-Prescription"
           }
         ],
-        "status": "active",
+        "status": "completed",
         "subject": {
           "reference": "Patient/Example-Patient"
         },
@@ -104,98 +113,60 @@
           {
             "coding": [
               {
-                "code": "send-to-pharmacy",
+                "code": "return-to-requester",
                 "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/prescription-fullfillment-type-cs"
               }
             ]
           }
         ],
-        "occurrenceDateTime": "2023-02-01",
+        "occurrenceDateTime": "2023-01-30",
         "authoredOn": "2023-01-27",
         "requester": {
-          "reference": "Organization/Example-HealthCareService-Organization"
+          "reference": "Organization/Example-Pharmacy-Organization"
         },
         "performer": [
           {
-            "identifier": {
-              "system": "http://gematik.de/fhir/sid/KIM-Adresse",
-              "value": "hans@ytopp-gluecklich.kim.telematik"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/UC2-Initial-Dispense-Request",
-      "resource": {
-        "resourceType": "ServiceRequest",
-        "id": "UC2-Initial-Dispense-Request",
-        "meta": {
-          "profile": [
-            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"
-          ]
-        },
-        "intent": "filler-order",
-        "requisition": {
-          "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
-          "value": "GroupID-2"
-        },
-        "supportingInfo": [
-          {
-            "type": "Practitioner",
             "reference": "Practitioner/Example-Practitioner"
           }
-        ],
-        "code": {
-          "coding": [
-            {
-              "code": "dispense-request",
-              "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
-            }
-          ]
-        },
-        "identifier": [
-          {
-            "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier",
-            "value": "012345"
-          }
-        ],
-        "status": "active",
-        "subject": {
-          "reference": "Patient/Example-Patient"
-        },
-        "occurrenceDateTime": "2023-02-01",
-        "authoredOn": "2023-02-01",
-        "requester": {
-          "reference": "Organization/Example-HealthCareService-Organization"
-        },
-        "performer": [
-          {
-            "identifier": {
-              "system": "http://gematik.de/fhir/sid/KIM-Adresse",
-              "value": "arbeitsplatz-1@test-apotheke.kim.telematik"
-            }
-          }
         ]
       }
     },
     {
-      "fullUrl": "http://erp-servicerequest-test.de/MedicationRequest/Example-Initial-Medication-Request",
+      "fullUrl": "http://erp-servicerequest-test.de/MedicationRequest/Example-Response-KBV-Prescription",
       "resource": {
         "resourceType": "MedicationRequest",
-        "id": "Example-Initial-Medication-Request",
+        "id": "Example-Response-KBV-Prescription",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request"
+            "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription|1.1.0"
           ]
         },
+        "status": "active",
+        "intent": "order",
         "extension": [
           {
-            "valueIdentifier": {
-              "system": "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
-              "value": "160.100.000.000.001.36"
-            },
-            "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/prescription-id-ex"
+            "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_EmergencyServicesFee",
+            "valueBoolean": false
+          },
+          {
+            "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_BVG",
+            "valueBoolean": false
+          },
+          {
+            "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Multiple_Prescription",
+            "extension": [
+              {
+                "url": "Kennzeichen",
+                "valueBoolean": false
+              }
+            ]
+          },
+          {
+            "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_StatusCoPayment",
+            "valueCoding": {
+              "code": "1",
+              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_StatusCoPayment"
+            }
           }
         ],
         "dispenseRequest": {
@@ -205,18 +176,30 @@
             "value": 1
           }
         },
-        "status": "active",
-        "intent": "order",
+        "dosageInstruction": [
+          {
+            "extension": [
+              {
+                "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_DosageFlag",
+                "valueBoolean": true
+              }
+            ],
+            "text": "2mal tägl. 5ml"
+          }
+        ],
         "medicationReference": {
-          "reference": "Medication/Example-Initial-Medication"
+          "reference": "Medication/Example-Response-Medication"
         },
         "subject": {
           "reference": "Patient/Example-Patient"
         },
         "authoredOn": "2022-05-20",
-        "dosageInstruction": [
+        "requester": {
+          "reference": "Practitioner/Example-Practitioner"
+        },
+        "insurance": [
           {
-            "text": "2mal tägl. 5ml"
+            "reference": "Coverage/Response-Coverage"
           }
         ],
         "substitution": {
@@ -225,10 +208,10 @@
       }
     },
     {
-      "fullUrl": "http://erp-servicerequest-test.de/Medication/Example-Initial-Medication",
+      "fullUrl": "http://erp-servicerequest-test.de/Medication/Example-Response-Medication",
       "resource": {
         "resourceType": "Medication",
-        "id": "Example-Initial-Medication",
+        "id": "Example-Response-Medication",
         "meta": {
           "profile": [
             "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.1.0"
@@ -271,7 +254,7 @@
               "code": "08585997"
             }
           ],
-          "text": "Prospan® Hustensaft 100ml"
+          "text": "Prospan® Hustensaft 100ml N1"
         },
         "form": {
           "coding": [
@@ -281,74 +264,6 @@
             }
           ]
         }
-      }
-    },
-    {
-      "fullUrl": "http://erp-servicerequest-test.de/Patient/Example-Patient",
-      "resource": {
-        "resourceType": "Patient",
-        "id": "Example-Patient",
-        "meta": {
-          "profile": [
-            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
-          ]
-        },
-        "identifier": [
-          {
-            "type": {
-              "coding": [
-                {
-                  "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
-                  "code": "GKV"
-                }
-              ]
-            },
-            "system": "http://fhir.de/sid/gkv/kvid-10",
-            "value": "X234567890"
-          }
-        ],
-        "name": [
-          {
-            "use": "official",
-            "family": "Königsstein",
-            "_family": {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
-                  "valueString": "Königsstein"
-                }
-              ]
-            },
-            "given": [
-              "Ludger"
-            ]
-          }
-        ],
-        "address": [
-          {
-            "type": "both",
-            "line": [
-              "Musterstr. 1"
-            ],
-            "_line": [
-              {
-                "extension": [
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-                    "valueString": "1"
-                  },
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-                    "valueString": "Musterstr."
-                  }
-                ]
-              }
-            ],
-            "city": "Berlin",
-            "postalCode": "10623"
-          }
-        ],
-        "birthDate": "1935-06-22"
       }
     },
     {
@@ -443,10 +358,144 @@
       }
     },
     {
-      "fullUrl": "http://erp-servicerequest-test.de/Organization/Example-HealthCareService-Organization",
+      "fullUrl": "http://erp-servicerequest-test.de/Patient/Example-Patient",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "Example-Patient",
+        "meta": {
+          "profile": [
+            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
+          ]
+        },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
+                  "code": "GKV"
+                }
+              ]
+            },
+            "system": "http://fhir.de/sid/gkv/kvid-10",
+            "value": "X234567890"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Königsstein",
+            "_family": {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+                  "valueString": "Königsstein"
+                }
+              ]
+            },
+            "given": [
+              "Ludger"
+            ]
+          }
+        ],
+        "address": [
+          {
+            "type": "both",
+            "line": [
+              "Musterstr. 1"
+            ],
+            "_line": [
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                    "valueString": "1"
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                    "valueString": "Musterstr."
+                  }
+                ]
+              }
+            ],
+            "city": "Berlin",
+            "postalCode": "10623"
+          }
+        ],
+        "birthDate": "1935-06-22"
+      }
+    },
+    {
+      "fullUrl": "http://erp-servicerequest-test.de/Coverage/Response-Coverage",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "Response-Coverage",
+        "meta": {
+          "profile": [
+            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Coverage|1.1.0"
+          ]
+        },
+        "status": "active",
+        "payor": [
+          {
+            "identifier": {
+              "system": "http://fhir.de/sid/arge-ik/iknr",
+              "value": "108416214"
+            },
+            "display": "AOK Bayern Die Gesundh."
+          }
+        ],
+        "extension": [
+          {
+            "url": "http://fhir.de/StructureDefinition/gkv/besondere-personengruppe",
+            "valueCoding": {
+              "code": "00",
+              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_PERSONENGRUPPE"
+            }
+          },
+          {
+            "url": "http://fhir.de/StructureDefinition/gkv/dmp-kennzeichen",
+            "valueCoding": {
+              "code": "00",
+              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DMP"
+            }
+          },
+          {
+            "url": "http://fhir.de/StructureDefinition/gkv/wop",
+            "valueCoding": {
+              "code": "72",
+              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ITA_WOP"
+            }
+          },
+          {
+            "url": "http://fhir.de/StructureDefinition/gkv/versichertenart",
+            "valueCoding": {
+              "code": "3",
+              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_VERSICHERTENSTATUS"
+            }
+          }
+        ],
+        "type": {
+          "coding": [
+            {
+              "code": "GKV",
+              "system": "http://fhir.de/CodeSystem/versicherungsart-de-basis"
+            }
+          ]
+        },
+        "beneficiary": {
+          "reference": "Patient/Example-Patient"
+        },
+        "period": {
+          "end": "2040-04-01"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://erp-servicerequest-test.de/Organization/Example-Pharmacy-Organization",
       "resource": {
         "resourceType": "Organization",
-        "id": "Example-HealthCareService-Organization",
+        "id": "Example-Pharmacy-Organization",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
@@ -463,7 +512,7 @@
               ]
             },
             "system": "http://gematik.de/fhir/sid/KIM-Adresse",
-            "value": "pflegeheim.immergrün.arzt@sana-pflegeheime.kim.telematik"
+            "value": "arbeitsplatz-1@test-apotheke.kim.telematik"
           },
           {
             "type": {
@@ -475,7 +524,7 @@
               ]
             },
             "system": "https://gematik.de/fhir/sid/telematik-id",
-            "value": "1-031234567"
+            "value": "1-57634852"
           },
           {
             "type": {
@@ -487,7 +536,7 @@
               ]
             },
             "system": "https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR",
-            "value": "031234567"
+            "value": "581463872"
           }
         ],
         "address": [
@@ -514,7 +563,7 @@
             "postalCode": "10623"
           }
         ],
-        "name": "Pflegeheim Immergrün",
+        "name": "Test Apotheke",
         "telecom": [
           {
             "system": "phone",
@@ -525,6 +574,6 @@
     }
   ],
   "_timestamp": {
-    "value": "2015-02-07T13:28:17.239+02:00"
+    "value": "2023-01-30T13:28:17.239+02:00"
   }
 }

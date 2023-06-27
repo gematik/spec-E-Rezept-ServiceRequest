@@ -35,14 +35,14 @@
           "display": "Test Apotheke"
         },
         "source": {
-          "endpoint": "http://healthcare.endpoint",
-          "name": "HealthCare-Source",
-          "software": "HealthCare-Software",
+          "name": "Pharmacy-Source",
+          "software": "Pharmacy-Software",
           "version": "1.0.0",
           "contact": {
             "system": "email",
-            "value": "info@healthcare.email"
-          }
+            "value": "info@pharmacy.email"
+          },
+          "endpoint": "http://pharmacy.endpoint"
         },
         "destination": [
           {
@@ -69,7 +69,7 @@
         "id": "UC4-Initial-Prescription-Request",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/service-request-prescription-request"
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
           ]
         },
         "intent": "order",
@@ -104,7 +104,7 @@
           {
             "coding": [
               {
-                "code": "send-to-pharmacy",
+                "code": "return-to-requester",
                 "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/prescription-fullfillment-type-cs"
               }
             ]

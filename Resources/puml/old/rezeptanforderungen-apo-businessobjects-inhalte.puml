@@ -12,6 +12,7 @@ class "Rezeptanforderung" as Rezeptanforderung #BUSINESS {
     #Prioritaet
     #Adressat_der_Rezeptanforderung
     #Adressat_der_Rezeptuebermittlung
+    #Ausliefernde_Apotheke
     #Patienteninformationen
     #Vorheriges_Rezept
     ..medizinische Informationen..
@@ -30,7 +31,7 @@ class "Rezeptanforderung_Storno" as Rezeptanforderung_Storno #BUSINESS {
     #Freitext
 }
 
-class "Rezeptanforderung_Bestätigung" as Rezeptanforderung_Bestätigung #BUSINESS {
+class "Rezeptanforderung_Rezeptübermittlung" as Rezeptanforderung_Rezeptübermittlung #BUSINESS {
     ..administrative Informationen..
     #Vorgangs_ID
     #ERezept_Access_Code
@@ -47,9 +48,12 @@ class "Dispensieranforderung_Bestätigung" as Dispensieranforderung_Bestätigung
     #Vorgangs_ID
     ..medizinische Informationen..
     #Strukturierter_Dispensierungsdatensatz
+    ..ergänzende Informationen..
+    #Freitext
 }
 
-Rezeptanforderung_Storno -up- Rezeptanforderung: revidiert >
-Rezeptanforderung_Bestätigung -up- Rezeptanforderung: beantwortet >
+Rezeptanforderung_Storno -right- Rezeptanforderung: revidiert >
+Rezeptanforderung_Rezeptübermittlung -up- Rezeptanforderung: beantwortet >
+Dispensieranforderung_Bestätigung -left- Rezeptanforderung_Rezeptübermittlung: bezieht sich auf >
 
 @enduml

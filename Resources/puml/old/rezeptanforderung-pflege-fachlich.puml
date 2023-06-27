@@ -34,19 +34,17 @@ opt #LightPink Stornierung
     Arztpraxis ->x Arztpraxis: **Rezeptanforderung wird verworfen**
 end
 
-alt Rezeptanforderung liegt vor beim Verordnenden
-    alt #PaleGreen Arzt ist einverstanden 
-        alt Direktübermittlungswunsch bei Pflegeeinrichtung
-        Arztpraxis ->> Apotheke: //Dispensieranforderung_Rezeptübermittlung//
-        else Pflegeeinrichtung entscheidet selbst über Übermittlung
-        Arztpraxis ->> Pflegeeinrichtung: //Rezeptanforderung_Bestätigung//
-        Pflegeeinrichtung ->> Apotheke: //Dispensieranforderung_Rezeptübermittlung//
-        end
-        Apotheke ->> Pflegeeinrichtung: **Medikamentbelieferung**
-        Apotheke ->> Pflegeeinrichtung: //Dispensieranforderung_Bestätigung//
-    else #LightPink Arzt lehnt ab
-        Arztpraxis ->> Pflegeeinrichtung: //Rezeptanforderung_Storno//
-    end
+alt #PaleGreen Arzt ist einverstanden 
+    
+    Arztpraxis ->> Pflegeeinrichtung: //Rezeptanforderung_Rezeptübermittlung//
+    Pflegeeinrichtung ->> Apotheke: //Dispensieranforderung_Rezeptübermittlung//
+    
+    Apotheke ->> Pflegeeinrichtung: //Dispensieranforderung_Bestätigung//
+    Apotheke ->> Pflegeeinrichtung: **Medikamentbelieferung**
+    
+else #LightPink Arzt lehnt ab
+    Arztpraxis ->> Pflegeeinrichtung: //Rezeptanforderung_Storno//
 end
+
 
 @enduml

@@ -20,9 +20,9 @@ Mapping: ERPServiceRequestPrescriptionRequestBestaetigung
 Source: ERPServiceRequestPrescriptionRequest
 Target: "gemF_eRp_KIM#3.1.1-Fachliche-Information"
 Id: Rezeptanforderung-Bestaetigung
-Title: "Rezeptanforderung_Bestätigung"
+Title: "Rezeptanforderung_Rezeptübermittlung"
 Description: "Mapping für fachliche Informationseinheiten der Verordnungsanfrage des Feature Dokuments"
-* -> "Rezeptanforderung_Bestätigung"
+* -> "Rezeptanforderung_Rezeptübermittlung"
 * extension[EPrescriptionTokenEX] -> "ERezept_Task_ID"
 * extension[EPrescriptionTokenEX] -> "ERezept_Access_Code"
 * requisition -> "Vorgangs_ID"

@@ -1,41 +1,40 @@
-Instance: UC2-1-HealthCareService-to-Practitioner-MessageHeader
+Instance: UC2-1-Pharmacy-to-HealthCareService-MessageHeader
+InstanceOf: ERPServiceRequestRequestHeader
+Usage: #inline
+Title: "Pharmacy-to-HealthCareService-MessageHeader"
+Description: "Message Header from Pharmacy to HealthCareService"
+* insert Pharmacy-to-Practitioner(UC2-Initial-Prescription-Request) //Das ist korrekt, Pflegeeinrichtung ist Proxy
+* eventCoding = $GEM_CS_ATF_ServiceIdentifier#eRezept_Rezeptanforderung;Rezeptanfrage
+
+
+Instance: UC2-2-HealthCareService-to-Practitioner-MessageHeader
 InstanceOf: ERPServiceRequestRequestHeader
 Usage: #inline
 Title: "HealthCareService-to-Practitioner-MessageHeader"
 Description: "Message Header from HealthCareService to Practitioner"
-* insert HealthCareService-to-Practitioner(UC2-Initial-Prescription-Request)
+* insert Pharmacy-to-Practitioner(UC2-Initial-Prescription-Request) //Das ist korrekt, Pflegeeinrichtung ist Proxy
 * eventCoding = $GEM_CS_ATF_ServiceIdentifier#eRezept_Rezeptanforderung;Rezeptanfrage
-* source.name = "HealthCare-Source"
-* source.software = "HealthCare-Software"
-* source.version = "1.0.0"
-* source.contact.system = #email
-* source.contact.value = "info@healthcare.email"
-* source.endpoint = "http://healthcare.endpoint"
 
-Instance: UC2-2-Practitioner-to-Pharmacy-MessageHeader
+Instance: UC2-3-Practitioner-to-HealthCareService-MessageHeader
 InstanceOf: ERPServiceRequestRequestHeader
 Usage: #inline
-Title: "Practitioner-to-Pharmacy-MessageHeader"
-Description: "Message Header from Practitioner to Pharmacy"
-* insert Practitioner-to-Pharmacy(UC2-Forward-Dispense-Request)
-* eventCoding = $GEM_CS_ATF_ServiceIdentifier#eRezept_Rezeptanforderung;Abgabeanfrage
-* source.name = "Practitioner-Source"
-* source.software = "Practitioner-Software"
-* source.version = "1.0.0"
-* source.contact.system = #email
-* source.contact.value = "info@practitioner.email"
-* source.endpoint = "http://practitioner.endpoint"
+Title: "Practitioner-to-HealthCareService-MessageHeader"
+Description: "Message Header from Practitioner to HealthCareService"
+* insert Practitioner-to-Pharmacy(UC2-Response-Prescription-Request) //Das ist korrekt, Pflegeeinrichtung ist Proxy
+* eventCoding = $GEM_CS_ATF_ServiceIdentifier#eRezept_Rezeptanforderung;Rezeptbestaetigung
 
-Instance: UC2-3-Pharmacy-to-HealthCareService-MessageHeader
+Instance: UC2-4-HealthCareService-to-Pharmacy-MessageHeader
+InstanceOf: ERPServiceRequestRequestHeader
+Usage: #inline
+Title: "HealthCareService-to-Pharmacy-MessageHeader"
+Description: "Message Header from HealthCareService to Pharmacy"
+* insert Practitioner-to-Pharmacy(UC2-Response-Prescription-Request)
+* eventCoding = $GEM_CS_ATF_ServiceIdentifier#eRezept_Rezeptanforderung;Rezeptbestaetigung
+
+Instance: UC2-5-Pharmacy-to-HealthCareService-MessageHeader
 InstanceOf: ERPServiceRequestRequestHeader
 Usage: #inline
 Title: "Pharmacy-to-HealthCareService-MessageHeader"
 Description: "Message Header from Practitioner to Pharmacy"
 * insert Pharmacy-to-HealthCareService(UC2-Response-Dispense-Request)
 * eventCoding = $GEM_CS_ATF_ServiceIdentifier#eRezept_Rezeptanforderung;Abgabebestaetigung
-* source.name = "Pharmacy-Source"
-* source.software = "Pharmacy-Software"
-* source.version = "1.0.0"
-* source.contact.system = #email
-* source.contact.value = "info@pharmacy.email"
-* source.endpoint = "http://pharmacy.endpoint"

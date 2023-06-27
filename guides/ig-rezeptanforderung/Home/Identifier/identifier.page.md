@@ -33,8 +33,6 @@ Diese Vorgangs-ID wird vom schreibenden System vergeben und ist von den anderen 
 
 Falls ein anderes System als das ursprünglich anfragende einen neuen ServiceRequest erstellt, ist die Vorgangs-ID von vorhandenen ServiceRequests zu übernehmen.
 
-Bspw. erstellt im Anwendungsfall {{pagelink:Home/Anwendungsfaelle/Rezeptanforderung}}, wenn `ServiceRequest.orderDetail.code = #send-to-pharmacy` gesetzt ist, das PVS die Belieferungsanfrage. Hier ist also die selbe Vorgangs-ID aus `ServiceRequest.requisition` aus der Verordnungsanfrage in die Belieferungsanfrage zu übernehmen.
-
 ### Profil
 
 {{tree:https://gematik.de/fhir/erp-servicerequest/StructureDefinition/identifier-procedure-identifier, diff}}

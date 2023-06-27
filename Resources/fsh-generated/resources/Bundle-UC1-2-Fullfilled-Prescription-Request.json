@@ -47,14 +47,14 @@
           }
         ],
         "source": {
-          "endpoint": "http://practitioner.endpoint",
-          "name": "Practitioner-Source",
-          "software": "Practitioner-Software",
+          "name": "HealthCare-Source",
+          "software": "HealthCare-Software",
           "version": "1.0.0",
           "contact": {
             "system": "email",
-            "value": "info@practitioner.email"
-          }
+            "value": "info@healthcare.email"
+          },
+          "endpoint": "http://healthcare.endpoint"
         },
         "eventCoding": {
           "code": "eRezept_Rezeptanforderung;Rezeptbestaetigung",
@@ -69,7 +69,7 @@
         "id": "UC1-Response-Prescription-Request",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/service-request-prescription-request"
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
           ]
         },
         "intent": "order",
