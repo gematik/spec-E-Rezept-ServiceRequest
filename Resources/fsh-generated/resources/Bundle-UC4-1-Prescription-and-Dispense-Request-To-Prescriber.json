@@ -35,7 +35,14 @@
           "display": "Test Apotheke"
         },
         "source": {
-          "endpoint": "http://test-apotheke.de"
+          "name": "Pharmacy-Source",
+          "software": "Pharmacy-Software",
+          "version": "1.0.0",
+          "contact": {
+            "system": "email",
+            "value": "info@pharmacy.email"
+          },
+          "endpoint": "http://pharmacy.endpoint"
         },
         "destination": [
           {
@@ -62,10 +69,14 @@
         "id": "UC4-Initial-Prescription-Request",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/service-request-prescription-request"
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
           ]
         },
         "intent": "order",
+        "requisition": {
+          "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
+          "value": "GroupID-UC4"
+        },
         "code": {
           "coding": [
             {
@@ -85,10 +96,6 @@
             "reference": "MedicationRequest/Example-Zyto-Medication-Request"
           }
         ],
-        "requisition": {
-          "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
-          "value": "GroupID-UC4"
-        },
         "status": "active",
         "subject": {
           "reference": "Patient/Example-Patient"
@@ -97,7 +104,7 @@
           {
             "coding": [
               {
-                "code": "send-to-pharmacy",
+                "code": "return-to-requester",
                 "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/prescription-fullfillment-type-cs"
               }
             ]
@@ -187,6 +194,9 @@
           ]
         },
         "amount": {
+          "denominator": {
+            "value": 1
+          },
           "numerator": {
             "extension": [
               {
@@ -195,9 +205,6 @@
               }
             ],
             "unit": "ml"
-          },
-          "denominator": {
-            "value": 1
           }
         },
         "ingredient": [

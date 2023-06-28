@@ -3,12 +3,12 @@
   "status": "draft",
   "name": "RequestReasonVS",
   "id": "request-reason-vs",
-  "title": "Grund der Medikamentenanfrage (VS)",
-  "description": "Liefert Codes für Gründe, warum Medikation angefragt wird",
-  "version": "1.0",
+  "title": "Reason for the medication request (VS)",
+  "description": "Provides codes for reasons why medication is requested",
   "url": "https://gematik.de/fhir/erp-servicerequest/ValueSet/request-reason-vs",
   "experimental": false,
   "publisher": "gematik GmbH",
+  "version": "1.0",
   "compose": {
     "include": [
       {

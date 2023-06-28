@@ -7,14 +7,17 @@
   ],
   "dependencies": {
     "hl7.fhir.r4.core": "4.0.1",
-    "de.basisprofil.r4": "1.3.2",
-    "de.gematik.erezept-workflow.r4": "1.2.0",
+    "de.basisprofil.r4": "1.4.0",
+    "de.gematik.erezept-workflow.r4": "1.2.1",
     "de.gematik.fhir.directory": "0.10.1",
     "kbv.basis": "1.3.0",
     "kbv.ita.for": "1.1.0",
-    "kbv.ita.erp": "1.1.0",
+    "kbv.ita.erp": "1.1.1",
     "de.abda.eRezeptAbgabedaten": "1.3.0",
     "de.abda.eRezeptAbgabedatenbasis": "1.3.0",
-    "de.gematik.fhir.atf": "0.9.5-beta"
+    "de.gematik.fhir.atf": "1.0.0",
+    "KBV.Basis": "1.3.0",
+    "de.abda.erezeptabgabedatenbasis": "1.3.1",
+    "de.abda.erezeptabgabedaten": "1.3.1"
   }
 }

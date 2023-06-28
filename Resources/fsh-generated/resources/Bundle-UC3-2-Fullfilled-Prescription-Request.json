@@ -47,7 +47,14 @@
           }
         ],
         "source": {
-          "endpoint": "http://test-pflegeheim.de"
+          "name": "HealthCare-Source",
+          "software": "HealthCare-Software",
+          "version": "1.0.0",
+          "contact": {
+            "system": "email",
+            "value": "info@healthcare.email"
+          },
+          "endpoint": "http://healthcare.endpoint"
         },
         "eventCoding": {
           "code": "eRezept_Rezeptanforderung;Rezeptbestaetigung",
@@ -62,10 +69,14 @@
         "id": "UC3-Response-Prescription-Request",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/service-request-prescription-request"
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
           ]
         },
         "intent": "order",
+        "requisition": {
+          "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
+          "value": "GroupID-UC3"
+        },
         "extension": [
           {
             "valueIdentifier": {
@@ -94,10 +105,6 @@
             "reference": "MedicationRequest/Example-Response-KBV-Prescription"
           }
         ],
-        "requisition": {
-          "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
-          "value": "GroupID-UC3"
-        },
         "status": "completed",
         "subject": {
           "reference": "Patient/Example-Patient"
@@ -429,6 +436,15 @@
           ]
         },
         "status": "active",
+        "payor": [
+          {
+            "identifier": {
+              "system": "http://fhir.de/sid/arge-ik/iknr",
+              "value": "108416214"
+            },
+            "display": "AOK Bayern Die Gesundh."
+          }
+        ],
         "extension": [
           {
             "url": "http://fhir.de/StructureDefinition/gkv/besondere-personengruppe",
@@ -457,15 +473,6 @@
               "code": "3",
               "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_VERSICHERTENSTATUS"
             }
-          }
-        ],
-        "payor": [
-          {
-            "identifier": {
-              "system": "http://fhir.de/sid/arge-ik/iknr",
-              "value": "108416214"
-            },
-            "display": "AOK Bayern Die Gesundh."
           }
         ],
         "type": {

@@ -4,11 +4,11 @@
   "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex",
   "version": "1.0",
   "name": "EPrescriptionTokenEX",
-  "title": "E-Rezept-Token Extension",
+  "title": "E-Prescription Token Extension",
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "Diese Extension dient der Angabe eines E-Rezept Tokens",
+  "description": "This extension is used to specify an e-prescription token",
   "fhirVersion": "4.0.1",
   "mapping": [
     {

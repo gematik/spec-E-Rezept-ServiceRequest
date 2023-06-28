@@ -8,7 +8,7 @@
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "ServiceRequest, der genutzt wird um ein Rezept zu beliefern",
+  "description": "ServiceRequest that is used to supply a recipe",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -37,22 +37,16 @@
       "name": "Quality Improvement and Clinical Knowledge (QUICK)"
     },
     {
-      "identity": "Rezeptanforderung-Rezeptuebermittlung",
-      "name": "Dispense Request Mapping für Rezeptübermittlung",
+      "identity": "Dispensieranforderung-Rezeptuebermittlung",
+      "name": "Dispensieranforderung_Rezeptübermittlung",
       "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
-      "comment": "Mapping für fachliche Informationseinheiten der Belieferungsanfrage des Feature Dokuments"
+      "comment": "Mapping for 'fachliche Informationseineit' of the 'Belieferungsanfrage' of the feature document"
     },
     {
-      "identity": "Rezeptanforderung-Rezeptuebermittlung-Storno",
-      "name": "Dispense Request Mapping für Storno",
+      "identity": "Dispensieranforderung-Bestaetigung",
+      "name": "Dispensieranforderung_Bestätigung",
       "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
-      "comment": "Mapping für fachliche Informationseinheiten des Stornos einer Belieferungsanfrage des Feature Dokuments"
-    },
-    {
-      "identity": "Rezeptanforderung-Rezeptuebermittlung-Ablehnung",
-      "name": "Dispense Request Mapping für Ablehnung",
-      "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
-      "comment": "Mapping für fachliche Informationseinheiten der Ablehnung einer Belieferungsanfrage des Feature Dokuments"
+      "comment": "Mapping for 'fachliche Informationseineit' of the 'Belieferungsanfrage' of the feature document"
     }
   ],
   "kind": "resource",
@@ -67,16 +61,12 @@
         "path": "ServiceRequest",
         "mapping": [
           {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung",
-            "map": "Rezeptanforderung_Rezeptuebermittlung"
+            "identity": "Dispensieranforderung-Rezeptuebermittlung",
+            "map": "Dispensieranforderung_Rezeptübermittlung"
           },
           {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung-Storno",
-            "map": "Rezeptanforderung_Rezeptuebermittlung_Storno"
-          },
-          {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung-Ablehnung",
-            "map": "Rezeptanforderung_Rezeptuebermittlung_Ablehnung"
+            "identity": "Dispensieranforderung-Bestaetigung",
+            "map": "Dispensieranforderung_Bestätigung"
           }
         ]
       },
@@ -89,8 +79,8 @@
         "id": "ServiceRequest.extension:EPrescriptionToken",
         "path": "ServiceRequest.extension",
         "sliceName": "EPrescriptionToken",
-        "short": "Hier kann der E-Rezept Token für die Belieferung der Apotheke bereit gestellt werden.",
-        "comment": "Der Token hat die Form '/Task/{PrescriptionID}/$accept?ac={AccessCode}. Siehe [gemSpec_DM_eRp](https://fachportal.gematik.de/fachportal-import/files/gemSpec_DM_eRp_V1.5.0.pdf)'.",
+        "short": "The e-prescription token for delivery to the pharmacy can be provided here.",
+        "comment": "The token is of the form '/Task/{PrescriptionID}/$accept?ac={AccessCode}. See [gemSpec_DM_eRp](https://fachportal.gematik.de/fachportal-import/files/gemSpec_DM_eRp_V1.5.0.pdf)'.",
         "min": 0,
         "max": "1",
         "type": [
@@ -104,11 +94,11 @@
         "mustSupport": true,
         "mapping": [
           {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung",
+            "identity": "Dispensieranforderung-Rezeptuebermittlung",
             "map": "ERezept_Access_Code"
           },
           {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung",
+            "identity": "Dispensieranforderung-Rezeptuebermittlung",
             "map": "ERezept_Task_ID"
           }
         ]
@@ -124,7 +114,7 @@
             }
           ],
           "rules": "open",
-          "description": "Definiert Identifier, die in einem Vorgang genutzt werden sollen"
+          "description": "Defines identifiers to be used in a process"
         },
         "min": 1,
         "mustSupport": true
@@ -133,8 +123,8 @@
         "id": "ServiceRequest.identifier:requestId",
         "path": "ServiceRequest.identifier",
         "sliceName": "requestId",
-        "short": "Identifier, der eineindeutig einen ServiceRequest referenziert.",
-        "comment": "Zur Referenzierung und Zuordnung von ServiceRequest, bspw. wenn ein ServiceRequest einen anderen ersetzen soll, ist es wichtig diese Zuordnung mit dem Identifier treffen zu können. Kann beispielsweise über eine UUID abgebildet werden.",
+        "short": "Identifier that uniquely references a ServiceRequest.",
+        "comment": "For referencing and assignment of ServiceRequest, e.g. if one ServiceRequest is to replace another, it is important to be able to make this assignment with the identifier. Can be mapped via a UUID, for example.",
         "min": 1,
         "max": "1",
         "type": [
@@ -150,9 +140,9 @@
         "id": "ServiceRequest.identifier:predisId",
         "path": "ServiceRequest.identifier",
         "sliceName": "predisId",
-        "short": "Identifier, der einen Prescription- und einen Dispenserequest verbindet.",
-        "definition": "In einigen Anwendungsfällen werden bedarf es der Information welche Verordnungsanfrage zu welcher Belieferungsanfrage gehört. Wenn bspw. ein Medikament angefragt wird möchte man verfolgen können welche die dazugehörige Belieferungsanfrage ist. Hierzu dient der predisIdentifier, der ein Paar von ServiceRequest**Prescription**Request und ServiceRequest**Dispense**Request zusammengehörig identifiziert.",
-        "comment": "Kann beispielsweise über eine UUID abgebildet werden.",
+        "short": "Identifier that connects a prescription and a dispensing request.",
+        "definition": "In some applications, it is necessary to know which prescription request belongs to which delivery request. If, for example, a medication is requested, you want to be able to track which is the corresponding delivery request. The predisIdentifier is used for this purpose, which identifies a pair of ServiceRequest**Prescription**Request and ServiceRequest**Dispense**Request together.",
+        "comment": "Can be mapped via a UUID, for example.",
         "min": 0,
         "max": "1",
         "type": [
@@ -167,8 +157,8 @@
       {
         "id": "ServiceRequest.basedOn",
         "path": "ServiceRequest.basedOn",
-        "short": "KBV Prescription, die von der Apotheke beliefert werden soll.",
-        "comment": "Einem ServiceRequest ist genau ein MedicationRequest zugeordnet, sodass unabhängige Bearbeitungen möglich sind.",
+        "short": "KBV Prescription to be supplied by the pharmacy.",
+        "comment": "Exactly one MedicationRequest is assigned to a ServiceRequest, so that independent processing is possible.",
         "max": "1",
         "type": [
           {
@@ -181,11 +171,7 @@
         "mustSupport": true,
         "mapping": [
           {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung",
-            "map": "Veraenderungskennzeichen_zur_Ursprungsanforderung"
-          },
-          {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung",
+            "identity": "Dispensieranforderung-Rezeptuebermittlung",
             "map": "Strukturierter_Verordnungsdatensatz"
           }
         ]
@@ -193,8 +179,8 @@
       {
         "id": "ServiceRequest.requisition",
         "path": "ServiceRequest.requisition",
-        "short": "Identifier des Vorgangs. Alle ServiceRequests innerhalb eines Vorgangs erhalten die gleiche ID.",
-        "comment": "Ist als Fall- oder Vorgangs-ID zu verstehen, um nachverfolgen zu können zu welcher Anfrage der ServiceRequest gehört.",
+        "short": "Identifier of the process. All ServiceRequests within a process receive the same ID.",
+        "comment": "Is to be understood as a case or process ID in order to be able to track which request the ServiceRequest belongs to.",
         "min": 1,
         "type": [
           {
@@ -207,15 +193,11 @@
         "mustSupport": true,
         "mapping": [
           {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung",
+            "identity": "Dispensieranforderung-Rezeptuebermittlung",
             "map": "Vorgangs_ID"
           },
           {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung-Storno",
-            "map": "Vorgangs_ID"
-          },
-          {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung-Ablehnung",
+            "identity": "Dispensieranforderung-Bestaetigung",
             "map": "Vorgangs_ID"
           }
         ]
@@ -223,8 +205,8 @@
       {
         "id": "ServiceRequest.status",
         "path": "ServiceRequest.status",
-        "short": "Gibt den Bearbeitungsstand eines ServiceRequests an.",
-        "comment": "Bei Statusänderung wird dieser Wert überschrieben.",
+        "short": "Indicates the processing status of a service request.",
+        "comment": "If the status changes, this value is overwritten.",
         "mustSupport": true,
         "binding": {
           "strength": "required",
@@ -239,7 +221,7 @@
       {
         "id": "ServiceRequest.code",
         "path": "ServiceRequest.code",
-        "short": "Gibt die Art des ServiceRequests an.",
+        "short": "Indicates the type of service request.",
         "mustSupport": true
       },
       {
@@ -261,14 +243,14 @@
       {
         "id": "ServiceRequest.code.coding.code",
         "path": "ServiceRequest.code.coding.code",
-        "comment": "#dispense-request dient als ServiceRequest für eine Apotheke zur Belieferung eines Rezeptes.",
+        "comment": "#dispense-request serves as a service request for a pharmacy to deliver a prescription.",
         "min": 1,
         "fixedCode": "dispense-request"
       },
       {
         "id": "ServiceRequest.subject",
         "path": "ServiceRequest.subject",
-        "short": "Patient für den stellvertretend ein Rezept beliefert werden soll.",
+        "short": "Patient for whom a prescription is to be delivered.",
         "type": [
           {
             "code": "Reference",
@@ -282,7 +264,7 @@
       {
         "id": "ServiceRequest.occurrence[x]",
         "path": "ServiceRequest.occurrence[x]",
-        "short": "Gibt das Datum an, an dem das Medikament ausgeliefert werden soll.",
+        "short": "Indicates the date when the medication should be delivered.",
         "min": 1,
         "type": [
           {
@@ -294,16 +276,16 @@
       {
         "id": "ServiceRequest.authoredOn",
         "path": "ServiceRequest.authoredOn",
-        "short": "Erstellungsdatum der Anfrage.",
-        "comment": "Wird initial angelegt und dann nicht mehr verändert.",
+        "short": "Creation date of the request.",
+        "comment": "Is initially created and then no longer changed.",
         "min": 1,
         "mustSupport": true
       },
       {
         "id": "ServiceRequest.requester",
         "path": "ServiceRequest.requester",
-        "short": "Anfragende Einrichtung oder Arzt.",
-        "comment": "Falls das System des Verordnenden dieses Profil erstellt muss hier die Einrichtung/ Person angegeben werden, die die Verordnungsanfrage gestellt hat.",
+        "short": "Inquiring institution or doctor.",
+        "comment": "If the prescriber's system creates this profile, the institution/person who made the prescription request must be specified here.",
         "min": 1,
         "type": [
           {
@@ -319,7 +301,7 @@
       {
         "id": "ServiceRequest.performer",
         "path": "ServiceRequest.performer",
-        "short": "Apotheke, die das E-Rezept beliefern soll.",
+        "short": "Pharmacy that is to deliver the e-prescription.",
         "type": [
           {
             "code": "Reference",
@@ -329,20 +311,6 @@
           }
         ],
         "mustSupport": true
-      },
-      {
-        "id": "ServiceRequest.reasonCode",
-        "path": "ServiceRequest.reasonCode",
-        "mapping": [
-          {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung-Storno",
-            "map": "Begründung der Stornierung"
-          },
-          {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung-Ablehnung",
-            "map": "Ablehnungsgrund"
-          }
-        ]
       },
       {
         "id": "ServiceRequest.supportingInfo",
@@ -355,7 +323,7 @@
             }
           ],
           "rules": "open",
-          "description": "Unterstützende Informationen zur Belieferung"
+          "description": "Supporting information about delivery"
         },
         "min": 1,
         "mustSupport": true
@@ -379,8 +347,8 @@
       {
         "id": "ServiceRequest.supportingInfo:AusstellenderArzt.type",
         "path": "ServiceRequest.supportingInfo.type",
-        "short": "Arzt, der die Verordnung ausgestellt hat.",
-        "comment": "Falls es Rückfragen zur Verordnung gibt kann die Apotheke diese Informationen nutzen, um sich mit einem Verordnenden in Verbindung zu setzen.",
+        "short": "Doctor who issued the prescription.",
+        "comment": "If there are any questions about the prescription, the pharmacy can use this information to get in touch with a prescriber.",
         "min": 1,
         "fixedUri": "Practitioner"
       },
@@ -398,33 +366,43 @@
             ]
           }
         ],
-        "mustSupport": true
+        "mustSupport": true,
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Bestaetigung",
+            "map": "Strukturierter_Dispensierungsdatensatz"
+          }
+        ]
       },
       {
         "id": "ServiceRequest.supportingInfo:AbgabeDaten.type",
         "path": "ServiceRequest.supportingInfo.type",
-        "short": "Abgabedaten, die auch an den E-Rezept-Fachdienst gesendet werden.",
-        "comment": "Daduruch kann die anfragende Einrichtung/ Person nachvollziehen, welche Medikamente tatsächlich beliefert werden.",
+        "short": "Delivery data that is also sent to the e-prescription specialist service.",
+        "comment": "In this way, the inquiring facility/person can understand which medications are actually supplied.",
         "min": 1,
         "fixedUri": "MedicationDispense"
       },
       {
         "id": "ServiceRequest.note",
         "path": "ServiceRequest.note",
-        "short": "Weitere Angaben zur Belieferung.",
-        "comment": "Eventuell nicht spezifizierte Anwendungsfälle können hier im Freitext platziert werden.",
+        "short": "Further information on delivery.",
+        "comment": "Any use cases that are not specified can be placed here in free text.",
         "mustSupport": true,
         "mapping": [
           {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung",
+            "identity": "Dispensieranforderung-Rezeptuebermittlung",
             "map": "Hinweise_fuer_Empfänger"
           },
           {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung",
+            "identity": "Dispensieranforderung-Rezeptuebermittlung",
             "map": "Freitext"
           },
           {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung-Ablehnung",
+            "identity": "Dispensieranforderung-Bestaetigung",
+            "map": "Hinweise_fuer_Empfänger"
+          },
+          {
+            "identity": "Dispensieranforderung-Bestaetigung",
             "map": "Freitext"
           }
         ]

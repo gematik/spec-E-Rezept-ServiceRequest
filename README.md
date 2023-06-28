@@ -1,8 +1,8 @@
 <img align="right" width="200" height="37" src="Gematik_Logo_Flag.png"/> <br/>
 
-# spec-erezept-medicationrequest-communications FHIR-Profiles
+# spec-E-Rezept-ServiceRequest
 
-Communication ressources used to request a electronical prescription context. Ressources to to be published on www.simplifier.net/erezept-medicationrequest-communication
+Communication ressources used to request a electronical prescription context. Ressources to to be published on https://simplifier.net/erezept-servicerequest
 
 
 <details>
@@ -30,7 +30,7 @@ Communication ressources used to request a electronical prescription context. Re
 
 
 ## About The Project
-This Repo contains the fsh files to the later published spec-erezept-medicationrequest-communications files on simplifier.net and a script to validate them.
+This Repo contains the fsh files to the later published spec-E-Rezept-ServiceRequest files on simplifier.net and a script to validate them.
 
 ### Release Notes
 See [ReleaseNotes.md](./ReleaseNotes.md) for all information regarding the (newest) releases.

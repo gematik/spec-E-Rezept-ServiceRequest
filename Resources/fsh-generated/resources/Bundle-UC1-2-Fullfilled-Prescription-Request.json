@@ -47,7 +47,14 @@
           }
         ],
         "source": {
-          "endpoint": "http://test-pflegeheim.de"
+          "name": "HealthCare-Source",
+          "software": "HealthCare-Software",
+          "version": "1.0.0",
+          "contact": {
+            "system": "email",
+            "value": "info@healthcare.email"
+          },
+          "endpoint": "http://healthcare.endpoint"
         },
         "eventCoding": {
           "code": "eRezept_Rezeptanforderung;Rezeptbestaetigung",
@@ -62,10 +69,14 @@
         "id": "UC1-Response-Prescription-Request",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/service-request-prescription-request"
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
           ]
         },
         "intent": "order",
+        "requisition": {
+          "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
+          "value": "GroupID-UC1"
+        },
         "extension": [
           {
             "valueIdentifier": {
@@ -98,10 +109,6 @@
             "reference": "MedicationRequest/Example-Response-KBV-Prescription"
           }
         ],
-        "requisition": {
-          "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
-          "value": "GroupID-UC1"
-        },
         "status": "completed",
         "subject": {
           "reference": "Patient/Example-Patient"
@@ -124,24 +131,6 @@
         "performer": [
           {
             "reference": "Practitioner/Example-Practitioner"
-          }
-        ],
-        "reasonCode": [
-          {
-            "coding": [
-              {
-                "code": "medication-runs-out",
-                "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-request-reason-cs"
-              }
-            ]
-          }
-        ],
-        "reasonReference": [
-          {
-            "reference": "Observation/Medication-Runs-Out-Example-dateTime"
-          },
-          {
-            "reference": "Observation/Medication-Runs-Out-Example-Quantity"
           }
         ],
         "note": [
@@ -456,6 +445,15 @@
           ]
         },
         "status": "active",
+        "payor": [
+          {
+            "identifier": {
+              "system": "http://fhir.de/sid/arge-ik/iknr",
+              "value": "108416214"
+            },
+            "display": "AOK Bayern Die Gesundh."
+          }
+        ],
         "extension": [
           {
             "url": "http://fhir.de/StructureDefinition/gkv/besondere-personengruppe",
@@ -484,15 +482,6 @@
               "code": "3",
               "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_VERSICHERTENSTATUS"
             }
-          }
-        ],
-        "payor": [
-          {
-            "identifier": {
-              "system": "http://fhir.de/sid/arge-ik/iknr",
-              "value": "108416214"
-            },
-            "display": "AOK Bayern Die Gesundh."
           }
         ],
         "type": {
@@ -590,59 +579,6 @@
             "value": "0301234567"
           }
         ]
-      }
-    },
-    {
-      "fullUrl": "http://erp-servicerequest-test.de/Observation/Medication-Runs-Out-Example-dateTime",
-      "resource": {
-        "resourceType": "Observation",
-        "id": "Medication-Runs-Out-Example-dateTime",
-        "meta": {
-          "profile": [
-            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-remaining-medication"
-          ]
-        },
-        "status": "final",
-        "subject": {
-          "reference": "Patient/Example-Patient"
-        },
-        "code": {
-          "coding": [
-            {
-              "code": "range-of-medication",
-              "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-observation-cs"
-            }
-          ]
-        },
-        "valueDateTime": "2023-01-31"
-      }
-    },
-    {
-      "fullUrl": "http://erp-servicerequest-test.de/Observation/Medication-Runs-Out-Example-Quantity",
-      "resource": {
-        "resourceType": "Observation",
-        "id": "Medication-Runs-Out-Example-Quantity",
-        "meta": {
-          "profile": [
-            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-remaining-medication"
-          ]
-        },
-        "status": "final",
-        "subject": {
-          "reference": "Patient/Example-Patient"
-        },
-        "code": {
-          "coding": [
-            {
-              "code": "range-of-medication",
-              "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-observation-cs"
-            }
-          ]
-        },
-        "valueQuantity": {
-          "value": 7,
-          "unit": "stk"
-        }
       }
     }
   ],

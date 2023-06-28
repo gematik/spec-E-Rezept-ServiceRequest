@@ -45,10 +45,6 @@ Description: "Response sent from Practitioner back to HealthCareService"
 * entry[=].resource = Response-Coverage
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Organization/Example-HealthCareService-Organization"
 * entry[=].resource = Example-HealthCareService-Organization
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/Observation/Medication-Runs-Out-Example-dateTime"
-* entry[=].resource = Medication-Runs-Out-Example-dateTime
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/Observation/Medication-Runs-Out-Example-Quantity"
-* entry[=].resource = Medication-Runs-Out-Example-Quantity
 
 Instance: UC1-3-Dispense-Request-To-Pharmacy
 InstanceOf: ERPServiceRequestMessageContainer

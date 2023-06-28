@@ -4,17 +4,17 @@
   "content": "complete",
   "name": "MedicationObservationCS",
   "id": "medication-observation-cs",
-  "title": "Angabe zur Medikamentenbeobachtung (CS)",
-  "description": "Gibt Arten der Beobachtungen zum Status eines Medikaments an",
-  "version": "1.0",
+  "title": "Information on medication monitoring (CS)",
+  "description": "Specifies types of observations on the status of a drug",
   "url": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-observation-cs",
   "concept": [
     {
       "code": "range-of-medication",
-      "display": "Angabe der Restreichweite des Medikaments"
+      "display": "Indication of the remaining range of the drug"
     }
   ],
   "experimental": false,
   "publisher": "gematik GmbH",
+  "version": "1.0",
   "count": 1
 }

@@ -1,6 +1,6 @@
 - name: Index
   filename: Index.page.md
-- name: Rezeptanforderung
+- name: Rezeptanforderung in der Pflege
   filename: 1_Rezeptanforderung
 - name: Rezeptanforderung für Parenterale Zubereitung
   filename: 2_Parenterale-Zubereitung

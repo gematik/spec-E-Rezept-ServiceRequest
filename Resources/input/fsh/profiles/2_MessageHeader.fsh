@@ -2,12 +2,12 @@ Profile: ERPServiceRequestRequestHeader
 Parent: $GEM_PR_ATF_MessageHeader
 Id: erp-service-request-request-header
 Title: "ERP Service Request Request Header"
-Description: "Header, welcher Informationen über Absender und Adressat enthält"
+Description: "Header containing information about the sender and addressee"
 * insert Meta (erp-service-request-request-header)
 * focus MS
 * focus only Reference(ERPServiceRequestPrescriptionRequest or ERPServiceRequestDispenseRequest)
-  * ^short = "Angabe des ServiceRequests, der die wesentlichen Informationen zu einem gegebenen Anwendungsfall enthält."
-  * ^comment = "Da eine Anfrage genau eine Medikation adressieren soll, ist auch entsprechend ein ServiceRequest anzugeben."
+  * ^short = "Specification of the ServiceRequest that contains the essential information for a given use case."
+  * ^comment = "Since a request should address exactly one medication, a ServiceRequest must also be specified accordingly."
 * eventCoding from ServiceIdentifierVS (required)
-  * ^short = "Der EventCode, der angibt in welchem Anwendungsfall und welchem Übertragungsweg die Kommunikation gerade geschieht"
-  * ^comment = "Für weitere Informationen siehe [ATF-ImplementationGuide](https://simplifier.net/app-transport-framework/~guides)"
+  * ^short = "The event code that indicates in which application and which transmission path the communication is currently taking place"
+  * ^comment = "For more information see [ATF ImplementationGuide](https://simplifier.net/app-transport-framework/~guides)"

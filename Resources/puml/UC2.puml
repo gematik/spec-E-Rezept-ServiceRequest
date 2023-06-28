@@ -1,17 +1,19 @@
 @startuml UC2
 autonumber "<b>[0]"
+participant Apotheke as AP #LightGreen
 participant Pflegeeinrichtung as PE #LightBlue
 participant Arzt as A #LightYellow
-participant Apotheke as AP #LightGreen
 participant "E-Rezept-Fachdienst" as FD #LightSalmon
 
-activate PE
-PE -> A++: <b>Prescription_ServiceRequest \n.status = active \n.basedOn = ERPServiceRequestMedicationRequest
+Activate AP
+AP -> PE++: <b>Rezeptanforderung\n <i>ERPServiceRequestPrescriptionRequest  \n.status = #active \n.basedOn = ERPServiceRequestMedicationRequest
+PE -> A++: <b>Rezeptanforderung\n <i>ERPServiceRequestPrescriptionRequest  \n.status = #active \n.basedOn = ERPServiceRequestMedicationRequest
 A -> FD++: E-Rezept einstellen
 FD -> A--: Task(PrescriptionID, AccessCode)
-A -> PE: <b>Prescription_ServiceRequest \n.status = completed \n.basedOn = KBV_Prescription
-A -> AP--++: <b>Dispense_ServiceRequest \n.status = active \n.basedOn = KBV_Prescription \n.extension:EPrescriptionToken = E-Rezept Token
-AP -> PE: <b>Dispense_ServiceRequest \n.status = active \n.basedOn = KBV_Prescription
+A -> PE: <b>Rezeptanforderung_Rezeptübermittlung\n <i>ERPServiceRequestPrescriptionRequest  \n.status = #completed \n.basedOn = KBV_Prescription
+PE -> AP: <b>Rezeptanforderung_Rezeptübermittlung\n <i>ERPServiceRequestPrescriptionRequest  \n.status = #completed \n.basedOn = KBV_Prescription
+
+
 AP <-> FD: E-Rezept einlösen
-AP -> PE--: <b>Dispense_ServiceRequest \n.status = completed \n.basedOn = KBV_Prescription \n.extension:EPrescriptionToken = E-Rezept Token
+AP -> PE--: <b>Dispensieranforderung_Bestätigung\n <i>ERPServiceRequestDispenseRequest  \n.status = #completed \n.basedOn = KBV_Prescription
 @enduml

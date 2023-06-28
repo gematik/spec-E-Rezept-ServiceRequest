@@ -25,7 +25,7 @@ Description: "Cancellationrequest sent to Prescriber to get a Prescription"
 Instance: UC1-Storno-2-Cancellation-Of-Prescriber
 InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
-Title: "Fullfilled Prescription Request"
+Title: "Cancellationrequest sent from Prescriber"
 Description: "Response sent from Practitioner back to HealthCareService"
 * identifier.value = "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
 * timestamp.value = "2023-01-30T13:28:17.239+02:00"

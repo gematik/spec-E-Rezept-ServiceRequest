@@ -2,7 +2,7 @@ Profile: ERPServiceRequestOrganization
 Parent: $KBV_PR_Base_Organization
 Id: erp-service-request-organization
 Title: "ERP Service Request Organization"
-Description: "Organisation die genutzt werden kann, um eine KIM-Addresse mit anzugeben"
+Description: "Organization that can be used to specify a KIM address"
 * insert Meta (erp-service-request-organization)
 
 * identifier MS
@@ -17,7 +17,7 @@ Description: "Organisation die genutzt werden kann, um eine KIM-Addresse mit anz
 
 Instance: Example-HealthCareService-Organization
 InstanceOf: ERPServiceRequestOrganization
-Usage: #inline
+Usage: #example
 * identifier[Telematik-ID].type = http://terminology.hl7.org/CodeSystem/v2-0203#PRN
 * identifier[Telematik-ID].system = "https://gematik.de/fhir/sid/telematik-id"
 * identifier[Telematik-ID].value = "1-031234567"

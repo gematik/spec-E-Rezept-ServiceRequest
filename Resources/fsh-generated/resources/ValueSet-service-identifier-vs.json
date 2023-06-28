@@ -3,12 +3,12 @@
   "status": "draft",
   "name": "ServiceIdentifierVS",
   "id": "service-identifier-vs",
-  "title": "Kennung des Anwendungsfalls",
-  "description": "Kennungen zur Angabe eines Anwendungsfalls der E-Rezept Kommunikation",
-  "version": "1.0",
+  "title": "Identifier of the use case",
+  "description": "Identifiers for specifying an application of e-prescription communication",
   "url": "https://gematik.de/fhir/erp-servicerequest/ValueSet/service-identifier-vs",
   "experimental": false,
   "publisher": "gematik GmbH",
+  "version": "1.0",
   "compose": {
     "include": [
       {
@@ -16,39 +16,39 @@
         "concept": [
           {
             "code": "eRezept_Rezeptanforderung;Rezeptanfrage",
-            "display": "Anfrage an einen Arzt ein Rezept auszustellen"
+            "display": "Request to a doctor to issue a prescription"
           },
           {
             "code": "eRezept_Rezeptanforderung;Rezeptanfrage_Storno",
-            "display": "Abbruch der Rezeptanfrage"
+            "display": "Cancellation of the prescription request"
           },
           {
             "code": "eRezept_Rezeptanforderung;Rezeptbestaetigung",
-            "display": "Bestätigung und übermittlung eines ausgestellten Rezeptes"
+            "display": "Confirmation and transmission of an issued prescription"
           },
           {
             "code": "eRezept_Rezeptanforderung;Abgabeanfrage",
-            "display": "Anfrage zur Erfüllung eines Rezeptes und Abgabe des Medikaments"
+            "display": "Request to fulfill a prescription and dispense the drug"
           },
           {
             "code": "eRezept_Rezeptanforderung;Abgabeanfrage_Storno",
-            "display": "Abbruch der Belieferungsanfrage"
+            "display": "Cancellation of the delivery request"
           },
           {
             "code": "eRezept_Rezeptanforderung;Abgabebestaetigung",
-            "display": "Bestätigung der Erfüllung und Abgabe eines Medikamentes"
+            "display": "Confirmation of fulfillment and dispensing of a medication"
           },
           {
             "code": "eRezept_ParenteraleZubereitung;Rezeptanfrage",
-            "display": "Rezeptanfrage für eine parenterale Zubereitung"
+            "display": "Prescription request for a parenteral preparation"
           },
           {
             "code": "eRezept_ParenteraleZubereitung;Rezeptanfrage_Storno",
-            "display": "Abbruch der Rezeptanfrage für eine parenterale Zubereitung"
+            "display": "Cancellation of the prescription request for a parenteral preparation"
           },
           {
             "code": "eRezept_ParenteraleZubereitung;Rezeptbestaetigung",
-            "display": "Bestätigung und übermittlung eines ausgestellten Rezeptes für eine parenterale Zubereitung"
+            "display": "Confirmation and transmission of an issued prescription for a parenteral preparation"
           }
         ]
       }

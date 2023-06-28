@@ -8,7 +8,7 @@
   "status": "draft",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "Organisation die genutzt werden kann, um eine KIM-Addresse mit anzugeben",
+  "description": "Organization that can be used to specify a KIM address",
   "fhirVersion": "4.0.1",
   "mapping": [
     {

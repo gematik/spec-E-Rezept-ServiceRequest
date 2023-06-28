@@ -2,4 +2,4 @@
 
 Valides Beispiel einer Verordnungsanfrage:
 
-{{json:UC1-Initial-Dispense-Request}}
+{{json:UC1-3-Dispense-Request-To-Pharmacy}}

@@ -1,14 +1,14 @@
 ValueSet: RequestReasonVS
 Id: request-reason-vs
-Title: "Grund der Medikamentenanfrage (VS)"
-Description: "Liefert Codes für Gründe, warum Medikation angefragt wird"
+Title: "Reason for the medication request (VS)"
+Description: "Provides codes for reasons why medication is requested"
 * insert MetaValueSet(request-reason-vs)
 * include codes from system MedicationRequestReasonCS
 * include codes from system CancellationReasonCS
 
 ValueSet: MedicationObservationVS
 Id: medication-observation-vs
-Title: "Angabe zur Medikamentenbeobachtung (VS)"
-Description: "Gibt Arten der Beobachtungen zum Status eines Medikaments an"
+Title: "Information on medication observation (VS)"
+Description: "Specifies types of observations on the status of a drug"
 * insert MetaValueSet(medication-observation-vs)
 * include codes from system MedicationObservationCS

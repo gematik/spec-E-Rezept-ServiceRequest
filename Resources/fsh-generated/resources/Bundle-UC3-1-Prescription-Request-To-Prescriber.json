@@ -47,7 +47,14 @@
           }
         ],
         "source": {
-          "endpoint": "http://test-pflegeheim.de"
+          "name": "HealthCare-Source",
+          "software": "HealthCare-Software",
+          "version": "1.0.0",
+          "contact": {
+            "system": "email",
+            "value": "info@healthcare.email"
+          },
+          "endpoint": "http://healthcare.endpoint"
         },
         "eventCoding": {
           "code": "eRezept_Rezeptanforderung;Rezeptanfrage",
@@ -62,10 +69,14 @@
         "id": "UC3-Initial-Prescription-Request",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/service-request-prescription-request"
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
           ]
         },
         "intent": "order",
+        "requisition": {
+          "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
+          "value": "GroupID-UC3"
+        },
         "code": {
           "coding": [
             {
@@ -85,10 +96,6 @@
             "reference": "MedicationRequest/Example-Initial-Medication-Request"
           }
         ],
-        "requisition": {
-          "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
-          "value": "GroupID-UC3"
-        },
         "status": "active",
         "subject": {
           "reference": "Patient/Example-Patient"
