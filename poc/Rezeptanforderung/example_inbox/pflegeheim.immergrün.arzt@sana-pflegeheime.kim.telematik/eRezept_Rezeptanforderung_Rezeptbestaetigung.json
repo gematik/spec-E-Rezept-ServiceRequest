@@ -1,0 +1,406 @@
+{
+    "id": "281e4a41-19d3-4292-b888-300d1dcd07e4",
+    "meta": {
+        "profile": [
+            "https://gematik.de/fhir/atf/StructureDefinition/bundle-app-transport-framework"
+        ]
+    },
+    "entry": [
+        {
+            "fullUrl": "urn:uuid:3f3cc6db-2b48-4f23-8240-628b59e0cf3e",
+            "resource": {
+                "id": "3f3cc6db-2b48-4f23-8240-628b59e0cf3e",
+                "meta": {
+                    "profile": [
+                        "https://gematik.de/fhir/atf/StructureDefinition/message-header-app-transport"
+                    ]
+                },
+                "destination": [
+                    {
+                        "endpoint": "https://ps_solutions.com/jira_helpdesk",
+                        "receiver": {
+                            "display": "pflegeheim.immergrÃ¼n.arzt@sana-pflegeheime.kim.telematik",
+                            "identifier": {
+                                "system": "http://gematik.de/fhir/sid/KIM-Adresse",
+                                "value": "pflegeheim.immergrÃ¼n.arzt@sana-pflegeheime.kim.telematik"
+                            }
+                        }
+                    }
+                ],
+                "eventCoding": {
+                    "code": "eRezept_Rezeptanforderung;Rezeptbestaetigung",
+                    "display": "BestÃ¤tigung und Ãbermittlung eines ausgestellten Rezeptes",
+                    "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
+                },
+                "focus": [
+                    {
+                        "reference": "urn:uuid:bced0e61-bc46-4de8-890a-5b8f395bf237"
+                    }
+                ],
+                "sender": {
+                    "display": "Praxis Dr. Hasenbein",
+                    "identifier": {
+                        "system": "http://gematik.de/fhir/sid/KIM-Adresse",
+                        "value": "praxis.hasenbein@gluecklich.kim.telematik"
+                    }
+                },
+                "source": {
+                    "contact": {
+                        "system": "email",
+                        "value": "issues@praxisfix-deltacare.de"
+                    },
+                    "endpoint": "https://deltacare.de/praxisfix/issues",
+                    "name": "DeltaCare Inc.",
+                    "software": "PraxisFix",
+                    "version": "1.3.2"
+                },
+                "resourceType": "MessageHeader"
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:bced0e61-bc46-4de8-890a-5b8f395bf237",
+            "resource": {
+                "id": "bced0e61-bc46-4de8-890a-5b8f395bf237",
+                "meta": {
+                    "profile": [
+                        "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/service-request-prescription-request"
+                    ]
+                },
+                "extension": [
+                    {
+                        "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex",
+                        "valueIdentifier": {
+                            "system": "https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken",
+                            "value": "Task/160.305.402.250.908/$accept?ac=de9EDD3cd78E9c258bcDba9e867daaEE10b5Dd09CCdF1caE3Fe3236474EfcE4A"
+                        }
+                    }
+                ],
+                "authoredOn": "2023-06-28T12:33:31.028749",
+                "basedOn": [
+                    {
+                        "reference": "a02acdaa-6239-4a14-ba41-0d2f943c150c"
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "code": "prescription-request",
+                            "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
+                        }
+                    ]
+                },
+                "identifier": [
+                    {
+                        "system": "request",
+                        "value": "bced0e61-bc46-4de8-890a-5b8f395bf237"
+                    },
+                    {
+                        "system": "predis",
+                        "value": "6035da62-33ca-4eab-84e9-89515a24cd35"
+                    },
+                    {
+                        "system": "vorgangs",
+                        "value": "72fa90d9-cd0f-4a99-ac87-5f8529bad3ff"
+                    }
+                ],
+                "intent": "order",
+                "note": [
+                    {
+                        "text": "Medikament lÃ¤uft am 31.01.2023 aus. Es sind noch 7 stk Ã¼brig."
+                    }
+                ],
+                "occurrenceDateTime": "2023-06-28T12:33:31.028745",
+                "orderDetail": [
+                    {
+                        "coding": [
+                            {
+                                "code": "return-to-requester",
+                                "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/prescription-fullfillment-type-cs"
+                            }
+                        ]
+                    }
+                ],
+                "performer": [
+                    {
+                        "identifier": {
+                            "system": "http://gematik.de/fhir/sid/KIM-Adresse",
+                            "value": "practitioner@gluecklich.kim.telematik"
+                        }
+                    }
+                ],
+                "reasonCode": [
+                    {
+                        "coding": [
+                            {
+                                "code": "medication-runs-out",
+                                "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-request-reason-cs"
+                            }
+                        ]
+                    }
+                ],
+                "reasonReference": [
+                    {
+                        "reference": "Medication-Runs-Out-Example-dateTime"
+                    },
+                    {
+                        "reference": "Medication-Runs-Out-Example-Quantity"
+                    }
+                ],
+                "requester": {
+                    "reference": "cfe76caf-82d4-4b04-9da3-6b67e409ffe5"
+                },
+                "requisition": {
+                    "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
+                    "value": "72fa90d9-cd0f-4a99-ac87-5f8529bad3ff"
+                },
+                "status": "completed",
+                "subject": {
+                    "reference": "e7c77ddd-206e-4a40-81e1-3313ef8c503d"
+                },
+                "resourceType": "ServiceRequest"
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:bced0e61-bc46-4de8-890a-5b8f395bf237",
+            "resource": {
+                "id": "bced0e61-bc46-4de8-890a-5b8f395bf237",
+                "meta": {
+                    "profile": [
+                        "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/service-request-prescription-request"
+                    ]
+                },
+                "extension": [
+                    {
+                        "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex",
+                        "valueIdentifier": {
+                            "system": "https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken",
+                            "value": "Task/160.305.402.250.908/$accept?ac=de9EDD3cd78E9c258bcDba9e867daaEE10b5Dd09CCdF1caE3Fe3236474EfcE4A"
+                        }
+                    }
+                ],
+                "authoredOn": "2023-06-28T12:33:31.028749",
+                "basedOn": [
+                    {
+                        "reference": "a02acdaa-6239-4a14-ba41-0d2f943c150c"
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "code": "prescription-request",
+                            "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
+                        }
+                    ]
+                },
+                "identifier": [
+                    {
+                        "system": "request",
+                        "value": "bced0e61-bc46-4de8-890a-5b8f395bf237"
+                    },
+                    {
+                        "system": "predis",
+                        "value": "6035da62-33ca-4eab-84e9-89515a24cd35"
+                    },
+                    {
+                        "system": "vorgangs",
+                        "value": "72fa90d9-cd0f-4a99-ac87-5f8529bad3ff"
+                    }
+                ],
+                "intent": "order",
+                "note": [
+                    {
+                        "text": "Medikament lÃ¤uft am 31.01.2023 aus. Es sind noch 7 stk Ã¼brig."
+                    }
+                ],
+                "occurrenceDateTime": "2023-06-28T12:33:31.028745",
+                "orderDetail": [
+                    {
+                        "coding": [
+                            {
+                                "code": "return-to-requester",
+                                "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/prescription-fullfillment-type-cs"
+                            }
+                        ]
+                    }
+                ],
+                "performer": [
+                    {
+                        "identifier": {
+                            "system": "http://gematik.de/fhir/sid/KIM-Adresse",
+                            "value": "practitioner@gluecklich.kim.telematik"
+                        }
+                    }
+                ],
+                "reasonCode": [
+                    {
+                        "coding": [
+                            {
+                                "code": "medication-runs-out",
+                                "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-request-reason-cs"
+                            }
+                        ]
+                    }
+                ],
+                "reasonReference": [
+                    {
+                        "reference": "Medication-Runs-Out-Example-dateTime"
+                    },
+                    {
+                        "reference": "Medication-Runs-Out-Example-Quantity"
+                    }
+                ],
+                "requester": {
+                    "reference": "cfe76caf-82d4-4b04-9da3-6b67e409ffe5"
+                },
+                "requisition": {
+                    "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
+                    "value": "72fa90d9-cd0f-4a99-ac87-5f8529bad3ff"
+                },
+                "status": "completed",
+                "subject": {
+                    "reference": "e7c77ddd-206e-4a40-81e1-3313ef8c503d"
+                },
+                "resourceType": "ServiceRequest"
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:a02acdaa-6239-4a14-ba41-0d2f943c150c",
+            "resource": {
+                "id": "a02acdaa-6239-4a14-ba41-0d2f943c150c",
+                "meta": {
+                    "profile": [
+                        "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription|1.1.0"
+                    ]
+                },
+                "extension": [
+                    {
+                        "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_EmergencyServicesFee",
+                        "valueBoolean": false
+                    },
+                    {
+                        "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_BVG",
+                        "valueBoolean": false
+                    },
+                    {
+                        "extension": [
+                            {
+                                "url": "Kennzeichen",
+                                "valueBoolean": false
+                            }
+                        ],
+                        "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Multiple_Prescription"
+                    },
+                    {
+                        "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_StatusCoPayment",
+                        "valueCoding": {
+                            "code": "1",
+                            "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_StatusCoPayment"
+                        }
+                    }
+                ],
+                "authoredOn": "2023-06-28",
+                "dosageInstruction": [
+                    {
+                        "extension": [
+                            {
+                                "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_DosageFlag",
+                                "valueBoolean": true
+                            }
+                        ],
+                        "text": "2mal tÃ¤gl. 5ml"
+                    }
+                ],
+                "insurance": [
+                    {
+                        "reference": "aa88f7fb-0a34-487a-b3f0-a15dab6a61fe"
+                    }
+                ],
+                "intent": "order",
+                "medicationReference": {
+                    "reference": "Example-Initial-Medication"
+                },
+                "requester": {
+                    "reference": "9709efab-10bd-4a7e-81e4-691501b768e8"
+                },
+                "status": "active",
+                "substitution": {
+                    "allowedBoolean": true
+                },
+                "resourceType": "MedicationRequest"
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:aa88f7fb-0a34-487a-b3f0-a15dab6a61fe",
+            "resource": {
+                "id": "aa88f7fb-0a34-487a-b3f0-a15dab6a61fe",
+                "meta": {
+                    "profile": [
+                        "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Coverage|1.1.0"
+                    ]
+                },
+                "extension": [
+                    {
+                        "url": "http://fhir.de/StructureDefinition/gkv/besondere-personengruppe",
+                        "valueCoding": {
+                            "code": "00",
+                            "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_PERSONENGRUPPE"
+                        }
+                    },
+                    {
+                        "url": "http://fhir.de/StructureDefinition/gkv/dmp-kennzeichen",
+                        "valueCoding": {
+                            "code": "00",
+                            "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DMP"
+                        }
+                    },
+                    {
+                        "url": "http://fhir.de/StructureDefinition/gkv/wop",
+                        "valueCoding": {
+                            "code": "72",
+                            "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ITA_WOP"
+                        }
+                    },
+                    {
+                        "url": "http://fhir.de/StructureDefinition/gkv/versichertenart",
+                        "valueCoding": {
+                            "code": "3",
+                            "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_VERSICHERTENSTATUS"
+                        }
+                    }
+                ],
+                "beneficiary": {
+                    "reference": "Patient/Example-Patient"
+                },
+                "payor": [
+                    {
+                        "display": "AOK Bayern Die Gesundh.",
+                        "identifier": {
+                            "system": "http://fhir.de/sid/arge-ik/iknr",
+                            "value": "108416214"
+                        }
+                    }
+                ],
+                "period": {
+                    "end": "2040-04-01"
+                },
+                "status": "active",
+                "type": {
+                    "coding": [
+                        {
+                            "code": "GKV",
+                            "system": "http://fhir.de/CodeSystem/versicherungsart-de-basis"
+                        }
+                    ]
+                },
+                "resourceType": "Coverage"
+            }
+        }
+    ],
+    "identifier": {
+        "system": "urn:ietf:rfc:3986",
+        "value": "urn:uuid:281e4a41-19d3-4292-b888-300d1dcd07e4"
+    },
+    "timestamp": "2023-06-28T10:33:31.040312+00:00",
+    "type": "message",
+    "resourceType": "Bundle"
+}

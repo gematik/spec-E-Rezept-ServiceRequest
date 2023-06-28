@@ -8,8 +8,8 @@ from example_helper.communication_mock import FileSystemCommunicator
 
 
 from app_transport_framework_library.models.message_to_send import MessageToSend
-from app_transport_framework_library.models.bundle_focus_content import (
-    BundleFocusContent,
+from app_transport_framework_library.models.bundle_content import (
+    BundleContent,
 )
 from app_transport_framework_library.models.empfangsbestaetigung import (
     Empfangsbestaetigung,
@@ -36,7 +36,7 @@ class Primärsystem:
         processor.received_Empfangsbestaetigung_event.subscribe(
             self.on_received_Empfangsbestaetigung
         )
-        processor.focus_Ressource_to_process_event.subscribe(
+        processor.bundle_content_to_process_event.subscribe(
             self.on_focus_Ressource_to_process
         )
         return processor
@@ -70,17 +70,18 @@ class Pflegeeinrichtung(Primärsystem):
             .decode("unicode_escape")
         )
 
-    def on_focus_Ressource_to_process(self, bundle_content: BundleFocusContent):
+    def on_focus_Ressource_to_process(self, bundle_content: BundleContent):
         print(f"Processing Bundle with focus on '{bundle_content.code}'")
         if bundle_content.code == "eRezept_Rezeptanforderung;Rezeptbestaetigung":
             print("Pflegeinrichtung hat Rezeptbestaetigung erhalten.")
 
 
 class Arztpraxis(Primärsystem):
-    def on_focus_Ressource_to_process(self, bundle_content: BundleFocusContent):
-        print(f"Processing Bundle with focus on '{bundle_content.code}'")
-        if bundle_content.code == "eRezept_Rezeptanforderung;Rezeptanfrage":
-            RezeptanfrageHandler().handle(bundle_content)
+    def on_focus_Ressource_to_process(self, bundle_content: BundleContent):
+        print(f"Processing Bundle with focus on '{bundle_content.service_identifier.code}'")
+        if bundle_content.service_identifier.code == "eRezept_Rezeptanforderung;Rezeptanfrage":
+            message_to_send = RezeptanfrageHandler(sender_arztpraxis, software_arztpraxis).handle(bundle_content)
+            self.on_new_message_to_send(message_to_send)
 
 
 communicator = FileSystemCommunicator([])
@@ -102,7 +103,7 @@ pflegeeinrichtung = Pflegeeinrichtung(
     software_pflegeeinrichtung,
 )
 
-kim_address_arzt = "hasenbein@gluecklich.kim.telematik"
+kim_address_arzt = "praxis.hasenbein@gluecklich.kim.telematik"
 sender_arztpraxis = ParticipantsCreator.create_sender(
     kim_address_arzt, "Praxis Dr. Hasenbein"
 )
@@ -115,13 +116,12 @@ software_arztpraxis = ParticipantsCreator.create_source(
 )
 
 destination_arzt = ParticipantsCreator.create_destinations(
-    kim_address_arzt, "Praxis Dr. Hasenbein", "https://unknown.endpoint.de"
+    kim_address_arzt, "Praxis Dr. Hasenbein", "http://www.praxis.hasenbein@test.de"
 )
 
 arztpraxis = Arztpraxis(
     "Praxis Dr. Hasenbein", communicator, sender_arztpraxis, software_arztpraxis
 )
-
 
 arztpraxis.processor.register_use_case_handler(
     "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs",
