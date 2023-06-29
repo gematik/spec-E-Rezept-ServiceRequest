@@ -1,5 +1,5 @@
 {
-    "id": "5d15c171-2aa4-48ef-8eed-e77c93aeb7db",
+    "id": "03df8c7e-e43e-4d63-acd1-b6fb14cb9953",
     "meta": {
         "profile": [
             "https://gematik.de/fhir/atf/StructureDefinition/bundle-app-transport-framework"
@@ -7,9 +7,9 @@
     },
     "entry": [
         {
-            "fullUrl": "urn:uuid:32604d18-9c44-4dff-a467-feecef4ed4d5",
+            "fullUrl": "urn:uuid:3c338001-737b-43a6-a2c2-7c4b8edbe47f",
             "resource": {
-                "id": "32604d18-9c44-4dff-a467-feecef4ed4d5",
+                "id": "3c338001-737b-43a6-a2c2-7c4b8edbe47f",
                 "meta": {
                     "profile": [
                         "https://gematik.de/fhir/atf/StructureDefinition/message-header-app-transport"
@@ -28,13 +28,13 @@
                     }
                 ],
                 "eventCoding": {
-                    "code": "eRezept_Rezeptanforderung;Abgabeanfrage",
-                    "display": "Anfrage zur Erfüllung eines Rezeptes und Abgabe des Medikaments",
+                    "code": "eRezept_Rezeptanforderung;Abgabeanfrage_Storno",
+                    "display": "Abbruch der Abgabeanfrage",
                     "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
                 },
                 "focus": [
                     {
-                        "reference": "urn:uuid:06724286-44d9-4fb9-88e0-d81ba459be9f"
+                        "reference": "urn:uuid:b2bd88ef-88ad-4472-80af-bf819a4d8936"
                     }
                 ],
                 "sender": {
@@ -58,15 +58,15 @@
             }
         },
         {
-            "fullUrl": "urn:uuid:06724286-44d9-4fb9-88e0-d81ba459be9f",
+            "fullUrl": "urn:uuid:b2bd88ef-88ad-4472-80af-bf819a4d8936",
             "resource": {
-                "id": "06724286-44d9-4fb9-88e0-d81ba459be9f",
+                "id": "b2bd88ef-88ad-4472-80af-bf819a4d8936",
                 "meta": {
                     "profile": [
                         "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"
                     ]
                 },
-                "authoredOn": "2023-06-30T00:16:00.692269",
+                "authoredOn": "2023-06-30T00:16:00.720278",
                 "basedOn": [
                     {
                         "reference": "a7e6e85c-aac8-4ed5-8d41-c5b3918a6a8b"
@@ -93,10 +93,10 @@
                 "intent": "filler-order",
                 "note": [
                     {
-                        "text": "Bitte wie üblich zur Abholung bereitlegen."
+                        "text": "Verschreibung fehlerhaft"
                     }
                 ],
-                "occurrenceDateTime": "2023-06-30T00:16:00.692267",
+                "occurrenceDateTime": "2023-06-30T00:16:00.720275",
                 "performer": [
                     {
                         "identifier": {
@@ -111,7 +111,7 @@
                     "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
                     "value": "83132153-07f4-4ce5-be81-3c3a093d48c0"
                 },
-                "status": "active",
+                "status": "revoked",
                 "subject": {
                     "reference": "96c423ad-cedb-45f5-8182-080cfd2195d9"
                 },
@@ -224,9 +224,9 @@
     ],
     "identifier": {
         "system": "urn:ietf:rfc:3986",
-        "value": "urn:uuid:5d15c171-2aa4-48ef-8eed-e77c93aeb7db"
+        "value": "urn:uuid:03df8c7e-e43e-4d63-acd1-b6fb14cb9953"
     },
-    "timestamp": "2023-06-29T22:16:00.692506+00:00",
+    "timestamp": "2023-06-29T22:16:00.720533+00:00",
     "type": "message",
     "resourceType": "Bundle"
 }

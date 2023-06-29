@@ -2,7 +2,7 @@ from typing import List, Type, Union
 from uuid import uuid4
 from app_transport_framework_library.models.bundle_content import BundleContent
 from app_transport_framework_library.models.message_to_send import MessageToSend
-from fhir.resources.bundle import BundleEntry
+from fhir.resources.bundle import Bundle, BundleEntry
 from fhir.resources.servicerequest import ServiceRequest
 from fhir.resources.medication import Medication
 from fhir.resources.medicationrequest import MedicationRequest
@@ -29,22 +29,24 @@ class RezeptanfrageHandler:
         self.practitioner = PractitionerCreator().get_example_practitioner()
         self.coverage_creator = CoverageCreator()
 
-    def handle(self, bundle_content: BundleContent) -> MessageToSend:
+    def handle(self, bundle_content: BundleContent) -> Bundle:
         response_bundle_entries = []
-        delivery_type = self.get_order_detail_code(bundle_content.bundle_entries)
+        service_request: ServiceRequest = self.get_resource_by_type(bundle_content.bundle_entries, ServiceRequest)
+        if service_request.status != "active":
+            return None
+        delivery_type = self.get_order_detail_code(service_request)
         if delivery_type == 'issue-prescription':
             self.handle_issue_prescription(bundle_content.bundle_entries)
 
         elif delivery_type == 'return-to-requester':
             response_service_request, response_bundle_entries = self.handle_return_to_requester(bundle_content.bundle_entries)
             #TODO: Also Store the display_name and endpoint from messageHeader  in BundleContent
-            destinations = ParticipantsCreator.create_destinations(bundle_content.sender, "Pflegeheim Immergrün", "https://ps_solutions.com/jira_helpdesk")
+            destinations = ParticipantsCreator.create_destinations(bundle_content.sender, "Pflegeeinrichtung Immergrün", "https://ps_solutions.com/jira_helpdesk")
             response_bundle = MessageContainerCreator.create_prescription_request_response(str(uuid4()), self.sender, self.source, destinations, response_service_request, response_bundle_entries)
-            return self.create_MessageToSend(bundle_content.sender, response_bundle)
+            return response_bundle
 
         else:
             raise ValueError(f'Unbekannter Zustelltyp: {delivery_type}')
-
 
     def handle_issue_prescription(self, bundle_entries: List[BundleEntry]):
         service_request: ServiceRequest = self.get_resource_by_type(bundle_entries, ServiceRequest)
@@ -96,13 +98,31 @@ class RezeptanfrageHandler:
     def get_resource_by_type(self, bundle_entries: List[BundleEntry], type: Type) -> Union[ServiceRequest, MedicationRequest, Medication, Organization]:
         return next((entry for entry in bundle_entries if isinstance(entry, type)), None)
 
-    def get_order_detail_code(self, bundle_entries: List[BundleEntry]):
-        service_request: ServiceRequest = self.get_resource_by_type(bundle_entries, ServiceRequest)
+    def get_order_detail_code(self, service_request: ServiceRequest):
         for detail in service_request.orderDetail:
             for coding in detail.coding:
                 if coding.system == 'https://gematik.de/fhir/erp-servicerequest/CodeSystem/prescription-fullfillment-type-cs':
                     return coding.code
         return None
+    
+    def get_storno_reason_code(self, service_request: ServiceRequest):
+        for detail in service_request.reasonCode:
+            for coding in detail.coding:
+                if coding.system == 'https://gematik.de/fhir/erp-servicerequest/CodeSystem/cancellation-reason-cs':
+                    return coding.code
+        return None
+    
+    def extract_identifiers(self, service_request: ServiceRequest):
+        identifier_dict = {}
+        for identifier in service_request.identifier:
+            if identifier.system == "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier":
+                identifier_dict["https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier"] = identifier.value
+            elif identifier.system == "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemPreDisIdentifier":
+                identifier_dict["https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemPreDisIdentifier"] = identifier.value
+        if service_request.id:
+            identifier_dict["https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier"] = service_request.id
+        return identifier_dict
+    
 
-    def create_MessageToSend(self, receiver: str, bundle):
-        return MessageToSend(atf_bundle=bundle, receiver=receiver, message_type="eRezept_Rezeptanforderung;Rezeptbestaetigung")
+
+  

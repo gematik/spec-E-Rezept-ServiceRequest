@@ -8,12 +8,12 @@ class RezeptbestaetigungHandler:
         self.sender = sender
         self.source = source
 
-    def handle(self, bundle_content: BundleContent) -> bool:
+    def handle(self, bundle_content: BundleContent):
         service_request: ServiceRequest = self.get_resource_by_type(bundle_content.bundle_entries, ServiceRequest)
         token = self.get_token_from_service_request(service_request)
         if token is not None:
-            return True
-        return False
+            return True, service_request
+        return False, service_request
 
     def get_token_from_service_request(self, service_request: ServiceRequest):
         token_url = "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex"

@@ -5,7 +5,7 @@ from fhir.resources.bundle import Bundle, BundleEntry
 from fhir.resources.messageheader import MessageHeader
 from typing import List, Tuple
 
-class RezeptanfrageValidator(BaseUseCaseValidator):
+class AbgabebestaetigungValidator(BaseUseCaseValidator):
 
     def resolve_reference(self, reference_str: str, bundle: Bundle):
         for entry in bundle.entry:
@@ -30,7 +30,7 @@ class RezeptanfrageValidator(BaseUseCaseValidator):
                 OperationOutcomeIssue(
                     severity="information",
                     code="informational",
-                    diagnostics="Rezeptanfrage erfolgreich entgegengenommen"
+                    diagnostics="Abgabebestätigung erfolgreich entgegengenommen"
                 )
             )
         for entry in bundle.entry:

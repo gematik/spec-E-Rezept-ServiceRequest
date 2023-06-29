@@ -16,7 +16,9 @@ class FileSystemCommunicator(ICommunicator):
     def send(self, receiver: str, messageType: str, message_bundle: Bundle):
         print(f"Sende '{messageType}' an '{receiver}'")
         self.write_result_ressource(
-            receiver, messageType, message_bundle.json(indent=4,ensure_ascii=False))
+            receiver, messageType, message_bundle.json(indent=4)
+            .encode()
+            .decode("unicode_escape"))
 
         # Check if receiver matches processor address
         for processor in self.processors:
@@ -30,5 +32,4 @@ class FileSystemCommunicator(ICommunicator):
             os.makedirs(path)
         file_name = file_name.replace(";", "_")
         with open(f"{path}/{file_name}.json", "w") as file:
-            file.write(ressource.encode().decode(
-                'unicode_escape'))
+            file.write(ressource)

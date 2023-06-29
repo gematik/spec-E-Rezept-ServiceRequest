@@ -31,6 +31,7 @@ class ServiceRequestCreator:
         order_detail_code: str,
         identifiers: Dict[str, str],
         references: Dict[str, Union[str,Identifier]],
+        reason_system,
         reason_code: str,
         reason_references: List[str],
         note_text: str,
@@ -93,7 +94,7 @@ class ServiceRequestCreator:
                 CodeableConcept(
                     coding=[
                         ServiceRequestCreator.create_coding(
-                            system="https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-request-reason-cs",
+                            system=reason_system,
                             code=reason_code,
                         )
                     ]

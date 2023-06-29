@@ -25,6 +25,9 @@ class PrescriptionRequestCreator:
         order_detail_code: str,
         reason_references: List[str],
         identifiers: Dict[str, str],
+        reason_system,
+        reason_code,
+        note_text
     ) -> ServiceRequest:
         return ServiceRequestCreator.create_service_request(
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request",
@@ -46,9 +49,10 @@ class PrescriptionRequestCreator:
                     value="practitioner@gluecklich.kim.telematik",
                 ),
             },
-            reason_code="medication-runs-out",
+            reason_system=reason_system,
+            reason_code=reason_code,
             reason_references=reason_references,
-            note_text="Medikament läuft am 31.01.2023 aus. Es sind noch 7 stk übrig.",
+            note_text=note_text,
         )
 
     @staticmethod
@@ -77,17 +81,23 @@ class PrescriptionRequestCreator:
         }
 
     @staticmethod
-    def create_prescription_request_bundle(
+    def create_request_bundle(
+        use_case,
+        use_case_display,
+        request_id,
         type: str,
         sender: ReferenceType,
         source: MessageHeaderSource,
         destinations: List[MessageHeaderDestination],
+        status,
+        reason_system,
+        reason_code,
+        note_text
     ) -> Bundle:
         identifiers = {
             name: PrescriptionRequestCreator.create_identifier()
             for name in [
                 "message",
-                "request",
                 "predis",
                 "vorgangs",
                 "patient",
@@ -96,10 +106,12 @@ class PrescriptionRequestCreator:
             ]
         }
 
+        identifiers[ "request"] = request_id 
+
         entries = PrescriptionRequestCreator.create_bundle_entries()
         observations_ids = [obs.id for obs in entries["observations"]]
         service_request = PrescriptionRequestCreator.create_service_request(
-            "active", type, observations_ids, identifiers
+            status, type, observations_ids, identifiers, reason_system, reason_code, note_text
         )
 
         bundle_entries = [
@@ -119,6 +131,6 @@ class PrescriptionRequestCreator:
             service_request,
             additional_bundle_entries=bundle_entries,
             code_system="https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs",
-            use_case="eRezept_Rezeptanforderung;Rezeptanfrage",
-            use_case_display="Anfrage an einen Arzt ein Rezept auszustellen"
-        )
+            use_case=use_case,
+            use_case_display=use_case_display
+        ),service_request

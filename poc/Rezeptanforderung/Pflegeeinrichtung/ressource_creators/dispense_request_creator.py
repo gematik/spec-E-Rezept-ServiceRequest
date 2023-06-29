@@ -53,43 +53,35 @@ class ResourceExtractor:
 
 class BundleBuilder:
     @staticmethod
-    def build_entries( kbv_prescription, medication, practitioner, patient, coverage,request_organisation, prescription_service_request ):
+    def build_entries( resource_list ):
         response_bundle_entries = []
-        response_bundle_entries.append(BundleEntry(fullUrl=f"urn:uuid:{kbv_prescription.id}", resource=kbv_prescription))
-        response_bundle_entries.append(BundleEntry(fullUrl=f"urn:uuid:{medication.id}", resource=medication))
-        response_bundle_entries.append(BundleEntry(fullUrl=f"urn:uuid:{practitioner.id}", resource=practitioner))
-        response_bundle_entries.append(BundleEntry(fullUrl=f"urn:uuid:{patient.id}", resource=patient))
-        response_bundle_entries.append(BundleEntry(fullUrl=f"urn:uuid:{coverage.id}", resource=coverage))
-        response_bundle_entries.append(BundleEntry(fullUrl=f"urn:uuid:{request_organisation.id}", resource=request_organisation))
-        response_bundle_entries.append(BundleEntry(fullUrl=f"urn:uuid:{prescription_service_request.id}", resource=prescription_service_request))
+        for resource in resource_list:
+            response_bundle_entries.append(BundleEntry(fullUrl=f"urn:uuid:{resource.id}", resource=resource))
 
         return response_bundle_entries
 
 class DispenseRequestCreator:
     @staticmethod
     def create_dispense_request_bundle(
+        status,
         sender: ReferenceType,
         source: MessageHeaderSource,
         destinations: List[MessageHeaderDestination],
-        prescription_request_bundle_content: BundleContent
+        prescription_service_request: ServiceRequest,
+        use_case,
+        use_case_display,
+        note_text
     ) -> Bundle:
         
-        prescription_service_request: ServiceRequest = ResourceExtractor.get_by_type(prescription_request_bundle_content.bundle_entries, ServiceRequest)
         identifiers = ResourceExtractor.extract_identifiers(prescription_service_request)
         identifiers["kim_address_apotheke"] = destinations[0].name
         references = ResourceExtractor.extract_references(prescription_service_request)
-        service_request = DispenseRequestCreator.create_dispense_service_request(identifiers, references)
+        service_request = DispenseRequestCreator.create_dispense_service_request(status, identifiers, references, note_text)
 
-        kbv_prescription: MedicationRequest = ResourceExtractor.get_by_type(prescription_request_bundle_content.bundle_entries, MedicationRequest)
-        practitioner: Practitioner = ResourceExtractor.get_by_type(prescription_request_bundle_content.bundle_entries, Practitioner)
-        medication: Medication = ResourceExtractor.get_by_type(prescription_request_bundle_content.bundle_entries, Medication)
-        patient: Patient = ResourceExtractor.get_by_type(prescription_request_bundle_content.bundle_entries, Patient)
-        coverage: Coverage = ResourceExtractor.get_by_type(prescription_request_bundle_content.bundle_entries, Coverage)
-        request_organisation: Coverage = ResourceExtractor.get_by_type(prescription_request_bundle_content.bundle_entries, Organization)
+        build_entries = [prescription_service_request]
 
+        dispense_additional_bundle_entries = BundleBuilder.build_entries(build_entries)
 
-        dispense_additional_bundle_entries = BundleBuilder.build_entries(kbv_prescription, medication,practitioner, patient, coverage, request_organisation, prescription_service_request)
-        
         return MessageContainerCreator.create_request_bundle(
             str(uuid4()),
             sender,
@@ -98,21 +90,23 @@ class DispenseRequestCreator:
             service_request,
             additional_bundle_entries=dispense_additional_bundle_entries,
             code_system="https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs",
-            use_case="eRezept_Rezeptanforderung;Abgabeanfrage",
-            use_case_display="Anfrage zur Erfüllung eines Rezeptes und Abgabe des Medikaments"
+            use_case=use_case,
+            use_case_display=use_case_display
         )
     
     
     @staticmethod
     def create_dispense_service_request(
+        status,
         identifiers: Dict[str, str],
         references: Dict[str, str],
+        note_text
     ) -> ServiceRequest:
         return ServiceRequestCreator.create_service_request(
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request",
             "filler-order",
             "dispense-request",
-            "active",
+            status,
             None,
             identifiers={
                 "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemPreDisIdentifier": identifiers["https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemPreDisIdentifier"],
@@ -127,7 +121,8 @@ class DispenseRequestCreator:
                     value=identifiers["kim_address_apotheke"],
                 ),
             },
+            reason_system=None,
             reason_code=None,
             reason_references=None,
-            note_text=None
+            note_text=note_text
         )

@@ -1,5 +1,5 @@
 {
-    "id": "62d1e3f4-fd58-4009-8db6-902676a6162d",
+    "id": "55957ec9-1449-4365-8a52-84a6f09d9d3e",
     "meta": {
         "profile": [
             "https://gematik.de/fhir/atf/StructureDefinition/bundle-app-transport-framework"
@@ -7,9 +7,9 @@
     },
     "entry": [
         {
-            "fullUrl": "urn:uuid:01816cb6-d72c-46ee-97c5-429013f5d0b4",
+            "fullUrl": "urn:uuid:2e9d2a8c-8ee1-43b0-b1d2-2b096a49e581",
             "resource": {
-                "id": "01816cb6-d72c-46ee-97c5-429013f5d0b4",
+                "id": "2e9d2a8c-8ee1-43b0-b1d2-2b096a49e581",
                 "meta": {
                     "profile": [
                         "https://gematik.de/fhir/atf/StructureDefinition/message-header-app-transport"
@@ -19,48 +19,48 @@
                     {
                         "endpoint": "https://ps_solutions.com/jira_helpdesk",
                         "receiver": {
-                            "display": "Pflegeheim ImmergrÃ¼n",
+                            "display": "Pflegeeinrichtung Immergrün",
                             "identifier": {
                                 "system": "http://gematik.de/fhir/sid/KIM-Adresse",
-                                "value": "pflegeheim.immergrÃ¼n.arzt@sana-pflegeheime.kim.telematik"
+                                "value": "pflegeheim.immergrün.arzt@sana-pflegeheime.kim.telematik"
                             }
                         }
                     }
                 ],
                 "eventCoding": {
                     "code": "atf;Empfangsbestaetigung",
-                    "display": "EmpfangsbestÃ¤tigung und Auskunft Ã¼ber FHIR Interpretierbarkeit der Nachricht",
+                    "display": "Empfangsbestätigung und Auskunft über FHIR Interpretierbarkeit der Nachricht",
                     "system": "https://gematik.de/fhir/atf/CodeSystem/operation-identifier-cs"
                 },
                 "focus": [
                     {
-                        "reference": "urn:uuid:d2f0a0ac-173e-4c80-9ff5-d45b192dfd00"
+                        "reference": "urn:uuid:15a1e2d7-0352-4b3d-a964-e64a03475510"
                     }
                 ],
                 "sender": {
-                    "display": "Praxis Dr. Hasenbein",
+                    "display": "Test Apotheke",
                     "identifier": {
                         "system": "http://gematik.de/fhir/sid/KIM-Adresse",
-                        "value": "praxis.hasenbein@gluecklich.kim.telematik"
+                        "value": "arbeitsplatz-1@test-apotheke.kim.telematik"
                     }
                 },
                 "source": {
                     "contact": {
                         "system": "email",
-                        "value": "issues@praxisfix-deltacare.de"
+                        "value": "issues@apo-flott.de"
                     },
-                    "endpoint": "https://deltacare.de/praxisfix/issues",
-                    "name": "DeltaCare Inc.",
-                    "software": "PraxisFix",
-                    "version": "1.3.2"
+                    "endpoint": "https://aposoft.de/issues",
+                    "name": "ApoSoft Gmbh",
+                    "software": "ApoFlott",
+                    "version": "1.1.3"
                 },
                 "resourceType": "MessageHeader"
             }
         },
         {
-            "fullUrl": "urn:uuid:d2f0a0ac-173e-4c80-9ff5-d45b192dfd00",
+            "fullUrl": "urn:uuid:15a1e2d7-0352-4b3d-a964-e64a03475510",
             "resource": {
-                "id": "d2f0a0ac-173e-4c80-9ff5-d45b192dfd00",
+                "id": "15a1e2d7-0352-4b3d-a964-e64a03475510",
                 "meta": {
                     "profile": [
                         "https://gematik.de/fhir/atf/StructureDefinition/atf-operation-outcome"
@@ -69,13 +69,13 @@
                 "extension": [
                     {
                         "url": "https://gematik.de/fhir/atf/StructureDefinition/atf-message-id-ex",
-                        "valueString": "c6912604-8457-4ec5-b1a8-24dbdcffbc9a"
+                        "valueString": "3c338001-737b-43a6-a2c2-7c4b8edbe47f"
                     }
                 ],
                 "issue": [
                     {
                         "code": "informational",
-                        "diagnostics": "Rezeptanfrage erfolgreich entgegengenommen",
+                        "diagnostics": "Stornierung der Rezeptanfrage erfolgreich entgegengenommen",
                         "severity": "information"
                     }
                 ],
@@ -85,9 +85,9 @@
     ],
     "identifier": {
         "system": "urn:ietf:rfc:3986",
-        "value": "urn:uuid:62d1e3f4-fd58-4009-8db6-902676a6162d"
+        "value": "urn:uuid:55957ec9-1449-4365-8a52-84a6f09d9d3e"
     },
-    "timestamp": "2023-06-28T20:43:42.242984+00:00",
+    "timestamp": "2023-06-29T22:16:00.723678+00:00",
     "type": "message",
     "resourceType": "Bundle"
 }
