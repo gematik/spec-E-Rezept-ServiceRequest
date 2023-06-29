@@ -62,46 +62,13 @@
         "mustSupport": true
       },
       {
-        "id": "Organization.identifier:KIMAdresse.type",
-        "path": "Organization.identifier.type",
-        "min": 1,
-        "fixedCodeableConcept": {
-          "coding": [
-            {
-              "code": "kim-2.0",
-              "system": "https://gematik.de/fhir/directory/CodeSystem/EndpointDirectoryConnectionType"
-            }
-          ]
-        }
-      },
-      {
         "id": "Organization.identifier:TIMAdresse",
         "path": "Organization.identifier",
         "sliceName": "TIMAdresse",
         "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Identifier",
-            "profile": [
-              "https://gematik.de/fhir/atf/StructureDefinition/identifier-address-tim"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "Organization.identifier:TIMAdresse.type",
-        "path": "Organization.identifier.type",
-        "min": 1,
-        "patternCodeableConcept": {
-          "coding": [
-            {
-              "code": "tim",
-              "system": "https://gematik.de/fhir/directory/CodeSystem/EndpointDirectoryConnectionType"
-            }
-          ]
-        }
+        "max": "1"
       }
     ]
-  }
+  },
+  "inProgress": true
 }
