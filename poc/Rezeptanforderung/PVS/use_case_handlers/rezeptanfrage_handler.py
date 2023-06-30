@@ -79,7 +79,7 @@ class RezeptanfrageHandler:
                 )
             )
         )
-        service_request.basedOn = [Reference(reference=kbv_prescription_id)]
+        service_request.basedOn = [Reference(reference="urn:uuid:" +kbv_prescription_id)]
 
         return service_request
 

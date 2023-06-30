@@ -1,5 +1,5 @@
 {
-    "id": "5c4e9521-4f0f-423b-a7bb-b0ae4005bfbe",
+    "id": "74f6a835-d967-44e8-9515-f4f1178e255b",
     "meta": {
         "profile": [
             "https://gematik.de/fhir/atf/StructureDefinition/bundle-app-transport-framework"
@@ -7,9 +7,9 @@
     },
     "entry": [
         {
-            "fullUrl": "urn:uuid:c3071103-469d-46cc-8d07-311a95e6e43b",
+            "fullUrl": "urn:uuid:340ab2bb-a78d-4e07-b56e-8c1579271aad",
             "resource": {
-                "id": "c3071103-469d-46cc-8d07-311a95e6e43b",
+                "id": "340ab2bb-a78d-4e07-b56e-8c1579271aad",
                 "meta": {
                     "profile": [
                         "https://gematik.de/fhir/atf/StructureDefinition/message-header-app-transport"
@@ -34,7 +34,7 @@
                 },
                 "focus": [
                     {
-                        "reference": "urn:uuid:83132153-07f4-4ce5-be81-3c3a093d48c0"
+                        "reference": "urn:uuid:9e248eb2-75ff-4e62-bd36-51de0da85dab"
                     }
                 ],
                 "sender": {
@@ -58,18 +58,18 @@
             }
         },
         {
-            "fullUrl": "urn:uuid:83132153-07f4-4ce5-be81-3c3a093d48c0",
+            "fullUrl": "urn:uuid:9e248eb2-75ff-4e62-bd36-51de0da85dab",
             "resource": {
-                "id": "83132153-07f4-4ce5-be81-3c3a093d48c0",
+                "id": "9e248eb2-75ff-4e62-bd36-51de0da85dab",
                 "meta": {
                     "profile": [
                         "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
                     ]
                 },
-                "authoredOn": "2023-06-30T00:16:00.669575",
+                "authoredOn": "2023-06-30T14:09:34.430254+02:00",
                 "basedOn": [
                     {
-                        "reference": "52b5baaf-88bc-4061-93f8-b87740a1ce08"
+                        "reference": "urn:uuid:17aa64dd-079b-4728-a11e-86ca3d4e255a"
                     }
                 ],
                 "code": {
@@ -83,15 +83,15 @@
                 "identifier": [
                     {
                         "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier",
-                        "value": "dfd9ebde-9b20-40e4-83c7-68727d75d850"
+                        "value": "44a1c934-19c3-479a-928c-b0a75ea347d9"
                     },
                     {
                         "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemPreDisIdentifier",
-                        "value": "71bc9cd2-b48a-4c12-88f2-9a9b41f01b4a"
+                        "value": "45b812bf-897d-456d-974b-4a95f096aaa5"
                     },
                     {
                         "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
-                        "value": "de0e2174-c754-41ec-a7a1-cafbfe82ff0e"
+                        "value": "67f22eff-7c70-4918-b0f7-7c903aabd159"
                     }
                 ],
                 "intent": "order",
@@ -100,7 +100,7 @@
                         "text": "Medikament läuft am 31.01.2023 aus. Es sind noch 7 stk übrig."
                     }
                 ],
-                "occurrenceDateTime": "2023-06-30T00:16:00.669573",
+                "occurrenceDateTime": "2023-06-30T14:09:34.430251+02:00",
                 "orderDetail": [
                     {
                         "coding": [
@@ -131,30 +131,30 @@
                 ],
                 "reasonReference": [
                     {
-                        "reference": "Medication-Runs-Out-Example-dateTime"
+                        "reference": "urn:uuid:Medication-Runs-Out-Example-dateTime"
                     },
                     {
-                        "reference": "Medication-Runs-Out-Example-Quantity"
+                        "reference": "urn:uuid:Medication-Runs-Out-Example-Quantity"
                     }
                 ],
                 "requester": {
-                    "reference": "e13c74fa-5a9c-488f-8d3c-518413841c8b"
+                    "reference": "urn:uuid:3212251d-03ab-4d85-9346-0750b19f4f92"
                 },
                 "requisition": {
                     "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
-                    "value": "de0e2174-c754-41ec-a7a1-cafbfe82ff0e"
+                    "value": "67f22eff-7c70-4918-b0f7-7c903aabd159"
                 },
                 "status": "active",
                 "subject": {
-                    "reference": "96c423ad-cedb-45f5-8182-080cfd2195d9"
+                    "reference": "urn:uuid:1506b1c8-4118-402a-9c6a-a159214535cb"
                 },
                 "resourceType": "ServiceRequest"
             }
         },
         {
-            "fullUrl": "urn:uuid:Example-Initial-Medication",
+            "fullUrl": "urn:uuid:9055bff8-1e77-4528-91ee-a2d0be733f83",
             "resource": {
-                "id": "Example-Initial-Medication",
+                "id": "9055bff8-1e77-4528-91ee-a2d0be733f83",
                 "meta": {
                     "profile": [
                         "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.1.0"
@@ -211,9 +211,9 @@
             }
         },
         {
-            "fullUrl": "urn:uuid:1fc5c671-da1a-489f-9025-ec7e9c9835a9",
+            "fullUrl": "urn:uuid:a28a3fd1-04e6-4cc7-baca-423daa1c1531",
             "resource": {
-                "id": "1fc5c671-da1a-489f-9025-ec7e9c9835a9",
+                "id": "a28a3fd1-04e6-4cc7-baca-423daa1c1531",
                 "meta": {
                     "profile": [
                         "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
@@ -261,6 +261,14 @@
                 "name": [
                     {
                         "family": "Königsstein",
+                        "_family": {
+                            "extension": [
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+                                    "valueString": "Königsstein"
+                                }
+                            ]
+                        },
                         "given": [
                             "Ludger"
                         ],
@@ -271,9 +279,9 @@
             }
         },
         {
-            "fullUrl": "urn:uuid:1b8f6ee7970c4dc9b703124e0df1c402",
+            "fullUrl": "urn:uuid:5be6f9d61be84955868e9c8385eeb0af",
             "resource": {
-                "id": "1b8f6ee7970c4dc9b703124e0df1c402",
+                "id": "5be6f9d61be84955868e9c8385eeb0af",
                 "meta": {
                     "profile": [
                         "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request"
@@ -288,7 +296,7 @@
                         }
                     }
                 ],
-                "authoredOn": "2023-06-30T00:16:00.668928",
+                "authoredOn": "2023-06-30T14:09:34.429343+02:00",
                 "dispenseRequest": {
                     "quantity": {
                         "code": "{Package}",
@@ -303,11 +311,11 @@
                 ],
                 "intent": "order",
                 "medicationReference": {
-                    "reference": "Example-Initial-Medication"
+                    "reference": "urn:uuid:9055bff8-1e77-4528-91ee-a2d0be733f83"
                 },
                 "status": "active",
                 "subject": {
-                    "reference": "1fc5c671-da1a-489f-9025-ec7e9c9835a9"
+                    "reference": "urn:uuid:a28a3fd1-04e6-4cc7-baca-423daa1c1531"
                 },
                 "substitution": {
                     "allowedBoolean": true
@@ -316,9 +324,9 @@
             }
         },
         {
-            "fullUrl": "urn:uuid:66611f77286f4d0bb43b932954b6556e",
+            "fullUrl": "urn:uuid:8698ba9ba35b4022a04de89792291f08",
             "resource": {
-                "id": "66611f77286f4d0bb43b932954b6556e",
+                "id": "8698ba9ba35b4022a04de89792291f08",
                 "meta": {
                     "profile": [
                         "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
@@ -452,9 +460,9 @@
     ],
     "identifier": {
         "system": "urn:ietf:rfc:3986",
-        "value": "urn:uuid:5c4e9521-4f0f-423b-a7bb-b0ae4005bfbe"
+        "value": "urn:uuid:74f6a835-d967-44e8-9515-f4f1178e255b"
     },
-    "timestamp": "2023-06-29T22:16:00.671706+00:00",
+    "timestamp": "2023-06-30T12:09:34.432099+00:00",
     "type": "message",
     "resourceType": "Bundle"
 }

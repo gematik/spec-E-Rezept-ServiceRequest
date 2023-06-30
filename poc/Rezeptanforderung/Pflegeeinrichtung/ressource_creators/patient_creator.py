@@ -50,6 +50,14 @@ class PatientCreator:
                 HumanName(
                     use="official",
                     family=family_name,
+                    _family=FHIRPrimitiveExtension(
+                        extension=[
+                            Extension(
+                                url="http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+                                valueString=family_name
+                            )
+                        ]
+                    ),
                     given=[given_name],
                 )
             ],

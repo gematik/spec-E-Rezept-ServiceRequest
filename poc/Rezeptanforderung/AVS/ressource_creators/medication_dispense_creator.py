@@ -15,7 +15,7 @@ from uuid import uuid4
 class MedicationDispenseCreator:
     @staticmethod
     def create_reference(ref: str = None, identifier: Identifier = None) -> Reference:
-        return Reference(reference=ref, identifier=identifier)
+        return Reference(reference="urn:uuid:" +ref, identifier=identifier)
 
 
     @staticmethod

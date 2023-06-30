@@ -6,6 +6,7 @@ from fhir.resources.identifier import Identifier
 from fhir.resources.reference import Reference
 from fhir.resources.codeableconcept import CodeableConcept
 from datetime import datetime
+from tzlocal import get_localzone
 from typing import Dict, List, Union
 
 
@@ -20,7 +21,7 @@ class ServiceRequestCreator:
 
     @staticmethod
     def create_reference(ref: str = None, identifier: Identifier = None) -> Reference:
-        return Reference(reference=ref, identifier=identifier)
+        return Reference(reference="urn:uuid:" +ref, identifier=identifier)
 
     @staticmethod
     def create_service_request(
@@ -68,8 +69,8 @@ class ServiceRequestCreator:
             ),
             status=status,
             subject=ServiceRequestCreator.create_reference(ref=references["patient"]),
-            occurrenceDateTime=datetime.now().isoformat(),
-            authoredOn=datetime.now().isoformat(),
+            occurrenceDateTime=datetime.now(get_localzone()).isoformat(),
+            authoredOn=datetime.now(get_localzone()).isoformat(),
             requester=ServiceRequestCreator.create_reference(
                 ref=references["requester"]
             ),

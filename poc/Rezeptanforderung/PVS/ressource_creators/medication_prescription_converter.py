@@ -24,13 +24,13 @@ class MedicationRequestConverter:
             ),
             status="active",
             intent="order",
-            medicationReference=Reference(reference=medication_id),
-            subject = Reference(reference=patient_id),
-            requester=Reference(reference=requester_id),
+            medicationReference=Reference(reference="urn:uuid:" +medication_id),
+            subject = Reference(reference="urn:uuid:" +patient_id),
+            requester=Reference(reference="urn:uuid:" +requester_id),
             dosageInstruction=[Dosage(text=dosage_instruction_text)],
             authoredOn=str(date.today()),
             substitution={'allowedBoolean': substitution_allowed},
-            insurance=[Reference(reference=insurance_id)]
+            insurance=[Reference(reference="urn:uuid:" +insurance_id)]
         )
 
         if kbv_prescription.dosageInstruction[0].extension is None:

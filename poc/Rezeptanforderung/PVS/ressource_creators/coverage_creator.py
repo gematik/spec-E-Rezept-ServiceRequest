@@ -17,7 +17,7 @@ class CoverageCreator:
             extension=[Extension(url=e['url'], valueCoding=Coding(system=e['valueCoding']['system'], code=e['valueCoding']['code'])) for e in extensions],
             payor=[Reference(identifier=Identifier(system=payor_identifier['system'], value=payor_identifier['value']), display=payor_display)],
             type=CodeableConcept(coding=[Coding(system=type_system, code=type_code)]),
-            beneficiary=Reference(reference=beneficiary_reference),
+            beneficiary=Reference(reference="urn:uuid:" +beneficiary_reference),
             period=Period(end=period_end)
         )
         return coverage

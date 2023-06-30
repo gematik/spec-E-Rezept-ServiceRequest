@@ -1,5 +1,5 @@
 {
-    "id": "901a5b86-11f5-4655-9ec4-3c38a2a50e37",
+    "id": "ff8bdb9c-2e04-4046-9ed6-3d35f7c317ef",
     "meta": {
         "profile": [
             "https://gematik.de/fhir/atf/StructureDefinition/bundle-app-transport-framework"
@@ -7,9 +7,9 @@
     },
     "entry": [
         {
-            "fullUrl": "urn:uuid:b7f1d36a-5b54-44e7-bf3f-bbfea6c7764f",
+            "fullUrl": "urn:uuid:279ba0f6-87de-4683-b977-376de403ad2a",
             "resource": {
-                "id": "b7f1d36a-5b54-44e7-bf3f-bbfea6c7764f",
+                "id": "279ba0f6-87de-4683-b977-376de403ad2a",
                 "meta": {
                     "profile": [
                         "https://gematik.de/fhir/atf/StructureDefinition/message-header-app-transport"
@@ -34,7 +34,7 @@
                 },
                 "focus": [
                     {
-                        "reference": "urn:uuid:06724286-44d9-4fb9-88e0-d81ba459be9f"
+                        "reference": "urn:uuid:9f5b2a80-b999-4aac-86d6-2be27c86973a"
                     }
                 ],
                 "sender": {
@@ -58,19 +58,19 @@
             }
         },
         {
-            "fullUrl": "urn:uuid:06724286-44d9-4fb9-88e0-d81ba459be9f",
+            "fullUrl": "urn:uuid:9f5b2a80-b999-4aac-86d6-2be27c86973a",
             "resource": {
-                "id": "06724286-44d9-4fb9-88e0-d81ba459be9f",
+                "id": "9f5b2a80-b999-4aac-86d6-2be27c86973a",
                 "meta": {
                     "profile": [
                         "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"
                     ]
                 },
                 "extension": [],
-                "authoredOn": "2023-06-30T00:16:00.692269",
+                "authoredOn": "2023-06-30T14:09:34.453106+02:00",
                 "basedOn": [
                     {
-                        "reference": "a7e6e85c-aac8-4ed5-8d41-c5b3918a6a8b"
+                        "reference": "urn:uuid:urn:uuid:7eb35531-8626-4da5-9108-d4076fe3af3f"
                     }
                 ],
                 "code": {
@@ -84,11 +84,11 @@
                 "identifier": [
                     {
                         "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemPreDisIdentifier",
-                        "value": "71bc9cd2-b48a-4c12-88f2-9a9b41f01b4a"
+                        "value": "45b812bf-897d-456d-974b-4a95f096aaa5"
                     },
                     {
                         "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
-                        "value": "83132153-07f4-4ce5-be81-3c3a093d48c0"
+                        "value": "9e248eb2-75ff-4e62-bd36-51de0da85dab"
                     }
                 ],
                 "intent": "filler-order",
@@ -97,7 +97,7 @@
                         "text": "Bitte wie üblich zur Abholung bereitlegen."
                     }
                 ],
-                "occurrenceDateTime": "2023-06-30T00:16:00.692267",
+                "occurrenceDateTime": "2023-06-30T14:09:34.453096+02:00",
                 "performer": [
                     {
                         "identifier": {
@@ -106,33 +106,33 @@
                     }
                 ],
                 "requester": {
-                    "reference": "e13c74fa-5a9c-488f-8d3c-518413841c8b"
+                    "reference": "urn:uuid:urn:uuid:3212251d-03ab-4d85-9346-0750b19f4f92"
                 },
                 "requisition": {
                     "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
-                    "value": "83132153-07f4-4ce5-be81-3c3a093d48c0"
+                    "value": "9e248eb2-75ff-4e62-bd36-51de0da85dab"
                 },
                 "status": "completed",
                 "subject": {
-                    "reference": "96c423ad-cedb-45f5-8182-080cfd2195d9"
+                    "reference": "urn:uuid:urn:uuid:1506b1c8-4118-402a-9c6a-a159214535cb"
                 },
                 "resourceType": "ServiceRequest"
             }
         },
         {
-            "fullUrl": "urn:uuid:06724286-44d9-4fb9-88e0-d81ba459be9f",
+            "fullUrl": "urn:uuid:9f5b2a80-b999-4aac-86d6-2be27c86973a",
             "resource": {
-                "id": "06724286-44d9-4fb9-88e0-d81ba459be9f",
+                "id": "9f5b2a80-b999-4aac-86d6-2be27c86973a",
                 "meta": {
                     "profile": [
                         "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"
                     ]
                 },
                 "extension": [],
-                "authoredOn": "2023-06-30T00:16:00.692269",
+                "authoredOn": "2023-06-30T14:09:34.453106+02:00",
                 "basedOn": [
                     {
-                        "reference": "a7e6e85c-aac8-4ed5-8d41-c5b3918a6a8b"
+                        "reference": "urn:uuid:urn:uuid:7eb35531-8626-4da5-9108-d4076fe3af3f"
                     }
                 ],
                 "code": {
@@ -146,11 +146,11 @@
                 "identifier": [
                     {
                         "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemPreDisIdentifier",
-                        "value": "71bc9cd2-b48a-4c12-88f2-9a9b41f01b4a"
+                        "value": "45b812bf-897d-456d-974b-4a95f096aaa5"
                     },
                     {
                         "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
-                        "value": "83132153-07f4-4ce5-be81-3c3a093d48c0"
+                        "value": "9e248eb2-75ff-4e62-bd36-51de0da85dab"
                     }
                 ],
                 "intent": "filler-order",
@@ -159,7 +159,7 @@
                         "text": "Bitte wie üblich zur Abholung bereitlegen."
                     }
                 ],
-                "occurrenceDateTime": "2023-06-30T00:16:00.692267",
+                "occurrenceDateTime": "2023-06-30T14:09:34.453096+02:00",
                 "performer": [
                     {
                         "identifier": {
@@ -168,15 +168,15 @@
                     }
                 ],
                 "requester": {
-                    "reference": "e13c74fa-5a9c-488f-8d3c-518413841c8b"
+                    "reference": "urn:uuid:urn:uuid:3212251d-03ab-4d85-9346-0750b19f4f92"
                 },
                 "requisition": {
                     "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
-                    "value": "83132153-07f4-4ce5-be81-3c3a093d48c0"
+                    "value": "9e248eb2-75ff-4e62-bd36-51de0da85dab"
                 },
                 "status": "completed",
                 "subject": {
-                    "reference": "96c423ad-cedb-45f5-8182-080cfd2195d9"
+                    "reference": "urn:uuid:urn:uuid:1506b1c8-4118-402a-9c6a-a159214535cb"
                 },
                 "resourceType": "ServiceRequest"
             }
@@ -186,9 +186,9 @@
             "resource": {
                 "entry": [
                     {
-                        "fullUrl": "http://erp-servicerequest-test.de/MedicationDispense/2729c2b3-ebec-43c5-aac5-ab06ad183aea",
+                        "fullUrl": "http://erp-servicerequest-test.de/MedicationDispense/34d49c5a-0dc5-49b5-b241-b2781b0ade18",
                         "resource": {
-                            "id": "2729c2b3-ebec-43c5-aac5-ab06ad183aea",
+                            "id": "34d49c5a-0dc5-49b5-b241-b2781b0ade18",
                             "meta": {
                                 "profile": [
                                     "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|1.2"
@@ -196,7 +196,7 @@
                             },
                             "contained": [
                                 {
-                                    "id": "aece1784-cb55-4bf3-b45a-a6dcaf6adc08",
+                                    "id": "51178982-ba21-405a-81dc-cb7713f9b716",
                                     "meta": {
                                         "profile": [
                                             "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.1.0"
@@ -250,7 +250,7 @@
                                 }
                             ],
                             "medicationReference": {
-                                "reference": "#aece1784-cb55-4bf3-b45a-a6dcaf6adc08"
+                                "reference": "urn:uuid:#51178982-ba21-405a-81dc-cb7713f9b716"
                             },
                             "performer": [
                                 {
@@ -264,7 +264,7 @@
                             ],
                             "status": "completed",
                             "subject": {
-                                "reference": "X123456789"
+                                "reference": "urn:uuid:X123456789"
                             },
                             "whenHandedOver": "2020-04-16T13:44:27.957000+00:00",
                             "resourceType": "MedicationDispense"
@@ -278,9 +278,9 @@
     ],
     "identifier": {
         "system": "urn:ietf:rfc:3986",
-        "value": "urn:uuid:901a5b86-11f5-4655-9ec4-3c38a2a50e37"
+        "value": "urn:uuid:ff8bdb9c-2e04-4046-9ed6-3d35f7c317ef"
     },
-    "timestamp": "2023-06-29T22:16:00.697795+00:00",
+    "timestamp": "2023-06-30T12:09:34.458918+00:00",
     "type": "message",
     "resourceType": "Bundle"
 }

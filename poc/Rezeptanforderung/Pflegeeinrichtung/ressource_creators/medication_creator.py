@@ -74,7 +74,7 @@ class MedicationCreator:
     @staticmethod
     def get_example_medication():
         return MedicationCreator.create_medication(
-            medication_id="Example-Initial-Medication",
+            medication_id=str(uuid4()),
             normgroesse="N1",
             pzn_code="08585997",
             medication_text="Prospan® Hustensaft 100ml",
