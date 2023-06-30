@@ -99,7 +99,7 @@ class OrganizationCreator:
     @staticmethod
     def get_example_organization():
         return OrganizationCreator.create_organization(
-            org_id=str(uuid4()).replace("-", ""),
+            org_id=str(uuid4()),
             kim_address="pflegeheim.immergrün.arzt@sana-pflegeheime.kim.telematik",
             telematik_id="1-031234567",
             bsnr="031234567",

@@ -31,9 +31,9 @@ class ResourceExtractor:
         identifier_dict = {}
         for identifier in service_request.identifier:
             if identifier.system == "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier":
-                identifier_dict["https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier"] = identifier.value
+                identifier_dict["https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier"] = identifier.value.replace("urn:uuid:","")
             elif identifier.system == "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemPreDisIdentifier":
-                identifier_dict["https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemPreDisIdentifier"] = identifier.value
+                identifier_dict["https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemPreDisIdentifier"] = identifier.value.replace("urn:uuid:","")
         if service_request.id:
             identifier_dict["https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier"] = service_request.id
         return identifier_dict
@@ -42,11 +42,11 @@ class ResourceExtractor:
     def extract_references(service_request: ServiceRequest):
         reference_dict = {}
         if service_request.basedOn:
-            reference_dict["based_on"] = service_request.basedOn[0].reference
+            reference_dict["based_on"] = service_request.basedOn[0].reference.replace("urn:uuid:","")
         if service_request.subject:
-            reference_dict["patient"] = service_request.subject.reference
+            reference_dict["patient"] = service_request.subject.reference.replace("urn:uuid:","")
         if service_request.requester:
-            reference_dict["requester"] = service_request.requester.reference
+            reference_dict["requester"] = service_request.requester.reference.replace("urn:uuid:","")
         if service_request.performer:
             reference_dict["performer"] = service_request.performer[0].identifier
         return reference_dict
@@ -109,6 +109,7 @@ class DispenseRequestCreator:
             status,
             None,
             identifiers={
+                "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier": identifiers["https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier"],
                 "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemPreDisIdentifier": identifiers["https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemPreDisIdentifier"],
                 "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier": identifiers["https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier"],
             },

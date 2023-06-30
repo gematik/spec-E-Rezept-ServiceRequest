@@ -68,8 +68,8 @@ class PrescriptionRequestCreator:
         )
         requesting_organisation = OrganizationCreator.get_example_organization()
         observations = [
-            ObservationCreator.get_example_observation_datetime(),
-            ObservationCreator.get_example_observation_quantity(),
+            ObservationCreator.get_example_observation_datetime(patient.id),
+            ObservationCreator.get_example_observation_quantity(patient.id),
         ]
 
         return {
@@ -99,16 +99,15 @@ class PrescriptionRequestCreator:
             for name in [
                 "message",
                 "predis",
-                "vorgangs",
-                "patient",
-                "requesting_organisation",
-                "medication_request",
+                "vorgangs"
             ]
         }
 
-        identifiers[ "request"] = request_id 
-
         entries = PrescriptionRequestCreator.create_bundle_entries()
+        identifiers["request"] = request_id 
+        identifiers["patient"] = entries["patient"].id
+        identifiers["medication_request"] = entries["medication_request"].id
+        identifiers["requesting_organisation"] = entries["requesting_organisation"].id
         observations_ids = [obs.id for obs in entries["observations"]]
         service_request = PrescriptionRequestCreator.create_service_request(
             status, type, observations_ids, identifiers, reason_system, reason_code, note_text

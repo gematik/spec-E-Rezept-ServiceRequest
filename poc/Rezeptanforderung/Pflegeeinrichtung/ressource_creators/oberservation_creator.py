@@ -1,3 +1,4 @@
+from uuid import uuid4
 from fhir.resources.observation import (
     Observation,
 )
@@ -36,7 +37,7 @@ class ObservationCreator:
             ]
         }
         observation.subject = Reference.construct()
-        observation.subject.reference = patient_ref
+        observation.subject.reference = "urn:uuid:" + patient_ref
 
         if value_date_time:
             observation.valueDateTime = value_date_time
@@ -48,20 +49,20 @@ class ObservationCreator:
         return observation
 
     @staticmethod
-    def get_example_observation_datetime():
+    def get_example_observation_datetime(patient_id):
         return ObservationCreator.create_observation(
-            id="Medication-Runs-Out-Example-dateTime",
-            patient_ref="Patient/Example-Patient",
+            id=str(uuid4()),
+            patient_ref=patient_id,
             obs_code="range-of-medication",
             obs_system="https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-observation-cs",
             value_date_time="2023-01-31",
         )
 
     @staticmethod
-    def get_example_observation_quantity():
+    def get_example_observation_quantity(patient_id):
         return ObservationCreator.create_observation(
-            id="Medication-Runs-Out-Example-Quantity",
-            patient_ref="Patient/Example-Patient",
+            id=str(uuid4()),
+            patient_ref=patient_id,
             obs_code="range-of-medication",
             obs_system="https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-observation-cs",
             value_quantity=7,
