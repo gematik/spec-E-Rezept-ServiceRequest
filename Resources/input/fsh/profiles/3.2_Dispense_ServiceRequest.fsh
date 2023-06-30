@@ -27,11 +27,6 @@ Description: "ServiceRequest that is used to supply a recipe"
   * ^comment = "Can be mapped via a UUID, for example."
   * ^definition = "In some applications, it is necessary to know which prescription request belongs to which delivery request. If, for example, a medication is requested, you want to be able to track which is the corresponding delivery request. The predisIdentifier is used for this purpose, which identifies a pair of ServiceRequest**Prescription**Request and ServiceRequest**Dispense**Request together."
 
-* basedOn 0..1 MS
-  * ^short = "KBV Prescription to be supplied by the pharmacy."
-  * ^comment = "Exactly one MedicationRequest is assigned to a ServiceRequest, so that independent processing is possible."
-* basedOn only Reference($KBV_PR_ERP_Prescription)
-
 * requisition 1..1 MS
 * requisition only ERPServiceRequestProcedureIdentifier
   * ^short = "Identifier of the process. All ServiceRequests within a process receive the same ID."
@@ -53,10 +48,6 @@ Description: "ServiceRequest that is used to supply a recipe"
 * code.coding.code = #dispense-request (exactly)
   * ^comment = "#dispense-request serves as a service request for a pharmacy to deliver a prescription."
 
-* subject MS
-* subject only Reference($KBV_PR_FOR_Patient)
-  * ^short = "Patient for whom a prescription is to be delivered."
-
 * occurrence[x] 1..1 MS
 * occurrence[x] only dateTime
   * ^short = "Indicates the date when the medication should be delivered."
@@ -65,26 +56,13 @@ Description: "ServiceRequest that is used to supply a recipe"
   * ^short = "Creation date of the request."
   * ^comment = "Is initially created and then no longer changed."
 
-* requester 1..1 MS
-* requester only Reference(ERPServiceRequestOrganization or $KBV_PR_FOR_Practitioner)
-  * ^short = "Inquiring institution or doctor."
-  * ^comment = "If the prescriber's system creates this profile, the institution/person who made the prescription request must be specified here."
-
-* performer MS
-* performer only Reference(ERPServiceRequestOrganization)
-  * ^short = "Pharmacy that is to deliver the e-prescription."
-
 * supportingInfo ^slicing.discriminator.type = #pattern
 * supportingInfo ^slicing.discriminator.path = "type"
 * supportingInfo ^slicing.rules = #open
 * supportingInfo ^slicing.description = "Supporting information about delivery"
 
 * supportingInfo MS
-* supportingInfo contains AusstellenderArzt 1..1 MS and AbgabeDaten 0..1 MS
-* supportingInfo[AusstellenderArzt] only Reference($KBV_PR_FOR_Practitioner)
-* supportingInfo[AusstellenderArzt].type = "Practitioner" (exactly)
-  * ^short = "Doctor who issued the prescription."
-  * ^comment = "If there are any questions about the prescription, the pharmacy can use this information to get in touch with a prescriber."
+* supportingInfo contains AbgabeDaten 0..1 MS
 // TODO: wenn status = erfüllt dann Abgabedaten vorhanden
 * supportingInfo[AbgabeDaten] only Reference($GEM_ERP_PR_MedicationDispense)
 * supportingInfo[AbgabeDaten].type = "MedicationDispense" (exactly)

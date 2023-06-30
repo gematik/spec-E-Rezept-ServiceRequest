@@ -157,18 +157,6 @@
       {
         "id": "ServiceRequest.basedOn",
         "path": "ServiceRequest.basedOn",
-        "short": "KBV Prescription to be supplied by the pharmacy.",
-        "comment": "Exactly one MedicationRequest is assigned to a ServiceRequest, so that independent processing is possible.",
-        "max": "1",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription"
-            ]
-          }
-        ],
-        "mustSupport": true,
         "mapping": [
           {
             "identity": "Dispensieranforderung-Rezeptuebermittlung",
@@ -248,20 +236,6 @@
         "fixedCode": "dispense-request"
       },
       {
-        "id": "ServiceRequest.subject",
-        "path": "ServiceRequest.subject",
-        "short": "Patient for whom a prescription is to be delivered.",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient"
-            ]
-          }
-        ],
-        "mustSupport": true
-      },
-      {
         "id": "ServiceRequest.occurrence[x]",
         "path": "ServiceRequest.occurrence[x]",
         "short": "Indicates the date when the medication should be delivered.",
@@ -282,37 +256,6 @@
         "mustSupport": true
       },
       {
-        "id": "ServiceRequest.requester",
-        "path": "ServiceRequest.requester",
-        "short": "Inquiring institution or doctor.",
-        "comment": "If the prescriber's system creates this profile, the institution/person who made the prescription request must be specified here.",
-        "min": 1,
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization",
-              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner"
-            ]
-          }
-        ],
-        "mustSupport": true
-      },
-      {
-        "id": "ServiceRequest.performer",
-        "path": "ServiceRequest.performer",
-        "short": "Pharmacy that is to deliver the e-prescription.",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
-            ]
-          }
-        ],
-        "mustSupport": true
-      },
-      {
         "id": "ServiceRequest.supportingInfo",
         "path": "ServiceRequest.supportingInfo",
         "slicing": {
@@ -325,32 +268,7 @@
           "rules": "open",
           "description": "Supporting information about delivery"
         },
-        "min": 1,
         "mustSupport": true
-      },
-      {
-        "id": "ServiceRequest.supportingInfo:AusstellenderArzt",
-        "path": "ServiceRequest.supportingInfo",
-        "sliceName": "AusstellenderArzt",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner"
-            ]
-          }
-        ],
-        "mustSupport": true
-      },
-      {
-        "id": "ServiceRequest.supportingInfo:AusstellenderArzt.type",
-        "path": "ServiceRequest.supportingInfo.type",
-        "short": "Doctor who issued the prescription.",
-        "comment": "If there are any questions about the prescription, the pharmacy can use this information to get in touch with a prescriber.",
-        "min": 1,
-        "fixedUri": "Practitioner"
       },
       {
         "id": "ServiceRequest.supportingInfo:AbgabeDaten",
