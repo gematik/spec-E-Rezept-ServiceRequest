@@ -36,16 +36,11 @@ Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
 * identifier[0]
   * system = "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier"
   * value = "2"
-* basedOn = Reference(Example-Response-KBV-Prescription)
 * requisition[0].system = "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier"
 * requisition[=].value = "GroupID-UC1"
 * status = RequestStatus#revoked
 * intent = RequestIntent#filler-order
-* code = ServiceRequestTypeCS#dispense-request
 * subject = Reference(Example-Patient)
+* code = ServiceRequestTypeCS#dispense-request
 * occurrenceDateTime = "2023-02-01"
 * authoredOn = "2023-02-01"
-* requester = Reference(Example-HealthCareService-Organization)
-* performer.identifier = Test-Apotheke-Identifier
-* supportingInfo[AusstellenderArzt] = Reference(Example-Practitioner)
-* supportingInfo[AusstellenderArzt].type = "Practitioner"
