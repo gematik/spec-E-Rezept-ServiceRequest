@@ -1,5 +1,5 @@
 {
-  "updated": "2023-06-05T10:45:58.165817+02:00",
+  "updated": "2023-06-30T15:03:45.078506+02:00",
   "dependencies": {
     "hl7.fhir.r4.core": "4.0.1",
     "de.basisprofil.r4": "1.4.0",
@@ -8,7 +8,7 @@
     "KBV.Basis": "1.3.0",
     "kbv.ita.for": "1.1.0",
     "de.gematik.fhir.directory": "0.10.1",
-    "de.gematik.fhir.atf": "1.0.0",
+    "de.gematik.fhir.atf": "1.0.1",
     "de.abda.erezeptabgabedatenbasis": "1.3.1",
     "de.abda.erezeptabgabedaten": "1.3.1"
   },
