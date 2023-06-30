@@ -3,6 +3,7 @@
   "id": "UC1-Storno-3-Cancellation-Of-Dispense-Requester",
   "meta": {
     "profile": [
+      "https://gematik.de/fhir/atf/StructureDefinition/bundle-app-transport-framework",
       "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
     ]
   },
@@ -19,6 +20,7 @@
         "id": "UC1-HealthCareService-to-Pharmacy-MessageHeader-Storno",
         "meta": {
           "profile": [
+            "https://gematik.de/fhir/atf/StructureDefinition/message-header-app-transport",
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
           ]
         },
