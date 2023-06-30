@@ -14,8 +14,6 @@ Description: "Request sent to Prescriber to get a Prescription"
 * entry[=].resource = Example-Zyto-Medication-Request
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Medication/Example-Zyto-Medication"
 * entry[=].resource = Example-Zyto-Medication
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/Patient/Example-Patient"
-* entry[=].resource = Example-Patient
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Organization/Example-Pharmacy-Organization"
 * entry[=].resource = Example-Pharmacy-Organization
 

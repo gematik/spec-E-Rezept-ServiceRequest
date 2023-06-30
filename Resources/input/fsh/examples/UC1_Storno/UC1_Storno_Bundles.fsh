@@ -55,6 +55,8 @@ Description: "Request sent to Pharmacy to request a dispense of the medication"
 * timestamp.value = "2023-02-01T13:28:17.239+02:00"
 * entry[0].fullUrl = "http://erp-servicerequest-test.de/MessageHeader/UC1-HealthCareService-to-Pharmacy-MessageHeader-Storno"
 * entry[=].resource = UC1-HealthCareService-to-Pharmacy-MessageHeader-Storno
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/Patient/Example-Patient"
+* entry[=].resource = Example-Patient
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/ServiceRequest/UC1-Cancelled-Dispense-Request"
 * entry[=].resource = UC1-Cancelled-Dispense-Request
 
@@ -69,6 +71,8 @@ Description: "Request sent to Pharmacy to request a dispense of the medication"
 * entry[=].resource = UC1-Pharmacy-to-HealthCareService-MessageHeader-Storno
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/ServiceRequest/UC1-Cancelled-Dispense-Request"
 * entry[=].resource = UC1-Cancelled-Dispense-Request
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/Patient/Example-Patient"
+* entry[=].resource = Example-Patient
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Medication/Example-Response-Medication"
 * entry[=].resource = Example-Response-Medication
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/MedicationDispense/UC1-Medication-Dispense"
