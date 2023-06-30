@@ -1,0 +1,294 @@
+{
+    "id": "10dca920-2fca-4049-b621-2133431af282",
+    "meta": {
+        "profile": [
+            "https://gematik.de/fhir/atf/StructureDefinition/bundle-app-transport-framework"
+        ]
+    },
+    "entry": [
+        {
+            "fullUrl": "urn:uuid:05cab981-7048-4fda-a8fb-cfe60c9451a8",
+            "resource": {
+                "id": "05cab981-7048-4fda-a8fb-cfe60c9451a8",
+                "meta": {
+                    "profile": [
+                        "https://gematik.de/fhir/atf/StructureDefinition/message-header-app-transport"
+                    ]
+                },
+                "destination": [
+                    {
+                        "endpoint": "https://ps_solutions.com/jira_helpdesk",
+                        "receiver": {
+                            "display": "Pflegeeinrichtung Immergrün",
+                            "identifier": {
+                                "system": "http://gematik.de/fhir/sid/KIM-Adresse",
+                                "value": "pflegeheim.immergrün.arzt@sana-pflegeheime.kim.telematik"
+                            }
+                        }
+                    }
+                ],
+                "eventCoding": {
+                    "code": "eRezept_Rezeptanforderung;Abgabebestaetigung",
+                    "display": "Bestätigung der Erfüllung und Abgabe eines Medikamentes",
+                    "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
+                },
+                "focus": [
+                    {
+                        "reference": "urn:uuid:00e7657d-e1c4-4f85-91ed-a71b18b529b2"
+                    }
+                ],
+                "sender": {
+                    "display": "Test Apotheke",
+                    "identifier": {
+                        "system": "http://gematik.de/fhir/sid/KIM-Adresse",
+                        "value": "arbeitsplatz-1@test-apotheke.kim.telematik"
+                    }
+                },
+                "source": {
+                    "contact": {
+                        "system": "email",
+                        "value": "issues@apo-flott.de"
+                    },
+                    "endpoint": "https://aposoft.de/issues",
+                    "name": "ApoSoft Gmbh",
+                    "software": "ApoFlott",
+                    "version": "1.1.3"
+                },
+                "resourceType": "MessageHeader"
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:00e7657d-e1c4-4f85-91ed-a71b18b529b2",
+            "resource": {
+                "id": "00e7657d-e1c4-4f85-91ed-a71b18b529b2",
+                "meta": {
+                    "profile": [
+                        "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"
+                    ]
+                },
+                "extension": [],
+                "authoredOn": "2023-06-30T16:05:43.825916+02:00",
+                "basedOn": [
+                    {
+                        "reference": "urn:uuid:f5041f1b-f171-42a3-9efa-38bf54a0349c"
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "code": "dispense-request",
+                            "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
+                        }
+                    ]
+                },
+                "identifier": [
+                    {
+                        "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier",
+                        "value": "bbe23113-68cb-4a7f-9ee5-3b218103cc5e"
+                    },
+                    {
+                        "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemPreDisIdentifier",
+                        "value": "289f3c9e-6acf-4bf4-a2c0-a0181d4068e4"
+                    },
+                    {
+                        "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
+                        "value": "92e4a1d2-c3d1-4426-abfd-bcc42a474c6d"
+                    }
+                ],
+                "intent": "filler-order",
+                "note": [
+                    {
+                        "text": "Bitte wie üblich zur Abholung bereitlegen."
+                    }
+                ],
+                "occurrenceDateTime": "2023-06-30T16:05:43.825911+02:00",
+                "performer": [
+                    {
+                        "identifier": {
+                            "system": "http://gematik.de/fhir/sid/KIM-Adresse"
+                        }
+                    }
+                ],
+                "requester": {
+                    "reference": "urn:uuid:0737100d-c555-4d82-8a1b-a5dd231eb33d"
+                },
+                "requisition": {
+                    "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
+                    "value": "92e4a1d2-c3d1-4426-abfd-bcc42a474c6d"
+                },
+                "status": "completed",
+                "subject": {
+                    "reference": "urn:uuid:23643872-b28e-43a3-b538-13e38d982a89"
+                },
+                "resourceType": "ServiceRequest"
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:00e7657d-e1c4-4f85-91ed-a71b18b529b2",
+            "resource": {
+                "id": "00e7657d-e1c4-4f85-91ed-a71b18b529b2",
+                "meta": {
+                    "profile": [
+                        "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"
+                    ]
+                },
+                "extension": [],
+                "authoredOn": "2023-06-30T16:05:43.825916+02:00",
+                "basedOn": [
+                    {
+                        "reference": "urn:uuid:f5041f1b-f171-42a3-9efa-38bf54a0349c"
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "code": "dispense-request",
+                            "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
+                        }
+                    ]
+                },
+                "identifier": [
+                    {
+                        "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier",
+                        "value": "bbe23113-68cb-4a7f-9ee5-3b218103cc5e"
+                    },
+                    {
+                        "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemPreDisIdentifier",
+                        "value": "289f3c9e-6acf-4bf4-a2c0-a0181d4068e4"
+                    },
+                    {
+                        "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
+                        "value": "92e4a1d2-c3d1-4426-abfd-bcc42a474c6d"
+                    }
+                ],
+                "intent": "filler-order",
+                "note": [
+                    {
+                        "text": "Bitte wie üblich zur Abholung bereitlegen."
+                    }
+                ],
+                "occurrenceDateTime": "2023-06-30T16:05:43.825911+02:00",
+                "performer": [
+                    {
+                        "identifier": {
+                            "system": "http://gematik.de/fhir/sid/KIM-Adresse"
+                        }
+                    }
+                ],
+                "requester": {
+                    "reference": "urn:uuid:0737100d-c555-4d82-8a1b-a5dd231eb33d"
+                },
+                "requisition": {
+                    "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
+                    "value": "92e4a1d2-c3d1-4426-abfd-bcc42a474c6d"
+                },
+                "status": "completed",
+                "subject": {
+                    "reference": "urn:uuid:23643872-b28e-43a3-b538-13e38d982a89"
+                },
+                "resourceType": "ServiceRequest"
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:None",
+            "resource": {
+                "entry": [
+                    {
+                        "fullUrl": "http://erp-servicerequest-test.de/MedicationDispense/a81ac943-06a0-466d-9f25-cbe5852a266c",
+                        "resource": {
+                            "id": "a81ac943-06a0-466d-9f25-cbe5852a266c",
+                            "meta": {
+                                "profile": [
+                                    "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|1.2"
+                                ]
+                            },
+                            "contained": [
+                                {
+                                    "id": "127796ad-9ebd-4098-9918-2fd31b05f0eb",
+                                    "meta": {
+                                        "profile": [
+                                            "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.1.0"
+                                        ]
+                                    },
+                                    "code": {
+                                        "coding": [
+                                            {
+                                                "code": "08585997",
+                                                "system": "http://fhir.de/CodeSystem/ifa/pzn"
+                                            }
+                                        ],
+                                        "text": "Prospan® Hustensaft 100ml N1"
+                                    },
+                                    "resourceType": "Medication"
+                                }
+                            ],
+                            "dosageInstruction": [
+                                {
+                                    "doseAndRate": [
+                                        {
+                                            "doseQuantity": {
+                                                "unit": "tablet",
+                                                "value": 1
+                                            },
+                                            "type": {
+                                                "coding": [
+                                                    {
+                                                        "code": "ordered"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ],
+                                    "sequence": 1,
+                                    "text": "Eine Tablette täglich",
+                                    "timing": {
+                                        "repeat": {
+                                            "frequency": 1,
+                                            "period": 1,
+                                            "periodUnit": "d"
+                                        }
+                                    }
+                                }
+                            ],
+                            "identifier": [
+                                {
+                                    "system": "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
+                                    "use": "official",
+                                    "value": "160.100.000.000.002.36"
+                                }
+                            ],
+                            "medicationReference": {
+                                "reference": "urn:uuid:#127796ad-9ebd-4098-9918-2fd31b05f0eb"
+                            },
+                            "performer": [
+                                {
+                                    "actor": {
+                                        "identifier": {
+                                            "system": "https://gematik.de/fhir/sid/telematik-id",
+                                            "value": "12345678901234567890"
+                                        }
+                                    }
+                                }
+                            ],
+                            "status": "completed",
+                            "subject": {
+                                "reference": "urn:uuid:X123456789"
+                            },
+                            "whenHandedOver": "2020-04-16T13:44:27.957000+00:00",
+                            "resourceType": "MedicationDispense"
+                        }
+                    }
+                ],
+                "type": "transaction",
+                "resourceType": "Bundle"
+            }
+        }
+    ],
+    "identifier": {
+        "system": "urn:ietf:rfc:3986",
+        "value": "urn:uuid:10dca920-2fca-4049-b621-2133431af282"
+    },
+    "timestamp": "2023-06-30T14:05:43.830864+00:00",
+    "type": "message",
+    "resourceType": "Bundle"
+}

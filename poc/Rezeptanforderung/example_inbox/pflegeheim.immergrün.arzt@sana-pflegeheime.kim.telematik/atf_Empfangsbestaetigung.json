@@ -1,0 +1,93 @@
+{
+    "id": "77a32e9c-aa31-4cc4-b795-7f017cfab077",
+    "meta": {
+        "profile": [
+            "https://gematik.de/fhir/atf/StructureDefinition/bundle-app-transport-framework"
+        ]
+    },
+    "entry": [
+        {
+            "fullUrl": "urn:uuid:827866c4-5abd-4543-9e0b-b8befbf36aec",
+            "resource": {
+                "id": "827866c4-5abd-4543-9e0b-b8befbf36aec",
+                "meta": {
+                    "profile": [
+                        "https://gematik.de/fhir/atf/StructureDefinition/message-header-app-transport"
+                    ]
+                },
+                "destination": [
+                    {
+                        "endpoint": "https://ps_solutions.com/jira_helpdesk",
+                        "receiver": {
+                            "display": "Pflegeeinrichtung Immergrün",
+                            "identifier": {
+                                "system": "http://gematik.de/fhir/sid/KIM-Adresse",
+                                "value": "pflegeheim.immergrün.arzt@sana-pflegeheime.kim.telematik"
+                            }
+                        }
+                    }
+                ],
+                "eventCoding": {
+                    "code": "atf;Empfangsbestaetigung",
+                    "display": "Empfangsbestätigung und Auskunft über FHIR Interpretierbarkeit der Nachricht",
+                    "system": "https://gematik.de/fhir/atf/CodeSystem/operation-identifier-cs"
+                },
+                "focus": [
+                    {
+                        "reference": "urn:uuid:e21f7803-a5f1-4200-ba19-24ab2da74266"
+                    }
+                ],
+                "sender": {
+                    "display": "Test Apotheke",
+                    "identifier": {
+                        "system": "http://gematik.de/fhir/sid/KIM-Adresse",
+                        "value": "arbeitsplatz-1@test-apotheke.kim.telematik"
+                    }
+                },
+                "source": {
+                    "contact": {
+                        "system": "email",
+                        "value": "issues@apo-flott.de"
+                    },
+                    "endpoint": "https://aposoft.de/issues",
+                    "name": "ApoSoft Gmbh",
+                    "software": "ApoFlott",
+                    "version": "1.1.3"
+                },
+                "resourceType": "MessageHeader"
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:e21f7803-a5f1-4200-ba19-24ab2da74266",
+            "resource": {
+                "id": "e21f7803-a5f1-4200-ba19-24ab2da74266",
+                "meta": {
+                    "profile": [
+                        "https://gematik.de/fhir/atf/StructureDefinition/atf-operation-outcome"
+                    ]
+                },
+                "extension": [
+                    {
+                        "url": "https://gematik.de/fhir/atf/StructureDefinition/atf-message-id-ex",
+                        "valueString": "ee60692a-ce30-4d67-95b4-baed8d749cc2"
+                    }
+                ],
+                "issue": [
+                    {
+                        "code": "informational",
+                        "diagnostics": "Stornierung der Rezeptanfrage erfolgreich entgegengenommen",
+                        "severity": "information"
+                    }
+                ],
+                "resourceType": "OperationOutcome"
+            }
+        }
+    ],
+    "identifier": {
+        "system": "urn:ietf:rfc:3986",
+        "value": "urn:uuid:77a32e9c-aa31-4cc4-b795-7f017cfab077"
+    },
+    "timestamp": "2023-06-30T14:05:43.857767+00:00",
+    "type": "message",
+    "resourceType": "Bundle"
+}

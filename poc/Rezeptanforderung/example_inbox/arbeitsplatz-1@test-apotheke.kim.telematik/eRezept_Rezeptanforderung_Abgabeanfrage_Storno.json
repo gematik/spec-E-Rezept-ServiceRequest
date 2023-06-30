@@ -1,0 +1,236 @@
+{
+    "id": "858a5179-4ab6-4704-bac4-9f680a155b60",
+    "meta": {
+        "profile": [
+            "https://gematik.de/fhir/atf/StructureDefinition/bundle-app-transport-framework"
+        ]
+    },
+    "entry": [
+        {
+            "fullUrl": "urn:uuid:ee60692a-ce30-4d67-95b4-baed8d749cc2",
+            "resource": {
+                "id": "ee60692a-ce30-4d67-95b4-baed8d749cc2",
+                "meta": {
+                    "profile": [
+                        "https://gematik.de/fhir/atf/StructureDefinition/message-header-app-transport"
+                    ]
+                },
+                "destination": [
+                    {
+                        "endpoint": "http://www.test-apotheke.de",
+                        "receiver": {
+                            "display": "Test Apotheke",
+                            "identifier": {
+                                "system": "http://gematik.de/fhir/sid/KIM-Adresse",
+                                "value": "arbeitsplatz-1@test-apotheke.kim.telematik"
+                            }
+                        }
+                    }
+                ],
+                "eventCoding": {
+                    "code": "eRezept_Rezeptanforderung;Abgabeanfrage_Storno",
+                    "display": "Abbruch der Abgabeanfrage",
+                    "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
+                },
+                "focus": [
+                    {
+                        "reference": "urn:uuid:03c5355a-c00e-4b5b-903a-f5cf1b303fe6"
+                    }
+                ],
+                "sender": {
+                    "display": "Pflegeeinrichtung Immergrün",
+                    "identifier": {
+                        "system": "http://gematik.de/fhir/sid/KIM-Adresse",
+                        "value": "pflegeheim.immergrün.arzt@sana-pflegeheime.kim.telematik"
+                    }
+                },
+                "source": {
+                    "contact": {
+                        "system": "email",
+                        "value": "dev@ps_solutions.de"
+                    },
+                    "endpoint": "https://ps_solutions.com/jira_helpdesk",
+                    "name": "PSSolutions",
+                    "software": "Globotron 500",
+                    "version": "2.1.3"
+                },
+                "resourceType": "MessageHeader"
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:03c5355a-c00e-4b5b-903a-f5cf1b303fe6",
+            "resource": {
+                "id": "03c5355a-c00e-4b5b-903a-f5cf1b303fe6",
+                "meta": {
+                    "profile": [
+                        "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"
+                    ]
+                },
+                "authoredOn": "2023-06-30T16:05:43.854091+02:00",
+                "basedOn": [
+                    {
+                        "reference": "urn:uuid:f5041f1b-f171-42a3-9efa-38bf54a0349c"
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "code": "dispense-request",
+                            "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
+                        }
+                    ]
+                },
+                "identifier": [
+                    {
+                        "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier",
+                        "value": "bbe23113-68cb-4a7f-9ee5-3b218103cc5e"
+                    },
+                    {
+                        "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemPreDisIdentifier",
+                        "value": "289f3c9e-6acf-4bf4-a2c0-a0181d4068e4"
+                    },
+                    {
+                        "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
+                        "value": "92e4a1d2-c3d1-4426-abfd-bcc42a474c6d"
+                    }
+                ],
+                "intent": "filler-order",
+                "note": [
+                    {
+                        "text": "Verschreibung fehlerhaft"
+                    }
+                ],
+                "occurrenceDateTime": "2023-06-30T16:05:43.854087+02:00",
+                "performer": [
+                    {
+                        "identifier": {
+                            "system": "http://gematik.de/fhir/sid/KIM-Adresse"
+                        }
+                    }
+                ],
+                "requester": {
+                    "reference": "urn:uuid:0737100d-c555-4d82-8a1b-a5dd231eb33d"
+                },
+                "requisition": {
+                    "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
+                    "value": "92e4a1d2-c3d1-4426-abfd-bcc42a474c6d"
+                },
+                "status": "revoked",
+                "subject": {
+                    "reference": "urn:uuid:23643872-b28e-43a3-b538-13e38d982a89"
+                },
+                "resourceType": "ServiceRequest"
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:92e4a1d2-c3d1-4426-abfd-bcc42a474c6d",
+            "resource": {
+                "id": "92e4a1d2-c3d1-4426-abfd-bcc42a474c6d",
+                "meta": {
+                    "profile": [
+                        "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
+                    ]
+                },
+                "extension": [
+                    {
+                        "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex",
+                        "valueIdentifier": {
+                            "system": "https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken",
+                            "value": "Task/160.768.272.480.500/$accept?ac=D1199D18FE268ddd9baeCEB7CACAddC2C1b1abdC7fbdE883d4C8cA7b5c2FC61f"
+                        }
+                    }
+                ],
+                "authoredOn": "2023-06-30T16:05:43.804482+02:00",
+                "basedOn": [
+                    {
+                        "reference": "urn:uuid:f5041f1b-f171-42a3-9efa-38bf54a0349c"
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "code": "prescription-request",
+                            "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
+                        }
+                    ]
+                },
+                "identifier": [
+                    {
+                        "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier",
+                        "value": "bbe23113-68cb-4a7f-9ee5-3b218103cc5e"
+                    },
+                    {
+                        "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemPreDisIdentifier",
+                        "value": "289f3c9e-6acf-4bf4-a2c0-a0181d4068e4"
+                    },
+                    {
+                        "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
+                        "value": "5b1fa810-7775-4f8d-af44-d7ef90464375"
+                    }
+                ],
+                "intent": "order",
+                "note": [
+                    {
+                        "text": "Medikament läuft am 31.01.2023 aus. Es sind noch 7 stk übrig."
+                    }
+                ],
+                "occurrenceDateTime": "2023-06-30T16:05:43.804480+02:00",
+                "orderDetail": [
+                    {
+                        "coding": [
+                            {
+                                "code": "return-to-requester",
+                                "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/prescription-fullfillment-type-cs"
+                            }
+                        ]
+                    }
+                ],
+                "performer": [
+                    {
+                        "identifier": {
+                            "system": "http://gematik.de/fhir/sid/KIM-Adresse",
+                            "value": "practitioner@gluecklich.kim.telematik"
+                        }
+                    }
+                ],
+                "reasonCode": [
+                    {
+                        "coding": [
+                            {
+                                "code": "medication-runs-out",
+                                "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-request-reason-cs"
+                            }
+                        ]
+                    }
+                ],
+                "reasonReference": [
+                    {
+                        "reference": "urn:uuid:92e9c1a9-de4d-4720-87c0-b3206e33faea"
+                    },
+                    {
+                        "reference": "urn:uuid:6330e47d-a6b7-477c-9fb1-618633107910"
+                    }
+                ],
+                "requester": {
+                    "reference": "urn:uuid:0737100d-c555-4d82-8a1b-a5dd231eb33d"
+                },
+                "requisition": {
+                    "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
+                    "value": "5b1fa810-7775-4f8d-af44-d7ef90464375"
+                },
+                "status": "completed",
+                "subject": {
+                    "reference": "urn:uuid:23643872-b28e-43a3-b538-13e38d982a89"
+                },
+                "resourceType": "ServiceRequest"
+            }
+        }
+    ],
+    "identifier": {
+        "system": "urn:ietf:rfc:3986",
+        "value": "urn:uuid:858a5179-4ab6-4704-bac4-9f680a155b60"
+    },
+    "timestamp": "2023-06-30T14:05:43.854319+00:00",
+    "type": "message",
+    "resourceType": "Bundle"
+}

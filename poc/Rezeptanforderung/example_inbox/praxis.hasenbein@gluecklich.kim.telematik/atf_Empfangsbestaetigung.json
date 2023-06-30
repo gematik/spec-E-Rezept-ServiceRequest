@@ -1,0 +1,93 @@
+{
+    "id": "edee53aa-15b6-4820-9796-7227fc76f724",
+    "meta": {
+        "profile": [
+            "https://gematik.de/fhir/atf/StructureDefinition/bundle-app-transport-framework"
+        ]
+    },
+    "entry": [
+        {
+            "fullUrl": "urn:uuid:ce190952-0342-40c5-addd-4f782d844190",
+            "resource": {
+                "id": "ce190952-0342-40c5-addd-4f782d844190",
+                "meta": {
+                    "profile": [
+                        "https://gematik.de/fhir/atf/StructureDefinition/message-header-app-transport"
+                    ]
+                },
+                "destination": [
+                    {
+                        "endpoint": "https://deltacare.de/praxisfix/issues",
+                        "receiver": {
+                            "display": "Arztpraxis",
+                            "identifier": {
+                                "system": "http://gematik.de/fhir/sid/KIM-Adresse",
+                                "value": "praxis.hasenbein@gluecklich.kim.telematik"
+                            }
+                        }
+                    }
+                ],
+                "eventCoding": {
+                    "code": "atf;Empfangsbestaetigung",
+                    "display": "Empfangsbestätigung und Auskunft über FHIR Interpretierbarkeit der Nachricht",
+                    "system": "https://gematik.de/fhir/atf/CodeSystem/operation-identifier-cs"
+                },
+                "focus": [
+                    {
+                        "reference": "urn:uuid:1b75bcb2-4160-4239-9136-fd30c225042a"
+                    }
+                ],
+                "sender": {
+                    "display": "Pflegeeinrichtung Immergrün",
+                    "identifier": {
+                        "system": "http://gematik.de/fhir/sid/KIM-Adresse",
+                        "value": "pflegeheim.immergrün.arzt@sana-pflegeheime.kim.telematik"
+                    }
+                },
+                "source": {
+                    "contact": {
+                        "system": "email",
+                        "value": "dev@ps_solutions.de"
+                    },
+                    "endpoint": "https://ps_solutions.com/jira_helpdesk",
+                    "name": "PSSolutions",
+                    "software": "Globotron 500",
+                    "version": "2.1.3"
+                },
+                "resourceType": "MessageHeader"
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:1b75bcb2-4160-4239-9136-fd30c225042a",
+            "resource": {
+                "id": "1b75bcb2-4160-4239-9136-fd30c225042a",
+                "meta": {
+                    "profile": [
+                        "https://gematik.de/fhir/atf/StructureDefinition/atf-operation-outcome"
+                    ]
+                },
+                "extension": [
+                    {
+                        "url": "https://gematik.de/fhir/atf/StructureDefinition/atf-message-id-ex",
+                        "valueString": "14d8d805-243f-4217-a2a9-4a20db2ca0c5"
+                    }
+                ],
+                "issue": [
+                    {
+                        "code": "informational",
+                        "diagnostics": "Stornierung der Rezeptanfrage erfolgreich entgegengenommen",
+                        "severity": "information"
+                    }
+                ],
+                "resourceType": "OperationOutcome"
+            }
+        }
+    ],
+    "identifier": {
+        "system": "urn:ietf:rfc:3986",
+        "value": "urn:uuid:edee53aa-15b6-4820-9796-7227fc76f724"
+    },
+    "timestamp": "2023-06-30T14:05:43.852788+00:00",
+    "type": "message",
+    "resourceType": "Bundle"
+}
