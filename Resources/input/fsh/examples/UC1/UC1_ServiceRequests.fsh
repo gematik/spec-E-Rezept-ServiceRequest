@@ -66,7 +66,6 @@ Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
   * value = "2"
 * identifier[+].system = "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemPreDisIdentifier"
 * identifier[=].value = "PreDis-1"
-* basedOn = Reference(Example-Response-KBV-Prescription)
 * requisition[0].system = "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier"
 * requisition[=].value = "GroupID-UC1"
 * status = RequestStatus#active
@@ -75,10 +74,6 @@ Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
 * subject = Reference(Example-Patient)
 * occurrenceDateTime = "2023-02-01"
 * authoredOn = "2023-02-01"
-* requester = Reference(Example-HealthCareService-Organization)
-* performer.identifier = Test-Apotheke-Identifier
-* supportingInfo[AusstellenderArzt] = Reference(Example-Practitioner)
-* supportingInfo[AusstellenderArzt].type = "Practitioner"
 
 Instance: UC1-Response-Dispense-Request
 InstanceOf: ERPServiceRequestDispenseRequest
@@ -90,7 +85,6 @@ Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
   * value = "2"
 * identifier[+].system = "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemPreDisIdentifier"
 * identifier[=].value = "PreDis-1"
-* basedOn = Reference(Example-Response-KBV-Prescription)
 * requisition[0].system = "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier"
 * requisition[=].value = "GroupID-UC1"
 * status = RequestStatus#completed
@@ -99,10 +93,6 @@ Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
 * subject = Reference(Example-Patient)
 * occurrenceDateTime = "2023-02-01"
 * authoredOn = "2023-02-01"
-* requester = Reference(Example-HealthCareService-Organization)
-* performer.identifier = Test-Apotheke-Identifier
-* supportingInfo[AusstellenderArzt] = Reference(Example-Practitioner)
-* supportingInfo[AusstellenderArzt].type = "Practitioner"
 * supportingInfo[AbgabeDaten] = Reference (UC1-Medication-Dispense)
 * supportingInfo[AbgabeDaten].type = "MedicationDispense" (exactly)
 
