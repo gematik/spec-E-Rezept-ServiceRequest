@@ -8,6 +8,8 @@ Description: "Request sent to Prescriber to get a Prescription"
 * timestamp.value = "2015-02-07T13:28:17.239+02:00"
 * entry[0].fullUrl = "http://erp-servicerequest-test.de/MessageHeader/UC4-1-Pharmacy-to-Practitioner-MessageHeader"
 * entry[=].resource = UC4-1-Pharmacy-to-Practitioner-MessageHeader
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/Patient/Example-Patient"
+* entry[=].resource = Example-Patient
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/ServiceRequest/UC4-Initial-Prescription-Request"
 * entry[=].resource = UC4-Initial-Prescription-Request
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/MedicationRequest/Example-Zyto-Medication-Request"
