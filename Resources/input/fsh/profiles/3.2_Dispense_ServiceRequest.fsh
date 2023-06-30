@@ -32,6 +32,10 @@ Description: "ServiceRequest that is used to supply a recipe"
   * ^short = "Identifier of the process. All ServiceRequests within a process receive the same ID."
   * ^comment = "Is to be understood as a case or process ID in order to be able to track which request the ServiceRequest belongs to."
 
+* subject MS
+* subject only Reference($KBV_PR_FOR_Patient)
+  * ^short = "Patient for whom a prescription is to be delivered."
+
 * status MS
 * status from ServiceRequestStatusVS
   * ^short = "Indicates the processing status of a service request."

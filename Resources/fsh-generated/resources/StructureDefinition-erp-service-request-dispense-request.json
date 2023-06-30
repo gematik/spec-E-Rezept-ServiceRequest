@@ -236,6 +236,20 @@
         "fixedCode": "dispense-request"
       },
       {
+        "id": "ServiceRequest.subject",
+        "path": "ServiceRequest.subject",
+        "short": "Patient for whom a prescription is to be delivered.",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
         "id": "ServiceRequest.occurrence[x]",
         "path": "ServiceRequest.occurrence[x]",
         "short": "Indicates the date when the medication should be delivered.",
