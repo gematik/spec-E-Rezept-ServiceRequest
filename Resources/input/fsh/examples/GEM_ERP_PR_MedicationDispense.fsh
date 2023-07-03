@@ -1,5 +1,5 @@
 Instance: UC1-Medication-Dispense
-InstanceOf: $GEM_ERP_PR_MedicationDispense
+InstanceOf: GEM_ERP_PR_MedicationDispense
 Usage: #inline
 Description: "Example MedicationDispense"
 * identifier.system = "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"
@@ -31,8 +31,9 @@ Description: "Example MedicationDispense"
       * period = 1
       * periodUnit = #d
   * doseAndRate
-    * type = #ordered
+    * type = http://terminology.hl7.org/CodeSystem/dose-rate-type#ordered
     * doseQuantity
       * value = 1
       * unit = "tablet"
+
 

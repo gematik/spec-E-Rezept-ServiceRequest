@@ -4,6 +4,12 @@ Id: erp-service-request-request-header
 Title: "ERP Service Request Request Header"
 Description: "Header containing information about the sender and addressee"
 * insert Meta (erp-service-request-request-header)
+
+* meta.profile 2..* MS
+
+* meta.profile contains service-request-profile 1..1
+* meta.profile[service-request-profile] = "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
+
 * focus MS
 * focus only Reference(ERPServiceRequestPrescriptionRequest or ERPServiceRequestDispenseRequest)
   * ^short = "Specification of the ServiceRequest that contains the essential information for a given use case."

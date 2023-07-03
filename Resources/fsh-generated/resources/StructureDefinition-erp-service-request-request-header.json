@@ -35,6 +35,19 @@
   "differential": {
     "element": [
       {
+        "id": "MessageHeader.meta.profile",
+        "path": "MessageHeader.meta.profile",
+        "min": 2
+      },
+      {
+        "id": "MessageHeader.meta.profile:service-request-profile",
+        "path": "MessageHeader.meta.profile",
+        "sliceName": "service-request-profile",
+        "min": 1,
+        "max": "1",
+        "patternCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
+      },
+      {
         "id": "MessageHeader.event[x]",
         "path": "MessageHeader.event[x]",
         "slicing": {

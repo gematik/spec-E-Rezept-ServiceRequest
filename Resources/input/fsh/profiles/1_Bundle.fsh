@@ -4,6 +4,12 @@ Id: erp-service-request-message-container
 Title: "ERP Service Request Message Container"
 Description: "Bundle, which contains all resources of a message"
 * insert Meta (erp-service-request-message-container)
+
+* meta.profile 2..* MS
+
+* meta.profile contains service-request-profile 1..1
+* meta.profile[service-request-profile] = "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
+
 * entry[MessageHeader].resource only ERPServiceRequestRequestHeader
 
 /*
