@@ -22,11 +22,27 @@
   "context": [
     {
       "type": "element",
-      "expression": "ServiceDelivery"
+      "expression": "ServiceRequest"
+    },
+    {
+      "type": "element",
+      "expression": "MedicationRequest"
+    },
+    {
+      "type": "element",
+      "expression": "DeviceRequest"
     },
     {
       "type": "element",
       "expression": "Task"
+    },
+    {
+      "type": "element",
+      "expression": "SupplyRequest"
+    },
+    {
+      "type": "element",
+      "expression": "ServiceDelivery"
     }
   ],
   "type": "Extension",
