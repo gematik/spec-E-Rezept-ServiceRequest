@@ -1,6 +1,6 @@
 # This config file is only to be used with the Codfsh Extension in VS Code: https://marketplace.visualstudio.com/items?itemName=gematikde.codfsh
 sushi_parameters:
-  snapshots: true
+  generate-snapshots: true
 hapi_parameters:
   jurisdiction: DE
   locale: en-EN
