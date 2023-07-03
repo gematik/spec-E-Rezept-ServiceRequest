@@ -6,6 +6,8 @@ Title: "Medication Request To HealthCareService"
 Description: "Request sent to HealthCareService to forward to prescriber"
 * identifier.value = "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
 * timestamp.value = "2015-02-07T13:28:17.239+02:00"
+* meta.profile[atf-profile] = "https://gematik.de/fhir/atf/StructureDefinition/bundle-app-transport-framework"
+* meta.profile[service-request-profile] = "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
 * entry[0].fullUrl = "http://erp-servicerequest-test.de/MessageHeader/UC2-1-Pharmacy-to-HealthCareService-MessageHeader"
 * entry[=].resource = UC2-1-Pharmacy-to-HealthCareService-MessageHeader
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/ServiceRequest/UC2-Initial-Prescription-Request"
@@ -16,8 +18,6 @@ Description: "Request sent to HealthCareService to forward to prescriber"
 * entry[=].resource = Example-Initial-Medication
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Patient/Example-Patient"
 * entry[=].resource = Example-Patient
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/Practitioner/Example-Practitioner"
-* entry[=].resource = Example-Practitioner
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Organization/Example-Pharmacy-Organization"
 * entry[=].resource = Example-Pharmacy-Organization
 
@@ -28,6 +28,8 @@ Title: "Medication Request To Prescriber"
 Description: "Request sent to Prescriber to get a Prescription"
 * identifier.value = "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
 * timestamp.value = "2015-02-07T13:28:17.239+02:00"
+* meta.profile[atf-profile] = "https://gematik.de/fhir/atf/StructureDefinition/bundle-app-transport-framework"
+* meta.profile[service-request-profile] = "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
 * entry[0].fullUrl = "http://erp-servicerequest-test.de/MessageHeader/UC2-2-HealthCareService-to-Practitioner-MessageHeader"
 * entry[=].resource = UC2-2-HealthCareService-to-Practitioner-MessageHeader
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/ServiceRequest/UC2-Initial-Prescription-Request"
@@ -38,8 +40,6 @@ Description: "Request sent to Prescriber to get a Prescription"
 * entry[=].resource = Example-Initial-Medication
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Patient/Example-Patient"
 * entry[=].resource = Example-Patient
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/Practitioner/Example-Practitioner"
-* entry[=].resource = Example-Practitioner
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Organization/Example-Pharmacy-Organization"
 * entry[=].resource = Example-Pharmacy-Organization
 
@@ -50,6 +50,8 @@ Title: "Fullfilled Prescription Request"
 Description: "Response sent from Practitioner back to HealthCareService"
 * identifier.value = "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
 * timestamp.value = "2023-01-30T13:28:17.239+02:00"
+* meta.profile[atf-profile] = "https://gematik.de/fhir/atf/StructureDefinition/bundle-app-transport-framework"
+* meta.profile[service-request-profile] = "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
 * entry[0].fullUrl = "http://erp-servicerequest-test.de/MessageHeader/UC2-3-Practitioner-to-HealthCareService-MessageHeader"
 * entry[=].resource = UC2-3-Practitioner-to-HealthCareService-MessageHeader
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/ServiceRequest/UC2-Response-Prescription-Request"
@@ -74,6 +76,8 @@ Title: "Fullfilled Prescription Request"
 Description: "Response sent from Practitioner back to HealthCareService"
 * identifier.value = "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
 * timestamp.value = "2023-01-30T13:28:17.239+02:00"
+* meta.profile[atf-profile] = "https://gematik.de/fhir/atf/StructureDefinition/bundle-app-transport-framework"
+* meta.profile[service-request-profile] = "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
 * entry[0].fullUrl = "http://erp-servicerequest-test.de/MessageHeader/UC2-4-HealthCareService-to-Pharmacy-MessageHeader"
 * entry[=].resource = UC2-4-HealthCareService-to-Pharmacy-MessageHeader
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/ServiceRequest/UC2-Response-Prescription-Request"
@@ -99,6 +103,8 @@ Title: "Fulfilled Dispense info to HealthCareService"
 Description: "Request sent from Pharmacy to to inform HealthCareService about dispense"
 * identifier.value = "urn:uuid:c80f6c55-92f8-4518-ba66-cb193da09336"
 * timestamp.value = "2023-02-01T13:28:17.239+02:00"
+* meta.profile[atf-profile] = "https://gematik.de/fhir/atf/StructureDefinition/bundle-app-transport-framework"
+* meta.profile[service-request-profile] = "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
 * entry[0].fullUrl = "http://erp-servicerequest-test.de/MessageHeader/UC2-5-Pharmacy-to-HealthCareService-MessageHeader"
 * entry[=].resource = UC2-5-Pharmacy-to-HealthCareService-MessageHeader
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/ServiceRequest/UC2-Response-Dispense-Request"

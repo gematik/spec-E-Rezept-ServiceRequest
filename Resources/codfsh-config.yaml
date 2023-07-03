@@ -1,0 +1,14 @@
+# This config file is only to be used with the Codfsh Extension in VS Code: https://marketplace.visualstudio.com/items?itemName=gematikde.codfsh
+sushi_parameters:
+  generate-snapshots: true
+hapi_parameters:
+  jurisdiction: DE
+  locale: en-EN
+  tx: n/a
+  debug: true
+  allow-example-urls: "true"
+hapi_ignore:
+  warning:
+    - "None of the codings provided are in the value set 'IdentifierType' (http://hl7.org/fhir/ValueSet/identifier-type|4.0.1), and a coding should come from this value set unless it has no suitable code (note that the validator cannot judge what is suitable) (codes = https://gematik.de/fhir/directory/CodeSystem/EndpointDirectoryConnectionType#kim-2.0)"
+    - "None of the codings provided are in the value set 'IdentifierType' (http://hl7.org/fhir/ValueSet/identifier-type|4.0.1), and a coding should come from this value set unless it has no suitable code (note that the validator cannot judge what is suitable) (codes = http://terminology.hl7.org/CodeSystem/v2-0203#BSNR)"
+    - "Bundle.entry[6].resource/*Coverage/Response-Coverage*/.extension[0].value.ofType(Coding) | ValueSet https://fhir.kbv.de/ValueSet/KBV_VS_SFHIR_KBV_PERSONENGRUPPE not found by validator"
