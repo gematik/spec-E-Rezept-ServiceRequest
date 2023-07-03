@@ -1,0 +1,21 @@
+sushi:
+  min_version: "3.0.0"
+  parameters:
+    generate-snapshots: true
+  ignore:
+    warning:
+      - "KBV.Basis contains uppercase characters, which is discouraged. SUSHI will use kbv.basis as the package name."
+hapi:
+  min_version: "3.0.0"
+  parameters:
+    jurisdiction: DE
+    locale: en-EN
+    tx: "n/a"
+    debug: true
+    allow-example-urls: "true"
+  ignore:
+    information:
+    warning:
+        - "None of the codings provided are in the value set 'IdentifierType' (http://hl7.org/fhir/ValueSet/identifier-type|4.0.1), and a coding should come from this value set unless it has no suitable code (note that the validator cannot judge what is suitable) (codes = https://gematik.de/fhir/directory/CodeSystem/EndpointDirectoryConnectionType#kim-2.0)"
+        - "None of the codings provided are in the value set 'IdentifierType' (http://hl7.org/fhir/ValueSet/identifier-type|4.0.1), and a coding should come from this value set unless it has no suitable code (note that the validator cannot judge what is suitable) (codes = http://terminology.hl7.org/CodeSystem/v2-0203#BSNR)"
+        - "ValueSet https://fhir.kbv.de/ValueSet/KBV_VS_SFHIR_KBV_PERSONENGRUPPE not found by validator"
