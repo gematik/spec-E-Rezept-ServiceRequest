@@ -18,8 +18,6 @@ Description: "Request sent to HealthCareService to forward to prescriber"
 * entry[=].resource = Example-Initial-Medication
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Patient/Example-Patient"
 * entry[=].resource = Example-Patient
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/Practitioner/Example-Practitioner"
-* entry[=].resource = Example-Practitioner
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Organization/Example-Pharmacy-Organization"
 * entry[=].resource = Example-Pharmacy-Organization
 
@@ -42,8 +40,6 @@ Description: "Request sent to Prescriber to get a Prescription"
 * entry[=].resource = Example-Initial-Medication
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Patient/Example-Patient"
 * entry[=].resource = Example-Patient
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/Practitioner/Example-Practitioner"
-* entry[=].resource = Example-Practitioner
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Organization/Example-Pharmacy-Organization"
 * entry[=].resource = Example-Pharmacy-Organization
 

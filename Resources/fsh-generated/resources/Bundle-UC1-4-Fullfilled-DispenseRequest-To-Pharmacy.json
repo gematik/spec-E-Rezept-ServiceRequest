@@ -350,7 +350,8 @@
                 "type": {
                   "coding": [
                     {
-                      "code": "ordered"
+                      "code": "ordered",
+                      "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type"
                     }
                   ]
                 },
