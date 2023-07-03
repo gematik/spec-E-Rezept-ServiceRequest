@@ -6,9 +6,6 @@ Description: "Bundle, which contains all resources of a message"
 * insert Meta (erp-service-request-message-container)
 
 * meta.profile 2..* MS
-* meta.profile ^slicing.discriminator.type = #value
-* meta.profile ^slicing.discriminator.path = "profile"
-* meta.profile ^slicing.rules = #open
 
 * meta.profile contains service-request-profile 1..1
 * meta.profile[service-request-profile] = "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"

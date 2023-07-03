@@ -37,15 +37,6 @@
       {
         "id": "MessageHeader.meta.profile",
         "path": "MessageHeader.meta.profile",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "profile"
-            }
-          ],
-          "rules": "open"
-        },
         "min": 2
       },
       {

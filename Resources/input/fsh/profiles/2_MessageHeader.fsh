@@ -6,9 +6,6 @@ Description: "Header containing information about the sender and addressee"
 * insert Meta (erp-service-request-request-header)
 
 * meta.profile 2..* MS
-* meta.profile ^slicing.discriminator.type = #value
-* meta.profile ^slicing.discriminator.path = "profile"
-* meta.profile ^slicing.rules = #open
 
 * meta.profile contains service-request-profile 1..1
 * meta.profile[service-request-profile] = "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"

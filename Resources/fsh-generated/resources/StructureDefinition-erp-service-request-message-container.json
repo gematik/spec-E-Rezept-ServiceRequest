@@ -42,15 +42,6 @@
       {
         "id": "Bundle.meta.profile",
         "path": "Bundle.meta.profile",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "profile"
-            }
-          ],
-          "rules": "open"
-        },
         "min": 2
       },
       {
