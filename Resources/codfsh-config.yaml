@@ -1,3 +1,4 @@
+# This config file is only to be used with the Codfsh Extension in VS Code: https://marketplace.visualstudio.com/items?itemName=gematikde.codfsh
 sushi:
   min_version: "3.0.0"
   parameters:
