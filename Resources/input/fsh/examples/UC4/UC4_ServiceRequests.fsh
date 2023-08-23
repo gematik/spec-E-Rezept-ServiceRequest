@@ -7,6 +7,18 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * identifier[0]
   * system = "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier"
   * value = "1"
+* identifier[+]
+  * system = "https://gematik.de/fhir/erp-servicerequest/sid/patient-id"
+  * value = "Patient-ID-e15232e9-01e0-4ce8-b628-71adb9023b21"
+* identifier[+]
+  * system = "https://gematik.de/fhir/erp-servicerequest/sid/case-id"
+  * value = "Case-ID-85d39ff7-2f02-4bfc-85d5-0ba2752f6076"
+* identifier[+]
+  * system = "https://gematik.de/fhir/erp-servicerequest/sid/process-id"
+  * value = "Process-ID-db6fd21d-cc85-4411-8567-479a7dc1ef74"
+* identifier[+]
+  * system = "my-very-own-zyto-identifier"
+  * value = "My-ID-bdbdf8a1-ffa4-4f16-a6c4-38e690ac5548"
 * basedOn = Reference(Example-Zyto-Medication-Request)
 * requisition[0].system = "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier"
 * requisition[=].value = "GroupID-UC4"
@@ -30,6 +42,18 @@ Description: "ServiceRequest that is returned to the requester"
 * identifier[0]
   * system = "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier"
   * value = "1"
+* identifier[+]
+  * system = "https://gematik.de/fhir/erp-servicerequest/sid/patient-id"
+  * value = "Patient-ID-e15232e9-01e0-4ce8-b628-71adb9023b21"
+* identifier[+]
+  * system = "https://gematik.de/fhir/erp-servicerequest/sid/case-id"
+  * value = "Case-ID-85d39ff7-2f02-4bfc-85d5-0ba2752f6076"
+* identifier[+]
+  * system = "https://gematik.de/fhir/erp-servicerequest/sid/process-id"
+  * value = "Process-ID-db6fd21d-cc85-4411-8567-479a7dc1ef74"
+* identifier[+]
+  * system = "my-very-own-zyto-identifier"
+  * value = "My-ID-bdbdf8a1-ffa4-4f16-a6c4-38e690ac5548"
 * basedOn = Reference(Example-Response-KBV-Prescription)
 * requisition[0].system = "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier"
 * requisition[=].value = "GroupID-UC4"

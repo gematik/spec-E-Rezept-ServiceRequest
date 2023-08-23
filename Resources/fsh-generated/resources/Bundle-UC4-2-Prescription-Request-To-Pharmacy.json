@@ -100,6 +100,22 @@
           {
             "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier",
             "value": "1"
+          },
+          {
+            "system": "https://gematik.de/fhir/erp-servicerequest/sid/patient-id",
+            "value": "Patient-ID-e15232e9-01e0-4ce8-b628-71adb9023b21"
+          },
+          {
+            "system": "https://gematik.de/fhir/erp-servicerequest/sid/case-id",
+            "value": "Case-ID-85d39ff7-2f02-4bfc-85d5-0ba2752f6076"
+          },
+          {
+            "system": "https://gematik.de/fhir/erp-servicerequest/sid/process-id",
+            "value": "Process-ID-db6fd21d-cc85-4411-8567-479a7dc1ef74"
+          },
+          {
+            "system": "my-very-own-zyto-identifier",
+            "value": "My-ID-bdbdf8a1-ffa4-4f16-a6c4-38e690ac5548"
           }
         ],
         "basedOn": [
@@ -415,18 +431,6 @@
         "name": [
           {
             "use": "official",
-            "family": "Topp-Glücklich",
-            "_family": {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
-                  "valueString": "Topp-Glücklich"
-                }
-              ]
-            },
-            "given": [
-              "Hans"
-            ],
             "prefix": [
               "Dr. med."
             ],
@@ -439,6 +443,18 @@
                   }
                 ]
               }
+            ],
+            "family": "Topp-Glücklich",
+            "_family": {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+                  "valueString": "Topp-Glücklich"
+                }
+              ]
+            },
+            "given": [
+              "Hans"
             ]
           }
         ],
