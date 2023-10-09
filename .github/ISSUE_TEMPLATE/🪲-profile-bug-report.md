@@ -1,5 +1,5 @@
 ---
-name: Profile-Bug report
+name: "\U0001FAB2 Profile-Bug report"
 about: Create a report to help us improve the FHIR Profiles
 title: "[PROFILE] "
 labels: bug
