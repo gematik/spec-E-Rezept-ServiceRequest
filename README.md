@@ -1,8 +1,8 @@
-<img align="right" width="200" height="37" src="Gematik_Logo_Flag.png"/> <br/>
+<img align="right" width="200" height="37" src="Gematik_Logo_Flag_With_Background.png"/> <br/>
 
 # spec-E-Rezept-ServiceRequest
 
-Communication ressources used to request a electronical prescription context. Ressources to to be published on https://simplifier.net/erezept-servicerequest
+Communication resources used to request a electronical prescription context. Resources to to be published on https://simplifier.net/erezept-servicerequest
 
 
 <details>
