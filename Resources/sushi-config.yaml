@@ -2,7 +2,7 @@ canonical: https://gematik.de/fhir/erp-servicerequest
 fhirVersion: 4.0.1
 applyExtensionMetadataToRoot: false
 FSHOnly: true
-version: "0.9"
+version: "1.0.1"
 dependencies:
   hl7.fhir.r4.core: 4.0.1
   de.basisprofil.r4: 1.4.0
