@@ -290,18 +290,6 @@
         "name": [
           {
             "use": "official",
-            "family": "Topp-Glücklich",
-            "_family": {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
-                  "valueString": "Topp-Glücklich"
-                }
-              ]
-            },
-            "given": [
-              "Hans"
-            ],
             "prefix": [
               "Dr. med."
             ],
@@ -314,6 +302,18 @@
                   }
                 ]
               }
+            ],
+            "family": "Topp-Glücklich",
+            "_family": {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+                  "valueString": "Topp-Glücklich"
+                }
+              ]
+            },
+            "given": [
+              "Hans"
             ]
           }
         ],

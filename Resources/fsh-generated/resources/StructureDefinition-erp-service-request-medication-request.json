@@ -121,10 +121,10 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_FreeText",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_FreeText|1.1.0",
               "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_Compounding",
               "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN",
-              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_Ingredient"
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_Ingredient|1.1.0"
             ]
           }
         ],
