@@ -16,3 +16,7 @@ where name = 'ERPServiceRequestMedicationRequest'
 for differential.element
     select id, short, comment
 ```
+
+### Weitere Informationen
+
+Für `medicationReference` existiert keine Einschränkung seitens des Profils, aber es sollte hier auf [KBV_PR_ERP_Medication_FreeText](https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_FreeText), [KBV_PR_ERP_Medication_Compounding](https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_Compounding), [KBV_PR_ERP_Medication_PZN](https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN) oder [KBV_PR_ERP_Medication_Ingredient](https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_Ingredient) referenziert werden.

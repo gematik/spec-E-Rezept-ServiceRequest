@@ -94,15 +94,14 @@
       {
         "id": "MedicationRequest.medication[x]",
         "path": "MedicationRequest.medication[x]",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "type",
-              "path": "$this"
-            }
-          ],
-          "rules": "closed"
-        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Medication"
+            ]
+          }
+        ],
         "mustSupport": true,
         "mapping": [
           {
@@ -112,42 +111,23 @@
         ]
       },
       {
-        "id": "MedicationRequest.medication[x]:medicationReference",
-        "path": "MedicationRequest.medication[x]",
-        "sliceName": "medicationReference",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_FreeText|1.1.0",
-              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_Compounding",
-              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN",
-              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_Ingredient|1.1.0"
-            ]
-          }
-        ],
-        "mustSupport": true
-      },
-      {
-        "id": "MedicationRequest.medication[x]:medicationReference.reference",
+        "id": "MedicationRequest.medication[x].reference",
         "path": "MedicationRequest.medication[x].reference",
         "min": 1,
         "mustSupport": true
       },
       {
-        "id": "MedicationRequest.medication[x]:medicationReference.type",
+        "id": "MedicationRequest.medication[x].type",
         "path": "MedicationRequest.medication[x].type",
         "max": "0"
       },
       {
-        "id": "MedicationRequest.medication[x]:medicationReference.identifier",
+        "id": "MedicationRequest.medication[x].identifier",
         "path": "MedicationRequest.medication[x].identifier",
         "max": "0"
       },
       {
-        "id": "MedicationRequest.medication[x]:medicationReference.display",
+        "id": "MedicationRequest.medication[x].display",
         "path": "MedicationRequest.medication[x].display",
         "max": "0"
       },

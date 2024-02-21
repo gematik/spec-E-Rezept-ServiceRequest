@@ -21,13 +21,9 @@ If this ID is available, the receiving system MUST be able to search for the pre
 "
 
 * medication[x] MS
-* medication[x] ^slicing.discriminator.type = #type
-* medication[x] ^slicing.discriminator.path = "$this"
-* medication[x] ^slicing.rules = #closed
+* medication[x] only Reference
 
 * medicationReference 1..1 MS
-* medicationReference only Reference($KBV_PR_ERP_Medication_FreeText or $KBV_PR_ERP_Medication_Compounding or $KBV_PR_ERP_Medication_PZN or $KBV_PR_ERP_Medication_Ingredient)
-* medicationReference ^sliceName = "medicationReference"
 * medicationReference.reference 1..1 MS
 * medicationReference.type 0..0
 * medicationReference.identifier 0..0
