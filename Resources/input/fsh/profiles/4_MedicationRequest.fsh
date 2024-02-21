@@ -30,7 +30,7 @@ If this ID is available, the receiving system MUST be able to search for the pre
 * medicationReference.display 0..0
 
 * subject MS
-* subject only Reference($KBV_PR_FOR_Patient)
+* subject only Reference(Patient)
 * subject.type 0..0
 * subject.identifier 0..0
 * subject.reference 1..1
@@ -40,7 +40,7 @@ If this ID is available, the receiving system MUST be able to search for the pre
 * requester MS
   * ^short = "Requesting doctor/facility/pharmacy for this MedicationRequest"
   * ^comment = "Is optional to specify here, since it must already be specified in the ServiceRequest"
-* requester only Reference($KBV_PR_FOR_Practitioner or ERPServiceRequestOrganization)
+* requester only Reference(Practitioner or Organization)
 * requester.type 0..0
 * requester.identifier 0..1
 * requester.reference 0..1
@@ -52,7 +52,7 @@ If this ID is available, the receiving system MUST be able to search for the pre
 * courseOfTherapyType 0..0
 
 // Wenn eine Coverage genutzt wird, kann es auch gleich die richtige sein
-* insurance only Reference($KBV_PR_FOR_Coverage)
+* insurance only Reference(Coverage)
   * ^short = "Insurance status of the patient for whom the medication is requested"
   * ^comment = "If this information is already known, it can optionally be given here"
 * insurance 0..1

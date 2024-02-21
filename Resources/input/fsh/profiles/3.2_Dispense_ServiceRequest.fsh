@@ -33,7 +33,7 @@ Description: "ServiceRequest that is used to supply a recipe"
   * ^comment = "Is to be understood as a case or process ID in order to be able to track which request the ServiceRequest belongs to."
 
 * subject MS
-* subject only Reference($KBV_PR_FOR_Patient)
+* subject only Reference(Patient)
   * ^short = "Patient for whom a prescription is to be delivered."
 
 * status MS
@@ -68,11 +68,11 @@ Description: "ServiceRequest that is used to supply a recipe"
 * supportingInfo MS
 * supportingInfo contains AbgabeDaten 0..1 MS
 // TODO: wenn status = erfüllt dann Abgabedaten vorhanden
-* supportingInfo[AbgabeDaten] only Reference($GEM_ERP_PR_MedicationDispense)
+* supportingInfo[AbgabeDaten] only Reference(MedicationDispense)
 * supportingInfo[AbgabeDaten].type = "MedicationDispense" (exactly)
   * ^short = "Delivery data that is also sent to the e-prescription specialist service."
   * ^comment = "In this way, the inquiring facility/person can understand which medications are actually supplied."
-  
+
 * note MS
   * ^short = "Further information on delivery."
   * ^comment = "Any use cases that are not specified can be placed here in free text."

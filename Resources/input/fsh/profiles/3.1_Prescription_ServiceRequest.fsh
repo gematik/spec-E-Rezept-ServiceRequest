@@ -34,7 +34,7 @@ Das implementierende System muss in der Lage sein diese Verknüpfung herzustelle
   * ^comment = "Exactly one MedicationRequest is assigned to a ServiceRequest, so that independent processing is possible."
   * ^definition = "This field references the underlying MedicationRequest, which contains the medical information for the prescription request. If the prescription request is made, the ERPServiceRequestMedicationRequest profile MAY be used.
 When the prescription has been created, the corresponding KBV_PR_ERP_Bundle prescription data record must be referenced."
-* basedOn only Reference(ERPServiceRequestMedicationRequest or $KBV_PR_ERP_Prescription)
+* basedOn only Reference(MedicationRequest)
 
 * requisition 1..1 MS
 * requisition only ERPServiceRequestProcedureIdentifier
@@ -58,7 +58,6 @@ When the prescription has been created, the corresponding KBV_PR_ERP_Bundle pres
   * ^comment = "#prescription-request defines this ServiceRequest as a prescription request from a doctor."
 
 * subject MS
-* subject only Reference($KBV_PR_FOR_Patient)
   * ^short = "Patient for whom a prescription is requested on behalf of the patient."
 
 * orderDetail 1..1 MS
@@ -78,12 +77,12 @@ When the prescription has been created, the corresponding KBV_PR_ERP_Bundle pres
 
 
 * requester 1..1 MS
-* requester only Reference(ERPServiceRequestOrganization or $KBV_PR_FOR_Practitioner)
+* requester only Reference(Organization or Practitioner)
   * ^short = "Inquiring facility or practitioner."
   * ^comment = "The KIM address is already stored in the message header. Therefore, the preferred specification is to store a KBV_PR_FOR_Practitioner."
 
 * performer MS
-* performer only Reference($KBV_PR_FOR_Practitioner)
+* performer only Reference(Practitioner)
   * ^short = "Doctor who is to write the prescription."
 
 * reasonCode MS

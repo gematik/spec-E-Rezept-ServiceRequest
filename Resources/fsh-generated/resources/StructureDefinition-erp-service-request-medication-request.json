@@ -138,7 +138,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient"
+              "http://hl7.org/fhir/StructureDefinition/Patient"
             ]
           }
         ],
@@ -173,8 +173,8 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner",
-              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
+              "http://hl7.org/fhir/StructureDefinition/Practitioner",
+              "http://hl7.org/fhir/StructureDefinition/Organization"
             ]
           }
         ],
@@ -220,7 +220,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Coverage"
+              "http://hl7.org/fhir/StructureDefinition/Coverage"
             ]
           }
         ]

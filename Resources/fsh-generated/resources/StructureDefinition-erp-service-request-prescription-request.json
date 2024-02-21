@@ -186,8 +186,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request",
-              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription"
+              "http://hl7.org/fhir/StructureDefinition/MedicationRequest"
             ]
           }
         ],
@@ -316,14 +315,6 @@
         "id": "ServiceRequest.subject",
         "path": "ServiceRequest.subject",
         "short": "Patient for whom a prescription is requested on behalf of the patient.",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient"
-            ]
-          }
-        ],
         "mustSupport": true,
         "mapping": [
           {
@@ -362,8 +353,8 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization",
-              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner"
+              "http://hl7.org/fhir/StructureDefinition/Organization",
+              "http://hl7.org/fhir/StructureDefinition/Practitioner"
             ]
           }
         ],
@@ -383,7 +374,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner"
+              "http://hl7.org/fhir/StructureDefinition/Practitioner"
             ]
           }
         ],

@@ -20,3 +20,9 @@ for differential.element
 ### Weitere Informationen
 
 Für `medicationReference` existiert keine Einschränkung seitens des Profils, aber es sollte hier auf [KBV_PR_ERP_Medication_FreeText](https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_FreeText), [KBV_PR_ERP_Medication_Compounding](https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_Compounding), [KBV_PR_ERP_Medication_PZN](https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN) oder [KBV_PR_ERP_Medication_Ingredient](https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_Ingredient) referenziert werden.
+
+`subject` ist nicht eingeschränkt, jedoch sollte hier [KBV_PR_FOR_Patient](https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient) verwendet werden.
+
+`requester` erlaubt Referenzen zu _Practitioner_ und _ Organization_, jedoch sollte hier entweder [KBV_PR_FOR_Practitioner](https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner) oder [ERPServiceRequestOrganization](https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization) verwendet werden.
+
+`insurance` erlaubt Referenzen zu _Coverage_, jedoch sollte hier [KBV_PR_FOR_Coverage](https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Coverage) verwendet werden.
