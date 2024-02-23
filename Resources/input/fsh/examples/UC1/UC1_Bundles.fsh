@@ -4,7 +4,7 @@ Usage: #example
 Title: "Medication Request To Prescriber"
 Description: "Request sent to Prescriber to get a Prescription"
 * identifier.value = "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
-* timestamp.value = "2015-02-07T13:28:17.239+02:00"
+* timestamp = "2015-02-07T13:28:17.239+02:00"
 * entry[0].fullUrl = "http://erp-servicerequest-test.de/MessageHeader/UC1-HealthCareService-to-Practitioner-MessageHeader"
 * entry[=].resource = UC1-HealthCareService-to-Practitioner-MessageHeader
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/ServiceRequest/UC1-Initial-Prescription-Request"
@@ -28,7 +28,7 @@ Usage: #example
 Title: "Fullfilled Prescription Request"
 Description: "Response sent from Practitioner back to HealthCareService"
 * identifier.value = "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
-* timestamp.value = "2023-01-30T13:28:17.239+02:00"
+* timestamp = "2023-01-30T13:28:17.239+02:00"
 * entry[0].fullUrl = "http://erp-servicerequest-test.de/MessageHeader/UC1-Practitioner-to-HealthCareService-MessageHeader"
 * entry[=].resource = UC1-Practitioner-to-HealthCareService-MessageHeader
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/ServiceRequest/UC1-Response-Prescription-Request"
@@ -52,7 +52,7 @@ Usage: #example
 Title: "DispenseRequestToPharmacy"
 Description: "Request sent to pharmacy to request a dispense of the medication"
 * identifier.value = "urn:uuid:c80f6c55-92f8-4518-ba66-cb193da09336"
-* timestamp.value = "2023-02-01T13:28:17.239+02:00"
+* timestamp = "2023-02-01T13:28:17.239+02:00"
 * entry[0].fullUrl = "http://erp-servicerequest-test.de/MessageHeader/UC1-HealthCareService-to-Pharmacy-MessageHeader"
 * entry[=].resource = UC1-HealthCareService-to-Pharmacy-MessageHeader
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Patient/Example-Patient"
@@ -66,7 +66,7 @@ Usage: #example
 Title: "DispenseRequestToPharmacy"
 Description: "Response sent from pharmacy to requester"
 * identifier.value = "urn:uuid:c80f6c55-92f8-4518-ba66-cb193da09336"
-* timestamp.value = "2023-02-01T13:28:17.239+02:00"
+* timestamp = "2023-02-01T13:28:17.239+02:00"
 * entry[0].fullUrl = "http://erp-servicerequest-test.de/MessageHeader/UC1-Pharmacy-to-HealthCareService-MessageHeader"
 * entry[=].resource = UC1-Pharmacy-to-HealthCareService-MessageHeader
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/ServiceRequest/UC1-Response-Dispense-Request"

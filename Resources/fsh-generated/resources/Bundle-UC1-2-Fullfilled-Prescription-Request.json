@@ -11,6 +11,7 @@
     "system": "urn:ietf:rfc:3986",
     "value": "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
   },
+  "timestamp": "2023-01-30T13:28:17.239+02:00",
   "entry": [
     {
       "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/UC1-Practitioner-to-HealthCareService-MessageHeader",
@@ -581,8 +582,5 @@
         ]
       }
     }
-  ],
-  "_timestamp": {
-    "value": "2023-01-30T13:28:17.239+02:00"
-  }
+  ]
 }
