@@ -6,8 +6,7 @@ Nachdem der Vorgang seitens der Apotheke abgeschlossen ist, werden die Abgabeinf
 
 {{tree:https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request, diff}}
 
-### Weitere Informationen
+### Use-Case spezifische Anforderungen
 
-`subject` ist nicht eingeschränkt, jedoch sollte hier [KBV_PR_FOR_Patient](https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient) verwendet werden.
-
-`supportingInfo:AbgabeDaten` erlaubt Referenzen zu _MedicationDispense_, jedoch sollte hier [GEM_ERP_PR_MedicationDispense](https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense) verwendet werden.
+* Für `subject` MUSS das Profil [KBV_PR_FOR_Patient](https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient) verwendet werden.
+* Für `supportingInfo:AbgabeDaten` MUSS das Profil [GEM_ERP_PR_MedicationDispense](https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense) verwendet werden.
