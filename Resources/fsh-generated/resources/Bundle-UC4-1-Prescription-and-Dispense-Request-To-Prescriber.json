@@ -3,7 +3,6 @@
   "id": "UC4-1-Prescription-and-Dispense-Request-To-Prescriber",
   "meta": {
     "profile": [
-      "https://gematik.de/fhir/atf/StructureDefinition/bundle-app-transport-framework",
       "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
     ]
   },
@@ -20,7 +19,6 @@
         "id": "UC4-1-Pharmacy-to-Practitioner-MessageHeader",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/atf/StructureDefinition/message-header-app-transport",
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
           ]
         },
