@@ -5,7 +5,7 @@
   "version": "1.0",
   "name": "ERPServiceRequestPrescriptionRequest",
   "title": "ERP Service Request Prescription Request",
-  "status": "draft",
+  "status": "active",
   "experimental": false,
   "publisher": "gematik GmbH",
   "description": "ServiceRequest, which is used to request a recipe",

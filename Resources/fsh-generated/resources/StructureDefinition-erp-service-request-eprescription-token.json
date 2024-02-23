@@ -5,7 +5,7 @@
   "version": "1.0",
   "name": "ERPServiceRequestEPrescriptionToken",
   "title": "ERP Service Request EPrescription Token",
-  "status": "draft",
+  "status": "active",
   "experimental": false,
   "publisher": "gematik GmbH",
   "description": "Identifier containing an e-prescription token",

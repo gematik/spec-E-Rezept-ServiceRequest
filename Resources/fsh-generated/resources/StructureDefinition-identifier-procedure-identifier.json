@@ -5,7 +5,7 @@
   "version": "1.0",
   "name": "ERPServiceRequestProcedureIdentifier",
   "title": "ERP Service Request Procedure Identifier",
-  "status": "draft",
+  "status": "active",
   "experimental": false,
   "publisher": "gematik GmbH",
   "description": "This identifier is used to identify service requests of a process",

@@ -5,7 +5,7 @@
   "version": "1.0",
   "name": "ERPServiceRequestPreDisIdentifier",
   "title": "ERP Service Request Pre Dis Identifier",
-  "status": "draft",
+  "status": "active",
   "experimental": false,
   "publisher": "gematik GmbH",
   "description": "Identifier is used to link a prescription and dispense requests of the same prescription request",

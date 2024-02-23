@@ -5,7 +5,7 @@
   "version": "1.0",
   "name": "EPrescriptionTokenEX",
   "title": "E-Prescription Token Extension",
-  "status": "draft",
+  "status": "active",
   "experimental": false,
   "publisher": "gematik GmbH",
   "description": "This extension is used to specify an e-prescription token",

@@ -1,6 +1,6 @@
 {
   "resourceType": "ValueSet",
-  "status": "draft",
+  "status": "active",
   "name": "RequestReasonVS",
   "id": "request-reason-vs",
   "title": "Reason for the medication request (VS)",

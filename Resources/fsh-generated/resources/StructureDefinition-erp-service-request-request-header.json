@@ -5,7 +5,7 @@
   "version": "1.0",
   "name": "ERPServiceRequestRequestHeader",
   "title": "ERP Service Request Request Header",
-  "status": "draft",
+  "status": "active",
   "experimental": false,
   "publisher": "gematik GmbH",
   "description": "Header containing information about the sender and addressee",

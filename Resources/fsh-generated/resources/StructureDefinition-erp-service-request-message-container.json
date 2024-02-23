@@ -5,7 +5,7 @@
   "version": "1.0",
   "name": "ERPServiceRequestMessageContainer",
   "title": "ERP Service Request Message Container",
-  "status": "draft",
+  "status": "active",
   "experimental": false,
   "publisher": "gematik GmbH",
   "description": "Bundle, which contains all resources of a message",

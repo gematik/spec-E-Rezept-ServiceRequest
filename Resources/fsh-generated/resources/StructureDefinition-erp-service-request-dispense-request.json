@@ -5,7 +5,7 @@
   "version": "1.0",
   "name": "ERPServiceRequestDispenseRequest",
   "title": "ERP Service Request Dispense Request",
-  "status": "draft",
+  "status": "active",
   "experimental": false,
   "publisher": "gematik GmbH",
   "description": "ServiceRequest that is used to supply a recipe",

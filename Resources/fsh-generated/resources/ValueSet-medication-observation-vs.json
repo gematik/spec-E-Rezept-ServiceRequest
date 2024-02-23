@@ -1,6 +1,6 @@
 {
   "resourceType": "ValueSet",
-  "status": "draft",
+  "status": "active",
   "name": "MedicationObservationVS",
   "id": "medication-observation-vs",
   "title": "Information on medication observation (VS)",
