@@ -4,7 +4,7 @@ Generell sind die hier spezifizierten FHIR Ressourcen unabhängig vom gewählten
 
 Weitere Festlegungen und Spezifikationen sind dem entsprechenden Implementierungsleitfaden zu entnehmen.
 
-Insbesondere ist zu beachten, dass nachdem eine Nachricht im System angekommen ist das System mit einer Bestätigung antworten SOLL. Diese Bestätigung enthält die Information, ob die übermittelten FHIR-Ressourcen interpretiert werden konnten und eine weiterverarbeitung im empfangenden System möglich ist.
+Insbesondere ist zu beachten, dass, nachdem eine Nachricht im System angekommen ist, das System mit einer Bestätigung antworten SOLL. Diese Bestätigung enthält die Information, ob die übermittelten FHIR-Ressourcen interpretiert werden konnten und eine Weiterverarbeitung im empfangenden System möglich ist.
 
 ## Präferiertes Transportmedium
 
