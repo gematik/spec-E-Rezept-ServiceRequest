@@ -3,7 +3,7 @@
   "id": "NamingSystemEPrescriptionToken",
   "description": "NamingSystem for specifying an e-prescription token",
   "name": "NamingSystemEPrescriptionToken",
-  "status": "draft",
+  "status": "active",
   "kind": "identifier",
   "date": "2023-02-01",
   "publisher": "gematik GmbH",

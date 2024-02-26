@@ -5,7 +5,7 @@
   "version": "1.0",
   "name": "ERPServiceRequestOrganization",
   "title": "ERP Service Request Organization",
-  "status": "draft",
+  "status": "active",
   "experimental": false,
   "publisher": "gematik GmbH",
   "description": "Organization that can be used to specify a KIM address",

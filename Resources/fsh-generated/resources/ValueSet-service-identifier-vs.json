@@ -1,6 +1,6 @@
 {
   "resourceType": "ValueSet",
-  "status": "draft",
+  "status": "active",
   "name": "ServiceIdentifierVS",
   "id": "service-identifier-vs",
   "title": "Identifier of the use case",

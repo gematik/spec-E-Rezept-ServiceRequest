@@ -5,7 +5,7 @@
   "version": "1.0",
   "name": "ERPServiceRequestDispenseRequest",
   "title": "ERP Service Request Dispense Request",
-  "status": "draft",
+  "status": "active",
   "experimental": false,
   "publisher": "gematik GmbH",
   "description": "ServiceRequest that is used to supply a recipe",
@@ -243,7 +243,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient"
+              "http://hl7.org/fhir/StructureDefinition/Patient"
             ]
           }
         ],
@@ -294,7 +294,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense"
+              "http://hl7.org/fhir/StructureDefinition/MedicationDispense"
             ]
           }
         ],

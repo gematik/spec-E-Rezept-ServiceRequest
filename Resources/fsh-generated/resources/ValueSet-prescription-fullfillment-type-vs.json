@@ -1,6 +1,6 @@
 {
   "resourceType": "ValueSet",
-  "status": "draft",
+  "status": "active",
   "name": "PrescriptionFullfillmentTypeVS",
   "id": "prescription-fullfillment-type-vs",
   "title": "Delivery type of the prescription request (VS)",

@@ -66,4 +66,3 @@ Description: "ServiceRequest that is returned to the requester"
 * authoredOn = "2023-01-27"
 * requester = Reference(Example-Pharmacy-Organization)
 * performer = Reference(Example-Practitioner)
-

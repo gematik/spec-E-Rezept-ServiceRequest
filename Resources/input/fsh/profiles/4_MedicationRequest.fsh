@@ -21,20 +21,16 @@ If this ID is available, the receiving system MUST be able to search for the pre
 "
 
 * medication[x] MS
-* medication[x] ^slicing.discriminator.type = #type
-* medication[x] ^slicing.discriminator.path = "$this"
-* medication[x] ^slicing.rules = #closed
+* medication[x] only Reference
 
 * medicationReference 1..1 MS
-* medicationReference only Reference($KBV_PR_ERP_Medication_FreeText or $KBV_PR_ERP_Medication_Compounding or $KBV_PR_ERP_Medication_PZN or $KBV_PR_ERP_Medication_Ingredient)
-* medicationReference ^sliceName = "medicationReference"
 * medicationReference.reference 1..1 MS
 * medicationReference.type 0..0
 * medicationReference.identifier 0..0
 * medicationReference.display 0..0
 
 * subject MS
-* subject only Reference($KBV_PR_FOR_Patient)
+* subject only Reference(Patient)
 * subject.type 0..0
 * subject.identifier 0..0
 * subject.reference 1..1
@@ -44,7 +40,7 @@ If this ID is available, the receiving system MUST be able to search for the pre
 * requester MS
   * ^short = "Requesting doctor/facility/pharmacy for this MedicationRequest"
   * ^comment = "Is optional to specify here, since it must already be specified in the ServiceRequest"
-* requester only Reference($KBV_PR_FOR_Practitioner or ERPServiceRequestOrganization)
+* requester only Reference(Practitioner or Organization)
 * requester.type 0..0
 * requester.identifier 0..1
 * requester.reference 0..1
@@ -56,7 +52,7 @@ If this ID is available, the receiving system MUST be able to search for the pre
 * courseOfTherapyType 0..0
 
 // Wenn eine Coverage genutzt wird, kann es auch gleich die richtige sein
-* insurance only Reference($KBV_PR_FOR_Coverage)
+* insurance only Reference(Coverage)
   * ^short = "Insurance status of the patient for whom the medication is requested"
   * ^comment = "If this information is already known, it can optionally be given here"
 * insurance 0..1

@@ -4,3 +4,4 @@ fhirpkg.lock.json
 *.vsix
 *.zip
 out/
+.history

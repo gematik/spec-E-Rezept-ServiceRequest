@@ -5,7 +5,7 @@
   "version": "1.0",
   "name": "ERPServiceRequestRemainingMedication",
   "title": "ERP Service Request Remaining Medication",
-  "status": "draft",
+  "status": "active",
   "experimental": false,
   "publisher": "gematik GmbH",
   "description": "This observation describes how long or how much of a medication is left",

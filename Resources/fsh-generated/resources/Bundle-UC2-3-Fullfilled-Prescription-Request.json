@@ -3,7 +3,6 @@
   "id": "UC2-3-Fullfilled-Prescription-Request",
   "meta": {
     "profile": [
-      "https://gematik.de/fhir/atf/StructureDefinition/bundle-app-transport-framework",
       "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
     ]
   },
@@ -12,6 +11,7 @@
     "system": "urn:ietf:rfc:3986",
     "value": "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
   },
+  "timestamp": "2023-01-30T13:28:17.239+02:00",
   "entry": [
     {
       "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/UC2-3-Practitioner-to-HealthCareService-MessageHeader",
@@ -20,7 +20,6 @@
         "id": "UC2-3-Practitioner-to-HealthCareService-MessageHeader",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/atf/StructureDefinition/message-header-app-transport",
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
           ]
         },
@@ -281,18 +280,6 @@
         "name": [
           {
             "use": "official",
-            "family": "Topp-Glücklich",
-            "_family": {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
-                  "valueString": "Topp-Glücklich"
-                }
-              ]
-            },
-            "given": [
-              "Hans"
-            ],
             "prefix": [
               "Dr. med."
             ],
@@ -305,6 +292,18 @@
                   }
                 ]
               }
+            ],
+            "family": "Topp-Glücklich",
+            "_family": {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+                  "valueString": "Topp-Glücklich"
+                }
+              ]
+            },
+            "given": [
+              "Hans"
             ]
           }
         ],
@@ -574,8 +573,5 @@
         ]
       }
     }
-  ],
-  "_timestamp": {
-    "value": "2023-01-30T13:28:17.239+02:00"
-  }
+  ]
 }

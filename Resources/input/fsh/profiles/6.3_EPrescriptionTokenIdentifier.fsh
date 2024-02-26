@@ -16,7 +16,7 @@ Usage: #definition
 Title: "E-Rezept-Token NamingSystem"
 Description: "NamingSystem for specifying an e-prescription token"
 * name = "NamingSystemEPrescriptionToken"
-* status = #draft
+* status = #active
 * kind = #identifier
 * date = "2023-02-01"
 * publisher = "gematik GmbH"

@@ -3,7 +3,6 @@
   "id": "UC2-2-Prescription-Request-To-Prescriber",
   "meta": {
     "profile": [
-      "https://gematik.de/fhir/atf/StructureDefinition/bundle-app-transport-framework",
       "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
     ]
   },
@@ -12,6 +11,7 @@
     "system": "urn:ietf:rfc:3986",
     "value": "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
   },
+  "timestamp": "2015-02-07T13:28:17.239+02:00",
   "entry": [
     {
       "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/UC2-2-HealthCareService-to-Practitioner-MessageHeader",
@@ -20,7 +20,6 @@
         "id": "UC2-2-HealthCareService-to-Practitioner-MessageHeader",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/atf/StructureDefinition/message-header-app-transport",
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
           ]
         },
@@ -380,8 +379,5 @@
         ]
       }
     }
-  ],
-  "_timestamp": {
-    "value": "2015-02-07T13:28:17.239+02:00"
-  }
+  ]
 }
