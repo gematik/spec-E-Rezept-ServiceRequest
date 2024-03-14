@@ -42,7 +42,9 @@ Ein ServiceRequest spiegelt neben den fachlichen Informationen auch den Status d
 
 #### Anzahl von E-Rezepten pro Nachricht
 
-In jedem Prozess, in dem ein E-Rezept bearbeitet werden soll, soll eine Nachricht genau ein E-Rezept adressieren. Die späteren Beschreibungen zu den Use Cases werden dies im Detail beschreiben. Diese Festlegung soll die Komplexität reduzieren und die Implementierung vereinfachen.
+In jedem Prozess, in dem ein E-Rezept bearbeitet werden soll, kann eine Nachricht ein oder mehrere E-Rezepte adressieren. Die späteren Beschreibungen zu den Use Cases werden dies im Detail beschreiben.
+
+Im Feld `MessageHeader.focus` werden alle ServiceRequests referenziert, die im Bundle enthalten sind. Jeder ServiceRequest entspricht genau einer Anfrage für eine Medikation.
 
 #### Zuordnung von Anfrage und Angefragtem Präparat
 
