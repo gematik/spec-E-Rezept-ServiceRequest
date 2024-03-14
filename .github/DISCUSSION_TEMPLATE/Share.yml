@@ -43,9 +43,11 @@ body:
   - type: checkboxes
     id: supported-use-cases
     attributes:
-      label: Unterstützte Anwendungsfälle (Supported Use Cases)
+      label: Unterstützte Anwendungsfälle (Supported Use Cases) aus [AppTagsCS](https://simplifier.net/app-transport-framework/app-tags-cs)
       options:
         - label: atf
         - label: eRezept_ParenteraleZubereitung
         - label: eRezept_Rezeptanforderung
+        - label: eRezept_Zuweisung
+        - label: eRezept_Kommunikation
 
