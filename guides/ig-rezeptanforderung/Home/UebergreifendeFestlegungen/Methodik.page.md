@@ -6,4 +6,15 @@ Anforderungen als Ausdruck normativer Festlegungen werden durch die dem [RFC2119
 
 ## Angabe von Codes im IG
 
-In der Beschreibung der Anwendungsfälle werden Codes aus FHIR-CodeSystemen erwähnt. Diese sind in Texten und Bildern mit einem '#' gekennzeichnet, um klarzustellen, dass es sich um einen Code handelt. Beispiel: #issue-prescription aus dem CodeSystem {{link: https://gematik.de/fhir/erp-servicerequest/CodeSystem/prescription-fullfillment-type-cs}}.
+In der Beschreibung der Anwendungsfälle werden Codes aus FHIR-CodeSystemen erwähnt. Diese sind in Texten und Bildern mit einem '#' gekennzeichnet, um klarzustellen, dass es sich um einen Code handelt. Beispiel: #issue-prescription aus dem CodeSystem [PrescriptionFullfillmentTypeCS](https://gematik.de/fhir/erp-servicerequest/CodeSystem/prescription-fullfillment-type-cs):
+
+@```
+from
+	CodeSystem
+where
+	url = 'https://gematik.de/fhir/erp-servicerequest/CodeSystem/prescription-fullfillment-type-cs'
+for concept
+	select code, display
+order by
+	name
+```
