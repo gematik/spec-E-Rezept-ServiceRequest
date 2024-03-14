@@ -1,0 +1,51 @@
+title: "Eintrag für eine KIM-Testadresse"
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Hier können Sie einen neuen Tabelleneintrag für [Test KIM-Adressen in der RU](https://github.com/gematik/spec-E-Rezept-ServiceRequest/discussions/61) erstellen lassen. Bitte füllen Sie das Formular aus und klicken Sie auf "Erstellen". Wir tragen die Daten dann entsprechend ein.
+
+  - type: input
+    id: manufacturer
+    attributes:
+      label: Hersteller (Manufacturer)
+      description: Name des Herstellers.
+    validations:
+      required: true
+
+  - type: textarea
+    id: contact-option
+    attributes:
+      label: Kontaktmöglichkeit (Contact Option)
+      description: Wie kann der Hersteller kontaktiert werden?
+      placeholder: "Name: Max Rezeptanforderungsmann\nEmail: example@example.com\nPhone: +49 123 456789"
+    validations:
+      required: false
+
+  - type: input
+    id: type-of-ps
+    attributes:
+      label: Art des PS (Type of PS)
+      description: Angabe des Typs (AVS/PVS/KIS/...)
+    validations:
+      required: true
+
+  - type: textarea
+    id: kim-addresses
+    attributes:
+      label: KIM-Adresse
+      description: Angabe der KIM-Adresse. Bitte nur eine KIM-Adresse pro Anfrage. Bei mehreren KIM-Adressen bitte mehrere Formulare ausfüllen.
+      placeholder: "example@kim.telematik.de"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: supported-use-cases
+    attributes:
+      label: Unterstützte Anwendungsfälle (Supported Use Cases)
+      options:
+        - label: atf
+        - label: eRezept_ParenteraleZubereitung
+        - label: eRezept_Rezeptanforderung
+
