@@ -66,7 +66,7 @@ Diese Spezifikation soll einen Beitrag dazu liefern den Versorgungsprozess für 
 
 ## Beispiele
 
-Beispielinstanzen sind im [Simplifier-Projekt](https://simplifier.net/erezept-medicationrequest-communication/~resources?category=Example&exampletype=Bundle&sortBy=RankScore_desc) zu finden.
+Beispielinstanzen sind im [Simplifier-Projekt](https://simplifier.net/erezept-servicerequest/~resources?category=Example&exampletype=Bundle&sortBy=RankScore_desc) zu finden.
 
 Folgende UseCases sind mit entsprechenden Beispielen beschrieben:
 
