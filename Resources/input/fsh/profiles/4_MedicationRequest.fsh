@@ -121,7 +121,7 @@ Usage: #inline
 * meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_Compounding|1.1.0"
 * extension[Kategorie].url = "https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Medication_Type"
 * extension[Kategorie].valueCodeableConcept.coding.version = "http://snomed.info/sct/900000000000207008/version/20220331"
-* extension[Kategorie].valueCodeableConcept.coding = http://snomed.info/sct#373873005:860781008=362943005 "Pharmaceutical / biologic product (product) : Has product characteristic (attribute) = Manual method (qualifier value)"
+* extension[Kategorie].valueCodeableConcept.coding = http://snomed.info/sct#373873005:860781008=362943005
 * extension[Arzneimittelkategorie].url = "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Category"
 * extension[Arzneimittelkategorie].valueCoding = https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Category#00
 * extension[Impfstoff].url = "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Vaccine"

@@ -17,7 +17,7 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
   * system = "https://gematik.de/fhir/erp-servicerequest/sid/process-id"
   * value = "Process-ID-db6fd21d-cc85-4411-8567-479a7dc1ef74"
 * identifier[+]
-  * system = "my-very-own-zyto-identifier"
+  * system = "https://my-very-own-zyto-identifier"
   * value = "My-ID-bdbdf8a1-ffa4-4f16-a6c4-38e690ac5548"
 * basedOn = Reference(Example-Zyto-Medication-Request)
 * requisition[0].system = "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier"
@@ -52,7 +52,7 @@ Description: "ServiceRequest that is returned to the requester"
   * system = "https://gematik.de/fhir/erp-servicerequest/sid/process-id"
   * value = "Process-ID-db6fd21d-cc85-4411-8567-479a7dc1ef74"
 * identifier[+]
-  * system = "my-very-own-zyto-identifier"
+  * system = "https://my-very-own-zyto-identifier"
   * value = "My-ID-bdbdf8a1-ffa4-4f16-a6c4-38e690ac5548"
 * basedOn = Reference(Example-Response-KBV-Prescription)
 * requisition[0].system = "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier"
