@@ -26,12 +26,12 @@
         "source": {
           "contact": {
             "system": "email",
-            "value": "info@pharmacy.email"
+            "value": "info@avs.email"
           },
           "name": "Pharmacy-Source",
           "software": "Pharmacy-Software",
           "version": "1.0.0",
-          "endpoint": "http://pharmacy.endpoint"
+          "endpoint": "mailto:pharmacy@test.kim.de"
         },
         "focus": [
           {
@@ -40,8 +40,8 @@
         ],
         "sender": {
           "identifier": {
-            "system": "http://gematik.de/fhir/sid/KIM-Adresse",
-            "value": "arbeitsplatz-1@test-apotheke.kim.telematik"
+            "system": "https://gematik.de/fhir/sid/telematik-id",
+            "value": "3-test-telematik-id"
           },
           "display": "Test Apotheke"
         },
@@ -49,12 +49,12 @@
           {
             "receiver": {
               "identifier": {
-                "system": "http://gematik.de/fhir/sid/KIM-Adresse",
-                "value": "hans@ytopp-gluecklich.kim.telematik"
+                "system": "https://gematik.de/fhir/sid/telematik-id",
+                "value": "1-test-telematik-id"
               },
               "display": "Praxis Hans Topp-Glücklich"
             },
-            "endpoint": "klaus@test.de"
+            "endpoint": "mailto:practitioner@test.kim.de"
           }
         ],
         "eventCoding": {
@@ -203,8 +203,8 @@
         "performer": [
           {
             "identifier": {
-              "system": "http://gematik.de/fhir/sid/KIM-Adresse",
-              "value": "hans@ytopp-gluecklich.kim.telematik"
+              "system": "https://gematik.de/fhir/sid/telematik-id",
+              "value": "1-test-telematik-id"
             }
           }
         ]

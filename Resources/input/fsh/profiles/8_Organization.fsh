@@ -22,7 +22,7 @@ Usage: #example
 * identifier[Telematik-ID].system = "https://gematik.de/fhir/sid/telematik-id"
 * identifier[Telematik-ID].value = "1-031234567"
 * identifier[KIMAdresse].type = https://gematik.de/fhir/directory/CodeSystem/EndpointDirectoryConnectionType#kim-2.0
-* identifier[KIMAdresse] = Pflegeheim-Immergrün-Identifier
+* identifier[KIMAdresse] = Pflegeheim-Immergrün-KIM-Identifier
 * identifier[Betriebsstaettennummer].type = http://terminology.hl7.org/CodeSystem/v2-0203#BSNR
 * identifier[Betriebsstaettennummer].system = "https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR"
 * identifier[Betriebsstaettennummer].value = "031234567"
@@ -45,7 +45,7 @@ Usage: #inline
 * identifier[Telematik-ID].system = "https://gematik.de/fhir/sid/telematik-id"
 * identifier[Telematik-ID].value = "1-57634852"
 * identifier[KIMAdresse].type = https://gematik.de/fhir/directory/CodeSystem/EndpointDirectoryConnectionType#kim-2.0
-* identifier[KIMAdresse] = Test-Apotheke-Identifier
+* identifier[KIMAdresse] = Test-Apotheke-KIM-Identifier
 * identifier[Betriebsstaettennummer].type = http://terminology.hl7.org/CodeSystem/v2-0203#BSNR
 * identifier[Betriebsstaettennummer].system = "https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR"
 * identifier[Betriebsstaettennummer].value = "581463872"

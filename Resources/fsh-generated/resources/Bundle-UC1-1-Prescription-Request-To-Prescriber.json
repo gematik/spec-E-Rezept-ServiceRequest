@@ -26,12 +26,12 @@
         "source": {
           "contact": {
             "system": "email",
-            "value": "info@healthcare.email"
+            "value": "info@hcs.email"
           },
           "name": "HealthCare-Source",
           "software": "HealthCare-Software",
           "version": "1.0.0",
-          "endpoint": "http://healthcare.endpoint"
+          "endpoint": "mailto:healthcare-service@test.kim.de"
         },
         "focus": [
           {
@@ -40,8 +40,8 @@
         ],
         "sender": {
           "identifier": {
-            "system": "http://gematik.de/fhir/sid/KIM-Adresse",
-            "value": "pflegeheim.immergrün.arzt@sana-pflegeheime.kim.telematik"
+            "system": "https://gematik.de/fhir/sid/telematik-id",
+            "value": "5-test-telematik-id"
           },
           "display": "Pflegeheim Immergrün"
         },
@@ -49,12 +49,12 @@
           {
             "receiver": {
               "identifier": {
-                "system": "http://gematik.de/fhir/sid/KIM-Adresse",
-                "value": "hans@ytopp-gluecklich.kim.telematik"
+                "system": "https://gematik.de/fhir/sid/telematik-id",
+                "value": "1-test-telematik-id"
               },
               "display": "Praxis Hans Topp-Glücklich"
             },
-            "endpoint": "klaus@test.de"
+            "endpoint": "mailto:practitioner@test.kim.de"
           }
         ],
         "eventCoding": {
@@ -123,8 +123,8 @@
         "performer": [
           {
             "identifier": {
-              "system": "http://gematik.de/fhir/sid/KIM-Adresse",
-              "value": "hans@ytopp-gluecklich.kim.telematik"
+              "system": "https://gematik.de/fhir/sid/telematik-id",
+              "value": "1-test-telematik-id"
             }
           }
         ],

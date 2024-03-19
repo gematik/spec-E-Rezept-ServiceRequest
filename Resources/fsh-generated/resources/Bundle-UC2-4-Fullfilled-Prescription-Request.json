@@ -26,12 +26,12 @@
         "source": {
           "contact": {
             "system": "email",
-            "value": "info@practitioner.email"
+            "value": "info@pvs.email"
           },
           "name": "Practitioner-Source",
           "software": "Practitioner-Software",
           "version": "1.0.0",
-          "endpoint": "http://practitioner.endpoint"
+          "endpoint": "mailto:practitioner@test.kim.de"
         },
         "focus": [
           {
@@ -40,8 +40,8 @@
         ],
         "sender": {
           "identifier": {
-            "system": "http://gematik.de/fhir/sid/KIM-Adresse",
-            "value": "hans@ytopp-gluecklich.kim.telematik"
+            "system": "https://gematik.de/fhir/sid/telematik-id",
+            "value": "1-test-telematik-id"
           },
           "display": "Praxis Hans Topp-Glücklich"
         },
@@ -49,12 +49,12 @@
           {
             "receiver": {
               "identifier": {
-                "system": "http://gematik.de/fhir/sid/KIM-Adresse",
-                "value": "arbeitsplatz-1@test-apotheke.kim.telematik"
+                "system": "https://gematik.de/fhir/sid/telematik-id",
+                "value": "3-test-telematik-id"
               },
               "display": "Test Apotheke"
             },
-            "endpoint": "http://test-apotheke.de"
+            "endpoint": "mailto:pharmacy@test.kim.dee"
           }
         ],
         "eventCoding": {
