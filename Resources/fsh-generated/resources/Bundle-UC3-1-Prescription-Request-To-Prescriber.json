@@ -23,6 +23,16 @@
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
           ]
         },
+        "source": {
+          "contact": {
+            "system": "email",
+            "value": "info@healthcare.email"
+          },
+          "name": "HealthCare-Source",
+          "software": "HealthCare-Software",
+          "version": "1.0.0",
+          "endpoint": "http://healthcare.endpoint"
+        },
         "focus": [
           {
             "reference": "ServiceRequest/UC3-Initial-Prescription-Request"
@@ -47,16 +57,6 @@
             "endpoint": "klaus@test.de"
           }
         ],
-        "source": {
-          "name": "HealthCare-Source",
-          "software": "HealthCare-Software",
-          "version": "1.0.0",
-          "contact": {
-            "system": "email",
-            "value": "info@healthcare.email"
-          },
-          "endpoint": "http://healthcare.endpoint"
-        },
         "eventCoding": {
           "code": "eRezept_Rezeptanforderung;Rezeptanfrage",
           "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"

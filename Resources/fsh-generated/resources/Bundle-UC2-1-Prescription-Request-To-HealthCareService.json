@@ -23,6 +23,16 @@
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
           ]
         },
+        "source": {
+          "contact": {
+            "system": "email",
+            "value": "info@pharmacy.email"
+          },
+          "name": "Pharmacy-Source",
+          "software": "Pharmacy-Software",
+          "version": "1.0.0",
+          "endpoint": "http://pharmacy.endpoint"
+        },
         "focus": [
           {
             "reference": "ServiceRequest/UC2-Initial-Prescription-Request"
@@ -34,16 +44,6 @@
             "value": "arbeitsplatz-1@test-apotheke.kim.telematik"
           },
           "display": "Test Apotheke"
-        },
-        "source": {
-          "name": "Pharmacy-Source",
-          "software": "Pharmacy-Software",
-          "version": "1.0.0",
-          "contact": {
-            "system": "email",
-            "value": "info@pharmacy.email"
-          },
-          "endpoint": "http://pharmacy.endpoint"
         },
         "destination": [
           {

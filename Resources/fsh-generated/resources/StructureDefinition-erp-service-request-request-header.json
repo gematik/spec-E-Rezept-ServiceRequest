@@ -79,8 +79,7 @@
               "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"
             ]
           }
-        ],
-        "mustSupport": true
+        ]
       }
     ]
   }

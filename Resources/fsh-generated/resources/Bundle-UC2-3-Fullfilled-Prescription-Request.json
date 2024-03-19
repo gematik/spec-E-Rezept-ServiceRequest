@@ -23,6 +23,16 @@
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
           ]
         },
+        "source": {
+          "contact": {
+            "system": "email",
+            "value": "info@practitioner.email"
+          },
+          "name": "Practitioner-Source",
+          "software": "Practitioner-Software",
+          "version": "1.0.0",
+          "endpoint": "http://practitioner.endpoint"
+        },
         "focus": [
           {
             "reference": "ServiceRequest/UC2-Response-Prescription-Request"
@@ -34,16 +44,6 @@
             "value": "hans@ytopp-gluecklich.kim.telematik"
           },
           "display": "Praxis Hans Topp-Glücklich"
-        },
-        "source": {
-          "name": "Practitioner-Source",
-          "software": "Practitioner-Software",
-          "version": "1.0.0",
-          "contact": {
-            "system": "email",
-            "value": "info@practitioner.email"
-          },
-          "endpoint": "http://practitioner.endpoint"
         },
         "destination": [
           {

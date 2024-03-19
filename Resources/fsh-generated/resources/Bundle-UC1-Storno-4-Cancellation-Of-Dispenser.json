@@ -23,6 +23,16 @@
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
           ]
         },
+        "source": {
+          "contact": {
+            "system": "email",
+            "value": "info@pharmacy.email"
+          },
+          "name": "Pharmacy-Source",
+          "software": "Pharmacy-Software",
+          "version": "1.0.0",
+          "endpoint": "http://pharmacy.endpoint"
+        },
         "focus": [
           {
             "reference": "ServiceRequest/UC1-Cancelled-Dispense-Request"
@@ -47,16 +57,6 @@
             "endpoint": "klaus@test.de"
           }
         ],
-        "source": {
-          "name": "Pharmacy-Source",
-          "software": "Pharmacy-Software",
-          "version": "1.0.0",
-          "contact": {
-            "system": "email",
-            "value": "info@pharmacy.email"
-          },
-          "endpoint": "http://pharmacy.endpoint"
-        },
         "eventCoding": {
           "code": "eRezept_Rezeptanforderung;Abgabeanfrage_Storno",
           "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
