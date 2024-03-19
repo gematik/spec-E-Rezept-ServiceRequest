@@ -1,13 +1,13 @@
 {
-  "updated": "2024-03-15T08:09:15.05486+01:00",
+  "updated": "2024-03-19T07:10:07.812892+01:00",
   "dependencies": {
     "hl7.fhir.r4.core": "4.0.1",
     "de.basisprofil.r4": "1.4.0",
-    "de.gematik.erezept-workflow.r4": "1.2.1",
+    "de.gematik.erezept-workflow.r4": "1.2.3",
+    "kbv.ita.erp": "1.1.2",
     "KBV.Basis": "1.3.0",
     "kbv.ita.for": "1.1.0",
-    "de.gematik.fhir.atf": "1.0.4",
-    "kbv.ita.erp": "1.1.2"
+    "de.gematik.fhir.atf": "1.3.0"
   },
   "missing": {}
 }
