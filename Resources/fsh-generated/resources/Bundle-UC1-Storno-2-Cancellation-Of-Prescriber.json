@@ -23,6 +23,16 @@
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
           ]
         },
+        "source": {
+          "contact": {
+            "system": "email",
+            "value": "info@practitioner.email"
+          },
+          "name": "Practitioner-Source",
+          "software": "Practitioner-Software",
+          "version": "1.0.0",
+          "endpoint": "http://practitioner.endpoint"
+        },
         "focus": [
           {
             "reference": "ServiceRequest/UC1-Cancelled-Prescription-Request"
@@ -30,8 +40,8 @@
         ],
         "sender": {
           "identifier": {
-            "system": "http://gematik.de/fhir/sid/KIM-Adresse",
-            "value": "pflegeheim.immergrün.arzt@sana-pflegeheime.kim.telematik"
+            "system": "https://gematik.de/fhir/sid/telematik-id",
+            "value": "5-test-telematik-id"
           },
           "display": "Pflegeheim Immergrün"
         },
@@ -39,24 +49,14 @@
           {
             "receiver": {
               "identifier": {
-                "system": "http://gematik.de/fhir/sid/KIM-Adresse",
-                "value": "hans@ytopp-gluecklich.kim.telematik"
+                "system": "https://gematik.de/fhir/sid/telematik-id",
+                "value": "1-test-telematik-id"
               },
               "display": "Praxis Hans Topp-Glücklich"
             },
-            "endpoint": "klaus@test.de"
+            "endpoint": "mailto:practitioner@test.kim.de"
           }
         ],
-        "source": {
-          "name": "Practitioner-Source",
-          "software": "Practitioner-Software",
-          "version": "1.0.0",
-          "contact": {
-            "system": "email",
-            "value": "info@practitioner.email"
-          },
-          "endpoint": "http://practitioner.endpoint"
-        },
         "eventCoding": {
           "code": "eRezept_Rezeptanforderung;Rezeptanfrage_Storno",
           "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
@@ -119,8 +119,8 @@
         "performer": [
           {
             "identifier": {
-              "system": "http://gematik.de/fhir/sid/KIM-Adresse",
-              "value": "hans@ytopp-gluecklich.kim.telematik"
+              "system": "https://gematik.de/fhir/sid/telematik-id",
+              "value": "1-test-telematik-id"
             }
           }
         ],

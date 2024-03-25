@@ -23,6 +23,16 @@
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
           ]
         },
+        "source": {
+          "contact": {
+            "system": "email",
+            "value": "info@avs.email"
+          },
+          "name": "Pharmacy-Source",
+          "software": "Pharmacy-Software",
+          "version": "1.0.0",
+          "endpoint": "mailto:pharmacy@test.kim.de"
+        },
         "focus": [
           {
             "reference": "ServiceRequest/UC2-Response-Dispense-Request"
@@ -30,31 +40,21 @@
         ],
         "sender": {
           "identifier": {
-            "system": "http://gematik.de/fhir/sid/KIM-Adresse",
-            "value": "arbeitsplatz-1@test-apotheke.kim.telematik"
+            "system": "https://gematik.de/fhir/sid/telematik-id",
+            "value": "3-test-telematik-id"
           },
           "display": "Test Apotheke"
-        },
-        "source": {
-          "name": "Pharmacy-Source",
-          "software": "Pharmacy-Software",
-          "version": "1.0.0",
-          "contact": {
-            "system": "email",
-            "value": "info@pharmacy.email"
-          },
-          "endpoint": "http://pharmacy.endpoint"
         },
         "destination": [
           {
             "receiver": {
               "identifier": {
-                "system": "http://gematik.de/fhir/sid/KIM-Adresse",
-                "value": "pflegeheim.immergrün.arzt@sana-pflegeheime.kim.telematik"
+                "system": "https://gematik.de/fhir/sid/telematik-id",
+                "value": "5-test-telematik-id"
               },
               "display": "Pflegeheim Immergrün"
             },
-            "endpoint": "http://test-pflegeheim.de"
+            "endpoint": "mailto:healthcare-service@test.kim.de"
           }
         ],
         "eventCoding": {

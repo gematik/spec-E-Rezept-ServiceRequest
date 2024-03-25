@@ -42,7 +42,9 @@ Ein ServiceRequest spiegelt neben den fachlichen Informationen auch den Status d
 
 #### Anzahl von E-Rezepten pro Nachricht
 
-In jedem Prozess, in dem ein E-Rezept bearbeitet werden soll, soll eine Nachricht genau ein E-Rezept adressieren. Die späteren Beschreibungen zu den Use Cases werden dies im Detail beschreiben. Diese Festlegung soll die Komplexität reduzieren und die Implementierung vereinfachen.
+In jedem Prozess, in dem ein E-Rezept bearbeitet werden soll, kann eine Nachricht ein oder mehrere E-Rezepte adressieren. Die späteren Beschreibungen zu den Use Cases werden dies im Detail beschreiben.
+
+Im Feld `MessageHeader.focus` werden alle ServiceRequests referenziert, die im Bundle enthalten sind. Jeder ServiceRequest entspricht genau einer Anfrage für eine Medikation.
 
 #### Zuordnung von Anfrage und Angefragtem Präparat
 
@@ -64,7 +66,7 @@ Diese Spezifikation soll einen Beitrag dazu liefern den Versorgungsprozess für 
 
 ## Beispiele
 
-Beispielinstanzen sind im [Simplifier-Projekt](https://simplifier.net/erezept-medicationrequest-communication/~resources?category=Example&exampletype=Bundle&sortBy=RankScore_desc) zu finden.
+Beispielinstanzen sind im [Simplifier-Projekt](https://simplifier.net/erezept-servicerequest/~resources?category=Example&exampletype=Bundle&sortBy=RankScore_desc) zu finden.
 
 Folgende UseCases sind mit entsprechenden Beispielen beschrieben:
 

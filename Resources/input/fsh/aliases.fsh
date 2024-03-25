@@ -20,6 +20,7 @@ Alias: $tim = http://gematik.de/fhir/sid/TIM-Adresse
 
 Alias: $Hl7_Request_Status = http://hl7.org/fhir/request-status
 Alias: $HL7_Intent_VS = http://hl7.org/fhir/ValueSet/request-intent
+Alias: $HL7_Identifier = http://hl7.org/fhir/StructureDefinition/Identifier
 
 Alias: $GEM_ERP_PR_MedicationDispense = https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense
 Alias: $GEM_PR_ATF_MessageBundle = https://gematik.de/fhir/atf/StructureDefinition/bundle-app-transport-framework
