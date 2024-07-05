@@ -5,7 +5,7 @@ Es ist denkbar, dass bei Übermittlung der Therapiedaten von Krankenhaus an Apot
 
 Um diese Situation zu verbessern, empfehlen wir eine Abstimmung zwischen dem Krankenhaus und der Apotheke. Folgende Schritte könnten dabei hilfreich sein:
 
-1.  **Kommunikation:** Das Krankenhaus sollte sicherstellen, dass bei jeder Rezeptanforderung per KIM die Arztnummer des behandelnden Arztes angegeben wird. Dazu muss diese der Apotheke vorab mitgeteilt werden.
+1.  **Kommunikation:** Das Krankenhaus sollte sicherstellen, dass bei jeder Rezeptanforderung per KIM die Arztnummer des behandelnden Arztes durch das AVS angegeben werden kann. Dazu muss diese der Apotheke vorab mitgeteilt werden.
     
 2.  **Apothekenprozess:** Die Apotheke kann ihre Abläufe überprüfen und sicherstellen, dass sie die eingehenden Therapieanforderungen auf Korrektheit überprüft.
     
