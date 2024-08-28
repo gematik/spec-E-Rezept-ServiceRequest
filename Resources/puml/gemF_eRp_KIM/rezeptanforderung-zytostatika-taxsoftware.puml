@@ -1,4 +1,4 @@
-@startuml
+@startuml name = "Rezeptanforderung-Taxierungssoftware"
 
 
 skinparam maxMessageSize 300

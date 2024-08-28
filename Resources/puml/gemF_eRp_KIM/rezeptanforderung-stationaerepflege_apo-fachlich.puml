@@ -1,4 +1,4 @@
-@startuml
+@startuml name = "Rezeptanforderung-Apotheke"
 
 
 skinparam maxMessageSize 200

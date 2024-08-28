@@ -1,4 +1,4 @@
-@startuml
+@startuml name = "Rezeptanforderung-Zytostatika Programm"
 
 
 skinparam maxMessageSize 300
