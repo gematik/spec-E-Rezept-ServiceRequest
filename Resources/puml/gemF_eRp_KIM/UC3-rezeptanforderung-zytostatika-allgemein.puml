@@ -1,9 +1,9 @@
-@startuml name = "Rezeptanforderung-anwendigungsfertige Zytostatika"
+@startuml name = "UC3-Rezeptanforderung-anwendigungsfertige-Zytostatika"
 
 
 skinparam maxMessageSize 300
 
-title Ablauf für Rezeptabgabe parenteraler Zubereitungen (allgemein)
+title UC3-Rezeptanforderung für anwendungsfertige Zytostatika Zubereitungen
 hide footbox
 autonumber
 

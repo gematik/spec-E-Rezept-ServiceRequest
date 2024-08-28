@@ -1,9 +1,9 @@
-@startuml name = "Rezeptanforderung-Taxierungssoftware"
+@startuml name = "UC3-Rezeptanforderung-Taxierungssoftware"
 
 
 skinparam maxMessageSize 300
 
-title Ablauf für Rezeptabgabe parenteraler Zubereitungen
+title UC3-Rezeptanforderung für anwendungsfertige Zytostatika Zubereitungen (Taxierungssoftware)
 hide footbox
 autonumber
 

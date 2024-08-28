@@ -1,4 +1,4 @@
-@startuml name = "Rezeptanforderung-Pflege"
+@startuml name = "UC1-Rezeptanforderung-Pflege"
 
 
 skinparam maxMessageSize 200
@@ -9,7 +9,7 @@ end box
 actor "Verordnender \nLeistungserbringer" as Arztpraxis
 actor Apotheke
 
-title Rezeptanforderungen durch Pflegeeinrichtungen (fachliche Sicht)
+title UC1-Rezeptanforderungen durch Pflegeeinrichtung
 hide footbox
 autonumber
 

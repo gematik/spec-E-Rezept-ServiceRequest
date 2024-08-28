@@ -1,4 +1,4 @@
-@startuml name = "Rezeptanforderung-Versicherteninvolvierung"
+@startuml name = "UC1-Rezeptanforderung-Versicherteninvolvierung"
 
 
 skinparam maxMessageSize 200
@@ -10,7 +10,7 @@ actor "Verordnender \nLeistungserbringer" as Arztpraxis
 actor Apotheke
 actor Versicherter
 
-title Rezeptanforderungen durch Pflegeeinrichtungen mit Abholung durch Versicherten (fachliche Sicht)
+title UC1-Rezeptanforderungen durch Pflegeeinrichtungen mit Abholung durch Versicherten
 hide footbox
 autonumber
 

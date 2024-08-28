@@ -1,9 +1,9 @@
-@startuml name = "Rezeptanforderung-Zytostatika Programm"
+@startuml name = "UC3-Rezeptanforderung-Zytostatika Programm"
 
 
 skinparam maxMessageSize 300
 
-title Ablauf für Rezeptabgabe parenteraler Zubereitungen (Anforderungsquelle: Zytostatika-Programm)
+title UC3-Rezeptanforderung für anwendungsfertige Zytostatika Zubereitungen (Zytoprogramm)
 hide footbox
 autonumber
 
