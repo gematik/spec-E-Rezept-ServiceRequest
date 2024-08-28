@@ -3,15 +3,13 @@
 
 skinparam maxMessageSize 200
 
-box "Rezeptmanagement" #White
-    actor Apotheke
-end box
-actor "Pflegeeinrichtung \n(stationär)" as Pflegeeinrichtung
+actor Apotheke
+actor "Pflegeeinrichtung" as Pflegeeinrichtung
 actor "Verordnender \nLeistungserbringer" as Arztpraxis
 
 title UC2-Rezeptanforderungen durch heimversorgende Apotheke
 hide footbox
-autonumber
+autonumber "<b>[0]"
 
 legend bottom right
     __Legende__
@@ -21,33 +19,33 @@ legend bottom right
     **lfd.Nr.** **sonstige Aktivität**
 endlegend
 
-hnote over Apotheke, Pflegeeinrichtung
-    Vorbedingung:
-    Rahmenvertrag zwischen Apotheke & 
-    Pflegedienst nach §12a ApoG
-end hnote
-
-Apotheke ->> Pflegeeinrichtung: //Rezeptanforderung//
-Pflegeeinrichtung ->> Arztpraxis: //Rezeptanforderung//
+Apotheke ->> Arztpraxis: //Rezeptanforderung//
+Apotheke --> Pflegeeinrichtung: //ServiceRequest_Nachricht_Kopie//
 
 opt #LightPink Stornierung
-    Apotheke ->> Pflegeeinrichtung: //Rezeptanforderung_Storno//
-    Pflegeeinrichtung ->> Arztpraxis: //Rezeptanforderung_Storno//
-
-    Arztpraxis ->x Arztpraxis: **Rezeptanforderung wird verworfen**
-end
-
-alt Rezeptanforderung liegt vor beim Verordnenden
-    alt #PaleGreen Arzt ist einverstanden 
-        Arztpraxis ->> Pflegeeinrichtung: //Rezeptanforderung_Rezeptübermittlung//
-        Pflegeeinrichtung ->> Apotheke: //Rezeptanforderung_Rezeptübermittlung//
-        Apotheke ->> Pflegeeinrichtung: //Dispensieranforderung_Bestätigung//
-        Apotheke ->> Pflegeeinrichtung: **Medikamentabgabe/-auslieferung**
-
-    else #LightPink Arzt lehnt ab
-        Arztpraxis ->> Pflegeeinrichtung: //Rezeptanforderung_Storno//
-        Pflegeeinrichtung ->> Apotheke: //Rezeptanforderung_Storno//
+    Apotheke ->> Arztpraxis: //Rezeptanforderung_Storno//
+    Apotheke --> Pflegeeinrichtung: //ServiceRequest_Nachricht_Kopie//
+    alt #LightPink E-Rezept noch nicht eingestellt
+    Apotheke -[hidden]-> Arztpraxis: Rezeptanforderung wird verworfen
+        Arztpraxis ->x Arztpraxis: Rezeptanforderung wird verworfen
+        Arztpraxis --> Pflegeeinrichtung: //ServiceRequest_Nachricht_Kopie//
+    else #LightPink E-Rezept wurde eingestellt
+        Arztpraxis ->x Arztpraxis: E-Rezept wird gelöscht
+        Arztpraxis --> Pflegeeinrichtung: //ServiceRequest_Nachricht_Kopie//
     end
 end
+
+
+alt #PaleGreen Arzt ist einverstanden 
+    Arztpraxis ->> Apotheke: //Rezeptanforderung_Rezeptübermittlung//
+    Arztpraxis --> Pflegeeinrichtung: //ServiceRequest_Nachricht_Kopie//
+    Apotheke ->> Pflegeeinrichtung: //Dispensieranforderung_Bestätigung//
+    Apotheke ->> Pflegeeinrichtung: Medikamentenbelieferung
+
+else #LightPink Arzt lehnt ab
+    Arztpraxis ->> Apotheke: //Rezeptanforderung_Storno//
+    Arztpraxis --> Pflegeeinrichtung: //ServiceRequest_Nachricht_Kopie//
+end
+
 
 @enduml
