@@ -4,8 +4,8 @@
 skinparam maxMessageSize 200
 
 actor Apotheke
-actor "Pflegeeinrichtung" as Pflegeeinrichtung
 actor "Verordnender \nLeistungserbringer" as Arztpraxis
+actor "Pflegeeinrichtung" as Pflegeeinrichtung
 
 title UC2-Rezeptanforderungen durch heimversorgende Apotheke
 hide footbox
@@ -15,8 +15,6 @@ legend bottom right
     __Legende__
     |<#PaleGreen> Ergebnis: Medikamentabgabe|
     |<#LightPink> Ergebnis: keine Medikamentabgabe|
-    **lfd.Nr.** //Informationseinheit als Nachricht übermittelt//
-    **lfd.Nr.** **sonstige Aktivität**
 endlegend
 
 Apotheke ->> Arztpraxis: //Rezeptanforderung//
