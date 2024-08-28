@@ -7,40 +7,32 @@ box "Rezeptmanagement" #White
     actor "Pflegeeinrichtung" as Pflegeeinrichtung
 end box
 actor "Verordnender \nLeistungserbringer" as Arztpraxis
-actor Apotheke
 
-title UC1-Rezeptanforderungen durch Pflegeeinrichtung
+title UC1-Rezeptanforderung durch Pflegeeinrichtung
 hide footbox
-autonumber
+autonumber "<b>[0]"
 
 legend bottom right
     __Legende__
     |<#PaleGreen> Ergebnis: Medikamentabgabe|
     |<#LightPink> Ergebnis: keine Medikamentabgabe|
-    **lfd.Nr.** //Informationseinheit als Nachricht übermittelt//
-    **lfd.Nr.** **sonstige Aktivität**
 endlegend
 
 Pflegeeinrichtung ->> Arztpraxis: //Rezeptanforderung//
-note left
-    Bedarfsgründe für Rezeptanforderung:
-      1. wg. Dosierung (Dauermedikation)
-      2. nach Vitalwertmessung
-      3. nach Bedarf
-end note
 
 opt #LightPink Stornierung
     Pflegeeinrichtung ->> Arztpraxis: //Rezeptanforderung_Storno//
-    Arztpraxis ->x Arztpraxis: **Rezeptanforderung wird verworfen**
+    alt #LightPink E-Rezept noch nicht eingestellt
+    Pflegeeinrichtung -[hidden]-> Arztpraxis: Rezeptanforderung wird verworfen
+        Arztpraxis ->x Arztpraxis: Rezeptanforderung wird verworfen
+    else #LightPink E-Rezept wurde eingestellt
+        Arztpraxis ->x Arztpraxis: E-Rezept wird gelöscht
+    end
 end
 
 alt #PaleGreen Arzt ist einverstanden 
     
     Arztpraxis ->> Pflegeeinrichtung: //Rezeptanforderung_Rezeptübermittlung//
-    Pflegeeinrichtung ->> Apotheke: //Dispensieranforderung_Rezeptübermittlung//
-    
-    Apotheke ->> Pflegeeinrichtung: //Dispensieranforderung_Bestätigung//
-    Apotheke ->> Pflegeeinrichtung: **Medikamentbelieferung**
     
 else #LightPink Arzt lehnt ab
     Arztpraxis ->> Pflegeeinrichtung: //Rezeptanforderung_Storno//

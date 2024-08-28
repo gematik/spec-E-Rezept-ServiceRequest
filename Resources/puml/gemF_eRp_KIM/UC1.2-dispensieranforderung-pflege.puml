@@ -1,0 +1,26 @@
+@startuml name = "UC1-Rezeptanforderung-Pflege"
+
+
+skinparam maxMessageSize 200
+
+box "Rezeptmanagement" #White
+    actor "Pflegeeinrichtung" as Pflegeeinrichtung
+end box
+actor Apotheke
+
+title UC1-Dispensieranforderung durch Pflegeeinrichtung
+hide footbox
+autonumber "<b>[0]"
+
+Pflegeeinrichtung ->> Apotheke: //Dispensieranforderung_Rezeptübermittlung//
+
+opt
+ Apotheke -> Apotheke: TODO: Prüfung des E-Rezeptes Fehlgeschlagen
+end
+
+Apotheke -> Apotheke: Einlösen des E-Rezeptes
+
+Apotheke ->> Pflegeeinrichtung: //Dispensieranforderung_Bestätigung//
+Apotheke ->> Pflegeeinrichtung: Medikamentbelieferung
+
+@enduml
