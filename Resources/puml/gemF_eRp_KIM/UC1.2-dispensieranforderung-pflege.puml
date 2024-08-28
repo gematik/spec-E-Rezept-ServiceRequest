@@ -3,9 +3,7 @@
 
 skinparam maxMessageSize 200
 
-box "Rezeptmanagement" #White
-    actor "Pflegeeinrichtung" as Pflegeeinrichtung
-end box
+actor "Pflegeeinrichtung" as Pflegeeinrichtung
 actor Apotheke
 
 title UC1-Dispensieranforderung durch Pflegeeinrichtung

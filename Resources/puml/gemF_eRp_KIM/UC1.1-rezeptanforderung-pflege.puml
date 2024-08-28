@@ -3,9 +3,7 @@
 
 skinparam maxMessageSize 200
 
-box "Rezeptmanagement" #White
-    actor "Pflegeeinrichtung" as Pflegeeinrichtung
-end box
+actor "Pflegeeinrichtung" as Pflegeeinrichtung
 actor "Verordnender \nLeistungserbringer" as Arztpraxis
 
 title UC1-Rezeptanforderung durch Pflegeeinrichtung
