@@ -1,0 +1,28 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "gem-erp-sr-log-dispense-request",
+  "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-dispense-request",
+  "version": "1.0",
+  "name": "GEM_ERP_SR_LOG_DispenseRequest",
+  "title": "Logical Dispenseieranforderung",
+  "status": "active",
+  "experimental": false,
+  "publisher": "gematik GmbH",
+  "description": "Fachliches Modell zur Beschreibung einer Dispenseieranforderung",
+  "fhirVersion": "4.0.1",
+  "kind": "logical",
+  "abstract": false,
+  "type": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-dispense-request",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Base",
+  "derivation": "specialization",
+  "differential": {
+    "element": [
+      {
+        "id": "gem-erp-sr-log-dispense-request",
+        "path": "gem-erp-sr-log-dispense-request",
+        "short": "Logical Dispenseieranforderung",
+        "definition": "Fachliches Modell zur Beschreibung einer Dispenseieranforderung"
+      }
+    ]
+  }
+}
