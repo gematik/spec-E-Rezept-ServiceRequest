@@ -5,10 +5,10 @@
   "id": "medication-observation-vs",
   "title": "Information on medication observation (VS)",
   "description": "Specifies types of observations on the status of a drug",
+  "version": "1.0",
   "url": "https://gematik.de/fhir/erp-servicerequest/ValueSet/medication-observation-vs",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "version": "1.0",
   "compose": {
     "include": [
       {

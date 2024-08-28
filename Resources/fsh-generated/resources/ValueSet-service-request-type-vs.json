@@ -5,10 +5,10 @@
   "id": "service-request-type-vs",
   "title": "Art des ServiceRequests (VS)",
   "description": "Specifies the type of ServiceRequest and is used to identify ServiceRequests",
+  "version": "1.0",
   "url": "https://gematik.de/fhir/erp-servicerequest/ValueSet/service-request-type-vs",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "version": "1.0",
   "compose": {
     "include": [
       {

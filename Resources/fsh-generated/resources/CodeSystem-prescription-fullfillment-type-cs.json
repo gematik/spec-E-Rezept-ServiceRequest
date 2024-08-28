@@ -6,6 +6,7 @@
   "id": "prescription-fullfillment-type-cs",
   "title": "Delivery type of prescription request (CS)",
   "description": "Is used in the Prescription_ServiceRequest to indicate how the prescription should be processed",
+  "version": "1.0",
   "url": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/prescription-fullfillment-type-cs",
   "concept": [
     {
@@ -19,6 +20,5 @@
   ],
   "experimental": false,
   "publisher": "gematik GmbH",
-  "version": "1.0",
   "count": 2
 }

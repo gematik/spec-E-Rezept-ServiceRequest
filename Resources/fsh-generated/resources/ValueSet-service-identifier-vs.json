@@ -5,10 +5,10 @@
   "id": "service-identifier-vs",
   "title": "Identifier of the use case",
   "description": "Identifiers for specifying an application of e-prescription communication",
+  "version": "1.0",
   "url": "https://gematik.de/fhir/erp-servicerequest/ValueSet/service-identifier-vs",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "version": "1.0",
   "compose": {
     "include": [
       {

@@ -6,6 +6,7 @@
   "id": "medication-request-reason-cs",
   "title": "Reason for medication request (CS)",
   "description": "Provides codes for reasons why medication is requested",
+  "version": "1.0",
   "url": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-request-reason-cs",
   "concept": [
     {
@@ -15,6 +16,5 @@
   ],
   "experimental": false,
   "publisher": "gematik GmbH",
-  "version": "1.0",
   "count": 1
 }
