@@ -4,14 +4,16 @@
 skinparam maxMessageSize 200
 
 actor "Pflegeeinrichtung" as Pflegeeinrichtung
-actor Apotheke
+actor "Verordnender \nLeistungserbringer" as Arztpraxis
 actor Versicherter
+actor Apotheke
 
 title UC1-Rezeptanforderungen durch Pflegeeinrichtungen mit Abholung durch Versicherten
 hide footbox
 autonumber "<b>[0]"
 
--> Pflegeeinrichtung: Bereitstellung des E-Rezepts
+Pflegeeinrichtung ->> Arztpraxis: //Rezeptanforderung//
+Arztpraxis ->> Pflegeeinrichtung: //Rezeptanforderung_Bestätigung//
 
 opt Benachrichtigung des Versicherten
     Pflegeeinrichtung --> Versicherter: opt. Benachrichtigung über Ausstellung des E-Rezepts
@@ -26,5 +28,5 @@ note left
         3. Papierausdruck
 end note
 
-Versicherter ->> Apotheke: **Medikamentabholung gg. Rezeptvorlage**
+Versicherter ->> Apotheke: Medikamentabholung
 @enduml

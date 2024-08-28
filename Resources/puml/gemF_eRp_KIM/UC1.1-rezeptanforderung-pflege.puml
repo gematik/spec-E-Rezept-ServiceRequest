@@ -30,7 +30,7 @@ end
 
 alt #PaleGreen Arzt ist einverstanden 
     
-    Arztpraxis ->> Pflegeeinrichtung: //Rezeptanforderung_Rezeptübermittlung//
+    Arztpraxis ->> Pflegeeinrichtung: //Rezeptanforderung_Bestätigung//
     
 else #LightPink Arzt lehnt ab
     Arztpraxis ->> Pflegeeinrichtung: //Rezeptanforderung_Storno//

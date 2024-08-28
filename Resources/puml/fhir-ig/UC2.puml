@@ -10,8 +10,8 @@ AP -> PE++: <b>Rezeptanforderung\n <i>ERPServiceRequestPrescriptionRequest  \n.s
 PE -> A++: <b>Rezeptanforderung\n <i>ERPServiceRequestPrescriptionRequest  \n.status = #active \n.basedOn = ERPServiceRequestMedicationRequest
 A -> FD++: E-Rezept einstellen
 FD -> A--: Task(PrescriptionID, AccessCode)
-A -> PE: <b>Rezeptanforderung_Rezeptübermittlung\n <i>ERPServiceRequestPrescriptionRequest  \n.status = #completed \n.basedOn = KBV_Prescription
-PE -> AP: <b>Rezeptanforderung_Rezeptübermittlung\n <i>ERPServiceRequestPrescriptionRequest  \n.status = #completed \n.basedOn = KBV_Prescription
+A -> PE: <b>Rezeptanforderung_Bestätigung\n <i>ERPServiceRequestPrescriptionRequest  \n.status = #completed \n.basedOn = KBV_Prescription
+PE -> AP: <b>Rezeptanforderung_Bestätigung\n <i>ERPServiceRequestPrescriptionRequest  \n.status = #completed \n.basedOn = KBV_Prescription
 
 
 AP <-> FD: E-Rezept einlösen

@@ -4,7 +4,7 @@
   filename: 1-Fachliche-Beschreibung.page.md
 - name: Rezeptanforderung
   filename: 2.1-Anfragender-an-Verordnenden.page.md
-- name: Rezeptanforderung_Rezeptübermittlung
+- name: Rezeptanforderung_Bestätigung
   filename: 2.2-Verordnender-an-Anfragenden.page.md
 - name: Dispensieranforderung_Rezeptübermittlung
   filename: 2.3-Anfragender-an-Apotheke.page.md
