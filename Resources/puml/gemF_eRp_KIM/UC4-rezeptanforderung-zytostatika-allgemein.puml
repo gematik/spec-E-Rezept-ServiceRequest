@@ -5,7 +5,7 @@ skinparam maxMessageSize 300
 
 title UC4-Rezeptanforderung für anwendungsfertige Zytostatikazubereitungen
 hide footbox
-autonumber
+autonumber "<b>[0]"
 
     actor "Apotheke" as Apotheke
     actor "Verordnender \nLeistungserbringer" as Arzt
@@ -14,8 +14,6 @@ legend bottom right
     __Legende__
     |<#PaleGreen> Ergebnis: Zubereitungs-/Medikamentabgabe|
     |<#LightPink> Ergebnis: keine Zubereitungs-/Medikamentabgabe|
-    **lfd.Nr.** //Informationseinheit als Nachricht übermittelt//
-    **lfd.Nr.** **sonstige Aktivität**
 endlegend
 
 ?-> Apotheke: Start der \nZubereitung
@@ -26,13 +24,12 @@ Apotheke ->> Arzt: //Rezeptanforderung//
 
 break #LightPink Stornierung notwendig
     Apotheke ->> Arzt: //Rezeptanforderung_Storno//
-    Arzt ->x Arzt: **Rezeptanforderung wird verworfen**
-    Arzt ->> Apotheke: //Stornierungsquittung//
+    alt #LightPink E-Rezept noch nicht eingestellt
+        Arzt ->x Arzt: Rezeptanforderung wird verworfen
+    else #LightPink E-Rezept wurde eingestellt
+        Arzt ->x Arzt: E-Rezept wird gelöscht
+    end
 end
-
-Arzt ->> Arzt: **Arbeitslisteneintrag erzeugen und vorhalten**
-
-Arzt ->> Arzt: **Rezeptzustimmung ODER Rezeptablehnung festlegen**
 
 alt #PaleGreen Arzt stimmt Rezeptanforderung zu
     Arzt ->> Apotheke: //Rezeptanforderung_Rezeptuebermittlung//
