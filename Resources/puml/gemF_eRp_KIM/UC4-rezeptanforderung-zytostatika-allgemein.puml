@@ -1,14 +1,13 @@
-@startuml name = "UC3-Rezeptanforderung-anwendigungsfertige-Zytostatika"
+@startuml name = "UC4-Rezeptanforderung-anwendigungsfertige-Zytostatika"
 
 
 skinparam maxMessageSize 300
 
-title UC3-Rezeptanforderung für anwendungsfertige Zytostatika Zubereitungen
+title UC4-Rezeptanforderung für anwendungsfertige Zytostatikazubereitungen
 hide footbox
 autonumber
 
     actor "Apotheke" as Apotheke
-
     actor "Verordnender \nLeistungserbringer" as Arzt
 
 legend bottom right

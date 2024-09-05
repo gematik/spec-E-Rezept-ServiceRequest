@@ -1,4 +1,4 @@
-@startuml name = "UC2-Rezeptanforderung-Apotheke"
+@startuml name = "UC3-Rezeptanforderung-Apotheke"
 
 
 skinparam maxMessageSize 200
@@ -7,7 +7,7 @@ actor Apotheke
 actor "Verordnender \nLeistungserbringer" as Arztpraxis
 actor "Pflegeeinrichtung" as Pflegeeinrichtung
 
-title UC2-Rezeptanforderungen durch heimversorgende Apotheke
+title UC3-Rezeptanforderung der heimversorgenden Apotheke
 hide footbox
 autonumber "<b>[0]"
 

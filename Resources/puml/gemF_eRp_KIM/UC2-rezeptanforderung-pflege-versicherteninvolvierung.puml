@@ -1,4 +1,4 @@
-@startuml name = "UC1-Rezeptanforderung-Versicherteninvolvierung"
+@startuml name = "UC2-Rezeptanforderung-Versicherteninvolvierung"
 
 
 skinparam maxMessageSize 200
@@ -8,7 +8,7 @@ actor "Verordnender \nLeistungserbringer" as Arztpraxis
 actor Versicherter
 actor Apotheke
 
-title UC1-Rezeptanforderungen durch Pflegeeinrichtungen mit Abholung durch Versicherten
+title UC2-Rezeptanforderung der Pflege mit Einlösung durch Patient
 hide footbox
 autonumber "<b>[0]"
 
