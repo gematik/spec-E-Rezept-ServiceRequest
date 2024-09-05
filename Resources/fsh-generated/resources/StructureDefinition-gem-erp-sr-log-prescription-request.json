@@ -24,10 +24,179 @@
         "definition": "Fachliches Modell zur Beschreibung einer Rezeptanforderung"
       },
       {
+        "id": "gem-erp-sr-log-prescription-request.MetaDaten",
+        "path": "gem-erp-sr-log-prescription-request.MetaDaten",
+        "short": "Metadaten im MessageHeader",
+        "definition": "Metadaten im MessageHeader",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request.MetaDaten.Empfaenger",
+        "path": "gem-erp-sr-log-prescription-request.MetaDaten.Empfaenger",
+        "short": "Empfänger der Nachricht",
+        "definition": "Empfänger der Nachricht",
+        "min": 1,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request.MetaDaten.Empfaenger.KIMAdresse",
+        "path": "gem-erp-sr-log-prescription-request.MetaDaten.Empfaenger.KIMAdresse",
+        "short": "KIM-Adresse des Empfängers",
+        "definition": "KIM-Adresse des Empfängers",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "url"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request.MetaDaten.Empfaenger.TelematikID",
+        "path": "gem-erp-sr-log-prescription-request.MetaDaten.Empfaenger.TelematikID",
+        "short": "Telematik-ID des Absenders",
+        "definition": "Telematik-ID des Absenders",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "url"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request.MetaDaten.Absender",
+        "path": "gem-erp-sr-log-prescription-request.MetaDaten.Absender",
+        "short": "Absender der Nachricht",
+        "definition": "Absender der Nachricht",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request.MetaDaten.Absender.TelematikID",
+        "path": "gem-erp-sr-log-prescription-request.MetaDaten.Absender.TelematikID",
+        "short": "Telematik-ID des Absenders",
+        "definition": "Telematik-ID des Absenders",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "url"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request.MetaDaten.Absender.Name",
+        "path": "gem-erp-sr-log-prescription-request.MetaDaten.Absender.Name",
+        "short": "Name des Absenders",
+        "definition": "Name des Absenders",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request.MetaDaten.AbsendendesSystem",
+        "path": "gem-erp-sr-log-prescription-request.MetaDaten.AbsendendesSystem",
+        "short": "Absendendes System",
+        "definition": "Absendendes System",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request.MetaDaten.AbsendendesSystem.Name",
+        "path": "gem-erp-sr-log-prescription-request.MetaDaten.AbsendendesSystem.Name",
+        "short": "Name des Herstellers des absendenden Systems",
+        "definition": "Name des Herstellers des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request.MetaDaten.AbsendendesSystem.Software",
+        "path": "gem-erp-sr-log-prescription-request.MetaDaten.AbsendendesSystem.Software",
+        "short": "Name der Software des absendenden Systems",
+        "definition": "Name der Software des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request.MetaDaten.AbsendendesSystem.Version",
+        "path": "gem-erp-sr-log-prescription-request.MetaDaten.AbsendendesSystem.Version",
+        "short": "Version des absendenden Systems",
+        "definition": "Version des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request.MetaDaten.AbsendendesSystem.EMailKontakt",
+        "path": "gem-erp-sr-log-prescription-request.MetaDaten.AbsendendesSystem.EMailKontakt",
+        "short": "E-Mail-Kontakt des absendenden Systems",
+        "definition": "E-Mail-Kontakt des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request.MetaDaten.AbsendendesSystem.Website",
+        "path": "gem-erp-sr-log-prescription-request.MetaDaten.AbsendendesSystem.Website",
+        "short": "Website des absendenden Systems",
+        "definition": "Website des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "url"
+          }
+        ]
+      },
+      {
         "id": "gem-erp-sr-log-prescription-request.Status",
         "path": "gem-erp-sr-log-prescription-request.Status",
         "short": "Status",
-        "definition": "Status der Anforderung. Beispiel: Neue Anforderung, Änderung",
+        "definition": "Status der Anforderung. Wird genutzt, um den Bearbeitungsstand einer Anfrage zu verfolgen. Im Falle der Rezeptanforderung wird eine Anfrage mit dem Status 'active' erstellt und geschickt und signalisiert somit eine neue Anfrage.",
         "min": 1,
         "max": "1",
         "type": [
@@ -40,7 +209,7 @@
         "id": "gem-erp-sr-log-prescription-request.VorgangsID",
         "path": "gem-erp-sr-log-prescription-request.VorgangsID",
         "short": "ID des Vorgangs",
-        "definition": "Wird vom initialen Sender gesetzt und muss immer mitgeführt werden",
+        "definition": "Wird vom initialen Sender gesetzt und muss immer mitgeführt werden.",
         "min": 1,
         "max": "1",
         "type": [
@@ -53,7 +222,7 @@
         "id": "gem-erp-sr-log-prescription-request.VorherigeRezeptID",
         "path": "gem-erp-sr-log-prescription-request.VorherigeRezeptID",
         "short": "ID des vorherigen Rezepts",
-        "definition": "Wird gebraucht, wenn der verordnende Arzt das vorherige Rezept löschen soll",
+        "definition": "Kann bei der Anforderung einer Folgeverordnung verwendet werden, um einen Bezug zu einer vorherigen Verordnung herzustellen.",
         "min": 0,
         "max": "1",
         "type": [
@@ -63,12 +232,64 @@
         ]
       },
       {
+        "id": "gem-erp-sr-log-prescription-request.PflegeeinrichtungKopie",
+        "path": "gem-erp-sr-log-prescription-request.PflegeeinrichtungKopie",
+        "short": "Zu benachrichtigende Pflegeeinrichtung",
+        "definition": "Angaben zur Pflegeeinrichtung, die über den Ablauf der Rezeptanforderung per Kopie informiert werden soll.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request.PflegeeinrichtungKopie.PflegeeinrichtungName",
+        "path": "gem-erp-sr-log-prescription-request.PflegeeinrichtungKopie.PflegeeinrichtungName",
+        "short": "Name der Pflegeeinrichtung",
+        "definition": "Name der Pflegeeinrichtung",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request.PflegeeinrichtungKopie.PflegeeinrichtungTelefon",
+        "path": "gem-erp-sr-log-prescription-request.PflegeeinrichtungKopie.PflegeeinrichtungTelefon",
+        "short": "Telefonnummer der Pflegeeinrichtung",
+        "definition": "Telefonnummer der Pflegeeinrichtung",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request.PflegeeinrichtungKopie.PflegeeinrichtungKIMAdresse",
+        "path": "gem-erp-sr-log-prescription-request.PflegeeinrichtungKopie.PflegeeinrichtungKIMAdresse",
+        "short": "KIM-Adresse der Pflegeeinrichtung",
+        "definition": "KIM-Adresse der Pflegeeinrichtung",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Address"
+          }
+        ]
+      },
+      {
         "id": "gem-erp-sr-log-prescription-request.involvierteParteien",
         "path": "gem-erp-sr-log-prescription-request.involvierteParteien",
         "short": "Involvierte Parteien",
         "definition": "Angaben zu den involvierten Parteien",
         "min": 1,
-        "max": "1",
+        "max": "*",
         "type": [
           {
             "code": "BackboneElement"
@@ -79,7 +300,7 @@
         "id": "gem-erp-sr-log-prescription-request.involvierteParteien.PatientenInformationen",
         "path": "gem-erp-sr-log-prescription-request.involvierteParteien.PatientenInformationen",
         "short": "Patienteninformationen",
-        "definition": "Angaben zum Patienten, es muss entweder die KVNR oder eine Referenz auf ein gültiges KBV_FOR_Paitient Objekt existieren.",
+        "definition": "Angaben zum Patienten",
         "min": 1,
         "max": "1",
         "type": [
@@ -93,7 +314,7 @@
         "path": "gem-erp-sr-log-prescription-request.involvierteParteien.PatientenInformationen.PatientenIdentifierKVNR",
         "short": "KVNR des Patienten",
         "definition": "KVNR des Patienten",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "type": [
           {
@@ -102,34 +323,28 @@
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request.involvierteParteien.PatientenInformationen.PatientenReferenz",
-        "path": "gem-erp-sr-log-prescription-request.involvierteParteien.PatientenInformationen.PatientenReferenz",
-        "short": "Referenz zum KBV_FOR_Patient Objekt, welches alle relevanten informationen enthält, die für eine Verordnung relevant sind",
-        "definition": "Referenz zum KBV_FOR_Patient Objekt, welches alle relevanten informationen enthält, die für eine Verordnung relevant sind",
-        "min": 0,
+        "id": "gem-erp-sr-log-prescription-request.involvierteParteien.PatientenInformationen.PatientenName",
+        "path": "gem-erp-sr-log-prescription-request.involvierteParteien.PatientenInformationen.PatientenName",
+        "short": "Name des Patienten",
+        "definition": "Strukturierte Angabe des Namens des Patienten",
+        "min": 1,
         "max": "1",
         "type": [
           {
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org/fhir/StructureDefinition/valueset-reference"
-            ]
+            "code": "HumanName"
           }
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request.involvierteParteien.PatientenInformationen.PatientenVersichertenInformationen",
-        "path": "gem-erp-sr-log-prescription-request.involvierteParteien.PatientenInformationen.PatientenVersichertenInformationen",
-        "short": "Referenz auf die Versicherteninformationen",
-        "definition": "Referenz auf die Versicherteninformationen",
-        "min": 0,
+        "id": "gem-erp-sr-log-prescription-request.involvierteParteien.PatientenInformationen.PatientenGeburtstag",
+        "path": "gem-erp-sr-log-prescription-request.involvierteParteien.PatientenInformationen.PatientenGeburtstag",
+        "short": "Geburtstag des Patienten",
+        "definition": "Angabe des Geburtstags mit Jahr, Monat und Tag",
+        "min": 1,
         "max": "1",
         "type": [
           {
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org/fhir/StructureDefinition/valueset-reference"
-            ]
+            "code": "date"
           }
         ]
       },
@@ -156,6 +371,19 @@
         "type": [
           {
             "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request.involvierteParteien.VerordnenderArzt.ArztName",
+        "path": "gem-erp-sr-log-prescription-request.involvierteParteien.VerordnenderArzt.ArztName",
+        "short": "Name des Arztes",
+        "definition": "Name des Arztes",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "HumanName"
           }
         ]
       },
@@ -188,13 +416,13 @@
       {
         "id": "gem-erp-sr-log-prescription-request.involvierteParteien.Anfragender.AnfragenderAdresse",
         "path": "gem-erp-sr-log-prescription-request.involvierteParteien.Anfragender.AnfragenderAdresse",
-        "short": "Adresse des Anfragenden",
-        "definition": "Adresse des Anfragenden",
-        "min": 1,
+        "short": "Straßenadresse des Anfragenden",
+        "definition": "Straßenadresse des Anfragenden",
+        "min": 0,
         "max": "1",
         "type": [
           {
-            "code": "string"
+            "code": "Address"
           }
         ]
       },
@@ -212,10 +440,23 @@
         ]
       },
       {
+        "id": "gem-erp-sr-log-prescription-request.involvierteParteien.Anfragender.AnfragenderTelematikID",
+        "path": "gem-erp-sr-log-prescription-request.involvierteParteien.Anfragender.AnfragenderTelematikID",
+        "short": "Telematik-ID des Anfragenden",
+        "definition": "Telematik-ID des Anfragenden",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
         "id": "gem-erp-sr-log-prescription-request.Freitext",
         "path": "gem-erp-sr-log-prescription-request.Freitext",
         "short": "Freitext",
-        "definition": "Freitextfeld für zusätzliche Informationen des Anfragenden",
+        "definition": "Individuelle Nachricht an den Empfänger",
         "min": 0,
         "max": "1",
         "type": [
@@ -241,7 +482,7 @@
         "id": "gem-erp-sr-log-prescription-request.GrundDerAnforderung.GrundCode",
         "path": "gem-erp-sr-log-prescription-request.GrundDerAnforderung.GrundCode",
         "short": "Code des Grundes",
-        "definition": "Beispiel Änderung des Zustands des Versicherten",
+        "definition": "Folgende Gründe sind vorgesehen: Korrektur, Reichweite erschöpft(Dauermedikation), nach Vitalwertmessung, nach Bedarf (z.B. aufgrund von Schmerzen)",
         "min": 0,
         "max": "1",
         "type": [
@@ -280,7 +521,7 @@
         "id": "gem-erp-sr-log-prescription-request.Prioritaet.Prioritaet",
         "path": "gem-erp-sr-log-prescription-request.Prioritaet.Prioritaet",
         "short": "Priorität der Anforderung",
-        "definition": "Priorität der Anforderung",
+        "definition": "Folgende Prioritäten sind zulässig: Hoch, Normal",
         "min": 1,
         "max": "1",
         "type": [
@@ -290,41 +531,57 @@
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request.Prioritaet.GrundFuerPriorität",
-        "path": "gem-erp-sr-log-prescription-request.Prioritaet.GrundFuerPriorität",
-        "short": "Grund der Priorität",
-        "definition": "Grund der Priorität",
+        "id": "gem-erp-sr-log-prescription-request.Restreichweite",
+        "path": "gem-erp-sr-log-prescription-request.Restreichweite",
+        "short": "Restreichweite",
+        "definition": "Angabe der Restreichweite",
         "min": 0,
         "max": "1",
         "type": [
           {
-            "code": "CodeableConcept"
+            "code": "BackboneElement"
           }
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request.Prioritaet.GrundFuerPriorität.GrundCode",
-        "path": "gem-erp-sr-log-prescription-request.Prioritaet.GrundFuerPriorität.GrundCode",
-        "short": "Code des Grundes",
-        "definition": "Beispiel geringe Restreichweite",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "Coding"
-          }
-        ]
-      },
-      {
-        "id": "gem-erp-sr-log-prescription-request.Prioritaet.GrundFuerPriorität.GrundText",
-        "path": "gem-erp-sr-log-prescription-request.Prioritaet.GrundFuerPriorität.GrundText",
-        "short": "Text des Grundes",
-        "definition": "Text des Grundes",
+        "id": "gem-erp-sr-log-prescription-request.Restreichweite.Freitext",
+        "path": "gem-erp-sr-log-prescription-request.Restreichweite.Freitext",
+        "short": "Restreichweite in Tage oder Anzahl an Einheiten",
+        "definition": "Restreichweite in Tage oder Anzahl an Einheiten",
         "min": 0,
         "max": "1",
         "type": [
           {
             "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request.Restreichweite.Einheit",
+        "path": "gem-erp-sr-log-prescription-request.Restreichweite.Einheit",
+        "short": "Einheit der Restreichweite",
+        "definition": "Einheit der Restreichweite",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request.Restreichweite.Wert",
+        "path": "gem-erp-sr-log-prescription-request.Restreichweite.Wert",
+        "short": "Wert der Restreichweite",
+        "definition": "Wert der Restreichweite",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
           }
         ]
       },
@@ -342,21 +599,8 @@
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request.Medikationsanfrage",
-        "path": "gem-erp-sr-log-prescription-request.Medikationsanfrage",
-        "short": "Medikationsanfrage",
-        "definition": "Angaben zur Medikationsanfrage",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "BackboneElement"
-          }
-        ]
-      },
-      {
-        "id": "gem-erp-sr-log-prescription-request.Medikationsanfrage.Medikation",
-        "path": "gem-erp-sr-log-prescription-request.Medikationsanfrage.Medikation",
+        "id": "gem-erp-sr-log-prescription-request.Medikation",
+        "path": "gem-erp-sr-log-prescription-request.Medikation",
         "short": "Medikation",
         "definition": "Angaben zur Medikation",
         "min": 1,
@@ -368,8 +612,8 @@
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request.Medikationsanfrage.Medikation.MedikationCodiert",
-        "path": "gem-erp-sr-log-prescription-request.Medikationsanfrage.Medikation.MedikationCodiert",
+        "id": "gem-erp-sr-log-prescription-request.Medikation.MedikationCodiert",
+        "path": "gem-erp-sr-log-prescription-request.Medikation.MedikationCodiert",
         "short": "Medikation codiert",
         "definition": "Codiertes Medikament",
         "min": 0,
@@ -381,8 +625,8 @@
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request.Medikationsanfrage.Medikation.MedikationCodiert.NameDesMedikaments",
-        "path": "gem-erp-sr-log-prescription-request.Medikationsanfrage.Medikation.MedikationCodiert.NameDesMedikaments",
+        "id": "gem-erp-sr-log-prescription-request.Medikation.MedikationCodiert.NameDesMedikaments",
+        "path": "gem-erp-sr-log-prescription-request.Medikation.MedikationCodiert.NameDesMedikaments",
         "short": "Name des Medikaments",
         "definition": "Name des Medikaments",
         "min": 1,
@@ -394,8 +638,8 @@
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request.Medikationsanfrage.Medikation.MedikationCodiert.PZN",
-        "path": "gem-erp-sr-log-prescription-request.Medikationsanfrage.Medikation.MedikationCodiert.PZN",
+        "id": "gem-erp-sr-log-prescription-request.Medikation.MedikationCodiert.PZN",
+        "path": "gem-erp-sr-log-prescription-request.Medikation.MedikationCodiert.PZN",
         "short": "PZN des Medikaments",
         "definition": "PZN des Medikaments",
         "min": 1,
@@ -407,24 +651,21 @@
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request.Medikationsanfrage.Medikation.MedikationObjekt",
-        "path": "gem-erp-sr-log-prescription-request.Medikationsanfrage.Medikation.MedikationObjekt",
+        "id": "gem-erp-sr-log-prescription-request.Medikation.MedikationObjekt",
+        "path": "gem-erp-sr-log-prescription-request.Medikation.MedikationObjekt",
         "short": "Referenz auf das Medikamentenobjekt",
-        "definition": "Referenz auf das Medikamentenobjekt nach KBV_Verordnung",
+        "definition": "Referenz auf das Medikamentenobjekt nach KBV_Verordnung/ePA Medication",
         "min": 0,
         "max": "1",
         "type": [
           {
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org/fhir/StructureDefinition/valueset-reference"
-            ]
+            "code": "Medication"
           }
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request.Medikationsanfrage.Menge",
-        "path": "gem-erp-sr-log-prescription-request.Medikationsanfrage.Menge",
+        "id": "gem-erp-sr-log-prescription-request.Menge",
+        "path": "gem-erp-sr-log-prescription-request.Menge",
         "short": "Menge des Medikaments",
         "definition": "Menge des Medikaments",
         "min": 1,
@@ -436,8 +677,8 @@
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request.Medikationsanfrage.Menge.Einheit",
-        "path": "gem-erp-sr-log-prescription-request.Medikationsanfrage.Menge.Einheit",
+        "id": "gem-erp-sr-log-prescription-request.Menge.Einheit",
+        "path": "gem-erp-sr-log-prescription-request.Menge.Einheit",
         "short": "Einheit der Menge",
         "definition": "Einheit der Menge",
         "min": 1,
@@ -449,8 +690,8 @@
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request.Medikationsanfrage.Menge.Wert",
-        "path": "gem-erp-sr-log-prescription-request.Medikationsanfrage.Menge.Wert",
+        "id": "gem-erp-sr-log-prescription-request.Menge.Wert",
+        "path": "gem-erp-sr-log-prescription-request.Menge.Wert",
         "short": "Wert der Menge",
         "definition": "Wert der Menge",
         "min": 1,
@@ -458,19 +699,6 @@
         "type": [
           {
             "code": "string"
-          }
-        ]
-      },
-      {
-        "id": "gem-erp-sr-log-prescription-request.autIdem",
-        "path": "gem-erp-sr-log-prescription-request.autIdem",
-        "short": "autIdem",
-        "definition": "Angabe, ob ausdrücklich das angegebene Medikament angefragt wird",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "boolean"
           }
         ]
       },

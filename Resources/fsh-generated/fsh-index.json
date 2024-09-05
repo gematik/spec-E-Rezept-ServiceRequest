@@ -357,7 +357,7 @@
     "fshType": "Logical",
     "fshFile": "logical-models/prescription-request-log.fsh",
     "startLine": 1,
-    "endLine": 55
+    "endLine": 76
   },
   {
     "outputFile": "StructureDefinition-identifier-procedure-identifier.json",
