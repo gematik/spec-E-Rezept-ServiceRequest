@@ -12,8 +12,10 @@ title UC2-Rezeptanforderung der Pflege mit Einlösung durch Patient
 hide footbox
 autonumber "<b>[0]"
 
+group "UC1-Rezeptanforderung durch Pflegeeinrichtung"
 Pflegeeinrichtung ->> Arztpraxis: //Rezeptanforderung//
 Arztpraxis ->> Pflegeeinrichtung: //Rezeptanforderung_Bestätigung//
+end
 
 opt Benachrichtigung des Versicherten
     Pflegeeinrichtung --> Versicherter: opt. Benachrichtigung über Ausstellung des E-Rezepts
