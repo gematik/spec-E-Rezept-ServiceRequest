@@ -13,7 +13,7 @@
   "kind": "logical",
   "abstract": false,
   "type": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-message-copy",
-  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Base",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Element",
   "derivation": "specialization",
   "differential": {
     "element": [
@@ -22,6 +22,175 @@
         "path": "gem-erp-sr-log-message-copy",
         "short": "Logical ServiceRequest_Nachricht_Kopie",
         "definition": "Fachliches Modell zur Beschreibung einer Kopie für die Pflegeeinrichtung."
+      },
+      {
+        "id": "gem-erp-sr-log-message-copy.MetaDaten",
+        "path": "gem-erp-sr-log-message-copy.MetaDaten",
+        "short": "Metadaten im MessageHeader",
+        "definition": "Metadaten im MessageHeader",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-message-copy.MetaDaten.Empfaenger",
+        "path": "gem-erp-sr-log-message-copy.MetaDaten.Empfaenger",
+        "short": "Empfänger der Nachricht",
+        "definition": "Empfänger der Nachricht",
+        "min": 1,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-message-copy.MetaDaten.Empfaenger.KIMAdresse",
+        "path": "gem-erp-sr-log-message-copy.MetaDaten.Empfaenger.KIMAdresse",
+        "short": "KIM-Adresse des Empfängers",
+        "definition": "KIM-Adresse des Empfängers",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "url"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-message-copy.MetaDaten.Empfaenger.TelematikID",
+        "path": "gem-erp-sr-log-message-copy.MetaDaten.Empfaenger.TelematikID",
+        "short": "Telematik-ID des Absenders",
+        "definition": "Telematik-ID des Absenders",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "url"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-message-copy.MetaDaten.Absender",
+        "path": "gem-erp-sr-log-message-copy.MetaDaten.Absender",
+        "short": "Absender der Nachricht",
+        "definition": "Absender der Nachricht",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-message-copy.MetaDaten.Absender.TelematikID",
+        "path": "gem-erp-sr-log-message-copy.MetaDaten.Absender.TelematikID",
+        "short": "Telematik-ID des Absenders",
+        "definition": "Telematik-ID des Absenders",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "url"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-message-copy.MetaDaten.Absender.Name",
+        "path": "gem-erp-sr-log-message-copy.MetaDaten.Absender.Name",
+        "short": "Name des Absenders",
+        "definition": "Name des Absenders",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-message-copy.MetaDaten.AbsendendesSystem",
+        "path": "gem-erp-sr-log-message-copy.MetaDaten.AbsendendesSystem",
+        "short": "Absendendes System",
+        "definition": "Absendendes System",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-message-copy.MetaDaten.AbsendendesSystem.Name",
+        "path": "gem-erp-sr-log-message-copy.MetaDaten.AbsendendesSystem.Name",
+        "short": "Name des Herstellers des absendenden Systems",
+        "definition": "Name des Herstellers des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-message-copy.MetaDaten.AbsendendesSystem.Software",
+        "path": "gem-erp-sr-log-message-copy.MetaDaten.AbsendendesSystem.Software",
+        "short": "Name der Software des absendenden Systems",
+        "definition": "Name der Software des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-message-copy.MetaDaten.AbsendendesSystem.Version",
+        "path": "gem-erp-sr-log-message-copy.MetaDaten.AbsendendesSystem.Version",
+        "short": "Version des absendenden Systems",
+        "definition": "Version des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-message-copy.MetaDaten.AbsendendesSystem.EMailKontakt",
+        "path": "gem-erp-sr-log-message-copy.MetaDaten.AbsendendesSystem.EMailKontakt",
+        "short": "E-Mail-Kontakt des absendenden Systems",
+        "definition": "E-Mail-Kontakt des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-message-copy.MetaDaten.AbsendendesSystem.Website",
+        "path": "gem-erp-sr-log-message-copy.MetaDaten.AbsendendesSystem.Website",
+        "short": "Website des absendenden Systems",
+        "definition": "Website des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "url"
+          }
+        ]
       }
     ]
   }

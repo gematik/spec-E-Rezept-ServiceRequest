@@ -4,7 +4,7 @@
   "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-dispense-request-confirmation",
   "version": "1.0",
   "name": "GEM_ERP_SR_LOG_DispenseRequest_Confirmation",
-  "title": "Logical Dispenseieranforderung_Bestätigung",
+  "title": "Logical Model Dispenseieranforderung_Bestätigung",
   "status": "active",
   "experimental": false,
   "publisher": "gematik GmbH",
@@ -20,7 +20,7 @@
       {
         "id": "gem-erp-sr-log-dispense-request-confirmation",
         "path": "gem-erp-sr-log-dispense-request-confirmation",
-        "short": "Logical Dispenseieranforderung_Bestätigung",
+        "short": "Logical Model Dispenseieranforderung_Bestätigung",
         "definition": "Fachliches Modell zur Beschreibung einer Bestätigung einer Dispenseieranforderung"
       },
       {
