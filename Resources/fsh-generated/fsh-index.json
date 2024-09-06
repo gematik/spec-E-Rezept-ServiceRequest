@@ -317,7 +317,7 @@
     "fshType": "Logical",
     "fshFile": "logical-models/dispense-request-confirmation-log.fsh",
     "startLine": 1,
-    "endLine": 15
+    "endLine": 16
   },
   {
     "outputFile": "StructureDefinition-gem-erp-sr-log-dispense-request.json",
@@ -325,7 +325,7 @@
     "fshType": "Logical",
     "fshFile": "logical-models/dispense-request-log.fsh",
     "startLine": 1,
-    "endLine": 30
+    "endLine": 31
   },
   {
     "outputFile": "StructureDefinition-gem-erp-sr-log-message-copy.json",
@@ -341,7 +341,7 @@
     "fshType": "Logical",
     "fshFile": "logical-models/prescription-request-cancellation-log.fsh",
     "startLine": 1,
-    "endLine": 10
+    "endLine": 11
   },
   {
     "outputFile": "StructureDefinition-gem-erp-sr-log-prescription-request-confirmation.json",
@@ -349,7 +349,7 @@
     "fshType": "Logical",
     "fshFile": "logical-models/prescription-request-confirmation-log.fsh",
     "startLine": 1,
-    "endLine": 21
+    "endLine": 22
   },
   {
     "outputFile": "StructureDefinition-gem-erp-sr-log-prescription-request.json",
@@ -357,7 +357,7 @@
     "fshType": "Logical",
     "fshFile": "logical-models/prescription-request-log.fsh",
     "startLine": 1,
-    "endLine": 63
+    "endLine": 64
   },
   {
     "outputFile": "StructureDefinition-identifier-procedure-identifier.json",
