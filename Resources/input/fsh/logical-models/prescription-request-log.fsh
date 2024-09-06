@@ -1,6 +1,6 @@
 Logical: GEM_ERP_SR_LOG_PrescriptionRequest
 Id: gem-erp-sr-log-prescription-request
-Title: "Rezeptanforderung Logical Model"
+Title: "Logical Model Rezeptanforderung"
 Description: "Fachliches Modell zur Beschreibung einer Rezeptanforderung"
 * insert Versioning
 

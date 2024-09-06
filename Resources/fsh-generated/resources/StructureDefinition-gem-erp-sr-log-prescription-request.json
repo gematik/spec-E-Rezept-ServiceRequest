@@ -4,7 +4,7 @@
   "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-prescription-request",
   "version": "1.0",
   "name": "GEM_ERP_SR_LOG_PrescriptionRequest",
-  "title": "Rezeptanforderung Logical Model",
+  "title": "Logical Model Rezeptanforderung",
   "status": "active",
   "experimental": false,
   "publisher": "gematik GmbH",
@@ -20,7 +20,7 @@
       {
         "id": "gem-erp-sr-log-prescription-request",
         "path": "gem-erp-sr-log-prescription-request",
-        "short": "Rezeptanforderung Logical Model",
+        "short": "Logical Model Rezeptanforderung",
         "definition": "Fachliches Modell zur Beschreibung einer Rezeptanforderung"
       },
       {
