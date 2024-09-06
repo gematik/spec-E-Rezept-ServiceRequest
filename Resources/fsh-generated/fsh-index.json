@@ -333,7 +333,7 @@
     "fshType": "Logical",
     "fshFile": "logical-models/service-request-message-copy-log.fsh",
     "startLine": 1,
-    "endLine": 7
+    "endLine": 16
   },
   {
     "outputFile": "StructureDefinition-gem-erp-sr-log-prescription-request-cancellation.json",

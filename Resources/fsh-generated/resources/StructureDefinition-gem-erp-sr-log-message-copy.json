@@ -191,6 +191,45 @@
             "code": "url"
           }
         ]
+      },
+      {
+        "id": "gem-erp-sr-log-message-copy.IndikatorKopie",
+        "path": "gem-erp-sr-log-message-copy.IndikatorKopie",
+        "short": "Indikator Kopie",
+        "definition": "Indikator, ob es sich um eine Kopie handelt.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-message-copy.ArtDerKopie",
+        "path": "gem-erp-sr-log-message-copy.ArtDerKopie",
+        "short": "Art der Kopie",
+        "definition": "Auswahl aus: \n- Rezeptanforderung\n- Rezeptanforderung_Stornierung\n- Rezeptanforderung_Bestätigung ",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-message-copy.Anforderungsinformationen",
+        "path": "gem-erp-sr-log-message-copy.Anforderungsinformationen",
+        "short": "Anforderungsinformationen",
+        "definition": "Kopie der Informationen die ursprünglich übertragen wurden. Siehe\n- Logical Model Rezeptanforderung\n- Logical Model Rezeptanforderung_Storno\n- Logical Model Rezeptanforderung_Bestätigung",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Bundle"
+          }
+        ]
       }
     ]
   }
