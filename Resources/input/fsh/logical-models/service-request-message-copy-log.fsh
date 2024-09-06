@@ -7,6 +7,7 @@ Description: "Fachliches Modell zur Beschreibung einer Kopie für die Pflegeeinr
 * insert RS_LOG_MessageHeader
 
 * IndikatorKopie 0..1 boolean "Indikator Kopie" "Indikator, ob es sich um eine Kopie handelt."
+  * ^comment = "Eingebettet im Nachrichtenkopf"
 * ArtDerKopie 1..1 code "Art der Kopie" """
 Auswahl aus: 
 - Rezeptanforderung
@@ -20,4 +21,3 @@ Kopie der Informationen die ursprünglich übertragen wurden. Siehe
 - [Logical Model Rezeptanforderung_Storno](https://simplifier.net/erezept-servicerequest/gem-erp-sr-log-prescription-request-cancellation)
 - [Logical Model Rezeptanforderung_Bestätigung](https://simplifier.net/erezept-servicerequest/gem-erp-sr-log-prescription-request-confirmation)
 """
-  * ^comment = "Eingebettet im Nachrichtenkopf"
