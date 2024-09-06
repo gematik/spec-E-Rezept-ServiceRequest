@@ -22,6 +22,240 @@
         "path": "gem-erp-sr-log-dispense-request-confirmation",
         "short": "Logical Dispenseieranforderung_Bestätigung",
         "definition": "Fachliches Modell zur Beschreibung einer Bestätigung einer Dispenseieranforderung"
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request-confirmation.MetaDaten",
+        "path": "gem-erp-sr-log-dispense-request-confirmation.MetaDaten",
+        "short": "Metadaten im MessageHeader",
+        "definition": "Metadaten im MessageHeader",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request-confirmation.MetaDaten.Empfaenger",
+        "path": "gem-erp-sr-log-dispense-request-confirmation.MetaDaten.Empfaenger",
+        "short": "Empfänger der Nachricht",
+        "definition": "Empfänger der Nachricht",
+        "min": 1,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request-confirmation.MetaDaten.Empfaenger.KIMAdresse",
+        "path": "gem-erp-sr-log-dispense-request-confirmation.MetaDaten.Empfaenger.KIMAdresse",
+        "short": "KIM-Adresse des Empfängers",
+        "definition": "KIM-Adresse des Empfängers",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "url"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request-confirmation.MetaDaten.Empfaenger.TelematikID",
+        "path": "gem-erp-sr-log-dispense-request-confirmation.MetaDaten.Empfaenger.TelematikID",
+        "short": "Telematik-ID des Absenders",
+        "definition": "Telematik-ID des Absenders",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "url"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request-confirmation.MetaDaten.Absender",
+        "path": "gem-erp-sr-log-dispense-request-confirmation.MetaDaten.Absender",
+        "short": "Absender der Nachricht",
+        "definition": "Absender der Nachricht",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request-confirmation.MetaDaten.Absender.TelematikID",
+        "path": "gem-erp-sr-log-dispense-request-confirmation.MetaDaten.Absender.TelematikID",
+        "short": "Telematik-ID des Absenders",
+        "definition": "Telematik-ID des Absenders",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "url"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request-confirmation.MetaDaten.Absender.Name",
+        "path": "gem-erp-sr-log-dispense-request-confirmation.MetaDaten.Absender.Name",
+        "short": "Name des Absenders",
+        "definition": "Name des Absenders",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request-confirmation.MetaDaten.AbsendendesSystem",
+        "path": "gem-erp-sr-log-dispense-request-confirmation.MetaDaten.AbsendendesSystem",
+        "short": "Absendendes System",
+        "definition": "Absendendes System",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request-confirmation.MetaDaten.AbsendendesSystem.Name",
+        "path": "gem-erp-sr-log-dispense-request-confirmation.MetaDaten.AbsendendesSystem.Name",
+        "short": "Name des Herstellers des absendenden Systems",
+        "definition": "Name des Herstellers des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request-confirmation.MetaDaten.AbsendendesSystem.Software",
+        "path": "gem-erp-sr-log-dispense-request-confirmation.MetaDaten.AbsendendesSystem.Software",
+        "short": "Name der Software des absendenden Systems",
+        "definition": "Name der Software des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request-confirmation.MetaDaten.AbsendendesSystem.Version",
+        "path": "gem-erp-sr-log-dispense-request-confirmation.MetaDaten.AbsendendesSystem.Version",
+        "short": "Version des absendenden Systems",
+        "definition": "Version des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request-confirmation.MetaDaten.AbsendendesSystem.EMailKontakt",
+        "path": "gem-erp-sr-log-dispense-request-confirmation.MetaDaten.AbsendendesSystem.EMailKontakt",
+        "short": "E-Mail-Kontakt des absendenden Systems",
+        "definition": "E-Mail-Kontakt des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request-confirmation.MetaDaten.AbsendendesSystem.Website",
+        "path": "gem-erp-sr-log-dispense-request-confirmation.MetaDaten.AbsendendesSystem.Website",
+        "short": "Website des absendenden Systems",
+        "definition": "Website des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "url"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request-confirmation.Status",
+        "path": "gem-erp-sr-log-dispense-request-confirmation.Status",
+        "short": "Status",
+        "definition": "Status der Anforderung. Wird genutzt, um den Bearbeitungsstand einer Anfrage zu verfolgen. Im Falle der Dispensieranforderung wird eine erledigte Anfrage mit dem Status 'completed' geschickt und signalisiert somit eine neue Anfrage.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request-confirmation.VorgangsID",
+        "path": "gem-erp-sr-log-dispense-request-confirmation.VorgangsID",
+        "short": "ID des Vorgangs",
+        "definition": "Wird vom initialen Sender gesetzt und muss immer mitgeführt werden.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request-confirmation.ERezeptToken",
+        "path": "gem-erp-sr-log-dispense-request-confirmation.ERezeptToken",
+        "short": "E-Rezept-Token",
+        "definition": "Token der für die Einlösung der Verordnung gebraucht wird. Angabe nach gemSpec_DM_eRp#A_19554.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request-confirmation.Freitext",
+        "path": "gem-erp-sr-log-dispense-request-confirmation.Freitext",
+        "short": "Freitext",
+        "definition": "Individuelle Nachricht an den Empfänger",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request-confirmation.Anhaenge",
+        "path": "gem-erp-sr-log-dispense-request-confirmation.Anhaenge",
+        "short": "Anhänge",
+        "definition": "Anhänge zur Anforderung. Das können PDFs, Bilder oder andere Dokumente sein.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Attachment"
+          }
+        ]
       }
     ]
   }

@@ -22,6 +22,201 @@
         "path": "gem-erp-sr-log-prescription-request-cancellation",
         "short": "Logical Rezeptanforderung_Storno",
         "definition": "Fachliches Modell zur Beschreibung einer Stornierung einer Rezeptanforderung"
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten",
+        "path": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten",
+        "short": "Metadaten im MessageHeader",
+        "definition": "Metadaten im MessageHeader",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.Empfaenger",
+        "path": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.Empfaenger",
+        "short": "Empfänger der Nachricht",
+        "definition": "Empfänger der Nachricht",
+        "min": 1,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.Empfaenger.KIMAdresse",
+        "path": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.Empfaenger.KIMAdresse",
+        "short": "KIM-Adresse des Empfängers",
+        "definition": "KIM-Adresse des Empfängers",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "url"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.Empfaenger.TelematikID",
+        "path": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.Empfaenger.TelematikID",
+        "short": "Telematik-ID des Absenders",
+        "definition": "Telematik-ID des Absenders",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "url"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.Absender",
+        "path": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.Absender",
+        "short": "Absender der Nachricht",
+        "definition": "Absender der Nachricht",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.Absender.TelematikID",
+        "path": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.Absender.TelematikID",
+        "short": "Telematik-ID des Absenders",
+        "definition": "Telematik-ID des Absenders",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "url"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.Absender.Name",
+        "path": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.Absender.Name",
+        "short": "Name des Absenders",
+        "definition": "Name des Absenders",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.AbsendendesSystem",
+        "path": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.AbsendendesSystem",
+        "short": "Absendendes System",
+        "definition": "Absendendes System",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.AbsendendesSystem.Name",
+        "path": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.AbsendendesSystem.Name",
+        "short": "Name des Herstellers des absendenden Systems",
+        "definition": "Name des Herstellers des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.AbsendendesSystem.Software",
+        "path": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.AbsendendesSystem.Software",
+        "short": "Name der Software des absendenden Systems",
+        "definition": "Name der Software des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.AbsendendesSystem.Version",
+        "path": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.AbsendendesSystem.Version",
+        "short": "Version des absendenden Systems",
+        "definition": "Version des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.AbsendendesSystem.EMailKontakt",
+        "path": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.AbsendendesSystem.EMailKontakt",
+        "short": "E-Mail-Kontakt des absendenden Systems",
+        "definition": "E-Mail-Kontakt des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.AbsendendesSystem.Website",
+        "path": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.AbsendendesSystem.Website",
+        "short": "Website des absendenden Systems",
+        "definition": "Website des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "url"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-cancellation.Status",
+        "path": "gem-erp-sr-log-prescription-request-cancellation.Status",
+        "short": "Status",
+        "definition": "Status der Anforderung. Wird genutzt, um den Bearbeitungsstand einer Anfrage zu verfolgen. Im Falle der Storinierung einer Rezeptanforderung wird eine Anfrage mit dem Status 'revoked' erstellt und geschickt.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-cancellation.VorgangsID",
+        "path": "gem-erp-sr-log-prescription-request-cancellation.VorgangsID",
+        "short": "ID des Vorgangs",
+        "definition": "Wird hier genutzt, um die Anfrage die storniert werden soll, zu referenzieren.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
       }
     ]
   }
