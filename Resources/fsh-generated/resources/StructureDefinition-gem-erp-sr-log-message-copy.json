@@ -222,7 +222,7 @@
         "id": "gem-erp-sr-log-message-copy.Anforderungsinformationen",
         "path": "gem-erp-sr-log-message-copy.Anforderungsinformationen",
         "short": "Anforderungsinformationen",
-        "definition": "Kopie der Informationen die ursprünglich übertragen wurden. Siehe\n- Logical Model Rezeptanforderung\n- Logical Model Rezeptanforderung_Storno\n- Logical Model Rezeptanforderung_Bestätigung",
+        "definition": "Kopie der Informationen die ursprünglich übertragen wurden. Siehe\n- [Logical Model Rezeptanforderung](https://simplifier.net/erezept-servicerequest/gem-erp-sr-log-prescription-request)\n- [Logical Model Rezeptanforderung_Storno](https://simplifier.net/erezept-servicerequest/gem-erp-sr-log-prescription-request-cancellation)\n- [Logical Model Rezeptanforderung_Bestätigung](https://simplifier.net/erezept-servicerequest/gem-erp-sr-log-prescription-request-confirmation)",
         "min": 1,
         "max": "1",
         "type": [

@@ -15,7 +15,7 @@ Auswahl aus:
 """
 * Anforderungsinformationen 1..1 Bundle "Anforderungsinformationen" """
 Kopie der Informationen die ursprünglich übertragen wurden. Siehe
-- Logical Model Rezeptanforderung
-- Logical Model Rezeptanforderung_Storno
-- Logical Model Rezeptanforderung_Bestätigung
+- [Logical Model Rezeptanforderung](https://simplifier.net/erezept-servicerequest/gem-erp-sr-log-prescription-request)
+- [Logical Model Rezeptanforderung_Storno](https://simplifier.net/erezept-servicerequest/gem-erp-sr-log-prescription-request-cancellation)
+- [Logical Model Rezeptanforderung_Bestätigung](https://simplifier.net/erezept-servicerequest/gem-erp-sr-log-prescription-request-confirmation)
 """
