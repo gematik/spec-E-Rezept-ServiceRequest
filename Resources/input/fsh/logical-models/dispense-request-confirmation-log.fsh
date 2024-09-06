@@ -1,4 +1,4 @@
-Logical: GEM_ERP_SR_LOG_DispenseRequest-Confirmation
+Logical: GEM_ERP_SR_LOG_DispenseRequest_Confirmation
 Parent: Base
 Id: gem-erp-sr-log-dispense-request-confirmation
 Title: "Logical Dispenseieranforderung_Bestätigung"

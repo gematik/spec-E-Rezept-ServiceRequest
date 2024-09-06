@@ -3,7 +3,7 @@
   "id": "gem-erp-sr-log-prescription-request-cancellation",
   "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-prescription-request-cancellation",
   "version": "1.0",
-  "name": "GEM_ERP_SR_LOG_PrescriptionRequest-Cancellation",
+  "name": "GEM_ERP_SR_LOG_PrescriptionRequest_Cancellation",
   "title": "Logical Rezeptanforderung_Storno",
   "status": "active",
   "experimental": false,

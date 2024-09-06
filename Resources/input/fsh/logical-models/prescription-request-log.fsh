@@ -4,19 +4,7 @@ Title: "Rezeptanforderung Logical Model"
 Description: "Fachliches Modell zur Beschreibung einer Rezeptanforderung"
 * insert Versioning
 
-* MetaDaten 1..1 BackboneElement "Metadaten im MessageHeader"
-  * Empfaenger 1..* BackboneElement "Empfänger der Nachricht"
-    * KIMAdresse 1..1 url "KIM-Adresse des Empfängers"
-    * TelematikID 0..1 url "Telematik-ID des Absenders"
-  * Absender 1..1 BackboneElement "Absender der Nachricht"
-    * TelematikID 0..1 url "Telematik-ID des Absenders"
-    * Name 1..1 string "Name des Absenders"
-  * AbsendendesSystem 1..1 BackboneElement "Absendendes System"
-    * Name 1..1 string "Name des Herstellers des absendenden Systems"
-    * Software 1..1 string "Name der Software des absendenden Systems"
-    * Version 1..1 string "Version des absendenden Systems"
-    * EMailKontakt 1..1 string "E-Mail-Kontakt des absendenden Systems"
-    * Website 1..1 url "Website des absendenden Systems"
+* insert RS_LOG_MessageHeader
 
 // Administrative Informationen
 * Status 1..1 code "Status" "Status der Anforderung. Wird genutzt, um den Bearbeitungsstand einer Anfrage zu verfolgen. Im Falle der Rezeptanforderung wird eine Anfrage mit dem Status 'active' erstellt und geschickt und signalisiert somit eine neue Anfrage."
@@ -61,15 +49,15 @@ Description: "Fachliches Modell zur Beschreibung einer Rezeptanforderung"
 * Anhaenge 0..* Attachment "Anhänge" "Anhänge zur Anforderung. Das können PDFs, Bilder oder andere Dokumente sein."
 
 // Medizinische Informationen
-* Medikation 1..* BackboneElement "Medikation" "Angaben zur Medikation"
+* Medikation 1..1 BackboneElement "Medikation" "Angaben zur Medikation"
   * MedikationCodiert 0..1 CodeableConcept "Medikation codiert" "Codiertes Medikament"
     * NameDesMedikaments 1..1 string "Name des Medikaments"
     * PZN 1..1 string "PZN des Medikaments"
   * MedikationObjekt 0..1 Medication "Referenz auf das Medikamentenobjekt" "Referenz auf das Medikamentenobjekt nach KBV_Verordnung/ePA Medication"  
-* Menge 1..1 BackboneElement "Menge des Medikaments"
-  * Einheit 1..1 string "Einheit der Menge"
-  * Wert 1..1 string "Wert der Menge"
+  * Menge 1..1 BackboneElement "Menge des Medikaments"
+    * Einheit 1..1 string "Einheit der Menge"
+    * Wert 1..1 string "Wert der Menge"
 
 // Konfiguratorische Informationen
-* VersichertenEinlösung 0..1 boolean "Versicherten Einlösung" "Angabe, ob der Versicherte das E-Rezept selbst einlösen möchte."
+* VersichertenEinloesung 0..1 boolean "Versicherten Einlösung" "Angabe, ob der Versicherte das E-Rezept selbst einlösen möchte."
 * AngabeMVO 0..1 boolean "Angabe MVO" "Angabe, ob der anfordernde eine MVO wünscht. Es obliegt dem Verordnenden dem Wunsch nachzukommen. Der verordnende LE entscheidet über die Menge und die Zeiträume"

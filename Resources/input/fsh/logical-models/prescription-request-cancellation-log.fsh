@@ -1,4 +1,4 @@
-Logical: GEM_ERP_SR_LOG_PrescriptionRequest-Cancellation
+Logical: GEM_ERP_SR_LOG_PrescriptionRequest_Cancellation
 Parent: Base
 Id: gem-erp-sr-log-prescription-request-cancellation
 Title: "Logical Rezeptanforderung_Storno"

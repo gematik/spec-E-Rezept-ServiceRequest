@@ -604,7 +604,7 @@
         "short": "Medikation",
         "definition": "Angaben zur Medikation",
         "min": 1,
-        "max": "*",
+        "max": "1",
         "type": [
           {
             "code": "BackboneElement"
@@ -664,8 +664,8 @@
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request.Menge",
-        "path": "gem-erp-sr-log-prescription-request.Menge",
+        "id": "gem-erp-sr-log-prescription-request.Medikation.Menge",
+        "path": "gem-erp-sr-log-prescription-request.Medikation.Menge",
         "short": "Menge des Medikaments",
         "definition": "Menge des Medikaments",
         "min": 1,
@@ -677,8 +677,8 @@
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request.Menge.Einheit",
-        "path": "gem-erp-sr-log-prescription-request.Menge.Einheit",
+        "id": "gem-erp-sr-log-prescription-request.Medikation.Menge.Einheit",
+        "path": "gem-erp-sr-log-prescription-request.Medikation.Menge.Einheit",
         "short": "Einheit der Menge",
         "definition": "Einheit der Menge",
         "min": 1,
@@ -690,8 +690,8 @@
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request.Menge.Wert",
-        "path": "gem-erp-sr-log-prescription-request.Menge.Wert",
+        "id": "gem-erp-sr-log-prescription-request.Medikation.Menge.Wert",
+        "path": "gem-erp-sr-log-prescription-request.Medikation.Menge.Wert",
         "short": "Wert der Menge",
         "definition": "Wert der Menge",
         "min": 1,
@@ -703,8 +703,8 @@
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request.VersichertenEinlösung",
-        "path": "gem-erp-sr-log-prescription-request.VersichertenEinlösung",
+        "id": "gem-erp-sr-log-prescription-request.VersichertenEinloesung",
+        "path": "gem-erp-sr-log-prescription-request.VersichertenEinloesung",
         "short": "Versicherten Einlösung",
         "definition": "Angabe, ob der Versicherte das E-Rezept selbst einlösen möchte.",
         "min": 0,
