@@ -1,11 +1,11 @@
-@startuml name = "UC2-Rezeptanforderung-Versicherteninvolvierung"
+@startuml name = "UC2-Rezeptanforderung-Patienteninvolvierung"
 
 
 skinparam maxMessageSize 200
 
 actor "Pflegeeinrichtung" as Pflegeeinrichtung
 actor "Verordnender \nLeistungserbringer" as Arztpraxis
-actor Versicherter
+actor Patient
 actor Apotheke
 
 title UC2-Rezeptanforderung der Pflege mit Einlösung durch Patient
@@ -14,14 +14,25 @@ autonumber "<b>[0]"
 
 group "UC1-Rezeptanforderung durch Pflegeeinrichtung"
 Pflegeeinrichtung ->> Arztpraxis: //Rezeptanforderung//
+
+    opt #LightPink Stornierung
+        Pflegeeinrichtung ->> Arztpraxis: //Rezeptanforderung_Storno//
+        alt #LightPink E-Rezept noch nicht eingestellt
+        Pflegeeinrichtung -[hidden]-> Arztpraxis: Rezeptanforderung wird verworfen
+            Arztpraxis ->x Arztpraxis: Rezeptanforderung wird verworfen
+        else #LightPink E-Rezept wurde eingestellt
+            Arztpraxis ->x Arztpraxis: E-Rezept wird gelöscht
+        end
+    end
+
 Arztpraxis ->> Pflegeeinrichtung: //Rezeptanforderung_Bestätigung//
 end
 
-opt Benachrichtigung des Versicherten
-    Pflegeeinrichtung --> Versicherter: opt. Benachrichtigung über Ausstellung des E-Rezepts
+opt Benachrichtigung des Patienten
+    Pflegeeinrichtung --> Patient: opt. Benachrichtigung über Ausstellung des E-Rezepts
 end
 
-Versicherter ->> Versicherter: Beziehen des E-Rezept Tokens
+Patient ->> Patient: Beziehen des E-Rezept Tokens
 
 note left
     möglich via
@@ -30,5 +41,5 @@ note left
         3. Papierausdruck
 end note
 
-Versicherter ->> Apotheke: Medikamentabholung
+Patient ->> Apotheke: Medikamentabholung
 @enduml

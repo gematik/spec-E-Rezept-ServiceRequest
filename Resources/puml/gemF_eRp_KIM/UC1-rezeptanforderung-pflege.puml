@@ -5,6 +5,8 @@ skinparam maxMessageSize 200
 
 actor "Pflegeeinrichtung" as Pflegeeinrichtung
 actor "Verordnender \nLeistungserbringer" as Arztpraxis
+actor "Abgebender \nLeistungserbringer" as Apotheke
+entity "E-Rezept\nFachdienst" as FD
 
 title UC1-Rezeptanforderung durch Pflegeeinrichtung
 hide footbox
@@ -12,10 +14,10 @@ autonumber "<b>[0]"
 
 legend bottom right
     __Legende__
-    |<#PaleGreen> Ergebnis: Medikamentabgabe|
     |<#LightPink> Ergebnis: keine Medikamentabgabe|
 endlegend
 
+group "Rezeptanforderung durch Pflegeeinrichtung"
 Pflegeeinrichtung ->> Arztpraxis: //Rezeptanforderung//
 
 opt #LightPink Stornierung
@@ -28,13 +30,35 @@ opt #LightPink Stornierung
     end
 end
 
-alt #PaleGreen Arzt ist einverstanden 
-    
+alt Arzt ist einverstanden 
+    Arztpraxis <-> FD: E-Rezept einstellen
     Arztpraxis ->> Pflegeeinrichtung: //Rezeptanforderung_Bestätigung//
     
 else #LightPink Arzt lehnt ab
     Arztpraxis ->> Pflegeeinrichtung: //Rezeptanforderung_Storno//
 end
 
+end
+
+group  "Dispensieranforderung durch Pflegeeinrichtung"
+Pflegeeinrichtung ->> Apotheke: //Dispensieranforderung_Rezeptübermittlung//
+
+opt "Fehler bei der Bearbeitung des E-Rezeptes"
+ Apotheke -> Apotheke: Prüfung des E-Rezeptes Fehlgeschlagen
+ Apotheke -> FD: E-Rezept zurückgeben
+ group "UC3: Rezeptanforderung durch Apotheke"
+  Apotheke -> Arztpraxis: Rezeptanforderung
+  Arztpraxis -> FD: Altes E-Rezept löschen
+  Arztpraxis -> FD: Neues E-Rezept einstellen
+  Arztpraxis -> Apotheke: Rezeptanforderung_Bestätigung
+ end
+end
+
+Apotheke -> Apotheke: Einlösen des E-Rezeptes
+
+Apotheke ->> Pflegeeinrichtung: //Dispensieranforderung_Bestätigung//
+Apotheke ->> Pflegeeinrichtung: Medikamentbelieferung
+
+end
 
 @enduml
