@@ -232,58 +232,6 @@
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request.PflegeeinrichtungKopie",
-        "path": "gem-erp-sr-log-prescription-request.PflegeeinrichtungKopie",
-        "short": "Zu benachrichtigende Pflegeeinrichtung",
-        "definition": "Angaben zur Pflegeeinrichtung, die über den Ablauf der Rezeptanforderung per Kopie informiert werden soll.",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "BackboneElement"
-          }
-        ]
-      },
-      {
-        "id": "gem-erp-sr-log-prescription-request.PflegeeinrichtungKopie.PflegeeinrichtungName",
-        "path": "gem-erp-sr-log-prescription-request.PflegeeinrichtungKopie.PflegeeinrichtungName",
-        "short": "Name der Pflegeeinrichtung",
-        "definition": "Name der Pflegeeinrichtung",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "string"
-          }
-        ]
-      },
-      {
-        "id": "gem-erp-sr-log-prescription-request.PflegeeinrichtungKopie.PflegeeinrichtungTelefon",
-        "path": "gem-erp-sr-log-prescription-request.PflegeeinrichtungKopie.PflegeeinrichtungTelefon",
-        "short": "Telefonnummer der Pflegeeinrichtung",
-        "definition": "Telefonnummer der Pflegeeinrichtung",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "string"
-          }
-        ]
-      },
-      {
-        "id": "gem-erp-sr-log-prescription-request.PflegeeinrichtungKopie.PflegeeinrichtungKIMAdresse",
-        "path": "gem-erp-sr-log-prescription-request.PflegeeinrichtungKopie.PflegeeinrichtungKIMAdresse",
-        "short": "KIM-Adresse der Pflegeeinrichtung",
-        "definition": "KIM-Adresse der Pflegeeinrichtung",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "Address"
-          }
-        ]
-      },
-      {
         "id": "gem-erp-sr-log-prescription-request.involvierteParteien",
         "path": "gem-erp-sr-log-prescription-request.involvierteParteien",
         "short": "Involvierte Parteien",
@@ -449,6 +397,58 @@
         "type": [
           {
             "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request.involvierteParteien.PflegeeinrichtungKopie",
+        "path": "gem-erp-sr-log-prescription-request.involvierteParteien.PflegeeinrichtungKopie",
+        "short": "Zu benachrichtigende Pflegeeinrichtung",
+        "definition": "Angaben zur Pflegeeinrichtung, die über den Ablauf der Rezeptanforderung per Kopie informiert werden soll. Muss angegeben werden, wenn die Apotheke die Rezeptanforderung stellt.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request.involvierteParteien.PflegeeinrichtungKopie.PflegeeinrichtungName",
+        "path": "gem-erp-sr-log-prescription-request.involvierteParteien.PflegeeinrichtungKopie.PflegeeinrichtungName",
+        "short": "Name der Pflegeeinrichtung",
+        "definition": "Name der Pflegeeinrichtung",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request.involvierteParteien.PflegeeinrichtungKopie.PflegeeinrichtungTelefon",
+        "path": "gem-erp-sr-log-prescription-request.involvierteParteien.PflegeeinrichtungKopie.PflegeeinrichtungTelefon",
+        "short": "Telefonnummer der Pflegeeinrichtung",
+        "definition": "Telefonnummer der Pflegeeinrichtung",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request.involvierteParteien.PflegeeinrichtungKopie.PflegeeinrichtungKIMAdresse",
+        "path": "gem-erp-sr-log-prescription-request.involvierteParteien.PflegeeinrichtungKopie.PflegeeinrichtungKIMAdresse",
+        "short": "KIM-Adresse der Pflegeeinrichtung",
+        "definition": "KIM-Adresse der Pflegeeinrichtung",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Address"
           }
         ]
       },

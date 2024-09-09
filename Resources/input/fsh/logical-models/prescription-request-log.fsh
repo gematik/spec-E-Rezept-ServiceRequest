@@ -12,11 +12,6 @@ Description: "Fachliches Modell zur Beschreibung einer Rezeptanforderung"
 * VorgangsID 1..1 string "ID des Vorgangs" "Wird vom initialen Sender gesetzt und muss immer mitgeführt werden."
 * VorherigeRezeptID 0..1 BackboneElement "ID des vorherigen Rezepts" "Kann bei der Anforderung einer Folgeverordnung verwendet werden, um einen Bezug zu einer vorherigen Verordnung herzustellen."
 
-* PflegeeinrichtungKopie 0..1 BackboneElement "Zu benachrichtigende Pflegeeinrichtung" "Angaben zur Pflegeeinrichtung, die über den Ablauf der Rezeptanforderung per Kopie informiert werden soll."
-  * PflegeeinrichtungName 1..1 string "Name der Pflegeeinrichtung"
-  * PflegeeinrichtungTelefon 1..1 string "Telefonnummer der Pflegeeinrichtung"
-  * PflegeeinrichtungKIMAdresse 1..1 Address "KIM-Adresse der Pflegeeinrichtung"
-
 * involvierteParteien 1..* BackboneElement "Involvierte Parteien" "Angaben zu den involvierten Parteien"
   * PatientenInformationen 1..1 BackboneElement "Patienteninformationen" "Angaben zum Patienten"
     * PatientenIdentifierKVNR 1..1 string "KVNR des Patienten"
@@ -32,6 +27,11 @@ Description: "Fachliches Modell zur Beschreibung einer Rezeptanforderung"
     * AnfragenderAdresse 0..1 Address "Straßenadresse des Anfragenden"
     * AnfragenderTelefon 1..1 string "Telefonnummer des Anfragenden"
 				* AnfragenderTelematikID 1..1 string "Telematik-ID des Anfragenden"
+
+  * PflegeeinrichtungKopie 0..1 BackboneElement "Zu benachrichtigende Pflegeeinrichtung" "Angaben zur Pflegeeinrichtung, die über den Ablauf der Rezeptanforderung per Kopie informiert werden soll. Muss angegeben werden, wenn die Apotheke die Rezeptanforderung stellt."
+    * PflegeeinrichtungName 1..1 string "Name der Pflegeeinrichtung"
+    * PflegeeinrichtungTelefon 1..1 string "Telefonnummer der Pflegeeinrichtung"
+    * PflegeeinrichtungKIMAdresse 1..1 Address "KIM-Adresse der Pflegeeinrichtung"
 
 * Freitext 0..1 string "Freitext" "Individuelle Nachricht an den Empfänger"
 
