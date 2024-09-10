@@ -23,7 +23,7 @@ Description: "Beschreibt die Quelle der Rezeptanforderung Bestätigung Informati
 * ERezeptToken -> "E-Rezept-Fachdienst" "Token lässt sich aus den Informationen des E-Rezept Fachdienstes erzeugen"
 
 * Status -> "PVS" "Setzt den Status der Anfrage auf 'completed'"
-* VorgangsID -> "Nachricht: Rezeptanforderung" "VorgangsID aus der initialen Rezeptanforderung"
+* VorgangsID -> "Rezeptanforderung" "VorgangsID aus der initialen Rezeptanforderung"
 
 * Freitext -> "Nutzer des PVS" "Abfrage im Moment der Bestätigung"
     

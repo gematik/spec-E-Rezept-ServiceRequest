@@ -338,7 +338,7 @@
         "mapping": [
           {
             "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
-            "map": "Nachricht: Rezeptanforderung",
+            "map": "Rezeptanforderung",
             "comment": "VorgangsID aus der initialen Rezeptanforderung"
           }
         ]
