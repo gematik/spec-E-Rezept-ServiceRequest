@@ -10,6 +10,13 @@
   "publisher": "gematik GmbH",
   "description": "Fachliches Modell zur Beschreibung einer Dispenseieranforderung",
   "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "Quelle-Dispensieranforderung-Mapping",
+      "name": "Quelle der Dispensieranforderungsinformationen",
+      "comment": "Beschreibt die Quelle der Dispensieranforderungsinformationen. Wird von der Pflegeeinrichtung zur Anforderung zur Abgabe von Arzneimitteln verwendet."
+    }
+  ],
   "kind": "logical",
   "abstract": false,
   "type": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-dispense-request",
@@ -34,6 +41,13 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Erstellendes PS",
+            "comment": "Pflegesystem"
+          }
         ]
       },
       {
@@ -46,6 +60,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Aus Kontaktmanagement oder VZD Suche"
           }
         ]
       },
@@ -60,6 +80,12 @@
           {
             "code": "url"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Aus Kontaktmanagement oder VZD Suche"
+          }
         ]
       },
       {
@@ -72,6 +98,12 @@
         "type": [
           {
             "code": "url"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Aus Kontaktmanagement oder VZD Suche"
           }
         ]
       },
@@ -86,6 +118,13 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Erstellendes PS",
+            "comment": "Pflegesystem"
+          }
         ]
       },
       {
@@ -98,6 +137,12 @@
         "type": [
           {
             "code": "url"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Erstellendes PS, SMC-B Zertifikat"
           }
         ]
       },
@@ -112,6 +157,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Erstellendes PS"
+          }
         ]
       },
       {
@@ -124,6 +175,13 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Erstellendes PS",
+            "comment": "Automatisiert durch Software gesetzt"
           }
         ]
       },
@@ -138,6 +196,13 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Erstellendes PS",
+            "comment": "Automatisiert durch Software gesetzt"
+          }
         ]
       },
       {
@@ -150,6 +215,13 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Erstellendes PS",
+            "comment": "Automatisiert durch Software gesetzt"
           }
         ]
       },
@@ -164,6 +236,13 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Erstellendes PS",
+            "comment": "Automatisiert durch Software gesetzt"
+          }
         ]
       },
       {
@@ -176,6 +255,13 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Erstellendes PS",
+            "comment": "Automatisiert durch Software gesetzt"
           }
         ]
       },
@@ -190,6 +276,13 @@
           {
             "code": "url"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Erstellendes PS",
+            "comment": "Automatisiert durch Software gesetzt"
+          }
         ]
       },
       {
@@ -202,6 +295,13 @@
         "type": [
           {
             "code": "code"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Anfragendes PS",
+            "comment": "Setzt den Status der Anfrage auf 'active'"
           }
         ]
       },
@@ -216,6 +316,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Initiale Rezeptanforderung"
+          }
         ]
       },
       {
@@ -228,6 +334,13 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Rezeptanforderung_Bestätigung",
+            "comment": "Wurde vom verordnenden Arzt bereitgestellt"
           }
         ]
       },
@@ -242,6 +355,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": ""
+          }
         ]
       },
       {
@@ -254,6 +373,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Anfragendes PS"
           }
         ]
       },
@@ -268,6 +393,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Anfragendes PS"
+          }
         ]
       },
       {
@@ -280,6 +411,12 @@
         "type": [
           {
             "code": "Address"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Anfragendes PS"
           }
         ]
       },
@@ -294,6 +431,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Anfragendes PS"
+          }
         ]
       },
       {
@@ -306,6 +449,13 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Anfragendes PS",
+            "comment": "Aus SMC-B oder HBA Zertifikat"
           }
         ]
       },
@@ -320,6 +470,13 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Nutzer des PS",
+            "comment": "Abfrage im Moment der Anforderung"
+          }
         ]
       },
       {
@@ -333,11 +490,18 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Nutzer des PS",
+            "comment": "Abfrage im Moment der Anforderung"
+          }
         ]
       },
       {
-        "id": "gem-erp-sr-log-dispense-request.Prioritaet.Prioritaet",
-        "path": "gem-erp-sr-log-dispense-request.Prioritaet.Prioritaet",
+        "id": "gem-erp-sr-log-dispense-request.Prioritaet.PrioritaetCode",
+        "path": "gem-erp-sr-log-dispense-request.Prioritaet.PrioritaetCode",
         "short": "Priorität der Anforderung",
         "definition": "Folgende Prioritäten sind zulässig: Hoch, Normal",
         "min": 1,
@@ -345,6 +509,13 @@
         "type": [
           {
             "code": "Coding"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Nutzer des PS",
+            "comment": "Abfrage im Moment der Anforderung"
           }
         ]
       },
@@ -359,6 +530,13 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Anfragendes PS oder Nutzer des PS",
+            "comment": "Abfrage/ Eingabe im Moment der Anforderung"
+          }
         ]
       },
       {
@@ -371,6 +549,13 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Nutzer des PS",
+            "comment": "Abfrage im Moment der Anforderung"
           }
         ]
       },
@@ -388,6 +573,13 @@
               "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
             ]
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Anfragendes PS",
+            "comment": "Ggf. automatisierte Berechnung"
+          }
         ]
       },
       {
@@ -400,6 +592,13 @@
         "type": [
           {
             "code": "code"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Anfragendes PS",
+            "comment": "Ggf. automatisierte Berechnung"
           }
         ]
       },
@@ -414,6 +613,13 @@
           {
             "code": "Attachment"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Nutzer oder PS",
+            "comment": "Angabe im Moment der Bestätigung"
+          }
         ]
       },
       {
@@ -427,6 +633,13 @@
           {
             "code": "Attachment"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Nutzer, PS oder Rezeptanforderung_Bestätigung",
+            "comment": "Aktualisierung und ggf. automatische Generierung vom PS"
+          }
         ]
       },
       {
@@ -439,6 +652,12 @@
         "type": [
           {
             "code": "Attachment"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Nutzer oder PS"
           }
         ]
       }

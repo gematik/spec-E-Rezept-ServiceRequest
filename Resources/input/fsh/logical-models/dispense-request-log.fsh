@@ -16,12 +16,12 @@ Description: "Fachliches Modell zur Beschreibung einer Dispenseieranforderung"
     * AnfragenderName 1..1 string "Name des Anfragenden"
     * AnfragenderAdresse 0..1 Address "Straßenadresse des Anfragenden"
     * AnfragenderTelefon 1..1 string "Telefonnummer des Anfragenden"
-				* AnfragenderTelematikID 1..1 string "Telematik-ID des Anfragenden"
+    * AnfragenderTelematikID 1..1 string "Telematik-ID des Anfragenden"
 
 * Freitext 0..1 string "Freitext" "Individuelle Nachricht an den Empfänger"
 
 * Prioritaet 0..1 BackboneElement "Priorität" "Angabe der Priorität der Anforderung"
-  * Prioritaet 1..1 Coding "Priorität der Anforderung" "Folgende Prioritäten sind zulässig: Hoch, Normal"
+  * PrioritaetCode 1..1 Coding "Priorität der Anforderung" "Folgende Prioritäten sind zulässig: Hoch, Normal"
 
 * Restreichweite 0..1 BackboneElement "Restreichweite" "Angabe der Restreichweite"
   * Freitext 0..1 string "Restreichweite in Tage oder Anzahl an Einheiten"
