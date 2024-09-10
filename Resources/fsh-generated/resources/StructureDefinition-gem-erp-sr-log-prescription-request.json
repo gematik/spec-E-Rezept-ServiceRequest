@@ -839,10 +839,7 @@
         "max": "1",
         "type": [
           {
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
-            ]
+            "code": "string"
           }
         ],
         "mapping": [
@@ -862,7 +859,7 @@
         "max": "1",
         "type": [
           {
-            "code": "code"
+            "code": "decimal"
           }
         ],
         "mapping": [

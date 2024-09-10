@@ -44,8 +44,8 @@ Description: "Fachliches Modell zur Beschreibung einer Rezeptanforderung"
 
 * Restreichweite 0..1 BackboneElement "Restreichweite" "Angabe der Restreichweite"
   * Freitext 0..1 string "Restreichweite in Tage oder Anzahl an Einheiten"
-  * Einheit 0..1 unit "Einheit der Restreichweite"
-  * Wert 0..1 code "Wert der Restreichweite"
+  * Einheit 0..1 string "Einheit der Restreichweite"
+  * Wert 0..1 decimal "Wert der Restreichweite"
     
 * Anhaenge 0..* Attachment "Anhänge" "Anhänge zur Anforderung. Das können PDFs, Bilder oder andere Dokumente sein."
 
