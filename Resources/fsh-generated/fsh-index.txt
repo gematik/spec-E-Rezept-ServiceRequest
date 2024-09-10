@@ -43,6 +43,7 @@ StructureDefinition-gem-erp-sr-log-dispense-request.json                   GEM_E
 StructureDefinition-gem-erp-sr-log-message-copy.json                       GEM_ERP_SR_LOG_MessageCopy                             Logical     logical-models/service-request-message-copy-log.fsh       1 - 18
 StructureDefinition-gem-erp-sr-log-prescription-request-cancellation.json  GEM_ERP_SR_LOG_PrescriptionRequest_Cancellation        Logical     logical-models/prescription-request-cancellation-log.fsh  1 - 12
 StructureDefinition-gem-erp-sr-log-prescription-request-confirmation.json  GEM_ERP_SR_LOG_PrescriptionRequest_Confirmation        Logical     logical-models/prescription-request-confirmation-log.fsh  1 - 24
+StructureDefinition-gem-erp-sr-log-prescription-request-rejection.json     GEM_ERP_SR_LOG_PrescriptionRequest_Rejection           Logical     logical-models/prescription-request-cancellation-log.fsh  14 - 25
 StructureDefinition-gem-erp-sr-log-prescription-request.json               GEM_ERP_SR_LOG_PrescriptionRequest                     Logical     logical-models/prescription-request-log.fsh               1 - 64
 StructureDefinition-identifier-procedure-identifier.json                   ERPServiceRequestProcedureIdentifier                   Profile     profiles/6.2_GroupAnforderungIdentifier.fsh               1 - 10
 StructureDefinition-prescription-id-ex.json                                PrescriptionIdEx                                       Extension   extensions/PrescriptionIdEX.fsh                           1 - 19

@@ -1,38 +1,38 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "gem-erp-sr-log-prescription-request-cancellation",
-  "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-prescription-request-cancellation",
+  "id": "gem-erp-sr-log-prescription-request-rejection",
+  "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-prescription-request-rejection",
   "version": "1.0",
-  "name": "GEM_ERP_SR_LOG_PrescriptionRequest_Cancellation",
-  "title": "Logical Model Rezeptanforderung_Storno",
+  "name": "GEM_ERP_SR_LOG_PrescriptionRequest_Rejection",
+  "title": "Logical Model Rezeptanforderung_Storno (Ablehnung)",
   "status": "active",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "description": "Fachliches Modell zur Beschreibung einer Stornierung einer Rezeptanforderung seitens der Pflegeeinrichtung.",
+  "description": "Fachliches Modell zur Beschreibung einer Ablehnung einer Rezeptanforderung seitens des Verordnenden.",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
-      "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
-      "name": "Quelle der Rezeptanforderung Stornierung Informationen",
-      "comment": "Beschreibt die Quelle der Rezeptanforderung Stornierung Informatione"
+      "identity": "Quelle-Rezeptanforderung-Ablehnung-Mapping",
+      "name": "Quelle der Rezeptanforderung Ablehnung Informationen",
+      "comment": "Beschreibt die Quelle der Rezeptanforderung Ablehnung Informatione"
     }
   ],
   "kind": "logical",
   "abstract": false,
-  "type": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-prescription-request-cancellation",
+  "type": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-prescription-request-rejection",
   "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Element",
   "derivation": "specialization",
   "differential": {
     "element": [
       {
-        "id": "gem-erp-sr-log-prescription-request-cancellation",
-        "path": "gem-erp-sr-log-prescription-request-cancellation",
-        "short": "Logical Model Rezeptanforderung_Storno",
-        "definition": "Fachliches Modell zur Beschreibung einer Stornierung einer Rezeptanforderung seitens der Pflegeeinrichtung."
+        "id": "gem-erp-sr-log-prescription-request-rejection",
+        "path": "gem-erp-sr-log-prescription-request-rejection",
+        "short": "Logical Model Rezeptanforderung_Storno (Ablehnung)",
+        "definition": "Fachliches Modell zur Beschreibung einer Ablehnung einer Rezeptanforderung seitens des Verordnenden."
       },
       {
-        "id": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten",
-        "path": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten",
+        "id": "gem-erp-sr-log-prescription-request-rejection.MetaDaten",
+        "path": "gem-erp-sr-log-prescription-request-rejection.MetaDaten",
         "short": "Metadaten im MessageHeader",
         "definition": "Metadaten im MessageHeader",
         "min": 1,
@@ -44,14 +44,14 @@
         ],
         "mapping": [
           {
-            "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
-            "map": "Erstellendes PS"
+            "identity": "Quelle-Rezeptanforderung-Ablehnung-Mapping",
+            "map": "PVS"
           }
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.Empfaenger",
-        "path": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.Empfaenger",
+        "id": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.Empfaenger",
+        "path": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.Empfaenger",
         "short": "Empfänger der Nachricht",
         "definition": "Empfänger der Nachricht",
         "min": 1,
@@ -63,14 +63,14 @@
         ],
         "mapping": [
           {
-            "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
+            "identity": "Quelle-Rezeptanforderung-Ablehnung-Mapping",
             "map": "Aus initialer Rezeptanforderung"
           }
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.Empfaenger.KIMAdresse",
-        "path": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.Empfaenger.KIMAdresse",
+        "id": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.Empfaenger.KIMAdresse",
+        "path": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.Empfaenger.KIMAdresse",
         "short": "KIM-Adresse des Empfängers",
         "definition": "KIM-Adresse des Empfängers",
         "min": 1,
@@ -82,14 +82,14 @@
         ],
         "mapping": [
           {
-            "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
+            "identity": "Quelle-Rezeptanforderung-Ablehnung-Mapping",
             "map": "Aus initialer Rezeptanforderung"
           }
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.Empfaenger.TelematikID",
-        "path": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.Empfaenger.TelematikID",
+        "id": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.Empfaenger.TelematikID",
+        "path": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.Empfaenger.TelematikID",
         "short": "Telematik-ID des Absenders",
         "definition": "Telematik-ID des Absenders",
         "min": 0,
@@ -101,14 +101,14 @@
         ],
         "mapping": [
           {
-            "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
+            "identity": "Quelle-Rezeptanforderung-Ablehnung-Mapping",
             "map": "Aus initialer Rezeptanforderung"
           }
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.Absender",
-        "path": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.Absender",
+        "id": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.Absender",
+        "path": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.Absender",
         "short": "Absender der Nachricht",
         "definition": "Absender der Nachricht",
         "min": 1,
@@ -120,14 +120,14 @@
         ],
         "mapping": [
           {
-            "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
-            "map": "Erstellendes PS"
+            "identity": "Quelle-Rezeptanforderung-Ablehnung-Mapping",
+            "map": "PVS"
           }
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.Absender.TelematikID",
-        "path": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.Absender.TelematikID",
+        "id": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.Absender.TelematikID",
+        "path": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.Absender.TelematikID",
         "short": "Telematik-ID des Absenders",
         "definition": "Telematik-ID des Absenders",
         "min": 0,
@@ -139,14 +139,14 @@
         ],
         "mapping": [
           {
-            "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
-            "map": "Erstellendes PS, SMC-B oder HBA Zertifikat"
+            "identity": "Quelle-Rezeptanforderung-Ablehnung-Mapping",
+            "map": "PVS, SMC-B oder HBA Zertifikat"
           }
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.Absender.Name",
-        "path": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.Absender.Name",
+        "id": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.Absender.Name",
+        "path": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.Absender.Name",
         "short": "Name des Absenders",
         "definition": "Name des Absenders",
         "min": 1,
@@ -158,14 +158,14 @@
         ],
         "mapping": [
           {
-            "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
-            "map": "Erstellendes PS"
+            "identity": "Quelle-Rezeptanforderung-Ablehnung-Mapping",
+            "map": "PVS"
           }
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.AbsendendesSystem",
-        "path": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.AbsendendesSystem",
+        "id": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.AbsendendesSystem",
+        "path": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.AbsendendesSystem",
         "short": "Absendendes System",
         "definition": "Absendendes System",
         "min": 1,
@@ -177,15 +177,15 @@
         ],
         "mapping": [
           {
-            "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
-            "map": "Erstellendes PS",
+            "identity": "Quelle-Rezeptanforderung-Ablehnung-Mapping",
+            "map": "PVS",
             "comment": "Automatisiert durch Software gesetzt"
           }
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.AbsendendesSystem.Name",
-        "path": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.AbsendendesSystem.Name",
+        "id": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.AbsendendesSystem.Name",
+        "path": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.AbsendendesSystem.Name",
         "short": "Name des Herstellers des absendenden Systems",
         "definition": "Name des Herstellers des absendenden Systems",
         "min": 1,
@@ -197,15 +197,15 @@
         ],
         "mapping": [
           {
-            "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
-            "map": "Erstellendes PS",
+            "identity": "Quelle-Rezeptanforderung-Ablehnung-Mapping",
+            "map": "PVS",
             "comment": "Automatisiert durch Software gesetzt"
           }
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.AbsendendesSystem.Software",
-        "path": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.AbsendendesSystem.Software",
+        "id": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.AbsendendesSystem.Software",
+        "path": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.AbsendendesSystem.Software",
         "short": "Name der Software des absendenden Systems",
         "definition": "Name der Software des absendenden Systems",
         "min": 1,
@@ -217,15 +217,15 @@
         ],
         "mapping": [
           {
-            "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
-            "map": "Erstellendes PS",
+            "identity": "Quelle-Rezeptanforderung-Ablehnung-Mapping",
+            "map": "PVS",
             "comment": "Automatisiert durch Software gesetzt"
           }
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.AbsendendesSystem.Version",
-        "path": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.AbsendendesSystem.Version",
+        "id": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.AbsendendesSystem.Version",
+        "path": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.AbsendendesSystem.Version",
         "short": "Version des absendenden Systems",
         "definition": "Version des absendenden Systems",
         "min": 1,
@@ -237,15 +237,15 @@
         ],
         "mapping": [
           {
-            "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
-            "map": "Erstellendes PS",
+            "identity": "Quelle-Rezeptanforderung-Ablehnung-Mapping",
+            "map": "PVS",
             "comment": "Automatisiert durch Software gesetzt"
           }
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.AbsendendesSystem.EMailKontakt",
-        "path": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.AbsendendesSystem.EMailKontakt",
+        "id": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.AbsendendesSystem.EMailKontakt",
+        "path": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.AbsendendesSystem.EMailKontakt",
         "short": "E-Mail-Kontakt des absendenden Systems",
         "definition": "E-Mail-Kontakt des absendenden Systems",
         "min": 1,
@@ -257,15 +257,15 @@
         ],
         "mapping": [
           {
-            "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
-            "map": "Erstellendes PS",
+            "identity": "Quelle-Rezeptanforderung-Ablehnung-Mapping",
+            "map": "PVS",
             "comment": "Automatisiert durch Software gesetzt"
           }
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.AbsendendesSystem.Website",
-        "path": "gem-erp-sr-log-prescription-request-cancellation.MetaDaten.AbsendendesSystem.Website",
+        "id": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.AbsendendesSystem.Website",
+        "path": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.AbsendendesSystem.Website",
         "short": "Website des absendenden Systems",
         "definition": "Website des absendenden Systems",
         "min": 1,
@@ -277,15 +277,15 @@
         ],
         "mapping": [
           {
-            "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
-            "map": "Erstellendes PS",
+            "identity": "Quelle-Rezeptanforderung-Ablehnung-Mapping",
+            "map": "PVS",
             "comment": "Automatisiert durch Software gesetzt"
           }
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request-cancellation.Status",
-        "path": "gem-erp-sr-log-prescription-request-cancellation.Status",
+        "id": "gem-erp-sr-log-prescription-request-rejection.Status",
+        "path": "gem-erp-sr-log-prescription-request-rejection.Status",
         "short": "Status",
         "definition": "Status der Anforderung. Wird genutzt, um den Bearbeitungsstand einer Anfrage zu verfolgen. Im Falle der Storinierung einer Rezeptanforderung wird eine Anfrage mit dem Status 'revoked' erstellt und geschickt.",
         "min": 1,
@@ -297,17 +297,17 @@
         ],
         "mapping": [
           {
-            "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
-            "map": "PS",
+            "identity": "Quelle-Rezeptanforderung-Ablehnung-Mapping",
+            "map": "PVS",
             "comment": "Setzt den Status der Anfrage auf 'revoked'"
           }
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request-cancellation.Grund",
-        "path": "gem-erp-sr-log-prescription-request-cancellation.Grund",
-        "short": "Grund der Stornierung",
-        "definition": "Der Grund, warum die Stornierung angegeben wurde kann als Freitext hinterlegt werden.",
+        "id": "gem-erp-sr-log-prescription-request-rejection.Grund",
+        "path": "gem-erp-sr-log-prescription-request-rejection.Grund",
+        "short": "Grund der Ablehnung",
+        "definition": "Der Grund, warum die Rezeptanforderung abgelehnt wurde kann als Freitext hinterlegt werden.",
         "min": 1,
         "max": "1",
         "type": [
@@ -317,15 +317,15 @@
         ],
         "mapping": [
           {
-            "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
-            "map": "Nutzer des PS",
-            "comment": "Abfrage im Moment der Stornierung"
+            "identity": "Quelle-Rezeptanforderung-Ablehnung-Mapping",
+            "map": "Nutzer des PVS",
+            "comment": "Abfrage im Moment der Ablehnung"
           }
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request-cancellation.VorgangsID",
-        "path": "gem-erp-sr-log-prescription-request-cancellation.VorgangsID",
+        "id": "gem-erp-sr-log-prescription-request-rejection.VorgangsID",
+        "path": "gem-erp-sr-log-prescription-request-rejection.VorgangsID",
         "short": "ID des Vorgangs",
         "definition": "Wird hier genutzt, um die Anfrage die storniert werden soll, zu referenzieren.",
         "min": 1,
@@ -337,8 +337,8 @@
         ],
         "mapping": [
           {
-            "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
-            "map": "PS",
+            "identity": "Quelle-Rezeptanforderung-Ablehnung-Mapping",
+            "map": "PVS",
             "comment": "Aus initialer Rezeptanforderung"
           }
         ]

@@ -352,6 +352,14 @@
     "endLine": 24
   },
   {
+    "outputFile": "StructureDefinition-gem-erp-sr-log-prescription-request-rejection.json",
+    "fshName": "GEM_ERP_SR_LOG_PrescriptionRequest_Rejection",
+    "fshType": "Logical",
+    "fshFile": "logical-models/prescription-request-cancellation-log.fsh",
+    "startLine": 14,
+    "endLine": 25
+  },
+  {
     "outputFile": "StructureDefinition-gem-erp-sr-log-prescription-request.json",
     "fshName": "GEM_ERP_SR_LOG_PrescriptionRequest",
     "fshType": "Logical",
