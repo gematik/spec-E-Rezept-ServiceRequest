@@ -9,8 +9,10 @@ Description: "Fachliches Modell zur Beschreibung einer Bestätigung einer Dispen
 // Administrative Informationen
 * Status 1..1 code "Status" "Status der Anforderung. Wird genutzt, um den Bearbeitungsstand einer Anfrage zu verfolgen. Im Falle der Dispensieranforderung wird eine erledigte Anfrage mit dem Status 'completed' geschickt und signalisiert somit eine neue Anfrage."
 * VorgangsID 1..1 string "ID des Vorgangs" "Wird vom initialen Sender gesetzt und muss immer mitgeführt werden."
-* ERezeptToken 1..1 string "E-Rezept-Token" "Token der für die Einlösung der Verordnung gebraucht wird. Angabe nach gemSpec_DM_eRp#A_19554."
 
-* Freitext 0..1 string "Freitext" "Individuelle Nachricht an den Empfänger"
-    
+* Freitext 0..1 string "Freitext" "Individuelle Nachricht an den Empfänger"    
 * Anhaenge 0..* Attachment "Anhänge" "Anhänge zur Anforderung. Das können PDFs, Bilder oder andere Dokumente sein."
+
+// Medizinische Informationen
+* Medikation 1..1 BackboneElement "Medikation" "Angaben zur Medikation"
+  * MedizinischeInformationenAusVerordnung 1..1 Reference(MedicationRequest) "Medizinische Verordnungsinformationen" "MedicationRequest und Medication Objekt aus der KBV_Verordnung."

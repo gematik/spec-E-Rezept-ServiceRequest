@@ -219,19 +219,6 @@
         ]
       },
       {
-        "id": "gem-erp-sr-log-dispense-request-confirmation.ERezeptToken",
-        "path": "gem-erp-sr-log-dispense-request-confirmation.ERezeptToken",
-        "short": "E-Rezept-Token",
-        "definition": "Token der für die Einlösung der Verordnung gebraucht wird. Angabe nach gemSpec_DM_eRp#A_19554.",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "string"
-          }
-        ]
-      },
-      {
         "id": "gem-erp-sr-log-dispense-request-confirmation.Freitext",
         "path": "gem-erp-sr-log-dispense-request-confirmation.Freitext",
         "short": "Freitext",
@@ -254,6 +241,35 @@
         "type": [
           {
             "code": "Attachment"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request-confirmation.Medikation",
+        "path": "gem-erp-sr-log-dispense-request-confirmation.Medikation",
+        "short": "Medikation",
+        "definition": "Angaben zur Medikation",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request-confirmation.Medikation.MedizinischeInformationenAusVerordnung",
+        "path": "gem-erp-sr-log-dispense-request-confirmation.Medikation.MedizinischeInformationenAusVerordnung",
+        "short": "Medizinische Verordnungsinformationen",
+        "definition": "MedicationRequest und Medication Objekt aus der KBV_Verordnung.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/MedicationRequest"
+            ]
           }
         ]
       }
