@@ -393,6 +393,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Anfragendes PS"
+          }
         ]
       },
       {
@@ -405,6 +411,12 @@
         "type": [
           {
             "code": "Address"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Anfragendes PS"
           }
         ]
       },
@@ -419,11 +431,17 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Anfragendes PS"
+          }
         ]
       },
       {
-        "id": "gem-erp-sr-log-dispense-request.involvierteParteien.Anfragender.TelematikID",
-        "path": "gem-erp-sr-log-dispense-request.involvierteParteien.Anfragender.TelematikID",
+        "id": "gem-erp-sr-log-dispense-request.involvierteParteien.Anfragender.Telefon.TelematikId",
+        "path": "gem-erp-sr-log-dispense-request.involvierteParteien.Anfragender.Telefon.TelematikId",
         "short": "Telematik-ID des Anfragenden",
         "definition": "Telematik-ID des Anfragenden",
         "min": 1,
@@ -431,6 +449,13 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Anfragendes PS",
+            "comment": "Aus SMC-B oder HBA Zertifikat"
           }
         ]
       },

@@ -26,7 +26,7 @@ Description: "Fachliches Modell zur Beschreibung einer Rezeptanforderung"
     * Name 1..1 string "Name des Anfragenden"
     * Adresse 0..1 Address "Straßenadresse des Anfragenden"
     * Telefon 1..1 string "Telefonnummer des Anfragenden"
-		* TelematikID 1..1 string "Telematik-ID des Anfragenden"
+		  * TelematikId 1..1 string "Telematik-ID des Anfragenden" //Seems to be a bug that this has to be indented
 
   * PflegeeinrichtungKopie 0..1 BackboneElement "Zu benachrichtigende Pflegeeinrichtung" "Angaben zur Pflegeeinrichtung, die über den Ablauf der Rezeptanforderung per Kopie informiert werden soll. Muss angegeben werden, wenn die Apotheke die Rezeptanforderung stellt."
     * Name 1..1 string "Name der Pflegeeinrichtung"

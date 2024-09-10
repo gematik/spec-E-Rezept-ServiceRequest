@@ -31,19 +31,19 @@ Description: "Beschreibt die Quelle der Rezeptanforderungsinformationen"
     * PatientenGeburtstag -> "Anfragendes PS"
 
   * VerordnenderArzt -> "Anfragendes PS" "Falls vorher bekannt aus Kontaktmanagement oder vorheriger RezeptID"
-    * ArztLANR -> "Anfragendes PS"
-    * ArztName -> "Anfragendes PS"
+    * LANR -> "Anfragendes PS"
+    * Name -> "Anfragendes PS"
 
   * Anfragender -> "Anfragendes PS"
-    * AnfragenderName -> "Anfragendes PS"
-    * AnfragenderAdresse -> "Anfragendes PS"
-    * AnfragenderTelefon -> "Anfragendes PS"
-		* AnfragenderTelematikID -> "Anfragendes PS" "Aus SMC-B oder HBA Zertifikat"
+    * Name -> "Anfragendes PS"
+    * Adresse -> "Anfragendes PS"
+    * Telefon -> "Anfragendes PS"
+		  * TelematikId -> "Anfragendes PS" "Aus SMC-B oder HBA Zertifikat"
 
   * PflegeeinrichtungKopie -> "Anfragendes AVS" "Im Fall, dass die Apotheke die Anfrage initiiert"
-    * PflegeeinrichtungName -> "Anfragendes AVS"
-    * PflegeeinrichtungTelefon -> "Anfragendes AVS"
-    * PflegeeinrichtungKIMAdresse -> "Anfragendes AVS"
+    * Name -> "Anfragendes AVS"
+    * Telefon -> "Anfragendes AVS"
+    * KIMAdresse -> "Anfragendes AVS"
 
 * Freitext -> "Nutzer des PS" "Abfrage im Moment der Anforderung"
 

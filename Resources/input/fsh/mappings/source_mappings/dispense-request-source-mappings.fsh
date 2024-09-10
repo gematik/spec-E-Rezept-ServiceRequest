@@ -26,10 +26,10 @@ Description: "Beschreibt die Quelle der Dispensieranforderungsinformationen. Wir
 
 * involvierteParteien -> ""
   * Anfragender -> "Anfragendes PS"
-    * AnfragenderName -> "Anfragendes PS"
-    * AnfragenderAdresse -> "Anfragendes PS"
-    * AnfragenderTelefon -> "Anfragendes PS"
-    * AnfragenderTelematikID -> "Anfragendes PS" "Aus SMC-B oder HBA Zertifikat"
+    * Name -> "Anfragendes PS"
+    * Adresse -> "Anfragendes PS"
+    * Telefon -> "Anfragendes PS"
+      * TelematikId -> "Anfragendes PS" "Aus SMC-B oder HBA Zertifikat"
 
 * Freitext -> "Nutzer des PS" "Abfrage im Moment der Anforderung"
 
