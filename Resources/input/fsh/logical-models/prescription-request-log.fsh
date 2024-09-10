@@ -35,7 +35,7 @@ Description: "Fachliches Modell zur Beschreibung einer Rezeptanforderung"
 
 * Freitext 0..1 string "Freitext" "Individuelle Nachricht an den Empfänger"
 
-* GrundDerAnforderung 0..1 CodeableConcept "Grund der Anforderung" "Entweder Codiert oder als Freitext"
+* GrundDerAnforderung 0..1 BackboneElement "Grund der Anforderung" "Entweder Codiert oder als Freitext"
   * GrundCode 0..1 Coding "Code des Grundes" "Folgende Gründe sind vorgesehen: Korrektur, Reichweite erschöpft(Dauermedikation), nach Vitalwertmessung, nach Bedarf (z.B. aufgrund von Schmerzen)"
   * GrundText 0..1 string "Text des Grundes"
 
