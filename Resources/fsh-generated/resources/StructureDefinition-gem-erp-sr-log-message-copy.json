@@ -10,6 +10,13 @@
   "publisher": "gematik GmbH",
   "description": "Fachliches Modell zur Beschreibung einer Kopie für die Pflegeeinrichtung.",
   "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "Quelle-Message-Copy-Mapping",
+      "name": "Quelle der Informationen für die Nachrichtenkopie",
+      "comment": "Beschreibt die Quelle der Informationen für die Nachrichtenkopie. Diese werden immer versendet, wenn die Rezeptanforderung und deren Bestätigung zwischen Arzt und Apotheke ausgetauscht werden."
+    }
+  ],
   "kind": "logical",
   "abstract": false,
   "type": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-message-copy",
@@ -34,6 +41,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Message-Copy-Mapping",
+            "map": "Erstellendes PS"
+          }
         ]
       },
       {
@@ -46,6 +59,13 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Message-Copy-Mapping",
+            "map": "VZD oder Rezeptanforderung",
+            "comment": "Wenn die Nachricht initial erstellt wird kann die Apotheke die Informationen aus dem System oder VZD beziehen. Der Verordnende kann die Informationen aus der Rezeptanforderung beziehen."
           }
         ]
       },
@@ -60,6 +80,13 @@
           {
             "code": "url"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Message-Copy-Mapping",
+            "map": "VZD oder Rezeptanforderung",
+            "comment": "Wenn die Nachricht initial erstellt wird kann die Apotheke die Informationen aus dem System oder VZD beziehen. Der Verordnende kann die Informationen aus der Rezeptanforderung beziehen."
+          }
         ]
       },
       {
@@ -72,6 +99,13 @@
         "type": [
           {
             "code": "url"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Message-Copy-Mapping",
+            "map": "VZD oder Rezeptanforderung",
+            "comment": "Wenn die Nachricht initial erstellt wird kann die Apotheke die Informationen aus dem System oder VZD beziehen. Der Verordnende kann die Informationen aus der Rezeptanforderung beziehen."
           }
         ]
       },
@@ -86,6 +120,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Message-Copy-Mapping",
+            "map": "Erstellendes PS"
+          }
         ]
       },
       {
@@ -98,6 +138,12 @@
         "type": [
           {
             "code": "url"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Message-Copy-Mapping",
+            "map": "Erstellendes PS, SMC-B oder HBA Zertifikat"
           }
         ]
       },
@@ -112,6 +158,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Message-Copy-Mapping",
+            "map": "Erstellendes PS"
+          }
         ]
       },
       {
@@ -124,6 +176,13 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Message-Copy-Mapping",
+            "map": "Erstellendes PS",
+            "comment": "Automatisiert durch Software gesetzt"
           }
         ]
       },
@@ -138,6 +197,13 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Message-Copy-Mapping",
+            "map": "Erstellendes PS",
+            "comment": "Automatisiert durch Software gesetzt"
+          }
         ]
       },
       {
@@ -150,6 +216,13 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Message-Copy-Mapping",
+            "map": "Erstellendes PS",
+            "comment": "Automatisiert durch Software gesetzt"
           }
         ]
       },
@@ -164,6 +237,13 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Message-Copy-Mapping",
+            "map": "Erstellendes PS",
+            "comment": "Automatisiert durch Software gesetzt"
+          }
         ]
       },
       {
@@ -177,6 +257,13 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Message-Copy-Mapping",
+            "map": "Erstellendes PS",
+            "comment": "Automatisiert durch Software gesetzt"
+          }
         ]
       },
       {
@@ -189,6 +276,13 @@
         "type": [
           {
             "code": "url"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Message-Copy-Mapping",
+            "map": "Erstellendes PS",
+            "comment": "Automatisiert durch Software gesetzt"
           }
         ]
       },
@@ -204,6 +298,12 @@
           {
             "code": "boolean"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Message-Copy-Mapping",
+            "map": "Erstellendes PS"
+          }
         ]
       },
       {
@@ -218,18 +318,31 @@
           {
             "code": "code"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Message-Copy-Mapping",
+            "map": "Erstellendes PS",
+            "comment": "Das PS, dass die Nachricht verschickt, kennt den Status im Flow und setzt den entsprechenden Wert."
+          }
         ]
       },
       {
         "id": "gem-erp-sr-log-message-copy.Anforderungsinformationen",
         "path": "gem-erp-sr-log-message-copy.Anforderungsinformationen",
         "short": "Anforderungsinformationen",
-        "definition": "Kopie der Informationen die ursprünglich übertragen wurden. Siehe\n- [Logical Model Rezeptanforderung](https://simplifier.net/erezept-servicerequest/gem-erp-sr-log-prescription-request)\n- [Logical Model Rezeptanforderung_Storno](https://simplifier.net/erezept-servicerequest/gem-erp-sr-log-prescription-request-cancellation)\n- [Logical Model Rezeptanforderung_Bestätigung](https://simplifier.net/erezept-servicerequest/gem-erp-sr-log-prescription-request-confirmation)",
+        "definition": "Kopie der Informationen, die dem Empfänger des Originals übertragen wurden. Dabei wird der komplette Datensatz versendet. Siehe\n- [Logical Model Rezeptanforderung](https://simplifier.net/erezept-servicerequest/gem-erp-sr-log-prescription-request)\n- [Logical Model Rezeptanforderung_Storno](https://simplifier.net/erezept-servicerequest/gem-erp-sr-log-prescription-request-cancellation)\n- [Logical Model Rezeptanforderung_Bestätigung](https://simplifier.net/erezept-servicerequest/gem-erp-sr-log-prescription-request-confirmation)",
         "min": 1,
         "max": "1",
         "type": [
           {
             "code": "Bundle"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Message-Copy-Mapping",
+            "map": "FHIR-Datensatz der zum Empfänger des Originals geschickt wird"
           }
         ]
       }

@@ -16,7 +16,7 @@ Auswahl aus:
 """
   * ^comment = "Eingebettet im Nachrichtenkopf"
 * Anforderungsinformationen 1..1 Bundle "Anforderungsinformationen" """
-Kopie der Informationen die ursprünglich übertragen wurden. Siehe
+Kopie der Informationen, die dem Empfänger des Originals übertragen wurden. Dabei wird der komplette Datensatz versendet. Siehe
 - [Logical Model Rezeptanforderung](https://simplifier.net/erezept-servicerequest/gem-erp-sr-log-prescription-request)
 - [Logical Model Rezeptanforderung_Storno](https://simplifier.net/erezept-servicerequest/gem-erp-sr-log-prescription-request-cancellation)
 - [Logical Model Rezeptanforderung_Bestätigung](https://simplifier.net/erezept-servicerequest/gem-erp-sr-log-prescription-request-confirmation)
