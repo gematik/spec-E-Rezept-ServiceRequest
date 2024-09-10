@@ -16,6 +16,8 @@ Description: "Fachliches Modell zur Beschreibung einer Bestätigung einer Rezept
 * Freitext 0..1 string "Freitext" "Individuelle Nachricht an den Empfänger"
     
 * Anhaenge 0..* Attachment "Anhänge" "Anhänge zur Bestätigung. Das können PDFs, Bilder oder andere Dokumente sein."
+  * Medikationsplan 0..1 Attachment "Medikationsplan" "Anhang des Medikationsplans"
+  * weitereAnhaenge 0..* Attachment "Weitere Anhänge" "Weitere Anhänge"
 
 // Medizinische Informationen
 * Medikation 1..1 BackboneElement "Medikation" "Angaben zur Medikation"

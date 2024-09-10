@@ -28,4 +28,6 @@ Description: "Fachliches Modell zur Beschreibung einer Dispenseieranforderung"
   * Einheit 0..1 unit "Einheit der Restreichweite"
   * Wert 0..1 code "Wert der Restreichweite"
     
-* Anhaenge 0..* Attachment "Anhänge" "Anhänge zur Anforderung. Das können PDFs, Bilder oder andere Dokumente sein."
+* Anhaenge 0..* Attachment "Anhänge" "Anhänge zur Bestätigung. Das können PDFs, Bilder oder andere Dokumente sein."
+  * Medikationsplan 0..1 Attachment "Medikationsplan" "Anhang des Medikationsplans"
+  * weitereAnhaenge 0..* Attachment "Weitere Anhänge" "Weitere Anhänge"

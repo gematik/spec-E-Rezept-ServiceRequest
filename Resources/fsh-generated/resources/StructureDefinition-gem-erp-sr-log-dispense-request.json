@@ -407,7 +407,33 @@
         "id": "gem-erp-sr-log-dispense-request.Anhaenge",
         "path": "gem-erp-sr-log-dispense-request.Anhaenge",
         "short": "Anhänge",
-        "definition": "Anhänge zur Anforderung. Das können PDFs, Bilder oder andere Dokumente sein.",
+        "definition": "Anhänge zur Bestätigung. Das können PDFs, Bilder oder andere Dokumente sein.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Attachment"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.Anhaenge.Medikationsplan",
+        "path": "gem-erp-sr-log-dispense-request.Anhaenge.Medikationsplan",
+        "short": "Medikationsplan",
+        "definition": "Anhang des Medikationsplans",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Attachment"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.Anhaenge.weitereAnhaenge",
+        "path": "gem-erp-sr-log-dispense-request.Anhaenge.weitereAnhaenge",
+        "short": "Weitere Anhänge",
+        "definition": "Weitere Anhänge",
         "min": 0,
         "max": "*",
         "type": [
