@@ -18,15 +18,15 @@ Description: "Fachliches Modell zur Beschreibung einer Rezeptanforderung"
     * PatientenName 1..1 HumanName "Name des Patienten" "Strukturierte Angabe des Namens des Patienten"
     * PatientenGeburtstag 1..1 date "Geburtstag des Patienten" "Angabe des Geburtstags mit Jahr, Monat und Tag"
 
-  * VerordnenderArzt 1..1 BackboneElement "Verordnender Arzt" "Angaben zum verordnenden Arzt"
-    * ArztLANR 1..1 string "LANR des Arztes"
-				* ArztName 1..1 HumanName "Name des Arztes"
+  * VerordnenderArzt 0..1 BackboneElement "Verordnender Arzt" "Angaben zum verordnenden Arzt. Anzugeben, wenn ein Arzt zur Ausstellung identifiziert werden kann."
+    * ArztLANR 0..1 string "LANR des Arztes"
+    * ArztName 1..1 HumanName "Name des Arztes"
 
   * Anfragender 1..1 BackboneElement "Anfragender" "Angaben zum anfragenden"
     * AnfragenderName 1..1 string "Name des Anfragenden"
     * AnfragenderAdresse 0..1 Address "Straßenadresse des Anfragenden"
     * AnfragenderTelefon 1..1 string "Telefonnummer des Anfragenden"
-				* AnfragenderTelematikID 1..1 string "Telematik-ID des Anfragenden"
+		* AnfragenderTelematikID 1..1 string "Telematik-ID des Anfragenden"
 
   * PflegeeinrichtungKopie 0..1 BackboneElement "Zu benachrichtigende Pflegeeinrichtung" "Angaben zur Pflegeeinrichtung, die über den Ablauf der Rezeptanforderung per Kopie informiert werden soll. Muss angegeben werden, wenn die Apotheke die Rezeptanforderung stellt."
     * PflegeeinrichtungName 1..1 string "Name der Pflegeeinrichtung"
@@ -40,7 +40,7 @@ Description: "Fachliches Modell zur Beschreibung einer Rezeptanforderung"
   * GrundText 0..1 string "Text des Grundes"
 
 * Prioritaet 0..1 BackboneElement "Priorität" "Angabe der Priorität der Anforderung"
-  * Prioritaet 1..1 Coding "Priorität der Anforderung" "Folgende Prioritäten sind zulässig: Hoch, Normal"
+  * PrioritaetCode 1..1 Coding "Priorität der Anforderung" "Folgende Prioritäten sind zulässig: Hoch, Normal"
 
 * Restreichweite 0..1 BackboneElement "Restreichweite" "Angabe der Restreichweite"
   * Freitext 0..1 string "Restreichweite in Tage oder Anzahl an Einheiten"
