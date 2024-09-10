@@ -383,8 +383,8 @@
         ]
       },
       {
-        "id": "gem-erp-sr-log-dispense-request.involvierteParteien.Anfragender.AnfragenderName",
-        "path": "gem-erp-sr-log-dispense-request.involvierteParteien.Anfragender.AnfragenderName",
+        "id": "gem-erp-sr-log-dispense-request.involvierteParteien.Anfragender.Name",
+        "path": "gem-erp-sr-log-dispense-request.involvierteParteien.Anfragender.Name",
         "short": "Name des Anfragenden",
         "definition": "Name des Anfragenden",
         "min": 1,
@@ -393,17 +393,11 @@
           {
             "code": "string"
           }
-        ],
-        "mapping": [
-          {
-            "identity": "Quelle-Dispensieranforderung-Mapping",
-            "map": "Anfragendes PS"
-          }
         ]
       },
       {
-        "id": "gem-erp-sr-log-dispense-request.involvierteParteien.Anfragender.AnfragenderAdresse",
-        "path": "gem-erp-sr-log-dispense-request.involvierteParteien.Anfragender.AnfragenderAdresse",
+        "id": "gem-erp-sr-log-dispense-request.involvierteParteien.Anfragender.Adresse",
+        "path": "gem-erp-sr-log-dispense-request.involvierteParteien.Anfragender.Adresse",
         "short": "Straßenadresse des Anfragenden",
         "definition": "Straßenadresse des Anfragenden",
         "min": 0,
@@ -412,17 +406,11 @@
           {
             "code": "Address"
           }
-        ],
-        "mapping": [
-          {
-            "identity": "Quelle-Dispensieranforderung-Mapping",
-            "map": "Anfragendes PS"
-          }
         ]
       },
       {
-        "id": "gem-erp-sr-log-dispense-request.involvierteParteien.Anfragender.AnfragenderTelefon",
-        "path": "gem-erp-sr-log-dispense-request.involvierteParteien.Anfragender.AnfragenderTelefon",
+        "id": "gem-erp-sr-log-dispense-request.involvierteParteien.Anfragender.Telefon",
+        "path": "gem-erp-sr-log-dispense-request.involvierteParteien.Anfragender.Telefon",
         "short": "Telefonnummer des Anfragenden",
         "definition": "Telefonnummer des Anfragenden",
         "min": 1,
@@ -431,17 +419,11 @@
           {
             "code": "string"
           }
-        ],
-        "mapping": [
-          {
-            "identity": "Quelle-Dispensieranforderung-Mapping",
-            "map": "Anfragendes PS"
-          }
         ]
       },
       {
-        "id": "gem-erp-sr-log-dispense-request.involvierteParteien.Anfragender.AnfragenderTelematikID",
-        "path": "gem-erp-sr-log-dispense-request.involvierteParteien.Anfragender.AnfragenderTelematikID",
+        "id": "gem-erp-sr-log-dispense-request.involvierteParteien.Anfragender.TelematikID",
+        "path": "gem-erp-sr-log-dispense-request.involvierteParteien.Anfragender.TelematikID",
         "short": "Telematik-ID des Anfragenden",
         "definition": "Telematik-ID des Anfragenden",
         "min": 1,
@@ -449,13 +431,6 @@
         "type": [
           {
             "code": "string"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "Quelle-Dispensieranforderung-Mapping",
-            "map": "Anfragendes PS",
-            "comment": "Aus SMC-B oder HBA Zertifikat"
           }
         ]
       },

@@ -13,10 +13,10 @@ Description: "Fachliches Modell zur Beschreibung einer Dispenseieranforderung"
 
 * involvierteParteien 1..* BackboneElement "Involvierte Parteien" "Angaben zu den involvierten Parteien"
   * Anfragender 1..1 BackboneElement "Anfragender" "Angaben zum anfragenden"
-    * AnfragenderName 1..1 string "Name des Anfragenden"
-    * AnfragenderAdresse 0..1 Address "Straßenadresse des Anfragenden"
-    * AnfragenderTelefon 1..1 string "Telefonnummer des Anfragenden"
-    * AnfragenderTelematikID 1..1 string "Telematik-ID des Anfragenden"
+    * Name 1..1 string "Name des Anfragenden"
+    * Adresse 0..1 Address "Straßenadresse des Anfragenden"
+    * Telefon 1..1 string "Telefonnummer des Anfragenden"
+    * TelematikID 1..1 string "Telematik-ID des Anfragenden"
 
 * Freitext 0..1 string "Freitext" "Individuelle Nachricht an den Empfänger"
 

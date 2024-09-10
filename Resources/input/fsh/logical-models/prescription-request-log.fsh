@@ -19,19 +19,19 @@ Description: "Fachliches Modell zur Beschreibung einer Rezeptanforderung"
     * PatientenGeburtstag 1..1 date "Geburtstag des Patienten" "Angabe des Geburtstags mit Jahr, Monat und Tag"
 
   * VerordnenderArzt 0..1 BackboneElement "Verordnender Arzt" "Angaben zum verordnenden Arzt. Anzugeben, wenn ein Arzt zur Ausstellung identifiziert werden kann."
-    * ArztLANR 0..1 string "LANR des Arztes"
-    * ArztName 1..1 HumanName "Name des Arztes"
+    * LANR 0..1 string "LANR des Arztes"
+    * Name 1..1 HumanName "Name des Arztes"
 
   * Anfragender 1..1 BackboneElement "Anfragender" "Angaben zum anfragenden"
-    * AnfragenderName 1..1 string "Name des Anfragenden"
-    * AnfragenderAdresse 0..1 Address "Straßenadresse des Anfragenden"
-    * AnfragenderTelefon 1..1 string "Telefonnummer des Anfragenden"
-		* AnfragenderTelematikID 1..1 string "Telematik-ID des Anfragenden"
+    * Name 1..1 string "Name des Anfragenden"
+    * Adresse 0..1 Address "Straßenadresse des Anfragenden"
+    * Telefon 1..1 string "Telefonnummer des Anfragenden"
+		* TelematikID 1..1 string "Telematik-ID des Anfragenden"
 
   * PflegeeinrichtungKopie 0..1 BackboneElement "Zu benachrichtigende Pflegeeinrichtung" "Angaben zur Pflegeeinrichtung, die über den Ablauf der Rezeptanforderung per Kopie informiert werden soll. Muss angegeben werden, wenn die Apotheke die Rezeptanforderung stellt."
-    * PflegeeinrichtungName 1..1 string "Name der Pflegeeinrichtung"
-    * PflegeeinrichtungTelefon 1..1 string "Telefonnummer der Pflegeeinrichtung"
-    * PflegeeinrichtungKIMAdresse 1..1 Address "KIM-Adresse der Pflegeeinrichtung"
+    * Name 1..1 string "Name der Pflegeeinrichtung"
+    * Telefon 1..1 string "Telefonnummer der Pflegeeinrichtung"
+    * KIMAdresse 1..1 Address "KIM-Adresse der Pflegeeinrichtung"
 
 * Freitext 0..1 string "Freitext" "Individuelle Nachricht an den Empfänger"
 

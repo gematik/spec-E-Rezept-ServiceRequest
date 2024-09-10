@@ -460,8 +460,8 @@
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request.involvierteParteien.VerordnenderArzt.ArztLANR",
-        "path": "gem-erp-sr-log-prescription-request.involvierteParteien.VerordnenderArzt.ArztLANR",
+        "id": "gem-erp-sr-log-prescription-request.involvierteParteien.VerordnenderArzt.LANR",
+        "path": "gem-erp-sr-log-prescription-request.involvierteParteien.VerordnenderArzt.LANR",
         "short": "LANR des Arztes",
         "definition": "LANR des Arztes",
         "min": 0,
@@ -470,17 +470,11 @@
           {
             "code": "string"
           }
-        ],
-        "mapping": [
-          {
-            "identity": "Quelle-Rezeptanforderung-Mapping",
-            "map": "Anfragendes PS"
-          }
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request.involvierteParteien.VerordnenderArzt.ArztName",
-        "path": "gem-erp-sr-log-prescription-request.involvierteParteien.VerordnenderArzt.ArztName",
+        "id": "gem-erp-sr-log-prescription-request.involvierteParteien.VerordnenderArzt.Name",
+        "path": "gem-erp-sr-log-prescription-request.involvierteParteien.VerordnenderArzt.Name",
         "short": "Name des Arztes",
         "definition": "Name des Arztes",
         "min": 1,
@@ -488,12 +482,6 @@
         "type": [
           {
             "code": "HumanName"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "Quelle-Rezeptanforderung-Mapping",
-            "map": "Anfragendes PS"
           }
         ]
       },
@@ -517,8 +505,8 @@
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request.involvierteParteien.Anfragender.AnfragenderName",
-        "path": "gem-erp-sr-log-prescription-request.involvierteParteien.Anfragender.AnfragenderName",
+        "id": "gem-erp-sr-log-prescription-request.involvierteParteien.Anfragender.Name",
+        "path": "gem-erp-sr-log-prescription-request.involvierteParteien.Anfragender.Name",
         "short": "Name des Anfragenden",
         "definition": "Name des Anfragenden",
         "min": 1,
@@ -527,17 +515,11 @@
           {
             "code": "string"
           }
-        ],
-        "mapping": [
-          {
-            "identity": "Quelle-Rezeptanforderung-Mapping",
-            "map": "Anfragendes PS"
-          }
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request.involvierteParteien.Anfragender.AnfragenderAdresse",
-        "path": "gem-erp-sr-log-prescription-request.involvierteParteien.Anfragender.AnfragenderAdresse",
+        "id": "gem-erp-sr-log-prescription-request.involvierteParteien.Anfragender.Adresse",
+        "path": "gem-erp-sr-log-prescription-request.involvierteParteien.Anfragender.Adresse",
         "short": "Straßenadresse des Anfragenden",
         "definition": "Straßenadresse des Anfragenden",
         "min": 0,
@@ -546,17 +528,11 @@
           {
             "code": "Address"
           }
-        ],
-        "mapping": [
-          {
-            "identity": "Quelle-Rezeptanforderung-Mapping",
-            "map": "Anfragendes PS"
-          }
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request.involvierteParteien.Anfragender.AnfragenderTelefon",
-        "path": "gem-erp-sr-log-prescription-request.involvierteParteien.Anfragender.AnfragenderTelefon",
+        "id": "gem-erp-sr-log-prescription-request.involvierteParteien.Anfragender.Telefon",
+        "path": "gem-erp-sr-log-prescription-request.involvierteParteien.Anfragender.Telefon",
         "short": "Telefonnummer des Anfragenden",
         "definition": "Telefonnummer des Anfragenden",
         "min": 1,
@@ -565,17 +541,11 @@
           {
             "code": "string"
           }
-        ],
-        "mapping": [
-          {
-            "identity": "Quelle-Rezeptanforderung-Mapping",
-            "map": "Anfragendes PS"
-          }
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request.involvierteParteien.AnfragenderTelematikID",
-        "path": "gem-erp-sr-log-prescription-request.involvierteParteien.AnfragenderTelematikID",
+        "id": "gem-erp-sr-log-prescription-request.involvierteParteien.TelematikID",
+        "path": "gem-erp-sr-log-prescription-request.involvierteParteien.TelematikID",
         "short": "Telematik-ID des Anfragenden",
         "definition": "Telematik-ID des Anfragenden",
         "min": 1,
@@ -583,13 +553,6 @@
         "type": [
           {
             "code": "string"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "Quelle-Rezeptanforderung-Mapping",
-            "map": "Anfragendes PS",
-            "comment": "Aus SMC-B oder HBA Zertifikat"
           }
         ]
       },
@@ -614,8 +577,8 @@
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request.involvierteParteien.PflegeeinrichtungKopie.PflegeeinrichtungName",
-        "path": "gem-erp-sr-log-prescription-request.involvierteParteien.PflegeeinrichtungKopie.PflegeeinrichtungName",
+        "id": "gem-erp-sr-log-prescription-request.involvierteParteien.PflegeeinrichtungKopie.Name",
+        "path": "gem-erp-sr-log-prescription-request.involvierteParteien.PflegeeinrichtungKopie.Name",
         "short": "Name der Pflegeeinrichtung",
         "definition": "Name der Pflegeeinrichtung",
         "min": 1,
@@ -624,17 +587,11 @@
           {
             "code": "string"
           }
-        ],
-        "mapping": [
-          {
-            "identity": "Quelle-Rezeptanforderung-Mapping",
-            "map": "Anfragendes AVS"
-          }
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request.involvierteParteien.PflegeeinrichtungKopie.PflegeeinrichtungTelefon",
-        "path": "gem-erp-sr-log-prescription-request.involvierteParteien.PflegeeinrichtungKopie.PflegeeinrichtungTelefon",
+        "id": "gem-erp-sr-log-prescription-request.involvierteParteien.PflegeeinrichtungKopie.Telefon",
+        "path": "gem-erp-sr-log-prescription-request.involvierteParteien.PflegeeinrichtungKopie.Telefon",
         "short": "Telefonnummer der Pflegeeinrichtung",
         "definition": "Telefonnummer der Pflegeeinrichtung",
         "min": 1,
@@ -643,17 +600,11 @@
           {
             "code": "string"
           }
-        ],
-        "mapping": [
-          {
-            "identity": "Quelle-Rezeptanforderung-Mapping",
-            "map": "Anfragendes AVS"
-          }
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request.involvierteParteien.PflegeeinrichtungKopie.PflegeeinrichtungKIMAdresse",
-        "path": "gem-erp-sr-log-prescription-request.involvierteParteien.PflegeeinrichtungKopie.PflegeeinrichtungKIMAdresse",
+        "id": "gem-erp-sr-log-prescription-request.involvierteParteien.PflegeeinrichtungKopie.KIMAdresse",
+        "path": "gem-erp-sr-log-prescription-request.involvierteParteien.PflegeeinrichtungKopie.KIMAdresse",
         "short": "KIM-Adresse der Pflegeeinrichtung",
         "definition": "KIM-Adresse der Pflegeeinrichtung",
         "min": 1,
@@ -661,12 +612,6 @@
         "type": [
           {
             "code": "Address"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "Quelle-Rezeptanforderung-Mapping",
-            "map": "Anfragendes AVS"
           }
         ]
       },
