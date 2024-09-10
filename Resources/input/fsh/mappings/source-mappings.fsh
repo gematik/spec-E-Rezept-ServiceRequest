@@ -1,6 +1,6 @@
 Mapping: GEM_ERP_SR_LOG_PrescriptionRequestSourceMapping
 Source: GEM_ERP_SR_LOG_PrescriptionRequest
-Id: Rezeptanforderung-Source-Mapping
+Id: Quelle-Rezeptanforderung-Mapping
 Title: "Quelle der Rezeptanforderungsinformationen"
 Description: "Beschreibt die Quelle der Rezeptanforderungsinformationen"
 
