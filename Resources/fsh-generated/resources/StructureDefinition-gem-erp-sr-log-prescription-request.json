@@ -10,6 +10,13 @@
   "publisher": "gematik GmbH",
   "description": "Fachliches Modell zur Beschreibung einer Rezeptanforderung",
   "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "Rezeptanforderung-Source-Mapping",
+      "name": "Quellinformationen der Rezeptanforderung",
+      "comment": "Mapping for 'fachliche Informationseinheiten' of the 'Verordnungsanfrage' of the feature document"
+    }
+  ],
   "kind": "logical",
   "abstract": false,
   "type": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-prescription-request",
@@ -21,7 +28,13 @@
         "id": "gem-erp-sr-log-prescription-request",
         "path": "gem-erp-sr-log-prescription-request",
         "short": "Logical Model Rezeptanforderung",
-        "definition": "Fachliches Modell zur Beschreibung einer Rezeptanforderung"
+        "definition": "Fachliches Modell zur Beschreibung einer Rezeptanforderung",
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": "Rezeptanforderung"
+          }
+        ]
       },
       {
         "id": "gem-erp-sr-log-prescription-request.MetaDaten",
@@ -203,6 +216,12 @@
           {
             "code": "code"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": "PS"
+          }
         ]
       },
       {
@@ -215,6 +234,12 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
           }
         ]
       },
@@ -229,6 +254,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
+          }
         ]
       },
       {
@@ -241,6 +272,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
           }
         ]
       },
@@ -255,6 +292,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
+          }
         ]
       },
       {
@@ -267,6 +310,12 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
           }
         ]
       },
@@ -281,6 +330,12 @@
           {
             "code": "HumanName"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
+          }
         ]
       },
       {
@@ -293,6 +348,12 @@
         "type": [
           {
             "code": "date"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
           }
         ]
       },
@@ -307,6 +368,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
+          }
         ]
       },
       {
@@ -319,6 +386,12 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
           }
         ]
       },
@@ -333,6 +406,12 @@
           {
             "code": "HumanName"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
+          }
         ]
       },
       {
@@ -345,6 +424,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
           }
         ]
       },
@@ -359,6 +444,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
+          }
         ]
       },
       {
@@ -371,6 +462,12 @@
         "type": [
           {
             "code": "Address"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
           }
         ]
       },
@@ -385,6 +482,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
+          }
         ]
       },
       {
@@ -397,6 +500,12 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
           }
         ]
       },
@@ -411,6 +520,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
+          }
         ]
       },
       {
@@ -423,6 +538,12 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
           }
         ]
       },
@@ -437,6 +558,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
+          }
         ]
       },
       {
@@ -449,6 +576,12 @@
         "type": [
           {
             "code": "Address"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
           }
         ]
       },
@@ -463,6 +596,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
+          }
         ]
       },
       {
@@ -475,6 +614,12 @@
         "type": [
           {
             "code": "CodeableConcept"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
           }
         ]
       },
@@ -489,6 +634,12 @@
           {
             "code": "Coding"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
+          }
         ]
       },
       {
@@ -501,6 +652,12 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
           }
         ]
       },
@@ -515,6 +672,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
+          }
         ]
       },
       {
@@ -527,6 +690,12 @@
         "type": [
           {
             "code": "Coding"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
           }
         ]
       },
@@ -541,6 +710,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
+          }
         ]
       },
       {
@@ -553,6 +728,12 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
           }
         ]
       },
@@ -570,6 +751,12 @@
               "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
             ]
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
+          }
         ]
       },
       {
@@ -582,6 +769,12 @@
         "type": [
           {
             "code": "code"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
           }
         ]
       },
@@ -596,6 +789,12 @@
           {
             "code": "Attachment"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
+          }
         ]
       },
       {
@@ -608,6 +807,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
           }
         ]
       },
@@ -622,6 +827,12 @@
           {
             "code": "CodeableConcept"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
+          }
         ]
       },
       {
@@ -634,6 +845,12 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
           }
         ]
       },
@@ -648,6 +865,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
+          }
         ]
       },
       {
@@ -660,6 +883,12 @@
         "type": [
           {
             "code": "Medication"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
           }
         ]
       },
@@ -674,6 +903,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
+          }
         ]
       },
       {
@@ -686,6 +921,12 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
           }
         ]
       },
@@ -700,6 +941,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
+          }
         ]
       },
       {
@@ -713,6 +960,12 @@
           {
             "code": "boolean"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
+          }
         ]
       },
       {
@@ -725,6 +978,12 @@
         "type": [
           {
             "code": "boolean"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Source-Mapping",
+            "map": ""
           }
         ]
       }
