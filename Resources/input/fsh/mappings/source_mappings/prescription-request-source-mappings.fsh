@@ -4,6 +4,21 @@ Id: Quelle-Rezeptanforderung-Mapping
 Title: "Quelle der Rezeptanforderungsinformationen"
 Description: "Beschreibt die Quelle der Rezeptanforderungsinformationen"
 
+// MetaDaten
+* MetaDaten -> "Erstellendes PS"
+  * Empfaenger -> "Aus Kontaktmanagement oder VZD Suche"
+    * KIMAdresse -> "Aus Kontaktmanagement oder VZD Suche"
+    * TelematikID -> "Aus Kontaktmanagement oder VZD Suche"
+  * Absender -> "Erstellendes PS"
+    * TelematikID -> "Erstellendes PS, SMC-B oder HBA Zertifikat"
+    * Name -> "Erstellendes PS"
+  * AbsendendesSystem -> "Erstellendes PS" "Automatisiert durch Software gesetzt"
+    * Name -> "Erstellendes PS" "Automatisiert durch Software gesetzt"
+    * Software -> "Erstellendes PS" "Automatisiert durch Software gesetzt"
+    * Version -> "Erstellendes PS" "Automatisiert durch Software gesetzt"
+    * EMailKontakt -> "Erstellendes PS" "Automatisiert durch Software gesetzt"
+    * Website -> "Erstellendes PS" "Automatisiert durch Software gesetzt"
+
 // Administrative Informationen
 * Status -> "Anfragendes PS" "Setzt den Status der Anfrage auf 'active'"
 * VorgangsID -> "Anfragendes PS" "Erzeugt einen Vorgang und generiert eine VorgangsID"

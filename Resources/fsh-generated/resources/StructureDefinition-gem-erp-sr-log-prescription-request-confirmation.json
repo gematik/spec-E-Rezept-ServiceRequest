@@ -10,6 +10,13 @@
   "publisher": "gematik GmbH",
   "description": "Fachliches Modell zur Beschreibung einer Bestätigung einer Rezeptanforderung",
   "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+      "name": "Quelle der Rezeptanforderung Bestätigung Informationen",
+      "comment": "Beschreibt die Quelle der Rezeptanforderung Bestätigung Informatione"
+    }
+  ],
   "kind": "logical",
   "abstract": false,
   "type": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-prescription-request-confirmation",
@@ -34,6 +41,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Erstellendes PVS"
+          }
         ]
       },
       {
@@ -46,6 +59,12 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Aus initialer Rezeptanforderung"
           }
         ]
       },
@@ -60,6 +79,12 @@
           {
             "code": "url"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Aus initialer Rezeptanforderung (KIM Nachricht)"
+          }
         ]
       },
       {
@@ -72,6 +97,12 @@
         "type": [
           {
             "code": "url"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Aus initialer Rezeptanforderung"
           }
         ]
       },
@@ -86,6 +117,12 @@
           {
             "code": "BackboneElement"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Erstellendes PVS"
+          }
         ]
       },
       {
@@ -98,6 +135,12 @@
         "type": [
           {
             "code": "url"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Erstellendes PVS, SMC-B oder HBA Zertifikat"
           }
         ]
       },
@@ -112,6 +155,12 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Erstellendes PVS"
+          }
         ]
       },
       {
@@ -124,6 +173,13 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Erstellendes PVS",
+            "comment": "Automatisiert durch Software gesetzt"
           }
         ]
       },
@@ -138,6 +194,13 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Erstellendes PVS",
+            "comment": "Automatisiert durch Software gesetzt"
+          }
         ]
       },
       {
@@ -150,6 +213,13 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Erstellendes PVS",
+            "comment": "Automatisiert durch Software gesetzt"
           }
         ]
       },
@@ -164,6 +234,13 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Erstellendes PVS",
+            "comment": "Automatisiert durch Software gesetzt"
+          }
         ]
       },
       {
@@ -176,6 +253,13 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Erstellendes PVS",
+            "comment": "Automatisiert durch Software gesetzt"
           }
         ]
       },
@@ -190,6 +274,13 @@
           {
             "code": "url"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Erstellendes PVS",
+            "comment": "Automatisiert durch Software gesetzt"
+          }
         ]
       },
       {
@@ -202,6 +293,13 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "E-Rezept-Fachdienst",
+            "comment": "Token lässt sich aus den Informationen des E-Rezept Fachdienstes erzeugen"
           }
         ]
       },
@@ -216,6 +314,13 @@
           {
             "code": "code"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "PVS",
+            "comment": "Setzt den Status der Anfrage auf 'completed'"
+          }
         ]
       },
       {
@@ -228,6 +333,13 @@
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Nachricht: Rezeptanforderung",
+            "comment": "VorgangsID aus der initialen Rezeptanforderung"
           }
         ]
       },
@@ -242,6 +354,13 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Nutzer des PVS",
+            "comment": "Abfrage im Moment der Bestätigung"
+          }
         ]
       },
       {
@@ -254,6 +373,13 @@
         "type": [
           {
             "code": "Attachment"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Nutzer oder PVS",
+            "comment": "Angabe im Moment der Bestätigung"
           }
         ]
       },
@@ -268,6 +394,13 @@
           {
             "code": "Attachment"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Nutzer oder PVS",
+            "comment": "Aktualisierung und ggf. automatische Generierung vom PVS"
+          }
         ]
       },
       {
@@ -281,6 +414,12 @@
           {
             "code": "Attachment"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Nutzer oder PVS"
+          }
         ]
       },
       {
@@ -293,6 +432,13 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "PVS",
+            "comment": "Informationen aus Verordnungsdatensatz"
           }
         ]
       },
@@ -309,6 +455,13 @@
             "targetProfile": [
               "http://hl7.org/fhir/StructureDefinition/MedicationRequest"
             ]
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "PVS",
+            "comment": "Informationen aus Verordnungsdatensatz (MedicationRequest und Medication)"
           }
         ]
       }
