@@ -8,38 +8,55 @@ actor "Verordnender \nLeistungserbringer" as Arztpraxis
 actor Patient
 actor Apotheke
 
-title UC2-Rezeptanforderung der Pflege mit Einlösung durch Patient
+title UC2-Rezeptanforderung der Pflegeeinrichtung mit Einlösung durch Patient
 hide footbox
 autonumber "<b>[0]"
 
-group "UC1-Rezeptanforderung durch Pflegeeinrichtung"
-Pflegeeinrichtung ->> Arztpraxis: //Rezeptanforderung//
+legend bottom right
+    __Legende__
+    |<#LightPink> Ergebnis: keine Bereitstellung E-Rezept|
+    |*: //ServiceRequest_Nachricht_Kopie// wird versendet|
+endlegend
+
+group "Rezeptanforderung durch Pflegeeinrichtung"
+    Pflegeeinrichtung -> Arztpraxis: //Rezeptanforderung//
 
     opt #LightPink Stornierung
-        Pflegeeinrichtung ->> Arztpraxis: //Rezeptanforderung_Storno//
+        Pflegeeinrichtung -> Arztpraxis: //Rezeptanforderung_Storno//
         alt #LightPink E-Rezept noch nicht eingestellt
-        Pflegeeinrichtung -[hidden]-> Arztpraxis: Rezeptanforderung wird verworfen
+        Pflegeeinrichtung -[hidden]-> Arztpraxis
             Arztpraxis ->x Arztpraxis: Rezeptanforderung wird verworfen
         else #LightPink E-Rezept wurde eingestellt
             Arztpraxis ->x Arztpraxis: E-Rezept wird gelöscht
         end
     end
 
-Arztpraxis ->> Pflegeeinrichtung: //Rezeptanforderung_Bestätigung//
+    alt Arzt ist einverstanden 
+        Arztpraxis -> Arztpraxis: E-Rezept einstellen
+        Arztpraxis -> Pflegeeinrichtung: //Rezeptanforderung_Bestätigung//
+        
+    else #LightPink Arzt lehnt ab
+        Arztpraxis -> Pflegeeinrichtung: //Rezeptanforderung_Ablehnung//
+    end
+
 end
 
-opt Benachrichtigung des Patienten
-    Pflegeeinrichtung --> Patient: opt. Benachrichtigung über Ausstellung des E-Rezepts
+group "Einlösung des E-Rezeptes durch Patient"
+    opt Benachrichtigung des Patienten
+        Pflegeeinrichtung --> Patient: opt. Benachrichtigung über Ausstellung des E-Rezepts
+    end
+
+    Patient -> Patient: Beziehen des E-Rezept Tokens
+
+    note left
+        möglich via
+            1. E-Rezept-App
+            2. Vorlage der eGK in der Apotheke
+            3. Papierausdruck
+    end note
+
+    Patient -> Apotheke: Medikamentabholung
+
 end
 
-Patient ->> Patient: Beziehen des E-Rezept Tokens
-
-note left
-    möglich via
-        1. E-Rezept-App
-        2. Vorlage der eGK in der Apotheke
-        3. Papierausdruck
-end note
-
-Patient ->> Apotheke: Medikamentabholung
 @enduml

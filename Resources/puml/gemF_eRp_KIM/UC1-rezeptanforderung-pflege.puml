@@ -15,13 +15,14 @@ autonumber "<b>[0]"
 legend bottom right
     __Legende__
     |<#LightPink> Ergebnis: keine Medikamentabgabe|
+    |*: //ServiceRequest_Nachricht_Kopie// wird versendet|
 endlegend
 
 group "Rezeptanforderung durch Pflegeeinrichtung"
-Pflegeeinrichtung ->> Arztpraxis: //Rezeptanforderung//
+Pflegeeinrichtung -> Arztpraxis: //Rezeptanforderung//
 
 opt #LightPink Stornierung
-    Pflegeeinrichtung ->> Arztpraxis: //Rezeptanforderung_Storno//
+    Pflegeeinrichtung -> Arztpraxis: //Rezeptanforderung_Storno//
     alt #LightPink E-Rezept noch nicht eingestellt
     Pflegeeinrichtung -[hidden]-> Arztpraxis: Rezeptanforderung wird verworfen
         Arztpraxis ->x Arztpraxis: Rezeptanforderung wird verworfen
@@ -32,32 +33,32 @@ end
 
 alt Arzt ist einverstanden 
     Arztpraxis <-> FD: E-Rezept einstellen
-    Arztpraxis ->> Pflegeeinrichtung: //Rezeptanforderung_Bestätigung//
+    Arztpraxis -> Pflegeeinrichtung: //Rezeptanforderung_Bestätigung//
     
 else #LightPink Arzt lehnt ab
-    Arztpraxis ->> Pflegeeinrichtung: //Rezeptanforderung_Storno//
+    Arztpraxis -> Pflegeeinrichtung: //Rezeptanforderung_Ablehnung//
 end
 
 end
 
 group  "Dispensieranforderung durch Pflegeeinrichtung"
-Pflegeeinrichtung ->> Apotheke: //Dispensieranforderung_Rezeptübermittlung//
+Pflegeeinrichtung -> Apotheke: //Dispensieranforderung_Rezeptübermittlung//
 
 opt "Fehler bei der Bearbeitung des E-Rezeptes"
  Apotheke -> Apotheke: Prüfung des E-Rezeptes Fehlgeschlagen
  Apotheke -> FD: E-Rezept zurückgeben
  group "UC3: Rezeptanforderung durch Apotheke"
-  Apotheke -> Arztpraxis: Rezeptanforderung
+  Apotheke -> Arztpraxis: //Rezeptanforderung*//
   Arztpraxis -> FD: Altes E-Rezept löschen
   Arztpraxis -> FD: Neues E-Rezept einstellen
-  Arztpraxis -> Apotheke: Rezeptanforderung_Bestätigung
+  Arztpraxis -> Apotheke: //Rezeptanforderung_Bestätigung*//
  end
 end
 
-Apotheke -> Apotheke: Einlösen des E-Rezeptes
+Apotheke <-> FD: E-Rezept einlösen
 
-Apotheke ->> Pflegeeinrichtung: //Dispensieranforderung_Bestätigung//
-Apotheke ->> Pflegeeinrichtung: Medikamentbelieferung
+Apotheke -> Pflegeeinrichtung: //Dispensieranforderung_Bestätigung//
+Apotheke -> Pflegeeinrichtung: Medikamentbelieferung
 
 end
 

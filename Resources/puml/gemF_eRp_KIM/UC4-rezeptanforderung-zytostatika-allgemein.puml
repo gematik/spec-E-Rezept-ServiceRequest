@@ -7,13 +7,13 @@ title UC4-Rezeptanforderung für anwendungsfertige Zytostatikazubereitungen
 hide footbox
 autonumber "<b>[0]"
 
-    actor "Apotheke" as Apotheke
-    actor "Verordnender \nLeistungserbringer" as Arzt
+actor "Apotheke" as Apotheke
+actor "Verordnender \nLeistungserbringer" as Arzt
+entity "E-Rezept\nFachdienst" as FD
 
 legend bottom right
     __Legende__
-    |<#PaleGreen> Ergebnis: Zubereitungs-/Medikamentabgabe|
-    |<#LightPink> Ergebnis: keine Zubereitungs-/Medikamentabgabe|
+    |<#LightPink> Ergebnis: keine Ausstellung E-Rezept|
 endlegend
 
 ?-> Apotheke: Start der \nZubereitung
@@ -22,7 +22,7 @@ Apotheke ->> Apotheke: Zubereitungsdaten
 
 Apotheke ->> Arzt: //Rezeptanforderung//
 
-break #LightPink Stornierung notwendig
+opt #LightPink Stornierung notwendig
     Apotheke ->> Arzt: //Rezeptanforderung_Storno//
     alt #LightPink E-Rezept noch nicht eingestellt
         Arzt ->x Arzt: Rezeptanforderung wird verworfen
@@ -31,11 +31,13 @@ break #LightPink Stornierung notwendig
     end
 end
 
-alt #PaleGreen Arzt stimmt Rezeptanforderung zu
-    Arzt ->> Apotheke: //Rezeptanforderung_Rezeptuebermittlung//
+alt Arzt stimmt Rezeptanforderung zu
+    Arzt ->> Apotheke: //Rezeptanforderung_Rezeptübermittlung//
 else #LightPink Arzt lehnt Rezeptanforderung ab
     Arzt ->> Apotheke: //Rezeptanforderung_Ablehnung//
 
 end
+
+Apotheke <-> FD: E-Rezept einlösen
 
 @enduml
