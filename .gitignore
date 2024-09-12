@@ -5,3 +5,6 @@ fhirpkg.lock.json
 *.zip
 out/
 .history
+project.yaml
+.simplifier/connection.settings.json
+.simplifier/project.snapshot.json
