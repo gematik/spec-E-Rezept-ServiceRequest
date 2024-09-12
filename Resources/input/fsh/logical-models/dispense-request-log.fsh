@@ -16,7 +16,6 @@ Description: "Fachliches Modell zur Beschreibung einer Dispenseieranforderung"
     * Name 1..1 string "Name des Anfragenden"
     * Adresse 0..1 Address "Straßenadresse des Anfragenden"
     * Telefon 1..1 string "Telefonnummer des Anfragenden"
-      * TelematikId 1..1 string "Telematik-ID des Anfragenden"
 
 * Freitext 0..1 string "Freitext" "Individuelle Nachricht an den Empfänger"
 

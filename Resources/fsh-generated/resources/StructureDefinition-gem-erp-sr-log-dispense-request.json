@@ -440,26 +440,6 @@
         ]
       },
       {
-        "id": "gem-erp-sr-log-dispense-request.involvierteParteien.Anfragender.Telefon.TelematikId",
-        "path": "gem-erp-sr-log-dispense-request.involvierteParteien.Anfragender.Telefon.TelematikId",
-        "short": "Telematik-ID des Anfragenden",
-        "definition": "Telematik-ID des Anfragenden",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "string"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "Quelle-Dispensieranforderung-Mapping",
-            "map": "Anfragendes PS",
-            "comment": "Aus SMC-B oder HBA Zertifikat"
-          }
-        ]
-      },
-      {
         "id": "gem-erp-sr-log-dispense-request.Freitext",
         "path": "gem-erp-sr-log-dispense-request.Freitext",
         "short": "Freitext",

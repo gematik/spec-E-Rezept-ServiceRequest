@@ -325,7 +325,7 @@
     "fshType": "Logical",
     "fshFile": "logical-models/dispense-request-log.fsh",
     "startLine": 1,
-    "endLine": 33
+    "endLine": 32
   },
   {
     "outputFile": "StructureDefinition-gem-erp-sr-log-message-copy.json",
@@ -365,7 +365,7 @@
     "fshType": "Logical",
     "fshFile": "logical-models/prescription-request-log.fsh",
     "startLine": 1,
-    "endLine": 64
+    "endLine": 63
   },
   {
     "outputFile": "StructureDefinition-identifier-procedure-identifier.json",
