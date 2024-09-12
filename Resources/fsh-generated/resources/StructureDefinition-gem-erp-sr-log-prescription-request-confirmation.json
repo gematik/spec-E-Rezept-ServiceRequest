@@ -423,6 +423,19 @@
         ]
       },
       {
+        "id": "gem-erp-sr-log-prescription-request-confirmation.AenderungVerordnung",
+        "path": "gem-erp-sr-log-prescription-request-confirmation.AenderungVerordnung",
+        "short": "Änderung der Verordnung",
+        "definition": "Gibt an, ob das verordnete Arzneimittel von dem angefragten abweicht.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      },
+      {
         "id": "gem-erp-sr-log-prescription-request-confirmation.Medikation",
         "path": "gem-erp-sr-log-prescription-request-confirmation.Medikation",
         "short": "Medikation",

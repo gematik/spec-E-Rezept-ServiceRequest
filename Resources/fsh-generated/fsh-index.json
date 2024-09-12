@@ -349,7 +349,7 @@
     "fshType": "Logical",
     "fshFile": "logical-models/prescription-request-confirmation-log.fsh",
     "startLine": 1,
-    "endLine": 24
+    "endLine": 25
   },
   {
     "outputFile": "StructureDefinition-gem-erp-sr-log-prescription-request-rejection.json",

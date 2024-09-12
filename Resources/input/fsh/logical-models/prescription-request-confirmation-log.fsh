@@ -20,5 +20,6 @@ Description: "Fachliches Modell zur Beschreibung einer Bestätigung einer Rezept
   * weitereAnhaenge 0..* Attachment "Weitere Anhänge" "Weitere Anhänge"
 
 // Medizinische Informationen
+* AenderungVerordnung 0..1 boolean "Änderung der Verordnung" "Gibt an, ob das verordnete Arzneimittel von dem angefragten abweicht."
 * Medikation 1..1 BackboneElement "Medikation" "Angaben zur Medikation"
   * MedizinischeInformationenAusVerordnung 1..1 Reference(MedicationRequest) "Medizinische Verordnungsinformationen" "MedicationRequest und Medication Objekt aus der KBV_Verordnung."
