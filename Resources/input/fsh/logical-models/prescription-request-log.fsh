@@ -50,13 +50,11 @@ Description: "Fachliches Modell zur Beschreibung einer Rezeptanforderung"
 
 // Medizinische Informationen
 * Medikation 1..1 BackboneElement "Medikation" "Angaben zur Medikation"
-  * MedikationCodiert 0..1 CodeableConcept "Medikation codiert" "Codiertes Medikament"
-    * NameDesMedikaments 1..1 string "Name des Medikaments"
-    * PZN 1..1 string "PZN des Medikaments"
-  * MedikationObjekt 0..1 Medication "Referenz auf das Medikamentenobjekt" "Referenz auf das Medikamentenobjekt nach KBV_Verordnung/ePA Medication"  
-  * Menge 1..1 BackboneElement "Menge des Medikaments"
-    * Einheit 1..1 string "Einheit der Menge"
-    * Wert 1..1 string "Wert der Menge"
+  * MedikationsReferenz 0..1 Medication "Referenz auf das Medikamentenobjekt" "Referenz auf das Medikamentenobjekt nach KBV_Verordnung (Freitext, PZN, Wirkstoff, Rezeptur)"  
+    * ^comment = "Folgende Profile aus dem E-Rezept Verordnungsdatensatz sind zulässig: KBV_PR_ERP_Medication_Compounding, KBV_PR_ERP_Medication_FreeText, KBV_PR_ERP_Medication _Ingredient, KBV_PR_ERP_Medication_PZN"
+  * AnzahlPackungen 1..1 BackboneElement "Anzahl der Packungen"
+    * Einheit 1..1 string "Einheit der Menge, fix auf 'Packung' gesetzt"
+    * Wert 1..1 string "Anzahl der Packungen"
 
 // Konfiguratorische Informationen
 * VersichertenEinloesung 0..1 boolean "Versicherten Einlösung" "Angabe, ob der Versicherte das E-Rezept selbst einlösen möchte."

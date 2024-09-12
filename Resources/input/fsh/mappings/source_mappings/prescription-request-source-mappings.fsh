@@ -38,7 +38,6 @@ Description: "Beschreibt die Quelle der Rezeptanforderungsinformationen"
     * Name -> "Anfragendes PS"
     * Adresse -> "Anfragendes PS"
     * Telefon -> "Anfragendes PS"
-		  * TelematikId -> "Anfragendes PS" "Aus SMC-B oder HBA Zertifikat"
 
   * PflegeeinrichtungKopie -> "Anfragendes AVS" "Im Fall, dass die Apotheke die Anfrage initiiert"
     * Name -> "Anfragendes AVS"
@@ -62,14 +61,11 @@ Description: "Beschreibt die Quelle der Rezeptanforderungsinformationen"
 * Anhaenge -> "Anfragendes PS oder Nutzer des PS" "Generierung oder Bereitstellung im Moment der Anforderung"
 
 // Medizinische Informationen
-* Medikation -> "Anfragendes PS oder Nutzer des PS"
-  * MedikationCodiert -> "Anfragendes PS" "Bereitstellung aus Medikamentenmanagement"
-    * NameDesMedikaments -> "Anfragendes PS" "Bereitstellung aus Medikamentenmanagement"
-    * PZN -> "Anfragendes PS" "Bereitstellung aus Medikamentenmanagement"
-  * MedikationObjekt -> "Anfragendes PS" "Bereitstellung aus Medikamentenmanagement"
-  * Menge -> "Anfragendes PS" "Bereitstellung aus Medikamentenmanagement"
+* Medikation -> "Anfragendes PS oder Nutzer des PS" "Bereitstellung aus Medikamentenmanagement"
+  * MedikationsReferenz -> "Anfragendes PS" "Bereitstellung aus Medikamentenmanagement"
+  * AnzahlPackungen -> "Anfragendes PS oder Nutzer des PS" "Bereitstellung aus Medikamentenmanagement"
     * Einheit -> "Anfragendes PS" "Bereitstellung aus Medikamentenmanagement"
-    * Wert -> "Anfragendes PS" "Bereitstellung aus Medikamentenmanagement"
+    * Wert -> "Anfragendes PS oder Nutzer des PS" "Bereitstellung aus Medikamentenmanagement"
 
 // Konfiguratorische Informationen
 * VersichertenEinloesung -> "Nutzer des PS" "Angabemöglichkeit im Moment der Anforderung"

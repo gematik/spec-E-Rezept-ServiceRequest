@@ -885,75 +885,17 @@
         "mapping": [
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
-            "map": "Anfragendes PS oder Nutzer des PS"
-          }
-        ]
-      },
-      {
-        "id": "gem-erp-sr-log-prescription-request.Medikation.MedikationCodiert",
-        "path": "gem-erp-sr-log-prescription-request.Medikation.MedikationCodiert",
-        "short": "Medikation codiert",
-        "definition": "Codiertes Medikament",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "CodeableConcept"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "Quelle-Rezeptanforderung-Mapping",
-            "map": "Anfragendes PS",
+            "map": "Anfragendes PS oder Nutzer des PS",
             "comment": "Bereitstellung aus Medikamentenmanagement"
           }
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request.Medikation.MedikationCodiert.NameDesMedikaments",
-        "path": "gem-erp-sr-log-prescription-request.Medikation.MedikationCodiert.NameDesMedikaments",
-        "short": "Name des Medikaments",
-        "definition": "Name des Medikaments",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "string"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "Quelle-Rezeptanforderung-Mapping",
-            "map": "Anfragendes PS",
-            "comment": "Bereitstellung aus Medikamentenmanagement"
-          }
-        ]
-      },
-      {
-        "id": "gem-erp-sr-log-prescription-request.Medikation.MedikationCodiert.PZN",
-        "path": "gem-erp-sr-log-prescription-request.Medikation.MedikationCodiert.PZN",
-        "short": "PZN des Medikaments",
-        "definition": "PZN des Medikaments",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "string"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "Quelle-Rezeptanforderung-Mapping",
-            "map": "Anfragendes PS",
-            "comment": "Bereitstellung aus Medikamentenmanagement"
-          }
-        ]
-      },
-      {
-        "id": "gem-erp-sr-log-prescription-request.Medikation.MedikationObjekt",
-        "path": "gem-erp-sr-log-prescription-request.Medikation.MedikationObjekt",
+        "id": "gem-erp-sr-log-prescription-request.Medikation.MedikationsReferenz",
+        "path": "gem-erp-sr-log-prescription-request.Medikation.MedikationsReferenz",
         "short": "Referenz auf das Medikamentenobjekt",
-        "definition": "Referenz auf das Medikamentenobjekt nach KBV_Verordnung/ePA Medication",
+        "definition": "Referenz auf das Medikamentenobjekt nach KBV_Verordnung (Freitext, PZN, Wirkstoff, Rezeptur)",
+        "comment": "Folgende Profile aus dem E-Rezept Verordnungsdatensatz sind zulässig: KBV_PR_ERP_Medication_Compounding, KBV_PR_ERP_Medication_FreeText, KBV_PR_ERP_Medication _Ingredient, KBV_PR_ERP_Medication_PZN",
         "min": 0,
         "max": "1",
         "type": [
@@ -970,10 +912,10 @@
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request.Medikation.Menge",
-        "path": "gem-erp-sr-log-prescription-request.Medikation.Menge",
-        "short": "Menge des Medikaments",
-        "definition": "Menge des Medikaments",
+        "id": "gem-erp-sr-log-prescription-request.Medikation.AnzahlPackungen",
+        "path": "gem-erp-sr-log-prescription-request.Medikation.AnzahlPackungen",
+        "short": "Anzahl der Packungen",
+        "definition": "Anzahl der Packungen",
         "min": 1,
         "max": "1",
         "type": [
@@ -984,16 +926,16 @@
         "mapping": [
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
-            "map": "Anfragendes PS",
+            "map": "Anfragendes PS oder Nutzer des PS",
             "comment": "Bereitstellung aus Medikamentenmanagement"
           }
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request.Medikation.Menge.Einheit",
-        "path": "gem-erp-sr-log-prescription-request.Medikation.Menge.Einheit",
-        "short": "Einheit der Menge",
-        "definition": "Einheit der Menge",
+        "id": "gem-erp-sr-log-prescription-request.Medikation.AnzahlPackungen.Einheit",
+        "path": "gem-erp-sr-log-prescription-request.Medikation.AnzahlPackungen.Einheit",
+        "short": "Einheit der Menge, fix auf 'Packung' gesetzt",
+        "definition": "Einheit der Menge, fix auf 'Packung' gesetzt",
         "min": 1,
         "max": "1",
         "type": [
@@ -1010,10 +952,10 @@
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request.Medikation.Menge.Wert",
-        "path": "gem-erp-sr-log-prescription-request.Medikation.Menge.Wert",
-        "short": "Wert der Menge",
-        "definition": "Wert der Menge",
+        "id": "gem-erp-sr-log-prescription-request.Medikation.AnzahlPackungen.Wert",
+        "path": "gem-erp-sr-log-prescription-request.Medikation.AnzahlPackungen.Wert",
+        "short": "Anzahl der Packungen",
+        "definition": "Anzahl der Packungen",
         "min": 1,
         "max": "1",
         "type": [
@@ -1024,7 +966,7 @@
         "mapping": [
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
-            "map": "Anfragendes PS",
+            "map": "Anfragendes PS oder Nutzer des PS",
             "comment": "Bereitstellung aus Medikamentenmanagement"
           }
         ]
