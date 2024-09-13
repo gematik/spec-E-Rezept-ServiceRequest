@@ -5,3 +5,5 @@ Description: "This extension is used to specify the remaining supply of a medica
 * insert Meta (remaining-supply-ex)
 * value[x] 1..1 MS
 * value[x] only Quantity
+* valueQuantity.value 1..1 MS
+* valueQuantity.unit 1..1 MS

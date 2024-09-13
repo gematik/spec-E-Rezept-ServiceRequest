@@ -45,7 +45,7 @@ StructureDefinition-gem-erp-sr-log-prescription-request.json               GEM_E
 StructureDefinition-identifier-procedure-identifier.json                   ERPServiceRequestProcedureIdentifier                   Profile     profiles/6.2_GroupAnforderungIdentifier.fsh               1 - 10
 StructureDefinition-prescription-id-ex.json                                PrescriptionIdEx                                       Extension   extensions/PrescriptionIdEX.fsh                           1 - 19
 StructureDefinition-redeem-by-patient-ex.json                              RedeemByPatientEX                                      Extension   extensions/RedeemByPatientEX.fsh                          1 - 21
-StructureDefinition-remaining-supply-ex.json                               RemainingSupplyEX                                      Extension   extensions/RemainingSupplyEX.fsh                          1 - 7
+StructureDefinition-remaining-supply-ex.json                               RemainingSupplyEX                                      Extension   extensions/RemainingSupplyEX.fsh                          1 - 9
 ValueSet-medication-request-reason-vs.json                                 MedicationRequestReasonVS                              ValueSet    valuesets/MedicationRequestReasonVS.fsh                   1 - 7
 ValueSet-service-identifier-vs.json                                        ServiceIdentifierVS                                    ValueSet    valuesets/ServiceIdentifierVS.fsh                         1 - 13
 ValueSet-service-request-organization-type-vs.json                         ServiceRequestOrganizationTypeVS                       ValueSet    valuesets/ServiceRequestOrganizationTypeVS.fsh            1 - 8

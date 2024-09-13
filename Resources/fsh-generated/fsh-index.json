@@ -373,7 +373,7 @@
     "fshType": "Extension",
     "fshFile": "extensions/RemainingSupplyEX.fsh",
     "startLine": 1,
-    "endLine": 7
+    "endLine": 9
   },
   {
     "outputFile": "ValueSet-medication-request-reason-vs.json",

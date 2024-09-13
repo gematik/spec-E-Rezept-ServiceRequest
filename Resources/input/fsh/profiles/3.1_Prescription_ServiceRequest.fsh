@@ -93,10 +93,10 @@ Description: "ServiceRequest, which is used to request a recipe"
   //Restreichweite
   * extension MS
   * extension contains
-      EPrescriptionTokenEX named EPrescriptionToken 0..1 MS
-  * extension[EPrescriptionTokenEX]
-    * ^short = "Here the e-prescription token can be made available for processing in a pharmacy."
-    * ^comment = "The token is of the form '/Task/{PrescriptionID}/$accept?ac={AccessCode}. See [gemSpec_DM_eRp](https://fachportal.gematik.de/fachportal-import/files/gemSpec_DM_eRp_V1.5.0.pdf)'."
+      RemainingSupplyEX named remainingSupply 0..1 MS
+  * extension[remainingSupply]
+    * ^short = "Remaining supply"
+    * ^definition = "Indicates the remaining supply of the medication."
 
 
 * priority 0..1 MS

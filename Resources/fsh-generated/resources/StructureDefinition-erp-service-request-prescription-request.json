@@ -387,18 +387,18 @@
         "mustSupport": true
       },
       {
-        "id": "ServiceRequest.reasonCode.extension:EPrescriptionToken",
+        "id": "ServiceRequest.reasonCode.extension:remainingSupply",
         "path": "ServiceRequest.reasonCode.extension",
-        "sliceName": "EPrescriptionToken",
-        "short": "Here the e-prescription token can be made available for processing in a pharmacy.",
-        "comment": "The token is of the form '/Task/{PrescriptionID}/$accept?ac={AccessCode}. See [gemSpec_DM_eRp](https://fachportal.gematik.de/fachportal-import/files/gemSpec_DM_eRp_V1.5.0.pdf)'.",
+        "sliceName": "remainingSupply",
+        "short": "Remaining supply",
+        "definition": "Indicates the remaining supply of the medication.",
         "min": 0,
         "max": "1",
         "type": [
           {
             "code": "Extension",
             "profile": [
-              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex"
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/remaining-supply-ex"
             ]
           }
         ],
