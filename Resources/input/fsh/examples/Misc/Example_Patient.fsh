@@ -3,7 +3,6 @@ InstanceOf: ERPServiceRequestPatient
 Usage: #inline
 Title: "Example-Patient"
 Description: "Beispiel Patient"
-* meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
 * identifier[versichertenId_GKV].type = http://fhir.de/CodeSystem/identifier-type-de-basis#GKV
 * identifier[versichertenId_GKV].system = "http://fhir.de/sid/gkv/kvid-10"
 * identifier[versichertenId_GKV].value = "X234567890"

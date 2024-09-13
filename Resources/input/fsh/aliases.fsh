@@ -6,9 +6,6 @@ Alias: $KBV_PR_FOR_Coverage = https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR
 
 Alias: $KBV_PR_Base_Organization = https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization
 
-Alias: $KVID = http://fhir.de/StructureDefinition/identifier-kvid-10
-Alias: $PKVID = http://fhir.de/StructureDefinition/identifier-pkv
-
 Alias: $KBV_PR_ERP_Medication_Compounding = https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_Compounding
 Alias: $KBV_PR_ERP_Medication_PZN = https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN
 Alias: $KBV_PR_ERP_Prescription = https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription
