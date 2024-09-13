@@ -7,7 +7,7 @@ Description: "ServiceRequest, which is used to request a recipe"
 
 * extension MS
 * extension contains
-    EPrescriptionTokenEX named EPrescriptionToken 0..1 MS
+    EPrescriptionTokenEX named EPrescriptionToken 0..1 MS ?!
 * extension[EPrescriptionTokenEX]
   * ^short = "Here the e-prescription token can be made available for processing in a pharmacy."
   * ^comment = "The token is of the form '/Task/{PrescriptionID}/$accept?ac={AccessCode}. See [gemSpec_DM_eRp](https://fachportal.gematik.de/fachportal-import/files/gemSpec_DM_eRp_V1.5.0.pdf)'."
@@ -59,7 +59,7 @@ Description: "ServiceRequest, which is used to request a recipe"
 
 * occurrence[x] 0..1 MS
 * occurrence[x] only dateTime
-  * ^short = "Specifies the date on which the prescription is to be issued."
+  * ^short = "Specifies the date on which the prescription is to be issued (Bedarfszeitraum)."
   * ^comment = "Can be used by the requester to make the timely urgency clear."
 
 * authoredOn 1..1 MS
@@ -90,6 +90,20 @@ Description: "ServiceRequest, which is used to request a recipe"
   * coding 0..1 MS
   * coding from MedicationRequestReasonVS (required)
   * text 0..1 MS
+  //Restreichweite
+  * extension MS
+  * extension contains
+      EPrescriptionTokenEX named EPrescriptionToken 0..1 MS
+  * extension[EPrescriptionTokenEX]
+    * ^short = "Here the e-prescription token can be made available for processing in a pharmacy."
+    * ^comment = "The token is of the form '/Task/{PrescriptionID}/$accept?ac={AccessCode}. See [gemSpec_DM_eRp](https://fachportal.gematik.de/fachportal-import/files/gemSpec_DM_eRp_V1.5.0.pdf)'."
+
+
+* priority 0..1 MS
+  * ^short = "Indicates the urgency of the request."
+  * ^definition = "The priority can be used to indicate the urgency of the request."
+  * ^comment = "Allowed values: routine | urgent"
+* priority from ServiceRequestPriorityVS (required)
 
 * supportingInfo MS
   * ^slicing.discriminator.type = #pattern

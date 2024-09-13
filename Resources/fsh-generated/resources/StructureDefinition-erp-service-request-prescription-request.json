@@ -87,6 +87,7 @@
           }
         ],
         "mustSupport": true,
+        "isModifier": true,
         "mapping": [
           {
             "identity": "Rezeptanforderung-Rezeptuebermittlung",
@@ -221,6 +222,14 @@
       {
         "id": "ServiceRequest.priority",
         "path": "ServiceRequest.priority",
+        "short": "Indicates the urgency of the request.",
+        "definition": "The priority can be used to indicate the urgency of the request.",
+        "comment": "Allowed values: routine | urgent",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/erp-servicerequest/ValueSet/service-request-priority-vs"
+        },
         "mapping": [
           {
             "identity": "Rezeptanforderung",
@@ -280,7 +289,7 @@
       {
         "id": "ServiceRequest.occurrence[x]",
         "path": "ServiceRequest.occurrence[x]",
-        "short": "Specifies the date on which the prescription is to be issued.",
+        "short": "Specifies the date on which the prescription is to be issued (Bedarfszeitraum).",
         "comment": "Can be used by the requester to make the timely urgency clear.",
         "type": [
           {
@@ -371,6 +380,29 @@
             "map": "Ablehnungsgrund"
           }
         ]
+      },
+      {
+        "id": "ServiceRequest.reasonCode.extension",
+        "path": "ServiceRequest.reasonCode.extension",
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.reasonCode.extension:EPrescriptionToken",
+        "path": "ServiceRequest.reasonCode.extension",
+        "sliceName": "EPrescriptionToken",
+        "short": "Here the e-prescription token can be made available for processing in a pharmacy.",
+        "comment": "The token is of the form '/Task/{PrescriptionID}/$accept?ac={AccessCode}. See [gemSpec_DM_eRp](https://fachportal.gematik.de/fachportal-import/files/gemSpec_DM_eRp_V1.5.0.pdf)'.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex"
+            ]
+          }
+        ],
+        "mustSupport": true
       },
       {
         "id": "ServiceRequest.reasonCode.coding",

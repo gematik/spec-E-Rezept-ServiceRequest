@@ -9,8 +9,8 @@ Description: "Medical and pharmaceutical information for the prescription reques
   * ^comment = "If the previous recipe ID is known, it can be named here"
 * extension contains
     PrescriptionIdEx named PriorPrescriptionID 0..1 MS
-    and KBV_EX_ERP_Multiple_Prescription named requestMVO 0..1 MS
-    and RedeemByPatientEX named redeemByPatient 0..1 MS
+    and KBV_EX_ERP_Multiple_Prescription named requestMVO 0..1 MS ?!
+    and RedeemByPatientEX named redeemByPatient 0..1 MS ?!
 
 * extension[PriorPrescriptionID]
   * ^short = "Provide a previous PrescriptionID that corresponds to the requested medication."

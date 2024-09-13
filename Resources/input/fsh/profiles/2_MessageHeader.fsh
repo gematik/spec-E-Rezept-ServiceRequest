@@ -7,7 +7,7 @@ Description: "Header containing information about the sender and addressee"
 
 * extension 0..1 MS
 * extension contains
-    CopyToCareFacilityEX named CopyToCareFacility 0..1 MS
+    CopyToCareFacilityEX named CopyToCareFacility 0..1 MS ?!
 * extension[CopyToCareFacility]
   * ^short = "The contact details of the care facility that receives a copy of the request."
 

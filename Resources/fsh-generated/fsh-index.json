@@ -269,7 +269,7 @@
     "fshType": "Profile",
     "fshFile": "profiles/3.1_Prescription_ServiceRequest.fsh",
     "startLine": 1,
-    "endLine": 106
+    "endLine": 120
   },
   {
     "outputFile": "StructureDefinition-erp-service-request-request-header.json",
@@ -368,6 +368,14 @@
     "endLine": 21
   },
   {
+    "outputFile": "StructureDefinition-remaining-supply-ex.json",
+    "fshName": "RemainingSupplyEX",
+    "fshType": "Extension",
+    "fshFile": "extensions/RemainingSupplyEX.fsh",
+    "startLine": 1,
+    "endLine": 7
+  },
+  {
     "outputFile": "ValueSet-medication-request-reason-vs.json",
     "fshName": "MedicationRequestReasonVS",
     "fshType": "ValueSet",
@@ -390,6 +398,14 @@
     "fshFile": "valuesets/ServiceRequestOrganizationTypeVS.fsh",
     "startLine": 1,
     "endLine": 8
+  },
+  {
+    "outputFile": "ValueSet-service-request-priority-vs.json",
+    "fshName": "ServiceRequestPriorityVS",
+    "fshType": "ValueSet",
+    "fshFile": "valuesets/ServiceRequestPriorityVS.fsh",
+    "startLine": 1,
+    "endLine": 6
   },
   {
     "outputFile": "ValueSet-service-request-status-vs.json",

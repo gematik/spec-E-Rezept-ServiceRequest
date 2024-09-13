@@ -82,7 +82,8 @@
             ]
           }
         ],
-        "mustSupport": true
+        "mustSupport": true,
+        "isModifier": true
       },
       {
         "id": "MedicationRequest.extension:requestMVO.extension:Kennzeichen",
@@ -124,7 +125,8 @@
             ]
           }
         ],
-        "mustSupport": true
+        "mustSupport": true,
+        "isModifier": true
       },
       {
         "id": "MedicationRequest.medication[x]",

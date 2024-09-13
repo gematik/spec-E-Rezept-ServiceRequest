@@ -19,6 +19,7 @@ Alias: $kim = http://gematik.de/fhir/sid/KIM-Adresse
 Alias: $tim = http://gematik.de/fhir/sid/TIM-Adresse
 
 Alias: $Hl7_Request_Status = http://hl7.org/fhir/request-status
+Alias: $Hl7_Priority = http://hl7.org/fhir/request-priority
 Alias: $HL7_Intent_VS = http://hl7.org/fhir/ValueSet/request-intent
 Alias: $HL7_Identifier = http://hl7.org/fhir/StructureDefinition/Identifier
 

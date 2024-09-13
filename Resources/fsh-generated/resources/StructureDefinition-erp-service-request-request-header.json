@@ -38,7 +38,8 @@
             ]
           }
         ],
-        "mustSupport": true
+        "mustSupport": true,
+        "isModifier": true
       },
       {
         "id": "MessageHeader.event[x]",
