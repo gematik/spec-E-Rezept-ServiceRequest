@@ -205,7 +205,7 @@
     "fshType": "Extension",
     "fshFile": "extensions/CopyToCareFacilityEX.fsh",
     "startLine": 1,
-    "endLine": 9
+    "endLine": 27
   },
   {
     "outputFile": "StructureDefinition-eprescription-token-ex.json",

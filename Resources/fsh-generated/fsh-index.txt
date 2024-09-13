@@ -24,7 +24,7 @@ MedicationRequest-Example-Initial-Medication-Request.json                  Examp
 MessageHeader-UC1-HealthCareService-to-Practitioner-MessageHeader.json     UC1-HealthCareService-to-Practitioner-MessageHeader    Instance    examples/UC1/UC1_MessageHeader.fsh                        1 - 7
 NamingSystem-NamingSystemEPrescriptionToken.json                           NamingSystemEPrescriptionToken                         Instance    profiles/6.3_EPrescriptionTokenIdentifier.fsh             13 - 29
 Organization-Example-HealthCareService-Organization.json                   Example-HealthCareService-Organization                 Instance    examples/Misc/Example_Organization.fsh                    1 - 16
-StructureDefinition-copy-to-care-facility-ex.json                          CopyToCareFacilityEX                                   Extension   extensions/CopyToCareFacilityEX.fsh                       1 - 9
+StructureDefinition-copy-to-care-facility-ex.json                          CopyToCareFacilityEX                                   Extension   extensions/CopyToCareFacilityEX.fsh                       1 - 27
 StructureDefinition-eprescription-token-ex.json                            EPrescriptionTokenEX                                   Extension   extensions/EPrescriptionTokenEX.fsh                       1 - 20
 StructureDefinition-erp-service-request-dispense-request.json              ERPServiceRequestDispenseRequest                       Profile     profiles/3.2_Dispense_ServiceRequest.fsh                  1 - 74
 StructureDefinition-erp-service-request-eprescription-token.json           ERPServiceRequestEPrescriptionToken                    Profile     profiles/6.3_EPrescriptionTokenIdentifier.fsh             1 - 11

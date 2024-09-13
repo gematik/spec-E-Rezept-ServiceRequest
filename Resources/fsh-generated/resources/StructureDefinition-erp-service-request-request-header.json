@@ -27,7 +27,7 @@
         "id": "MessageHeader.extension:CopyToCareFacility",
         "path": "MessageHeader.extension",
         "sliceName": "CopyToCareFacility",
-        "short": "The KIM-Adress of the care facility that receives a copy of the request.",
+        "short": "The contact details of the care facility that receives a copy of the request.",
         "min": 0,
         "max": "1",
         "type": [

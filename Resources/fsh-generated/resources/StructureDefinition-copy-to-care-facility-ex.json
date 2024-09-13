@@ -40,13 +40,77 @@
       {
         "id": "Extension.value[x]",
         "path": "Extension.value[x]",
-        "short": "The KIM-Adress of the care facility that receives a copy of the request.",
+        "short": "The contact details of the care facility that receives a copy of the request.",
         "min": 1,
         "type": [
           {
-            "code": "uri"
+            "code": "ContactDetail"
           }
         ],
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.value[x].name",
+        "path": "Extension.value[x].name",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.value[x].telecom",
+        "path": "Extension.value[x].telecom",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "system"
+            }
+          ],
+          "rules": "open",
+          "description": "Slices on contact options",
+          "ordered": false
+        },
+        "min": 2,
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.value[x].telecom:tel",
+        "path": "Extension.value[x].telecom",
+        "sliceName": "tel",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.value[x].telecom:tel.system",
+        "path": "Extension.value[x].telecom.system",
+        "min": 1,
+        "patternCode": "phone"
+      },
+      {
+        "id": "Extension.value[x].telecom:tel.value",
+        "path": "Extension.value[x].telecom.value",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.value[x].telecom:kim",
+        "path": "Extension.value[x].telecom",
+        "sliceName": "kim",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.value[x].telecom:kim.system",
+        "path": "Extension.value[x].telecom.system",
+        "min": 1,
+        "patternCode": "email"
+      },
+      {
+        "id": "Extension.value[x].telecom:kim.value",
+        "path": "Extension.value[x].telecom.value",
+        "short": "The KIM-Adress of the care facility that receives a copy of the request.",
+        "min": 1,
         "mustSupport": true
       }
     ]
