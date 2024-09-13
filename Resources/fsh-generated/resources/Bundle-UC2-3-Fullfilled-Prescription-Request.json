@@ -108,7 +108,7 @@
         ],
         "status": "completed",
         "subject": {
-          "reference": "Example-Patient"
+          "reference": "Patient/Example-Patient"
         },
         "occurrenceDateTime": "2023-01-30",
         "authoredOn": "2023-01-27",
@@ -118,7 +118,7 @@
         },
         "performer": [
           {
-            "reference": "Example-Practitioner"
+            "reference": "Practitioner/Example-Practitioner"
           }
         ]
       }

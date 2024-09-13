@@ -164,7 +164,7 @@
           "reference": "Medication/Example-Initial-Medication"
         },
         "subject": {
-          "reference": "Example-Patient"
+          "reference": "Patient/Example-Patient"
         },
         "authoredOn": "2022-05-20",
         "dosageInstruction": [

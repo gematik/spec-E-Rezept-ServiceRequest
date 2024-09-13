@@ -103,7 +103,7 @@
         ],
         "status": "revoked",
         "subject": {
-          "reference": "Example-Patient"
+          "reference": "Patient/Example-Patient"
         },
         "occurrenceDateTime": "2023-02-01",
         "authoredOn": "2023-02-01"
