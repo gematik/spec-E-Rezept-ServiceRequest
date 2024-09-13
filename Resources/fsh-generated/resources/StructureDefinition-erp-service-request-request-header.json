@@ -59,7 +59,8 @@
             "code": "Reference",
             "targetProfile": [
               "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request",
-              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request",
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
             ]
           }
         ]

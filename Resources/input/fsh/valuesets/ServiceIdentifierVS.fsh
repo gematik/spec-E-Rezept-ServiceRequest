@@ -8,3 +8,6 @@ Description: "Identifiers for specifying an application of e-prescription commun
 
 // Anwendungsfertige Zytostatikazubereitungen
 * include codes from system $GEM_CS_ATF_ServiceIdentifier where concept is-a #eRezept_ParenteraleZubereitung
+
+// Nachrichtenkopie
+* include ServiceRequestServiceIdentifierCS#message-copy "Nachrichtenkopie"

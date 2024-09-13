@@ -60,12 +60,6 @@ When the prescription has been created, the corresponding KBV_PR_ERP_Bundle pres
 * subject MS
   * ^short = "Patient for whom a prescription is requested on behalf of the patient."
 
-* orderDetail 1..1 MS
-* orderDetail.coding 1..1 MS
-* orderDetail.coding from PrescriptionFullfillmentTypeVS
-  * ^short = "Specifies how the recipe request should be fulfilled."
-  * ^comment = "If the prescription goes to a pharmacy, a corresponding ServiceRequest must be included in the bundle."
-
 * occurrence[x] 0..1 MS
 * occurrence[x] only dateTime
   * ^short = "Specifies the date on which the prescription is to be issued."
@@ -84,26 +78,6 @@ When the prescription has been created, the corresponding KBV_PR_ERP_Bundle pres
 * performer MS
 * performer only Reference(Practitioner)
   * ^short = "Doctor who is to write the prescription."
-
-* reasonCode MS
-* reasonCode from RequestReasonVS
-  * ^short = "Code indicating why a prescription is requested."
-  * ^comment = "Also used to indicate why the transaction was canceled in the event of a cancellation."
-
-* reasonReference only Reference(ERPServiceRequestRemainingMedication)
-  * ^short = "Reference to an observation resource that indicates how long the current medication will last."
-  * ^comment = "If a reference to the reason is provided, a human-readable entry in .note must also be added in case systems cannot process the referenced observation."
-
-* supportingInfo ^slicing.discriminator.type = #pattern
-* supportingInfo ^slicing.discriminator.path = "type"
-* supportingInfo ^slicing.rules = #open
-* supportingInfo ^slicing.description = "Supporting information for the prescription request"
-
-* supportingInfo MS
-* supportingInfo contains
-AuslieferndeApotheke 0..1 MS
-* supportingInfo[AuslieferndeApotheke] only Reference(ERPServiceRequestOrganization)
-* supportingInfo[AuslieferndeApotheke].type = "Organization"
 
 * note MS
   * ^short = "Further information on the prescription request."

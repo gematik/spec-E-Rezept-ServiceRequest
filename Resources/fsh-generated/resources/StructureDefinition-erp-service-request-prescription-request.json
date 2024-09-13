@@ -267,26 +267,6 @@
         "fixedCode": "prescription-request"
       },
       {
-        "id": "ServiceRequest.orderDetail",
-        "path": "ServiceRequest.orderDetail",
-        "min": 1,
-        "max": "1",
-        "mustSupport": true
-      },
-      {
-        "id": "ServiceRequest.orderDetail.coding",
-        "path": "ServiceRequest.orderDetail.coding",
-        "short": "Specifies how the recipe request should be fulfilled.",
-        "comment": "If the prescription goes to a pharmacy, a corresponding ServiceRequest must be included in the bundle.",
-        "min": 1,
-        "max": "1",
-        "mustSupport": true,
-        "binding": {
-          "strength": "required",
-          "valueSet": "https://gematik.de/fhir/erp-servicerequest/ValueSet/prescription-fullfillment-type-vs"
-        }
-      },
-      {
         "id": "ServiceRequest.subject",
         "path": "ServiceRequest.subject",
         "short": "Patient for whom a prescription is requested on behalf of the patient.",
@@ -364,13 +344,6 @@
       {
         "id": "ServiceRequest.reasonCode",
         "path": "ServiceRequest.reasonCode",
-        "short": "Code indicating why a prescription is requested.",
-        "comment": "Also used to indicate why the transaction was canceled in the event of a cancellation.",
-        "mustSupport": true,
-        "binding": {
-          "strength": "required",
-          "valueSet": "https://gematik.de/fhir/erp-servicerequest/ValueSet/request-reason-vs"
-        },
         "mapping": [
           {
             "identity": "Rezeptanforderung",
@@ -389,16 +362,6 @@
       {
         "id": "ServiceRequest.reasonReference",
         "path": "ServiceRequest.reasonReference",
-        "short": "Reference to an observation resource that indicates how long the current medication will last.",
-        "comment": "If a reference to the reason is provided, a human-readable entry in .note must also be added in case systems cannot process the referenced observation.",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-remaining-medication"
-            ]
-          }
-        ],
         "mapping": [
           {
             "identity": "Rezeptanforderung",
@@ -409,43 +372,6 @@
             "map": "Restreichweite"
           }
         ]
-      },
-      {
-        "id": "ServiceRequest.supportingInfo",
-        "path": "ServiceRequest.supportingInfo",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "pattern",
-              "path": "type"
-            }
-          ],
-          "rules": "open",
-          "description": "Supporting information for the prescription request"
-        },
-        "mustSupport": true
-      },
-      {
-        "id": "ServiceRequest.supportingInfo:AuslieferndeApotheke",
-        "path": "ServiceRequest.supportingInfo",
-        "sliceName": "AuslieferndeApotheke",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
-            ]
-          }
-        ],
-        "mustSupport": true
-      },
-      {
-        "id": "ServiceRequest.supportingInfo:AuslieferndeApotheke.type",
-        "path": "ServiceRequest.supportingInfo.type",
-        "min": 1,
-        "patternUri": "Organization"
       },
       {
         "id": "ServiceRequest.note",

@@ -105,16 +105,6 @@
         "subject": {
           "reference": "Patient/Example-Patient"
         },
-        "orderDetail": [
-          {
-            "coding": [
-              {
-                "code": "return-to-requester",
-                "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/prescription-fullfillment-type-cs"
-              }
-            ]
-          }
-        ],
         "occurrenceDateTime": "2023-02-01",
         "authoredOn": "2023-01-27",
         "requester": {
@@ -407,57 +397,7 @@
       }
     },
     {
-      "fullUrl": "http://erp-servicerequest-test.de/Observation/Medication-Runs-Out-Example-dateTime",
-      "resource": {
-        "resourceType": "Observation",
-        "id": "Medication-Runs-Out-Example-dateTime",
-        "meta": {
-          "profile": [
-            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-remaining-medication"
-          ]
-        },
-        "status": "final",
-        "subject": {
-          "reference": "Patient/Example-Patient"
-        },
-        "code": {
-          "coding": [
-            {
-              "code": "range-of-medication",
-              "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-observation-cs"
-            }
-          ]
-        },
-        "valueDateTime": "2023-01-31"
-      }
-    },
-    {
-      "fullUrl": "http://erp-servicerequest-test.de/Observation/Medication-Runs-Out-Example-Quantity",
-      "resource": {
-        "resourceType": "Observation",
-        "id": "Medication-Runs-Out-Example-Quantity",
-        "meta": {
-          "profile": [
-            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-remaining-medication"
-          ]
-        },
-        "status": "final",
-        "subject": {
-          "reference": "Patient/Example-Patient"
-        },
-        "code": {
-          "coding": [
-            {
-              "code": "range-of-medication",
-              "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-observation-cs"
-            }
-          ]
-        },
-        "valueQuantity": {
-          "value": 7,
-          "unit": "stk"
-        }
-      }
+      "fullUrl": "http://erp-servicerequest-test.de/Observation/Medication-Runs-Out-Example-dateTime"
     }
   ]
 }

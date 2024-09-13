@@ -126,16 +126,6 @@
         "subject": {
           "reference": "Patient/Example-Patient"
         },
-        "orderDetail": [
-          {
-            "coding": [
-              {
-                "code": "return-to-requester",
-                "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/prescription-fullfillment-type-cs"
-              }
-            ]
-          }
-        ],
         "occurrenceDateTime": "2023-01-30",
         "authoredOn": "2023-01-27",
         "requester": {

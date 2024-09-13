@@ -5,31 +5,31 @@
     "fshType": "Instance",
     "fshFile": "examples/UC1/UC1_Bundles.fsh",
     "startLine": 1,
-    "endLine": 23
+    "endLine": 20
   },
   {
     "outputFile": "Bundle-UC1-2-Fullfilled-Prescription-Request.json",
     "fshName": "UC1-2-Fullfilled-Prescription-Request",
     "fshType": "Instance",
     "fshFile": "examples/UC1/UC1_Bundles.fsh",
-    "startLine": 25,
-    "endLine": 47
+    "startLine": 22,
+    "endLine": 44
   },
   {
     "outputFile": "Bundle-UC1-3-Dispense-Request-To-Pharmacy.json",
     "fshName": "UC1-3-Dispense-Request-To-Pharmacy",
     "fshType": "Instance",
     "fshFile": "examples/UC1/UC1_Bundles.fsh",
-    "startLine": 49,
-    "endLine": 61
+    "startLine": 46,
+    "endLine": 58
   },
   {
     "outputFile": "Bundle-UC1-4-Fullfilled-DispenseRequest-To-Pharmacy.json",
     "fshName": "UC1-4-Fullfilled-DispenseRequest-To-Pharmacy",
     "fshType": "Instance",
     "fshFile": "examples/UC1/UC1_Bundles.fsh",
-    "startLine": 63,
-    "endLine": 79
+    "startLine": 60,
+    "endLine": 76
   },
   {
     "outputFile": "Bundle-UC1-Storno-1-Cancellation-Of-Prescription-Requester.json",
@@ -37,31 +37,31 @@
     "fshType": "Instance",
     "fshFile": "examples/UC1_Storno/UC1_Storno_Bundles.fsh",
     "startLine": 1,
-    "endLine": 23
+    "endLine": 19
   },
   {
     "outputFile": "Bundle-UC1-Storno-2-Cancellation-Of-Prescriber.json",
     "fshName": "UC1-Storno-2-Cancellation-Of-Prescriber",
     "fshType": "Instance",
     "fshFile": "examples/UC1_Storno/UC1_Storno_Bundles.fsh",
-    "startLine": 25,
-    "endLine": 47
+    "startLine": 22,
+    "endLine": 41
   },
   {
     "outputFile": "Bundle-UC1-Storno-3-Cancellation-Of-Dispense-Requester.json",
     "fshName": "UC1-Storno-3-Cancellation-Of-Dispense-Requester",
     "fshType": "Instance",
     "fshFile": "examples/UC1_Storno/UC1_Storno_Bundles.fsh",
-    "startLine": 49,
-    "endLine": 61
+    "startLine": 43,
+    "endLine": 55
   },
   {
     "outputFile": "Bundle-UC1-Storno-4-Cancellation-Of-Dispenser.json",
     "fshName": "UC1-Storno-4-Cancellation-Of-Dispenser",
     "fshType": "Instance",
     "fshFile": "examples/UC1_Storno/UC1_Storno_Bundles.fsh",
-    "startLine": 63,
-    "endLine": 79
+    "startLine": 57,
+    "endLine": 73
   },
   {
     "outputFile": "Bundle-UC2-1-Prescription-Request-To-HealthCareService.json",
@@ -136,14 +136,6 @@
     "endLine": 44
   },
   {
-    "outputFile": "CodeSystem-cancellation-reason-cs.json",
-    "fshName": "CancellationReasonCS",
-    "fshType": "CodeSystem",
-    "fshFile": "codesystems/CancellationReasonTypeCS.fsh",
-    "startLine": 1,
-    "endLine": 14
-  },
-  {
     "outputFile": "CodeSystem-medication-observation-cs.json",
     "fshName": "MedicationObservationCS",
     "fshType": "CodeSystem",
@@ -160,12 +152,12 @@
     "endLine": 6
   },
   {
-    "outputFile": "CodeSystem-prescription-fullfillment-type-cs.json",
-    "fshName": "PrescriptionFullfillmentTypeCS",
+    "outputFile": "CodeSystem-service-request-service-identifier-cs.json",
+    "fshName": "ServiceRequestServiceIdentifierCS",
     "fshType": "CodeSystem",
-    "fshFile": "codesystems/PrescriptionFullfillmentTypeCS.fsh",
+    "fshFile": "codesystems/ServiceRequestServiceIdentifierCS.fsh",
     "startLine": 1,
-    "endLine": 8
+    "endLine": 5
   },
   {
     "outputFile": "CodeSystem-service-request-type-cs.json",
@@ -198,22 +190,6 @@
     "fshFile": "profiles/6.3_EPrescriptionTokenIdentifier.fsh",
     "startLine": 13,
     "endLine": 29
-  },
-  {
-    "outputFile": "Observation-Medication-Runs-Out-Example-Quantity.json",
-    "fshName": "Medication-Runs-Out-Example-Quantity",
-    "fshType": "Instance",
-    "fshFile": "profiles/7_ReminingObservation.fsh",
-    "startLine": 32,
-    "endLine": 41
-  },
-  {
-    "outputFile": "Observation-Medication-Runs-Out-Example-dateTime.json",
-    "fshName": "Medication-Runs-Out-Example-dateTime",
-    "fshType": "Instance",
-    "fshFile": "profiles/7_ReminingObservation.fsh",
-    "startLine": 23,
-    "endLine": 30
   },
   {
     "outputFile": "Organization-Example-HealthCareService-Organization.json",
@@ -285,15 +261,7 @@
     "fshType": "Profile",
     "fshFile": "profiles/3.1_Prescription_ServiceRequest.fsh",
     "startLine": 1,
-    "endLine": 110
-  },
-  {
-    "outputFile": "StructureDefinition-erp-service-request-remaining-medication.json",
-    "fshName": "ERPServiceRequestRemainingMedication",
-    "fshType": "Profile",
-    "fshFile": "profiles/7_ReminingObservation.fsh",
-    "startLine": 1,
-    "endLine": 21
+    "endLine": 84
   },
   {
     "outputFile": "StructureDefinition-erp-service-request-request-header.json",
@@ -384,36 +352,12 @@
     "endLine": 19
   },
   {
-    "outputFile": "ValueSet-medication-observation-vs.json",
-    "fshName": "MedicationObservationVS",
-    "fshType": "ValueSet",
-    "fshFile": "valuesets/MedicationRequestReasonVS.fsh",
-    "startLine": 9,
-    "endLine": 14
-  },
-  {
-    "outputFile": "ValueSet-prescription-fullfillment-type-vs.json",
-    "fshName": "PrescriptionFullfillmentTypeVS",
-    "fshType": "ValueSet",
-    "fshFile": "valuesets/PrescriptionFullfillmentTypeVS.fsh",
-    "startLine": 1,
-    "endLine": 6
-  },
-  {
-    "outputFile": "ValueSet-request-reason-vs.json",
-    "fshName": "RequestReasonVS",
-    "fshType": "ValueSet",
-    "fshFile": "valuesets/MedicationRequestReasonVS.fsh",
-    "startLine": 1,
-    "endLine": 7
-  },
-  {
     "outputFile": "ValueSet-service-identifier-vs.json",
     "fshName": "ServiceIdentifierVS",
     "fshType": "ValueSet",
     "fshFile": "valuesets/ServiceIdentifierVS.fsh",
     "startLine": 1,
-    "endLine": 10
+    "endLine": 13
   },
   {
     "outputFile": "ValueSet-service-request-status-vs.json",
