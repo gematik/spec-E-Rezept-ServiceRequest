@@ -584,6 +584,7 @@
         "path": "gem-erp-sr-log-dispense-request.Anhaenge",
         "short": "Anhänge",
         "definition": "Anhänge zur Bestätigung. Das können PDFs, Bilder oder andere Dokumente sein.",
+        "comment": "Werden auf Ebene der KIM-Nachricht angehangen",
         "min": 0,
         "max": "*",
         "type": [

@@ -12,6 +12,7 @@ Description: "Fachliches Modell zur Beschreibung einer Bestätigung einer Dispen
 
 * Freitext 0..1 string "Freitext" "Individuelle Nachricht an den Empfänger"    
 * Anhaenge 0..* Attachment "Anhänge" "Anhänge zur Anforderung. Das können PDFs, Bilder oder andere Dokumente sein."
+  * ^comment = "Werden auf Ebene der KIM-Nachricht angehangen"
 
 // Medizinische Informationen
 * Medikation 1..1 BackboneElement "Medikation" "Angaben zur Medikation"

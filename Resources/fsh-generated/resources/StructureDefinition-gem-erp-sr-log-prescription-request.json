@@ -868,6 +868,7 @@
         "path": "gem-erp-sr-log-prescription-request.Anhaenge",
         "short": "Anhänge",
         "definition": "Anhänge zur Anforderung. Das können PDFs, Bilder oder andere Dokumente sein.",
+        "comment": "Werden auf Ebene der KIM-Nachricht angehangen",
         "min": 0,
         "max": "*",
         "type": [

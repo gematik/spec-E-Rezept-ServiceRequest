@@ -98,7 +98,6 @@ Description: "ServiceRequest, which is used to request a recipe"
     * ^short = "Remaining supply"
     * ^definition = "Indicates the remaining supply of the medication."
 
-
 * priority 0..1 MS
   * ^short = "Indicates the urgency of the request."
   * ^definition = "The priority can be used to indicate the urgency of the request."

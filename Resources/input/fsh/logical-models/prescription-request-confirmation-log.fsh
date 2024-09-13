@@ -18,6 +18,7 @@ Description: "Fachliches Modell zur Beschreibung einer Bestätigung einer Rezept
 * Anhaenge 0..* Attachment "Anhänge" "Anhänge zur Bestätigung. Das können PDFs, Bilder oder andere Dokumente sein."
   * Medikationsplan 0..1 Attachment "Medikationsplan" "Anhang des Medikationsplans"
   * weitereAnhaenge 0..* Attachment "Weitere Anhänge" "Weitere Anhänge"
+  * ^comment = "Werden auf Ebene der KIM-Nachricht angehangen"
 
 // Medizinische Informationen
 * AenderungVerordnung 0..1 boolean "Änderung der Verordnung" "Gibt an, ob das verordnete Arzneimittel von dem angefragten abweicht."

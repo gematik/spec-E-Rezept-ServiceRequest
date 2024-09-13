@@ -48,6 +48,7 @@ Description: "Fachliches Modell zur Beschreibung einer Rezeptanforderung"
   * Wert 0..1 decimal "Wert der Restreichweite"
     
 * Anhaenge 0..* Attachment "Anhänge" "Anhänge zur Anforderung. Das können PDFs, Bilder oder andere Dokumente sein."
+  * ^comment = "Werden auf Ebene der KIM-Nachricht angehangen"
 
 // Medizinische Informationen
 * Medikation 1..1 BackboneElement "Medikation" "Angaben zur Medikation"
