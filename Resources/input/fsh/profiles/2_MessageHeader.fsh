@@ -5,6 +5,12 @@ Title: "ERP Service Request Request Header"
 Description: "Header containing information about the sender and addressee"
 * insert Meta (erp-service-request-request-header)
 
+* extension 0..1 MS
+* extension contains
+    CopyToCareFacilityEX named CopyToCareFacility 0..1 MS
+* extension[CopyToCareFacility]
+  * ^short = "The KIM-Adress of the care facility that receives a copy of the request."
+
 * focus MS
 * focus only Reference(ERPServiceRequestPrescriptionRequest or ERPServiceRequestDispenseRequest or ERPServiceRequestMessageContainer)
   * ^short = "Specification of the ServiceRequest that contains the essential information for a given use case."

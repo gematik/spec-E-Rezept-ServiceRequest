@@ -200,6 +200,14 @@
     "endLine": 16
   },
   {
+    "outputFile": "StructureDefinition-copy-to-care-facility-ex.json",
+    "fshName": "CopyToCareFacilityEX",
+    "fshType": "Extension",
+    "fshFile": "extensions/CopyToCareFacilityEX.fsh",
+    "startLine": 1,
+    "endLine": 9
+  },
+  {
     "outputFile": "StructureDefinition-eprescription-token-ex.json",
     "fshName": "EPrescriptionTokenEX",
     "fshType": "Extension",
@@ -277,7 +285,7 @@
     "fshType": "Profile",
     "fshFile": "profiles/2_MessageHeader.fsh",
     "startLine": 1,
-    "endLine": 14
+    "endLine": 20
   },
   {
     "outputFile": "StructureDefinition-erp-service-request-request-identifier.json",

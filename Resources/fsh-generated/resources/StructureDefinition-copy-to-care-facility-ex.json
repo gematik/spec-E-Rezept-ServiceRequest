@@ -1,0 +1,54 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "copy-to-care-facility-ex",
+  "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/copy-to-care-facility-ex",
+  "version": "1.0",
+  "name": "CopyToCareFacilityEX",
+  "title": "Copy To Care Facility (EX)",
+  "status": "active",
+  "experimental": false,
+  "publisher": "gematik GmbH",
+  "description": "This extension is used to record the KIM-Adress of the care facility that receives a copy of the request.",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "expression": "MessageHeader",
+      "type": "element"
+    },
+    {
+      "expression": "MessageDefinition",
+      "type": "element"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/copy-to-care-facility-ex"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "short": "The KIM-Adress of the care facility that receives a copy of the request.",
+        "min": 1,
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}
