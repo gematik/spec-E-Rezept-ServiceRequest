@@ -13,42 +13,21 @@
     "include": [
       {
         "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs",
-        "concept": [
+        "filter": [
           {
-            "code": "eRezept_Rezeptanforderung;Rezeptanfrage",
-            "display": "Request to a doctor to issue a prescription"
-          },
+            "property": "concept",
+            "op": "is-a",
+            "value": "eRezept_Rezeptanforderung"
+          }
+        ]
+      },
+      {
+        "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs",
+        "filter": [
           {
-            "code": "eRezept_Rezeptanforderung;Rezeptanfrage_Storno",
-            "display": "Cancellation of the prescription request"
-          },
-          {
-            "code": "eRezept_Rezeptanforderung;Rezeptbestaetigung",
-            "display": "Confirmation and transmission of an issued prescription"
-          },
-          {
-            "code": "eRezept_Rezeptanforderung;Abgabeanfrage",
-            "display": "Request to fulfill a prescription and dispense the drug"
-          },
-          {
-            "code": "eRezept_Rezeptanforderung;Abgabeanfrage_Storno",
-            "display": "Cancellation of the delivery request"
-          },
-          {
-            "code": "eRezept_Rezeptanforderung;Abgabebestaetigung",
-            "display": "Confirmation of fulfillment and dispensing of a medication"
-          },
-          {
-            "code": "eRezept_ParenteraleZubereitung;Rezeptanfrage",
-            "display": "Prescription request for a parenteral preparation"
-          },
-          {
-            "code": "eRezept_ParenteraleZubereitung;Rezeptanfrage_Storno",
-            "display": "Cancellation of the prescription request for a parenteral preparation"
-          },
-          {
-            "code": "eRezept_ParenteraleZubereitung;Rezeptbestaetigung",
-            "display": "Confirmation and transmission of an issued prescription for a parenteral preparation"
+            "property": "concept",
+            "op": "is-a",
+            "value": "eRezept_ParenteraleZubereitung"
           }
         ]
       }
