@@ -517,6 +517,19 @@
         ]
       },
       {
+        "id": "gem-erp-sr-log-prescription-request.involvierteParteien.Anfragender.AnfragenderTyp",
+        "path": "gem-erp-sr-log-prescription-request.involvierteParteien.Anfragender.AnfragenderTyp",
+        "short": "Typ des Anfragenden",
+        "definition": "Folgende Typen sind zulässig: Apotheke, Pflegeeinrichtung",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ]
+      },
+      {
         "id": "gem-erp-sr-log-prescription-request.involvierteParteien.Anfragender.Name",
         "path": "gem-erp-sr-log-prescription-request.involvierteParteien.Anfragender.Name",
         "short": "Name des Anfragenden",

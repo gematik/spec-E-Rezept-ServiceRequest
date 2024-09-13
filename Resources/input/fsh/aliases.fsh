@@ -28,3 +28,5 @@ Alias: $GEM_PR_ATF_MessageHeader = https://gematik.de/fhir/atf/StructureDefiniti
 Alias: $GEM_PR_KIM_AdressIdentifier = https://gematik.de/fhir/atf/StructureDefinition/identifier-address-kim
 Alias: $GEM_PR_TIM_AdressIdentifier = https://gematik.de/fhir/atf/StructureDefinition/identifier-address-tim
 Alias: $GEM_CS_ATF_ServiceIdentifier = https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs
+
+Alias: $IHEXDShealthcareFacilityTypeCode = http://ihe-d.de/ValueSets/IHEXDShealthcareFacilityTypeCode

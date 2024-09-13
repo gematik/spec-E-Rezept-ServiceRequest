@@ -17,6 +17,7 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * occurrenceDateTime = "2023-02-01"
 * authoredOn = "2023-01-27"
 * requester = Reference(Example-HealthCareService-Organization)
+* requester.type = #PFL
 * performer.identifier = Hans-Topp-Glücklich-Identifier
 * reasonCode = MedicationRequestReasonCS#medication-runs-out
 * reasonReference[+] = Reference(Observation/Medication-Runs-Out-Example-dateTime)

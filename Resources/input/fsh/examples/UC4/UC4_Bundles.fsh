@@ -16,8 +16,6 @@ Description: "Request sent to Prescriber to get a Prescription"
 * entry[=].resource = Example-Zyto-Medication-Request
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Medication/Example-Zyto-Medication"
 * entry[=].resource = Example-Zyto-Medication
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/Organization/Example-Pharmacy-Organization"
-* entry[=].resource = Example-Pharmacy-Organization
 
 Instance: UC4-2-Prescription-Request-To-Pharmacy
 InstanceOf: ERPServiceRequestMessageContainer
@@ -40,5 +38,3 @@ Description: "Request sent to Pharmacy to request a dispense of the medication"
 * entry[=].resource = Example-Patient
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Practitioner/Example-Practitioner"
 * entry[=].resource = Example-Practitioner
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/Organization/Example-Pharmacy-Organization"
-* entry[=].resource = Example-Pharmacy-Organization

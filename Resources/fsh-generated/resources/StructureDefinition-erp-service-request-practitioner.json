@@ -1,0 +1,51 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "erp-service-request-practitioner",
+  "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-practitioner",
+  "version": "1.0",
+  "name": "ERPServiceRequestPractitioner",
+  "title": "ERP Service Request Practitioner",
+  "status": "active",
+  "experimental": false,
+  "publisher": "gematik GmbH",
+  "description": "Practitioner that can be used to identify the desired performer of a ServiceRequest",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Practitioner",
+  "baseDefinition": "https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Practitioner",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Practitioner.identifier",
+        "path": "Practitioner.identifier",
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.identifier:ANR",
+        "path": "Practitioner.identifier",
+        "sliceName": "ANR",
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.name",
+        "path": "Practitioner.name",
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.name:name",
+        "path": "Practitioner.name",
+        "sliceName": "name",
+        "min": 1
+      },
+      {
+        "id": "Practitioner.name:geburtsname",
+        "path": "Practitioner.name",
+        "sliceName": "geburtsname",
+        "max": "0"
+      }
+    ]
+  }
+}

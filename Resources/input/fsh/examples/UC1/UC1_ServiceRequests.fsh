@@ -19,6 +19,7 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * occurrenceDateTime = "2023-02-01"
 * authoredOn = "2023-01-27"
 * requester = Reference(Example-HealthCareService-Organization)
+* requester.type = #PFL
 * performer.identifier = Hans-Topp-Glücklich-Identifier
 * reasonCode = MedicationRequestReasonCS#medication-runs-out
 * reasonReference[+] = Reference(Observation/Medication-Runs-Out-Example-dateTime)
@@ -47,6 +48,7 @@ Description: "ServiceRequest that is returned to the requester"
 * occurrenceDateTime = "2023-01-30" //update wann es tatsächlich ausgestellt wurde
 * authoredOn = "2023-01-27"
 * requester = Reference(Example-HealthCareService-Organization)
+* requester.type = #PFL
 * performer = Reference(Example-Practitioner)
 * note[+].text = "Medikament läuft am 31.01.2023 aus. Es sind noch 7 stk übrig. "
 

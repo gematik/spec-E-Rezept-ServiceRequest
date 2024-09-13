@@ -15,8 +15,6 @@ Description: "Cancellationrequest sent to Prescriber to get a Prescription"
 * entry[=].resource = Example-Initial-Medication
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Patient/Example-Patient"
 * entry[=].resource = Example-Patient
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/Organization/Example-HealthCareService-Organization"
-* entry[=].resource = Example-HealthCareService-Organization
 
 
 Instance: UC1-Storno-2-Cancellation-Of-Prescriber
@@ -36,9 +34,6 @@ Description: "Response sent from Practitioner back to HealthCareService"
 * entry[=].resource = Example-Initial-Medication
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Patient/Example-Patient"
 * entry[=].resource = Example-Patient
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/Organization/Example-HealthCareService-Organization"
-* entry[=].resource = Example-HealthCareService-Organization
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/Observation/Medication-Runs-Out-Example-dateTime"
 
 Instance: UC1-Storno-3-Cancellation-Of-Dispense-Requester
 InstanceOf: ERPServiceRequestMessageContainer

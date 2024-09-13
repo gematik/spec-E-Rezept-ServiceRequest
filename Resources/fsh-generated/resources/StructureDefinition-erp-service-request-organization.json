@@ -18,67 +18,78 @@
   "differential": {
     "element": [
       {
-        "id": "Organization.identifier",
-        "path": "Organization.identifier",
+        "id": "Organization.name",
+        "path": "Organization.name",
         "min": 1,
         "mustSupport": true
       },
       {
-        "id": "Organization.identifier:KIMAdresse",
-        "path": "Organization.identifier",
-        "sliceName": "KIMAdresse",
+        "id": "Organization.address",
+        "path": "Organization.address",
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.contact",
+        "path": "Organization.contact",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.contact.telecom",
+        "path": "Organization.contact.telecom",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "system"
+            }
+          ],
+          "rules": "open",
+          "description": "Slices on contact options",
+          "ordered": false
+        },
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.contact.telecom:tel",
+        "path": "Organization.contact.telecom",
+        "sliceName": "tel",
         "min": 1,
         "max": "1",
-        "type": [
-          {
-            "code": "Identifier",
-            "profile": [
-              "https://gematik.de/fhir/atf/StructureDefinition/identifier-address-kim"
-            ]
-          }
-        ],
         "mustSupport": true
       },
       {
-        "id": "Organization.identifier:KIMAdresse.type",
-        "path": "Organization.identifier.type",
+        "id": "Organization.contact.telecom:tel.system",
+        "path": "Organization.contact.telecom.system",
         "min": 1,
-        "fixedCodeableConcept": {
-          "coding": [
-            {
-              "code": "kim-2.0",
-              "system": "https://gematik.de/fhir/directory/CodeSystem/EndpointDirectoryConnectionType"
-            }
-          ]
-        }
+        "patternCode": "phone"
       },
       {
-        "id": "Organization.identifier:TIMAdresse",
-        "path": "Organization.identifier",
-        "sliceName": "TIMAdresse",
+        "id": "Organization.contact.telecom:tel.value",
+        "path": "Organization.contact.telecom.value",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.contact.telecom:kim",
+        "path": "Organization.contact.telecom",
+        "sliceName": "kim",
         "min": 0,
         "max": "1",
-        "type": [
-          {
-            "code": "Identifier",
-            "profile": [
-              "https://gematik.de/fhir/atf/StructureDefinition/identifier-address-tim"
-            ]
-          }
-        ]
+        "mustSupport": true
       },
       {
-        "id": "Organization.identifier:TIMAdresse.type",
-        "path": "Organization.identifier.type",
+        "id": "Organization.contact.telecom:kim.system",
+        "path": "Organization.contact.telecom.system",
         "min": 1,
-        "patternCodeableConcept": {
-          "coding": [
-            {
-              "code": "tim",
-              "system": "https://gematik.de/fhir/directory/CodeSystem/EndpointDirectoryConnectionType"
-            }
-          ]
-        }
+        "patternCode": "email"
+      },
+      {
+        "id": "Organization.contact.telecom:kim.value",
+        "path": "Organization.contact.telecom.value",
+        "min": 1,
+        "mustSupport": true
       }
     ]
   }

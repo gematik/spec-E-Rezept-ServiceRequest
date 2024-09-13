@@ -1,0 +1,29 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "RequesterTypeVS",
+  "id": "requester-type-vs",
+  "title": "Requester Type (VS)",
+  "description": "Defines the allowed types of Requesters for a ServiceRequest",
+  "version": "1.0",
+  "url": "https://gematik.de/fhir/erp-servicerequest/ValueSet/service-identifier-vs",
+  "experimental": false,
+  "publisher": "gematik GmbH",
+  "compose": {
+    "include": [
+      {
+        "system": "http://ihe-d.de/ValueSets/IHEXDShealthcareFacilityTypeCode",
+        "concept": [
+          {
+            "code": "APO",
+            "display": "Apotheke"
+          },
+          {
+            "code": "PFL",
+            "display": "Pflegeheim"
+          }
+        ]
+      }
+    ]
+  }
+}

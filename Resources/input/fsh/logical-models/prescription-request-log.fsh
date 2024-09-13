@@ -23,6 +23,7 @@ Description: "Fachliches Modell zur Beschreibung einer Rezeptanforderung"
     * Name 1..1 HumanName "Name des Arztes"
 
   * Anfragender 1..1 BackboneElement "Anfragender" "Angaben zum anfragenden"
+    * AnfragenderTyp 1..1 Coding "Typ des Anfragenden" "Folgende Typen sind zulässig: Apotheke, Pflegeeinrichtung"
     * Name 1..1 string "Name des Anfragenden"
     * Adresse 0..1 Address "Straßenadresse des Anfragenden"
     * Telefon 1..1 string "Telefonnummer des Anfragenden"

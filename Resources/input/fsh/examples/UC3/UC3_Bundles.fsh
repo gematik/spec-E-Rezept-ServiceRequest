@@ -15,8 +15,6 @@ Description: "Request sent to Prescriber to get a Prescription"
 * entry[=].resource = Example-Initial-Medication
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Patient/Example-Patient"
 * entry[=].resource = Example-Patient
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/Organization/Example-HealthCareService-Organization"
-* entry[=].resource = Example-HealthCareService-Organization
 
 Instance: UC3-2-Fullfilled-Prescription-Request
 InstanceOf: ERPServiceRequestMessageContainer
@@ -39,5 +37,3 @@ Description: "Response sent from Practitioner back to HealthCareService"
 * entry[=].resource = Example-Patient
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Coverage/Response-Coverage"
 * entry[=].resource = Response-Coverage
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/Organization/Example-HealthCareService-Organization"
-* entry[=].resource = Example-HealthCareService-Organization

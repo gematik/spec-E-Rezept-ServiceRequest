@@ -17,6 +17,7 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * occurrenceDateTime = "2023-02-01"
 * authoredOn = "2023-01-27"
 * requester = Reference(Example-HealthCareService-Organization)
+* requester.type = #PFL
 * performer.identifier = Hans-Topp-Glücklich-Identifier
 
 Instance: UC3-Response-Prescription-Request
@@ -39,4 +40,5 @@ Description: "ServiceRequest that is returned to the requester"
 * occurrenceDateTime = "2023-01-30" //update wann es tatsächlich ausgestellt wurde
 * authoredOn = "2023-01-27"
 * requester = Reference(Example-HealthCareService-Organization)
+* requester.type = #PFL
 * performer = Reference(Example-Practitioner)
