@@ -69,7 +69,7 @@ Description: "ServiceRequest, which is used to request a recipe"
   * ^short = "Creation date of the request."
   * ^comment = "Is initially created and then no longer changed."
 
-* requester 1..1 MS
+* requester 0..1 MS
 * requester only Reference(ERPServiceRequestOrganization)
   * ^short = "Inquiring facility or practitioner."
   * ^comment = "The KIM address is already stored in the message header. Therefore, the preferred specification is to store a KBV_PR_FOR_Practitioner."
@@ -124,5 +124,6 @@ Description: "ServiceRequest, which is used to request a recipe"
 
 
 // Constraints
+//TODO, "if status active then requester must be present"
 //TODO, "if status completed then token must be present"
 //TODO: "if status active then basedOn Reference must be ERPMedicationRequest otherwise KBV_PR_ERP"
