@@ -50,6 +50,6 @@ StructureDefinition-prescription-id-ex.json                                Presc
 ValueSet-medication-observation-vs.json                                    MedicationObservationVS                                ValueSet    valuesets/MedicationRequestReasonVS.fsh                   9 - 14
 ValueSet-prescription-fullfillment-type-vs.json                            PrescriptionFullfillmentTypeVS                         ValueSet    valuesets/PrescriptionFullfillmentTypeVS.fsh              1 - 6
 ValueSet-request-reason-vs.json                                            RequestReasonVS                                        ValueSet    valuesets/MedicationRequestReasonVS.fsh                   1 - 7
-ValueSet-service-identifier-vs.json                                        ServiceIdentifierVS                                    ValueSet    valuesets/ServiceIdentifierVS.fsh                         1 - 14
+ValueSet-service-identifier-vs.json                                        ServiceIdentifierVS                                    ValueSet    valuesets/ServiceIdentifierVS.fsh                         1 - 10
 ValueSet-service-request-status-vs.json                                    ServiceRequestStatusVS                                 ValueSet    valuesets/ServiceRequestStatusVS.fsh                      1 - 9
 ValueSet-service-request-type-vs.json                                      ServiceRequestTypeVS                                   ValueSet    valuesets/ServiceRequestCodeVS.fsh                        1 - 6

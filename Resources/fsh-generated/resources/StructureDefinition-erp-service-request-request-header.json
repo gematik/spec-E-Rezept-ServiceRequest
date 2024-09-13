@@ -53,7 +53,7 @@
         "id": "MessageHeader.focus",
         "path": "MessageHeader.focus",
         "short": "Specification of the ServiceRequest that contains the essential information for a given use case.",
-        "comment": "Since a request should address exactly one medication, a ServiceRequest must also be specified accordingly.",
+        "comment": "One Message can contain multiple ServiceRequests which each are identified with an ID.",
         "type": [
           {
             "code": "Reference",

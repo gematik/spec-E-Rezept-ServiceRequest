@@ -413,7 +413,7 @@
     "fshType": "ValueSet",
     "fshFile": "valuesets/ServiceIdentifierVS.fsh",
     "startLine": 1,
-    "endLine": 14
+    "endLine": 10
   },
   {
     "outputFile": "ValueSet-service-request-status-vs.json",
