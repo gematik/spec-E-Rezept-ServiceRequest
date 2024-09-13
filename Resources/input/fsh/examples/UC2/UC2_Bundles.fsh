@@ -14,8 +14,6 @@ Description: "Request sent to HealthCareService to forward to prescriber"
 * entry[=].resource = Example-Initial-Medication-Request
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Medication/Example-Initial-Medication"
 * entry[=].resource = Example-Initial-Medication
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/Patient/Example-Patient"
-* entry[=].resource = Example-Patient
 
 Instance: UC2-2-Prescription-Request-To-Prescriber
 InstanceOf: ERPServiceRequestMessageContainer
@@ -32,8 +30,6 @@ Description: "Request sent to Prescriber to get a Prescription"
 * entry[=].resource = Example-Initial-Medication-Request
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Medication/Example-Initial-Medication"
 * entry[=].resource = Example-Initial-Medication
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/Patient/Example-Patient"
-* entry[=].resource = Example-Patient
 
 Instance: UC2-3-Fullfilled-Prescription-Request
 InstanceOf: ERPServiceRequestMessageContainer
@@ -50,12 +46,6 @@ Description: "Response sent from Practitioner back to HealthCareService"
 * entry[=].resource = Example-Response-KBV-Prescription
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Medication/Example-Response-Medication"
 * entry[=].resource = Example-Response-Medication
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/Practitioner/Example-Practitioner"
-* entry[=].resource = Example-Practitioner
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/Patient/Example-Patient"
-* entry[=].resource = Example-Patient
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/Coverage/Response-Coverage"
-* entry[=].resource = Response-Coverage
 
 Instance: UC2-4-Fullfilled-Prescription-Request
 InstanceOf: ERPServiceRequestMessageContainer
@@ -72,13 +62,6 @@ Description: "Response sent from Practitioner back to HealthCareService"
 * entry[=].resource = Example-Response-KBV-Prescription
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Medication/Example-Response-Medication"
 * entry[=].resource = Example-Response-Medication
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/Practitioner/Example-Practitioner"
-* entry[=].resource = Example-Practitioner
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/Patient/Example-Patient"
-* entry[=].resource = Example-Patient
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/Coverage/Response-Coverage"
-* entry[=].resource = Response-Coverage
-
 
 Instance: UC2-5-Fullfilled-DispenseRequest-To-HealthCareService
 InstanceOf: ERPServiceRequestMessageContainer
@@ -91,8 +74,6 @@ Description: "Request sent from Pharmacy to to inform HealthCareService about di
 * entry[=].resource = UC2-5-Pharmacy-to-HealthCareService-MessageHeader
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/ServiceRequest/UC2-Response-Dispense-Request"
 * entry[=].resource = UC2-Response-Dispense-Request
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/Patient/Example-Patient"
-* entry[=].resource = Example-Patient
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Medication/Example-Response-Medication"
 * entry[=].resource = Example-Response-Medication
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/MedicationDispense/UC1-Medication-Dispense"

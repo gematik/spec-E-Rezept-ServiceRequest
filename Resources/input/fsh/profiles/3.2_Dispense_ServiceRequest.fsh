@@ -7,7 +7,7 @@ Description: "ServiceRequest that is used to supply a recipe"
 
 * extension MS
 * extension contains
-    EPrescriptionTokenEX named EPrescriptionToken 0..1 MS //muss 0..1 sein für den Fall, dass die Pflegeeinrichtung den DispenseRequest an den Arzt schickt, der es dann zur Apotheke weiterleitet
+    EPrescriptionTokenEX named EPrescriptionToken 0..1 MS
 * extension[EPrescriptionToken]
   * ^short = "The e-prescription token for delivery to the pharmacy can be provided here."
   * ^comment = "The token is of the form '/Task/{PrescriptionID}/$accept?ac={AccessCode}. See [gemSpec_DM_eRp](https://fachportal.gematik.de/fachportal-import/files/gemSpec_DM_eRp_V1.5.0.pdf)'."
@@ -18,7 +18,7 @@ Description: "ServiceRequest that is used to supply a recipe"
 * identifier ^slicing.description = "Defines identifiers to be used in a process"
 
 * identifier 1..* MS
-* identifier contains requestId 1..1 and predisId 0..1
+* identifier contains requestId 1..1
 * identifier[requestId] only ERPServiceRequestRequestIdentifier
   * ^short = "Identifier that uniquely references a ServiceRequest."
   * ^comment = "For referencing and assignment of ServiceRequest, e.g. if one ServiceRequest is to replace another, it is important to be able to make this assignment with the identifier. Can be mapped via a UUID, for example."
@@ -27,10 +27,6 @@ Description: "ServiceRequest that is used to supply a recipe"
 * requisition only ERPServiceRequestProcedureIdentifier
   * ^short = "Identifier of the process. All ServiceRequests within a process receive the same ID."
   * ^comment = "Is to be understood as a case or process ID in order to be able to track which request the ServiceRequest belongs to."
-
-* subject MS
-* subject only Reference(Patient)
-  * ^short = "Patient for whom a prescription is to be delivered."
 
 * status MS
 * status from ServiceRequestStatusVS
@@ -48,7 +44,7 @@ Description: "ServiceRequest that is used to supply a recipe"
 * code.coding.code = #dispense-request (exactly)
   * ^comment = "#dispense-request serves as a service request for a pharmacy to deliver a prescription."
 
-* occurrence[x] 1..1 MS
+* occurrence[x] 0..1 MS
 * occurrence[x] only dateTime
   * ^short = "Indicates the date when the medication should be delivered."
 
@@ -56,19 +52,44 @@ Description: "ServiceRequest that is used to supply a recipe"
   * ^short = "Creation date of the request."
   * ^comment = "Is initially created and then no longer changed."
 
+* requester 0..1 MS
+* requester only Reference(ERPServiceRequestOrganization)
+  * ^short = "Inquiring facility or practitioner."
+  * ^comment = "The KIM address is already stored in the message header. Therefore, the preferred specification is to store a KBV_PR_FOR_Practitioner."
+
+* requester.type 1..1 MS
+* requester.type = #PFL (exactly)
+  * ^short = "Care Facility as requester for the dispensation of the prescription"
+  * ^comment = "This value helps the receiving Systems to identify the source of the request."
+
+* priority 0..1 MS
+  * ^short = "Indicates the urgency of the request."
+  * ^definition = "The priority can be used to indicate the urgency of the request."
+  * ^comment = "Allowed values: routine | urgent"
+* priority from ServiceRequestPriorityVS (required)
+
 * supportingInfo ^slicing.discriminator.type = #pattern
 * supportingInfo ^slicing.discriminator.path = "type"
 * supportingInfo ^slicing.rules = #open
-* supportingInfo ^slicing.description = "Supporting information about delivery"
+* supportingInfo ^slicing.description = "Supporting information about dispense"
 
 * supportingInfo MS
 * supportingInfo contains AbgabeDaten 0..1 MS
-// TODO: wenn status = erfüllt dann Abgabedaten vorhanden
-* supportingInfo[AbgabeDaten] only Reference(MedicationDispense)
+* supportingInfo contains AbgabeArzneimittel 0..1 MS
+
+* supportingInfo[AbgabeDaten] only Reference(GEM_ERP_PR_MedicationDispense)
 * supportingInfo[AbgabeDaten].type = "MedicationDispense" (exactly)
-  * ^short = "Delivery data that is also sent to the e-prescription specialist service."
-  * ^comment = "In this way, the inquiring facility/person can understand which medications are actually supplied."
+  * ^short = "Dispense data that is also sent to the e-prescription server."
+
+* supportingInfo[AbgabeArzneimittel] only Reference(GEM_ERP_PR_Medication)
+* supportingInfo[AbgabeArzneimittel].type = "Medication" (exactly)
+  * ^short = "Medication data that is also sent to the e-prescription server."
 
 * note MS
-  * ^short = "Further information on delivery."
+  * ^short = "Further information on dispense."
   * ^comment = "Any use cases that are not specified can be placed here in free text."
+
+//constraints
+//TODO: wenn status = active, dann Token vorhanden
+// TODO: wenn status = completed dann Abgabedaten vorhanden
+// TODO: wenn AbgabeDaten vorhanden dann Abgabedatenarzneimittel vorhanden

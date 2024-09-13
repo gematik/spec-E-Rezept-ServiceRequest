@@ -34,11 +34,6 @@ Description: "Beschreibt die Quelle der Dispensieranforderungsinformationen. Wir
 
 * Prioritaet -> "Nutzer des PS" "Abfrage im Moment der Anforderung"
   * PrioritaetCode -> "Nutzer des PS" "Abfrage im Moment der Anforderung"
-
-* Restreichweite -> "Anfragendes PS oder Nutzer des PS" "Abfrage/ Eingabe im Moment der Anforderung"
-  * Freitext -> "Nutzer des PS" "Abfrage im Moment der Anforderung"
-  * Einheit -> "Anfragendes PS" "Ggf. automatisierte Berechnung"
-  * Wert -> "Anfragendes PS" "Ggf. automatisierte Berechnung"
     
 * Anhaenge -> "Nutzer oder PS" "Angabe im Moment der Bestätigung"
   * Medikationsplan -> "Nutzer, PS oder Rezeptanforderung_Bestätigung" "Aktualisierung und ggf. automatische Generierung vom PS"

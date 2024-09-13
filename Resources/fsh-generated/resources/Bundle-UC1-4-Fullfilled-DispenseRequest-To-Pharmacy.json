@@ -104,78 +104,10 @@
         ],
         "status": "completed",
         "subject": {
-          "reference": "Patient/Example-Patient"
+          "reference": "Example-Patient"
         },
         "occurrenceDateTime": "2023-02-01",
         "authoredOn": "2023-02-01"
-      }
-    },
-    {
-      "fullUrl": "http://erp-servicerequest-test.de/Patient/Example-Patient",
-      "resource": {
-        "resourceType": "Patient",
-        "id": "Example-Patient",
-        "meta": {
-          "profile": [
-            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
-          ]
-        },
-        "identifier": [
-          {
-            "type": {
-              "coding": [
-                {
-                  "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
-                  "code": "GKV"
-                }
-              ]
-            },
-            "system": "http://fhir.de/sid/gkv/kvid-10",
-            "value": "X234567890"
-          }
-        ],
-        "name": [
-          {
-            "use": "official",
-            "family": "Königsstein",
-            "_family": {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
-                  "valueString": "Königsstein"
-                }
-              ]
-            },
-            "given": [
-              "Ludger"
-            ]
-          }
-        ],
-        "address": [
-          {
-            "type": "both",
-            "line": [
-              "Musterstr. 1"
-            ],
-            "_line": [
-              {
-                "extension": [
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-                    "valueString": "1"
-                  },
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-                    "valueString": "Musterstr."
-                  }
-                ]
-              }
-            ],
-            "city": "Berlin",
-            "postalCode": "10623"
-          }
-        ],
-        "birthDate": "1935-06-22"
       }
     },
     {
@@ -244,10 +176,9 @@
         "id": "UC1-Medication-Dispense",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|1.2"
+            "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|1.4"
           ]
         },
-        "status": "completed",
         "identifier": [
           {
             "use": "official",
@@ -255,16 +186,7 @@
             "value": "160.100.000.000.002.36"
           }
         ],
-        "performer": [
-          {
-            "actor": {
-              "identifier": {
-                "system": "https://gematik.de/fhir/sid/telematik-id",
-                "value": "12345678901234567890"
-              }
-            }
-          }
-        ],
+        "status": "completed",
         "contained": [
           {
             "resourceType": "Medication",
@@ -332,6 +254,16 @@
             "value": "X123456789"
           }
         },
+        "performer": [
+          {
+            "actor": {
+              "identifier": {
+                "system": "https://gematik.de/fhir/sid/telematik-id",
+                "value": "12345678901234567890"
+              }
+            }
+          }
+        ],
         "whenHandedOver": "2020-04-16T13:44:27.957+00:00",
         "dosageInstruction": [
           {

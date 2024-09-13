@@ -13,8 +13,6 @@ Description: "Request sent to Prescriber to get a Prescription"
 * entry[=].resource = Example-Initial-Medication-Request
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Medication/Example-Initial-Medication"
 * entry[=].resource = Example-Initial-Medication
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/Patient/Example-Patient"
-* entry[=].resource = Example-Patient
 
 Instance: UC1-2-Fullfilled-Prescription-Request
 InstanceOf: ERPServiceRequestMessageContainer
@@ -31,12 +29,6 @@ Description: "Response sent from Practitioner back to HealthCareService"
 * entry[=].resource = Example-Response-KBV-Prescription
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Medication/Example-Response-Medication"
 * entry[=].resource = Example-Response-Medication
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/Practitioner/Example-Practitioner"
-* entry[=].resource = Example-Practitioner
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/Patient/Example-Patient"
-* entry[=].resource = Example-Patient
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/Coverage/Response-Coverage"
-* entry[=].resource = Response-Coverage
 
 Instance: UC1-3-Dispense-Request-To-Pharmacy
 InstanceOf: ERPServiceRequestMessageContainer
@@ -47,8 +39,6 @@ Description: "Request sent to pharmacy to request a dispense of the medication"
 * timestamp = "2023-02-01T13:28:17.239+02:00"
 * entry[0].fullUrl = "http://erp-servicerequest-test.de/MessageHeader/UC1-HealthCareService-to-Pharmacy-MessageHeader"
 * entry[=].resource = UC1-HealthCareService-to-Pharmacy-MessageHeader
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/Patient/Example-Patient"
-* entry[=].resource = Example-Patient
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/ServiceRequest/UC1-Initial-Dispense-Request"
 * entry[=].resource = UC1-Initial-Dispense-Request
 
@@ -63,8 +53,6 @@ Description: "Response sent from pharmacy to requester"
 * entry[=].resource = UC1-Pharmacy-to-HealthCareService-MessageHeader
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/ServiceRequest/UC1-Response-Dispense-Request"
 * entry[=].resource = UC1-Response-Dispense-Request
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/Patient/Example-Patient"
-* entry[=].resource = Example-Patient
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Medication/Example-Response-Medication"
 * entry[=].resource = Example-Response-Medication
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/MedicationDispense/UC1-Medication-Dispense"

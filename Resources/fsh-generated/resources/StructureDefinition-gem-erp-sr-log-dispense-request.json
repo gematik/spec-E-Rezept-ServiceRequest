@@ -328,8 +328,9 @@
         "id": "gem-erp-sr-log-dispense-request.ERezeptToken",
         "path": "gem-erp-sr-log-dispense-request.ERezeptToken",
         "short": "E-Rezept-Token",
-        "definition": "Token der für die Einlösung der Verordnung gebraucht wird. Angabe nach gemSpec_DM_eRp#A_19554.",
-        "min": 1,
+        "definition": "Token der für die Einlösung der Verordnung gebraucht wird. Optional, da in der Antwort an die Pflegeeinrichtung der Token nicht gebraucht wird.",
+        "comment": "Angabe nach gemSpec_DM_eRp#A_19554.",
+        "min": 0,
         "max": "1",
         "type": [
           {
@@ -496,86 +497,6 @@
             "identity": "Quelle-Dispensieranforderung-Mapping",
             "map": "Nutzer des PS",
             "comment": "Abfrage im Moment der Anforderung"
-          }
-        ]
-      },
-      {
-        "id": "gem-erp-sr-log-dispense-request.Restreichweite",
-        "path": "gem-erp-sr-log-dispense-request.Restreichweite",
-        "short": "Restreichweite",
-        "definition": "Angabe der Restreichweite",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "BackboneElement"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "Quelle-Dispensieranforderung-Mapping",
-            "map": "Anfragendes PS oder Nutzer des PS",
-            "comment": "Abfrage/ Eingabe im Moment der Anforderung"
-          }
-        ]
-      },
-      {
-        "id": "gem-erp-sr-log-dispense-request.Restreichweite.Freitext",
-        "path": "gem-erp-sr-log-dispense-request.Restreichweite.Freitext",
-        "short": "Restreichweite in Tage oder Anzahl an Einheiten",
-        "definition": "Restreichweite in Tage oder Anzahl an Einheiten",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "string"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "Quelle-Dispensieranforderung-Mapping",
-            "map": "Nutzer des PS",
-            "comment": "Abfrage im Moment der Anforderung"
-          }
-        ]
-      },
-      {
-        "id": "gem-erp-sr-log-dispense-request.Restreichweite.Einheit",
-        "path": "gem-erp-sr-log-dispense-request.Restreichweite.Einheit",
-        "short": "Einheit der Restreichweite",
-        "definition": "Einheit der Restreichweite",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "string"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "Quelle-Dispensieranforderung-Mapping",
-            "map": "Anfragendes PS",
-            "comment": "Ggf. automatisierte Berechnung"
-          }
-        ]
-      },
-      {
-        "id": "gem-erp-sr-log-dispense-request.Restreichweite.Wert",
-        "path": "gem-erp-sr-log-dispense-request.Restreichweite.Wert",
-        "short": "Wert der Restreichweite",
-        "definition": "Wert der Restreichweite",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "decimal"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "Quelle-Dispensieranforderung-Mapping",
-            "map": "Anfragendes PS",
-            "comment": "Ggf. automatisierte Berechnung"
           }
         ]
       },

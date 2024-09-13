@@ -119,7 +119,7 @@ Description: "ServiceRequest, which is used to request a recipe"
 * supportingInfo[pflegeeinrichtungKopie]
   * ^short = "Reference to the care facility that receives a copy of the prescription."
   * ^comment = "This needs to be set if the initiating Requester is a pharmacy."
-  * type = "PFL"
+  * type = "Organization"
 
 
 

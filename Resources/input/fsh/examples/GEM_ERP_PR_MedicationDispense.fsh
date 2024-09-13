@@ -2,9 +2,9 @@ Instance: UC1-Medication-Dispense
 InstanceOf: GEM_ERP_PR_MedicationDispense
 Usage: #inline
 Description: "Example MedicationDispense"
-* identifier.system = "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"
-* identifier.value = "160.100.000.000.002.36"
-* identifier.use = #official
+* identifier[prescriptionID].system = "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"
+* identifier[prescriptionID].value = "160.100.000.000.002.36"
+* identifier[prescriptionID].use = #official
 * contained[0] = Example-Response-Medication
 * status = RequestStatus#completed
 * medicationReference = Reference(Example-Response-Medication)

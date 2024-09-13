@@ -474,7 +474,7 @@
         "id": "ServiceRequest.supportingInfo:pflegeeinrichtungKopie.type",
         "path": "ServiceRequest.supportingInfo.type",
         "min": 1,
-        "patternUri": "PFL"
+        "patternUri": "Organization"
       },
       {
         "id": "ServiceRequest.note",

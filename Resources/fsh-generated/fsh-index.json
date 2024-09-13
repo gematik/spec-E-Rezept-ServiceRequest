@@ -5,31 +5,31 @@
     "fshType": "Instance",
     "fshFile": "examples/UC1/UC1_Bundles.fsh",
     "startLine": 1,
-    "endLine": 17
+    "endLine": 15
   },
   {
     "outputFile": "Bundle-UC1-2-Fullfilled-Prescription-Request.json",
     "fshName": "UC1-2-Fullfilled-Prescription-Request",
     "fshType": "Instance",
     "fshFile": "examples/UC1/UC1_Bundles.fsh",
-    "startLine": 19,
-    "endLine": 39
+    "startLine": 17,
+    "endLine": 31
   },
   {
     "outputFile": "Bundle-UC1-3-Dispense-Request-To-Pharmacy.json",
     "fshName": "UC1-3-Dispense-Request-To-Pharmacy",
     "fshType": "Instance",
     "fshFile": "examples/UC1/UC1_Bundles.fsh",
-    "startLine": 41,
-    "endLine": 53
+    "startLine": 33,
+    "endLine": 43
   },
   {
     "outputFile": "Bundle-UC1-4-Fullfilled-DispenseRequest-To-Pharmacy.json",
     "fshName": "UC1-4-Fullfilled-DispenseRequest-To-Pharmacy",
     "fshType": "Instance",
     "fshFile": "examples/UC1/UC1_Bundles.fsh",
-    "startLine": 55,
-    "endLine": 71
+    "startLine": 45,
+    "endLine": 59
   },
   {
     "outputFile": "Bundle-UC1-Storno-1-Cancellation-Of-Prescription-Requester.json",
@@ -37,31 +37,31 @@
     "fshType": "Instance",
     "fshFile": "examples/UC1_Storno/UC1_Storno_Bundles.fsh",
     "startLine": 1,
-    "endLine": 17
+    "endLine": 15
   },
   {
     "outputFile": "Bundle-UC1-Storno-2-Cancellation-Of-Prescriber.json",
     "fshName": "UC1-Storno-2-Cancellation-Of-Prescriber",
     "fshType": "Instance",
     "fshFile": "examples/UC1_Storno/UC1_Storno_Bundles.fsh",
-    "startLine": 20,
-    "endLine": 36
+    "startLine": 18,
+    "endLine": 32
   },
   {
     "outputFile": "Bundle-UC1-Storno-3-Cancellation-Of-Dispense-Requester.json",
     "fshName": "UC1-Storno-3-Cancellation-Of-Dispense-Requester",
     "fshType": "Instance",
     "fshFile": "examples/UC1_Storno/UC1_Storno_Bundles.fsh",
-    "startLine": 38,
-    "endLine": 50
+    "startLine": 34,
+    "endLine": 44
   },
   {
     "outputFile": "Bundle-UC1-Storno-4-Cancellation-Of-Dispenser.json",
     "fshName": "UC1-Storno-4-Cancellation-Of-Dispenser",
     "fshType": "Instance",
     "fshFile": "examples/UC1_Storno/UC1_Storno_Bundles.fsh",
-    "startLine": 52,
-    "endLine": 68
+    "startLine": 46,
+    "endLine": 60
   },
   {
     "outputFile": "Bundle-UC2-1-Prescription-Request-To-HealthCareService.json",
@@ -69,39 +69,39 @@
     "fshType": "Instance",
     "fshFile": "examples/UC2/UC2_Bundles.fsh",
     "startLine": 2,
-    "endLine": 18
+    "endLine": 16
   },
   {
     "outputFile": "Bundle-UC2-2-Prescription-Request-To-Prescriber.json",
     "fshName": "UC2-2-Prescription-Request-To-Prescriber",
     "fshType": "Instance",
     "fshFile": "examples/UC2/UC2_Bundles.fsh",
-    "startLine": 20,
-    "endLine": 36
+    "startLine": 18,
+    "endLine": 32
   },
   {
     "outputFile": "Bundle-UC2-3-Fullfilled-Prescription-Request.json",
     "fshName": "UC2-3-Fullfilled-Prescription-Request",
     "fshType": "Instance",
     "fshFile": "examples/UC2/UC2_Bundles.fsh",
-    "startLine": 38,
-    "endLine": 58
+    "startLine": 34,
+    "endLine": 48
   },
   {
     "outputFile": "Bundle-UC2-4-Fullfilled-Prescription-Request.json",
     "fshName": "UC2-4-Fullfilled-Prescription-Request",
     "fshType": "Instance",
     "fshFile": "examples/UC2/UC2_Bundles.fsh",
-    "startLine": 60,
-    "endLine": 80
+    "startLine": 50,
+    "endLine": 64
   },
   {
     "outputFile": "Bundle-UC2-5-Fullfilled-DispenseRequest-To-HealthCareService.json",
     "fshName": "UC2-5-Fullfilled-DispenseRequest-To-HealthCareService",
     "fshType": "Instance",
     "fshFile": "examples/UC2/UC2_Bundles.fsh",
-    "startLine": 83,
-    "endLine": 99
+    "startLine": 66,
+    "endLine": 80
   },
   {
     "outputFile": "Bundle-UC3-1-Prescription-Request-To-Prescriber.json",
@@ -109,15 +109,15 @@
     "fshType": "Instance",
     "fshFile": "examples/UC3/UC3_Bundles.fsh",
     "startLine": 1,
-    "endLine": 17
+    "endLine": 15
   },
   {
     "outputFile": "Bundle-UC3-2-Fullfilled-Prescription-Request.json",
     "fshName": "UC3-2-Fullfilled-Prescription-Request",
     "fshType": "Instance",
     "fshFile": "examples/UC3/UC3_Bundles.fsh",
-    "startLine": 19,
-    "endLine": 39
+    "startLine": 17,
+    "endLine": 31
   },
   {
     "outputFile": "Bundle-UC4-1-Prescription-and-Dispense-Request-To-Prescriber.json",
@@ -125,15 +125,15 @@
     "fshType": "Instance",
     "fshFile": "examples/UC4/UC4_Bundles.fsh",
     "startLine": 2,
-    "endLine": 18
+    "endLine": 16
   },
   {
     "outputFile": "Bundle-UC4-2-Prescription-Request-To-Pharmacy.json",
     "fshName": "UC4-2-Prescription-Request-To-Pharmacy",
     "fshType": "Instance",
     "fshFile": "examples/UC4/UC4_Bundles.fsh",
-    "startLine": 20,
-    "endLine": 40
+    "startLine": 18,
+    "endLine": 32
   },
   {
     "outputFile": "CodeSystem-medication-request-reason-cs.json",
@@ -221,7 +221,7 @@
     "fshType": "Profile",
     "fshFile": "profiles/3.2_Dispense_ServiceRequest.fsh",
     "startLine": 1,
-    "endLine": 74
+    "endLine": 90
   },
   {
     "outputFile": "StructureDefinition-erp-service-request-eprescription-token.json",
@@ -309,7 +309,7 @@
     "fshType": "Logical",
     "fshFile": "logical-models/dispense-request-log.fsh",
     "startLine": 1,
-    "endLine": 33
+    "endLine": 29
   },
   {
     "outputFile": "StructureDefinition-gem-erp-sr-log-message-copy.json",
