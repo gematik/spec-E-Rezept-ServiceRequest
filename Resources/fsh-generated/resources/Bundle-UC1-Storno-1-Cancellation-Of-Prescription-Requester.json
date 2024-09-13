@@ -119,18 +119,10 @@
           {
             "coding": [
               {
-                "code": "medication-runs-out",
+                "code": "exhausted-range",
                 "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-request-reason-cs"
               }
             ]
-          }
-        ],
-        "reasonReference": [
-          {
-            "reference": "Observation/Medication-Runs-Out-Example-dateTime"
-          },
-          {
-            "reference": "Observation/Medication-Runs-Out-Example-Quantity"
           }
         ],
         "note": [

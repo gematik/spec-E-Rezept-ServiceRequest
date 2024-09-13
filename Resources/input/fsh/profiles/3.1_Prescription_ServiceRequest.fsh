@@ -84,6 +84,13 @@ Description: "ServiceRequest, which is used to request a recipe"
   * ^short = "Further information on the prescription request."
   * ^comment = "Any use cases that are not specified can be placed here in free text."
 
+* reasonCode MS
+  * ^short = "Reason for the prescription request."
+  * ^comment = "The reason for the prescription request can be documented here."
+  * coding 0..1 MS
+  * coding from MedicationRequestReasonVS (required)
+  * text 0..1 MS
+
 * supportingInfo MS
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "type"

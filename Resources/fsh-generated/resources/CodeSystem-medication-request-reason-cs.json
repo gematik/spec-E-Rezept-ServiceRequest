@@ -10,11 +10,23 @@
   "url": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-request-reason-cs",
   "concept": [
     {
-      "code": "medication-runs-out",
-      "display": "Medikation geht zu neige"
+      "code": "correction",
+      "display": "Korrektur"
+    },
+    {
+      "code": "exhausted-range",
+      "display": "Reichweite erschöpft(Dauermedikation)"
+    },
+    {
+      "code": "vital-value-measurement",
+      "display": "nach Vitalwertmessung"
+    },
+    {
+      "code": "on-demand",
+      "display": "nach Bedarf"
     }
   ],
   "experimental": false,
   "publisher": "gematik GmbH",
-  "count": 1
+  "count": 4
 }

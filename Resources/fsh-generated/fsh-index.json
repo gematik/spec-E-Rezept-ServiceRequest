@@ -136,20 +136,12 @@
     "endLine": 40
   },
   {
-    "outputFile": "CodeSystem-medication-observation-cs.json",
-    "fshName": "MedicationObservationCS",
-    "fshType": "CodeSystem",
-    "fshFile": "codesystems/MedicationRequestReasonCS.fsh",
-    "startLine": 8,
-    "endLine": 13
-  },
-  {
     "outputFile": "CodeSystem-medication-request-reason-cs.json",
     "fshName": "MedicationRequestReasonCS",
     "fshType": "CodeSystem",
     "fshFile": "codesystems/MedicationRequestReasonCS.fsh",
     "startLine": 1,
-    "endLine": 6
+    "endLine": 9
   },
   {
     "outputFile": "CodeSystem-service-request-service-identifier-cs.json",
@@ -205,7 +197,7 @@
     "fshType": "Extension",
     "fshFile": "extensions/CopyToCareFacilityEX.fsh",
     "startLine": 1,
-    "endLine": 27
+    "endLine": 28
   },
   {
     "outputFile": "StructureDefinition-eprescription-token-ex.json",
@@ -277,7 +269,7 @@
     "fshType": "Profile",
     "fshFile": "profiles/3.1_Prescription_ServiceRequest.fsh",
     "startLine": 1,
-    "endLine": 99
+    "endLine": 106
   },
   {
     "outputFile": "StructureDefinition-erp-service-request-request-header.json",
@@ -374,6 +366,14 @@
     "fshFile": "extensions/RedeemByPatientEX.fsh",
     "startLine": 1,
     "endLine": 21
+  },
+  {
+    "outputFile": "ValueSet-medication-request-reason-vs.json",
+    "fshName": "MedicationRequestReasonVS",
+    "fshType": "ValueSet",
+    "fshFile": "valuesets/MedicationRequestReasonVS.fsh",
+    "startLine": 1,
+    "endLine": 7
   },
   {
     "outputFile": "ValueSet-service-identifier-vs.json",

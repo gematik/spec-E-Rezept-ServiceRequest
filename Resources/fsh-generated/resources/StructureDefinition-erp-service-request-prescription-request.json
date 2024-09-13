@@ -354,6 +354,9 @@
       {
         "id": "ServiceRequest.reasonCode",
         "path": "ServiceRequest.reasonCode",
+        "short": "Reason for the prescription request.",
+        "comment": "The reason for the prescription request can be documented here.",
+        "mustSupport": true,
         "mapping": [
           {
             "identity": "Rezeptanforderung",
@@ -368,6 +371,21 @@
             "map": "Ablehnungsgrund"
           }
         ]
+      },
+      {
+        "id": "ServiceRequest.reasonCode.coding",
+        "path": "ServiceRequest.reasonCode.coding",
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/erp-servicerequest/ValueSet/medication-request-reason-vs"
+        }
+      },
+      {
+        "id": "ServiceRequest.reasonCode.text",
+        "path": "ServiceRequest.reasonCode.text",
+        "mustSupport": true
       },
       {
         "id": "ServiceRequest.reasonReference",

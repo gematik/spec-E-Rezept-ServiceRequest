@@ -21,9 +21,7 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * requester = Reference(Example-HealthCareService-Organization)
 * requester.type = #PFL
 * performer.identifier = Hans-Topp-Glücklich-Identifier
-* reasonCode = MedicationRequestReasonCS#medication-runs-out
-* reasonReference[+] = Reference(Observation/Medication-Runs-Out-Example-dateTime)
-* reasonReference[+] = Reference(Observation/Medication-Runs-Out-Example-Quantity)
+* reasonCode = MedicationRequestReasonCS#exhausted-range
 * note[+].text = "Medikament läuft am 31.01.2023 aus. Es sind noch 7 stk übrig. "
 
 Instance: UC1-Response-Prescription-Request
