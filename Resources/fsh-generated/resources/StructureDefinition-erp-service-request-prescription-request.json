@@ -468,6 +468,14 @@
         "comment": "This needs to be set if the initiating Requester is a pharmacy.",
         "min": 0,
         "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
+            ]
+          }
+        ],
         "mustSupport": true
       },
       {
