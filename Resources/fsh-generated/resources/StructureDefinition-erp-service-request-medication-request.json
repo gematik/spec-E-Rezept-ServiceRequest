@@ -46,7 +46,7 @@
         "path": "MedicationRequest.extension",
         "sliceName": "PriorPrescriptionID",
         "short": "Provide a previous PrescriptionID that corresponds to the requested medication.",
-        "definition": "\nThe MedicationRequest can contain a PrescriptionId of a prescription that has already been issued.\n\nIf a previous prescription ID is known, the writing system MAY indicate this in the medication request.\n\nIf this ID is available, the receiving system MUST be able to search for the previous regulation and give the user the opportunity to display and compare the content.\n",
+        "definition": "\nThe MedicationRequest can contain a PrescriptionId of a prescription that has already been issued.\nIf a previous prescription ID is known, the writing system MAY indicate this in the medication request.\nIf this ID is available, the receiving system MUST be able to search for the previous regulation and give the user the opportunity to display and compare the content.\n",
         "comment": "Must be given in the form xxx.xxx.xxx.xxx.xxx.xx.",
         "min": 0,
         "max": "1",

@@ -22,10 +22,6 @@ Description: "ServiceRequest that is used to supply a recipe"
 * identifier[requestId] only ERPServiceRequestRequestIdentifier
   * ^short = "Identifier that uniquely references a ServiceRequest."
   * ^comment = "For referencing and assignment of ServiceRequest, e.g. if one ServiceRequest is to replace another, it is important to be able to make this assignment with the identifier. Can be mapped via a UUID, for example."
-* identifier[predisId] only ERPServiceRequestPreDisIdentifier
-  * ^short = "Identifier that connects a prescription and a dispensing request."
-  * ^comment = "Can be mapped via a UUID, for example."
-  * ^definition = "In some applications, it is necessary to know which prescription request belongs to which delivery request. If, for example, a medication is requested, you want to be able to track which is the corresponding delivery request. The predisIdentifier is used for this purpose, which identifies a pair of ServiceRequest**Prescription**Request and ServiceRequest**Dispense**Request together."
 
 * requisition 1..1 MS
 * requisition only ERPServiceRequestProcedureIdentifier
