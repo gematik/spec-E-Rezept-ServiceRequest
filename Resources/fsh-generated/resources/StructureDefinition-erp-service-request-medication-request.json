@@ -67,13 +67,76 @@
         ]
       },
       {
+        "id": "MedicationRequest.extension:requestMVO",
+        "path": "MedicationRequest.extension",
+        "sliceName": "requestMVO",
+        "short": "Multiple prescription order",
+        "comment": "If the prescription is should be a multiple prescription order. Only the 'Kennzeichen' should be stated, indicating that the prescription is requested to be a multiple prescription order.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Multiple_Prescription"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.extension:requestMVO.extension:Kennzeichen",
+        "path": "MedicationRequest.extension.extension",
+        "sliceName": "Kennzeichen",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.extension:requestMVO.extension:Nummerierung",
+        "path": "MedicationRequest.extension.extension",
+        "sliceName": "Nummerierung",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.extension:requestMVO.extension:Zeitraum",
+        "path": "MedicationRequest.extension.extension",
+        "sliceName": "Zeitraum",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.extension:requestMVO.extension:ID",
+        "path": "MedicationRequest.extension.extension",
+        "sliceName": "ID",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.extension:redeemByPatient",
+        "path": "MedicationRequest.extension",
+        "sliceName": "redeemByPatient",
+        "short": "Redeem By Patient",
+        "comment": "Indicates whether the prescription should be redeemed by the patient.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/prescription-id-ex"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
         "id": "MedicationRequest.medication[x]",
         "path": "MedicationRequest.medication[x]",
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/Medication"
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_Compounding",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_Ingredient",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_FreeText"
             ]
           }
         ],
@@ -84,126 +147,6 @@
             "map": "Praeparat"
           }
         ]
-      },
-      {
-        "id": "MedicationRequest.medication[x].reference",
-        "path": "MedicationRequest.medication[x].reference",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
-        "id": "MedicationRequest.medication[x].type",
-        "path": "MedicationRequest.medication[x].type",
-        "max": "0"
-      },
-      {
-        "id": "MedicationRequest.medication[x].identifier",
-        "path": "MedicationRequest.medication[x].identifier",
-        "max": "0"
-      },
-      {
-        "id": "MedicationRequest.medication[x].display",
-        "path": "MedicationRequest.medication[x].display",
-        "max": "0"
-      },
-      {
-        "id": "MedicationRequest.subject",
-        "path": "MedicationRequest.subject",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/Patient"
-            ]
-          }
-        ],
-        "mustSupport": true
-      },
-      {
-        "id": "MedicationRequest.subject.reference",
-        "path": "MedicationRequest.subject.reference",
-        "min": 1
-      },
-      {
-        "id": "MedicationRequest.subject.type",
-        "path": "MedicationRequest.subject.type",
-        "max": "0"
-      },
-      {
-        "id": "MedicationRequest.subject.identifier",
-        "path": "MedicationRequest.subject.identifier",
-        "max": "0"
-      },
-      {
-        "id": "MedicationRequest.encounter",
-        "path": "MedicationRequest.encounter",
-        "max": "0"
-      },
-      {
-        "id": "MedicationRequest.requester",
-        "path": "MedicationRequest.requester",
-        "short": "Requesting doctor/facility/pharmacy for this MedicationRequest",
-        "comment": "Is optional to specify here, since it must already be specified in the ServiceRequest",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/Practitioner",
-              "http://hl7.org/fhir/StructureDefinition/Organization"
-            ]
-          }
-        ],
-        "mustSupport": true
-      },
-      {
-        "id": "MedicationRequest.requester.type",
-        "path": "MedicationRequest.requester.type",
-        "max": "0"
-      },
-      {
-        "id": "MedicationRequest.instantiatesCanonical",
-        "path": "MedicationRequest.instantiatesCanonical",
-        "max": "0"
-      },
-      {
-        "id": "MedicationRequest.instantiatesUri",
-        "path": "MedicationRequest.instantiatesUri",
-        "max": "0"
-      },
-      {
-        "id": "MedicationRequest.basedOn",
-        "path": "MedicationRequest.basedOn",
-        "max": "0"
-      },
-      {
-        "id": "MedicationRequest.groupIdentifier",
-        "path": "MedicationRequest.groupIdentifier",
-        "max": "0"
-      },
-      {
-        "id": "MedicationRequest.courseOfTherapyType",
-        "path": "MedicationRequest.courseOfTherapyType",
-        "max": "0"
-      },
-      {
-        "id": "MedicationRequest.insurance",
-        "path": "MedicationRequest.insurance",
-        "short": "Insurance status of the patient for whom the medication is requested",
-        "comment": "If this information is already known, it can optionally be given here",
-        "max": "1",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/Coverage"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "MedicationRequest.dosageInstruction",
-        "path": "MedicationRequest.dosageInstruction",
-        "max": "1"
       },
       {
         "id": "MedicationRequest.dispenseRequest",
@@ -242,11 +185,6 @@
         "min": 1,
         "fixedCode": "{Package}",
         "mustSupport": true
-      },
-      {
-        "id": "MedicationRequest.dispenseRequest.performer",
-        "path": "MedicationRequest.dispenseRequest.performer",
-        "max": "0"
       }
     ]
   }

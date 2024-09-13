@@ -78,7 +78,7 @@ Das implementierende System muss in der Lage sein diese Verknüpfung herzustelle
   * ^comment = "The KIM address is already stored in the message header. Therefore, the preferred specification is to store a KBV_PR_FOR_Practitioner."
 
 * requester.type 1..1 MS
-* requester.type from RequesterTypeVS (required)
+* requester.type from ServiceRequestOrganizationTypeVS (required)
   * ^short = "Type of Requester (Pharmacy or Care Facility)."
   * ^comment = "This value helps the receiving Systems to identify the source of the request."
 
@@ -102,7 +102,7 @@ Das implementierende System muss in der Lage sein diese Verknüpfung herzustelle
 * supportingInfo[pflegeeinrichtungKopie]
   * ^short = "Reference to the care facility that receives a copy of the prescription."
   * ^comment = "This needs to be set if the initiating Requester is a pharmacy."
-  * type = RequesterTypeVS#PFL
+  * type = ServiceRequestOrganizationTypeVS#PFL
 
 
 

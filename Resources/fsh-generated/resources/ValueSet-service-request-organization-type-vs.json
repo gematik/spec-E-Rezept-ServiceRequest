@@ -1,12 +1,12 @@
 {
   "resourceType": "ValueSet",
   "status": "active",
-  "name": "RequesterTypeVS",
-  "id": "requester-type-vs",
-  "title": "Requester Type (VS)",
-  "description": "Defines the allowed types of Requesters for a ServiceRequest",
+  "name": "ServiceRequestOrganizationTypeVS",
+  "id": "service-request-organization-type-vs",
+  "title": "ServiceRequest Organization Type (VS)",
+  "description": "Defines Organizations in the context of a ServiceRequest",
   "version": "1.0",
-  "url": "https://gematik.de/fhir/erp-servicerequest/ValueSet/service-identifier-vs",
+  "url": "https://gematik.de/fhir/erp-servicerequest/ValueSet/service-request-organization-type-vs",
   "experimental": false,
   "publisher": "gematik GmbH",
   "compose": {

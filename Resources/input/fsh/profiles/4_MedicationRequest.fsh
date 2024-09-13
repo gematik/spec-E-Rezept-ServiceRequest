@@ -9,69 +9,42 @@ Description: "Medical and pharmaceutical information for the prescription reques
   * ^comment = "If the previous recipe ID is known, it can be named here"
 * extension contains
     PrescriptionIdEx named PriorPrescriptionID 0..1 MS
+    and KBV_EX_ERP_Multiple_Prescription named requestMVO 0..1 MS
+    and RedeemByPatientEX named redeemByPatient 0..1 MS
+
 * extension[PriorPrescriptionID]
   * ^short = "Provide a previous PrescriptionID that corresponds to the requested medication."
   * ^comment = "Must be given in the form xxx.xxx.xxx.xxx.xxx.xx."
   * ^definition = "
 The MedicationRequest can contain a PrescriptionId of a prescription that has already been issued.
-
 If a previous prescription ID is known, the writing system MAY indicate this in the medication request.
-
 If this ID is available, the receiving system MUST be able to search for the previous regulation and give the user the opportunity to display and compare the content.
 "
+* extension[requestMVO]
+  * ^short = "Multiple prescription order"
+  * ^comment = "If the prescription is should be a multiple prescription order. Only the 'Kennzeichen' should be stated, indicating that the prescription is requested to be a multiple prescription order."
+  * extension[Kennzeichen] MS
+  * extension[Nummerierung] 0..0
+  * extension[Zeitraum] 0..0
+  * extension[ID] 0..0
+
+* extension[redeemByPatient]
+  * ^short = "Redeem By Patient"
+  * ^comment = "Indicates whether the prescription should be redeemed by the patient."
 
 * medication[x] MS
-* medication[x] only Reference
-
-* medicationReference 1..1 MS
-* medicationReference.reference 1..1 MS
-* medicationReference.type 0..0
-* medicationReference.identifier 0..0
-* medicationReference.display 0..0
-
-* subject MS
-* subject only Reference(Patient)
-* subject.type 0..0
-* subject.identifier 0..0
-* subject.reference 1..1
-
-* encounter 0..0
-
-* requester MS
-  * ^short = "Requesting doctor/facility/pharmacy for this MedicationRequest"
-  * ^comment = "Is optional to specify here, since it must already be specified in the ServiceRequest"
-* requester only Reference(Practitioner or Organization)
-* requester.type 0..0
-* requester.identifier 0..1
-* requester.reference 0..1
-
-* instantiatesCanonical 0..0
-* instantiatesUri 0..0
-* basedOn 0..0
-* groupIdentifier 0..0
-* courseOfTherapyType 0..0
-
-// Wenn eine Coverage genutzt wird, kann es auch gleich die richtige sein
-* insurance only Reference(Coverage)
-  * ^short = "Insurance status of the patient for whom the medication is requested"
-  * ^comment = "If this information is already known, it can optionally be given here"
-* insurance 0..1
-
-* dosageInstruction 0..1
+* medication[x] only Reference(KBV_PR_ERP_Medication_PZN or KBV_PR_ERP_Medication_Compounding or KBV_PR_ERP_Medication_Ingredient or KBV_PR_ERP_Medication_FreeText)
 
 * dispenseRequest 0..1 MS
-* dispenseRequest.quantity 1..1 MS
-* dispenseRequest.quantity.value 1..1 MS
-* dispenseRequest.quantity.value ^short = "Number of packs prescribed"
-* dispenseRequest.quantity.value ^definition = "Number of packs prescribed"
-* dispenseRequest.quantity.unit 0..0
-* dispenseRequest.quantity.system 1..1 MS
-* dispenseRequest.quantity.system = $UNITSOFMEASURE (exactly)
-* dispenseRequest.quantity.code 1..1 MS
-* dispenseRequest.quantity.code = #{Package} (exactly)
-* dispenseRequest.performer 0..0
-
-* substitution 0..1
+  * quantity 1..1 MS
+    * value 1..1 MS
+      * ^short = "Number of packs prescribed"
+      * ^definition = "Number of packs prescribed"
+    * system 1..1 MS
+    * system = $UNITSOFMEASURE (exactly)
+    * code 1..1 MS
+    * code = #{Package} (exactly)
+    * unit 0..0
 
 Instance: Example-Initial-Medication-Request
 InstanceOf: ERPServiceRequestMedicationRequest

@@ -172,8 +172,8 @@
     "fshName": "Example-Initial-Medication-Request",
     "fshType": "Instance",
     "fshFile": "profiles/4_MedicationRequest.fsh",
-    "startLine": 76,
-    "endLine": 89
+    "startLine": 51,
+    "endLine": 64
   },
   {
     "outputFile": "MessageHeader-UC1-HealthCareService-to-Practitioner-MessageHeader.json",
@@ -229,7 +229,7 @@
     "fshType": "Profile",
     "fshFile": "profiles/4_MedicationRequest.fsh",
     "startLine": 1,
-    "endLine": 74
+    "endLine": 49
   },
   {
     "outputFile": "StructureDefinition-erp-service-request-message-container.json",
@@ -368,12 +368,12 @@
     "endLine": 19
   },
   {
-    "outputFile": "ValueSet-requester-type-vs.json",
-    "fshName": "RequesterTypeVS",
-    "fshType": "ValueSet",
-    "fshFile": "valuesets/RequesterTypeVS.fsh",
+    "outputFile": "StructureDefinition-redeem-by-patient-ex.json",
+    "fshName": "RedeemByPatientEX",
+    "fshType": "Extension",
+    "fshFile": "extensions/RedeemByPatientEX.fsh",
     "startLine": 1,
-    "endLine": 8
+    "endLine": 21
   },
   {
     "outputFile": "ValueSet-service-identifier-vs.json",
@@ -382,6 +382,14 @@
     "fshFile": "valuesets/ServiceIdentifierVS.fsh",
     "startLine": 1,
     "endLine": 13
+  },
+  {
+    "outputFile": "ValueSet-service-request-organization-type-vs.json",
+    "fshName": "ServiceRequestOrganizationTypeVS",
+    "fshType": "ValueSet",
+    "fshFile": "valuesets/ServiceRequestOrganizationTypeVS.fsh",
+    "startLine": 1,
+    "endLine": 8
   },
   {
     "outputFile": "ValueSet-service-request-status-vs.json",
