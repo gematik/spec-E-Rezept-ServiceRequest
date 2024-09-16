@@ -37,12 +37,12 @@ Description: "ServiceRequest that is used to supply a recipe"
 
 * code MS
   * ^short = "Indicates the type of service request."
-* code.coding 1..1 MS
-* code.coding from ServiceRequestTypeVS
-* code.coding.system 1..1
-* code.coding.code 1..1
-* code.coding.code = #dispense-request (exactly)
-  * ^comment = "#dispense-request serves as a service request for a pharmacy to deliver a prescription."
+  * coding 1..1 MS
+  * coding from ServiceRequestTypeVS
+  * coding = ServiceRequestTypeCS#dispense-request (exactly)
+    * system 1..1
+    * code 1..1
+      * ^comment = "#dispense-request serves as a service request for a pharmacy to deliver a prescription."
 
 * occurrence[x] 0..1 MS
 * occurrence[x] only dateTime

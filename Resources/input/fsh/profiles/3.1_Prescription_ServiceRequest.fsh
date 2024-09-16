@@ -49,12 +49,12 @@ Description: "ServiceRequest, which is used to request a recipe"
 
 * code MS
   * ^short = "Indicates the type of service request."
-* code.coding 1..1 MS
-* code.coding from ServiceRequestTypeVS
-* code.coding.system 1..1
-* code.coding.code 1..1
-* code.coding.code = #prescription-request (exactly)
-  * ^comment = "#prescription-request defines this ServiceRequest as a prescription request from a requester to a doctor."
+  * coding 1..1 MS
+  * coding from ServiceRequestTypeVS
+  * coding = ServiceRequestTypeCS#prescription-request (exactly)
+    * system 1..1
+    * code 1..1
+      * ^comment = "#prescription-request defines this ServiceRequest as a prescription request from a requester to a doctor."
 
 * subject MS
 * subject only Reference(ERPServiceRequestPatient)

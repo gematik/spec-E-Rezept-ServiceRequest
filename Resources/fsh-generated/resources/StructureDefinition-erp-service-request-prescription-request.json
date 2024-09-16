@@ -260,6 +260,10 @@
         "path": "ServiceRequest.code.coding",
         "min": 1,
         "max": "1",
+        "fixedCoding": {
+          "code": "prescription-request",
+          "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
+        },
         "mustSupport": true,
         "binding": {
           "strength": "required",
@@ -275,8 +279,7 @@
         "id": "ServiceRequest.code.coding.code",
         "path": "ServiceRequest.code.coding.code",
         "comment": "#prescription-request defines this ServiceRequest as a prescription request from a requester to a doctor.",
-        "min": 1,
-        "fixedCode": "prescription-request"
+        "min": 1
       },
       {
         "id": "ServiceRequest.subject",

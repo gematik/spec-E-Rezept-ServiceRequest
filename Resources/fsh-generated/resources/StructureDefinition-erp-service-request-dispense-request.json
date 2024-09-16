@@ -186,6 +186,10 @@
         "path": "ServiceRequest.code.coding",
         "min": 1,
         "max": "1",
+        "fixedCoding": {
+          "code": "dispense-request",
+          "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
+        },
         "mustSupport": true,
         "binding": {
           "strength": "required",
@@ -201,8 +205,7 @@
         "id": "ServiceRequest.code.coding.code",
         "path": "ServiceRequest.code.coding.code",
         "comment": "#dispense-request serves as a service request for a pharmacy to deliver a prescription.",
-        "min": 1,
-        "fixedCode": "dispense-request"
+        "min": 1
       },
       {
         "id": "ServiceRequest.occurrence[x]",
