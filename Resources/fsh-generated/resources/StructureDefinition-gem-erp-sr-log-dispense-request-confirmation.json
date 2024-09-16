@@ -422,6 +422,13 @@
               "http://hl7.org/fhir/StructureDefinition/MedicationRequest"
             ]
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Bestaetigung-Mapping",
+            "map": "AVS",
+            "comment": "Informationen aus Abgabedatensatz (MedicationDispense und Medication)"
+          }
         ]
       }
     ]

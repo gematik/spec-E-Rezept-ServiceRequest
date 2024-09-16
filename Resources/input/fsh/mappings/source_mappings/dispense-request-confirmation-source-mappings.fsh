@@ -29,4 +29,4 @@ Description: "Beschreibt die Quelle der Dispensieranforderung Bestätigung Infor
 
 // Medizinische Informationen
 * Medikation -> "AVS" "Informationen aus Abgabedatensatz"
-  * MedizinischeInformationenAusVerordnung -> "AVS" "Informationen aus Abgabedatensatz (MedicationRequest und Medication)"
+  * Abgabeinformationen -> "AVS" "Informationen aus Abgabedatensatz (MedicationDispense und Medication)"
