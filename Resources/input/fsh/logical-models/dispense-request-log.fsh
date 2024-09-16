@@ -20,7 +20,8 @@ Description: "Fachliches Modell zur Beschreibung einer Dispenseieranforderung"
 
 * involvierteParteien 1..* BackboneElement "Involvierte Parteien" "Angaben zu den involvierten Parteien"
   * Anfragender 1..1 BackboneElement "Anfragender" "Angaben zum anfragenden"
-    * obeys log-dispense-request-1
+    * AnfragenderTyp 1..1 Coding "Typ des Anfragenden" "Folgende Typen sind zulässig: Apotheke, Pflegeeinrichtung"
+      * obeys log-dispense-request-1
     * Name 1..1 string "Name des Anfragenden"
     * Adresse 0..1 Address "Straßenadresse des Anfragenden"
     * Telefon 1..1 string "Telefonnummer des Anfragenden"
@@ -36,7 +37,7 @@ Description: "Fachliches Modell zur Beschreibung einer Dispenseieranforderung"
   * ^comment = "Werden auf Ebene der KIM-Nachricht angehangen"
 
 Invariant: log-dispense-request-1
-Description: "Wenn eine Anfrage gestellt wird (status = 'active'), muss auch der Anfragende vorhanden sein."
+Description: "Wenn eine Anfrage gestellt wird (status = 'active'), muss der Anfragende eine Pflegeeinrichtung sein."
 Severity: #error
 
 Invariant: log-dispense-request-2

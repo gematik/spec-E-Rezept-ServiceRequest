@@ -33,7 +33,7 @@
           {
             "key": "log-dispense-request-1",
             "severity": "error",
-            "human": "Wenn eine Anfrage gestellt wird (status = 'active'), muss auch der Anfragende vorhanden sein.",
+            "human": "Wenn eine Anfrage gestellt wird (status = 'active'), muss der Anfragende eine Pflegeeinrichtung sein.",
             "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-dispense-request"
           },
           {
@@ -315,7 +315,7 @@
           {
             "key": "log-dispense-request-1",
             "severity": "error",
-            "human": "Wenn eine Anfrage gestellt wird (status = 'active'), muss auch der Anfragende vorhanden sein.",
+            "human": "Wenn eine Anfrage gestellt wird (status = 'active'), muss der Anfragende eine Pflegeeinrichtung sein.",
             "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-dispense-request"
           },
           {
@@ -412,18 +412,31 @@
             "code": "BackboneElement"
           }
         ],
-        "constraint": [
-          {
-            "key": "log-dispense-request-1",
-            "severity": "error",
-            "human": "Wenn eine Anfrage gestellt wird (status = 'active'), muss auch der Anfragende vorhanden sein.",
-            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-dispense-request"
-          }
-        ],
         "mapping": [
           {
             "identity": "Quelle-Dispensieranforderung-Mapping",
             "map": "Anfragendes PS"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.involvierteParteien.Anfragender.AnfragenderTyp",
+        "path": "gem-erp-sr-log-dispense-request.involvierteParteien.Anfragender.AnfragenderTyp",
+        "short": "Typ des Anfragenden",
+        "definition": "Folgende Typen sind zulässig: Apotheke, Pflegeeinrichtung",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "log-dispense-request-1",
+            "severity": "error",
+            "human": "Wenn eine Anfrage gestellt wird (status = 'active'), muss der Anfragende eine Pflegeeinrichtung sein.",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-dispense-request"
           }
         ]
       },

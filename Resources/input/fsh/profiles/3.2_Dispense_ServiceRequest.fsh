@@ -86,10 +86,12 @@ Description: "ServiceRequest that is used to supply a recipe"
   * ^short = "Medication data that is also sent to the e-prescription server."
 
 * note MS
-  * ^short = "Further information on dispense."
+  * ^short = "Further information on the dispense request."
   * ^comment = "Any use cases that are not specified can be placed here in free text."
 
 //constraints
 //TODO: wenn status = active, dann Token vorhanden
+//TODO: wenn status = active, dann Anfragender vorhanden
+//TODO: wenn status = active, dann AnfragenderTyp = PFL
 // TODO: wenn status = completed dann Abgabedaten vorhanden
 // TODO: wenn AbgabeDaten vorhanden dann Abgabedatenarzneimittel vorhanden

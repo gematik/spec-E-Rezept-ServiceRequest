@@ -412,14 +412,14 @@
         "id": "gem-erp-sr-log-dispense-request-confirmation.Medikation.Abgabeinformationen",
         "path": "gem-erp-sr-log-dispense-request-confirmation.Medikation.Abgabeinformationen",
         "short": "Medizinische Verordnungsinformationen",
-        "definition": "MedicationRequest und Medication Objekt aus der KBV_Verordnung.",
+        "definition": "MedicationDispense und Medication Objekt aus den Abgabedaten.",
         "min": 1,
         "max": "1",
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/MedicationRequest"
+              "http://hl7.org/fhir/StructureDefinition/MedicationDispense"
             ]
           }
         ],

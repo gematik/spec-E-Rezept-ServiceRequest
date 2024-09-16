@@ -317,7 +317,7 @@
       {
         "id": "ServiceRequest.note",
         "path": "ServiceRequest.note",
-        "short": "Further information on dispense.",
+        "short": "Further information on the dispense request.",
         "comment": "Any use cases that are not specified can be placed here in free text.",
         "mustSupport": true,
         "mapping": [

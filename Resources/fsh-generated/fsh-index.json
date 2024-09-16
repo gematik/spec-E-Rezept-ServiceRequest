@@ -309,7 +309,7 @@
     "fshType": "Logical",
     "fshFile": "logical-models/dispense-request-log.fsh",
     "startLine": 1,
-    "endLine": 36
+    "endLine": 37
   },
   {
     "outputFile": "StructureDefinition-gem-erp-sr-log-message-copy.json",

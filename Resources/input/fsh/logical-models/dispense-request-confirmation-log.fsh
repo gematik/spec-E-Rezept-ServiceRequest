@@ -20,7 +20,7 @@ Description: "Fachliches Modell zur Beschreibung einer Bestätigung einer Dispen
 // Medizinische Informationen
 * Medikation 1..1 BackboneElement "Medikation" "Angaben zur Medikation"
   * obeys log-dispense-request-3
-  * Abgabeinformationen 1..1 Reference(MedicationRequest) "Medizinische Verordnungsinformationen" "MedicationRequest und Medication Objekt aus der KBV_Verordnung."
+  * Abgabeinformationen 1..1 Reference(MedicationDispense) "Medizinische Verordnungsinformationen" "MedicationDispense und Medication Objekt aus den Abgabedaten."
 
 
 Invariant: log-dispense-request-3
