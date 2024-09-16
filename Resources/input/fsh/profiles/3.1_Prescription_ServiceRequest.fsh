@@ -5,6 +5,13 @@ Title: "ERP Service Request Prescription Request"
 Description: "ServiceRequest, which is used to request a recipe"
 * insert Meta (erp-service-request-prescription-request)
 
+* obeys servicerequest-prescription-request-1
+* obeys servicerequest-prescription-request-2
+* obeys servicerequest-prescription-request-3
+* obeys servicerequest-prescription-request-4
+* obeys servicerequest-prescription-request-5
+* obeys servicerequest-prescription-request-6
+
 * extension MS
 * extension contains
     EPrescriptionTokenEX named EPrescriptionToken 0..1 MS ?!
@@ -123,9 +130,35 @@ Description: "ServiceRequest, which is used to request a recipe"
   * type = "Organization"
 
 
+//TODO: Test Invariants!
 
-// Constraints
-//TODO, "if status active then requester must be present"
-//TODO, "if status completed then token must be present"
-//TODO: "if status active then basedOn Reference must be ERPMedicationRequest otherwise KBV_PR_ERP"
-//TODO: Wenn Anfragender Apotheke muss Pflegeinrichtung Kopie vorhanden sein
+Invariant: servicerequest-prescription-request-1
+Description: "If the status is active, the requester must be present."
+Expression: "status = 'active' implies requester.exists()"
+Severity: #error
+
+Invariant: servicerequest-prescription-request-2
+Description: "If the status is completed, the token must be present."
+Expression: "status = 'completed' implies extension('EPrescriptionToken').exists()"
+Severity: #error
+
+Invariant: servicerequest-prescription-request-3
+Description: "If the status is active, then the request must be based on an ERP MedicationRequest."
+Expression: "status = 'active' implies basedOn.exists() and basedOn is ERPServiceRequestMedicationRequest"
+Severity: #error
+
+Invariant: servicerequest-prescription-request-4
+Description: "If the status is completed, then the request must be based on an KBV Prescription."
+Expression: "status = 'completed' implies basedOn.exists() and basedOn is KBV_PR_ERP_Prescription"
+Severity: #error
+
+Invariant: servicerequest-prescription-request-5
+Description: "If the requester is a pharmacy then the KIM-adress of the care facility must be stated in order to receive a copy of the message."
+Expression: "requester.type = 'APO' implies supportingInfo.where(type='pflegeeinrichtungKopie').exists()"
+Severity: #error
+
+
+Invariant: servicerequest-prescription-request-6
+Description: "If the status is revoked or entered-in-error, then the reasonCode.text must be present."
+Expression: "(status = 'revoked' or status = 'entered-in-error') implies reasonCode.text.exists()"
+Severity: #error

@@ -277,7 +277,7 @@
     "fshType": "Profile",
     "fshFile": "profiles/3.1_Prescription_ServiceRequest.fsh",
     "startLine": 1,
-    "endLine": 123
+    "endLine": 130
   },
   {
     "outputFile": "StructureDefinition-erp-service-request-request-header.json",
