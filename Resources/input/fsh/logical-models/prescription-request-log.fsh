@@ -9,6 +9,7 @@ Description: "Fachliches Modell zur Beschreibung einer Rezeptanforderung"
 
 * obeys log-prescription-request-1
 * obeys log-prescription-request-2
+* obeys log-prescription-request-5
 
 // Administrative Informationen
 * Status 1..1 code "Status" "Status der Anforderung. Wird genutzt, um den Bearbeitungsstand einer Anfrage zu verfolgen. Im Falle der Rezeptanforderung wird eine Anfrage mit dem Status 'active' erstellt und geschickt und signalisiert somit eine neue Anfrage."
@@ -30,11 +31,13 @@ Description: "Fachliches Modell zur Beschreibung einer Rezeptanforderung"
   * Anfragender 1..1 BackboneElement "Anfragender" "Angaben zum anfragenden"
     * obeys log-prescription-request-1
     * AnfragenderTyp 1..1 Coding "Typ des Anfragenden" "Folgende Typen sind zulässig: Apotheke, Pflegeeinrichtung"
+      * obeys log-prescription-request-5
     * Name 1..1 string "Name des Anfragenden"
     * Adresse 0..1 Address "Straßenadresse des Anfragenden"
     * Telefon 1..1 string "Telefonnummer des Anfragenden"
 
   * PflegeeinrichtungKopie 0..1 BackboneElement "Zu benachrichtigende Pflegeeinrichtung" "Angaben zur Pflegeeinrichtung, die über den Ablauf der Rezeptanforderung per Kopie informiert werden soll. Muss angegeben werden, wenn die Apotheke die Rezeptanforderung stellt."
+    * obeys log-prescription-request-5
     * Name 1..1 string "Name der Pflegeeinrichtung"
     * Telefon 1..1 string "Telefonnummer der Pflegeeinrichtung"
     * KIMAdresse 1..1 Address "KIM-Adresse der Pflegeeinrichtung"
@@ -75,4 +78,8 @@ Severity: #error
 
 Invariant: log-prescription-request-2
 Description: "Wenn eine Anfrage gestellt wird (status = 'active'), muss das Profil ERPMedicationRequest mit einer KBV_Medication genutzt werden."
+Severity: #error
+
+Invariant: log-prescription-request-5
+Description: "Wenn eine Anfrage von einer Apotheke (involvierteParteien.Anfragender.AnfragenderTyp = 'APO') gestellt wird, muss die Angabe der Pflegeeinrichtung zur Kopie angegeben werden (involvierteParteien.PflegeeinrichtungKopie)."
 Severity: #error

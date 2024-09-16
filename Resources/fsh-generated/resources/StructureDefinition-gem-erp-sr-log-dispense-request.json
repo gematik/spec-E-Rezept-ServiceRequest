@@ -28,7 +28,21 @@
         "id": "gem-erp-sr-log-dispense-request",
         "path": "gem-erp-sr-log-dispense-request",
         "short": "Logical Model Dispenseieranforderung",
-        "definition": "Fachliches Modell zur Beschreibung einer Dispenseieranforderung"
+        "definition": "Fachliches Modell zur Beschreibung einer Dispenseieranforderung",
+        "constraint": [
+          {
+            "key": "log-dispense-request-1",
+            "severity": "error",
+            "human": "Wenn eine Anfrage gestellt wird (status = 'active'), muss auch der Anfragende vorhanden sein.",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-dispense-request"
+          },
+          {
+            "key": "log-dispense-request-2",
+            "severity": "error",
+            "human": "Wenn eine Anfrage gestellt wird (status = 'active'), muss auch der E-Rezept-Token vorhanden sein.",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-dispense-request"
+          }
+        ]
       },
       {
         "id": "gem-erp-sr-log-dispense-request.MetaDaten",
@@ -297,6 +311,20 @@
             "code": "code"
           }
         ],
+        "constraint": [
+          {
+            "key": "log-dispense-request-1",
+            "severity": "error",
+            "human": "Wenn eine Anfrage gestellt wird (status = 'active'), muss auch der Anfragende vorhanden sein.",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-dispense-request"
+          },
+          {
+            "key": "log-dispense-request-2",
+            "severity": "error",
+            "human": "Wenn eine Anfrage gestellt wird (status = 'active'), muss auch der E-Rezept-Token vorhanden sein.",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-dispense-request"
+          }
+        ],
         "mapping": [
           {
             "identity": "Quelle-Dispensieranforderung-Mapping",
@@ -328,13 +356,21 @@
         "id": "gem-erp-sr-log-dispense-request.ERezeptToken",
         "path": "gem-erp-sr-log-dispense-request.ERezeptToken",
         "short": "E-Rezept-Token",
-        "definition": "Token der für die Einlösung der Verordnung gebraucht wird. Optional, da in der Antwort an die Pflegeeinrichtung der Token nicht gebraucht wird.",
+        "definition": "Token der für die Einlösung der Verordnung gebraucht wird.",
         "comment": "Angabe nach gemSpec_DM_eRp#A_19554.",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "type": [
           {
             "code": "string"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "log-dispense-request-2",
+            "severity": "error",
+            "human": "Wenn eine Anfrage gestellt wird (status = 'active'), muss auch der E-Rezept-Token vorhanden sein.",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-dispense-request"
           }
         ],
         "mapping": [
@@ -374,6 +410,14 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "log-dispense-request-1",
+            "severity": "error",
+            "human": "Wenn eine Anfrage gestellt wird (status = 'active'), muss auch der Anfragende vorhanden sein.",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-dispense-request"
           }
         ],
         "mapping": [

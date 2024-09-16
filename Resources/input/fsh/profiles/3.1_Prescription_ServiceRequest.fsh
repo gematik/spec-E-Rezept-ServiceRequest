@@ -128,3 +128,4 @@ Description: "ServiceRequest, which is used to request a recipe"
 //TODO, "if status active then requester must be present"
 //TODO, "if status completed then token must be present"
 //TODO: "if status active then basedOn Reference must be ERPMedicationRequest otherwise KBV_PR_ERP"
+//TODO: Wenn Anfragender Apotheke muss Pflegeinrichtung Kopie vorhanden sein

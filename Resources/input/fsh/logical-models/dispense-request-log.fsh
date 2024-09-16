@@ -6,14 +6,21 @@ Description: "Fachliches Modell zur Beschreibung einer Dispenseieranforderung"
 * insert Versioning
 * insert RS_LOG_MessageHeader
 
+* obeys log-dispense-request-1
+* obeys log-dispense-request-2
+
 // Administrative Informationen
 * Status 1..1 code "Status" "Status der Anforderung. Wird genutzt, um den Bearbeitungsstand einer Anfrage zu verfolgen. Im Falle der initialen Dispensieranforderung wird eine Anfrage mit dem Status 'active' erstellt und geschickt und signalisiert somit eine neue Anfrage."
+  * obeys log-dispense-request-1
+  * obeys log-dispense-request-2
 * VorgangsID 1..1 string "ID des Vorgangs" "Wird vom initialen Sender gesetzt und muss immer mitgeführt werden."
-* ERezeptToken 0..1 string "E-Rezept-Token" "Token der für die Einlösung der Verordnung gebraucht wird. Optional, da in der Antwort an die Pflegeeinrichtung der Token nicht gebraucht wird."
+* ERezeptToken 1..1 string "E-Rezept-Token" "Token der für die Einlösung der Verordnung gebraucht wird."
   * ^comment = "Angabe nach gemSpec_DM_eRp#A_19554."
+  * obeys log-dispense-request-2
 
 * involvierteParteien 1..* BackboneElement "Involvierte Parteien" "Angaben zu den involvierten Parteien"
   * Anfragender 1..1 BackboneElement "Anfragender" "Angaben zum anfragenden"
+    * obeys log-dispense-request-1
     * Name 1..1 string "Name des Anfragenden"
     * Adresse 0..1 Address "Straßenadresse des Anfragenden"
     * Telefon 1..1 string "Telefonnummer des Anfragenden"
@@ -27,3 +34,11 @@ Description: "Fachliches Modell zur Beschreibung einer Dispenseieranforderung"
   * Medikationsplan 0..1 Attachment "Medikationsplan" "Anhang des Medikationsplans"
   * weitereAnhaenge 0..* Attachment "Weitere Anhänge" "Weitere Anhänge"
   * ^comment = "Werden auf Ebene der KIM-Nachricht angehangen"
+
+Invariant: log-dispense-request-1
+Description: "Wenn eine Anfrage gestellt wird (status = 'active'), muss auch der Anfragende vorhanden sein."
+Severity: #error
+
+Invariant: log-dispense-request-2
+Description: "Wenn eine Anfrage gestellt wird (status = 'active'), muss auch der E-Rezept-Token vorhanden sein."
+Severity: #error

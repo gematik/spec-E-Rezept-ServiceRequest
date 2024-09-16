@@ -28,7 +28,15 @@
         "id": "gem-erp-sr-log-dispense-request-confirmation",
         "path": "gem-erp-sr-log-dispense-request-confirmation",
         "short": "Logical Model Dispenseieranforderung_Bestätigung",
-        "definition": "Fachliches Modell zur Beschreibung einer Bestätigung einer Dispenseieranforderung"
+        "definition": "Fachliches Modell zur Beschreibung einer Bestätigung einer Dispenseieranforderung",
+        "constraint": [
+          {
+            "key": "log-dispense-request-3",
+            "severity": "error",
+            "human": "Wenn eine Anfrage erfüllt wird (status = 'completed'), müssen Abgabeinformationen vorhanden sein.",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-dispense-request-confirmation"
+          }
+        ]
       },
       {
         "id": "gem-erp-sr-log-dispense-request-confirmation.MetaDaten",
@@ -295,6 +303,14 @@
             "code": "code"
           }
         ],
+        "constraint": [
+          {
+            "key": "log-dispense-request-3",
+            "severity": "error",
+            "human": "Wenn eine Anfrage erfüllt wird (status = 'completed'), müssen Abgabeinformationen vorhanden sein.",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-dispense-request-confirmation"
+          }
+        ],
         "mapping": [
           {
             "identity": "Quelle-Dispensieranforderung-Bestaetigung-Mapping",
@@ -376,6 +392,14 @@
             "code": "BackboneElement"
           }
         ],
+        "constraint": [
+          {
+            "key": "log-dispense-request-3",
+            "severity": "error",
+            "human": "Wenn eine Anfrage erfüllt wird (status = 'completed'), müssen Abgabeinformationen vorhanden sein.",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-dispense-request-confirmation"
+          }
+        ],
         "mapping": [
           {
             "identity": "Quelle-Dispensieranforderung-Bestaetigung-Mapping",
@@ -385,8 +409,8 @@
         ]
       },
       {
-        "id": "gem-erp-sr-log-dispense-request-confirmation.Medikation.MedizinischeInformationenAusVerordnung",
-        "path": "gem-erp-sr-log-dispense-request-confirmation.Medikation.MedizinischeInformationenAusVerordnung",
+        "id": "gem-erp-sr-log-dispense-request-confirmation.Medikation.Abgabeinformationen",
+        "path": "gem-erp-sr-log-dispense-request-confirmation.Medikation.Abgabeinformationen",
         "short": "Medizinische Verordnungsinformationen",
         "definition": "MedicationRequest und Medication Objekt aus der KBV_Verordnung.",
         "min": 1,
@@ -397,13 +421,6 @@
             "targetProfile": [
               "http://hl7.org/fhir/StructureDefinition/MedicationRequest"
             ]
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "Quelle-Dispensieranforderung-Bestaetigung-Mapping",
-            "map": "AVS",
-            "comment": "Informationen aus Abgabedatensatz (MedicationRequest und Medication)"
           }
         ]
       }
