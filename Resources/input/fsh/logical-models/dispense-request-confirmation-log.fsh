@@ -6,8 +6,6 @@ Description: "Fachliches Modell zur Beschreibung einer Bestätigung einer Dispen
 * insert Versioning
 * insert RS_LOG_MessageHeader
 
-* obeys test-invariant
-
 // Administrative Informationen
 * Status 1..1 code "Status" "Status der Anforderung. Wird genutzt, um den Bearbeitungsstand einer Anfrage zu verfolgen. Im Falle der Dispensieranforderung wird eine erledigte Anfrage mit dem Status 'completed' geschickt und signalisiert somit eine neue Anfrage."
 * VorgangsID 1..1 string "ID des Vorgangs" "Wird vom initialen Sender gesetzt und muss immer mitgeführt werden."
@@ -19,9 +17,4 @@ Description: "Fachliches Modell zur Beschreibung einer Bestätigung einer Dispen
 // Medizinische Informationen
 * Medikation 1..1 BackboneElement "Medikation" "Angaben zur Medikation"
   * MedizinischeInformationenAusVerordnung 1..1 Reference(MedicationRequest) "Medizinische Verordnungsinformationen" "MedicationRequest und Medication Objekt aus der KBV_Verordnung."
-
-Invariant: test-invariant
-Description: "Lala"
-Expression: "status.exists() or vorgangsID.exists()"
-Severity: #error
 

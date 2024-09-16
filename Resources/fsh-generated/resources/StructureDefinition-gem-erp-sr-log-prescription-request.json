@@ -28,7 +28,21 @@
         "id": "gem-erp-sr-log-prescription-request",
         "path": "gem-erp-sr-log-prescription-request",
         "short": "Logical Model Rezeptanforderung",
-        "definition": "Fachliches Modell zur Beschreibung einer Rezeptanforderung"
+        "definition": "Fachliches Modell zur Beschreibung einer Rezeptanforderung",
+        "constraint": [
+          {
+            "key": "log-prescription-request-1",
+            "severity": "error",
+            "human": "Wenn eine Anfrage gestellt wird (status = 'active'), muss auch der Anfragende vorhanden sein.",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-prescription-request"
+          },
+          {
+            "key": "log-prescription-request-2",
+            "severity": "error",
+            "human": "Wenn eine Anfrage gestellt wird (status = 'active'), muss das Profil ERPMedicationRequest mit einer KBV_Medication genutzt werden.",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-prescription-request"
+          }
+        ]
       },
       {
         "id": "gem-erp-sr-log-prescription-request.MetaDaten",
@@ -295,6 +309,20 @@
             "code": "code"
           }
         ],
+        "constraint": [
+          {
+            "key": "log-prescription-request-1",
+            "severity": "error",
+            "human": "Wenn eine Anfrage gestellt wird (status = 'active'), muss auch der Anfragende vorhanden sein.",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-prescription-request"
+          },
+          {
+            "key": "log-prescription-request-2",
+            "severity": "error",
+            "human": "Wenn eine Anfrage gestellt wird (status = 'active'), muss das Profil ERPMedicationRequest mit einer KBV_Medication genutzt werden.",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-prescription-request"
+          }
+        ],
         "mapping": [
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -507,6 +535,14 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "log-prescription-request-1",
+            "severity": "error",
+            "human": "Wenn eine Anfrage gestellt wird (status = 'active'), muss auch der Anfragende vorhanden sein.",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-prescription-request"
           }
         ],
         "mapping": [
@@ -894,6 +930,14 @@
         "type": [
           {
             "code": "BackboneElement"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "log-prescription-request-2",
+            "severity": "error",
+            "human": "Wenn eine Anfrage gestellt wird (status = 'active'), muss das Profil ERPMedicationRequest mit einer KBV_Medication genutzt werden.",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-prescription-request"
           }
         ],
         "mapping": [

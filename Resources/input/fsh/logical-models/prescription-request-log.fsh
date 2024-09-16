@@ -7,8 +7,13 @@ Description: "Fachliches Modell zur Beschreibung einer Rezeptanforderung"
 
 * insert RS_LOG_MessageHeader
 
+* obeys log-prescription-request-1
+* obeys log-prescription-request-2
+
 // Administrative Informationen
 * Status 1..1 code "Status" "Status der Anforderung. Wird genutzt, um den Bearbeitungsstand einer Anfrage zu verfolgen. Im Falle der Rezeptanforderung wird eine Anfrage mit dem Status 'active' erstellt und geschickt und signalisiert somit eine neue Anfrage."
+  * obeys log-prescription-request-1
+  * obeys log-prescription-request-2
 * VorgangsID 1..1 string "ID des Vorgangs" "Wird vom initialen Sender gesetzt und muss immer mitgeführt werden."
 * VorherigeRezeptID 0..1 BackboneElement "ID des vorherigen Rezepts" "Kann bei der Anforderung einer Folgeverordnung verwendet werden, um einen Bezug zu einer vorherigen Verordnung herzustellen."
 
@@ -23,6 +28,7 @@ Description: "Fachliches Modell zur Beschreibung einer Rezeptanforderung"
     * Name 1..1 HumanName "Name des Arztes"
 
   * Anfragender 1..1 BackboneElement "Anfragender" "Angaben zum anfragenden"
+    * obeys log-prescription-request-1
     * AnfragenderTyp 1..1 Coding "Typ des Anfragenden" "Folgende Typen sind zulässig: Apotheke, Pflegeeinrichtung"
     * Name 1..1 string "Name des Anfragenden"
     * Adresse 0..1 Address "Straßenadresse des Anfragenden"
@@ -52,7 +58,8 @@ Description: "Fachliches Modell zur Beschreibung einer Rezeptanforderung"
 
 // Medizinische Informationen
 * Medikation 1..1 BackboneElement "Medikation" "Angaben zur Medikation"
-  * MedikationsReferenz 0..1 Medication "Referenz auf das Medikamentenobjekt" "Referenz auf das Medikamentenobjekt nach KBV_Verordnung (Freitext, PZN, Wirkstoff, Rezeptur)"  
+  * obeys log-prescription-request-2
+  * MedikationsReferenz 0..1 Medication "Referenz auf das Medikamentenobjekt" "Referenz auf das Medikamentenobjekt nach KBV_Verordnung (Freitext, PZN, Wirkstoff, Rezeptur)"
     * ^comment = "Folgende Profile aus dem E-Rezept Verordnungsdatensatz sind zulässig: KBV_PR_ERP_Medication_Compounding, KBV_PR_ERP_Medication_FreeText, KBV_PR_ERP_Medication _Ingredient, KBV_PR_ERP_Medication_PZN"
   * AnzahlPackungen 1..1 BackboneElement "Anzahl der Packungen"
     * Einheit 1..1 string "Einheit der Menge, fix auf 'Packung' gesetzt"
@@ -61,3 +68,11 @@ Description: "Fachliches Modell zur Beschreibung einer Rezeptanforderung"
 // Konfiguratorische Informationen
 * VersichertenEinloesung 0..1 boolean "Versicherten Einlösung" "Angabe, ob der Versicherte das E-Rezept selbst einlösen möchte."
 * AngabeMVO 0..1 boolean "Angabe MVO" "Angabe, ob der anfordernde eine MVO wünscht. Es obliegt dem Verordnenden dem Wunsch nachzukommen. Der verordnende LE entscheidet über die Menge und die Zeiträume"
+
+Invariant: log-prescription-request-1
+Description: "Wenn eine Anfrage gestellt wird (status = 'active'), muss auch der Anfragende vorhanden sein."
+Severity: #error
+
+Invariant: log-prescription-request-2
+Description: "Wenn eine Anfrage gestellt wird (status = 'active'), muss das Profil ERPMedicationRequest mit einer KBV_Medication genutzt werden."
+Severity: #error
