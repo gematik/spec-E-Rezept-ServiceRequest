@@ -34,6 +34,43 @@
       {
         "id": "ServiceRequest",
         "path": "ServiceRequest",
+        "constraint": [
+          {
+            "key": "servicerequest-dispense-request-1",
+            "severity": "error",
+            "human": "If the status is active, then requester must be present.",
+            "expression": "status = 'active' implies requester.exists()",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"
+          },
+          {
+            "key": "servicerequest-dispense-request-2",
+            "severity": "error",
+            "human": "If the status is active, then the e-prescription-token must be present.",
+            "expression": "status = 'active' implies extension('EPrescriptionToken').exists()",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"
+          },
+          {
+            "key": "servicerequest-dispense-request-3",
+            "severity": "error",
+            "human": "If the status is active, then the requester type must be Care Facility.",
+            "expression": "status = 'active' implies requester.type = 'PFL'",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"
+          },
+          {
+            "key": "servicerequest-dispense-request-4",
+            "severity": "error",
+            "human": "If the status is completed, then the dispense data must be present.",
+            "expression": "status = 'completed' implies supportingInfo.where(type='MedicationDispense').exists()",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"
+          },
+          {
+            "key": "servicerequest-dispense-request-5",
+            "severity": "error",
+            "human": "If the dispense data is present, then the dispense medication must be present.",
+            "expression": "supportingInfo.where(type='MedicationDispense').exists() implies supportingInfo.where(type='Medication').exists()",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"
+          }
+        ],
         "mapping": [
           {
             "identity": "Dispensieranforderung-Rezeptuebermittlung",

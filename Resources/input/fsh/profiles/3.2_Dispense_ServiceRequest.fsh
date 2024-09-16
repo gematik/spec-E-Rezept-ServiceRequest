@@ -5,6 +5,12 @@ Title: "ERP Service Request Dispense Request"
 Description: "ServiceRequest that is used to supply a recipe"
 * insert Meta (erp-service-request-dispense-request)
 
+* obeys servicerequest-dispense-request-1
+* obeys servicerequest-dispense-request-2
+* obeys servicerequest-dispense-request-3
+* obeys servicerequest-dispense-request-4
+* obeys servicerequest-dispense-request-5
+
 * extension MS
 * extension contains
     EPrescriptionTokenEX named EPrescriptionToken 0..1 MS
@@ -89,9 +95,28 @@ Description: "ServiceRequest that is used to supply a recipe"
   * ^short = "Further information on the dispense request."
   * ^comment = "Any use cases that are not specified can be placed here in free text."
 
-//constraints
-//TODO: wenn status = active, dann Token vorhanden
-//TODO: wenn status = active, dann Anfragender vorhanden
-//TODO: wenn status = active, dann AnfragenderTyp = PFL
-// TODO: wenn status = completed dann Abgabedaten vorhanden
-// TODO: wenn AbgabeDaten vorhanden dann Abgabedatenarzneimittel vorhanden
+//TODO: Test Dispense Invariants!
+Invariant: servicerequest-dispense-request-1
+Description: "If the status is active, then requester must be present."
+Expression: "status = 'active' implies requester.exists()"
+Severity: #error
+
+Invariant: servicerequest-dispense-request-2
+Description: "If the status is active, then the e-prescription-token must be present."
+Expression: "status = 'active' implies extension('EPrescriptionToken').exists()"
+Severity: #error
+
+Invariant: servicerequest-dispense-request-3
+Description: "If the status is active, then the requester type must be Care Facility."
+Expression: "status = 'active' implies requester.type = 'PFL'"
+Severity: #error
+
+Invariant: servicerequest-dispense-request-4
+Description: "If the status is completed, then the dispense data must be present."
+Expression: "status = 'completed' implies supportingInfo.where(type='MedicationDispense').exists()"
+Severity: #error
+
+Invariant: servicerequest-dispense-request-5
+Description: "If the dispense data is present, then the dispense medication must be present."
+Expression: "supportingInfo.where(type='MedicationDispense').exists() implies supportingInfo.where(type='Medication').exists()"
+Severity: #error

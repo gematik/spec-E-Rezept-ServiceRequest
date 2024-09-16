@@ -130,7 +130,7 @@ Description: "ServiceRequest, which is used to request a recipe"
   * type = "Organization"
 
 
-//TODO: Test Invariants!
+//TODO: Test Prescription Invariants!
 
 Invariant: servicerequest-prescription-request-1
 Description: "If the status is active, the requester must be present."
@@ -138,7 +138,7 @@ Expression: "status = 'active' implies requester.exists()"
 Severity: #error
 
 Invariant: servicerequest-prescription-request-2
-Description: "If the status is completed, the token must be present."
+Description: "If the status is completed, the e-prescription-token must be present."
 Expression: "status = 'completed' implies extension('EPrescriptionToken').exists()"
 Severity: #error
 

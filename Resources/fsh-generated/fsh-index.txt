@@ -26,7 +26,7 @@ Organization-Example-HealthCareService-Organization.json                   Examp
 StructureDefinition-changed-medication-ex.json                             ChangedMedicationEX                                    Extension   extensions/DidChangeMedicationEX.fsh                      1 - 8
 StructureDefinition-copy-to-care-facility-ex.json                          CopyToCareFacilityEX                                   Extension   extensions/CopyToCareFacilityEX.fsh                       1 - 28
 StructureDefinition-eprescription-token-ex.json                            EPrescriptionTokenEX                                   Extension   extensions/EPrescriptionTokenEX.fsh                       1 - 20
-StructureDefinition-erp-service-request-dispense-request.json              ERPServiceRequestDispenseRequest                       Profile     profiles/3.2_Dispense_ServiceRequest.fsh                  1 - 90
+StructureDefinition-erp-service-request-dispense-request.json              ERPServiceRequestDispenseRequest                       Profile     profiles/3.2_Dispense_ServiceRequest.fsh                  1 - 96
 StructureDefinition-erp-service-request-eprescription-token.json           ERPServiceRequestEPrescriptionToken                    Profile     profiles/6.3_EPrescriptionTokenIdentifier.fsh             1 - 11
 StructureDefinition-erp-service-request-medication-request.json            ERPServiceRequestMedicationRequest                     Profile     profiles/4_MedicationRequest.fsh                          1 - 47
 StructureDefinition-erp-service-request-message-container.json             ERPServiceRequestMessageContainer                      Profile     profiles/1_Bundle.fsh                                     1 - 8
