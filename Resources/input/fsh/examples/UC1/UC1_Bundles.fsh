@@ -1,3 +1,7 @@
+//TODO: Beispiel für mehrere Rezeptanfragen in einem Bundle
+//TODO: Beispiel für andere Medikation verschrieben (Flag)
+//TODO: Alle Beispiele durchgehen
+
 Instance: UC1-1-Prescription-Request-To-Prescriber
 InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
@@ -13,6 +17,10 @@ Description: "Request sent to Prescriber to get a Prescription"
 * entry[=].resource = Example-Initial-Medication-Request
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Medication/Example-Initial-Medication"
 * entry[=].resource = Example-Initial-Medication
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/Patient/Example-Patient"
+* entry[=].resource = Example-Patient
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/Organization/Example-HealthCareService-Organization"
+* entry[=].resource = Example-HealthCareService-Organization
 
 Instance: UC1-2-Fullfilled-Prescription-Request
 InstanceOf: ERPServiceRequestMessageContainer

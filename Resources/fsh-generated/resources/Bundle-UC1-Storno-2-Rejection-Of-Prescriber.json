@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "id": "UC1-Storno-4-Cancellation-Of-Dispenser",
+  "id": "UC1-Storno-2-Rejection-Of-Prescriber",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
@@ -9,15 +9,15 @@
   "type": "message",
   "identifier": {
     "system": "urn:ietf:rfc:3986",
-    "value": "urn:uuid:c80f6c55-92f8-4518-ba66-cb193da09336"
+    "value": "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
   },
-  "timestamp": "2023-02-01T13:28:17.239+02:00",
+  "timestamp": "2023-01-30T13:28:17.239+02:00",
   "entry": [
     {
-      "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/UC1-Pharmacy-to-HealthCareService-MessageHeader-Storno",
+      "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/UC1-Practitioner-to-HealthCareService-MessageHeader-Storno",
       "resource": {
         "resourceType": "MessageHeader",
-        "id": "UC1-Pharmacy-to-HealthCareService-MessageHeader-Storno",
+        "id": "UC1-Practitioner-to-HealthCareService-MessageHeader-Storno",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
@@ -26,16 +26,16 @@
         "source": {
           "contact": {
             "system": "email",
-            "value": "info@pharmacy.email"
+            "value": "info@practitioner.email"
           },
-          "name": "Pharmacy-Source",
-          "software": "Pharmacy-Software",
+          "name": "Practitioner-Source",
+          "software": "Practitioner-Software",
           "version": "1.0.0",
-          "endpoint": "http://pharmacy.endpoint"
+          "endpoint": "http://practitioner.endpoint"
         },
         "focus": [
           {
-            "reference": "ServiceRequest/UC1-Cancelled-Dispense-Request"
+            "reference": "ServiceRequest/UC1-Cancelled-Prescription-Request"
           }
         ],
         "sender": {
@@ -58,62 +58,130 @@
           }
         ],
         "eventCoding": {
-          "code": "eRezept_Rezeptanforderung;Abgabeanfrage_Storno",
+          "code": "eRezept_Rezeptanforderung;Rezeptanfrage_Storno",
           "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
         }
       }
     },
     {
-      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/UC1-Cancelled-Dispense-Request",
+      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/UC1-Cancelled-Prescription-Request",
       "resource": {
         "resourceType": "ServiceRequest",
-        "id": "UC1-Cancelled-Dispense-Request",
+        "id": "UC1-Cancelled-Prescription-Request",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
           ]
         },
-        "intent": "filler-order",
+        "intent": "order",
         "identifier": [
           {
             "system": "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier",
-            "value": "2"
+            "value": "1"
           }
         ],
         "requisition": {
           "system": "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier",
           "value": "GroupID-UC1"
         },
-        "extension": [
-          {
-            "valueIdentifier": {
-              "system": "https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken",
-              "value": "Task/160.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
-            },
-            "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex"
-          }
-        ],
         "code": {
           "coding": [
             {
-              "code": "dispense-request",
+              "code": "prescription-request",
               "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
             }
           ]
         },
+        "basedOn": [
+          {
+            "reference": "MedicationRequest/Example-Initial-Medication-Request"
+          }
+        ],
         "status": "revoked",
         "subject": {
           "reference": "Patient/Example-Patient"
         },
         "occurrenceDateTime": "2023-02-01",
-        "authoredOn": "2023-02-01"
+        "authoredOn": "2023-01-27",
+        "requester": {
+          "reference": "Organization/Example-HealthCareService-Organization",
+          "type": "PFL"
+        },
+        "performer": [
+          {
+            "identifier": {
+              "system": "https://gematik.de/fhir/sid/telematik-id",
+              "value": "1-test-telematik-id"
+            }
+          }
+        ],
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "code": "exhausted-range",
+                "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-request-reason-cs"
+              }
+            ]
+          }
+        ],
+        "note": [
+          {
+            "text": "Medikament läuft am 31.01.2023 aus. Es sind noch 7 stk übrig. "
+          }
+        ]
       }
     },
     {
-      "fullUrl": "http://erp-servicerequest-test.de/Medication/Example-Response-Medication",
+      "fullUrl": "http://erp-servicerequest-test.de/MedicationRequest/Example-Initial-Medication-Request",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "Example-Initial-Medication-Request",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request"
+          ]
+        },
+        "extension": [
+          {
+            "valueIdentifier": {
+              "system": "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
+              "value": "160.100.000.000.001.36"
+            },
+            "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/prescription-id-ex"
+          }
+        ],
+        "dispenseRequest": {
+          "quantity": {
+            "system": "http://unitsofmeasure.org",
+            "code": "{Package}",
+            "value": 1
+          }
+        },
+        "status": "active",
+        "intent": "order",
+        "medicationReference": {
+          "reference": "Medication/Example-Initial-Medication"
+        },
+        "subject": {
+          "reference": "Patient/Example-Patient"
+        },
+        "authoredOn": "2022-05-20",
+        "dosageInstruction": [
+          {
+            "text": "2mal tägl. 5ml"
+          }
+        ],
+        "substitution": {
+          "allowedBoolean": true
+        }
+      }
+    },
+    {
+      "fullUrl": "http://erp-servicerequest-test.de/Medication/Example-Initial-Medication",
       "resource": {
         "resourceType": "Medication",
-        "id": "Example-Response-Medication",
+        "id": "Example-Initial-Medication",
         "meta": {
           "profile": [
             "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.1.0"
@@ -156,7 +224,7 @@
               "code": "08585997"
             }
           ],
-          "text": "Prospan® Hustensaft 100ml N1"
+          "text": "Prospan® Hustensaft 100ml"
         },
         "form": {
           "coding": [
@@ -166,75 +234,6 @@
             }
           ]
         }
-      }
-    },
-    {
-      "fullUrl": "http://erp-servicerequest-test.de/MedicationDispense/UC1-Medication-Dispense",
-      "resource": {
-        "resourceType": "MedicationDispense",
-        "id": "UC1-Medication-Dispense",
-        "meta": {
-          "profile": [
-            "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|1.4"
-          ]
-        },
-        "identifier": [
-          {
-            "use": "official",
-            "system": "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
-            "value": "160.100.000.000.002.36"
-          }
-        ],
-        "status": "completed",
-        "subject": {
-          "identifier": {
-            "system": "http://fhir.de/sid/gkv/kvid-10",
-            "value": "X123456789"
-          }
-        },
-        "performer": [
-          {
-            "actor": {
-              "identifier": {
-                "system": "https://gematik.de/fhir/sid/telematik-id",
-                "value": "12345678901234567890"
-              }
-            }
-          }
-        ],
-        "medicationReference": {
-          "reference": "Medication/Example-Response-Medication"
-        },
-        "whenHandedOver": "2020-04-16T13:44:27.957+00:00",
-        "dosageInstruction": [
-          {
-            "sequence": 1,
-            "text": "Eine Tablette täglich",
-            "timing": {
-              "repeat": {
-                "frequency": 1,
-                "period": 1,
-                "periodUnit": "d"
-              }
-            },
-            "doseAndRate": [
-              {
-                "type": {
-                  "coding": [
-                    {
-                      "code": "ordered",
-                      "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type"
-                    }
-                  ]
-                },
-                "doseQuantity": {
-                  "value": 1,
-                  "unit": "tablet"
-                }
-              }
-            ]
-          }
-        ]
       }
     }
   ]

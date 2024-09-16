@@ -157,8 +157,7 @@ Description: "If the requester is a pharmacy then the KIM-adress of the care fac
 Expression: "requester.type = 'APO' implies supportingInfo.where(type='pflegeeinrichtungKopie').exists()"
 Severity: #error
 
-
 Invariant: servicerequest-prescription-request-6
-Description: "If the status is revoked or entered-in-error, then the reasonCode.text must be present."
-Expression: "(status = 'revoked' or status = 'entered-in-error') implies reasonCode.text.exists()"
+Description: "If the status is revoked or entered-in-error, then the reasonCode or note must be present."
+Expression: "(status = 'revoked' or status = 'entered-in-error') implies (reasonCode.text.exists() or note.exists())"
 Severity: #error

@@ -199,66 +199,8 @@
             }
           }
         ],
-        "contained": [
-          {
-            "resourceType": "Medication",
-            "id": "Example-Response-Medication",
-            "meta": {
-              "profile": [
-                "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.1.0"
-              ]
-            },
-            "extension": [
-              {
-                "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Medication_Type",
-                "valueCodeableConcept": {
-                  "coding": [
-                    {
-                      "system": "http://snomed.info/sct",
-                      "version": "http://snomed.info/sct/900000000000207008/version/20220331",
-                      "code": "763158003",
-                      "display": "Medicinal product (product)"
-                    }
-                  ]
-                }
-              },
-              {
-                "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Category",
-                "valueCoding": {
-                  "code": "00",
-                  "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Category"
-                }
-              },
-              {
-                "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Vaccine",
-                "valueBoolean": false
-              },
-              {
-                "url": "http://fhir.de/StructureDefinition/normgroesse",
-                "valueCode": "N1"
-              }
-            ],
-            "code": {
-              "coding": [
-                {
-                  "system": "http://fhir.de/CodeSystem/ifa/pzn",
-                  "code": "08585997"
-                }
-              ],
-              "text": "Prospan® Hustensaft 100ml N1"
-            },
-            "form": {
-              "coding": [
-                {
-                  "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM",
-                  "code": "FLE"
-                }
-              ]
-            }
-          }
-        ],
         "medicationReference": {
-          "reference": "#Example-Response-Medication"
+          "reference": "Medication/Example-Response-Medication"
         },
         "whenHandedOver": "2020-04-16T13:44:27.957+00:00",
         "dosageInstruction": [

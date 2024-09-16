@@ -5,7 +5,6 @@ Description: "Example MedicationDispense"
 * identifier[prescriptionID].system = "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"
 * identifier[prescriptionID].value = "160.100.000.000.002.36"
 * identifier[prescriptionID].use = #official
-* contained[0] = Example-Response-Medication
 * status = RequestStatus#completed
 * medicationReference = Reference(Example-Response-Medication)
 

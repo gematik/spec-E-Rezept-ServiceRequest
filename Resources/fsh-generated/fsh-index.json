@@ -4,38 +4,46 @@
     "fshName": "UC1-1-Prescription-Request-To-Prescriber",
     "fshType": "Instance",
     "fshFile": "examples/UC1/UC1_Bundles.fsh",
-    "startLine": 1,
-    "endLine": 15
+    "startLine": 4,
+    "endLine": 22
   },
   {
     "outputFile": "Bundle-UC1-2-Fullfilled-Prescription-Request.json",
     "fshName": "UC1-2-Fullfilled-Prescription-Request",
     "fshType": "Instance",
     "fshFile": "examples/UC1/UC1_Bundles.fsh",
-    "startLine": 17,
-    "endLine": 31
+    "startLine": 24,
+    "endLine": 38
   },
   {
     "outputFile": "Bundle-UC1-3-Dispense-Request-To-Pharmacy.json",
     "fshName": "UC1-3-Dispense-Request-To-Pharmacy",
     "fshType": "Instance",
     "fshFile": "examples/UC1/UC1_Bundles.fsh",
-    "startLine": 33,
-    "endLine": 43
+    "startLine": 40,
+    "endLine": 50
   },
   {
     "outputFile": "Bundle-UC1-4-Fullfilled-DispenseRequest-To-Pharmacy.json",
     "fshName": "UC1-4-Fullfilled-DispenseRequest-To-Pharmacy",
     "fshType": "Instance",
     "fshFile": "examples/UC1/UC1_Bundles.fsh",
-    "startLine": 45,
-    "endLine": 59
+    "startLine": 52,
+    "endLine": 66
   },
   {
     "outputFile": "Bundle-UC1-Storno-1-Cancellation-Of-Prescription-Requester.json",
     "fshName": "UC1-Storno-1-Cancellation-Of-Prescription-Requester",
     "fshType": "Instance",
     "fshFile": "examples/UC1_Storno/UC1_Storno_Bundles.fsh",
+    "startLine": 1,
+    "endLine": 15
+  },
+  {
+    "outputFile": "Bundle-UC1-Storno-1-Rejection-Of-Prescription-Requester.json",
+    "fshName": "UC1-Storno-1-Rejection-Of-Prescription-Requester",
+    "fshType": "Instance",
+    "fshFile": "examples/UC1_Ablehnung/UC1_Ablehnung_Bundles.fsh",
     "startLine": 1,
     "endLine": 15
   },
@@ -48,6 +56,14 @@
     "endLine": 32
   },
   {
+    "outputFile": "Bundle-UC1-Storno-2-Rejection-Of-Prescriber.json",
+    "fshName": "UC1-Storno-2-Rejection-Of-Prescriber",
+    "fshType": "Instance",
+    "fshFile": "examples/UC1_Ablehnung/UC1_Ablehnung_Bundles.fsh",
+    "startLine": 18,
+    "endLine": 32
+  },
+  {
     "outputFile": "Bundle-UC1-Storno-3-Cancellation-Of-Dispense-Requester.json",
     "fshName": "UC1-Storno-3-Cancellation-Of-Dispense-Requester",
     "fshType": "Instance",
@@ -56,10 +72,26 @@
     "endLine": 44
   },
   {
+    "outputFile": "Bundle-UC1-Storno-3-Rejection-Of-Dispense-Requester.json",
+    "fshName": "UC1-Storno-3-Rejection-Of-Dispense-Requester",
+    "fshType": "Instance",
+    "fshFile": "examples/UC1_Ablehnung/UC1_Ablehnung_Bundles.fsh",
+    "startLine": 34,
+    "endLine": 44
+  },
+  {
     "outputFile": "Bundle-UC1-Storno-4-Cancellation-Of-Dispenser.json",
     "fshName": "UC1-Storno-4-Cancellation-Of-Dispenser",
     "fshType": "Instance",
     "fshFile": "examples/UC1_Storno/UC1_Storno_Bundles.fsh",
+    "startLine": 46,
+    "endLine": 60
+  },
+  {
+    "outputFile": "Bundle-UC1-Storno-4-Rejection-Of-Dispenser.json",
+    "fshName": "UC1-Storno-4-Rejection-Of-Dispenser",
+    "fshType": "Instance",
+    "fshFile": "examples/UC1_Ablehnung/UC1_Ablehnung_Bundles.fsh",
     "startLine": 46,
     "endLine": 60
   },

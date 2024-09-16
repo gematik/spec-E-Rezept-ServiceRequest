@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "id": "UC1-3-Dispense-Request-To-Pharmacy",
+  "id": "UC1-Storno-3-Rejection-Of-Dispense-Requester",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
@@ -14,10 +14,10 @@
   "timestamp": "2023-02-01T13:28:17.239+02:00",
   "entry": [
     {
-      "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/UC1-HealthCareService-to-Pharmacy-MessageHeader",
+      "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/UC1-HealthCareService-to-Pharmacy-MessageHeader-Storno",
       "resource": {
         "resourceType": "MessageHeader",
-        "id": "UC1-HealthCareService-to-Pharmacy-MessageHeader",
+        "id": "UC1-HealthCareService-to-Pharmacy-MessageHeader-Storno",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
@@ -26,16 +26,16 @@
         "source": {
           "contact": {
             "system": "email",
-            "value": "info@hcs.email"
+            "value": "info@healthcare.email"
           },
           "name": "HealthCare-Source",
           "software": "HealthCare-Software",
           "version": "1.0.0",
-          "endpoint": "mailto:healthcare-service@test.kim.de"
+          "endpoint": "http://healthcare.endpoint"
         },
         "focus": [
           {
-            "reference": "ServiceRequest/UC1-Initial-Dispense-Request"
+            "reference": "ServiceRequest/UC1-Cancelled-Dispense-Request"
           }
         ],
         "sender": {
@@ -58,16 +58,16 @@
           }
         ],
         "eventCoding": {
-          "code": "eRezept_Rezeptanforderung;Abgabeanfrage",
+          "code": "eRezept_Rezeptanforderung;Abgabeanfrage_Storno",
           "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
         }
       }
     },
     {
-      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/UC1-Initial-Dispense-Request",
+      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/UC1-Cancelled-Dispense-Request",
       "resource": {
         "resourceType": "ServiceRequest",
-        "id": "UC1-Initial-Dispense-Request",
+        "id": "UC1-Cancelled-Dispense-Request",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"
@@ -101,15 +101,12 @@
             }
           ]
         },
-        "requester": {
-          "type": "PFL",
-          "reference": "Organization/Example-HealthCareService-Organization"
-        },
-        "status": "active",
+        "status": "revoked",
         "subject": {
           "reference": "Patient/Example-Patient"
         },
-        "authoredOn": "2023-01-28"
+        "occurrenceDateTime": "2023-02-01",
+        "authoredOn": "2023-02-01"
       }
     }
   ]
