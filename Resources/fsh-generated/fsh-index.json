@@ -301,7 +301,7 @@
     "fshType": "Logical",
     "fshFile": "logical-models/dispense-request-confirmation-log.fsh",
     "startLine": 1,
-    "endLine": 19
+    "endLine": 21
   },
   {
     "outputFile": "StructureDefinition-gem-erp-sr-log-dispense-request.json",

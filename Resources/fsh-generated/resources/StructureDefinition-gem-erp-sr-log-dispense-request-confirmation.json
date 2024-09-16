@@ -28,7 +28,16 @@
         "id": "gem-erp-sr-log-dispense-request-confirmation",
         "path": "gem-erp-sr-log-dispense-request-confirmation",
         "short": "Logical Model Dispenseieranforderung_Bestätigung",
-        "definition": "Fachliches Modell zur Beschreibung einer Bestätigung einer Dispenseieranforderung"
+        "definition": "Fachliches Modell zur Beschreibung einer Bestätigung einer Dispenseieranforderung",
+        "constraint": [
+          {
+            "key": "test-invariant",
+            "severity": "error",
+            "human": "Lala",
+            "expression": "status.exists() or vorgangsID.exists()",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-dispense-request-confirmation"
+          }
+        ]
       },
       {
         "id": "gem-erp-sr-log-dispense-request-confirmation.MetaDaten",
