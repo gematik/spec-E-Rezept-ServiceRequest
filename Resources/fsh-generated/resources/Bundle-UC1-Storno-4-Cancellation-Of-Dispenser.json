@@ -74,8 +74,14 @@
           ]
         },
         "intent": "filler-order",
+        "identifier": [
+          {
+            "system": "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier",
+            "value": "2"
+          }
+        ],
         "requisition": {
-          "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
+          "system": "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier",
           "value": "GroupID-UC1"
         },
         "extension": [
@@ -95,12 +101,6 @@
             }
           ]
         },
-        "identifier": [
-          {
-            "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier",
-            "value": "2"
-          }
-        ],
         "status": "revoked",
         "subject": {
           "reference": "Patient/Example-Patient"

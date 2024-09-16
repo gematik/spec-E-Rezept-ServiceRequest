@@ -293,7 +293,7 @@
     "fshType": "Profile",
     "fshFile": "profiles/6.1_AnforderungIdentifier.fsh",
     "startLine": 1,
-    "endLine": 10
+    "endLine": 11
   },
   {
     "outputFile": "StructureDefinition-gem-erp-sr-log-dispense-request-confirmation.json",
@@ -357,7 +357,7 @@
     "fshType": "Profile",
     "fshFile": "profiles/6.2_GroupAnforderungIdentifier.fsh",
     "startLine": 1,
-    "endLine": 10
+    "endLine": 11
   },
   {
     "outputFile": "StructureDefinition-prescription-id-ex.json",

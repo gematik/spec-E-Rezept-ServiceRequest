@@ -74,8 +74,14 @@
           ]
         },
         "intent": "order",
+        "identifier": [
+          {
+            "system": "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier",
+            "value": "1"
+          }
+        ],
         "requisition": {
-          "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
+          "system": "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier",
           "value": "GroupID-UC1"
         },
         "code": {
@@ -86,16 +92,6 @@
             }
           ]
         },
-        "identifier": [
-          {
-            "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier",
-            "value": "1"
-          },
-          {
-            "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemPreDisIdentifier",
-            "value": "PreDis-1"
-          }
-        ],
         "basedOn": [
           {
             "reference": "MedicationRequest/Example-Initial-Medication-Request"

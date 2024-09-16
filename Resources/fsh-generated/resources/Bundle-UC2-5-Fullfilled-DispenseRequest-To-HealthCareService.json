@@ -74,8 +74,14 @@
           ]
         },
         "intent": "filler-order",
+        "identifier": [
+          {
+            "system": "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier",
+            "value": "req-2"
+          }
+        ],
         "requisition": {
-          "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
+          "system": "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier",
           "value": "GroupID-2"
         },
         "code": {
@@ -90,12 +96,6 @@
           {
             "type": "MedicationDispense",
             "reference": "MedicationDispense/UC1-Medication-Dispense"
-          }
-        ],
-        "identifier": [
-          {
-            "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier",
-            "value": "req-2"
           }
         ],
         "status": "completed",

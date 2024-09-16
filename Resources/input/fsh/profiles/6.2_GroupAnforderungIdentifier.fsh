@@ -7,4 +7,5 @@ Description: "This identifier is used to identify service requests of a process"
 * value 1..1 MS
   * ^short = "String that uniquely references an operation."
   * ^comment = "It is recommended to use a UUID."
-* system = "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier"
+* system 1..1 MS
+* system = "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier"

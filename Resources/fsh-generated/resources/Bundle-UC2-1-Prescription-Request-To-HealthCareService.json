@@ -74,8 +74,14 @@
           ]
         },
         "intent": "order",
+        "identifier": [
+          {
+            "system": "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier",
+            "value": "req-1"
+          }
+        ],
         "requisition": {
-          "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
+          "system": "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier",
           "value": "GroupID-2"
         },
         "code": {
@@ -86,12 +92,6 @@
             }
           ]
         },
-        "identifier": [
-          {
-            "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier",
-            "value": "req-1"
-          }
-        ],
         "basedOn": [
           {
             "reference": "MedicationRequest/Example-Initial-Medication-Request"

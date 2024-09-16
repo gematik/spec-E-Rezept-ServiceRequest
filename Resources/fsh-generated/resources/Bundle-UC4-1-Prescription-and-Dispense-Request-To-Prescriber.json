@@ -74,23 +74,7 @@
           ]
         },
         "intent": "order",
-        "requisition": {
-          "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
-          "value": "GroupID-UC4"
-        },
-        "code": {
-          "coding": [
-            {
-              "code": "prescription-request",
-              "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
-            }
-          ]
-        },
         "identifier": [
-          {
-            "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier",
-            "value": "1"
-          },
           {
             "system": "https://gematik.de/fhir/erp-servicerequest/sid/patient-id",
             "value": "Patient-ID-e15232e9-01e0-4ce8-b628-71adb9023b21"
@@ -108,6 +92,18 @@
             "value": "My-ID-bdbdf8a1-ffa4-4f16-a6c4-38e690ac5548"
           }
         ],
+        "requisition": {
+          "system": "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier",
+          "value": "GroupID-UC4"
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "prescription-request",
+              "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
+            }
+          ]
+        },
         "basedOn": [
           {
             "reference": "MedicationRequest/Example-Zyto-Medication-Request"

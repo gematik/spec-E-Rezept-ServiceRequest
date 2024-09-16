@@ -20,7 +20,9 @@
       {
         "id": "Identifier.system",
         "path": "Identifier.system",
-        "patternUri": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier"
+        "min": 1,
+        "patternUri": "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier",
+        "mustSupport": true
       },
       {
         "id": "Identifier.value",
