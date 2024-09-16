@@ -186,6 +186,22 @@
           }
         ],
         "status": "completed",
+        "subject": {
+          "identifier": {
+            "system": "http://fhir.de/sid/gkv/kvid-10",
+            "value": "X123456789"
+          }
+        },
+        "performer": [
+          {
+            "actor": {
+              "identifier": {
+                "system": "https://gematik.de/fhir/sid/telematik-id",
+                "value": "12345678901234567890"
+              }
+            }
+          }
+        ],
         "contained": [
           {
             "resourceType": "Medication",
@@ -247,22 +263,6 @@
         "medicationReference": {
           "reference": "#Example-Response-Medication"
         },
-        "subject": {
-          "identifier": {
-            "system": "http://fhir.de/sid/gkv/kvid-10",
-            "value": "X123456789"
-          }
-        },
-        "performer": [
-          {
-            "actor": {
-              "identifier": {
-                "system": "https://gematik.de/fhir/sid/telematik-id",
-                "value": "12345678901234567890"
-              }
-            }
-          }
-        ],
         "whenHandedOver": "2020-04-16T13:44:27.957+00:00",
         "dosageInstruction": [
           {
