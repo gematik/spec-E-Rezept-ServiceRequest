@@ -22,7 +22,6 @@ Description: "Beschreibt die Quelle der Rezeptanforderungsinformationen"
 // Administrative Informationen
 * Status -> "Anfragendes PS" "Setzt den Status der Anfrage auf 'active'"
 * VorgangsID -> "Anfragendes PS" "Erzeugt einen Vorgang und generiert eine VorgangsID"
-* VorherigeRezeptID -> "Anfragendes PS" "Kann aus dem Medikamentenmanagement abgefragt werden"
 
 * involvierteParteien -> ""
   * PatientenInformationen -> "Anfragendes PS" "Abfrage aus Stammdatenmanagement"
@@ -62,11 +61,12 @@ Description: "Beschreibt die Quelle der Rezeptanforderungsinformationen"
 
 // Medizinische Informationen
 * Medikation -> "Anfragendes PS oder Nutzer des PS" "Bereitstellung aus Medikamentenmanagement"
+  * VorherigeRezeptID -> "Anfragendes PS" "Kann aus dem Medikamentenmanagement abgefragt werden"
   * MedikationsReferenz -> "Anfragendes PS" "Bereitstellung aus Medikamentenmanagement"
   * AnzahlPackungen -> "Anfragendes PS oder Nutzer des PS" "Bereitstellung aus Medikamentenmanagement"
     * Einheit -> "Anfragendes PS" "Bereitstellung aus Medikamentenmanagement"
     * Wert -> "Anfragendes PS oder Nutzer des PS" "Bereitstellung aus Medikamentenmanagement"
 
-// Konfiguratorische Informationen
-* VersichertenEinloesung -> "Nutzer des PS" "Angabemöglichkeit im Moment der Anforderung"
-* AngabeMVO -> "Nutzer des PS" "Angabemöglichkeit im Moment der Anforderung. Unterstützung ggf. durch PS."
+  // Konfiguratorische Informationen
+  * VersichertenEinloesung -> "Nutzer des PS" "Angabemöglichkeit im Moment der Anforderung"
+  * AngabeMVO -> "Nutzer des PS" "Angabemöglichkeit im Moment der Anforderung. Unterstützung ggf. durch PS."
