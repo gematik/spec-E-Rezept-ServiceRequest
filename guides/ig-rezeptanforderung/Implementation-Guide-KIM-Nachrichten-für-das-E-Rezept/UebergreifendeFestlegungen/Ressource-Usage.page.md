@@ -17,3 +17,16 @@ Alle Ressourcen, die ein .note Feld enthalten und mit MS geflaggt sind, sind in 
 Wenn Informationen zu einem E-Rezept in einem ServiceRequest eingebettet werden, sind `PrescriptionID` und `AccessCode` zu übertragen. Dies soll nach dem Format eines E-Rezept-Tokens geschehen (siehe [gemSpec_DM_eRp](https://gemspec.gematik.de/docs/gemSpec/gemSpec_DM_eRp/)).
 
 Dieses Datenformat wird bereits in der Apotheke genutzt, wenn ein 2D-Code eines E-Rezeptes ausgelesen wird. Daher minimiert es den Implementierungsaufwand, wenn dieses Format beibehalten wird.
+
+### Anzahl von E-Rezepten pro Nachricht
+In jedem Prozess, in dem ein E-Rezept bearbeitet werden soll, kann eine Nachricht ein oder mehrere E-Rezepte adressieren. Die späteren Beschreibungen zu den Use Cases werden dies im Detail beschreiben.
+
+Im Feld `MessageHeader.focus` werden alle ServiceRequests referenziert, die im Bundle enthalten sind. Jeder ServiceRequest entspricht genau einer Anfrage für eine Medikation.
+
+### Zuordnung von Anfrage und Angefragtem Präparat
+
+ServiceRequest.basedOn referenziert die zu behandelnde Medikation, bzw. Rezeptanfrage, gibt also an, auf welche medizinische Information sie der Service Request bezieht.
+
+Ein Service Request soll sich dabei immer auf genau eine medizinsiche Information beziehen. Wenn also z.B. ein Rezept angefragt wird, dann referenziert ServiceRequest.basedOn genau einen MedicationRequest. So ist für jeden MedicationRequest also ein ServiceRequest zu erstellen. Entsprechend ist die Kardinalität für ServiceRequest.basedOn ..1.
+
+Somit enthält eine KIM-Nachricht einen ServiceRequest mit einem MedicationRequest.

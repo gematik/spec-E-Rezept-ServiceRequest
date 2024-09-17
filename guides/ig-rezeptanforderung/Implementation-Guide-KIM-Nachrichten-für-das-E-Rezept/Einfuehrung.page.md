@@ -1,49 +1,59 @@
 # {{page-title}}
 
 ## Motivation und Hintergrund
+Die gematik hat mit dem E-Rezept ein Produkt eingeführt, das zur Digitalisierung der Verordnung, Abgabe und Abrechnung von Rezepten beiträgt. Der gesamte Prozess der Verordnung wird über den zentralen E-Rezept-Fachdienst abgewickelt.
 
-Mit dem E-Rezept hat die gematik ein Produkt auf den Weg gebracht, was dazu beiträgt die Verordnung, Abgabe und Abrechnung von Rezepten zu digitalisieren. Der gesamte Ablauf der Verordnung ist über den zentralen E-Rezept-Fachdienst gelöst.
+Dieses Feature zielt darauf ab, eine digitale und medienbruchfreie Kommunikation im Zusammenhang mit E-Rezepten zu ermöglichen, beispielsweise zur Anforderung von E-Rezepten.
 
-Dieses Feature soll die 
+Derzeit existiert kein strukturierter, dezentraler Kommunikationsweg für E-Rezepte. Diese Spezifikation soll sicherstellen, dass Leistungserbringer im deutschen Gesundheitswesen strukturierte Informationen über E-Rezepte austauschen können.
 
+Ziel dieser Spezifikation ist es, den Versorgungsprozess für Leistungserbringer zu vereinfachen, zu automatisieren und dadurch zu beschleunigen.
 
+## Grundlegendes Message Konzept - ATF
+Im Folgenden werden grundlegende Merkmale und Konzepte beschrieben, die für die Umsetzung dieses Features wichtig sind.
 
-Bisher steht kein strukturierter, dezentraler Weg der Kommunikation für E-Rezepte zur Verfügung. Diese Spezifikation soll dazu beitragen, dass Leistungserbringer im deutschen Gesundheitswesen strukturiert Informationen über E-Rezepte austauschen können.
+Anwendungsfälle des Features "KIM-Nachrichten für das E-Rezept" werden nicht über einen zentralen Dienst der TI gelöst, sondern dezentral Peer-to-Peer zwischen Clients auf Basis von FHIR ausgeführt.
 
-Anwendungsfälle sind bspw., die Anforderung von Rezepten von Pflegeeinrichtungen oder inhaltliche Klärung von Verordnungen zwischen Arzt und Apotheke.
-
-Diese Spezifikation soll einen Beitrag dazu liefern den Versorgungsprozess für die Leistungserbringer zu vereinfachen und zu beschleunigen.
-
-
-## Konzept
-
-### Message Konzept
-
-Grundlegend handelt es sich aufbauend auf dem App-Transport-Framework der gematik um ein FHIR Message Konzept (https://www.hl7.org/fhir/messaging.html).
+Daher handelt es sich grundlegend, aufbauend auf dem App-Transport-Framework (ATF) der gematik, um ein FHIR Message Konzept (https://www.hl7.org/fhir/messaging.html).
 
 Aus dem App-Transport-Framework werden die Ressourcen "Bundle" und "MessageHeader" genutzt, um einerseits alle Ressourcen zu übermitteln, als auch Informationen über Sender und Empfänger zu halten. Die Funktionsweise und Implementierung des App-Transport-Framework sind im entsprechenden [Implementation Guide](https://simplifier.net/app-transport-framework/~guides) zu finden.
 
-### Verwendung von EventCodes (MessageHeader.eventCode)
+Dieser Implementation Guide basisiert auf Version ==X.X.X //TODO Version und Link!!== des App Transport Frameworks. Die folgenden Module des ATF MÜSSEN unterstützt werden, um konform zu diesem IG zu sein:
+- ✅ Modul 1: Datenmodell und Messaging Konzept MUSS unterstützt werden
+- ❓ Modul 2: Capability-Messages KANN unterstützt werden
+- ❓ Modul 3: Empfangsbestätigung KANN unterstützt werden
+- ❓ Modul 4: Fehlermeldung KANN unterstützt werden
 
-In dieser Spezifikation dient der EventCode sowohl der Identifikation des Anwendungsfalles, sowie des Transportweges innerhalb des Anwendungsfalls. So gibt z.B. der Code `eRezept_Rezeptanforderung;Rezeptanfrage` an, dass es sich um den Anwendungsfall "Rezeptanforderung", sowie über eine initiale "Rezeptanfrage" eines Anfragenden an einen Verordnenden handelt.
-Die für diese Spezifikation zulässigen EventCodes sind in ValueSet {{link:https://gematik.de/fhir/erp-servicerequest/ValueSet/service-identifier-vs}} aufgelistet und beschrieben.
+### Verwendung von MessageBundle
+Das im App Transport Framework definierte *MessageBundle* wird verwendet, um alle für die Anfrage relevanten Ressourcen zu übermitteln.
 
-Die in diesem Implementierungsleitfaden beschriebenen Anwendungsfälle enthalten jeweils auch eine Angabe, welcher EventCode zu nutzen ist.
+### Verwendung des MessageHeader
+Der im App Transport Framework definierte *MessageHeader* dient zur Übertragung der Meta-Informationen, wie beispielsweise der Angabe von Absender und Empfänger.
 
-### Verwendung von ServiceRequests (MessageHeader.focus)
+#### EventCodes
+In dieser Spezifikation dient der unter *MessageHeader.eventCode* anzugebende EventCode sowohl zur Identifikation des Anwendungsfalls als auch des Nachrichtentyps innerhalb des Anwendungsfalls. So zeigt der Code `eRezept_Rezeptanforderung;Rezeptanfrage` beispielsweise an, dass es sich um den Anwendungsfall "Rezeptanforderung" sowie um eine initiale "Rezeptanfrage" eines Anfragenden an einen Verordnenden handelt.
 
-Grundlegend basieren alle Anwendungsfälle in diesem Projekt auf [Service-Request Ressourcen](http://hl7.org/fhir/R4/servicerequest.html), die nach FHIR-Spezifikation dazu dienen einen Dienst anzufragen. Dieser Service Request dient als Trägerressource für Informationen, die ausgetauscht werden. Diese Informationen werden entweder im Service Request angegeben oder referenziert.
+Die in dieser Spezifikation zulässigen EventCodes sind im [ValueSet](https://gematik.de/fhir/erp-servicerequest/ValueSet/service-identifier-vs) definiert.
+
+Jeder im Implementierungsleitfaden beschriebene Anwendungsfall enthält eine Angabe darüber, welcher EventCode zu verwenden ist.
+
+#### Relevante Ressourcen
+Unter *MessageHeader.focus* werden die Ressourcen aufgelistet, die alle relevanten Informationen zu einer Anfrage bündeln. In diesem Projekt übernimmt die FHIR-Ressource *ServiceRequest* diese Funktion als Trägerressource. *MessageHeader.focus* listet alle *ServiceRequests* auf, die als Ausgangspunkt für die Auswertung der Anfragen in einer Nachricht dienen.
+
+### Verwendung von ServiceRequests
+Alle Anwendungsfälle in diesem Projekt basieren auf [ServiceRequest-Ressourcen](http://hl7.org/fhir/R4/servicerequest.html), die gemäß FHIR-Spezifikation verwendet werden, um einen Dienst bzw. eine Dienstleistung anzufragen. Der *ServiceRequest* dient dabei als Trägerressource für die auszutauschenden Informationen.
+
+#### Anzahl der ServiceRequests
+Jede Nachricht kann mehrere *ServiceRequest*-Ressourcen enthalten. Jede *ServiceRequest* besitzt eine eigene *requestID* und stellt somit eine separate Anfrage dar.
+
+#### IDs in den ServiceRequests
+Ein einzelner *ServiceRequest* bzw. eine einzelne Anfrage wird über `ServiceRequest.identifier:requestId` identifiziert. Über `ServiceRequest.requisition` können mehrere *ServiceRequests* mithilfe eines gemeinsamen Identifiers gebündelt werden, um z.B. Vorgänge mit mehreren Anfragen zusammenzufassen.
 
 Folgende Service Requests und damit verbrundene Service Anfragen sind derzeit spezifiziert:
-
-* Prescription_ServiceRequest {{pagelink:Home/Datenobjekte/Prescription_ServiceRequest}} (Dient der Anfrage zum Ausstellen einer Verordnung)
-* Dispense_ServiceRequest {{pagelink:Home/Datenobjekte/Dispense_ServiceRequest}} (Dient der Anfrage zum Beliefern einer Verordnung)
-
-Da ein Service Request alle Informationen zum Verarbeiten einer Anfrage bündelt, wird dieser unter MessageHeader.focus referenziert.
-Ein Service Request soll in einem Anwendungsfall nur ein mal generiert und anschließend nur weitergereicht und mit Informationen angereichert werden.
+* {{pagelink:Implementation-Guide-KIM-Nachrichten-für-das-E-Rezept/Datenobjekte/Prescription_ServiceRequest}}
+* {{pagelink:Implementation-Guide-KIM-Nachrichten-für-das-E-Rezept/Datenobjekte/Dispense_ServiceRequest}}
 
 #### Status der Anfrage
-
 Ein ServiceRequest spiegelt neben den fachlichen Informationen auch den Status des Vorgangs wieder. Über das Feld .status kann dargestellt werden, in welchem Zustand sich der Vorgang befindet:
 
 | Status           | Bedeutung                                                |
@@ -53,33 +63,16 @@ Ein ServiceRequest spiegelt neben den fachlichen Informationen auch den Status d
 | completed        | Anfrage wurde von der zu bearbeitenden Partei erfüllt    |
 | entered-in-error | Anfrage wurde von der anfragenden Partei storniert       |
 
-### Allgemeine Festlegungen
-
-#### Anzahl von E-Rezepten pro Nachricht
-
-In jedem Prozess, in dem ein E-Rezept bearbeitet werden soll, kann eine Nachricht ein oder mehrere E-Rezepte adressieren. Die späteren Beschreibungen zu den Use Cases werden dies im Detail beschreiben.
-
-Im Feld `MessageHeader.focus` werden alle ServiceRequests referenziert, die im Bundle enthalten sind. Jeder ServiceRequest entspricht genau einer Anfrage für eine Medikation.
-
-#### Zuordnung von Anfrage und Angefragtem Präparat
-
-ServiceRequest.basedOn referenziert die zu behandelnde Medikation, bzw. Rezeptanfrage, gibt also an, auf welche medizinische Information sie der Service Request bezieht.
-
-Ein Service Request soll sich dabei immer auf genau eine medizinsiche Information beziehen. Wenn also z.B. ein Rezept angefragt wird, dann referenziert ServiceRequest.basedOn genau einen MedicationRequest. So ist für jeden MedicationRequest also ein ServiceRequest zu erstellen. Entsprechend ist die Kardinalität für ServiceRequest.basedOn ..1.
-
-Somit enthält eine KIM-Nachricht einen ServiceRequest mit einem MedicationRequest.
-
 
 ## Beispiele
-
 Beispielinstanzen sind im [Simplifier-Projekt](https://simplifier.net/erezept-servicerequest/~resources?category=Example&exampletype=Bundle&sortBy=RankScore_desc) zu finden.
 
 Folgende UseCases sind mit entsprechenden Beispielen beschrieben:
 
-* UC1: Pflegeeinrichtung -> Arzt -> Pflegeeinrichtung -> Apotheke
-* UC2: Pflegeeinrichtung -> Arzt -> Apotheke -> Pflegeeinrichtung
-* UC3: Pflegeeinrichtung -> Arzt -> Pflegeeinrichtung (Patient geht selbst zur Apotheke)
-* UC4(parenterale Zubereitung): Apotheke -> Arzt -> Apotheke
+* UC1: Rezeptanforderung durch Pflegeeinrichtung
+* UC2: Rezeptanforderung der Pflegeeinrichtung mit Einlösung durch Patient
+* UC3: Rezeptanforderung der heimversorgenden Apotheke
+* UC4: Rezeptanforderung für anwendungsfertige Zytostatikazubereitungen
 
 Die Beispiele tragen jeweils das Präfix zum entsprechenden UseCase und der entsprechenden Sequenz. Bsp: UC1-3-* ist ein Beispiel, was UC1 zugeordnet ist und den dritten Schritt in der Abfolge entspricht.
-Für UC1 gibt es auch Storno Beispiele.
+Für UC1 gibt es auch Beispiele für Stornierung und Ablehnung.
