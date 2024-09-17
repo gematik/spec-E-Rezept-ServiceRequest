@@ -12,6 +12,12 @@
   "fhirVersion": "4.0.1",
   "mapping": [
     {
+      "identity": "Rezeptanforderung-Fachliches-Mapping",
+      "name": "Rezeptanforderung Fachliches Mapping",
+      "uri": "ERPServiceRequestPrescriptionRequest",
+      "comment": "Mapping des Fachmodells aus GEM_ERP_SR_LOG_PrescriptionRequest auf das FHIR-Modell ERPServiceRequestPrescriptionRequest"
+    },
+    {
       "identity": "Quelle-Rezeptanforderung-Mapping",
       "name": "Quelle der Rezeptanforderungsinformationen",
       "comment": "Beschreibt die Quelle der Rezeptanforderungsinformationen"
@@ -64,6 +70,10 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestRequestHeader"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Erstellendes PS"
           }
@@ -82,6 +92,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "destination"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Aus Kontaktmanagement oder VZD Suche"
@@ -102,6 +116,10 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "endpoint"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Aus Kontaktmanagement oder VZD Suche"
           }
@@ -120,6 +138,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "receiver.identifier.value"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Aus Kontaktmanagement oder VZD Suche"
@@ -140,6 +162,10 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestRequestHeader"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Erstellendes PS"
           }
@@ -158,6 +184,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestRequestHeader.sender.identifier.value"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Erstellendes PS, SMC-B oder HBA Zertifikat"
@@ -178,6 +208,10 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestRequestHeader.sender.display"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Erstellendes PS"
           }
@@ -196,6 +230,11 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Erstellendes PS",
+            "comment": "Automatisiert durch Software gesetzt"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Erstellendes PS",
@@ -217,6 +256,11 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Erstellendes PS",
+            "comment": "Automatisiert durch Software gesetzt"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Erstellendes PS",
             "comment": "Automatisiert durch Software gesetzt"
@@ -236,6 +280,11 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Erstellendes PS",
+            "comment": "Automatisiert durch Software gesetzt"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Erstellendes PS",
@@ -257,6 +306,11 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Erstellendes PS",
+            "comment": "Automatisiert durch Software gesetzt"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Erstellendes PS",
             "comment": "Automatisiert durch Software gesetzt"
@@ -277,6 +331,11 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Erstellendes PS",
+            "comment": "Automatisiert durch Software gesetzt"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Erstellendes PS",
             "comment": "Automatisiert durch Software gesetzt"
@@ -296,6 +355,11 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Erstellendes PS",
+            "comment": "Automatisiert durch Software gesetzt"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Erstellendes PS",
@@ -331,6 +395,11 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Anfragendes PS",
+            "comment": "Setzt den Status der Anfrage auf 'active'"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Anfragendes PS",
             "comment": "Setzt den Status der Anfrage auf 'active'"
@@ -350,6 +419,11 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Anfragendes PS",
+            "comment": "Erzeugt einen Vorgang und generiert eine VorgangsID"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Anfragendes PS",
@@ -371,6 +445,11 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Anfragendes PS",
+            "comment": "Kann aus dem Medikamentenmanagement abgefragt werden"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Anfragendes PS",
             "comment": "Kann aus dem Medikamentenmanagement abgefragt werden"
@@ -391,6 +470,10 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": ""
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": ""
           }
@@ -409,6 +492,11 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Anfragendes PS",
+            "comment": "Abfrage aus Stammdatenmanagement"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Anfragendes PS",
@@ -430,6 +518,10 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Anfragendes PS"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Anfragendes PS"
           }
@@ -448,6 +540,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Anfragendes PS"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Anfragendes PS"
@@ -468,6 +564,10 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Anfragendes PS"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Anfragendes PS"
           }
@@ -486,6 +586,11 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Anfragendes PS",
+            "comment": "Falls vorher bekannt aus Kontaktmanagement oder vorheriger RezeptID"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Anfragendes PS",
@@ -507,6 +612,10 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Anfragendes PS"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Anfragendes PS"
           }
@@ -525,6 +634,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Anfragendes PS"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Anfragendes PS"
@@ -552,6 +665,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Anfragendes PS"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Anfragendes PS"
@@ -593,6 +710,10 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Anfragendes PS"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Anfragendes PS"
           }
@@ -612,6 +733,10 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Anfragendes PS"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Anfragendes PS"
           }
@@ -630,6 +755,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Anfragendes PS"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Anfragendes PS"
@@ -658,6 +787,11 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Anfragendes AVS",
+            "comment": "Im Fall, dass die Apotheke die Anfrage initiiert"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Anfragendes AVS",
             "comment": "Im Fall, dass die Apotheke die Anfrage initiiert"
@@ -678,6 +812,10 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Anfragendes AVS"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Anfragendes AVS"
           }
@@ -696,6 +834,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Anfragendes AVS"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Anfragendes AVS"
@@ -716,6 +858,10 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Anfragendes AVS"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Anfragendes AVS"
           }
@@ -734,6 +880,11 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Nutzer des PS",
+            "comment": "Abfrage im Moment der Anforderung"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Nutzer des PS",
@@ -755,6 +906,11 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Nutzer des PS",
+            "comment": "Abfrage im Moment der Anforderung"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Nutzer des PS",
             "comment": "Abfrage im Moment der Anforderung"
@@ -774,6 +930,11 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Nutzer des PS",
+            "comment": "Abfrage im Moment der Anforderung"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Nutzer des PS",
@@ -795,6 +956,11 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Nutzer des PS",
+            "comment": "Abfrage im Moment der Anforderung"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Nutzer des PS",
             "comment": "Abfrage im Moment der Anforderung"
@@ -814,6 +980,11 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Nutzer des PS",
+            "comment": "Abfrage im Moment der Anforderung"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Nutzer des PS",
@@ -835,6 +1006,11 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Nutzer des PS",
+            "comment": "Abfrage im Moment der Anforderung"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Nutzer des PS",
             "comment": "Abfrage im Moment der Anforderung"
@@ -854,6 +1030,11 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Anfragendes PS oder Nutzer des PS",
+            "comment": "Abfrage/ Eingabe im Moment der Anforderung"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Anfragendes PS oder Nutzer des PS",
@@ -875,6 +1056,11 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Nutzer des PS",
+            "comment": "Abfrage im Moment der Anforderung"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Nutzer des PS",
             "comment": "Abfrage im Moment der Anforderung"
@@ -894,6 +1080,11 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Anfragendes PS",
+            "comment": "Ggf. automatisierte Berechnung"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Anfragendes PS",
@@ -915,6 +1106,11 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Anfragendes PS",
+            "comment": "Ggf. automatisierte Berechnung"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Anfragendes PS",
             "comment": "Ggf. automatisierte Berechnung"
@@ -935,6 +1131,11 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Anfragendes PS oder Nutzer des PS",
+            "comment": "Generierung oder Bereitstellung im Moment der Anforderung"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Anfragendes PS oder Nutzer des PS",
@@ -964,6 +1165,11 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Anfragendes PS oder Nutzer des PS",
+            "comment": "Bereitstellung aus Medikamentenmanagement"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Anfragendes PS oder Nutzer des PS",
             "comment": "Bereitstellung aus Medikamentenmanagement"
@@ -985,6 +1191,11 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Anfragendes PS",
+            "comment": "Bereitstellung aus Medikamentenmanagement"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Anfragendes PS",
             "comment": "Bereitstellung aus Medikamentenmanagement"
@@ -1004,6 +1215,11 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Anfragendes PS oder Nutzer des PS",
+            "comment": "Bereitstellung aus Medikamentenmanagement"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Anfragendes PS oder Nutzer des PS",
@@ -1025,6 +1241,11 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Anfragendes PS",
+            "comment": "Bereitstellung aus Medikamentenmanagement"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Anfragendes PS",
             "comment": "Bereitstellung aus Medikamentenmanagement"
@@ -1044,6 +1265,11 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Anfragendes PS oder Nutzer des PS",
+            "comment": "Bereitstellung aus Medikamentenmanagement"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Anfragendes PS oder Nutzer des PS",
@@ -1065,6 +1291,11 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Nutzer des PS",
+            "comment": "Angabemöglichkeit im Moment der Anforderung"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Nutzer des PS",
             "comment": "Angabemöglichkeit im Moment der Anforderung"
@@ -1084,6 +1315,11 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "Nutzer des PS",
+            "comment": "Angabemöglichkeit im Moment der Anforderung. Unterstützung ggf. durch PS."
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Nutzer des PS",

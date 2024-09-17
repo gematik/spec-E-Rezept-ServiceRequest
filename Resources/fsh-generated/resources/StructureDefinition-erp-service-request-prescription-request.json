@@ -10,32 +10,6 @@
   "publisher": "gematik GmbH",
   "description": "ServiceRequest, which is used to request a recipe",
   "fhirVersion": "4.0.1",
-  "mapping": [
-    {
-      "identity": "Rezeptanforderung",
-      "name": "Rezeptanforderung",
-      "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
-      "comment": "Mapping for 'fachliche Informationseinheiten' of the 'Verordnungsanfrage' of the feature document"
-    },
-    {
-      "identity": "Rezeptanforderung-Rezeptuebermittlung",
-      "name": "Rezeptanforderung_Bestätigung",
-      "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
-      "comment": "Mapping for 'fachliche Informationseinheiten' of the 'Verordnungsanfrage' of the feature document"
-    },
-    {
-      "identity": "Rezeptanforderung-Storno",
-      "name": "Rezeptanforderung_Storno (Anfragender)",
-      "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
-      "comment": "Mapping for 'fachliche Informationseinheiten' of the cancellation of a 'Verordnungsanfrage' of the feature document"
-    },
-    {
-      "identity": "Rezeptanforderung-Ablehnung",
-      "name": "Rezeptanforderung_Storno (Verordnender)",
-      "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
-      "comment": "Mapping for 'fachliche Informationseinheiten' of the refusal of a 'Verordnungsanfrage' of the feature document"
-    }
-  ],
   "kind": "resource",
   "abstract": false,
   "type": "ServiceRequest",
@@ -89,24 +63,6 @@
             "expression": "(status = 'revoked' or status = 'entered-in-error') implies (reasonCode.text.exists() or note.exists())",
             "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
           }
-        ],
-        "mapping": [
-          {
-            "identity": "Rezeptanforderung",
-            "map": "Rezeptanforderung"
-          },
-          {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung",
-            "map": "Rezeptanforderung_Bestätigung"
-          },
-          {
-            "identity": "Rezeptanforderung-Storno",
-            "map": "Rezeptanforderung_Storno"
-          },
-          {
-            "identity": "Rezeptanforderung-Ablehnung",
-            "map": "Rezeptanforderung_Storno"
-          }
         ]
       },
       {
@@ -131,17 +87,7 @@
           }
         ],
         "mustSupport": true,
-        "isModifier": true,
-        "mapping": [
-          {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung",
-            "map": "ERezept_Task_ID"
-          },
-          {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung",
-            "map": "ERezept_Access_Code"
-          }
-        ]
+        "isModifier": true
       },
       {
         "id": "ServiceRequest.extension:medicationChanged",
@@ -212,17 +158,7 @@
             ]
           }
         ],
-        "mustSupport": true,
-        "mapping": [
-          {
-            "identity": "Rezeptanforderung",
-            "map": "Praeparat"
-          },
-          {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung",
-            "map": "Strukturierter_Verordnungsdatensatz"
-          }
-        ]
+        "mustSupport": true
       },
       {
         "id": "ServiceRequest.requisition",
@@ -238,25 +174,7 @@
             ]
           }
         ],
-        "mustSupport": true,
-        "mapping": [
-          {
-            "identity": "Rezeptanforderung",
-            "map": "Vorgangs_ID"
-          },
-          {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung",
-            "map": "Vorgangs_ID"
-          },
-          {
-            "identity": "Rezeptanforderung-Storno",
-            "map": "Vorgangs_ID"
-          },
-          {
-            "identity": "Rezeptanforderung-Ablehnung",
-            "map": "Vorgangs_ID"
-          }
-        ]
+        "mustSupport": true
       },
       {
         "id": "ServiceRequest.status",
@@ -285,13 +203,7 @@
         "binding": {
           "strength": "required",
           "valueSet": "https://gematik.de/fhir/erp-servicerequest/ValueSet/service-request-priority-vs"
-        },
-        "mapping": [
-          {
-            "identity": "Rezeptanforderung",
-            "map": "Prioritaet"
-          }
-        ]
+        }
       },
       {
         "id": "ServiceRequest.code",
@@ -337,13 +249,7 @@
             ]
           }
         ],
-        "mustSupport": true,
-        "mapping": [
-          {
-            "identity": "Rezeptanforderung",
-            "map": "Patienteninformationen"
-          }
-        ]
+        "mustSupport": true
       },
       {
         "id": "ServiceRequest.occurrence[x]",
@@ -378,13 +284,7 @@
             ]
           }
         ],
-        "mustSupport": true,
-        "mapping": [
-          {
-            "identity": "Rezeptanforderung",
-            "map": "Adressat_der_Rezeptuebermittlung"
-          }
-        ]
+        "mustSupport": true
       },
       {
         "id": "ServiceRequest.requester.type",
@@ -410,34 +310,14 @@
             ]
           }
         ],
-        "mustSupport": true,
-        "mapping": [
-          {
-            "identity": "Rezeptanforderung",
-            "map": "Adressat_der_Rezeptanforderung"
-          }
-        ]
+        "mustSupport": true
       },
       {
         "id": "ServiceRequest.reasonCode",
         "path": "ServiceRequest.reasonCode",
         "short": "Reason for the prescription request.",
         "comment": "The reason for the prescription request can be documented here.",
-        "mustSupport": true,
-        "mapping": [
-          {
-            "identity": "Rezeptanforderung",
-            "map": "Bedarfsbegruendung (Code)"
-          },
-          {
-            "identity": "Rezeptanforderung-Storno",
-            "map": "Begründung der Stornierung"
-          },
-          {
-            "identity": "Rezeptanforderung-Ablehnung",
-            "map": "Ablehnungsgrund"
-          }
-        ]
+        "mustSupport": true
       },
       {
         "id": "ServiceRequest.reasonCode.extension",
@@ -476,20 +356,6 @@
         "id": "ServiceRequest.reasonCode.text",
         "path": "ServiceRequest.reasonCode.text",
         "mustSupport": true
-      },
-      {
-        "id": "ServiceRequest.reasonReference",
-        "path": "ServiceRequest.reasonReference",
-        "mapping": [
-          {
-            "identity": "Rezeptanforderung",
-            "map": "Bedarfsbegruendung (Observation)"
-          },
-          {
-            "identity": "Rezeptanforderung",
-            "map": "Restreichweite"
-          }
-        ]
       },
       {
         "id": "ServiceRequest.supportingInfo",
@@ -536,25 +402,7 @@
         "path": "ServiceRequest.note",
         "short": "Further information on the prescription request.",
         "comment": "Any use cases that are not specified can be placed here in free text.",
-        "mustSupport": true,
-        "mapping": [
-          {
-            "identity": "Rezeptanforderung",
-            "map": "Freitext"
-          },
-          {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung",
-            "map": "Hinweise_fuer_Empfaenger"
-          },
-          {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung",
-            "map": "Freitext"
-          },
-          {
-            "identity": "Rezeptanforderung-Ablehnung",
-            "map": "Freitext"
-          }
-        ]
+        "mustSupport": true
       }
     ]
   }
