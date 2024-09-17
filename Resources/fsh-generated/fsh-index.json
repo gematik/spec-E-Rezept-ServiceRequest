@@ -309,7 +309,7 @@
     "fshType": "Profile",
     "fshFile": "profiles/3.1_Prescription_ServiceRequest.fsh",
     "startLine": 1,
-    "endLine": 130
+    "endLine": 134
   },
   {
     "outputFile": "StructureDefinition-erp-service-request-request-header.json",
@@ -381,7 +381,7 @@
     "fshType": "Logical",
     "fshFile": "logical-models/prescription-request-log.fsh",
     "startLine": 1,
-    "endLine": 73
+    "endLine": 72
   },
   {
     "outputFile": "StructureDefinition-identifier-procedure-identifier.json",
@@ -414,6 +414,14 @@
     "fshFile": "extensions/RemainingSupplyEX.fsh",
     "startLine": 1,
     "endLine": 9
+  },
+  {
+    "outputFile": "StructureDefinition-remaining-supply-free-text-ex.json",
+    "fshName": "RemainingSupplyFreeTextEX",
+    "fshType": "Extension",
+    "fshFile": "extensions/RemainingSupplyFreeTextEX.fsh",
+    "startLine": 1,
+    "endLine": 7
   },
   {
     "outputFile": "ValueSet-medication-request-reason-vs.json",

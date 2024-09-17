@@ -16,7 +16,6 @@ Description: "Fachliches Modell zur Beschreibung einer Rezeptanforderung"
   * obeys log-prescription-request-1
   * obeys log-prescription-request-2
 * VorgangsID 1..1 string "ID des Vorgangs" "Wird vom initialen Sender gesetzt und muss immer mitgeführt werden."
-* VorherigeRezeptID 0..1 BackboneElement "ID des vorherigen Rezepts" "Kann bei der Anforderung einer Folgeverordnung verwendet werden, um einen Bezug zu einer vorherigen Verordnung herzustellen."
 
 * involvierteParteien 1..* BackboneElement "Involvierte Parteien" "Angaben zu den involvierten Parteien"
   * PatientenInformationen 1..1 BackboneElement "Patienteninformationen" "Angaben zum Patienten"
@@ -62,15 +61,15 @@ Description: "Fachliches Modell zur Beschreibung einer Rezeptanforderung"
 // Medizinische Informationen
 * Medikation 1..1 BackboneElement "Medikation" "Angaben zur Medikation"
   * obeys log-prescription-request-2
+  * VorherigeRezeptID 0..1 BackboneElement "ID des vorherigen Rezepts" "Kann bei der Anforderung einer Folgeverordnung verwendet werden, um einen Bezug zu einer vorherigen Verordnung herzustellen."
   * MedikationsReferenz 0..1 Medication "Referenz auf das Medikamentenobjekt" "Referenz auf das Medikamentenobjekt nach KBV_Verordnung (Freitext, PZN, Wirkstoff, Rezeptur)"
     * ^comment = "Folgende Profile aus dem E-Rezept Verordnungsdatensatz sind zulässig: KBV_PR_ERP_Medication_Compounding, KBV_PR_ERP_Medication_FreeText, KBV_PR_ERP_Medication _Ingredient, KBV_PR_ERP_Medication_PZN"
   * AnzahlPackungen 1..1 BackboneElement "Anzahl der Packungen"
     * Einheit 1..1 string "Einheit der Menge, fix auf 'Packung' gesetzt"
     * Wert 1..1 string "Anzahl der Packungen"
-
-// Konfiguratorische Informationen
-* VersichertenEinloesung 0..1 boolean "Versicherten Einlösung" "Angabe, ob der Versicherte das E-Rezept selbst einlösen möchte."
-* AngabeMVO 0..1 boolean "Angabe MVO" "Angabe, ob der anfordernde eine MVO wünscht. Es obliegt dem Verordnenden dem Wunsch nachzukommen. Der verordnende LE entscheidet über die Menge und die Zeiträume"
+  // Konfiguratorische Informationen
+  * VersichertenEinloesung 0..1 boolean "Versicherten Einlösung" "Angabe, ob der Versicherte das E-Rezept selbst einlösen möchte."
+  * AngabeMVO 0..1 boolean "Angabe MVO" "Angabe, ob der anfordernde eine MVO wünscht. Es obliegt dem Verordnenden dem Wunsch nachzukommen. Der verordnende LE entscheidet über die Menge und die Zeiträume"
 
 Invariant: log-prescription-request-1
 Description: "Wenn eine Anfrage gestellt wird (status = 'active'), muss auch der Anfragende vorhanden sein."

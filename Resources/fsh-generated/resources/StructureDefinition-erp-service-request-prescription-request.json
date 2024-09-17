@@ -343,6 +343,24 @@
         "mustSupport": true
       },
       {
+        "id": "ServiceRequest.reasonCode.extension:remainingSupplyFreeText",
+        "path": "ServiceRequest.reasonCode.extension",
+        "sliceName": "remainingSupplyFreeText",
+        "short": "Remaining supply as free text",
+        "definition": "Here the remaining supply of the medication can be stated as free text.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/remaining-supply-free-text-ex"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
         "id": "ServiceRequest.reasonCode.coding",
         "path": "ServiceRequest.reasonCode.coding",
         "max": "1",

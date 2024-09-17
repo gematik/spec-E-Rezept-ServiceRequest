@@ -94,7 +94,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "destination"
+            "map": "ERPServiceRequestRequestHeader.destination"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -117,7 +117,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "endpoint"
+            "map": "ERPServiceRequestRequestHeader.destination.endpoint"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -140,7 +140,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "receiver.identifier.value"
+            "map": "ERPServiceRequestRequestHeader.destination.receiver.identifier.value"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -163,7 +163,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "ERPServiceRequestRequestHeader"
+            "map": "ERPServiceRequestRequestHeader.sender"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -232,8 +232,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Erstellendes PS",
-            "comment": "Automatisiert durch Software gesetzt"
+            "map": "ERPServiceRequestRequestHeader.source"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -257,8 +256,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Erstellendes PS",
-            "comment": "Automatisiert durch Software gesetzt"
+            "map": "ERPServiceRequestRequestHeader.source.name"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -282,8 +280,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Erstellendes PS",
-            "comment": "Automatisiert durch Software gesetzt"
+            "map": "ERPServiceRequestRequestHeader.source.software"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -307,8 +304,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Erstellendes PS",
-            "comment": "Automatisiert durch Software gesetzt"
+            "map": "ERPServiceRequestRequestHeader.source.version"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -332,8 +328,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Erstellendes PS",
-            "comment": "Automatisiert durch Software gesetzt"
+            "map": "ERPServiceRequestRequestHeader.source.contact.value"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -357,8 +352,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Erstellendes PS",
-            "comment": "Automatisiert durch Software gesetzt"
+            "map": "ERPServiceRequestRequestHeader.source.endpoint"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -396,8 +390,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Anfragendes PS",
-            "comment": "Setzt den Status der Anfrage auf 'active'"
+            "map": "ERPServiceRequestPrescriptionRequest.status"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -421,38 +414,12 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Anfragendes PS",
-            "comment": "Erzeugt einen Vorgang und generiert eine VorgangsID"
+            "map": "ERPServiceRequestPrescriptionRequest.identifier:requestId.value"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Anfragendes PS",
             "comment": "Erzeugt einen Vorgang und generiert eine VorgangsID"
-          }
-        ]
-      },
-      {
-        "id": "gem-erp-sr-log-prescription-request.VorherigeRezeptID",
-        "path": "gem-erp-sr-log-prescription-request.VorherigeRezeptID",
-        "short": "ID des vorherigen Rezepts",
-        "definition": "Kann bei der Anforderung einer Folgeverordnung verwendet werden, um einen Bezug zu einer vorherigen Verordnung herzustellen.",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "BackboneElement"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Anfragendes PS",
-            "comment": "Kann aus dem Medikamentenmanagement abgefragt werden"
-          },
-          {
-            "identity": "Quelle-Rezeptanforderung-Mapping",
-            "map": "Anfragendes PS",
-            "comment": "Kann aus dem Medikamentenmanagement abgefragt werden"
           }
         ]
       },
@@ -469,10 +436,6 @@
           }
         ],
         "mapping": [
-          {
-            "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": ""
-          },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": ""
@@ -494,8 +457,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Anfragendes PS",
-            "comment": "Abfrage aus Stammdatenmanagement"
+            "map": "ERPServiceRequestPrescriptionRequest.subject(ERPServiceRequestPatient)"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -519,7 +481,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Anfragendes PS"
+            "map": "ERPServiceRequestPatient.identifier.value"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -542,7 +504,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Anfragendes PS"
+            "map": "ERPServiceRequestPatient.name"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -565,7 +527,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Anfragendes PS"
+            "map": "ERPServiceRequestPatient.birthDate"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -588,8 +550,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Anfragendes PS",
-            "comment": "Falls vorher bekannt aus Kontaktmanagement oder vorheriger RezeptID"
+            "map": "ERPServiceRequestPrescriptionRequest.performer(ERPServiceRequestPractitioner)"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -613,7 +574,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Anfragendes PS"
+            "map": "ERPServiceRequestPractitioner.identifier.value"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -636,7 +597,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Anfragendes PS"
+            "map": "ERPServiceRequestPractitioner.name"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -667,7 +628,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Anfragendes PS"
+            "map": "ERPServiceRequestPrescriptionRequest.requester(ERPServiceRequestOrganization)"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -711,7 +672,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Anfragendes PS"
+            "map": "ERPServiceRequestOrganization.name"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -734,7 +695,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Anfragendes PS"
+            "map": "ERPServiceRequestOrganization.address"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -757,7 +718,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Anfragendes PS"
+            "map": "ERPServiceRequestOrganization.contact.telecom:tel.value"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -788,8 +749,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Anfragendes AVS",
-            "comment": "Im Fall, dass die Apotheke die Anfrage initiiert"
+            "map": "ERPServiceRequestPrescriptionRequest.supportingInfo:pflegeeinrichtungKopie(ERPServiceRequestOrganization)"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -813,7 +773,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Anfragendes AVS"
+            "map": "ERPServiceRequestOrganization.name"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -836,7 +796,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Anfragendes AVS"
+            "map": "ERPServiceRequestOrganization.contact.telecom:tel.value"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -859,7 +819,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Anfragendes AVS"
+            "map": "ERPServiceRequestOrganization.contact.telecom:kim.value"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -882,8 +842,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Nutzer des PS",
-            "comment": "Abfrage im Moment der Anforderung"
+            "map": "ERPServiceRequestPrescriptionRequest.note"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -907,8 +866,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Nutzer des PS",
-            "comment": "Abfrage im Moment der Anforderung"
+            "map": "ERPServiceRequestPrescriptionRequest.reasonCode"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -932,8 +890,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Nutzer des PS",
-            "comment": "Abfrage im Moment der Anforderung"
+            "map": "ERPServiceRequestPrescriptionRequest.reasonCode.coding"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -957,8 +914,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Nutzer des PS",
-            "comment": "Abfrage im Moment der Anforderung"
+            "map": "ERPServiceRequestPrescriptionRequest.reasonCode.text"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -982,8 +938,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Nutzer des PS",
-            "comment": "Abfrage im Moment der Anforderung"
+            "map": "ERPServiceRequestPrescriptionRequest.priority"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -1007,8 +962,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Nutzer des PS",
-            "comment": "Abfrage im Moment der Anforderung"
+            "map": "ERPServiceRequestPrescriptionRequest.priority"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -1032,8 +986,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Anfragendes PS oder Nutzer des PS",
-            "comment": "Abfrage/ Eingabe im Moment der Anforderung"
+            "map": "ERPServiceRequestPrescriptionRequest.reasonCode.extension:remainingSupply"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -1057,8 +1010,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Nutzer des PS",
-            "comment": "Abfrage im Moment der Anforderung"
+            "map": "ERPServiceRequestPrescriptionRequest.reasonCode.extension:remainingSupplyFreeText.valueString"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -1082,8 +1034,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Anfragendes PS",
-            "comment": "Ggf. automatisierte Berechnung"
+            "map": "ERPServiceRequestPrescriptionRequest.reasonCode.extension:remainingSupply.unit"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -1107,8 +1058,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Anfragendes PS",
-            "comment": "Ggf. automatisierte Berechnung"
+            "map": "ERPServiceRequestPrescriptionRequest.reasonCode.extension:remainingSupply.value"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -1131,11 +1081,6 @@
           }
         ],
         "mapping": [
-          {
-            "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Anfragendes PS oder Nutzer des PS",
-            "comment": "Generierung oder Bereitstellung im Moment der Anforderung"
-          },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Anfragendes PS oder Nutzer des PS",
@@ -1166,13 +1111,36 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Anfragendes PS oder Nutzer des PS",
-            "comment": "Bereitstellung aus Medikamentenmanagement"
+            "map": "ERPServiceRequestPrescriptionRequest.basedOn(ERPServiceRequestMedicationRequest)"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Anfragendes PS oder Nutzer des PS",
             "comment": "Bereitstellung aus Medikamentenmanagement"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request.Medikation.VorherigeRezeptID",
+        "path": "gem-erp-sr-log-prescription-request.Medikation.VorherigeRezeptID",
+        "short": "ID des vorherigen Rezepts",
+        "definition": "Kann bei der Anforderung einer Folgeverordnung verwendet werden, um einen Bezug zu einer vorherigen Verordnung herzustellen.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestMedicationRequest.extension:PriorPrescriptionID.valueIdentifier.value"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Mapping",
+            "map": "Anfragendes PS",
+            "comment": "Kann aus dem Medikamentenmanagement abgefragt werden"
           }
         ]
       },
@@ -1192,8 +1160,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Anfragendes PS",
-            "comment": "Bereitstellung aus Medikamentenmanagement"
+            "map": "ERPServiceRequestMedicationRequest.medication"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -1217,8 +1184,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Anfragendes PS oder Nutzer des PS",
-            "comment": "Bereitstellung aus Medikamentenmanagement"
+            "map": "ERPServiceRequestMedicationRequest.dispenseReques.quantity"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -1242,8 +1208,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Anfragendes PS",
-            "comment": "Bereitstellung aus Medikamentenmanagement"
+            "map": "ERPServiceRequestMedicationRequest.dispenseRequest.quantity.code"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -1267,8 +1232,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Anfragendes PS oder Nutzer des PS",
-            "comment": "Bereitstellung aus Medikamentenmanagement"
+            "map": "ERPServiceRequestMedicationRequest.dispenseRequest.quantity.value"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -1278,8 +1242,8 @@
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request.VersichertenEinloesung",
-        "path": "gem-erp-sr-log-prescription-request.VersichertenEinloesung",
+        "id": "gem-erp-sr-log-prescription-request.Medikation.VersichertenEinloesung",
+        "path": "gem-erp-sr-log-prescription-request.Medikation.VersichertenEinloesung",
         "short": "Versicherten Einlösung",
         "definition": "Angabe, ob der Versicherte das E-Rezept selbst einlösen möchte.",
         "min": 0,
@@ -1292,8 +1256,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Nutzer des PS",
-            "comment": "Angabemöglichkeit im Moment der Anforderung"
+            "map": "ERPServiceRequestMedicationRequest.extension:redeemByPatient.valueBoolean"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",
@@ -1303,8 +1266,8 @@
         ]
       },
       {
-        "id": "gem-erp-sr-log-prescription-request.AngabeMVO",
-        "path": "gem-erp-sr-log-prescription-request.AngabeMVO",
+        "id": "gem-erp-sr-log-prescription-request.Medikation.AngabeMVO",
+        "path": "gem-erp-sr-log-prescription-request.Medikation.AngabeMVO",
         "short": "Angabe MVO",
         "definition": "Angabe, ob der anfordernde eine MVO wünscht. Es obliegt dem Verordnenden dem Wunsch nachzukommen. Der verordnende LE entscheidet über die Menge und die Zeiträume",
         "min": 0,
@@ -1317,8 +1280,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "Nutzer des PS",
-            "comment": "Angabemöglichkeit im Moment der Anforderung. Unterstützung ggf. durch PS."
+            "map": "ERPServiceRequestMedicationRequest.extension:requestMVO.extension:Kennzeichen.valueBoolean"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Mapping",

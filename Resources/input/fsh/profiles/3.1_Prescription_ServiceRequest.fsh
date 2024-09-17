@@ -104,9 +104,13 @@ Description: "ServiceRequest, which is used to request a recipe"
   * extension MS
   * extension contains
       RemainingSupplyEX named remainingSupply 0..1 MS
+      and RemainingSupplyFreeTextEX named remainingSupplyFreeText 0..1 MS
   * extension[remainingSupply]
     * ^short = "Remaining supply"
     * ^definition = "Indicates the remaining supply of the medication."
+  * extension[remainingSupplyFreeText]
+    * ^short = "Remaining supply as free text"
+    * ^definition = "Here the remaining supply of the medication can be stated as free text."
 
 * priority 0..1 MS
   * ^short = "Indicates the urgency of the request."
