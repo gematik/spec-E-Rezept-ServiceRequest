@@ -24,7 +24,7 @@ Description: "Mapping des Fachmodells aus GEM_ERP_SR_LOG_PrescriptionRequest auf
 * Status -> "ERPServiceRequestPrescriptionRequest.status"
 * VorgangsID -> "ERPServiceRequestPrescriptionRequest.identifier:requestId.value"
 
-* involvierteParteien
+* involvierteParteien -> "ERPServiceRequestPrescriptionRequest.subject/performer/requester"
   * PatientenInformationen -> "ERPServiceRequestPrescriptionRequest.subject(ERPServiceRequestPatient)"
     * PatientenIdentifierKVNR -> "ERPServiceRequestPatient.identifier.value"
     * PatientenName -> "ERPServiceRequestPatient.name"

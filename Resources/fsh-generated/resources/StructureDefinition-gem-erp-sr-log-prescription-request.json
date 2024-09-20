@@ -437,6 +437,10 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestPrescriptionRequest.subject/performer/requester"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": ""
           }
