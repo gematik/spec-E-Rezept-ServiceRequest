@@ -28,48 +28,34 @@
     {
       "element": [
         {
-          "code": "message-copy",
-          "display": "Nachrichtenkopie",
-          "target": [
-            {
-              "display": "Kopie einer Rezeptanforderung",
-              "equivalence": "equal"
-            }
-          ]
-        },
-        {
           "code": "eRezept_Rezeptanforderung;Rezeptanfrage",
-          "display": "Anfrage an einen Arzt ein Rezept auszustellen",
           "target": [
             {
-              "display": "Anfrage zur Ausstellung eines Rezepts",
+              "display": "Anfrage zur Ausstellung eines E-Rezepts",
               "equivalence": "equal"
             }
           ]
         },
         {
           "code": "eRezept_Rezeptanforderung;Rezeptanfrage_Storno",
-          "display": "Stornierung der Rezeptanfrage",
           "target": [
             {
-              "display": "Stornierung der Rezeptanfrage",
+              "display": "Stornierung einer Rezeptanfrage",
               "equivalence": "equal"
             }
           ]
         },
         {
           "code": "eRezept_Rezeptanforderung;Rezeptanfrage_Ablehnung",
-          "display": "Ablehnung der Rezeptanfrage",
           "target": [
             {
-              "display": "Ablehnung der Rezeptanfrage",
+              "display": "Ablehnung einer Rezeptanfrage",
               "equivalence": "equal"
             }
           ]
         },
         {
           "code": "eRezept_Rezeptanforderung;Rezeptbestaetigung",
-          "display": "Bestätigung und Übermittlung eines ausgestellten Rezeptes",
           "target": [
             {
               "display": "Rezeptbestätigung und Übermittlung",
@@ -79,7 +65,6 @@
         },
         {
           "code": "eRezept_Rezeptanforderung;Abgabeanfrage",
-          "display": "Anfrage zur Erfüllung eines Rezeptes und Abgabe des Medikaments",
           "target": [
             {
               "display": "Anfrage zur Abgabe eines Medikaments",
@@ -89,7 +74,6 @@
         },
         {
           "code": "eRezept_Rezeptanforderung;Abgabebestaetigung",
-          "display": "Bestätigung der Erfüllung und Abgabe eines Medikamentes",
           "target": [
             {
               "display": "Bestätigung der Medikamentenabgabe",
@@ -99,40 +83,36 @@
         },
         {
           "code": "eRezept_Rezeptanforderung;NachrichtKopie",
-          "display": "Kopie einer Nachricht innerhalb des Prozesses der Rezeptanforderung",
           "target": [
             {
-              "display": "Prozessnachricht Kopie",
+              "display": "Kopie einer Rezeptanforderung",
               "equivalence": "equal"
             }
           ]
         },
         {
           "code": "eRezept_ParenteraleZubereitung;Rezeptanfrage",
-          "display": "Rezeptanfrage für eine anwendungsfertige Zytostatikazubereitung",
           "target": [
             {
-              "display": "Anfrage für Zytostatikazubereitung",
+              "display": "Anfrage zur Ausstellung eines E-Rezepts einer Zytostatikazubereitung",
               "equivalence": "equal"
             }
           ]
         },
         {
           "code": "eRezept_ParenteraleZubereitung;Rezeptanfrage_Storno",
-          "display": "Abbruch der Rezeptanfrage für eine anwendungsfertige Zytostatikazubereitung",
           "target": [
             {
-              "display": "Stornierung der Zytostatikazubereitungsanfrage",
+              "display": "Stornierung einer Rezeptanfrage zur Zytostatikazubereitung",
               "equivalence": "equal"
             }
           ]
         },
         {
           "code": "eRezept_ParenteraleZubereitung;Rezeptbestaetigung",
-          "display": "Bestätigung und Übermittlung eines ausgestellten Rezeptes für eine anwendungsfertige Zytostatikazubereitung",
           "target": [
             {
-              "display": "Rezeptbestätigung für Zytostatikazubereitung",
+              "display": "Rezeptbestätigung einer Rezeptanfrage zur Zytostatikazubereitung",
               "equivalence": "equal"
             }
           ]

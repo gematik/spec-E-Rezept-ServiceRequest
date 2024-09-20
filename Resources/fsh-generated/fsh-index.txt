@@ -22,7 +22,7 @@ Bundle-UC4-1-Prescription-and-Dispense-Request-To-Prescriber.json          UC4-1
 Bundle-UC4-2-Prescription-Request-To-Pharmacy.json                         UC4-2-Prescription-Request-To-Pharmacy                 Instance    examples/UC4/UC4_Bundles.fsh                              18 - 32
 CodeSystem-medication-request-reason-cs.json                               MedicationRequestReasonCS                              CodeSystem  codesystems/MedicationRequestReasonCS.fsh                 1 - 9
 CodeSystem-service-request-type-cs.json                                    ServiceRequestTypeCS                                   CodeSystem  codesystems/ServiceRequestCodeCS.fsh                      1 - 8
-ConceptMap-ServiceIdentifierToSubjectConceptMap.json                       ServiceIdentifierToSubjectConceptMap                   Instance    conceptmaps/serviceidentifier-to-subject-conceptmap.fsh   1 - 65
+ConceptMap-ServiceIdentifierToSubjectConceptMap.json                       ServiceIdentifierToSubjectConceptMap                   Instance    conceptmaps/serviceidentifier-to-subject-conceptmap.fsh   1 - 50
 MedicationRequest-Example-Initial-Medication-Request.json                  Example-Initial-Medication-Request                     Instance    profiles/4_MedicationRequest.fsh                          49 - 62
 MessageHeader-UC1-HealthCareService-to-Practitioner-MessageHeader.json     UC1-HealthCareService-to-Practitioner-MessageHeader    Instance    examples/UC1/UC1_MessageHeader.fsh                        1 - 7
 NamingSystem-NamingSystemEPrescriptionToken.json                           NamingSystemEPrescriptionToken                         Instance    profiles/6.3_EPrescriptionTokenIdentifier.fsh             13 - 29
