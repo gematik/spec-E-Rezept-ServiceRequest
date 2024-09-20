@@ -176,20 +176,20 @@
     "endLine": 9
   },
   {
-    "outputFile": "CodeSystem-service-request-service-identifier-cs.json",
-    "fshName": "ServiceRequestServiceIdentifierCS",
-    "fshType": "CodeSystem",
-    "fshFile": "codesystems/ServiceRequestServiceIdentifierCS.fsh",
-    "startLine": 1,
-    "endLine": 5
-  },
-  {
     "outputFile": "CodeSystem-service-request-type-cs.json",
     "fshName": "ServiceRequestTypeCS",
     "fshType": "CodeSystem",
     "fshFile": "codesystems/ServiceRequestCodeCS.fsh",
     "startLine": 1,
     "endLine": 8
+  },
+  {
+    "outputFile": "ConceptMap-ServiceIdentifierToSubjectConceptMap.json",
+    "fshName": "ServiceIdentifierToSubjectConceptMap",
+    "fshType": "Instance",
+    "fshFile": "conceptmaps/serviceidentifier-to-subject-conceptmap.fsh",
+    "startLine": 1,
+    "endLine": 65
   },
   {
     "outputFile": "MedicationRequest-Example-Initial-Medication-Request.json",
@@ -437,7 +437,7 @@
     "fshType": "ValueSet",
     "fshFile": "valuesets/ServiceIdentifierVS.fsh",
     "startLine": 1,
-    "endLine": 13
+    "endLine": 10
   },
   {
     "outputFile": "ValueSet-service-request-organization-type-vs.json",

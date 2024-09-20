@@ -21,8 +21,8 @@ Bundle-UC3-2-Fullfilled-Prescription-Request.json                          UC3-2
 Bundle-UC4-1-Prescription-and-Dispense-Request-To-Prescriber.json          UC4-1-Prescription-and-Dispense-Request-To-Prescriber  Instance    examples/UC4/UC4_Bundles.fsh                              2 - 16
 Bundle-UC4-2-Prescription-Request-To-Pharmacy.json                         UC4-2-Prescription-Request-To-Pharmacy                 Instance    examples/UC4/UC4_Bundles.fsh                              18 - 32
 CodeSystem-medication-request-reason-cs.json                               MedicationRequestReasonCS                              CodeSystem  codesystems/MedicationRequestReasonCS.fsh                 1 - 9
-CodeSystem-service-request-service-identifier-cs.json                      ServiceRequestServiceIdentifierCS                      CodeSystem  codesystems/ServiceRequestServiceIdentifierCS.fsh         1 - 5
 CodeSystem-service-request-type-cs.json                                    ServiceRequestTypeCS                                   CodeSystem  codesystems/ServiceRequestCodeCS.fsh                      1 - 8
+ConceptMap-ServiceIdentifierToSubjectConceptMap.json                       ServiceIdentifierToSubjectConceptMap                   Instance    conceptmaps/serviceidentifier-to-subject-conceptmap.fsh   1 - 65
 MedicationRequest-Example-Initial-Medication-Request.json                  Example-Initial-Medication-Request                     Instance    profiles/4_MedicationRequest.fsh                          49 - 62
 MessageHeader-UC1-HealthCareService-to-Practitioner-MessageHeader.json     UC1-HealthCareService-to-Practitioner-MessageHeader    Instance    examples/UC1/UC1_MessageHeader.fsh                        1 - 7
 NamingSystem-NamingSystemEPrescriptionToken.json                           NamingSystemEPrescriptionToken                         Instance    profiles/6.3_EPrescriptionTokenIdentifier.fsh             13 - 29
@@ -53,7 +53,7 @@ StructureDefinition-redeem-by-patient-ex.json                              Redee
 StructureDefinition-remaining-supply-ex.json                               RemainingSupplyEX                                      Extension   extensions/RemainingSupplyEX.fsh                          1 - 9
 StructureDefinition-remaining-supply-free-text-ex.json                     RemainingSupplyFreeTextEX                              Extension   extensions/RemainingSupplyFreeTextEX.fsh                  1 - 7
 ValueSet-medication-request-reason-vs.json                                 MedicationRequestReasonVS                              ValueSet    valuesets/MedicationRequestReasonVS.fsh                   1 - 7
-ValueSet-service-identifier-vs.json                                        ServiceIdentifierVS                                    ValueSet    valuesets/ServiceIdentifierVS.fsh                         1 - 13
+ValueSet-service-identifier-vs.json                                        ServiceIdentifierVS                                    ValueSet    valuesets/ServiceIdentifierVS.fsh                         1 - 10
 ValueSet-service-request-organization-type-vs.json                         ServiceRequestOrganizationTypeVS                       ValueSet    valuesets/ServiceRequestOrganizationTypeVS.fsh            1 - 8
 ValueSet-service-request-priority-vs.json                                  ServiceRequestPriorityVS                               ValueSet    valuesets/ServiceRequestPriorityVS.fsh                    1 - 6
 ValueSet-service-request-status-vs.json                                    ServiceRequestStatusVS                                 ValueSet    valuesets/ServiceRequestStatusVS.fsh                      1 - 9

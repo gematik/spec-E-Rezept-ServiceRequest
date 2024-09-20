@@ -1,0 +1,143 @@
+{
+  "resourceType": "ConceptMap",
+  "id": "ServiceIdentifierToSubjectConceptMap",
+  "url": "https://gematik.de/fhir/erp-servicerequest/ConceptMap/ServiceIdentifierToSubjectConceptMap",
+  "title": "Service Identifier To Subject Concept Map",
+  "description": "This Concept Map allows for the mapping of a Service Identifier to a Subject Header for a KIM-Message in the context of a Service Request.",
+  "status": "draft",
+  "experimental": false,
+  "publisher": "gematik GmbH",
+  "version": "1.2",
+  "date": "2025-01-01",
+  "contact": [
+    {
+      "name": "gematik GmbH",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.gematik.de"
+        }
+      ]
+    }
+  ],
+  "name": "Service Identifier To Subject Concept Map",
+  "purpose": "This Concept Map allows for the mapping of a Service Identifier to a Subject Header for a KIM-Message in the context of a Service Request.",
+  "sourceCanonical": "https://gematik.de/fhir/erp-servicerequest/ValueSet/service-identifier-vs",
+  "targetUri": "subject-line-for-KIM-message",
+  "group": [
+    {
+      "element": [
+        {
+          "code": "message-copy",
+          "display": "Nachrichtenkopie",
+          "target": [
+            {
+              "display": "Kopie einer Rezeptanforderung",
+              "equivalence": "equal"
+            }
+          ]
+        },
+        {
+          "code": "eRezept_Rezeptanforderung;Rezeptanfrage",
+          "display": "Anfrage an einen Arzt ein Rezept auszustellen",
+          "target": [
+            {
+              "display": "Anfrage zur Ausstellung eines Rezepts",
+              "equivalence": "equal"
+            }
+          ]
+        },
+        {
+          "code": "eRezept_Rezeptanforderung;Rezeptanfrage_Storno",
+          "display": "Stornierung der Rezeptanfrage",
+          "target": [
+            {
+              "display": "Stornierung der Rezeptanfrage",
+              "equivalence": "equal"
+            }
+          ]
+        },
+        {
+          "code": "eRezept_Rezeptanforderung;Rezeptanfrage_Ablehnung",
+          "display": "Ablehnung der Rezeptanfrage",
+          "target": [
+            {
+              "display": "Ablehnung der Rezeptanfrage",
+              "equivalence": "equal"
+            }
+          ]
+        },
+        {
+          "code": "eRezept_Rezeptanforderung;Rezeptbestaetigung",
+          "display": "Bestätigung und Übermittlung eines ausgestellten Rezeptes",
+          "target": [
+            {
+              "display": "Rezeptbestätigung und Übermittlung",
+              "equivalence": "equal"
+            }
+          ]
+        },
+        {
+          "code": "eRezept_Rezeptanforderung;Abgabeanfrage",
+          "display": "Anfrage zur Erfüllung eines Rezeptes und Abgabe des Medikaments",
+          "target": [
+            {
+              "display": "Anfrage zur Abgabe eines Medikaments",
+              "equivalence": "equal"
+            }
+          ]
+        },
+        {
+          "code": "eRezept_Rezeptanforderung;Abgabebestaetigung",
+          "display": "Bestätigung der Erfüllung und Abgabe eines Medikamentes",
+          "target": [
+            {
+              "display": "Bestätigung der Medikamentenabgabe",
+              "equivalence": "equal"
+            }
+          ]
+        },
+        {
+          "code": "eRezept_Rezeptanforderung;NachrichtKopie",
+          "display": "Kopie einer Nachricht innerhalb des Prozesses der Rezeptanforderung",
+          "target": [
+            {
+              "display": "Prozessnachricht Kopie",
+              "equivalence": "equal"
+            }
+          ]
+        },
+        {
+          "code": "eRezept_ParenteraleZubereitung;Rezeptanfrage",
+          "display": "Rezeptanfrage für eine anwendungsfertige Zytostatikazubereitung",
+          "target": [
+            {
+              "display": "Anfrage für Zytostatikazubereitung",
+              "equivalence": "equal"
+            }
+          ]
+        },
+        {
+          "code": "eRezept_ParenteraleZubereitung;Rezeptanfrage_Storno",
+          "display": "Abbruch der Rezeptanfrage für eine anwendungsfertige Zytostatikazubereitung",
+          "target": [
+            {
+              "display": "Stornierung der Zytostatikazubereitungsanfrage",
+              "equivalence": "equal"
+            }
+          ]
+        },
+        {
+          "code": "eRezept_ParenteraleZubereitung;Rezeptbestaetigung",
+          "display": "Bestätigung und Übermittlung eines ausgestellten Rezeptes für eine anwendungsfertige Zytostatikazubereitung",
+          "target": [
+            {
+              "display": "Rezeptbestätigung für Zytostatikazubereitung",
+              "equivalence": "equal"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
