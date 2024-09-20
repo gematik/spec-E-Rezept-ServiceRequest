@@ -3,6 +3,7 @@ RuleSet: HealthCareService-to-Practitioner(SR)
 * focus[+] = Reference(ServiceRequest/{SR})
 * sender.identifier = Pflegeheim-Immergrün-Identifier
 * sender.display = "Pflegeheim Immergrün"
+* destination.receiver = Reference(Example-Practitioner-Organization)
 * destination.receiver.identifier = Hans-Topp-Glücklich-Identifier
 * destination.receiver.display = "Praxis Hans Topp-Glücklich"
 * destination.endpoint = "mailto:practitioner@test.kim.de"
@@ -25,6 +26,7 @@ RuleSet: Practitioner-to-HealthCareService(SR)
 * source.contact.system = #email
 * source.contact.value = "info@pvs.email"
 * source.endpoint = "mailto:practitioner@test.kim.de"
+* destination.receiver = Reference(Example-HealthCareService-Organization)
 * destination.receiver.identifier = Pflegeheim-Immergrün-Identifier
 * destination.receiver.display = "Pflegeheim Immergrün"
 * destination.endpoint = "mailto:healthcare-service@test.kim.de"
@@ -39,6 +41,7 @@ RuleSet: HealthCareService-to-Pharmacy(SR)
 * source.contact.system = #email
 * source.contact.value = "info@hcs.email"
 * source.endpoint = "mailto:healthcare-service@test.kim.de"
+* destination.receiver = Reference(Example-Pharmacy-Organization)
 * destination.receiver.identifier = Test-Apotheke-Identifier
 * destination.receiver.display = "Test Apotheke"
 * destination.endpoint = "mailto:pharmacy@test.kim.de"
@@ -53,6 +56,7 @@ RuleSet: Pharmacy-to-HealthCareService(SR)
 * source.contact.system = #email
 * source.contact.value = "info@avs.email"
 * source.endpoint = "mailto:pharmacy@test.kim.de"
+* destination.receiver = Reference(Example-HealthCareService-Organization)
 * destination.receiver.identifier = Pflegeheim-Immergrün-Identifier
 * destination.receiver.display = "Pflegeheim Immergrün"
 * destination.endpoint = "mailto:healthcare-service@test.kim.de"
@@ -67,6 +71,7 @@ RuleSet: Pharmacy-to-Practitioner(SR)
 * source.contact.system = #email
 * source.contact.value = "info@avs.email"
 * source.endpoint = "mailto:pharmacy@test.kim.de"
+* destination.receiver = Reference(Example-Practitioner-Organization)
 * destination.receiver.identifier = Hans-Topp-Glücklich-Identifier
 * destination.receiver.display = "Praxis Hans Topp-Glücklich"
 * destination.endpoint = "mailto:practitioner@test.kim.de"
@@ -81,6 +86,7 @@ RuleSet: Practitioner-to-Pharmacy(SR)
 * source.contact.system = #email
 * source.contact.value = "info@pvs.email"
 * source.endpoint = "mailto:practitioner@test.kim.de"
+* destination.receiver = Reference(Example-Pharmacy-Organization)
 * destination.receiver.identifier = Test-Apotheke-Identifier
 * destination.receiver.display = "Test Apotheke"
 * destination.endpoint = "mailto:pharmacy@test.kim.dee"
@@ -95,6 +101,7 @@ RuleSet: Pharmacy1-to-Pharmacy2(SR)
 * source.contact.system = #email
 * source.contact.value = "info@avs.email"
 * source.endpoint = "mailto:pharmacy@test.kim.de"
+* destination.receiver = Reference(Example-Pharmacy-Organization)
 * destination.receiver.identifier = Test-Apotheke2-Identifier
 * destination.receiver.display = "Test Apotheke 2"
 * destination.endpoint = "mailto:pharamacy_2@test.kim.de"
@@ -110,6 +117,7 @@ RuleSet: Pharmacy2-to-Pharmacy1(SR)
 * source.contact.system = #email
 * source.contact.value = "info@avs_2.email"
 * source.endpoint = "mailto:pharmacy_2@test.kim.de"
+* destination.receiver = Reference(Example-Pharmacy-Organization)
 * destination.receiver.identifier = Test-Apotheke-Identifier
 * destination.receiver.display = "Test Apotheke-2"
 * destination.endpoint = "mailto:pharmacy@test.kim.de"

@@ -11,6 +11,7 @@ Description: "Cancellation Message Header from HealthCareService to Practitioner
 * source.contact.system = #email
 * source.contact.value = "info@healthcare.email"
 * source.endpoint = "http://healthcare.endpoint"
+* responsible = Reference(Example-HealthCareService-Organization)
 
 Instance: UC1-Practitioner-to-HealthCareService-MessageHeader-Rejection
 InstanceOf: ERPServiceRequestRequestHeader
@@ -25,3 +26,4 @@ Description: "Cancellation Message Header from Practitioner to HealthCareService
 * source.contact.system = #email
 * source.contact.value = "info@practitioner.email"
 * source.endpoint = "http://practitioner.endpoint"
+* responsible = Reference(Example-Practitioner-Organization)

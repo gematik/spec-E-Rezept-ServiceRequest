@@ -205,7 +205,7 @@
     "fshType": "Instance",
     "fshFile": "examples/UC1/UC1_MessageHeader.fsh",
     "startLine": 1,
-    "endLine": 7
+    "endLine": 8
   },
   {
     "outputFile": "NamingSystem-NamingSystemEPrescriptionToken.json",
@@ -317,7 +317,7 @@
     "fshType": "Profile",
     "fshFile": "profiles/2_MessageHeader.fsh",
     "startLine": 1,
-    "endLine": 20
+    "endLine": 25
   },
   {
     "outputFile": "StructureDefinition-erp-service-request-request-identifier.json",

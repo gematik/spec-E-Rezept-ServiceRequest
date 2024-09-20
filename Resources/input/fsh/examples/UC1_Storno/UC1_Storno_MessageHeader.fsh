@@ -11,6 +11,7 @@ Description: "Cancellation Message Header from HealthCareService to Practitioner
 * source.contact.system = #email
 * source.contact.value = "info@healthcare.email"
 * source.endpoint = "http://healthcare.endpoint"
+* responsible = Reference(Example-HealthCareService-Organization)
 
 Instance: UC1-Practitioner-to-HealthCareService-MessageHeader-Storno
 InstanceOf: ERPServiceRequestRequestHeader
@@ -25,6 +26,7 @@ Description: "Cancellation Message Header from Practitioner to HealthCareService
 * source.contact.system = #email
 * source.contact.value = "info@practitioner.email"
 * source.endpoint = "http://practitioner.endpoint"
+* responsible = Reference(Example-Practitioner-Organization)
 
 Instance: UC1-HealthCareService-to-Pharmacy-MessageHeader-Storno
 InstanceOf: ERPServiceRequestRequestHeader
@@ -39,6 +41,7 @@ Description: "Cancellation Message Header from HealthCareService to Pharmacy"
 * source.contact.system = #email
 * source.contact.value = "info@healthcare.email"
 * source.endpoint = "http://healthcare.endpoint"
+* responsible = Reference(Example-HealthCareService-Organization)
 
 Instance: UC1-Pharmacy-to-HealthCareService-MessageHeader-Storno
 InstanceOf: ERPServiceRequestRequestHeader
@@ -53,5 +56,6 @@ Description: "Cancellation Message Header from Pharmacy to HealthCareService"
 * source.contact.system = #email
 * source.contact.value = "info@pharmacy.email"
 * source.endpoint = "http://pharmacy.endpoint"
+* responsible = Reference(Example-Pharmacy-Organization)
 
 

@@ -31,6 +31,7 @@
   "destination": [
     {
       "receiver": {
+        "reference": "Organization/Example-Practitioner-Organization",
         "identifier": {
           "system": "https://gematik.de/fhir/sid/telematik-id",
           "value": "1-test-telematik-id"
@@ -42,6 +43,10 @@
   ],
   "eventCoding": {
     "code": "eRezept_Rezeptanforderung;Rezeptanfrage",
-    "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
+    "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs",
+    "display": "Anfrage zur Ausstellung eines E-Rezepts"
+  },
+  "responsible": {
+    "reference": "Organization/Example-HealthCareService-Organization"
   }
 }

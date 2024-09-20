@@ -75,6 +75,22 @@
         }
       },
       {
+        "id": "MessageHeader.responsible",
+        "path": "MessageHeader.responsible",
+        "short": "The organization that is responsible for the request.",
+        "comment": "This organization will be stated in the message header as the sender of the message.",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
         "id": "MessageHeader.focus",
         "path": "MessageHeader.focus",
         "short": "Specification of the ServiceRequest that contains the essential information for a given use case.",

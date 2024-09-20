@@ -48,6 +48,7 @@
         "destination": [
           {
             "receiver": {
+              "reference": "Organization/Example-Practitioner-Organization",
               "identifier": {
                 "system": "https://gematik.de/fhir/sid/telematik-id",
                 "value": "1-test-telematik-id"
@@ -60,6 +61,9 @@
         "eventCoding": {
           "code": "eRezept_Rezeptanforderung;Abgabeanfrage_Storno",
           "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
+        },
+        "responsible": {
+          "reference": "Organization/Example-HealthCareService-Organization"
         }
       }
     },
