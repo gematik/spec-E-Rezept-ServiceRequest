@@ -7,7 +7,7 @@ Description: "This Concept Map allows for the mapping of a Service Identifier to
 * name = "Service Identifier To Subject Concept Map"
 * purpose = "This Concept Map allows for the mapping of a Service Identifier to a Subject Header for a KIM-Message in the context of a Service Request."
 * sourceCanonical = "https://gematik.de/fhir/erp-servicerequest/ValueSet/service-identifier-vs"
-* targetUri = "subject-line-for-KIM-message"
+* targetUri = "Betreffzeile_in_einer_KIM-Nachricht"
 
 * group.element[+].code = #eRezept_Rezeptanforderung;Rezeptanfrage
 * group.element[=].target.display = "Anfrage zur Ausstellung eines E-Rezepts"
