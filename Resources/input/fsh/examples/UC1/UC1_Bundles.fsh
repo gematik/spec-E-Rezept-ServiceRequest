@@ -21,6 +21,8 @@ Description: "Request sent to Prescriber to get a Prescription"
 * entry[=].resource = Example-Patient
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Organization/Example-HealthCareService-Organization"
 * entry[=].resource = Example-HealthCareService-Organization
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/Organization/Example-Practitioner-Organization"
+* entry[=].resource = Example-Practitioner-Organization
 
 Instance: UC1-2-Fullfilled-Prescription-Request
 InstanceOf: ERPServiceRequestMessageContainer
