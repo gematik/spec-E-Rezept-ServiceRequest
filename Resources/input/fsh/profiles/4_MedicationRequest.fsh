@@ -22,7 +22,8 @@ If this ID is available, the receiving system MUST be able to search for the pre
 "
 * extension[requestMVO]
   * ^short = "Multiple prescription order"
-  * ^comment = "If the prescription is should be a multiple prescription order. Only the 'Kennzeichen' should be stated, indicating that the prescription is requested to be a multiple prescription order."
+  * ^definition = "If the prescription is should be a multiple prescription order. Only the 'Kennzeichen' should be stated, indicating that the prescription is requested to be a multiple prescription order."
+  * ^comment = "When this extension is received by a PVS, the prescriber has to be visually notified about the request for a multiple prescription order."
   * extension[Kennzeichen] MS
   * extension[Nummerierung] 0..0
   * extension[Zeitraum] 0..0
@@ -30,7 +31,8 @@ If this ID is available, the receiving system MUST be able to search for the pre
 
 * extension[redeemByPatient]
   * ^short = "Redeem By Patient"
-  * ^comment = "Indicates whether the prescription should be redeemed by the patient."
+  * ^definition = "Indicates whether the prescription should be redeemed by the patient."
+  * ^comment = "This determines the Flow Type of the prescription to be set to 160/200 so that the patient can redeem the prescription himself."
 
 * medication[x] MS
 * medication[x] only Reference(KBV_PR_ERP_Medication_PZN or KBV_PR_ERP_Medication_Compounding or KBV_PR_ERP_Medication_Ingredient or KBV_PR_ERP_Medication_FreeText)

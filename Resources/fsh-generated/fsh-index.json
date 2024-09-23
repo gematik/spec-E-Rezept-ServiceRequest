@@ -196,8 +196,8 @@
     "fshName": "Example-Initial-Medication-Request",
     "fshType": "Instance",
     "fshFile": "profiles/4_MedicationRequest.fsh",
-    "startLine": 49,
-    "endLine": 62
+    "startLine": 51,
+    "endLine": 64
   },
   {
     "outputFile": "MessageHeader-UC1-HealthCareService-to-Practitioner-MessageHeader.json",
@@ -269,7 +269,7 @@
     "fshType": "Profile",
     "fshFile": "profiles/4_MedicationRequest.fsh",
     "startLine": 1,
-    "endLine": 47
+    "endLine": 49
   },
   {
     "outputFile": "StructureDefinition-erp-service-request-message-container.json",
@@ -309,7 +309,7 @@
     "fshType": "Profile",
     "fshFile": "profiles/3.1_Prescription_ServiceRequest.fsh",
     "startLine": 1,
-    "endLine": 134
+    "endLine": 135
   },
   {
     "outputFile": "StructureDefinition-erp-service-request-request-header.json",

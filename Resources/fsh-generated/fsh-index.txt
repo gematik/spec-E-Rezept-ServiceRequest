@@ -23,7 +23,7 @@ Bundle-UC4-2-Prescription-Request-To-Pharmacy.json                         UC4-2
 CodeSystem-medication-request-reason-cs.json                               MedicationRequestReasonCS                              CodeSystem  codesystems/MedicationRequestReasonCS.fsh                 1 - 9
 CodeSystem-service-request-type-cs.json                                    ServiceRequestTypeCS                                   CodeSystem  codesystems/ServiceRequestCodeCS.fsh                      1 - 8
 ConceptMap-ServiceIdentifierToSubjectConceptMap.json                       ServiceIdentifierToSubjectConceptMap                   Instance    conceptmaps/serviceidentifier-to-subject-conceptmap.fsh   1 - 50
-MedicationRequest-Example-Initial-Medication-Request.json                  Example-Initial-Medication-Request                     Instance    profiles/4_MedicationRequest.fsh                          49 - 62
+MedicationRequest-Example-Initial-Medication-Request.json                  Example-Initial-Medication-Request                     Instance    profiles/4_MedicationRequest.fsh                          51 - 64
 MessageHeader-UC1-HealthCareService-to-Practitioner-MessageHeader.json     UC1-HealthCareService-to-Practitioner-MessageHeader    Instance    examples/UC1/UC1_MessageHeader.fsh                        1 - 8
 NamingSystem-NamingSystemEPrescriptionToken.json                           NamingSystemEPrescriptionToken                         Instance    profiles/6.3_EPrescriptionTokenIdentifier.fsh             13 - 29
 Organization-Example-HealthCareService-Organization.json                   Example-HealthCareService-Organization                 Instance    examples/Misc/Example_Organization.fsh                    1 - 16
@@ -32,12 +32,12 @@ StructureDefinition-copy-to-care-facility-ex.json                          CopyT
 StructureDefinition-eprescription-token-ex.json                            EPrescriptionTokenEX                                   Extension   extensions/EPrescriptionTokenEX.fsh                       1 - 20
 StructureDefinition-erp-service-request-dispense-request.json              ERPServiceRequestDispenseRequest                       Profile     profiles/3.2_Dispense_ServiceRequest.fsh                  1 - 96
 StructureDefinition-erp-service-request-eprescription-token.json           ERPServiceRequestEPrescriptionToken                    Profile     profiles/6.3_EPrescriptionTokenIdentifier.fsh             1 - 11
-StructureDefinition-erp-service-request-medication-request.json            ERPServiceRequestMedicationRequest                     Profile     profiles/4_MedicationRequest.fsh                          1 - 47
+StructureDefinition-erp-service-request-medication-request.json            ERPServiceRequestMedicationRequest                     Profile     profiles/4_MedicationRequest.fsh                          1 - 49
 StructureDefinition-erp-service-request-message-container.json             ERPServiceRequestMessageContainer                      Profile     profiles/1_Bundle.fsh                                     1 - 8
 StructureDefinition-erp-service-request-organization.json                  ERPServiceRequestOrganization                          Profile     profiles/8_Organization.fsh                               1 - 26
 StructureDefinition-erp-service-request-patient.json                       ERPServiceRequestPatient                               Profile     profiles/9_Patient.fsh                                    1 - 18
 StructureDefinition-erp-service-request-practitioner.json                  ERPServiceRequestPractitioner                          Profile     profiles/10_Practitioner.fsh                              1 - 13
-StructureDefinition-erp-service-request-prescription-request.json          ERPServiceRequestPrescriptionRequest                   Profile     profiles/3.1_Prescription_ServiceRequest.fsh              1 - 134
+StructureDefinition-erp-service-request-prescription-request.json          ERPServiceRequestPrescriptionRequest                   Profile     profiles/3.1_Prescription_ServiceRequest.fsh              1 - 135
 StructureDefinition-erp-service-request-request-header.json                ERPServiceRequestRequestHeader                         Profile     profiles/2_MessageHeader.fsh                              1 - 27
 StructureDefinition-erp-service-request-request-identifier.json            ERPServiceRequestRequestIdentifier                     Profile     profiles/6.1_AnforderungIdentifier.fsh                    1 - 11
 StructureDefinition-gem-erp-sr-log-dispense-request-confirmation.json      GEM_ERP_SR_LOG_DispenseRequest_Confirmation            Logical     logical-models/dispense-request-confirmation-log.fsh      1 - 23

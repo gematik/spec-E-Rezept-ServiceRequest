@@ -14,14 +14,15 @@ Description: "ServiceRequest, which is used to request a recipe"
 
 * extension MS
 * extension contains
-    EPrescriptionTokenEX named EPrescriptionToken 0..1 MS ?!
+    EPrescriptionTokenEX named EPrescriptionToken 0..1 MS
     and ChangedMedicationEX named medicationChanged 0..1 MS ?!
 * extension[EPrescriptionTokenEX]
   * ^short = "Here the e-prescription token can be made available for processing in a pharmacy."
   * ^comment = "The token is of the form '/Task/{PrescriptionID}/$accept?ac={AccessCode}. See [gemSpec_DM_eRp](https://fachportal.gematik.de/fachportal-import/files/gemSpec_DM_eRp_V1.5.0.pdf)'."
 * extension[medicationChanged]
   * ^short = "Indicates whether the medication has been changed by the prescriber."
-  * ^comment = "If the medication has been changed, the value is set to true."
+  * ^definition = "If the medication has been changed, the value is set to true."
+  * ^comment = "If the medication has been changed, the receiving system must display the changed medication to the receiving user."
 
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "system"
