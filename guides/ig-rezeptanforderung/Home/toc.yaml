@@ -12,5 +12,7 @@
   filename: UebergreifendeFestlegungen
 - name: Datenobjekte
   filename: Datenobjekte
+- name: Mappings
+  filename: Mappings
 - name: Identifier
   filename: Identifier
