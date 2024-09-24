@@ -4,3 +4,7 @@
   filename: Mapping-für-Rezeptanforderung.page.md
 - name: Mapping für Rezeptanforderung Bestätigung
   filename: Mapping-für-Rezeptanforderung_Bestaetigung.page.md
+- name: Mapping für Rezeptanforderung Stornierung
+  filename: Mapping-für-Rezeptanforderung_Cancellation.page.md
+- name: Mapping für Rezeptanforderung Ablehnung
+  filename: Mapping-für-Rezeptanforderung_Rejection.page.md

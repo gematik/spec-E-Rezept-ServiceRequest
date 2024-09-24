@@ -1,7 +1,7 @@
 Mapping: RezeptanforderungAblehnungFachlichesMapping
 Source: GEM_ERP_SR_LOG_PrescriptionRequest_Rejection
 Target: "ERPServiceRequestPrescriptionRequest"
-Id: Rezeptanforderung-Bestaetigung-Fachliches-Mapping
+Id: Rezeptanforderung-Ablehnung-Fachliches-Mapping
 Title: "Rezeptanforderung Ablehnung Fachliches Mapping"
 Description: "Mapping des Fachmodells aus GEM_ERP_SR_LOG_PrescriptionRequest_Rejection auf das FHIR-Modell ERPServiceRequestPrescriptionRequest"
 

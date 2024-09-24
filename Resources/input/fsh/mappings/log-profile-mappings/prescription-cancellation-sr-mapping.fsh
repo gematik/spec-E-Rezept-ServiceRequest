@@ -1,7 +1,7 @@
 Mapping: RezeptanforderungStornierungFachlichesMapping
 Source: GEM_ERP_SR_LOG_PrescriptionRequest_Cancellation
 Target: "ERPServiceRequestPrescriptionRequest"
-Id: Rezeptanforderung-Bestaetigung-Fachliches-Mapping
+Id: Rezeptanforderung-Stornierung-Fachliches-Mapping
 Title: "Rezeptanforderung Stornierung Fachliches Mapping"
 Description: "Mapping des Fachmodells aus GEM_ERP_SR_LOG_PrescriptionRequest_Cancellation auf das FHIR-Modell ERPServiceRequestPrescriptionRequest"
 
