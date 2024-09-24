@@ -1,0 +1,21 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "ServiceRequestServiceIdentifierCS",
+  "id": "service-request-service-identifier-cs",
+  "title": "Service Request Service Identifier (CS)",
+  "description": "Specifies extra Identifiers for ServiceRequests",
+  "version": "1.2",
+  "url": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-service-identifier-cs",
+  "concept": [
+    {
+      "code": "message-copy",
+      "display": "Message Copy"
+    }
+  ],
+  "experimental": false,
+  "publisher": "gematik GmbH",
+  "date": "2025-01-01",
+  "count": 1
+}

@@ -14,7 +14,7 @@
   "mapping": [
     {
       "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
-      "name": "Rezeptanforderung Stornierung/ Ablehnung Fachliches Mapping",
+      "name": "Rezeptanforderung Stornierung Fachliches Mapping",
       "uri": "ERPServiceRequestPrescriptionRequest",
       "comment": "Mapping des Fachmodells aus GEM_ERP_SR_LOG_PrescriptionRequest_Cancellation auf das FHIR-Modell ERPServiceRequestPrescriptionRequest"
     },

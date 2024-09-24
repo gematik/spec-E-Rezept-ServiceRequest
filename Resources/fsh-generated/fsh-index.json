@@ -176,6 +176,14 @@
     "endLine": 9
   },
   {
+    "outputFile": "CodeSystem-service-request-service-identifier-cs.json",
+    "fshName": "ServiceRequestServiceIdentifierCS",
+    "fshType": "CodeSystem",
+    "fshFile": "codesystems/ServiceRequestServiceIdentifierCS.fsh",
+    "startLine": 1,
+    "endLine": 6
+  },
+  {
     "outputFile": "CodeSystem-service-request-type-cs.json",
     "fshName": "ServiceRequestTypeCS",
     "fshType": "CodeSystem",
@@ -437,7 +445,7 @@
     "fshType": "ValueSet",
     "fshFile": "valuesets/ServiceIdentifierVS.fsh",
     "startLine": 1,
-    "endLine": 10
+    "endLine": 12
   },
   {
     "outputFile": "ValueSet-service-request-organization-type-vs.json",
