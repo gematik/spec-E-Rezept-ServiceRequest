@@ -2,3 +2,5 @@
   filename: Index.page.md
 - name: Mapping für Rezeptanforderung
   filename: Mapping-für-Rezeptanforderung.page.md
+- name: Mapping für Rezeptanforderung Bestätigung
+  filename: Mapping-für-Rezeptanforderung_Bestaetigung.page.md

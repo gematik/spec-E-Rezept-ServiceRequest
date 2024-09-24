@@ -13,6 +13,12 @@
   "fhirVersion": "4.0.1",
   "mapping": [
     {
+      "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+      "name": "Rezeptanforderung Bestätigung Fachliches Mapping",
+      "uri": "ERPServiceRequestPrescriptionRequest",
+      "comment": "Mapping des Fachmodells aus GEM_ERP_SR_LOG_PrescriptionRequest_Confirmation auf das FHIR-Modell ERPServiceRequestPrescriptionRequest"
+    },
+    {
       "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
       "name": "Quelle der Rezeptanforderung Bestätigung Informationen",
       "comment": "Beschreibt die Quelle der Rezeptanforderung Bestätigung Informatione"
@@ -59,6 +65,10 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestRequestHeader"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
             "map": "Erstellendes PVS"
           }
@@ -77,6 +87,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestRequestHeader.destination"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
             "map": "Aus initialer Rezeptanforderung"
@@ -97,6 +111,10 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestRequestHeader.destination.endpoint"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
             "map": "Aus initialer Rezeptanforderung (KIM Nachricht)"
           }
@@ -115,6 +133,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestRequestHeader.destination.receiver.identifier.value"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
             "map": "Aus initialer Rezeptanforderung"
@@ -135,6 +157,10 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestRequestHeader.sender"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
             "map": "Erstellendes PVS"
           }
@@ -153,6 +179,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestRequestHeader.sender.identifier.value"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
             "map": "Erstellendes PVS, SMC-B oder HBA Zertifikat"
@@ -173,6 +203,10 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestRequestHeader.sender.display"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
             "map": "Erstellendes PVS"
           }
@@ -191,6 +225,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestRequestHeader.source"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
             "map": "Erstellendes PVS",
@@ -212,6 +250,10 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestRequestHeader.source.name"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
             "map": "Erstellendes PVS",
             "comment": "Automatisiert durch Software gesetzt"
@@ -231,6 +273,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestRequestHeader.source.software"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
             "map": "Erstellendes PVS",
@@ -252,6 +298,10 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestRequestHeader.source.version"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
             "map": "Erstellendes PVS",
             "comment": "Automatisiert durch Software gesetzt"
@@ -272,6 +322,10 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestRequestHeader.source.contact.value"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
             "map": "Erstellendes PVS",
             "comment": "Automatisiert durch Software gesetzt"
@@ -291,6 +345,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestRequestHeader.source.endpoint"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
             "map": "Erstellendes PVS",
@@ -319,6 +377,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestPrescriptionRequest.extension:EPrescriptionToken"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
             "map": "E-Rezept-Fachdienst",
@@ -354,6 +416,10 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestPrescriptionRequest.status"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
             "map": "PVS",
             "comment": "Setzt den Status der Anfrage auf 'completed'"
@@ -374,6 +440,10 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestPrescriptionRequest.identifier:requestId.value"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
             "map": "Rezeptanforderung",
             "comment": "VorgangsID aus der initialen Rezeptanforderung"
@@ -393,6 +463,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestPrescriptionRequest.note"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
             "map": "Nutzer des PVS",
@@ -471,6 +545,12 @@
           {
             "code": "boolean"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestPrescriptionRequest.extension:medicationChanged"
+          }
         ]
       },
       {
@@ -494,6 +574,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestPrescriptionRequest.basedOn(KBV_Prescription)"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
             "map": "PVS",
