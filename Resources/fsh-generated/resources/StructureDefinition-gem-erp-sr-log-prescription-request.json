@@ -546,7 +546,7 @@
         "short": "Verordnender Arzt",
         "definition": "Angaben zum verordnenden Arzt. Anzugeben, wenn ein Arzt zur Ausstellung identifiziert werden kann.",
         "min": 0,
-        "max": "1",
+        "max": "*",
         "type": [
           {
             "code": "BackboneElement"

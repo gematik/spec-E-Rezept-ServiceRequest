@@ -11,6 +11,7 @@ Description: "ServiceRequest, which is used to request a recipe"
 * obeys servicerequest-prescription-request-4
 * obeys servicerequest-prescription-request-5
 * obeys servicerequest-prescription-request-6
+* obeys servicerequest-prescription-request-7
 
 * extension MS
 * extension contains
@@ -40,7 +41,7 @@ Description: "ServiceRequest, which is used to request a recipe"
   * ^short = "Requested or fulfilled MedicationRequest."
   * ^comment = "Exactly one MedicationRequest is assigned to a ServiceRequest, so that independent processing is possible."
   * ^definition = "This field references the underlying MedicationRequest, which contains the medical information for the prescription request. For active requests ERPServiceRequestMedicationRequest may be used, otherwise KBV_PR_ERP_MedicationRequest."
-* basedOn only Reference(ERPServiceRequestMedicationRequest or KBV_PR_ERP_Prescription)
+* basedOn only Reference(ERPServiceRequestMedicationRequest)
 
 * requisition 1..1 MS
 * requisition only ERPServiceRequestProcedureIdentifier
@@ -77,7 +78,7 @@ Description: "ServiceRequest, which is used to request a recipe"
   * ^short = "Creation date of the request."
   * ^comment = "Is initially created and then no longer changed."
 
-* requester 1..1 MS
+* requester 0..1 MS // 0..1 für die Antwort, siehe Constraint
 * requester only Reference(ERPServiceRequestOrganization)
   * ^short = "Inquiring facility or practitioner."
   * ^comment = "The KIM address is already stored in the message header. Therefore, the preferred specification is to store a KBV_PR_FOR_Practitioner."
@@ -152,11 +153,6 @@ Description: "If the status is active, then the request must be based on an ERP 
 Expression: "status = 'active' implies basedOn.exists() and basedOn is ERPServiceRequestMedicationRequest"
 Severity: #error
 
-Invariant: servicerequest-prescription-request-4
-Description: "If the status is completed, then the request must be based on an KBV Prescription."
-Expression: "status = 'completed' implies basedOn.exists() and basedOn is KBV_PR_ERP_Prescription"
-Severity: #error
-
 Invariant: servicerequest-prescription-request-5
 Description: "If the requester is a pharmacy then the KIM-adress of the care facility must be stated in order to receive a copy of the message."
 Expression: "requester.type = 'APO' implies supportingInfo.where(type='pflegeeinrichtungKopie').exists()"
@@ -165,4 +161,9 @@ Severity: #error
 Invariant: servicerequest-prescription-request-6
 Description: "If the status is revoked or entered-in-error, then the reasonCode or note must be present."
 Expression: "(status = 'revoked' or status = 'entered-in-error') implies (reasonCode.text.exists() or note.exists())"
+Severity: #error
+
+Invariant: servicerequest-prescription-request-7
+Description: "If the status is completed, the performer must be present."
+Expression: "status = 'completed' implies performer.exists()"
 Severity: #error

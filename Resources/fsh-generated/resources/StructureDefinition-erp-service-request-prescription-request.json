@@ -44,13 +44,6 @@
             "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
           },
           {
-            "key": "servicerequest-prescription-request-4",
-            "severity": "error",
-            "human": "If the status is completed, then the request must be based on an KBV Prescription.",
-            "expression": "status = 'completed' implies basedOn.exists() and basedOn is KBV_PR_ERP_Prescription",
-            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
-          },
-          {
             "key": "servicerequest-prescription-request-5",
             "severity": "error",
             "human": "If the requester is a pharmacy then the KIM-adress of the care facility must be stated in order to receive a copy of the message.",
@@ -62,6 +55,13 @@
             "severity": "error",
             "human": "If the status is revoked or entered-in-error, then the reasonCode or note must be present.",
             "expression": "(status = 'revoked' or status = 'entered-in-error') implies (reasonCode.text.exists() or note.exists())",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
+          },
+          {
+            "key": "servicerequest-prescription-request-7",
+            "severity": "error",
+            "human": "If the status is completed, the performer must be present.",
+            "expression": "status = 'completed' implies performer.exists()",
             "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
           }
         ]
@@ -154,8 +154,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request",
-              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription"
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request"
             ]
           }
         ],
