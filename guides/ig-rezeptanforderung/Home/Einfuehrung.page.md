@@ -33,18 +33,18 @@ Aus dem App-Transport-Framework werden die Ressourcen "Bundle" und "MessageHeade
 
 In dieser Spezifikation dient der unter MessageHeader.eventCode anzugebende EventCode sowohl zur Identifikation des Anwendungsfalls als auch des Nachrichtentyps innerhalb des Anwendungsfalls. So zeigt der Code eRezept_Rezeptanforderung;Rezeptanfrage beispielsweise an, dass es sich um den Anwendungsfall "Rezeptanforderung" sowie um eine initiale "Rezeptanfrage" eines Anfragenden an einen Verordnenden handelt.
 
-Die in dieser Spezifikation zulässigen EventCodes sind im ValueSet definiert.
-
+Die in dieser Spezifikation zulässigen EventCodes sind im ValueSet {{link:https://gematik.de/fhir/erp-servicerequest/ValueSet/service-identifier-vs}} definiert.
 Jeder im Implementierungsleitfaden beschriebene Anwendungsfall enthält eine Angabe darüber, welcher EventCode zu verwenden ist.
 
 ### Verwendung von ServiceRequests (MessageHeader.focus)
 
-Unter MessageHeader.focus werden die Ressourcen aufgelistet, die alle relevanten Informationen zu einer Anfrage bündeln. In diesem Projekt übernimmt die FHIR-Ressource ServiceRequest diese Funktion als Trägerressource. MessageHeader.focus listet alle ServiceRequests auf, die als Ausgangspunkt für die Auswertung der Anfragen in einer Nachricht dienen.
+Unter MessageHeader.focus werden die Ressourcen aufgelistet, die alle relevanten Informationen zu einer Anfrage bündeln. In diesem Projekt übernimmt die FHIR-Ressource ServiceRequest diese Funktion als Trägerressource. MessageHeader.focus referenziert alle ServiceRequests, die als Ausgangspunkt für die Auswertung der Anfragen in einer Nachricht dienen. Es können je Nachricht auch mehrere ServiceRequest Ressourcen übermittelt werden. Jede ServiceRequest Ressource stellt damit ein Angefordertes Medikament dar.
 
+Auf {{pagelink:Home/Datenobjekte/Prescription_ServiceRequest}} und {{pagelink:Home/Datenobjekte/Dispense_ServiceRequest}} werden die Profile beschrieben. Dort ist dieser Zusammenhang durch die Abbildung eines Klassendiagramms erkennbar.
 
+#### Multiple Anfragen in einer Nachricht
 
-
-Grundlegend basieren alle Anwendungsfälle in diesem Projekt auf [Service-Request Ressourcen](http://hl7.org/fhir/R4/servicerequest.html), die nach FHIR-Spezifikation dazu dienen einen Dienst anzufragen. Dieser Service Request dient als Trägerressource für Informationen, die ausgetauscht werden. Diese Informationen werden entweder im Service Request angegeben oder referenziert.
+Durch die Angabe 
 
 Folgende Service Requests und damit verbrundene Service Anfragen sind derzeit spezifiziert:
 
