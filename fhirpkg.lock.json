@@ -1,5 +1,5 @@
 {
-  "updated": "2024-09-13T17:56:22.204395+02:00",
+  "updated": "2024-09-24T07:55:08.203193+02:00",
   "dependencies": {
     "hl7.fhir.r4.core": "4.0.1",
     "de.gematik.erezept-workflow.r4": "1.4.0",
