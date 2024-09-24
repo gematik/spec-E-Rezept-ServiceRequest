@@ -20,6 +20,11 @@ Description: "Mapping des Fachmodells aus GEM_ERP_SR_LOG_DispenseRequest auf das
     * Adresse -> "ERPServiceRequestOrganization.address"
     * Telefon -> "ERPServiceRequestOrganization.contact.telecom:tel.value"
 
+  * PatientenInformationen -> "ERPServiceRequestDispenseRequest.subject(ERPServiceRequestPatient)"
+    * PatientenIdentifierKVNR -> "ERPServiceRequestPatient.identifier.value"
+    * PatientenName -> "ERPServiceRequestPatient.name"
+    * PatientenGeburtstag -> "ERPServiceRequestPatient.birthDate"
+
 * Freitext -> "ERPServiceRequestDispenseRequest.note"
 
 * Prioritaet -> "ERPServiceRequestDispenseRequest.priority"

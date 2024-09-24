@@ -31,7 +31,7 @@ Organization-Example-HealthCareService-Organization.json                   Examp
 StructureDefinition-changed-medication-ex.json                             ChangedMedicationEX                                    Extension   extensions/DidChangeMedicationEX.fsh                      1 - 8
 StructureDefinition-copy-to-care-facility-ex.json                          CopyToCareFacilityEX                                   Extension   extensions/CopyToCareFacilityEX.fsh                       1 - 28
 StructureDefinition-eprescription-token-ex.json                            EPrescriptionTokenEX                                   Extension   extensions/EPrescriptionTokenEX.fsh                       1 - 20
-StructureDefinition-erp-service-request-dispense-request.json              ERPServiceRequestDispenseRequest                       Profile     profiles/3.2_Dispense_ServiceRequest.fsh                  1 - 96
+StructureDefinition-erp-service-request-dispense-request.json              ERPServiceRequestDispenseRequest                       Profile     profiles/3.2_Dispense_ServiceRequest.fsh                  1 - 100
 StructureDefinition-erp-service-request-eprescription-token.json           ERPServiceRequestEPrescriptionToken                    Profile     profiles/6.3_EPrescriptionTokenIdentifier.fsh             1 - 11
 StructureDefinition-erp-service-request-medication-request.json            ERPServiceRequestMedicationRequest                     Profile     profiles/4_MedicationRequest.fsh                          1 - 49
 StructureDefinition-erp-service-request-message-container.json             ERPServiceRequestMessageContainer                      Profile     profiles/1_Bundle.fsh                                     1 - 8
@@ -42,7 +42,7 @@ StructureDefinition-erp-service-request-prescription-request.json          ERPSe
 StructureDefinition-erp-service-request-request-header.json                ERPServiceRequestRequestHeader                         Profile     profiles/2_MessageHeader.fsh                              1 - 28
 StructureDefinition-erp-service-request-request-identifier.json            ERPServiceRequestRequestIdentifier                     Profile     profiles/6.1_AnforderungIdentifier.fsh                    1 - 11
 StructureDefinition-gem-erp-sr-log-dispense-request-confirmation.json      GEM_ERP_SR_LOG_DispenseRequest_Confirmation            Logical     logical-models/dispense-request-confirmation-log.fsh      1 - 23
-StructureDefinition-gem-erp-sr-log-dispense-request.json                   GEM_ERP_SR_LOG_DispenseRequest                         Logical     logical-models/dispense-request-log.fsh                   1 - 37
+StructureDefinition-gem-erp-sr-log-dispense-request.json                   GEM_ERP_SR_LOG_DispenseRequest                         Logical     logical-models/dispense-request-log.fsh                   1 - 43
 StructureDefinition-gem-erp-sr-log-message-copy.json                       GEM_ERP_SR_LOG_MessageCopy                             Logical     logical-models/service-request-message-copy-log.fsh       1 - 18
 StructureDefinition-gem-erp-sr-log-prescription-request-cancellation.json  GEM_ERP_SR_LOG_PrescriptionRequest_Cancellation        Logical     logical-models/prescription-request-cancellation-log.fsh  1 - 12
 StructureDefinition-gem-erp-sr-log-prescription-request-confirmation.json  GEM_ERP_SR_LOG_PrescriptionRequest_Confirmation        Logical     logical-models/prescription-request-confirmation-log.fsh  1 - 33

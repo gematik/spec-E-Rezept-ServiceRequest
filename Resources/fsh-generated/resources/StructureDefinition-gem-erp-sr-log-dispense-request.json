@@ -595,6 +595,82 @@
         ]
       },
       {
+        "id": "gem-erp-sr-log-dispense-request.involvierteParteien.PatientenInformationen",
+        "path": "gem-erp-sr-log-dispense-request.involvierteParteien.PatientenInformationen",
+        "short": "Patienteninformationen",
+        "definition": "Angaben zum Patienten",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequest.subject(ERPServiceRequestPatient)"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.involvierteParteien.PatientenInformationen.PatientenIdentifierKVNR",
+        "path": "gem-erp-sr-log-dispense-request.involvierteParteien.PatientenInformationen.PatientenIdentifierKVNR",
+        "short": "KVNR des Patienten",
+        "definition": "KVNR des Patienten",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestPatient.identifier.value"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.involvierteParteien.PatientenInformationen.PatientenName",
+        "path": "gem-erp-sr-log-dispense-request.involvierteParteien.PatientenInformationen.PatientenName",
+        "short": "Name des Patienten",
+        "definition": "Strukturierte Angabe des Namens des Patienten",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "HumanName"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestPatient.name"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.involvierteParteien.PatientenInformationen.PatientenGeburtstag",
+        "path": "gem-erp-sr-log-dispense-request.involvierteParteien.PatientenInformationen.PatientenGeburtstag",
+        "short": "Geburtstag des Patienten",
+        "definition": "Angabe des Geburtstags mit Jahr, Monat und Tag",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "date"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestPatient.birthDate"
+          }
+        ]
+      },
+      {
         "id": "gem-erp-sr-log-dispense-request.Freitext",
         "path": "gem-erp-sr-log-dispense-request.Freitext",
         "short": "Freitext",

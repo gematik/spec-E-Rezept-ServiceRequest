@@ -261,7 +261,7 @@
     "fshType": "Profile",
     "fshFile": "profiles/3.2_Dispense_ServiceRequest.fsh",
     "startLine": 1,
-    "endLine": 96
+    "endLine": 100
   },
   {
     "outputFile": "StructureDefinition-erp-service-request-eprescription-token.json",
@@ -349,7 +349,7 @@
     "fshType": "Logical",
     "fshFile": "logical-models/dispense-request-log.fsh",
     "startLine": 1,
-    "endLine": 37
+    "endLine": 43
   },
   {
     "outputFile": "StructureDefinition-gem-erp-sr-log-message-copy.json",

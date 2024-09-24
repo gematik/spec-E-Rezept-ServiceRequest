@@ -26,6 +26,12 @@ Description: "Fachliches Modell zur Beschreibung einer Dispenseieranforderung"
     * Adresse 0..1 Address "Straßenadresse des Anfragenden"
     * Telefon 1..1 string "Telefonnummer des Anfragenden"
 
+  * PatientenInformationen 1..1 BackboneElement "Patienteninformationen" "Angaben zum Patienten"
+    * PatientenIdentifierKVNR 1..1 string "KVNR des Patienten"
+    * PatientenName 1..1 HumanName "Name des Patienten" "Strukturierte Angabe des Namens des Patienten"
+    * PatientenGeburtstag 1..1 date "Geburtstag des Patienten" "Angabe des Geburtstags mit Jahr, Monat und Tag"
+
+
 * Freitext 0..1 string "Freitext" "Individuelle Nachricht an den Empfänger"
 
 * Prioritaet 0..1 BackboneElement "Priorität" "Angabe der Priorität der Anforderung"

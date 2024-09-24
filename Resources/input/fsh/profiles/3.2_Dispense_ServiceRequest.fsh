@@ -39,6 +39,10 @@ Description: "ServiceRequest that is used to supply a recipe"
   * ^short = "Indicates the processing status of a service request."
   * ^comment = "If the status changes, this value is overwritten."
 
+* subject MS
+* subject only Reference(ERPServiceRequestPatient)
+  * ^short = "Patient for whom a dispense is requested on behalf of the patient."
+
 * intent = #filler-order (exactly)
 
 * code MS
