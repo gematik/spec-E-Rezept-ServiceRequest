@@ -13,6 +13,12 @@
   "fhirVersion": "4.0.1",
   "mapping": [
     {
+      "identity": "Abgabeanforderung-Fachliches-Mapping",
+      "name": "Abgabeanforderung Fachliches Mapping",
+      "uri": "ERPServiceRequestDispenseRequest",
+      "comment": "Mapping des Fachmodells aus GEM_ERP_SR_LOG_DispenseRequest auf das FHIR-Modell ERPServiceRequestDispenseRequest"
+    },
+    {
       "identity": "Quelle-Dispensieranforderung-Mapping",
       "name": "Quelle der Dispensieranforderungsinformationen",
       "comment": "Beschreibt die Quelle der Dispensieranforderungsinformationen. Wird von der Pflegeeinrichtung zur Anforderung zur Abgabe von Arzneimitteln verwendet."
@@ -59,6 +65,10 @@
         ],
         "mapping": [
           {
+            "identity": "Abgabeanforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader"
+          },
+          {
             "identity": "Quelle-Dispensieranforderung-Mapping",
             "map": "Erstellendes PS",
             "comment": "Pflegesystem"
@@ -79,6 +89,10 @@
         ],
         "mapping": [
           {
+            "identity": "Abgabeanforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.destination"
+          },
+          {
             "identity": "Quelle-Dispensieranforderung-Mapping",
             "map": "Aus Kontaktmanagement oder VZD Suche"
           }
@@ -97,6 +111,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Abgabeanforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.destination.endpoint"
+          },
           {
             "identity": "Quelle-Dispensieranforderung-Mapping",
             "map": "Aus Kontaktmanagement oder VZD Suche"
@@ -117,6 +135,10 @@
         ],
         "mapping": [
           {
+            "identity": "Abgabeanforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.destination.receiver.identifier.value"
+          },
+          {
             "identity": "Quelle-Dispensieranforderung-Mapping",
             "map": "Aus Kontaktmanagement oder VZD Suche"
           }
@@ -135,6 +157,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Abgabeanforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.sender"
+          },
           {
             "identity": "Quelle-Dispensieranforderung-Mapping",
             "map": "Erstellendes PS",
@@ -156,6 +182,10 @@
         ],
         "mapping": [
           {
+            "identity": "Abgabeanforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.sender.identifier.value"
+          },
+          {
             "identity": "Quelle-Dispensieranforderung-Mapping",
             "map": "Erstellendes PS, SMC-B Zertifikat"
           }
@@ -175,6 +205,10 @@
         ],
         "mapping": [
           {
+            "identity": "Abgabeanforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.sender.display"
+          },
+          {
             "identity": "Quelle-Dispensieranforderung-Mapping",
             "map": "Erstellendes PS"
           }
@@ -193,6 +227,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Abgabeanforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.source"
+          },
           {
             "identity": "Quelle-Dispensieranforderung-Mapping",
             "map": "Erstellendes PS",
@@ -214,6 +252,10 @@
         ],
         "mapping": [
           {
+            "identity": "Abgabeanforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.source.name"
+          },
+          {
             "identity": "Quelle-Dispensieranforderung-Mapping",
             "map": "Erstellendes PS",
             "comment": "Automatisiert durch Software gesetzt"
@@ -233,6 +275,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Abgabeanforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.source.software"
+          },
           {
             "identity": "Quelle-Dispensieranforderung-Mapping",
             "map": "Erstellendes PS",
@@ -254,6 +300,10 @@
         ],
         "mapping": [
           {
+            "identity": "Abgabeanforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.source.version"
+          },
+          {
             "identity": "Quelle-Dispensieranforderung-Mapping",
             "map": "Erstellendes PS",
             "comment": "Automatisiert durch Software gesetzt"
@@ -274,6 +324,10 @@
         ],
         "mapping": [
           {
+            "identity": "Abgabeanforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.source.contact.value"
+          },
+          {
             "identity": "Quelle-Dispensieranforderung-Mapping",
             "map": "Erstellendes PS",
             "comment": "Automatisiert durch Software gesetzt"
@@ -293,6 +347,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Abgabeanforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.source.endpoint"
+          },
           {
             "identity": "Quelle-Dispensieranforderung-Mapping",
             "map": "Erstellendes PS",
@@ -328,6 +386,10 @@
         ],
         "mapping": [
           {
+            "identity": "Abgabeanforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequest.status"
+          },
+          {
             "identity": "Quelle-Dispensieranforderung-Mapping",
             "map": "Anfragendes PS",
             "comment": "Setzt den Status der Anfrage auf 'active'"
@@ -347,6 +409,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Abgabeanforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequest.identifier:requestId.value"
+          },
           {
             "identity": "Quelle-Dispensieranforderung-Mapping",
             "map": "Initiale Rezeptanforderung"
@@ -376,6 +442,10 @@
         ],
         "mapping": [
           {
+            "identity": "Abgabeanforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequest.extension:EPrescriptionToken"
+          },
+          {
             "identity": "Quelle-Dispensieranforderung-Mapping",
             "map": "Rezeptanforderung_Bestätigung",
             "comment": "Wurde vom verordnenden Arzt bereitgestellt"
@@ -396,6 +466,10 @@
         ],
         "mapping": [
           {
+            "identity": "Abgabeanforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequest.requester"
+          },
+          {
             "identity": "Quelle-Dispensieranforderung-Mapping",
             "map": ""
           }
@@ -414,6 +488,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Abgabeanforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequest.requester(ERPServiceRequestOrganization)"
+          },
           {
             "identity": "Quelle-Dispensieranforderung-Mapping",
             "map": "Anfragendes PS"
@@ -439,6 +517,12 @@
             "human": "Wenn eine Anfrage gestellt wird (status = 'active'), muss der Anfragende eine Pflegeeinrichtung sein.",
             "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-dispense-request"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Abgabeanforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequest.requester.type"
+          }
         ]
       },
       {
@@ -454,6 +538,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Abgabeanforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestOrganization.name"
+          },
           {
             "identity": "Quelle-Dispensieranforderung-Mapping",
             "map": "Anfragendes PS"
@@ -474,6 +562,10 @@
         ],
         "mapping": [
           {
+            "identity": "Abgabeanforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestOrganization.address"
+          },
+          {
             "identity": "Quelle-Dispensieranforderung-Mapping",
             "map": "Anfragendes PS"
           }
@@ -493,6 +585,10 @@
         ],
         "mapping": [
           {
+            "identity": "Abgabeanforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestOrganization.contact.telecom:tel.value"
+          },
+          {
             "identity": "Quelle-Dispensieranforderung-Mapping",
             "map": "Anfragendes PS"
           }
@@ -511,6 +607,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Abgabeanforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequest.note"
+          },
           {
             "identity": "Quelle-Dispensieranforderung-Mapping",
             "map": "Nutzer des PS",
@@ -532,6 +632,10 @@
         ],
         "mapping": [
           {
+            "identity": "Abgabeanforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequest.priority"
+          },
+          {
             "identity": "Quelle-Dispensieranforderung-Mapping",
             "map": "Nutzer des PS",
             "comment": "Abfrage im Moment der Anforderung"
@@ -551,6 +655,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Abgabeanforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequest.priority"
+          },
           {
             "identity": "Quelle-Dispensieranforderung-Mapping",
             "map": "Nutzer des PS",
