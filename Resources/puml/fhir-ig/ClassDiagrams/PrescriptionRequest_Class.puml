@@ -2,30 +2,48 @@
 !define RECTANGLE class
 
 RECTANGLE "ServiceRequest" as SR {
-    +subject: Patient
-    +informationen: String
-    +referenzen: List<String>
+    +identifier:requestId: string
+    +basedOn: Reference<ERPServiceRequestMedicationRequest>
+    +status: #active
+    +intent: #order
+    +code: #prescription-request
+    +subject: Reference<Patient>
+    +occurrence: dateTime
+    +authoredOn: Date
+    +requester: Reference<ERPServiceRequestOrganization>
+    +performer: Reference<ERPServiceRequestPractitioner>
+    +note: String
+    +reasonCode: String
+    +priority: #routine | #urgent
 }
 
-RECTANGLE "Patient" as P {
+RECTANGLE "ERPServiceRequestMedicationRequest" as MR {
+    +extension:PriorPrescriptionID: String
+    +extension:requestMVO.extension:Kennzeichen: boolean
+    +dispenseRequest.quantity: Quantity
+    +medicationReference: Reference<KBV_Medication>
+}
+
+RECTANGLE "ERPServiceRequestPatient" as P {
     +name: String
-    +geburtsdatum: Date
-    +geschlecht: String
+    +identifier:kvnr: String
+    +birthDate: Date
 }
 
-RECTANGLE "Arzneimittelinformationen" as A {
+RECTANGLE "ERPServiceRequestOrganization" as O {
     +name: String
-    +dosierung: String
-    +beschreibung: String
+    +address: String
+    +contact:tel: String
+    +contact:kim: String
 }
 
-RECTANGLE "Angaben zur Arztpraxis" as D {
-    +praxisname: String
-    +adresse: String
-    +kontakt: String
+RECTANGLE "ERPServiceRequestPractitioner" as PR {
+    +name: String
+    +identifier:ANR: String
 }
 
-SR .right.> P : .subject
-SR -- A : Arzneimittelinformationen
-SR --> D : "enthält"
+SR .down.> P : .subject
+SR .up.> MR : .basedOn
+SR .down.> O : .requester
+SR .down.> PR : .performer
 @enduml
