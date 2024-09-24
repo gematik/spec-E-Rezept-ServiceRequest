@@ -12,3 +12,18 @@ RuleSet: RS_LOG_MessageHeader
     * Version 1..1 string "Version des absendenden Systems"
     * EMailKontakt 1..1 string "E-Mail-Kontakt des absendenden Systems"
     * Website 1..1 url "Website des absendenden Systems"
+
+RuleSet: RS_MAP_MetaDaten
+* MetaDaten -> "ERPServiceRequestDispenseRequestHeader"
+  * Empfaenger -> "ERPServiceRequestDispenseRequestHeader.destination"
+    * KIMAdresse -> "ERPServiceRequestDispenseRequestHeader.destination.endpoint"
+    * TelematikID -> "ERPServiceRequestDispenseRequestHeader.destination.receiver.identifier.value"
+  * Absender -> "ERPServiceRequestDispenseRequestHeader.sender"
+    * TelematikID -> "ERPServiceRequestDispenseRequestHeader.sender.identifier.value"
+    * Name -> "ERPServiceRequestDispenseRequestHeader.sender.display"
+  * AbsendendesSystem -> "ERPServiceRequestDispenseRequestHeader.source"
+    * Name -> "ERPServiceRequestDispenseRequestHeader.source.name"
+    * Software -> "ERPServiceRequestDispenseRequestHeader.source.software"
+    * Version -> "ERPServiceRequestDispenseRequestHeader.source.version"
+    * EMailKontakt -> "ERPServiceRequestDispenseRequestHeader.source.contact.value"
+    * Website -> "ERPServiceRequestDispenseRequestHeader.source.endpoint"

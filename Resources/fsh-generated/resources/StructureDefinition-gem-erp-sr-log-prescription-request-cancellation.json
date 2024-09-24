@@ -52,7 +52,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
-            "map": "ERPServiceRequestRequestHeader"
+            "map": "ERPServiceRequestDispenseRequestHeader"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
@@ -75,7 +75,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
-            "map": "ERPServiceRequestRequestHeader.destination"
+            "map": "ERPServiceRequestDispenseRequestHeader.destination"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
@@ -98,7 +98,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
-            "map": "ERPServiceRequestRequestHeader.destination.endpoint"
+            "map": "ERPServiceRequestDispenseRequestHeader.destination.endpoint"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
@@ -121,7 +121,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
-            "map": "ERPServiceRequestRequestHeader.destination.receiver.identifier.value"
+            "map": "ERPServiceRequestDispenseRequestHeader.destination.receiver.identifier.value"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
@@ -144,7 +144,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
-            "map": "ERPServiceRequestRequestHeader.sender"
+            "map": "ERPServiceRequestDispenseRequestHeader.sender"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
@@ -167,7 +167,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
-            "map": "ERPServiceRequestRequestHeader.sender.identifier.value"
+            "map": "ERPServiceRequestDispenseRequestHeader.sender.identifier.value"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
@@ -190,7 +190,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
-            "map": "ERPServiceRequestRequestHeader.sender.display"
+            "map": "ERPServiceRequestDispenseRequestHeader.sender.display"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
@@ -213,7 +213,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
-            "map": "ERPServiceRequestRequestHeader.source"
+            "map": "ERPServiceRequestDispenseRequestHeader.source"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
@@ -237,7 +237,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
-            "map": "ERPServiceRequestRequestHeader.source.name"
+            "map": "ERPServiceRequestDispenseRequestHeader.source.name"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
@@ -261,7 +261,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
-            "map": "ERPServiceRequestRequestHeader.source.software"
+            "map": "ERPServiceRequestDispenseRequestHeader.source.software"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
@@ -285,7 +285,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
-            "map": "ERPServiceRequestRequestHeader.source.version"
+            "map": "ERPServiceRequestDispenseRequestHeader.source.version"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
@@ -309,7 +309,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
-            "map": "ERPServiceRequestRequestHeader.source.contact.value"
+            "map": "ERPServiceRequestDispenseRequestHeader.source.contact.value"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
@@ -333,7 +333,7 @@
         "mapping": [
           {
             "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
-            "map": "ERPServiceRequestRequestHeader.source.endpoint"
+            "map": "ERPServiceRequestDispenseRequestHeader.source.endpoint"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",

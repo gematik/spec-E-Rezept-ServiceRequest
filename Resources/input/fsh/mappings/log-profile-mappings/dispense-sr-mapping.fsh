@@ -6,19 +6,7 @@ Title: "Abgabeanforderung Fachliches Mapping"
 Description: "Mapping des Fachmodells aus GEM_ERP_SR_LOG_DispenseRequest auf das FHIR-Modell ERPServiceRequestDispenseRequest"
 
 // MetaDaten
-* MetaDaten -> "ERPServiceRequestDispenseRequestHeader"
-  * Empfaenger -> "ERPServiceRequestDispenseRequestHeader.destination"
-    * KIMAdresse -> "ERPServiceRequestDispenseRequestHeader.destination.endpoint"
-    * TelematikID -> "ERPServiceRequestDispenseRequestHeader.destination.receiver.identifier.value"
-  * Absender -> "ERPServiceRequestDispenseRequestHeader.sender"
-    * TelematikID -> "ERPServiceRequestDispenseRequestHeader.sender.identifier.value"
-    * Name -> "ERPServiceRequestDispenseRequestHeader.sender.display"
-  * AbsendendesSystem -> "ERPServiceRequestDispenseRequestHeader.source"
-    * Name -> "ERPServiceRequestDispenseRequestHeader.source.name"
-    * Software -> "ERPServiceRequestDispenseRequestHeader.source.software"
-    * Version -> "ERPServiceRequestDispenseRequestHeader.source.version"
-    * EMailKontakt -> "ERPServiceRequestDispenseRequestHeader.source.contact.value"
-    * Website -> "ERPServiceRequestDispenseRequestHeader.source.endpoint"
+* insert RS_MAP_MetaDaten
 
 // Administrative Informationen
 * Status -> "ERPServiceRequestDispenseRequest.status"

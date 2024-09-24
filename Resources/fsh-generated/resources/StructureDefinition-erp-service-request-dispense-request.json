@@ -11,20 +11,6 @@
   "publisher": "gematik GmbH",
   "description": "ServiceRequest that is used to supply a recipe",
   "fhirVersion": "4.0.1",
-  "mapping": [
-    {
-      "identity": "Dispensieranforderung-Rezeptuebermittlung",
-      "name": "Dispensieranforderung_Rezeptübermittlung",
-      "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
-      "comment": "Mapping for 'fachliche Informationseineit' of the 'Belieferungsanfrage' of the feature document"
-    },
-    {
-      "identity": "Dispensieranforderung-Bestaetigung",
-      "name": "Dispensieranforderung_Bestätigung",
-      "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
-      "comment": "Mapping for 'fachliche Informationseineit' of the 'Belieferungsanfrage' of the feature document"
-    }
-  ],
   "kind": "resource",
   "abstract": false,
   "type": "ServiceRequest",
@@ -71,16 +57,6 @@
             "expression": "supportingInfo.where(type='MedicationDispense').exists() implies supportingInfo.where(type='Medication').exists()",
             "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"
           }
-        ],
-        "mapping": [
-          {
-            "identity": "Dispensieranforderung-Rezeptuebermittlung",
-            "map": "Dispensieranforderung_Rezeptübermittlung"
-          },
-          {
-            "identity": "Dispensieranforderung-Bestaetigung",
-            "map": "Dispensieranforderung_Bestätigung"
-          }
         ]
       },
       {
@@ -104,17 +80,7 @@
             ]
           }
         ],
-        "mustSupport": true,
-        "mapping": [
-          {
-            "identity": "Dispensieranforderung-Rezeptuebermittlung",
-            "map": "ERezept_Access_Code"
-          },
-          {
-            "identity": "Dispensieranforderung-Rezeptuebermittlung",
-            "map": "ERezept_Task_ID"
-          }
-        ]
+        "mustSupport": true
       },
       {
         "id": "ServiceRequest.identifier",
@@ -150,16 +116,6 @@
         ]
       },
       {
-        "id": "ServiceRequest.basedOn",
-        "path": "ServiceRequest.basedOn",
-        "mapping": [
-          {
-            "identity": "Dispensieranforderung-Rezeptuebermittlung",
-            "map": "Strukturierter_Verordnungsdatensatz"
-          }
-        ]
-      },
-      {
         "id": "ServiceRequest.requisition",
         "path": "ServiceRequest.requisition",
         "short": "Identifier of the process. All ServiceRequests within a process receive the same ID.",
@@ -173,17 +129,7 @@
             ]
           }
         ],
-        "mustSupport": true,
-        "mapping": [
-          {
-            "identity": "Dispensieranforderung-Rezeptuebermittlung",
-            "map": "Vorgangs_ID"
-          },
-          {
-            "identity": "Dispensieranforderung-Bestaetigung",
-            "map": "Vorgangs_ID"
-          }
-        ]
+        "mustSupport": true
       },
       {
         "id": "ServiceRequest.status",
@@ -317,13 +263,7 @@
             ]
           }
         ],
-        "mustSupport": true,
-        "mapping": [
-          {
-            "identity": "Dispensieranforderung-Bestaetigung",
-            "map": "Strukturierter_Dispensierungsdatensatz"
-          }
-        ]
+        "mustSupport": true
       },
       {
         "id": "ServiceRequest.supportingInfo:AbgabeDaten.type",
@@ -360,25 +300,7 @@
         "path": "ServiceRequest.note",
         "short": "Further information on the dispense request.",
         "comment": "Any use cases that are not specified can be placed here in free text.",
-        "mustSupport": true,
-        "mapping": [
-          {
-            "identity": "Dispensieranforderung-Rezeptuebermittlung",
-            "map": "Hinweise_fuer_Empfänger"
-          },
-          {
-            "identity": "Dispensieranforderung-Rezeptuebermittlung",
-            "map": "Freitext"
-          },
-          {
-            "identity": "Dispensieranforderung-Bestaetigung",
-            "map": "Hinweise_fuer_Empfänger"
-          },
-          {
-            "identity": "Dispensieranforderung-Bestaetigung",
-            "map": "Freitext"
-          }
-        ]
+        "mustSupport": true
       }
     ]
   }

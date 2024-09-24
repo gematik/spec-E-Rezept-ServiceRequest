@@ -13,6 +13,12 @@
   "fhirVersion": "4.0.1",
   "mapping": [
     {
+      "identity": "Abgabeanforderung-Bestaetigung-Fachliches-Mapping",
+      "name": "Abgabeanforderung Bestätigung Fachliches Mapping",
+      "uri": "ERPServiceRequestDispenseRequest",
+      "comment": "Mapping des Fachmodells aus GEM_ERP_SR_LOG_DispenseRequest_Confirmation auf das FHIR-Modell ERPServiceRequestDispenseRequest"
+    },
+    {
       "identity": "Quelle-Dispensieranforderung-Bestaetigung-Mapping",
       "name": "Quelle der Dispensieranforderung Bestätigung Informationen",
       "comment": "Beschreibt die Quelle der Dispensieranforderung Bestätigung Informatione"
@@ -53,6 +59,10 @@
         ],
         "mapping": [
           {
+            "identity": "Abgabeanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader"
+          },
+          {
             "identity": "Quelle-Dispensieranforderung-Bestaetigung-Mapping",
             "map": "Erstellendes AVS"
           }
@@ -71,6 +81,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Abgabeanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.destination"
+          },
           {
             "identity": "Quelle-Dispensieranforderung-Bestaetigung-Mapping",
             "map": "Aus initialer Dispensieranforderung"
@@ -91,6 +105,10 @@
         ],
         "mapping": [
           {
+            "identity": "Abgabeanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.destination.endpoint"
+          },
+          {
             "identity": "Quelle-Dispensieranforderung-Bestaetigung-Mapping",
             "map": "Aus initialer Dispensieranforderung (KIM Nachricht)"
           }
@@ -109,6 +127,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Abgabeanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.destination.receiver.identifier.value"
+          },
           {
             "identity": "Quelle-Dispensieranforderung-Bestaetigung-Mapping",
             "map": "Aus initialer Dispensieranforderung"
@@ -129,6 +151,10 @@
         ],
         "mapping": [
           {
+            "identity": "Abgabeanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.sender"
+          },
+          {
             "identity": "Quelle-Dispensieranforderung-Bestaetigung-Mapping",
             "map": "Erstellendes AVS"
           }
@@ -147,6 +173,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Abgabeanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.sender.identifier.value"
+          },
           {
             "identity": "Quelle-Dispensieranforderung-Bestaetigung-Mapping",
             "map": "Erstellendes AVS, SMC-B oder HBA Zertifikat"
@@ -167,6 +197,10 @@
         ],
         "mapping": [
           {
+            "identity": "Abgabeanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.sender.display"
+          },
+          {
             "identity": "Quelle-Dispensieranforderung-Bestaetigung-Mapping",
             "map": "Erstellendes AVS"
           }
@@ -185,6 +219,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Abgabeanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.source"
+          },
           {
             "identity": "Quelle-Dispensieranforderung-Bestaetigung-Mapping",
             "map": "Erstellendes AVS",
@@ -206,6 +244,10 @@
         ],
         "mapping": [
           {
+            "identity": "Abgabeanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.source.name"
+          },
+          {
             "identity": "Quelle-Dispensieranforderung-Bestaetigung-Mapping",
             "map": "Erstellendes AVS",
             "comment": "Automatisiert durch Software gesetzt"
@@ -225,6 +267,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Abgabeanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.source.software"
+          },
           {
             "identity": "Quelle-Dispensieranforderung-Bestaetigung-Mapping",
             "map": "Erstellendes AVS",
@@ -246,6 +292,10 @@
         ],
         "mapping": [
           {
+            "identity": "Abgabeanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.source.version"
+          },
+          {
             "identity": "Quelle-Dispensieranforderung-Bestaetigung-Mapping",
             "map": "Erstellendes AVS",
             "comment": "Automatisiert durch Software gesetzt"
@@ -266,6 +316,10 @@
         ],
         "mapping": [
           {
+            "identity": "Abgabeanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.source.contact.value"
+          },
+          {
             "identity": "Quelle-Dispensieranforderung-Bestaetigung-Mapping",
             "map": "Erstellendes AVS",
             "comment": "Automatisiert durch Software gesetzt"
@@ -285,6 +339,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Abgabeanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.source.endpoint"
+          },
           {
             "identity": "Quelle-Dispensieranforderung-Bestaetigung-Mapping",
             "map": "Erstellendes AVS",
@@ -314,6 +372,10 @@
         ],
         "mapping": [
           {
+            "identity": "Abgabeanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequest.status"
+          },
+          {
             "identity": "Quelle-Dispensieranforderung-Bestaetigung-Mapping",
             "map": "AVS",
             "comment": "Setzt den Status der Anfrage auf 'completed'"
@@ -334,6 +396,10 @@
         ],
         "mapping": [
           {
+            "identity": "Abgabeanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequest.identifier:requestId.value"
+          },
+          {
             "identity": "Quelle-Dispensieranforderung-Bestaetigung-Mapping",
             "map": "Dispensieranforderung",
             "comment": "VorgangsID aus der initialen Dispensieranforderung"
@@ -353,6 +419,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Abgabeanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequest.note"
+          },
           {
             "identity": "Quelle-Dispensieranforderung-Bestaetigung-Mapping",
             "map": "Nutzer des AVS",
@@ -403,6 +473,10 @@
         ],
         "mapping": [
           {
+            "identity": "Abgabeanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequest.supportingInfo"
+          },
+          {
             "identity": "Quelle-Dispensieranforderung-Bestaetigung-Mapping",
             "map": "AVS",
             "comment": "Informationen aus Abgabedatensatz"
@@ -425,6 +499,14 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Abgabeanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequest.supportingInfo:AbgabeDaten"
+          },
+          {
+            "identity": "Abgabeanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequest.supportingInfo:AbgabeArzneimittel"
+          },
           {
             "identity": "Quelle-Dispensieranforderung-Bestaetigung-Mapping",
             "map": "AVS",

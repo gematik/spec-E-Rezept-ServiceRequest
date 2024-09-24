@@ -1,25 +1,19 @@
-Mapping: ERPServiceRequestDispenseRequest
-Source: ERPServiceRequestDispenseRequest
-Target: "gemF_eRp_KIM#3.1.1-Fachliche-Information"
-Id: Dispensieranforderung-Rezeptuebermittlung
-Title: "Dispensieranforderung_Rezeptübermittlung"
-Description: "Mapping for 'fachliche Informationseineit' of the 'Belieferungsanfrage' of the feature document"
-* -> "Dispensieranforderung_Rezeptübermittlung"
-* extension[EPrescriptionToken] -> "ERezept_Access_Code"
-* extension[EPrescriptionToken] -> "ERezept_Task_ID"
-* basedOn -> "Strukturierter_Verordnungsdatensatz"
-* requisition -> "Vorgangs_ID"
-* note -> "Hinweise_fuer_Empfänger"
-* note -> "Freitext"
+Mapping: AbgabeanforderungBestaetigungFachlichesMapping
+Source: GEM_ERP_SR_LOG_DispenseRequest_Confirmation
+Target: "ERPServiceRequestDispenseRequest"
+Id: Abgabeanforderung-Bestaetigung-Fachliches-Mapping
+Title: "Abgabeanforderung Bestätigung Fachliches Mapping"
+Description: "Mapping des Fachmodells aus GEM_ERP_SR_LOG_DispenseRequest_Confirmation auf das FHIR-Modell ERPServiceRequestDispenseRequest"
 
-Mapping: ERPServiceRequestDispenseRequestApproval
-Source: ERPServiceRequestDispenseRequest
-Target: "gemF_eRp_KIM#3.1.1-Fachliche-Information"
-Id: Dispensieranforderung-Bestaetigung
-Title: "Dispensieranforderung_Bestätigung"
-Description: "Mapping for 'fachliche Informationseineit' of the 'Belieferungsanfrage' of the feature document"
-* -> "Dispensieranforderung_Bestätigung"
-* requisition -> "Vorgangs_ID"
-* supportingInfo[AbgabeDaten] -> "Strukturierter_Dispensierungsdatensatz"
-* note -> "Hinweise_fuer_Empfänger"
-* note -> "Freitext"
+// MetaDaten
+* insert RS_MAP_MetaDaten
+
+// Administrative Informationen
+* Status -> "ERPServiceRequestDispenseRequest.status"
+* VorgangsID -> "ERPServiceRequestDispenseRequest.identifier:requestId.value"
+
+* Freitext -> "ERPServiceRequestDispenseRequest.note"
+
+* Medikation -> "ERPServiceRequestDispenseRequest.supportingInfo"
+  * Abgabeinformationen -> "ERPServiceRequestDispenseRequest.supportingInfo:AbgabeDaten"
+  * Abgabeinformationen -> "ERPServiceRequestDispenseRequest.supportingInfo:AbgabeArzneimittel"
