@@ -11,7 +11,7 @@ where
 	name = 'GEM_ERP_SR_LOG_PrescriptionRequest'
 for differential.element where mapping.any(identity = 'Rezeptanforderung-Fachliches-Mapping') and id.startsWith('gem-erp-sr-log-prescription-request.MetaDaten')
 select
-	'Fachliche Infomration': id.replace('gem-erp-sr-log-prescription-request.', '').replace('MetaDaten.', ''), 'FHIR-Profil': mapping.where(identity = 'Rezeptanforderung-Fachliches-Mapping').map
+	'Fachliche Information': id.replace('gem-erp-sr-log-prescription-request.', '').replace('MetaDaten.', ''), 'FHIR-Profil': mapping.where(identity = 'Rezeptanforderung-Fachliches-Mapping').map
 ```
 
 ### Involvierte Parteien
@@ -23,7 +23,7 @@ where
 	name = 'GEM_ERP_SR_LOG_PrescriptionRequest'
 for differential.element where mapping.any(identity = 'Rezeptanforderung-Fachliches-Mapping') and id.startsWith('gem-erp-sr-log-prescription-request.involviertePartei')
 select
-	'Fachliche Infomration': id.replace('gem-erp-sr-log-prescription-request.', '').replace('involviertePartei.', ''), 'FHIR-Profil': mapping.where(identity = 'Rezeptanforderung-Fachliches-Mapping').map
+	'Fachliche Information': id.replace('gem-erp-sr-log-prescription-request.', '').replace('involviertePartei.', ''), 'FHIR-Profil': mapping.where(identity = 'Rezeptanforderung-Fachliches-Mapping').map
 ```
 
 ### Angaben zur Medikation
@@ -35,7 +35,7 @@ where
 	name = 'GEM_ERP_SR_LOG_PrescriptionRequest'
 for differential.element where mapping.any(identity = 'Rezeptanforderung-Fachliches-Mapping') and id.startsWith('gem-erp-sr-log-prescription-request.Medikation.')
 select
-	'Fachliche Infomration': id.replace('gem-erp-sr-log-prescription-request.Medikation.', ''), 'FHIR-Profil': mapping.where(identity = 'Rezeptanforderung-Fachliches-Mapping').map
+	'Fachliche Information': id.replace('gem-erp-sr-log-prescription-request.Medikation.', ''), 'FHIR-Profil': mapping.where(identity = 'Rezeptanforderung-Fachliches-Mapping').map
 ```
 
 ### Weitere Informationen
@@ -47,5 +47,5 @@ where
 	name = 'GEM_ERP_SR_LOG_PrescriptionRequest'
 for differential.element where mapping.any(identity = 'Rezeptanforderung-Fachliches-Mapping') and id.startsWith('gem-erp-sr-log-prescription-request.Medikation.').not() and id.startsWith('gem-erp-sr-log-prescription-request.involvierteParteien.').not() and id.startsWith('gem-erp-sr-log-prescription-request.MetaDaten.').not()
 select
-	'Fachliche Infomration': id.replace('gem-erp-sr-log-prescription-request.', ''), 'FHIR-Profil': mapping.where(identity = 'Rezeptanforderung-Fachliches-Mapping').map
+	'Fachliche Information': id.replace('gem-erp-sr-log-prescription-request.', ''), 'FHIR-Profil': mapping.where(identity = 'Rezeptanforderung-Fachliches-Mapping').map
 ```

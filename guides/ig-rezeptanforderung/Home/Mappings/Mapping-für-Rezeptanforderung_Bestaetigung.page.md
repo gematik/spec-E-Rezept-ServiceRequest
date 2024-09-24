@@ -9,9 +9,9 @@ from
 	StructureDefinition
 where
 	name = 'GEM_ERP_SR_LOG_PrescriptionRequest_Confirmation'
-for differential.element where mapping.any(identity = 'Rezeptanforderung-Fachliches-Mapping') and id.startsWith('gem-erp-sr-log-prescription-request.MetaDaten')
+for differential.element where mapping.any(identity = 'Rezeptanforderung-Bestaetigung-Fachliches-Mapping') and id.startsWith('gem-erp-sr-log-prescription-request.MetaDaten')
 select
-	'Fachliche Infomration': id.replace('gem-erp-sr-log-prescription-request.', '').replace('MetaDaten.', ''), 'FHIR-Profil': mapping.where(identity = 'Rezeptanforderung-Fachliches-Mapping').map
+	'Fachliche Information': id.replace('gem-erp-sr-log-prescription-request.', '').replace('MetaDaten.', ''), 'FHIR-Profil': mapping.where(identity = 'Rezeptanforderung-Bestaetigung-Fachliches-Mapping').map
 ```
 
 ### Involvierte Parteien
@@ -21,9 +21,9 @@ from
 	StructureDefinition
 where
 	name = 'GEM_ERP_SR_LOG_PrescriptionRequest_Confirmation'
-for differential.element where mapping.any(identity = 'Rezeptanforderung-Fachliches-Mapping') and id.startsWith('gem-erp-sr-log-prescription-request.involviertePartei')
+for differential.element where mapping.any(identity = 'Rezeptanforderung-Bestaetigung-Fachliches-Mapping') and id.startsWith('gem-erp-sr-log-prescription-request.involviertePartei')
 select
-	'Fachliche Infomration': id.replace('gem-erp-sr-log-prescription-request.', '').replace('involviertePartei.', ''), 'FHIR-Profil': mapping.where(identity = 'Rezeptanforderung-Fachliches-Mapping').map
+	'Fachliche Information': id.replace('gem-erp-sr-log-prescription-request.', '').replace('involviertePartei.', ''), 'FHIR-Profil': mapping.where(identity = 'Rezeptanforderung-Bestaetigung-Fachliches-Mapping').map
 ```
 
 ### Angaben zur Medikation
@@ -33,9 +33,9 @@ from
 	StructureDefinition
 where
 	name = 'GEM_ERP_SR_LOG_PrescriptionRequest_Confirmation'
-for differential.element where mapping.any(identity = 'Rezeptanforderung-Fachliches-Mapping') and id.startsWith('gem-erp-sr-log-prescription-request.Medikation.')
+for differential.element where mapping.any(identity = 'Rezeptanforderung-Bestaetigung-Fachliches-Mapping') and id.startsWith('gem-erp-sr-log-prescription-request.Medikation.')
 select
-	'Fachliche Infomration': id.replace('gem-erp-sr-log-prescription-request.Medikation.', ''), 'FHIR-Profil': mapping.where(identity = 'Rezeptanforderung-Fachliches-Mapping').map
+	'Fachliche Information': id.replace('gem-erp-sr-log-prescription-request.Medikation.', ''), 'FHIR-Profil': mapping.where(identity = 'Rezeptanforderung-Bestaetigung-Fachliches-Mapping').map
 ```
 
 ### Weitere Informationen
@@ -45,7 +45,7 @@ from
 	StructureDefinition
 where
 	name = 'GEM_ERP_SR_LOG_PrescriptionRequest_Confirmation'
-for differential.element where mapping.any(identity = 'Rezeptanforderung-Fachliches-Mapping') and id.startsWith('gem-erp-sr-log-prescription-request.Medikation.').not() and id.startsWith('gem-erp-sr-log-prescription-request.involvierteParteien.').not() and id.startsWith('gem-erp-sr-log-prescription-request.MetaDaten.').not()
+for differential.element where mapping.any(identity = 'Rezeptanforderung-Bestaetigung-Fachliches-Mapping') and id.startsWith('gem-erp-sr-log-prescription-request.Medikation.').not() and id.startsWith('gem-erp-sr-log-prescription-request.involvierteParteien.').not() and id.startsWith('gem-erp-sr-log-prescription-request.MetaDaten.').not()
 select
-	'Fachliche Infomration': id.replace('gem-erp-sr-log-prescription-request.', ''), 'FHIR-Profil': mapping.where(identity = 'Rezeptanforderung-Fachliches-Mapping').map
+	'Fachliche Information': id.replace('gem-erp-sr-log-prescription-request.', ''), 'FHIR-Profil': mapping.where(identity = 'Rezeptanforderung-Bestaetigung-Fachliches-Mapping').map
 ```
