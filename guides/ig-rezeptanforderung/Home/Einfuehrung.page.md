@@ -40,19 +40,11 @@ Jeder im Implementierungsleitfaden beschriebene Anwendungsfall enthält eine Ang
 
 Unter MessageHeader.focus werden die Ressourcen aufgelistet, die alle relevanten Informationen zu einer Anfrage bündeln. In diesem Projekt übernimmt die FHIR-Ressource ServiceRequest diese Funktion als Trägerressource. MessageHeader.focus referenziert alle ServiceRequests, die als Ausgangspunkt für die Auswertung der Anfragen in einer Nachricht dienen. Es können je Nachricht auch mehrere ServiceRequest Ressourcen übermittelt werden. Jede ServiceRequest Ressource stellt damit ein Angefordertes Medikament dar.
 
-Auf {{pagelink:Home/Datenobjekte/Prescription_ServiceRequest}} und {{pagelink:Home/Datenobjekte/Dispense_ServiceRequest}} werden die Profile beschrieben. Dort ist dieser Zusammenhang durch die Abbildung eines Klassendiagramms erkennbar.
+Folgende Service Requests und damit verbundene Service Anfragen sind derzeit spezifiziert:
 
-#### Multiple Anfragen in einer Nachricht
+* {{pagelink:Home/Datenobjekte/Prescription_ServiceRequest}}
+* {{pagelink:Home/Datenobjekte/Dispense_ServiceRequest}}
 
-Durch die Angabe 
-
-Folgende Service Requests und damit verbrundene Service Anfragen sind derzeit spezifiziert:
-
-* Prescription_ServiceRequest {{pagelink:Home/Datenobjekte/Prescription_ServiceRequest}} (Dient der Anfrage zum Ausstellen einer Verordnung)
-* Dispense_ServiceRequest {{pagelink:Home/Datenobjekte/Dispense_ServiceRequest}} (Dient der Anfrage zum Beliefern einer Verordnung)
-
-Da ein Service Request alle Informationen zum Verarbeiten einer Anfrage bündelt, wird dieser unter MessageHeader.focus referenziert.
-Ein Service Request soll in einem Anwendungsfall nur ein mal generiert und anschließend nur weitergereicht und mit Informationen angereichert werden.
 
 #### Status der Anfrage
 
@@ -61,9 +53,10 @@ Ein ServiceRequest spiegelt neben den fachlichen Informationen auch den Status d
 | Status           | Bedeutung                                                |
 | ---------------- | -------------------------------------------------------- |
 | active           | Anfrage ist aktiv und muss noch bearbeitet werden        |
-| revoked          | Anfrage wurde von der zu bearbeitenden Partei abgewiesen |
+| revoked          | Anfrage wurde von der zu bearbeitenden Partei abgelehnt  |
 | completed        | Anfrage wurde von der zu bearbeitenden Partei erfüllt    |
 | entered-in-error | Anfrage wurde von der anfragenden Partei storniert       |
+
 
 ### Allgemeine Festlegungen
 
@@ -71,25 +64,7 @@ Ein ServiceRequest spiegelt neben den fachlichen Informationen auch den Status d
 
 In jedem Prozess, in dem ein E-Rezept bearbeitet werden soll, kann eine Nachricht ein oder mehrere E-Rezepte adressieren. Die späteren Beschreibungen zu den Use Cases werden dies im Detail beschreiben.
 
-Im Feld `MessageHeader.focus` werden alle ServiceRequests referenziert, die im Bundle enthalten sind. Jeder ServiceRequest entspricht genau einer Anfrage für eine Medikation.
-
-#### Zuordnung von Anfrage und Angefragtem Präparat
-
-ServiceRequest.basedOn referenziert die zu behandelnde Medikation, bzw. Rezeptanfrage, gibt also an, auf welche medizinische Information sie der Service Request bezieht.
-
-Ein Service Request soll sich dabei immer auf genau eine medizinsiche Information beziehen. Wenn also z.B. ein Rezept angefragt wird, dann referenziert ServiceRequest.basedOn genau einen MedicationRequest. So ist für jeden MedicationRequest also ein ServiceRequest zu erstellen. Entsprechend ist die Kardinalität für ServiceRequest.basedOn ..1.
-
-Somit enthält eine KIM-Nachricht einen ServiceRequest mit einem MedicationRequest.
-
-## Motivation und Hintergrund
-
-Mit dem E-Rezept hat die gematik ein Produkt auf den Weg gebracht, was dazu beiträgt die Verordnung, Abgabe und Abrechnung von Rezepten zu digitalisieren. Der gesamte Ablauf der Verordnung ist über den zentralen E-Rezept-Fachdienst gelöst.
-
-Bisher steht kein strukturierter, dezentraler Weg der Kommunikation für E-Rezepte zur Verfügung. Diese Spezifikation soll dazu beitragen, dass Leistungserbringer im deutschen Gesundheitswesen strukturiert Informationen über E-Rezepte austauschen können.
-
-Anwendungsfälle sind bspw., die Anforderung von Rezepten von Pflegeeinrichtungen oder inhaltliche Klärung von Verordnungen zwischen Arzt und Apotheke.
-
-Diese Spezifikation soll einen Beitrag dazu liefern den Versorgungsprozess für die Leistungserbringer zu vereinfachen und zu beschleunigen.
+Wie oben beschrieben, werden im Feld `MessageHeader.focus` alle ServiceRequests referenziert, die im Bundle enthalten sind. Jeder ServiceRequest entspricht genau einer Anfrage für eine Medikation.
 
 ## Beispiele
 
@@ -97,10 +72,11 @@ Beispielinstanzen sind im [Simplifier-Projekt](https://simplifier.net/erezept-se
 
 Folgende UseCases sind mit entsprechenden Beispielen beschrieben:
 
-* UC1: Pflegeeinrichtung -> Arzt -> Pflegeeinrichtung -> Apotheke
-* UC2: Pflegeeinrichtung -> Arzt -> Apotheke -> Pflegeeinrichtung
-* UC3: Pflegeeinrichtung -> Arzt -> Pflegeeinrichtung (Patient geht selbst zur Apotheke)
-* UC4(parenterale Zubereitung): Apotheke -> Arzt -> Apotheke
+* UC1: Rezeptanforderung durch Pflegeeinrichtung
+* UC2: Rezeptanforderung der Pflegeeinrichtung mit Einlösung durch Patient 
+* UC3: Rezeptanforderung der heimversorgenden Apotheke
+* UC4: Rezeptanforderung für anwendungsfertige Zytostatikazubereitungen
 
 Die Beispiele tragen jeweils das Präfix zum entsprechenden UseCase und der entsprechenden Sequenz. Bsp: UC1-3-* ist ein Beispiel, was UC1 zugeordnet ist und den dritten Schritt in der Abfolge entspricht.
-Für UC1 gibt es auch Storno Beispiele.
+
+Für UC1 gibt es auch Storno- und Ablehnungsbeispiele.
