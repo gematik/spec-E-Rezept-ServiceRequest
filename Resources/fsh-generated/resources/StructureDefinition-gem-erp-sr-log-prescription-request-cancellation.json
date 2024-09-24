@@ -13,6 +13,12 @@
   "fhirVersion": "4.0.1",
   "mapping": [
     {
+      "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+      "name": "Rezeptanforderung Stornierung/ Ablehnung Fachliches Mapping",
+      "uri": "ERPServiceRequestPrescriptionRequest",
+      "comment": "Mapping des Fachmodells aus GEM_ERP_SR_LOG_PrescriptionRequest_Cancellation auf das FHIR-Modell ERPServiceRequestPrescriptionRequest"
+    },
+    {
       "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
       "name": "Quelle der Rezeptanforderung Stornierung Informationen",
       "comment": "Beschreibt die Quelle der Rezeptanforderung Stornierung Informatione"
@@ -45,6 +51,10 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestRequestHeader"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
             "map": "Erstellendes PS"
           }
@@ -63,6 +73,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestRequestHeader.destination"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
             "map": "Aus initialer Rezeptanforderung"
@@ -83,6 +97,10 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestRequestHeader.destination.endpoint"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
             "map": "Aus initialer Rezeptanforderung"
           }
@@ -101,6 +119,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestRequestHeader.destination.receiver.identifier.value"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
             "map": "Aus initialer Rezeptanforderung"
@@ -121,6 +143,10 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestRequestHeader.sender"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
             "map": "Erstellendes PS"
           }
@@ -139,6 +165,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestRequestHeader.sender.identifier.value"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
             "map": "Erstellendes PS, SMC-B oder HBA Zertifikat"
@@ -159,6 +189,10 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestRequestHeader.sender.display"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
             "map": "Erstellendes PS"
           }
@@ -177,6 +211,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestRequestHeader.source"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
             "map": "Erstellendes PS",
@@ -198,6 +236,10 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestRequestHeader.source.name"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
             "map": "Erstellendes PS",
             "comment": "Automatisiert durch Software gesetzt"
@@ -217,6 +259,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestRequestHeader.source.software"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
             "map": "Erstellendes PS",
@@ -238,6 +284,10 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestRequestHeader.source.version"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
             "map": "Erstellendes PS",
             "comment": "Automatisiert durch Software gesetzt"
@@ -257,6 +307,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestRequestHeader.source.contact.value"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
             "map": "Erstellendes PS",
@@ -278,6 +332,10 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestRequestHeader.source.endpoint"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
             "map": "Erstellendes PS",
             "comment": "Automatisiert durch Software gesetzt"
@@ -297,6 +355,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestPrescriptionRequest.status"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
             "map": "PS",
@@ -318,6 +380,10 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestPrescriptionRequest.reasonCode.text"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
             "map": "Nutzer des PS",
             "comment": "Abfrage im Moment der Stornierung"
@@ -337,6 +403,10 @@
           }
         ],
         "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestPrescriptionRequest.identifier:requestId.value"
+          },
           {
             "identity": "Quelle-Rezeptanforderung-Stornierung-Mapping",
             "map": "PS",

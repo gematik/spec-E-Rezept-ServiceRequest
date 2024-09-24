@@ -1,4 +1,4 @@
-Mapping: RezeptanforderungBestaetigungFachlichesMapping
+Mapping: RezeptanforderungFachlichesMapping
 Source: GEM_ERP_SR_LOG_PrescriptionRequest
 Target: "ERPServiceRequestPrescriptionRequest"
 Id: Rezeptanforderung-Fachliches-Mapping
