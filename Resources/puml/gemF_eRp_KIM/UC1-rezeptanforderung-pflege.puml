@@ -42,7 +42,7 @@ end
 end
 
 group  "Dispensieranforderung durch Pflegeeinrichtung"
-Pflegeeinrichtung -> Apotheke: //Dispensieranforderung_Rezeptübermittlung//
+Pflegeeinrichtung -> Apotheke: //Dispensieranforderung//
 
 opt "Fehler bei der Bearbeitung des E-Rezeptes"
  Apotheke -> Apotheke: Prüfung des E-Rezeptes Fehlgeschlagen

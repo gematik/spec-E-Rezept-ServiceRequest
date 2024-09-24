@@ -1,8 +1,8 @@
-Mapping: AbgabeanforderungBestaetigungFachlichesMapping
+Mapping: DispensieranforderungBestaetigungFachlichesMapping
 Source: GEM_ERP_SR_LOG_DispenseRequest_Confirmation
 Target: "ERPServiceRequestDispenseRequest"
-Id: Abgabeanforderung-Bestaetigung-Fachliches-Mapping
-Title: "Abgabeanforderung Bestätigung Fachliches Mapping"
+Id: Dispensieranforderung-Bestaetigung-Fachliches-Mapping
+Title: "Dispensieranforderung Bestätigung Fachliches Mapping"
 Description: "Mapping des Fachmodells aus GEM_ERP_SR_LOG_DispenseRequest_Confirmation auf das FHIR-Modell ERPServiceRequestDispenseRequest"
 
 // MetaDaten

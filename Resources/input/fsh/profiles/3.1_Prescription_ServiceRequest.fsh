@@ -8,7 +8,6 @@ Description: "ServiceRequest, which is used to request a recipe"
 * obeys servicerequest-prescription-request-1
 * obeys servicerequest-prescription-request-2
 * obeys servicerequest-prescription-request-3
-* obeys servicerequest-prescription-request-4
 * obeys servicerequest-prescription-request-5
 * obeys servicerequest-prescription-request-6
 * obeys servicerequest-prescription-request-7

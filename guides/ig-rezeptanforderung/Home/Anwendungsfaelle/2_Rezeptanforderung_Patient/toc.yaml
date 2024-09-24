@@ -6,7 +6,7 @@
   filename: 2.1-Anfragender-an-Verordnenden.page.md
 - name: Rezeptanforderung_Bestätigung
   filename: 2.2-Verordnender-an-Anfragenden.page.md
-- name: Dispensieranforderung_Rezeptübermittlung
+- name: Dispensieranforderung
   filename: 2.3-Anfragender-an-Apotheke.page.md
 - name: Dispensieranforderung_Bestätigung
   filename: 2.4-Apotheke-an-Anfragenden.page.md

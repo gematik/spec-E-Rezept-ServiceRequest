@@ -1,8 +1,8 @@
-Mapping: AbgabeanforderungFachlichesMapping
+Mapping: DispensieranforderungFachlichesMapping
 Source: GEM_ERP_SR_LOG_DispenseRequest
 Target: "ERPServiceRequestDispenseRequest"
-Id: Abgabeanforderung-Fachliches-Mapping
-Title: "Abgabeanforderung Fachliches Mapping"
+Id: Dispensieranforderung-Fachliches-Mapping
+Title: "Dispensieranforderung Fachliches Mapping"
 Description: "Mapping des Fachmodells aus GEM_ERP_SR_LOG_DispenseRequest auf das FHIR-Modell ERPServiceRequestDispenseRequest"
 
 // MetaDaten

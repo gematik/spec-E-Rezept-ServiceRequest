@@ -8,7 +8,7 @@
   filename: Mapping-für-Rezeptanforderung_Cancellation.page.md
 - name: Mapping für Rezeptanforderung Ablehnung
   filename: Mapping-für-Rezeptanforderung_Rejection.page.md
-- name: Mapping für Abgabeanforderung
-  filename: Mapping-für-Abgabeanforderung.page.md
-- name: Mapping für Abgabeanforderung Bestätigung
-  filename: Mapping-für-Abgabeanforderung_Bestaetigung.page.md
+- name: Mapping für Dispensieranforderung
+  filename: Mapping-für-Dispensieranforderung.page.md
+- name: Mapping für Dispensieranforderung Bestätigung
+  filename: Mapping-für-Dispensieranforderung_Bestaetigung.page.md
