@@ -23,7 +23,7 @@ Description: "Fachliches Modell zur Beschreibung einer Rezeptanforderung"
     * PatientenName 1..1 HumanName "Name des Patienten" "Strukturierte Angabe des Namens des Patienten"
     * PatientenGeburtstag 1..1 date "Geburtstag des Patienten" "Angabe des Geburtstags mit Jahr, Monat und Tag"
 
-  * VerordnenderArzt 0..1 BackboneElement "Verordnender Arzt" "Angaben zum verordnenden Arzt. Anzugeben, wenn ein Arzt zur Ausstellung identifiziert werden kann."
+  * VerordnenderArzt 0..* BackboneElement "Verordnender Arzt" "Angaben zum verordnenden Arzt. Anzugeben, wenn ein Arzt zur Ausstellung identifiziert werden kann."
     * LANR 0..1 string "LANR des Arztes"
     * Name 1..1 HumanName "Name des Arztes"
 

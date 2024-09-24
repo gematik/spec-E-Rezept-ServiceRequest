@@ -10,5 +10,5 @@
   filename: MessageHeader
 - name: Organisation mit KIM-Addresse
   filename: Organization
-- name: Angabe zur Medikamentenreichweite
-  filename: RemainingObservation
+- name: Patient
+  filename: Patient

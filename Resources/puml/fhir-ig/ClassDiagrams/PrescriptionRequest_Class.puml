@@ -1,6 +1,12 @@
 @startuml "PrescriptionRequest_Class"
 !define RECTANGLE class
 
+RECTANGLE "MessageHeader" as MH {
+    +eventCode: #eRezept_Rezeptanforderung;Rezeptanfrage
+    +focus: Reference<ERPServiceRequestPrescriptionRequest>
+}
+
+
 RECTANGLE "ServiceRequest" as SR {
     +identifier:requestId: string
     +basedOn: Reference<ERPServiceRequestMedicationRequest>
@@ -42,8 +48,9 @@ RECTANGLE "ERPServiceRequestPractitioner" as PR {
     +identifier:ANR: String
 }
 
-SR .down.> P : .subject
-SR .up.> MR : .basedOn
-SR .down.> O : .requester
-SR .down.> PR : .performer
+MH .down.> SR : .focus 1..*
+SR .down.> P : .subject 1..1
+SR .right.> MR : .basedOn 1..1
+SR .down.> O : .requester 1..1
+SR .down.> PR : .performer 0..1
 @enduml

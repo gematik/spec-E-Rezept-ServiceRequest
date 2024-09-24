@@ -7,7 +7,11 @@ Die Übermittlung erfolgt als strukturierte FHIR-Bundles unter Verwendung der TI
 
 Die folgenden Anwendungsfälle sind in dieser Version beschrieben und umzusetzen:
 * {{pagelink:Implementation-Guide-KIM-Nachrichten-für-das-E-Rezept/Anwendungsfaelle/1_Rezeptanforderung}}
-* {{pagelink:Implementation-Guide-KIM-Nachrichten-für-das-E-Rezept/Anwendungsfaelle/2_Parenterale-Zubereitung}}
+* {{pagelink:Implementation-Guide-KIM-Nachrichten-für-das-E-Rezept/Anwendungsfaelle/2_Rezeptanforderung_Patient}}
+* {{pagelink:Implementation-Guide-KIM-Nachrichten-für-das-E-Rezept/Anwendungsfaelle/3_Rezeptanforderung_Apotheke}}
+* {{pagelink:Implementation-Guide-KIM-Nachrichten-für-das-E-Rezept/Anwendungsfaelle/4_Rezeptanforderung_Zyto}}
+
+Eine ausführliche fachliche Beschreibung findet sich im dazugehörigen Featuredokument ==[gemF_eRp_KIM](https://fachportal.gematik.de/schnelleinstieg/downloadcenter/feature-dokumente).== //TODO: Set Link
 
 ## Relevante Dokumente
 

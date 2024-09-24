@@ -6,4 +6,3 @@ Der verordnende Leistungserbringer übermittelt den E-Rezept-Token anschließend
 
 Die Pflegeeinrichtung sendet daraufhin eine Anfrage zur Belieferung der Verordnung an die ausgewählte Apotheke. Diese kann mithilfe der Informationen aus dem E-Rezept-Token das E-Rezept vom E-Rezept-Fachdienst abrufen und die Pflegeeinrichtung mit der entsprechenden Medikation beliefern.
 
-Eine ausführliche fachliche Beschreibung findet sich im dazugehörigen Featuredokument ==[gemF_eRp_KIM](https://fachportal.gematik.de/schnelleinstieg/downloadcenter/feature-dokumente).== //TODO: Set Link
