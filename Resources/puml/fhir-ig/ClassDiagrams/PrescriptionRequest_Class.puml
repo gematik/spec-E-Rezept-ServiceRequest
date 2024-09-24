@@ -1,0 +1,31 @@
+@startuml "PrescriptionRequest_Class"
+!define RECTANGLE class
+
+RECTANGLE "ServiceRequest" as SR {
+    +subject: Patient
+    +informationen: String
+    +referenzen: List<String>
+}
+
+RECTANGLE "Patient" as P {
+    +name: String
+    +geburtsdatum: Date
+    +geschlecht: String
+}
+
+RECTANGLE "Arzneimittelinformationen" as A {
+    +name: String
+    +dosierung: String
+    +beschreibung: String
+}
+
+RECTANGLE "Angaben zur Arztpraxis" as D {
+    +praxisname: String
+    +adresse: String
+    +kontakt: String
+}
+
+SR .right.> P : .subject
+SR -- A : Arzneimittelinformationen
+SR --> D : "enthält"
+@enduml
