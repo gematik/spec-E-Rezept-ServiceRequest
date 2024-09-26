@@ -1,0 +1,39 @@
+@startuml "DispenseRequest_Class"
+!define RECTANGLE class
+
+RECTANGLE "MessageHeader" as MH {
+    +eventCode: #eRezept_Rezeptanforderung;Rezeptanfrage
+    +focus: Reference<ERPServiceRequestDispenseRequest>
+}
+
+
+RECTANGLE "ServiceRequest" as SR {
+    +identifier:requestId: string
+    +status: #active
+    +intent: #filler-order
+    +code: #dispense-request
+    +subject: Reference<Patient>
+    +occurrence: dateTime
+    +authoredOn: Date
+    +requester: Reference<ERPServiceRequestOrganization>
+    +note: String
+    +priority: #routine | #urgent
+}
+
+RECTANGLE "ERPServiceRequestPatient" as P {
+    +name: String
+    +identifier:kvnr: String
+    +birthDate: Date
+}
+
+RECTANGLE "ERPServiceRequestOrganization" as O {
+    +name: String
+    +address: String
+    +contact:tel: String
+    +contact:kim: String
+}
+
+MH .down.> SR : .focus 1..*
+SR .down.> P : .subject 1..1
+SR .down.> O : .requester 1..1
+@enduml
