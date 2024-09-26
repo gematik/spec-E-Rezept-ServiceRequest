@@ -93,7 +93,7 @@
         "sliceName": "redeemByPatient",
         "short": "Redeem By Patient",
         "definition": "Indicates whether the prescription should be redeemed by the patient.",
-        "comment": "This determines the Flow Type of the prescription to be set to 160/200 so that the patient can redeem the prescription himself.",
+        "comment": "This determines the Flow Type of the prescription to be set to 160/200 so that the patient can redeem the prescription himself. If not set the Flow Type is set to 169/209.",
         "min": 0,
         "max": "1",
         "type": [

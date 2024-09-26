@@ -36,7 +36,7 @@ If this ID is available, the receiving system MUST be able to search for the pre
 * extension[redeemByPatient]
   * ^short = "Redeem By Patient"
   * ^definition = "Indicates whether the prescription should be redeemed by the patient."
-  * ^comment = "This determines the Flow Type of the prescription to be set to 160/200 so that the patient can redeem the prescription himself."
+  * ^comment = "This determines the Flow Type of the prescription to be set to 160/200 so that the patient can redeem the prescription himself. If not set the Flow Type is set to 169/209."
 
 * medication[x] MS
 * medication[x] only Reference(KBV_PR_ERP_Medication_PZN or KBV_PR_ERP_Medication_Compounding or KBV_PR_ERP_Medication_Ingredient or KBV_PR_ERP_Medication_FreeText)
