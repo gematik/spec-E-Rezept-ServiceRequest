@@ -2,7 +2,7 @@
 !define RECTANGLE class
 
 RECTANGLE "MessageHeader" as MH {
-    +eventCode: #eRezept_Rezeptanforderung;Rezeptanfrage
+    +eventCode: #eRezept_Rezeptanforderung;Abgabeanfrage
     +focus: Reference<ERPServiceRequestDispenseRequest>
 }
 

@@ -1,9 +1,9 @@
-@startuml "PrescriptionRequest_Confirmation_Class"
+@startuml "DispenseRequest_Confirmation_Class"
 !define RECTANGLE class
 
 RECTANGLE "MessageHeader" as MH {
-    +eventCode: #eRezept_Rezeptanforderung;Rezeptbestaetigung
-    +focus: Reference<ERPServiceRequestPrescriptionRequest>
+    +eventCode: #eRezept_Rezeptanforderung;Abgabebestaetigung
+    +focus: Reference<ERPServiceRequestDispenseRequest>
 }
 
 
@@ -11,8 +11,8 @@ RECTANGLE "ServiceRequest" as SR {
     +identifier:requestId: string
     +basedOn: Reference<ERPServiceRequestMedicationRequest>
     +status: #completed
-    +intent: #order
-    +code: #prescription-request
+    +intent: #filler-order
+    +code: #dispense-request
     +subject: Reference<Patient>
     +occurrence: dateTime
     +authoredOn: Date
@@ -30,13 +30,7 @@ RECTANGLE "ERPServiceRequestPatient" as P {
     +birthDate: Date
 }
 
-RECTANGLE "ERPServiceRequestPractitioner" as PR {
-    +name: String
-    +identifier:ANR: String
-}
-
 MH .down.> SR : .focus 1..*
 SR .down.> P : .subject 1..1
 SR .right.> MR : .basedOn 1..1
-SR .down.> PR : .performer 1..1
 @enduml
