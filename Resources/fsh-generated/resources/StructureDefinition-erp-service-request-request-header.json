@@ -76,6 +76,30 @@
         }
       },
       {
+        "id": "MessageHeader.destination.receiver.identifier",
+        "path": "MessageHeader.destination.receiver.identifier",
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "http://fhir.de/StructureDefinition/identifier-telematik-id"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MessageHeader.sender.identifier",
+        "path": "MessageHeader.sender.identifier",
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "http://fhir.de/StructureDefinition/identifier-telematik-id"
+            ]
+          }
+        ]
+      },
+      {
         "id": "MessageHeader.responsible",
         "path": "MessageHeader.responsible",
         "short": "The organization that is responsible for the request.",

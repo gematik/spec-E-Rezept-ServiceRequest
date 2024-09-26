@@ -325,7 +325,7 @@
     "fshType": "Profile",
     "fshFile": "profiles/2_MessageHeader.fsh",
     "startLine": 1,
-    "endLine": 28
+    "endLine": 34
   },
   {
     "outputFile": "StructureDefinition-erp-service-request-request-identifier.json",

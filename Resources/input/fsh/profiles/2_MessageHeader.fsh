@@ -14,6 +14,12 @@ Description: "Header containing information about the sender and addressee"
 
   //TODO: überlegen ob sender.reference auch 1..1 sein soll für die XSLTs
 
+* sender
+  * identifier only IdentifierTelematikId
+* destination
+  * receiver
+    * identifier only IdentifierTelematikId
+
 * responsible 1..1 MS
 * responsible only Reference(ERPServiceRequestOrganization)
   * ^short = "The organization that is responsible for the request."
