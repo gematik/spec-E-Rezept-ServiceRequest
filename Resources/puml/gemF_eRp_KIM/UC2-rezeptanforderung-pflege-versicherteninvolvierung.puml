@@ -50,9 +50,9 @@ group "Einlösung des E-Rezeptes durch Patient"
 
     note left
         möglich via
-            1. E-Rezept-App
+            1. E-Rezept-FdV
             2. Vorlage der eGK in der Apotheke
-            3. Papierausdruck
+            3. Patientenausdruck
     end note
 
     Patient -> Apotheke: Medikamentabholung
