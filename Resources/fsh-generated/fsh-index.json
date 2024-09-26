@@ -204,8 +204,8 @@
     "fshName": "Example-Initial-Medication-Request",
     "fshType": "Instance",
     "fshFile": "profiles/4_MedicationRequest.fsh",
-    "startLine": 51,
-    "endLine": 64
+    "startLine": 55,
+    "endLine": 68
   },
   {
     "outputFile": "MessageHeader-UC1-HealthCareService-to-Practitioner-MessageHeader.json",
@@ -277,7 +277,7 @@
     "fshType": "Profile",
     "fshFile": "profiles/4_MedicationRequest.fsh",
     "startLine": 1,
-    "endLine": 49
+    "endLine": 53
   },
   {
     "outputFile": "StructureDefinition-erp-service-request-message-container.json",

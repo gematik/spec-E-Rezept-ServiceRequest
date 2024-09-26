@@ -12,6 +12,10 @@ Description: "Medical and pharmaceutical information for the prescription reques
     and KBV_EX_ERP_Multiple_Prescription named requestMVO 0..1 MS ?!
     and RedeemByPatientEX named redeemByPatient 0..1 MS ?!
 
+* subject MS
+* subject only Reference(ERPServiceRequestPatient)
+  * ^short = "Patient for whom a dispense is requested on behalf of the patient."
+
 * extension[PriorPrescriptionID]
   * ^short = "Provide a previous PrescriptionID that corresponds to the requested medication."
   * ^comment = "Must be given in the form xxx.xxx.xxx.xxx.xxx.xx."
