@@ -451,6 +451,30 @@
         ]
       },
       {
+        "id": "gem-erp-sr-log-prescription-request-confirmation.VersichertenEinloesung",
+        "path": "gem-erp-sr-log-prescription-request-confirmation.VersichertenEinloesung",
+        "short": "Versicherten Einlösung",
+        "definition": "Angabe, ob der Versicherte das E-Rezept selbst einlösen möchte.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestPrescriptionRequest.extension:redeemByPatient.valueBoolean"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Rezeptanforderung",
+            "comment": "Aus der initialen Rezeptanforderung"
+          }
+        ]
+      },
+      {
         "id": "gem-erp-sr-log-prescription-request-confirmation.Freitext",
         "path": "gem-erp-sr-log-prescription-request-confirmation.Freitext",
         "short": "Freitext",

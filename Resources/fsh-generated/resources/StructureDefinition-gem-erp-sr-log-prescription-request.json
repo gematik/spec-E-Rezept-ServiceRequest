@@ -425,6 +425,30 @@
         ]
       },
       {
+        "id": "gem-erp-sr-log-prescription-request.VersichertenEinloesung",
+        "path": "gem-erp-sr-log-prescription-request.VersichertenEinloesung",
+        "short": "Versicherten Einlösung",
+        "definition": "Angabe, ob der Versicherte das E-Rezept selbst einlösen möchte.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestPrescriptionRequest.extension:redeemByPatient.valueBoolean"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Mapping",
+            "map": "Nutzer des PS",
+            "comment": "Angabemöglichkeit im Moment der Anforderung"
+          }
+        ]
+      },
+      {
         "id": "gem-erp-sr-log-prescription-request.involvierteParteien",
         "path": "gem-erp-sr-log-prescription-request.involvierteParteien",
         "short": "Involvierte Parteien",
@@ -1243,30 +1267,6 @@
             "identity": "Quelle-Rezeptanforderung-Mapping",
             "map": "Anfragendes PS oder Nutzer des PS",
             "comment": "Bereitstellung aus Medikamentenmanagement"
-          }
-        ]
-      },
-      {
-        "id": "gem-erp-sr-log-prescription-request.Medikation.VersichertenEinloesung",
-        "path": "gem-erp-sr-log-prescription-request.Medikation.VersichertenEinloesung",
-        "short": "Versicherten Einlösung",
-        "definition": "Angabe, ob der Versicherte das E-Rezept selbst einlösen möchte.",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "boolean"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "Rezeptanforderung-Fachliches-Mapping",
-            "map": "ERPServiceRequestMedicationRequest.extension:redeemByPatient.valueBoolean"
-          },
-          {
-            "identity": "Quelle-Rezeptanforderung-Mapping",
-            "map": "Nutzer des PS",
-            "comment": "Angabemöglichkeit im Moment der Anforderung"
           }
         ]
       },

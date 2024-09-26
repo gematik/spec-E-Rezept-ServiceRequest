@@ -16,6 +16,7 @@ Description: "Fachliches Modell zur Beschreibung einer Rezeptanforderung"
   * obeys log-prescription-request-1
   * obeys log-prescription-request-2
 * VorgangsID 1..1 string "ID des Vorgangs" "Wird vom initialen Sender gesetzt und muss immer mitgeführt werden."
+* VersichertenEinloesung 0..1 boolean "Versicherten Einlösung" "Angabe, ob der Versicherte das E-Rezept selbst einlösen möchte."
 
 * involvierteParteien 1..* BackboneElement "Involvierte Parteien" "Angaben zu den involvierten Parteien"
   * PatientenInformationen 1..1 BackboneElement "Patienteninformationen" "Angaben zum Patienten"
@@ -68,7 +69,6 @@ Description: "Fachliches Modell zur Beschreibung einer Rezeptanforderung"
     * Einheit 1..1 string "Einheit der Menge, fix auf 'Packung' gesetzt"
     * Wert 1..1 string "Anzahl der Packungen"
   // Konfiguratorische Informationen
-  * VersichertenEinloesung 0..1 boolean "Versicherten Einlösung" "Angabe, ob der Versicherte das E-Rezept selbst einlösen möchte."
   * AngabeMVO 0..1 boolean "Angabe MVO" "Angabe, ob der anfordernde eine MVO wünscht. Es obliegt dem Verordnenden dem Wunsch nachzukommen. Der verordnende LE entscheidet über die Menge und die Zeiträume"
 
 Invariant: log-prescription-request-1

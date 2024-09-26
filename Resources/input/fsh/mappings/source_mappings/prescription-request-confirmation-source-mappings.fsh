@@ -21,7 +21,7 @@ Description: "Beschreibt die Quelle der Rezeptanforderung Bestätigung Informati
 
 // Administrative Informationen
 * ERezeptToken -> "E-Rezept-Fachdienst" "Token lässt sich aus den Informationen des E-Rezept Fachdienstes erzeugen"
-
+* VersichertenEinloesung -> "Rezeptanforderung" "Aus der initialen Rezeptanforderung"
 * Status -> "PVS" "Setzt den Status der Anfrage auf 'completed'"
 * VorgangsID -> "Rezeptanforderung" "VorgangsID aus der initialen Rezeptanforderung"
 

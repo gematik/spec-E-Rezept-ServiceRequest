@@ -11,6 +11,7 @@ Description: "Mapping des Fachmodells aus GEM_ERP_SR_LOG_PrescriptionRequest auf
 // Administrative Informationen
 * Status -> "ERPServiceRequestPrescriptionRequest.status"
 * VorgangsID -> "ERPServiceRequestPrescriptionRequest.identifier:requestId.value"
+* VersichertenEinloesung -> "ERPServiceRequestPrescriptionRequest.extension:redeemByPatient.valueBoolean"
 
 * involvierteParteien -> "ERPServiceRequestPrescriptionRequest.subject/performer/requester"
   * PatientenInformationen -> "ERPServiceRequestPrescriptionRequest.subject(ERPServiceRequestPatient)"
@@ -54,6 +55,5 @@ Description: "Mapping des Fachmodells aus GEM_ERP_SR_LOG_PrescriptionRequest auf
     * Einheit -> "ERPServiceRequestMedicationRequest.dispenseRequest.quantity.code"
     * Wert -> "ERPServiceRequestMedicationRequest.dispenseRequest.quantity.value"
   // Konfiguratorische Informationen
-  * VersichertenEinloesung -> "ERPServiceRequestMedicationRequest.extension:redeemByPatient.valueBoolean"
   * AngabeMVO -> "ERPServiceRequestMedicationRequest.extension:requestMVO.extension:Kennzeichen.valueBoolean"
 

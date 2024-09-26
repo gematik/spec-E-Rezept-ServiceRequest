@@ -22,6 +22,7 @@ Description: "Beschreibt die Quelle der Rezeptanforderungsinformationen"
 // Administrative Informationen
 * Status -> "Anfragendes PS" "Setzt den Status der Anfrage auf 'active'"
 * VorgangsID -> "Anfragendes PS" "Erzeugt einen Vorgang und generiert eine VorgangsID"
+* VersichertenEinloesung -> "Nutzer des PS" "Angabemöglichkeit im Moment der Anforderung"
 
 * involvierteParteien -> ""
   * PatientenInformationen -> "Anfragendes PS" "Abfrage aus Stammdatenmanagement"
@@ -68,5 +69,4 @@ Description: "Beschreibt die Quelle der Rezeptanforderungsinformationen"
     * Wert -> "Anfragendes PS oder Nutzer des PS" "Bereitstellung aus Medikamentenmanagement"
 
   // Konfiguratorische Informationen
-  * VersichertenEinloesung -> "Nutzer des PS" "Angabemöglichkeit im Moment der Anforderung"
   * AngabeMVO -> "Nutzer des PS" "Angabemöglichkeit im Moment der Anforderung. Unterstützung ggf. durch PS."

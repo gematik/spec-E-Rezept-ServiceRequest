@@ -11,6 +11,7 @@ Description: "Mapping des Fachmodells aus GEM_ERP_SR_LOG_PrescriptionRequest_Con
 // Administrative Informationen
 * Status -> "ERPServiceRequestPrescriptionRequest.status"
 * VorgangsID -> "ERPServiceRequestPrescriptionRequest.identifier:requestId.value"
+* VersichertenEinloesung -> "ERPServiceRequestPrescriptionRequest.extension:redeemByPatient.valueBoolean"
 
 * ERezeptToken -> "ERPServiceRequestPrescriptionRequest.extension:EPrescriptionToken"
 * AenderungVerordnung -> "ERPServiceRequestPrescriptionRequest.extension:medicationChanged"

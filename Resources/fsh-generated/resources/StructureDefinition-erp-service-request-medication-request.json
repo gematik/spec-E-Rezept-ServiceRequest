@@ -88,26 +88,6 @@
         "max": "0"
       },
       {
-        "id": "MedicationRequest.extension:redeemByPatient",
-        "path": "MedicationRequest.extension",
-        "sliceName": "redeemByPatient",
-        "short": "Redeem By Patient",
-        "definition": "Indicates whether the prescription should be redeemed by the patient.",
-        "comment": "This determines the Flow Type of the prescription to be set to 160/200 so that the patient can redeem the prescription himself. If not set the Flow Type is set to 169/209.",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/prescription-id-ex"
-            ]
-          }
-        ],
-        "mustSupport": true,
-        "isModifier": true
-      },
-      {
         "id": "MedicationRequest.medication[x]",
         "path": "MedicationRequest.medication[x]",
         "type": [

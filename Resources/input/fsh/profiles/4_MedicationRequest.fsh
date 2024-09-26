@@ -10,7 +10,6 @@ Description: "Medical and pharmaceutical information for the prescription reques
 * extension contains
     PrescriptionIdEx named PriorPrescriptionID 0..1 MS
     and KBV_EX_ERP_Multiple_Prescription named requestMVO 0..1 MS ?!
-    and RedeemByPatientEX named redeemByPatient 0..1 MS ?!
 
 * subject MS
 * subject only Reference(ERPServiceRequestPatient)
@@ -33,11 +32,6 @@ If this ID is available, the receiving system MUST be able to search for the pre
   * extension[Zeitraum] 0..0
   * extension[ID] 0..0
 
-* extension[redeemByPatient]
-  * ^short = "Redeem By Patient"
-  * ^definition = "Indicates whether the prescription should be redeemed by the patient."
-  * ^comment = "This determines the Flow Type of the prescription to be set to 160/200 so that the patient can redeem the prescription himself. If not set the Flow Type is set to 169/209."
-
 * medication[x] MS
 * medication[x] only Reference(KBV_PR_ERP_Medication_PZN or KBV_PR_ERP_Medication_Compounding or KBV_PR_ERP_Medication_Ingredient or KBV_PR_ERP_Medication_FreeText)
 
@@ -55,9 +49,6 @@ If this ID is available, the receiving system MUST be able to search for the pre
 Instance: Example-Initial-Medication-Request
 InstanceOf: ERPServiceRequestMedicationRequest
 Usage: #example
-* extension[PriorPrescriptionID].valueIdentifier
-  * system = "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"
-  * value = "160.100.000.000.001.36"
 * status = #active
 * intent = #order
 * medicationReference = Reference(Example-Initial-Medication)

@@ -18,6 +18,7 @@ Description: "Fachliches Modell zur Beschreibung einer Bestätigung einer Rezept
   * obeys log-prescription-request-3
   * obeys log-prescription-request-4
 * VorgangsID 1..1 string "ID des Vorgangs" "Wird vom initialen Sender gesetzt und muss in der Antwort mitgeführt werden."
+* VersichertenEinloesung 0..1 boolean "Versicherten Einlösung" "Angabe, ob der Versicherte das E-Rezept selbst einlösen möchte."
 
 * Freitext 0..1 string "Freitext" "Individuelle Nachricht an den Empfänger"
     

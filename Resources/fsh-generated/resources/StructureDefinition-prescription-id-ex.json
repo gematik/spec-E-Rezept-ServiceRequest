@@ -60,6 +60,7 @@
       {
         "id": "Extension.value[x]",
         "path": "Extension.value[x]",
+        "min": 1,
         "type": [
           {
             "code": "Identifier",
@@ -67,7 +68,8 @@
               "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PrescriptionId"
             ]
           }
-        ]
+        ],
+        "mustSupport": true
       }
     ]
   }

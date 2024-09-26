@@ -32,8 +32,8 @@
           {
             "key": "servicerequest-prescription-request-2",
             "severity": "error",
-            "human": "If the status is completed, the e-prescription-token must be present.",
-            "expression": "status = 'completed' implies extension('EPrescriptionToken').exists()",
+            "human": "If the status is completed and the prescription should not be redeemed by the patient, the e-prescription-token must be present.",
+            "expression": "(status = 'completed' and extension('redeemByPatient') = true) implies extension('EPrescriptionToken').exists()",
             "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
           },
           {
@@ -103,6 +103,26 @@
             "code": "Extension",
             "profile": [
               "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/changed-medication-ex"
+            ]
+          }
+        ],
+        "mustSupport": true,
+        "isModifier": true
+      },
+      {
+        "id": "ServiceRequest.extension:redeemByPatient",
+        "path": "ServiceRequest.extension",
+        "sliceName": "redeemByPatient",
+        "short": "Redeem By Patient",
+        "definition": "Indicates whether the prescription should be redeemed by the patient.",
+        "comment": "This determines the Flow Type of the prescription to be set to 160/200 so that the patient can redeem the prescription himself. If not set the Flow Type is set to 169/209.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/prescription-id-ex"
             ]
           }
         ],
