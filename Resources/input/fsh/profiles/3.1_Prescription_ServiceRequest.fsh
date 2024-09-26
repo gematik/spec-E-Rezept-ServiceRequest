@@ -94,7 +94,9 @@ Description: "ServiceRequest, which is used to request a recipe"
 * note MS
   * ^short = "Further information on the prescription request."
   * ^comment = "Any use cases that are not specified can be placed here in free text."
-
+  * time 1..1 MS
+    * ^comment = "This is used in order to sort the Annotations"
+    
 * reasonCode MS
   * ^short = "Reason for the prescription request."
   * ^comment = "The reason for the prescription request can be documented here."

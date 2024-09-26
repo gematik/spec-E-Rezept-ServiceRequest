@@ -17,7 +17,8 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * requester.type = #PFL
 * performer.identifier = Hans-Topp-Glücklich-Identifier
 * reasonCode = MedicationRequestReasonCS#exhausted-range
-* note[+].text = "Medikament läuft am 31.01.2023 aus. Es sind noch 7 stk übrig. "
+* note[+].text = "Medikament läuft am 31.01.2023 aus. Es sind noch 7 stk übrig."
+* note[=].time = "2025-01-16T12:23:12+02:00"
 
 // Dispense Service Requests
 Instance: UC1-Cancelled-Dispense-Request

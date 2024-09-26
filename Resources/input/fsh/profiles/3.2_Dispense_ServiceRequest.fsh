@@ -98,6 +98,8 @@ Description: "ServiceRequest that is used to supply a recipe"
 * note MS
   * ^short = "Further information on the dispense request."
   * ^comment = "Any use cases that are not specified can be placed here in free text."
+  * time 1..1 MS
+    * ^comment = "This is used in order to sort the Annotations"
 
 //TODO: Test Dispense Invariants!
 Invariant: servicerequest-dispense-request-1

@@ -14,3 +14,4 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * occurrenceDateTime = "2023-02-01"
 * authoredOn = "2023-01-27"
 * note[+].text = "Hr. Müller braucht das Medikament nicht mehr"
+* note[=].time = "2025-01-16T12:23:12+02:00"

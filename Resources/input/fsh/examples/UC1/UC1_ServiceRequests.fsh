@@ -21,6 +21,7 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
     * value = 7
     * unit = "Stück"
 * note[+].text = "Medikament läuft am 31.01.2023 aus. Es sind noch 7 stk übrig."
+* note[=].time = "2025-01-16T12:23:12+02:00"
 
 Instance: UC1-Response-Prescription-Request
 InstanceOf: ERPServiceRequestPrescriptionRequest
