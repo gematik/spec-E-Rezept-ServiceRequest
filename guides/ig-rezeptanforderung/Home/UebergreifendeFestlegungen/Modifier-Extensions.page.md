@@ -6,7 +6,7 @@ In diesem Projekt sind folgende Modifier Extensions definiert und müssen entspr
 @```
 from StructureDefinition
 select
-    Name: name,
+    Name: link(name, url),
     join for differential.element 
     where isModifier = true
     select { Extension: link(type.profile, id), 'Verarbeitungshinweis': comment }
