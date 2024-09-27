@@ -14,7 +14,7 @@
   filename: erp-service-request-practitioner.page.md
 - name: ERP ServiceRequest PrescriptionRequest
   filename: erp-service-request-prescription-request.page.md
-- name: ERP ServiceRequest RequestHeader
+- name: ERP ServiceRequest Request Header
   filename: erp-service-request-request-header.page.md
 
 

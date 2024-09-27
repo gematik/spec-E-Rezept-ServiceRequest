@@ -2,9 +2,11 @@
   filename: Index.page.md
 - name: Profilierungen
   filename: Profile
+- name: Identifier
+  filename: Identifier
 - name: Terminologien
   filename: Terminologien
-- name: "Logische Modelle"
+- name: Logische Modelle
   filename: Logical-Models
 - name: Mappings
   filename: Mappings
