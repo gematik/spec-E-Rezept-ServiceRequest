@@ -1,3 +1,5 @@
 # {{page-title}}
 
-In den folgenden Unterkapiteln werden die Datenobjekte und ihre Nutzung beschrieben.
+Folgende CodeSysteme und ValueSets sind in diesem Implementation Guide definiert:
+
+{{index:children}}

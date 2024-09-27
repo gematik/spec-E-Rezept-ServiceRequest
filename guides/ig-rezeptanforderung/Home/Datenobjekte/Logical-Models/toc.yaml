@@ -1,2 +1,16 @@
 - name: Index
   filename: Index.page.md
+- name: GEM ERP SR LOG PrescriptionRequest
+  filename: gem-erp-sr-log-prescription-request.page.md
+- name: GEM ERP SR LOG PrescriptionRequest Confirmation
+  filename: gem-erp-sr-log-prescription-request-confirmation.page.md
+- name: GEM ERP SR LOG PrescriptionRequest Cancellation
+  filename: gem-erp-sr-log-prescription-request-cancellation.page.md
+- name: GEM ERP SR LOG PrescriptionRequest Rejection
+  filename: gem-erp-sr-log-prescription-request-rejection.page.md
+- name: GEM ERP SR LOG DispenseRequest
+  filename: gem-erp-sr-log-dispense-request.page.md
+- name: GEM ERP SR LOG DispenseRequestConfirmation
+  filename: gem-erp-sr-log-dispense-request-confirmation.page.md
+- name: GEM ERP SR LOG MessageCopy
+  filename: gem-erp-sr-log-message-copy.page.md

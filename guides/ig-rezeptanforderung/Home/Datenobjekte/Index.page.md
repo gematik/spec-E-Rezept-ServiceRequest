@@ -1,4 +1,5 @@
 # {{page-title}}
 
-In den folgenden Unterkapiteln werden die Datenobjekte und ihre Nutzung beschrieben.
+In den folgenden Unterkapiteln werden die FHIR Artefakte beschrieben.
 
+{{index:current}}
