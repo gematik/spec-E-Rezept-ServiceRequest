@@ -4,15 +4,11 @@
   filename: Einfuehrung.page.md
 - name: Anwendungsfälle
   filename: Anwendungsfaelle
+- name: Konformität
+  filename: UebergreifendeFestlegungen
+- name: FHIR-Profile
+  filename: Datenobjekte
+- name: Beispiele
+  filename: Examples.page.md
 - name: Release Notes
   filename: Release-Notes.page.md
-- name: Motivation
-  filename: Motivation.page.md
-- name: Übergreifende Festlegungen
-  filename: UebergreifendeFestlegungen
-- name: "FHIR-Profile"
-  filename: Datenobjekte
-- name: Mappings
-  filename: Mappings
-- name: Terminologien
-  filename: Terminologien
