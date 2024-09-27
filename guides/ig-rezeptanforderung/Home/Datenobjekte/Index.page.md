@@ -2,4 +2,4 @@
 
 In den folgenden Unterkapiteln werden die FHIR Artefakte beschrieben.
 
-{{index:current}}
+{{index:children}}
