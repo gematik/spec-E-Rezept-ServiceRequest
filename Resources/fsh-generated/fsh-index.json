@@ -320,6 +320,14 @@
     "endLine": 143
   },
   {
+    "outputFile": "StructureDefinition-erp-service-request-procedure-identifier.json",
+    "fshName": "ERPServiceRequestProcedureIdentifier",
+    "fshType": "Profile",
+    "fshFile": "profiles/6.2_GroupAnforderungIdentifier.fsh",
+    "startLine": 1,
+    "endLine": 11
+  },
+  {
     "outputFile": "StructureDefinition-erp-service-request-request-header.json",
     "fshName": "ERPServiceRequestRequestHeader",
     "fshType": "Profile",
@@ -390,14 +398,6 @@
     "fshFile": "logical-models/prescription-request-log.fsh",
     "startLine": 1,
     "endLine": 72
-  },
-  {
-    "outputFile": "StructureDefinition-identifier-procedure-identifier.json",
-    "fshName": "ERPServiceRequestProcedureIdentifier",
-    "fshType": "Profile",
-    "fshFile": "profiles/6.2_GroupAnforderungIdentifier.fsh",
-    "startLine": 1,
-    "endLine": 11
   },
   {
     "outputFile": "StructureDefinition-prescription-id-ex.json",

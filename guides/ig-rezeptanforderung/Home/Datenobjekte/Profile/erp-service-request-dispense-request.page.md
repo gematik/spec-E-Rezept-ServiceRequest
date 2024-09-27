@@ -1,5 +1,5 @@
 ---
-canonical: https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-dispense-prescription-request
+canonical: https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request
 expand: 2
 ---
 

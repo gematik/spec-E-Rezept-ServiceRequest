@@ -1,5 +1,5 @@
 ---
-canonical: https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-medication-prescription-request
+canonical: https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request
 expand: 2
 ---
 
