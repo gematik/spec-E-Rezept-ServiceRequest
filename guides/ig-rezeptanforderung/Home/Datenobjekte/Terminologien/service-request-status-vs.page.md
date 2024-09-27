@@ -1,5 +1,5 @@
 ---
-canonical: https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-request-reason-cs
+canonical: https://gematik.de/fhir/erp-servicerequest/ValueSet/service-request-status-vs
 expand: 2
 ---
 
@@ -11,7 +11,7 @@ These are the details for this resource:
 
 <fql output="table">
     from
-        CodeSystem
+        ValueSet
     where
         url = %canonical
     select
