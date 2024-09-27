@@ -1,7 +1,7 @@
 - name: Index
   filename: Index.page.md
 - name: "UC1: Rezeptanforderung in der Pflege"
-  filename: 1_Rezeptanforderung
+  filename: 1_Rezeptanforderung.page.md
 - name: "UC2: Rezeptanforderung mit Patienteneinlösung"
   filename: 2_Rezeptanforderung_Patient
 - name: "UC3: Rezeptanforderung durch Apotheke"
