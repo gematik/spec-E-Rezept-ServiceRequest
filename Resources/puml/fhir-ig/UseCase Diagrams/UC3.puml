@@ -1,11 +1,12 @@
 @startuml UC3
 autonumber "<b>[0]"
-participant Pflegeeinrichtung as PE #LightBlue
+participant Apotheke as Ap #LightGreen
 participant Arzt as A #LightYellow
-participant "E-Rezept-Fachdienst" as FD #LightSalmon
+participant Pflegeeinrichtung as PE #LightBlue
 
-activate PE
-PE -> A++: <b>Rezeptanforderung\n <i>ERPServiceRequestPrescriptionRequest  \n.status = #active \n.basedOn = ERPServiceRequestMedicationRequest
-A <-> FD: E-Rezept einstellen
-A -> PE--: <b>Rezeptanforderung_Bestätigung\n <i>ERPServiceRequestPrescriptionRequest  \n.status = #completed \n.basedOn = KBV_Prescription
+Ap -> A++: <b>Rezeptanforderung\n <i>ERPServiceRequestPrescriptionRequest  \n.status = #active \n.basedOn = ERPServiceRequestMedicationRequest
+Ap --> PE:  <b>Nachrichten_Kopie\n <i>ERPServiceRequestPrescriptionRequest
+A -> A: E-Rezept einstellen
+A -> Ap--: <b>Rezeptanforderung_Bestätigung\n <i>ERPServiceRequestPrescriptionRequest  \n.status = #completed \n.basedOn = KBV_Prescription
+Ap --> PE:  <b>Nachrichten_Kopie\n <i>ERPServiceRequestPrescriptionRequest
 @enduml

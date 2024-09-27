@@ -1,11 +1,11 @@
 ## {{page-title}}
 
-In diesem Anwendungsfall löst ein Anfragender (z.B. eine Pflegeeinrichtung) den Prozess aus und stellt eine Rezeptanfrage an einen verordnenden Arzt. Der Arzt kann nun die Anfrage bearbeiten und ein E-Rezept erstellen. Mit Erstellung des E-Rezepts erhält der Verordnende die Informationen "PrescriptionID" und "AccessCode" vom E-Rezept-Fachdienst und kann somit einen E-Rezept-Token erzeugen.
+In diesem Anwendungsfall initiiert eine Pflegeeinrichtung den Prozess, indem sie eine Rezeptanfrage an einen verordnenden Arzt stellt. In dieser Anfrage ist angegeben, dass die Verordnung vom Patienten eingelöst werden soll.
 
-Nun entscheidet sich der weitere Verlauf je nach Zustelltyp (ServiceRequest.orderDetail.code). Wenn der Code "#issue-prescription" angegeben wurde, wird nach dem Erstellen des E-Rezepts eine Bestätigung ohne den Token an den Anfragenden versendet. Damit endet der Workflow. Der Code "#return-to-requester" signalisiert, dass der E-Rezept-Token an den Anfragenden zu übermitteln ist, damit dieser dann die Belieferungsanfrage an die Apotheke starten kann.
+Der Arzt bearbeitet die Anfrage und erstellt ein E-Rezept mit Flowtype 160/200, damit der Versicherte das E-Rezept selbst einlösen kann.
+Nach der Erstellung des E-Rezepts erhält der Verordnende die Informationen "PrescriptionID" und "AccessCode" vom E-Rezept-Fachdienst und kann damit einen E-Rezept-Token generieren.
 
-Eine detaillierte fachliche Beschreibung findet sich im dazugehörigen Featuredokument [gemF_eRp_KIM](https://fachportal.gematik.de/schnelleinstieg/downloadcenter/feature-dokumente).
+Der verordnende Leistungserbringer übermittelt den E-Rezept-Token, sowie den Patientenausdruck als PDF (s. [Feature Dokument gemF_eRp_KIM](https://gemspec.gematik.de/docs/gemF/gemF_eRp_KIM/latest/)) anschließend an die Pflegeeinrichtung.
 
-Ein Mapping der fachlichen Informationseinheiten des Featuredokuments zu den Profilen findet sich unten.
+Die Pflegeeinrichtung kann den Patienten informieren, dass das E-Rezept in einer Apotheke eingelöst werden kann und gibt ggf. den Patientenausdruck mit.
 
-{{render:guides/ig-rezeptanforderung/images/puml_images/UC1_1.png}}

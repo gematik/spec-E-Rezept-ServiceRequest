@@ -10,9 +10,5 @@
   filename: 2.3-Anfragender-an-Apotheke.page.md
 - name: Dispensieranforderung_Bestätigung
   filename: 2.4-Apotheke-an-Anfragenden.page.md
-- name: "Sonderfall: Apotheke als Anfragender"
-  filename: 2.5-Apotheke-als-Anfragender.page.md
 - name: Beispiele
   filename: 4-Beispiele.page.md
-- name: Mappings
-  filename: 5-Mappings.page.md

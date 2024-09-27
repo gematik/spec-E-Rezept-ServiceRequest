@@ -49,30 +49,17 @@ for differential.element
 
 ```
 
+## Festlegungen zu Identifiern
 
-## PreDis Identifier
+Generell sind die Identifier in den Profilen offen spezifiziert. Daher können beliebige Identifier vergeben werden.
+WICHTIG: Wenn ein Objekt (z.B. ein ServiceRequest) bearbeitet, modifiziert und dann weitergeleitet wird sind alle Identifier, die unter `ServiceRequest.identifier` vergeben wurden zu kopieren und weiterzureichen.
 
-### Motivation
+### Anwendungsfall Parenterale Zubereitung
 
-Dieser Identifier wird in `ServiceRequest.identifier[predisId]` verwendet, um eine Verknüpfung einer Verordungs- und Belieferungsanfrage zu der selben Medikation herzustellen.
+Im Anwendungsfall {{pagelink:Home/Anwendungsfaelle/2_Parenterale-Zubereitung}} sind folgende Identifier zu verwenden:
 
-Insbesondere wenn der Vorgang und die Erstellung der beiden Anfragen zeitversetzt erfolgt ist es für Systeme dann hilfreich diese Verknüpfung herzustellen und den Verlauf der Anfrage zu einem Medikament dann festzustellen.
-
-Beispielsweise erstellt im Anwendungsfall {{pagelink:Home/Anwendungsfaelle/Rezeptanforderung}} das anfragende System zunächst nur die Verordnungsanfrage.
-Nachdem der Verordnende das E-Rezept-Token übermittelt hat wird dann die Belieferungsanfrage zum gleichen Medikament gestellt. Diese erhält die gleiche predisId wie die Verordnungsanfrage. So kann bspw. der Status zur Anfrage eines Medikaments besser verfolgt werden.
-
-### Profil
-
-{{tree:https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-pre-dis-identifier, diff}}
-
-Folgende Felder sind entsprechend zu befüllen, bzw. können befüllt werden:
-
-@```
-
-from StructureDefinition
-where name = 'ERPServiceRequestPreDisIdentifier'
-for differential.element
-    where exists(comment | short)
-    select id, short, comment
-
-```
+|Fachliche Beschreibung|.identifier.system|
+|---|---|
+|Patienten-ID für die Verwendung in einer Taxierungssoftware|"https://gematik.de/fhir/erp-servicerequest/sid/patient-id"|
+|Fall-ID für die Verwendung in einer Taxierungssoftware|"https://gematik.de/fhir/erp-servicerequest/sid/case-id"|
+|Vorgangs-ID für die Verwendung in einer Taxierungssoftware, abweichend von .requisition|"https://gematik.de/fhir/erp-servicerequest/sid/process-id"|

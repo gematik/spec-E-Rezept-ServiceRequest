@@ -10,11 +10,9 @@
   filename: Motivation.page.md
 - name: Übergreifende Festlegungen
   filename: UebergreifendeFestlegungen
-- name: Datenobjekte
+- name: "FHIR-Profile"
   filename: Datenobjekte
 - name: Mappings
   filename: Mappings
-- name: Identifier
-  filename: Identifier
 - name: Terminologien
   filename: Terminologien

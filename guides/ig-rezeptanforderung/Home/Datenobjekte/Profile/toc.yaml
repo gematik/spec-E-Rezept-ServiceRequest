@@ -1,0 +1,14 @@
+- name: Index
+  filename: Index.page.md
+- name: Anfrage zum Ausstellen einer Verordnung (ServiceRequest)
+  filename: Prescription_ServiceRequest
+- name: Anfrage zum Beliefern einer Verordnung (ServiceRequest)
+  filename: Dispense_ServiceRequest
+- name: Angefragte Medikation (MedicationRequest)
+  filename: MedicationRequest
+- name: Message Header
+  filename: MessageHeader
+- name: Organisation mit KIM-Addresse
+  filename: Organization
+- name: Patient
+  filename: Patient
