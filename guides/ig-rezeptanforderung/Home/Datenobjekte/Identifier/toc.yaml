@@ -1,8 +1,4 @@
 - name: Index
   filename: Index.page.md
-- name: ERP ServiceRequest Prescription Token
-  filename: erp-service-request-prescription-token.page.md 
-- name: ERP ServiceRequest Procedure Identifier
-  filename: erp-service-request-procedure-identifier.page.md 
-- name: ERP ServiceRequest Request Identifier
-  filename: erp-service-request-request-identifier.page.md
+- name: Identifier
+  filename: identifier_definitions

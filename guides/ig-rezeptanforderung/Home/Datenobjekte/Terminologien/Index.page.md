@@ -2,4 +2,4 @@
 
 Folgende CodeSysteme und ValueSets sind in diesem Implementation Guide definiert:
 
-{{index:current}}
+{{index:children}}
