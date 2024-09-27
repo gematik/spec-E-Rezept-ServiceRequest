@@ -25,7 +25,5 @@ Description: "Response sent from Practitioner back to HealthCareService"
 * entry[=].resource = UC3-Practitioner-to-HealthCareService-MessageHeader
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/ServiceRequest/UC3-Response-Prescription-Request"
 * entry[=].resource = UC3-Response-Prescription-Request
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/MedicationRequest/Example-Response-KBV-Prescription"
-* entry[=].resource = Example-Response-KBV-Prescription
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Medication/Example-Response-Medication"
 * entry[=].resource = Example-Response-Medication

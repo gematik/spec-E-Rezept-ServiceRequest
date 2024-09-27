@@ -56,5 +56,3 @@ Description: "Request sent to Pharmacy to request a dispense of the medication"
 * entry[=].resource = UC1-Cancelled-Dispense-Request
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Medication/Example-Response-Medication"
 * entry[=].resource = Example-Response-Medication
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/MedicationDispense/UC1-Medication-Dispense"
-* entry[=].resource = UC1-Medication-Dispense

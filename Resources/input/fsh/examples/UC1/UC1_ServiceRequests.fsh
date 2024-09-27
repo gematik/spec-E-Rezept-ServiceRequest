@@ -1,7 +1,7 @@
 // Prescription Service Requests
 Instance: UC1-Initial-Prescription-Request
 InstanceOf: ERPServiceRequestPrescriptionRequest
-Usage: #inline
+Usage: #example
 Title: "Initial Prescription Request"
 Description: "This ServiceRequest is sent initially to the prescribing practitioner"
 * identifier[requestId].value = "1"

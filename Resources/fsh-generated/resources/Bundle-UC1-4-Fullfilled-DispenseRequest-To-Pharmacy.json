@@ -99,7 +99,7 @@
         "supportingInfo": [
           {
             "type": "MedicationDispense",
-            "reference": "MedicationDispense/UC1-Medication-Dispense"
+            "reference": "UC1-Medication-Dispense"
           },
           {
             "type": "Medication",
@@ -170,75 +170,6 @@
             }
           ]
         }
-      }
-    },
-    {
-      "fullUrl": "http://erp-servicerequest-test.de/MedicationDispense/UC1-Medication-Dispense",
-      "resource": {
-        "resourceType": "MedicationDispense",
-        "id": "UC1-Medication-Dispense",
-        "meta": {
-          "profile": [
-            "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|1.4"
-          ]
-        },
-        "identifier": [
-          {
-            "use": "official",
-            "system": "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
-            "value": "160.100.000.000.002.36"
-          }
-        ],
-        "status": "completed",
-        "subject": {
-          "identifier": {
-            "system": "http://fhir.de/sid/gkv/kvid-10",
-            "value": "X123456789"
-          }
-        },
-        "performer": [
-          {
-            "actor": {
-              "identifier": {
-                "system": "https://gematik.de/fhir/sid/telematik-id",
-                "value": "12345678901234567890"
-              }
-            }
-          }
-        ],
-        "medicationReference": {
-          "reference": "Medication/Example-Response-Medication"
-        },
-        "whenHandedOver": "2020-04-16T13:44:27.957+00:00",
-        "dosageInstruction": [
-          {
-            "sequence": 1,
-            "text": "Eine Tablette täglich",
-            "timing": {
-              "repeat": {
-                "frequency": 1,
-                "period": 1,
-                "periodUnit": "d"
-              }
-            },
-            "doseAndRate": [
-              {
-                "type": {
-                  "coding": [
-                    {
-                      "code": "ordered",
-                      "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type"
-                    }
-                  ]
-                },
-                "doseQuantity": {
-                  "value": 1,
-                  "unit": "tablet"
-                }
-              }
-            ]
-          }
-        ]
       }
     }
   ]

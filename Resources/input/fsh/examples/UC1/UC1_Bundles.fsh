@@ -35,8 +35,6 @@ Description: "Response sent from Practitioner back to HealthCareService"
 * entry[=].resource = UC1-Practitioner-to-HealthCareService-MessageHeader
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/ServiceRequest/UC1-Response-Prescription-Request"
 * entry[=].resource = UC1-Response-Prescription-Request
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/MedicationRequest/Example-Response-KBV-Prescription"
-* entry[=].resource = Example-Response-KBV-Prescription
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Medication/Example-Response-Medication"
 * entry[=].resource = Example-Response-Medication
 
@@ -65,5 +63,3 @@ Description: "Response sent from pharmacy to requester"
 * entry[=].resource = UC1-Response-Dispense-Request
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Medication/Example-Response-Medication"
 * entry[=].resource = Example-Response-Medication
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/MedicationDispense/UC1-Medication-Dispense"
-* entry[=].resource = UC1-Medication-Dispense

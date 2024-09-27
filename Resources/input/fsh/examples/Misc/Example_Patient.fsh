@@ -1,6 +1,6 @@
 Instance: Example-Patient
 InstanceOf: ERPServiceRequestPatient
-Usage: #inline
+Usage: #example
 Title: "Example-Patient"
 Description: "Beispiel Patient"
 * identifier[versichertenId_GKV].type = http://fhir.de/CodeSystem/identifier-type-de-basis#GKV

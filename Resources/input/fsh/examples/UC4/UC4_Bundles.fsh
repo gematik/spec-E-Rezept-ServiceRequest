@@ -26,7 +26,5 @@ Description: "Request sent to Pharmacy to request a dispense of the medication"
 * entry[=].resource = UC4-2-Practitioner-to-Pharmacy-MessageHeader
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/ServiceRequest/UC4-Response-Prescription-Request"
 * entry[=].resource = UC4-Response-Prescription-Request
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/MedicationRequest/Example-Response-KBV-Prescription"
-* entry[=].resource = Example-Response-KBV-Prescription
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Medication/Example-Response-Medication"
 * entry[=].resource = Example-Response-Medication

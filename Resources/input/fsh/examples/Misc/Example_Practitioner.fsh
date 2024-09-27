@@ -1,6 +1,6 @@
 Instance: Example-Practitioner
 InstanceOf: ERPServiceRequestPractitioner
-Usage: #inline
+Usage: #example
 Title: "Example-Practitioner"
 Description: "Beispielarzt zum Ausstellen der Rezepte"
 * identifier[ANR].type = http://terminology.hl7.org/CodeSystem/v2-0203#LANR

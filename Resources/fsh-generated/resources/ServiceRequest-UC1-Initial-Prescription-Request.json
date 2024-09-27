@@ -1,0 +1,76 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "UC1-Initial-Prescription-Request",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
+    ]
+  },
+  "intent": "order",
+  "identifier": [
+    {
+      "system": "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier",
+      "value": "1"
+    }
+  ],
+  "requisition": {
+    "system": "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier",
+    "value": "GroupID-UC1"
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "prescription-request",
+        "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
+      }
+    ]
+  },
+  "reasonCode": [
+    {
+      "extension": [
+        {
+          "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/remaining-supply-ex",
+          "valueQuantity": {
+            "value": 7,
+            "unit": "Stück"
+          }
+        }
+      ],
+      "coding": [
+        {
+          "code": "exhausted-range",
+          "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-request-reason-cs"
+        }
+      ]
+    }
+  ],
+  "basedOn": [
+    {
+      "reference": "MedicationRequest/Example-Initial-Medication-Request"
+    }
+  ],
+  "status": "active",
+  "subject": {
+    "reference": "Patient/Example-Patient"
+  },
+  "occurrenceDateTime": "2023-02-01",
+  "authoredOn": "2023-01-27",
+  "requester": {
+    "reference": "Organization/Example-HealthCareService-Organization",
+    "type": "PFL"
+  },
+  "performer": [
+    {
+      "identifier": {
+        "system": "https://gematik.de/fhir/sid/telematik-id",
+        "value": "1-test-telematik-id"
+      }
+    }
+  ],
+  "note": [
+    {
+      "text": "Medikament läuft am 31.01.2023 aus. Es sind noch 7 stk übrig.",
+      "time": "2025-01-16T12:23:12+02:00"
+    }
+  ]
+}

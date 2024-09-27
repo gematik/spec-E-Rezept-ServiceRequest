@@ -9,7 +9,7 @@ Die folgenden Anwendungsfälle sind in dieser Version beschrieben und umzusetzen
 * {{pagelink:Home/Anwendungsfaelle/3_Rezeptanforderung_Apotheke}}
 * {{pagelink:Home/Anwendungsfaelle/4_Rezeptanforderung_Zyto}}
 
-Eine ausführliche fachliche Beschreibung findet sich im dazugehörigen Featuredokument ==[gemF_eRp_KIM](https://fachportal.gematik.de/schnelleinstieg/downloadcenter/feature-dokumente).== //TODO: Set Link
+Eine ausführliche fachliche Beschreibung findet sich im dazugehörigen [Feature Dokument gemF_eRp_KIM](https://gemspec.gematik.de/docs/gemF/gemF_eRp_KIM/latest/).
 
 ## Relevante Dokumente
 
