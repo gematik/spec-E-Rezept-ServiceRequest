@@ -1,14 +1,28 @@
 - name: Index
   filename: Index.page.md
-- name: Anfrage zum Ausstellen einer Verordnung (ServiceRequest)
-  filename: erp-service-request-prescription-request
-- name: Anfrage zum Beliefern einer Verordnung (ServiceRequest)
-  filename: Dispense_ServiceRequest
-- name: Angefragte Medikation (MedicationRequest)
-  filename: MedicationRequest
-- name: Message Header
-  filename: MessageHeader
-- name: Organisation mit KIM-Addresse
-  filename: Organization
-- name: Patient
-  filename: Patient
+- name: ERP ServiceRequest DispenseRequest
+  filename: erp-service-request-dispense-request.page.md
+- name: ERP ServiceRequest MedicationRequest
+  filename: erp-service-request-medication-request.page.md
+- name: ERP ServiceRequest MessageContainer
+  filename: erp-service-request-message-container.page.md
+- name: ERP ServiceRequest Organization
+  filename: erp-service-request-organization.page.md
+- name: ERP ServiceRequest Patient
+  filename: erp-service-request-patient.page.md
+- name: ERP ServiceRequest Practitioner
+  filename: erp-service-request-practitioner.page.md
+- name: ERP ServiceRequest PrescriptionRequest
+  filename: erp-service-request-prescription-request.page.md
+- name: ERP ServiceRequest RequestHeader
+  filename: erp-service-request-request-header.page.md
+
+
+
+
+
+
+
+
+
+
