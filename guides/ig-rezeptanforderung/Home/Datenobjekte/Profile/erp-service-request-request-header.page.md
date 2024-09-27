@@ -25,8 +25,7 @@ expand: 2
 
 ### Motivation
 
-//TODO
-Der MessageHeader wird nach dem [App-Transport-Framework](https://simplifier.net/app-transport-framework/) genutzt. Entsprechende Nutzung ist dem [ImplementationGuide](https://simplifier.net/app-transport-framework/~guides) zu entnehmen.
+Der ATF MessageHeader wurde dahingehend weiterspezifiziert, als dass nur für diesen Anwendungsfall gültige eventCodes und Ressourcen zu verwenden sind.
 
 
 ## Inhalt des Profils

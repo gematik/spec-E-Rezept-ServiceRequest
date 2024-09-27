@@ -1,6 +1,6 @@
 ## {{page-title}}
 
-Diese Seite zeigt das Mapping der fachlichen Informationen aus dem Logical Model der Dispensieranforderung: {{tree:GEM_ERP_SR_LOG_DispenseRequest}}
+Diese Seite zeigt das Mapping der fachlichen Informationen aus dem {{pagelink:Home/Datenobjekte/Logical-Models/gem-erp-sr-log-dispense-request.page.md}}: {{tree:GEM_ERP_SR_LOG_DispenseRequest}}
 
 ### MetaDaten zur Nachricht
 Im folgenden werden die Mappings der Metainformationen einer Dispensieranforderung zu den Profilen gelistet.

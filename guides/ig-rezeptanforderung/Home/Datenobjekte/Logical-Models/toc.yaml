@@ -1,16 +1,16 @@
 - name: Index
   filename: Index.page.md
-- name: GEM ERP SR LOG PrescriptionRequest
+- name: Logisches Modell zur Rezeptanforderung
   filename: gem-erp-sr-log-prescription-request.page.md
-- name: GEM ERP SR LOG PrescriptionRequest Confirmation
+- name: Logisches Modell zur Rezeptanforderungs Bestätigung
   filename: gem-erp-sr-log-prescription-request-confirmation.page.md
-- name: GEM ERP SR LOG PrescriptionRequest Cancellation
+- name: Logisches Modell zur Rezeptanforderungs Stornierung
   filename: gem-erp-sr-log-prescription-request-cancellation.page.md
-- name: GEM ERP SR LOG PrescriptionRequest Rejection
+- name: Logisches Modell zur Rezeptanforderungs Ablehnung
   filename: gem-erp-sr-log-prescription-request-rejection.page.md
-- name: GEM ERP SR LOG DispenseRequest
+- name: Logisches Modell zur Dispensieranforderung
   filename: gem-erp-sr-log-dispense-request.page.md
-- name: GEM ERP SR LOG DispenseRequestConfirmation
+- name: Logisches Modell zur Dispensieranforderungs Bestätigung
   filename: gem-erp-sr-log-dispense-request-confirmation.page.md
-- name: GEM ERP SR LOG MessageCopy
+- name: Logisches Modell zur Nachrichten Kopie
   filename: gem-erp-sr-log-message-copy.page.md

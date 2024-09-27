@@ -25,7 +25,6 @@ expand: 2
 
 ### Motivation
 
-//TODO
 Dieses Profil wird in den Anwendungsfällen genutzt, um angefragte, verordnete oder dispensierte Arzneimittelinformationen zu übertragen.
 
 Als Anfragender möchte ich angeben können, welche Medikation ich für einen Patienten anfragen möchte. Eine Einrichtung/ Person, die eine Verordnung anfragt nutzt dieses Profil, um strukturiert anzugeben, welche Medikation benötigt wird.

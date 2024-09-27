@@ -25,7 +25,7 @@ expand: 2
 
 ### Motivation
 
-//TODO
+Dieses Identifier Profil wurde angelegt, damit der E-Rezept Token in einer bestätigten Rezept- und in einer Dispensieranforderung anzugeben.
 
 ## Inhalt des Profils
 

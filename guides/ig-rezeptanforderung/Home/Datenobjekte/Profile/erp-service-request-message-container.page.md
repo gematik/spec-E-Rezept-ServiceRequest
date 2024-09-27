@@ -25,7 +25,7 @@ expand: 2
 
 ### Motivation
 
-//TODO
+Der ATF Message Container wurde in dieser Spezifikation dahingehend eingeschränkt, dass ein ERPServiceRequestHeader zu nutzen ist.
 
 ## Inhalt des Profils
 

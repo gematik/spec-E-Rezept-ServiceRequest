@@ -25,7 +25,7 @@ expand: 2
 
 ### Motivation
 
-//TODO
+Dieser Identifier stellt eine ID dar, die für eine Anfrage vergeben wird. Ein einzelner ServiceRequest enthält diesen eindeutigen Identifier.
 
 ## Inhalt des Profils
 

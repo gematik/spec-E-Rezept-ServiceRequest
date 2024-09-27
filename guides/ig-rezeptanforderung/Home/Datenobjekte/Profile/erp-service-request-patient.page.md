@@ -25,7 +25,7 @@ expand: 2
 
 ### Motivation
 
-//TODO
+Zur Angabe der relevanten Informationen eines Versicherten wurden wesentliche Informationen verpflichtend übernommen.
 
 ## Inhalt des Profils
 
