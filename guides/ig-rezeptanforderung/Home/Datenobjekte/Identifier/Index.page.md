@@ -1,5 +1,3 @@
 # {{page-title}}
 
-Folgende Profile sind in diesem Implementation Guide definiert:
-
-{{index:children}}
+Folgende Identifier sind in diesem Implementation Guide definiert:
