@@ -1,2 +1,18 @@
-- name: Index
-  filename: Index.page.md
+- name: "CS - Medication Request Reason"
+  filename: medication-request-reason-cs.page.md
+- name: "CS - Service Request Identifier"
+  filename: service-request-service-identifier-cs.page.md
+- name: "CS - Service Request Type"
+  filename: service-request-type-cs.page.md
+- name: "VS - Medication Request Reason"
+  filename: medication-request-reason-vs.page.md
+- name: "VS - Service Identifier"
+  filename: service-identifier-vs.page.md
+- name: "VS - Organization Type"
+  filename: service-request-organization-type-vs.page.md
+- name: "VS - Request Priority"
+  filename: service-request-priority-vs.page.md
+- name: "VS - Request Status"
+  filename: service-request-status-vs.page.md
+- name: "VS - Request Type"
+  filename: service-request-type-vs.page.md
