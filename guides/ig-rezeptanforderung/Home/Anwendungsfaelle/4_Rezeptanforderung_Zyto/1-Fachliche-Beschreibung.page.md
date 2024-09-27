@@ -8,7 +8,7 @@ WICHTIG: Hierbei MUSS die Verordnung exakt der angefragten Medikation entspreche
 
 Der Arzt übernimmt die angefragte Medikation in die Verordnung und stellt diese im E-Rezept-Fachdienst ein (**[2]**). Darauf hin erhält der Arzt die Informationen für den E-Rezept Token (**[3]**) und übermittelt den Token an die Apotheke (**[4]**).
 
-Diese kann nun das Rezept am E-Rezept-Fachdienst einlösen (**[5]**).
+Diese kann das Rezept am E-Rezept-Fachdienst einlösen (**[5]**).
 
 {{render:guides/ig-rezeptanforderung/images/puml_images/UC4.png}}
 
