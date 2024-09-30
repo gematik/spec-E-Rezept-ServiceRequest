@@ -24,6 +24,10 @@ RECTANGLE "ERPServiceRequestMedicationRequest" as MR {
     +medicationReference: Reference<KBV_Medication>
 }
 
+RECTANGLE "KBV_Medication" as MED {
+    +(s. eRezept Profile)
+}
+
 RECTANGLE "ERPServiceRequestPatient" as P {
     +name: String
     +identifier:kvnr: String
@@ -31,6 +35,7 @@ RECTANGLE "ERPServiceRequestPatient" as P {
 }
 
 MH .down.> SR : .focus 1..*
+MR .down.> MED : .medication 1..1
 SR .down.> P : .subject 1..1
 SR .right.> MR : .basedOn 1..1
 @enduml
