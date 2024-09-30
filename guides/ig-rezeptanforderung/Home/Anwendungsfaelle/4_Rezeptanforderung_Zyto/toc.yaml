@@ -1,12 +1,8 @@
 - name: Index
   filename: Index.page.md
-- name: Fachliche Beschreibung
-  filename: 1-Fachliche-Beschreibung.page.md
 - name: Rezeptanforderung
-  filename: 2.1-Anfrage-an-Verordnenden.page.md
+  filename: 4.1-Anfrage-an-Verordnenden.page.md
 - name: Rezeptanforderung_Bestätigung
-  filename: 2.2-Verordnender-an-Anfragenden.page.md
+  filename: 4.2-Verordnender-an-Anfragenden.page.md
 - name: Beispiele
-  filename: 4-Beispiele.page.md
-- name: Mappings
-  filename: 5-Mappings.page.md
+  filename: 4.3-Beispiele.page.md

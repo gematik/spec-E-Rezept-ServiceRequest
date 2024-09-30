@@ -5,7 +5,7 @@ participant PVS as A #LightYellow
 
 AP -> A++: <b>Rezeptanforderung \n <i>ERPServiceRequestPrescriptionRequest \n.status = #active \n.basedOn = ERPServiceRequestMedicationRequest \n<b>MessageHeader\neventCode = eRezept_ParenteraleZubereitung;Rezeptanfrage
 A -> A: E-Rezept einstellen
-A -> AP--: <b>Rezeptanforderung_Bestätigung \n <i>ERPServiceRequestPrescriptionRequest  \n.status = #completed \n.basedOn = KBV_Prescription \n.extension:EPrescriptionToken = E-Rezept Token\n<b>MessageHeader\neventCode = eRezept_ParenteraleZubereitung;Rezeptbestaetigung
+A -> AP--: <b>Rezeptanforderung_Bestätigung \n <i>ERPServiceRequestPrescriptionRequest  \n.status = #completed \n.basedOn = ERPServiceRequestMedicationRequest \n.extension:EPrescriptionToken = E-Rezept Token\n<b>MessageHeader\neventCode = eRezept_ParenteraleZubereitung;Rezeptbestaetigung
 AP -> AP: E-Rezept einlösen
 
 @enduml
