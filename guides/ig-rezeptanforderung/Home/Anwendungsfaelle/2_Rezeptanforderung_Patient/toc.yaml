@@ -1,7 +1,5 @@
 - name: Index
   filename: Index.page.md
-- name: Fachliche Beschreibung
-  filename: 1-Fachliche-Beschreibung.page.md
 - name: Rezeptanforderung
   filename: 2.1-Anfragender-an-Verordnenden.page.md
 - name: Rezeptanforderung_Bestätigung
