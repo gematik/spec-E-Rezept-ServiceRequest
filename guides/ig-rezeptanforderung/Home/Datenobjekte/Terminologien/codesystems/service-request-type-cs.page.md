@@ -1,5 +1,5 @@
 ---
-canonical: https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-request-reason-cs
+canonical: https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs
 expand: 2
 ---
 
