@@ -145,6 +145,8 @@ Description: "ServiceRequest, which is used to request a recipe"
 
 //TODO: Test Prescription Invariants!
 
+//TODO: Wenn Organization referenziert aus SR:supportingInformation:pflegeeinrichtungKopie, dann muss kim adresse vorhanden sein
+
 Invariant: servicerequest-prescription-request-1
 Description: "If the status is active, the requester must be present."
 Expression: "status = 'active' implies requester.exists()"

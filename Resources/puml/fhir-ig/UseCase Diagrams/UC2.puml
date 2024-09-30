@@ -4,9 +4,9 @@ participant Pflegeeinrichtung as PE #LightBlue
 participant Arzt as A #LightYellow
 participant Patient as P #LightGrey
 
-PE -> A++: <b>Rezeptanforderung\n <i>ERPServiceRequestPrescriptionRequest \n.basedOn.extension:redeemByPatient = true
+PE -> A++: <b>Rezeptanforderung\n <i>ERPServiceRequestPrescriptionRequest \n.extension:redeemByPatient = true
 A -> A: E-Rezept einstellen
-A -> PE--: <b>Rezeptanforderung_Bestätigung\n <i>ERPServiceRequestPrescriptionRequest  \n.status = #completed \n.E-Rezezept Token
-PE --> P: opt. Informationen und Patientenausdruck bereitstellen
+A -> PE--: <b>Rezeptanforderung_Bestätigung\n <i>ERPServiceRequestPrescriptionRequest  \n.status = #completed
+PE --> P: opt. informieren und Patientenausdruck bereitstellen
 
 @enduml

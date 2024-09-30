@@ -4,9 +4,12 @@ participant Apotheke as Ap #LightGreen
 participant Arzt as A #LightYellow
 participant Pflegeeinrichtung as PE #LightBlue
 
+activate Ap
 Ap -> A++: <b>Rezeptanforderung\n <i>ERPServiceRequestPrescriptionRequest  \n.status = #active \n.basedOn = ERPServiceRequestMedicationRequest
-Ap --> PE:  <b>Nachrichten_Kopie\n <i>ERPServiceRequestPrescriptionRequest
+Ap --> PE:  <b>Nachrichten_Kopie\n <i>ERPServiceRequestMessageContainer
 A -> A: E-Rezept einstellen
-A -> Ap--: <b>Rezeptanforderung_Bestätigung\n <i>ERPServiceRequestPrescriptionRequest  \n.status = #completed \n.basedOn = KBV_Prescription
-Ap --> PE:  <b>Nachrichten_Kopie\n <i>ERPServiceRequestPrescriptionRequest
+A -> Ap: <b>Rezeptanforderung_Bestätigung\n <i>ERPServiceRequestPrescriptionRequest  \n.status = #completed \n.basedOn = ERPServiceRequestMedicationRequest
+A --> PE:  <b>Nachrichten_Kopie\n <i>ERPServiceRequestMessageContainer
+deactivate A
+Ap -> PE--: <b>Dispensieranforderung_Bestätigung \n<i>ERPServiceRequestDispenseRequest \n.status = #completed \n.basedOn = ERPServiceRequestMedicationRequest
 @enduml

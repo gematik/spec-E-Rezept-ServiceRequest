@@ -7,5 +7,5 @@ participant "E-Rezept-Fachdienst" as FD #LightSalmon
 activate PE
 PE -> A++: <b>Dispensieranforderung \n<i>ERPServiceRequestDispenseRequest \n.status = #active \n.extension:EPrescriptionToken = E-Rezept Token
 A <-> FD: E-Rezept einlösen
-A -> PE--: <b>Dispensieranforderung_Bestätigung \n<i>ERPServiceRequestDispenseRequest \n.status = #completed \n.basedOn = ERPServiceRequestMedicationRequest \n.extension:EPrescriptionToken = E-Rezept Token
+A -> PE--: <b>Dispensieranforderung_Bestätigung \n<i>ERPServiceRequestDispenseRequest \n.status = #completed \n.basedOn = ERPServiceRequestMedicationRequest
 @enduml
