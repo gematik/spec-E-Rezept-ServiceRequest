@@ -10,8 +10,8 @@
   "url": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-service-identifier-cs",
   "concept": [
     {
-      "code": "message-copy",
-      "display": "Message Copy"
+      "code": "eRezept_Rezeptanforderung;message-copy",
+      "display": "Kopie einer Nachricht in der Rezeptanforderung"
     }
   ],
   "experimental": false,
