@@ -1,10 +1,10 @@
 - name: Index
   filename: Index.page.md
-- name: Anfragender an Verordnenden
+- name: Pflegeeinrichtung an Verordnenden
   filename: 2.1-Anfragender-an-Verordnenden.page.md
-- name: Verordnendender an Anfragenden
+- name: Verordnendender an Pflegeeinrichtung
   filename: 2.2-Verordnender-an-Anfragenden.page.md
-- name: Anfragender an Apotheke
+- name: Pflegeeinrichtung an Apotheke
   filename: 2.3-Anfragender-an-Apotheke.page.md
-- name: Apotheke an Anfragenden
+- name: Apotheke an Pflegeeinrichtung
   filename: 2.4-Apotheke-an-Anfragenden.page.md
