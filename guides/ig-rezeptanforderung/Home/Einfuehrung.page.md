@@ -13,24 +13,19 @@ Ziel dieser Spezifikation ist es, den Versorgungsprozess für Leistungserbringer
 Im Folgenden werden grundlegende Merkmale und Konzepte beschrieben, die für die Umsetzung dieses Features wichtig sind.
 
 Anwendungsfälle des Features "KIM-Nachrichten für das E-Rezept" werden nicht über einen zentralen Dienst der TI gelöst, sondern dezentral Peer-to-Peer zwischen Clients auf Basis von FHIR ausgeführt.
-
 Daher handelt es sich grundlegend, aufbauend auf dem App-Transport-Framework (ATF) der gematik, um ein FHIR Message Konzept (https://www.hl7.org/fhir/messaging.html).
-
 Aus dem App-Transport-Framework werden die Ressourcen "Bundle" und "MessageHeader" genutzt, um einerseits alle Ressourcen zu übermitteln, als auch Informationen über Sender und Empfänger zu halten. Die Funktionsweise und Implementierung des App-Transport-Framework sind im entsprechenden [Implementation Guide](https://simplifier.net/app-transport-framework/~guides) zu finden.
 
-Dieser Implementation Guide basisiert auf Version ==X.X.X //TODO Version und Link!!== des App Transport Frameworks. Die folgende Stufe des ATF MUSS unterstützt werden, um konform zu diesem IG zu sein: 
-**Stufe 1** - Datenmodell und Messaging Konzept MUSS unterstützt werden. Empfangsbestätigung und Capability-Message KANN unterstützt werden
+Dieser Implementation Guide basiert auf Version ==X.X.X //TODO Version und Link!!== des App Transport Frameworks. Die folgende Stufe des ATF MUSS unterstützt werden, um konform zu diesem IG zu sein: 
 
-### Verwendung von MessageBundle
-Das im App Transport Framework definierte *MessageBundle* wird verwendet, um alle für die Anfrage relevanten Ressourcen zu übermitteln.
-
-### Verwendung des MessageHeader
-Der im App Transport Framework definierte *MessageHeader* dient zur Übertragung der Meta-Informationen, wie beispielsweise der Angabe von Absender und Empfänger.
+**Stufe 1** 
+- Datenmodell und Messaging Konzept MUSS unterstützt werden
+- Empfangsbestätigung und Capability-Message KANN unterstützt werden
 
 #### EventCodes
-In dieser Spezifikation dient der unter *MessageHeader.eventCode* anzugebende EventCode sowohl zur Identifikation des Anwendungsfalls als auch des Nachrichtentyps innerhalb des Anwendungsfalls. So zeigt der Code `eRezept_Rezeptanforderung;Rezeptanfrage` beispielsweise an, dass es sich um den Anwendungsfall "Rezeptanforderung" sowie um eine initiale "Rezeptanfrage" eines Anfragenden an einen Verordnenden handelt.
+In dieser Spezifikation dient der unter *MessageHeader.eventCode* anzugebende EventCode sowohl zur Identifikation des Anwendungsfalls als auch des Nachrichtentyps innerhalb des Anwendungsfalls. So zeigt der Code `eRezept_Rezeptanforderung;Rezeptanfrage` beispielsweise an, dass es sich um den Anwendungsfall "Rezeptanforderung" sowie um eine initiale Rezeptanforderung eines Anfragenden an einen Verordnenden handelt.
 
-Die in dieser Spezifikation zulässigen EventCodes sind im [ValueSet](https://gematik.de/fhir/erp-servicerequest/ValueSet/service-identifier-vs) definiert.
+Die in dieser Spezifikation zulässigen EventCodes sind im {{pagelink:Home/Datenobjekte/Terminologien/valuesets/service-identifier-vs.page.md}} definiert.
 
 Jeder im Implementierungsleitfaden beschriebene Anwendungsfall enthält eine Angabe darüber, welcher EventCode zu verwenden ist.
 
@@ -41,14 +36,15 @@ Unter *MessageHeader.focus* werden die Ressourcen aufgelistet, die alle relevant
 Alle Anwendungsfälle in diesem Projekt basieren auf [ServiceRequest-Ressourcen](http://hl7.org/fhir/R4/servicerequest.html), die gemäß FHIR-Spezifikation verwendet werden, um einen Dienst bzw. eine Dienstleistung anzufragen. Der *ServiceRequest* dient dabei als Trägerressource für die auszutauschenden Informationen.
 
 #### Anzahl der ServiceRequests
-Jede Nachricht kann mehrere *ServiceRequest*-Ressourcen enthalten. Jede *ServiceRequest* besitzt eine eigene *requestID* und stellt somit eine separate Anfrage dar.
+Jede Nachricht kann mehrere *ServiceRequest*-Ressourcen enthalten. Jede *ServiceRequest* besitzt eine eigene *requestID* und stellt somit eine separate Anfrage dar. Eine detaillierte Beschreibung und Darstellungen sind unter {{pagelink:Home/UebergreifendeFestlegungen/multiple-servicerequest.page.md}} einzusehen.
 
 #### IDs in den ServiceRequests
 Ein einzelner *ServiceRequest* bzw. eine einzelne Anfrage wird über `ServiceRequest.identifier:requestId` identifiziert. Über `ServiceRequest.requisition` können mehrere *ServiceRequests* mithilfe eines gemeinsamen Identifiers gebündelt werden, um z.B. Vorgänge mit mehreren Anfragen zusammenzufassen.
+HINWEIS: Unter {{pagelink:Home/UebergreifendeFestlegungen/identifier.page.md}} sind weitere vorgaben zu Identifiern getroffen worden.
 
-Folgende Service Requests und damit verbrundene Service Anfragen sind derzeit spezifiziert:
-* {{pagelink:Implementation-Guide-KIM-Nachrichten-für-das-E-Rezept/Datenobjekte/Prescription_ServiceRequest}}
-* {{pagelink:Implementation-Guide-KIM-Nachrichten-für-das-E-Rezept/Datenobjekte/Dispense_ServiceRequest}}
+Folgende Service Requests und damit verbundene Service Anfragen sind derzeit spezifiziert:
+* {{pagelink:Home/Datenobjekte/Profile/profile_definitions/erp-service-request-prescription-request.page.md}}
+* {{pagelink:Home/Datenobjekte/Profile/profile_definitions/erp-service-request-dispense-request.page.md}}
 
 #### Status der Anfrage
 Ein ServiceRequest spiegelt neben den fachlichen Informationen auch den Status des Vorgangs wieder. Über das Feld .status kann dargestellt werden, in welchem Zustand sich der Vorgang befindet:
@@ -56,13 +52,13 @@ Ein ServiceRequest spiegelt neben den fachlichen Informationen auch den Status d
 | Status           | Bedeutung                                                |
 | ---------------- | -------------------------------------------------------- |
 | active           | Anfrage ist aktiv und muss noch bearbeitet werden        |
-| revoked          | Anfrage wurde von der zu bearbeitenden Partei abgewiesen |
+| entered-in-error | Anfrage wurde vom Anfragenden storniert       |
+| revoked          | Anfrage wurde vom Verordnenden abgelehnt  |
 | completed        | Anfrage wurde von der zu bearbeitenden Partei erfüllt    |
-| entered-in-error | Anfrage wurde von der anfragenden Partei storniert       |
 
 
 ## Beispiele
-Beispielinstanzen sind im [Simplifier-Projekt](https://simplifier.net/erezept-servicerequest/~resources?category=Example&exampletype=Bundle&sortBy=RankScore_desc) zu finden.
+Beispielinstanzen sind unter {{pagelink:Home/Examples.page.md}} zu finden.
 
 Folgende UseCases sind mit entsprechenden Beispielen beschrieben:
 
@@ -73,3 +69,5 @@ Folgende UseCases sind mit entsprechenden Beispielen beschrieben:
 
 Die Beispiele tragen jeweils das Präfix zum entsprechenden UseCase und der entsprechenden Sequenz. Bsp: UC1-3-* ist ein Beispiel, was UC1 zugeordnet ist und den dritten Schritt in der Abfolge entspricht.
 Für UC1 gibt es auch Beispiele für Stornierung und Ablehnung.
+
+HINWEIS: Die Beispiele, die in dieser Spezifikation auf Simplifier vorhanden sind verwenden URL-Referenzen. Dies dient der Anschaulichkeit und dem Nachvollziehen von Ressourcen und Referenzen. Für den produktiven Einsatz sollten absolute Referenzen mit UUID's verwendet werden: "urn:uuid:e615aa46-30f3-4d3f-b3f1-3274ad314b5c".
