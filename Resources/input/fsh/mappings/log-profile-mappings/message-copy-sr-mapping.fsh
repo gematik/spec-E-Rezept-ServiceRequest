@@ -8,8 +8,5 @@ Description: "Mapping des Fachmodells aus GEM_ERP_SR_LOG_MessageCopy auf das FHI
 // MetaDaten
 * insert RS_MAP_MetaDaten
 
-* IndikatorKopie -> "ERPServiceRequestRequestHeader.eventCoding.code = 'messageCopy'"
+* IndikatorKopie -> "ERPServiceRequestRequestHeader.eventCoding.code = 'eRezept_Rezeptanforderung;message-copy'"
 * Anforderungsinformationen -> "ERPServiceRequestRequestHeader.focus(ERPServiceRequestMessageContainer)"
-
-* ArtDerKopie -> "ERPServiceRequestMessageContainer.ERPServiceRequestRequestHeader.eventCoding.code"
-

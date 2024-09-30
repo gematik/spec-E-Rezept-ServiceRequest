@@ -20,5 +20,4 @@ Description: "Beschreibt die Quelle der Informationen für die Nachrichtenkopie.
     * Website -> "Erstellendes PS" "Automatisiert durch Software gesetzt"
 
 * IndikatorKopie -> "Erstellendes PS"
-* ArtDerKopie -> "Erstellendes PS" "Das PS, dass die Nachricht verschickt, kennt den Status im Flow und setzt den entsprechenden Wert."
 * Anforderungsinformationen -> "FHIR-Datensatz der zum Empfänger des Originals geschickt wird"

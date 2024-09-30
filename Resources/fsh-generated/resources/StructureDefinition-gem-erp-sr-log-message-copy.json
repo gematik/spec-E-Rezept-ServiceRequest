@@ -350,8 +350,7 @@
         "path": "gem-erp-sr-log-message-copy.IndikatorKopie",
         "short": "Indikator Kopie",
         "definition": "Indikator, ob es sich um eine Kopie handelt.",
-        "comment": "Eingebettet im Nachrichtenkopf",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "type": [
           {
@@ -361,36 +360,11 @@
         "mapping": [
           {
             "identity": "Nachrichten-Kopie-Fachliches-Mapping",
-            "map": "ERPServiceRequestRequestHeader.eventCoding.code = 'messageCopy'"
+            "map": "ERPServiceRequestRequestHeader.eventCoding.code = 'eRezept_Rezeptanforderung;message-copy'"
           },
           {
             "identity": "Quelle-Message-Copy-Mapping",
             "map": "Erstellendes PS"
-          }
-        ]
-      },
-      {
-        "id": "gem-erp-sr-log-message-copy.ArtDerKopie",
-        "path": "gem-erp-sr-log-message-copy.ArtDerKopie",
-        "short": "Art der Kopie",
-        "definition": "Auswahl aus: \n- Rezeptanforderung\n- Rezeptanforderung_Stornierung\n- Rezeptanforderung_Bestätigung ",
-        "comment": "Eingebettet im Nachrichtenkopf",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "code"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "Nachrichten-Kopie-Fachliches-Mapping",
-            "map": "ERPServiceRequestMessageContainer.ERPServiceRequestRequestHeader.eventCoding.code"
-          },
-          {
-            "identity": "Quelle-Message-Copy-Mapping",
-            "map": "Erstellendes PS",
-            "comment": "Das PS, dass die Nachricht verschickt, kennt den Status im Flow und setzt den entsprechenden Wert."
           }
         ]
       },
