@@ -93,15 +93,15 @@
     "fshType": "Instance",
     "fshFile": "examples/UC3/UC3_Bundles.fsh",
     "startLine": 1,
-    "endLine": 15
+    "endLine": 24
   },
   {
     "outputFile": "Bundle-UC3-2-Fullfilled-Prescription-Request.json",
     "fshName": "UC3-2-Fullfilled-Prescription-Request",
     "fshType": "Instance",
     "fshFile": "examples/UC3/UC3_Bundles.fsh",
-    "startLine": 17,
-    "endLine": 29
+    "startLine": 26,
+    "endLine": 49
   },
   {
     "outputFile": "Bundle-UC4-1-Prescription-and-Dispense-Request-To-Prescriber.json",
