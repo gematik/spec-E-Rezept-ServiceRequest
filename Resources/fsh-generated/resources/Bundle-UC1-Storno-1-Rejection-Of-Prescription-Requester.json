@@ -47,15 +47,8 @@
         },
         "destination": [
           {
-            "receiver": {
-              "reference": "Organization/Example-Practitioner-Organization",
-              "identifier": {
-                "system": "https://gematik.de/fhir/sid/telematik-id",
-                "value": "1-test-telematik-id"
-              },
-              "display": "Praxis Hans Topp-Glücklich"
-            },
-            "endpoint": "mailto:practitioner@test.kim.de"
+            "name": "Praxis Hans Topp-Glücklich",
+            "endpoint": "practitioner@test.kim.de"
           }
         ],
         "eventCoding": {

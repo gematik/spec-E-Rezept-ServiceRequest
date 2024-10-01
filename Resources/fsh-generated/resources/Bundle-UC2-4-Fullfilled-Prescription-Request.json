@@ -31,7 +31,7 @@
           "name": "Practitioner-Source",
           "software": "Practitioner-Software",
           "version": "1.0.0",
-          "endpoint": "mailto:practitioner@test.kim.de"
+          "endpoint": "practitioner@test.kim.de"
         },
         "focus": [
           {
@@ -55,7 +55,7 @@
               },
               "display": "Test Apotheke"
             },
-            "endpoint": "mailto:pharmacy@test.kim.dee"
+            "endpoint": "pharmacy@test.kim.dee"
           }
         ],
         "eventCoding": {

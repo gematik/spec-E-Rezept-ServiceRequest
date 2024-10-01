@@ -1,5 +1,5 @@
 Profile: ERPServiceRequestRequestHeader
-Parent: $GEM_PR_ATF_MessageHeader
+Parent: MessageHeaderAppTransportFramework
 Id: erp-service-request-request-header
 Title: "ERP Service Request Request Header"
 Description: "Header containing information about the sender and addressee"

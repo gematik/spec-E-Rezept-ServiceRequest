@@ -31,7 +31,7 @@
           "name": "Pharmacy-Source",
           "software": "Pharmacy-Software",
           "version": "1.0.0",
-          "endpoint": "mailto:pharmacy@test.kim.de"
+          "endpoint": "pharmacy@test.kim.de"
         },
         "focus": [
           {
@@ -55,7 +55,7 @@
               },
               "display": "Praxis Hans Topp-Glücklich"
             },
-            "endpoint": "mailto:practitioner@test.kim.de"
+            "endpoint": "practitioner@test.kim.de"
           }
         ],
         "eventCoding": {

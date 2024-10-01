@@ -31,7 +31,7 @@
           "name": "Practitioner-Source",
           "software": "Practitioner-Software",
           "version": "1.0.0",
-          "endpoint": "mailto:practitioner@test.kim.de"
+          "endpoint": "practitioner@test.kim.de"
         },
         "focus": [
           {
@@ -55,7 +55,7 @@
               },
               "display": "Pflegeheim Immergrün"
             },
-            "endpoint": "mailto:healthcare-service@test.kim.de"
+            "endpoint": "healthcare-service@test.kim.de"
           }
         ],
         "eventCoding": {

@@ -31,7 +31,7 @@
           "name": "Pharmacy-Source",
           "software": "Pharmacy-Software",
           "version": "1.0.0",
-          "endpoint": "mailto:pharmacy@test.kim.de"
+          "endpoint": "pharmacy@test.kim.de"
         },
         "focus": [
           {
@@ -55,7 +55,7 @@
               },
               "display": "Pflegeheim Immergrün"
             },
-            "endpoint": "mailto:healthcare-service@test.kim.de"
+            "endpoint": "healthcare-service@test.kim.de"
           }
         ],
         "eventCoding": {

@@ -31,7 +31,7 @@
           "name": "HealthCare-Source",
           "software": "HealthCare-Software",
           "version": "1.0.0",
-          "endpoint": "mailto:healthcare-service@test.kim.de"
+          "endpoint": "healthcare-service@test.kim.de"
         },
         "focus": [
           {
@@ -55,7 +55,7 @@
               },
               "display": "Test Apotheke"
             },
-            "endpoint": "mailto:pharmacy@test.kim.de"
+            "endpoint": "pharmacy@test.kim.de"
           }
         ],
         "eventCoding": {
