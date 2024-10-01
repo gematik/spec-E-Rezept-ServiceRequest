@@ -1,0 +1,40 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "ServiceIdentifierVS",
+  "id": "service-identifier-vs",
+  "title": "Identifier of the use case",
+  "description": "Identifiers for specifying an application of e-prescription communication",
+  "version": "1.2",
+  "url": "https://gematik.de/fhir/erp-servicerequest/ValueSet/service-identifier-vs",
+  "experimental": false,
+  "publisher": "gematik GmbH",
+  "date": "2025-01-01",
+  "compose": {
+    "include": [
+      {
+        "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs",
+        "filter": [
+          {
+            "property": "concept",
+            "op": "is-a",
+            "value": "eRezept_Rezeptanforderung"
+          }
+        ]
+      },
+      {
+        "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs",
+        "filter": [
+          {
+            "property": "concept",
+            "op": "is-a",
+            "value": "eRezept_ParenteraleZubereitung"
+          }
+        ]
+      },
+      {
+        "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-service-identifier-cs"
+      }
+    ]
+  }
+}

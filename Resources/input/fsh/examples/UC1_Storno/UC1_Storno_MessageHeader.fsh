@@ -4,7 +4,7 @@ Usage: #inline
 Title: "HealthCareService-to-Practitioner-MessageHeader-Storno"
 Description: "Cancellation Message Header from HealthCareService to Practitioner"
 * insert HealthCareService-to-Practitioner(UC1-Cancelled-Prescription-Request)
-* eventCoding = $GEM_CS_ATF_ServiceIdentifier#eRezept_Rezeptanforderung;Rezeptanfrage_Storno
+* eventCoding = ServiceIdentifierCS#eRezept_Rezeptanforderung;Rezeptanfrage_Storno
 * source.name = "HealthCare-Source"
 * source.software = "HealthCare-Software"
 * source.version = "1.0.0"
@@ -19,7 +19,7 @@ Usage: #inline
 Title: "Practitioner-to-HealthCareService-MessageHeader-Storno"
 Description: "Cancellation Message Header from Practitioner to HealthCareService"
 * insert HealthCareService-to-Practitioner(UC1-Cancelled-Prescription-Request)
-* eventCoding = $GEM_CS_ATF_ServiceIdentifier#eRezept_Rezeptanforderung;Rezeptanfrage_Storno
+* eventCoding = ServiceIdentifierCS#eRezept_Rezeptanforderung;Rezeptanfrage_Storno
 * source.name = "Practitioner-Source"
 * source.software = "Practitioner-Software"
 * source.version = "1.0.0"
@@ -34,7 +34,7 @@ Usage: #inline
 Title: "HealthCareService-to-Pharmacy-MessageHeader-Storno"
 Description: "Cancellation Message Header from HealthCareService to Pharmacy"
 * insert HealthCareService-to-Practitioner(UC1-Cancelled-Dispense-Request)
-* eventCoding = $GEM_CS_ATF_ServiceIdentifier#eRezept_Rezeptanforderung;Abgabeanfrage_Storno
+* eventCoding = ServiceIdentifierCS#eRezept_Rezeptanforderung;Abgabeanfrage_Storno
 * source.name = "HealthCare-Source"
 * source.software = "HealthCare-Software"
 * source.version = "1.0.0"
@@ -49,7 +49,7 @@ Usage: #inline
 Title: "Pharmacy-to-HealthCareService-MessageHeader-Storno"
 Description: "Cancellation Message Header from Pharmacy to HealthCareService"
 * insert HealthCareService-to-Practitioner(UC1-Cancelled-Dispense-Request)
-* eventCoding = $GEM_CS_ATF_ServiceIdentifier#eRezept_Rezeptanforderung;Abgabeanfrage_Storno
+* eventCoding = ServiceIdentifierCS#eRezept_Rezeptanforderung;Abgabeanfrage_Storno
 * source.name = "Pharmacy-Source"
 * source.software = "Pharmacy-Software"
 * source.version = "1.0.0"

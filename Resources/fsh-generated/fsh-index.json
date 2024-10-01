@@ -488,6 +488,14 @@
     "endLine": 7
   },
   {
+    "outputFile": "ValueSet-service-identifier-vs.json",
+    "fshName": "ServiceIdentifierVS",
+    "fshType": "ValueSet",
+    "fshFile": "valuesets/ServiceIdentifierVS.fsh",
+    "startLine": 1,
+    "endLine": 12
+  },
+  {
     "outputFile": "ValueSet-service-request-organization-type-vs.json",
     "fshName": "ServiceRequestOrganizationTypeVS",
     "fshType": "ValueSet",

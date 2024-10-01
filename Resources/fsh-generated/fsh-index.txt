@@ -60,6 +60,7 @@ StructureDefinition-redeem-by-patient-ex.json                              Redee
 StructureDefinition-remaining-supply-ex.json                               RemainingSupplyEX                                      Extension   extensions/RemainingSupplyEX.fsh                          1 - 9
 StructureDefinition-remaining-supply-free-text-ex.json                     RemainingSupplyFreeTextEX                              Extension   extensions/RemainingSupplyFreeTextEX.fsh                  1 - 7
 ValueSet-medication-request-reason-vs.json                                 MedicationRequestReasonVS                              ValueSet    valuesets/MedicationRequestReasonVS.fsh                   1 - 7
+ValueSet-service-identifier-vs.json                                        ServiceIdentifierVS                                    ValueSet    valuesets/ServiceIdentifierVS.fsh                         1 - 12
 ValueSet-service-request-organization-type-vs.json                         ServiceRequestOrganizationTypeVS                       ValueSet    valuesets/ServiceRequestOrganizationTypeVS.fsh            1 - 8
 ValueSet-service-request-priority-vs.json                                  ServiceRequestPriorityVS                               ValueSet    valuesets/ServiceRequestPriorityVS.fsh                    1 - 6
 ValueSet-service-request-status-vs.json                                    ServiceRequestStatusVS                                 ValueSet    valuesets/ServiceRequestStatusVS.fsh                      1 - 9
