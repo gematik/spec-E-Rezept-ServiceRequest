@@ -61,6 +61,53 @@
       }
     },
     {
+      "fullUrl": "http://erp-servicerequest-test.de/Organization/Example-Practitioner-Organization",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "Example-Practitioner-Organization",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
+          ]
+        },
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "0307654321"
+              }
+            ]
+          }
+        ],
+        "address": [
+          {
+            "type": "both",
+            "line": [
+              "Musterarztstr. 3"
+            ],
+            "_line": [
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                    "valueString": "3"
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                    "valueString": "Musterarztstr."
+                  }
+                ]
+              }
+            ],
+            "city": "Berlin",
+            "postalCode": "10623"
+          }
+        ],
+        "name": "Test Arztpraxis"
+      }
+    },
+    {
       "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/UC3-Response-Prescription-Request",
       "resource": {
         "resourceType": "ServiceRequest",

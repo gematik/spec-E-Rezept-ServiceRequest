@@ -1,8 +1,8 @@
 Instance: UC4-1-Pharmacy-to-Practitioner-MessageHeader
 InstanceOf: ERPServiceRequestRequestHeader
 Usage: #inline
-Title: "TODO"
-Description: "TODO"
+Title: "Pharmacy-to-Practitioner-MessageHeader"
+Description: "Message Header from Pharmacy to Practitioner"
 * insert Pharmacy-to-Practitioner(UC4-Initial-Prescription-Request)
 * eventCoding = ServiceIdentifierCS#eRezept_ParenteraleZubereitung;Rezeptanfrage
 * responsible = Reference(Example-Pharmacy-Organization)

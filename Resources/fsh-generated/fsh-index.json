@@ -101,7 +101,7 @@
     "fshType": "Instance",
     "fshFile": "examples/UC3/UC3_Bundles.fsh",
     "startLine": 26,
-    "endLine": 49
+    "endLine": 51
   },
   {
     "outputFile": "Bundle-UC4-1-Prescription-and-Dispense-Request-To-Prescriber.json",
@@ -109,15 +109,15 @@
     "fshType": "Instance",
     "fshFile": "examples/UC4/UC4_Bundles.fsh",
     "startLine": 2,
-    "endLine": 16
+    "endLine": 25
   },
   {
     "outputFile": "Bundle-UC4-2-Prescription-Request-To-Pharmacy.json",
     "fshName": "UC4-2-Prescription-Request-To-Pharmacy",
     "fshType": "Instance",
     "fshFile": "examples/UC4/UC4_Bundles.fsh",
-    "startLine": 18,
-    "endLine": 30
+    "startLine": 27,
+    "endLine": 52
   },
   {
     "outputFile": "CodeSystem-medication-request-reason-cs.json",

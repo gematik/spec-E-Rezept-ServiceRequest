@@ -33,6 +33,8 @@ Description: "Response sent from Practitioner back to Pharmacy"
 // Header
 * entry[0].fullUrl = "http://erp-servicerequest-test.de/MessageHeader/UC3-Practitioner-to-Pharmacy-MessageHeader"
 * entry[=].resource = UC3-Practitioner-to-Pharmacy-MessageHeader
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/Organization/Example-Practitioner-Organization"
+* entry[=].resource = Example-Practitioner-Organization
 
 //ServiceRequest
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/ServiceRequest/UC3-Response-Prescription-Request"
