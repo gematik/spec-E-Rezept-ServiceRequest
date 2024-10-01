@@ -43,7 +43,7 @@ Description: "ServiceRequest, which is used to request a recipe"
   * ^short = "Identifier that uniquely references a ServiceRequest."
   * ^comment = "For referencing and assignment of ServiceRequest, e.g. if one ServiceRequest is to replace another, it is important to be able to make this assignment with the identifier. Can be mapped via a UUID, for example."
 
-* basedOn 1..1 MS
+* basedOn 0..1 MS
   * ^short = "Requested or fulfilled MedicationRequest."
   * ^comment = "Exactly one MedicationRequest is assigned to a ServiceRequest, so that independent processing is possible."
   * ^definition = "This field references the underlying MedicationRequest, which contains the medical information for the prescription request. For active requests ERPServiceRequestMedicationRequest may be used, otherwise KBV_PR_ERP_MedicationRequest."
@@ -147,6 +147,7 @@ Description: "ServiceRequest, which is used to request a recipe"
 //TODO: Test Prescription Invariants!
 
 //TODO: Wenn Organization referenziert aus SR:supportingInformation:pflegeeinrichtungKopie, dann muss kim adresse vorhanden sein
+// TODO: wenn status active oder completed dann basedOn vorhanden
 
 Invariant: servicerequest-prescription-request-1
 Description: "If the status is active, the requester must be present."

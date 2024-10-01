@@ -11,7 +11,7 @@
     "system": "urn:ietf:rfc:3986",
     "value": "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
   },
-  "timestamp": "2015-02-07T13:28:17.239+02:00",
+  "timestamp": "2025-05-13T15:32:12.239+02:00",
   "entry": [
     {
       "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/UC1-HealthCareService-to-Practitioner-MessageHeader-Storno",
@@ -61,6 +61,57 @@
       }
     },
     {
+      "fullUrl": "http://erp-servicerequest-test.de/Organization/Example-HealthCareService-Organization",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "Example-HealthCareService-Organization",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
+          ]
+        },
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "0301234567"
+              },
+              {
+                "system": "email",
+                "value": "arbeitsplatz-1@test-pflegeheim.kim.telematik"
+              }
+            ]
+          }
+        ],
+        "address": [
+          {
+            "type": "both",
+            "line": [
+              "Musterstr. 2"
+            ],
+            "_line": [
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                    "valueString": "2"
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                    "valueString": "Musterstr."
+                  }
+                ]
+              }
+            ],
+            "city": "Berlin",
+            "postalCode": "10623"
+          }
+        ],
+        "name": "Pflegeheim Immergrün"
+      }
+    },
+    {
       "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/UC1-Cancelled-Prescription-Request",
       "resource": {
         "resourceType": "ServiceRequest",
@@ -89,17 +140,11 @@
             }
           ]
         },
-        "basedOn": [
-          {
-            "reference": "MedicationRequest/Example-Initial-Medication-Request"
-          }
-        ],
-        "status": "revoked",
+        "status": "entered-in-error",
         "subject": {
           "reference": "Patient/Example-Patient"
         },
-        "occurrenceDateTime": "2023-02-01",
-        "authoredOn": "2023-01-27",
+        "authoredOn": "2025-05-13",
         "requester": {
           "reference": "Organization/Example-HealthCareService-Organization",
           "type": "PFL"
@@ -114,106 +159,87 @@
         ],
         "reasonCode": [
           {
-            "coding": [
-              {
-                "code": "exhausted-range",
-                "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-request-reason-cs"
-              }
-            ]
+            "text": "Falsche Medikation angefragt, neuer Antrag wird erstellt."
           }
         ],
         "note": [
           {
-            "text": "Medikament läuft am 31.01.2023 aus. Es sind noch 7 stk übrig.",
-            "time": "2025-01-16T12:23:12+02:00"
+            "text": "Sehr geehrter Herr Topp Glücklich,\n Wir möchten gerne die angehangene Medikation bei ihnen schnellstmöglich anfragen.",
+            "time": "2025-05-13T14:23:12+02:00"
+          },
+          {
+            "text": "Sehr geehrter Herr Topp Glücklich,\n Bitte entschuldigen Sie die vorherige anfrage, nach Möglichkeit bitte stornieren, eine neue Anfrage wird erstellt.",
+            "time": "2025-05-13T15:31:12+02:00"
           }
         ]
       }
     },
     {
-      "fullUrl": "http://erp-servicerequest-test.de/MedicationRequest/Example-Initial-Medication-Request",
+      "fullUrl": "http://erp-servicerequest-test.de/Patient/Example-Patient",
       "resource": {
-        "resourceType": "MedicationRequest",
-        "id": "Example-Initial-Medication-Request",
+        "resourceType": "Patient",
+        "id": "Example-Patient",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request"
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-patient"
           ]
         },
-        "dispenseRequest": {
-          "quantity": {
-            "system": "http://unitsofmeasure.org",
-            "code": "{Package}",
-            "value": 1
-          }
-        },
-        "status": "active",
-        "intent": "order",
-        "medicationReference": {
-          "reference": "Medication/Example-Initial-Medication"
-        },
-        "subject": {
-          "reference": "Patient/Example-Patient"
-        }
-      }
-    },
-    {
-      "fullUrl": "http://erp-servicerequest-test.de/Medication/Example-Initial-Medication",
-      "resource": {
-        "resourceType": "Medication",
-        "id": "Example-Initial-Medication",
-        "meta": {
-          "profile": [
-            "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.1.0"
-          ]
-        },
-        "extension": [
+        "name": [
           {
-            "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Medication_Type",
-            "valueCodeableConcept": {
-              "coding": [
+            "use": "official",
+            "family": "Königsstein",
+            "_family": {
+              "extension": [
                 {
-                  "system": "http://snomed.info/sct",
-                  "version": "http://snomed.info/sct/900000000000207008/version/20220331",
-                  "code": "763158003",
-                  "display": "Medicinal product (product)"
+                  "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+                  "valueString": "Königsstein"
                 }
               ]
-            }
-          },
-          {
-            "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Category",
-            "valueCoding": {
-              "code": "00",
-              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Category"
-            }
-          },
-          {
-            "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Vaccine",
-            "valueBoolean": false
-          },
-          {
-            "url": "http://fhir.de/StructureDefinition/normgroesse",
-            "valueCode": "N1"
+            },
+            "given": [
+              "Ludger"
+            ]
           }
         ],
-        "code": {
-          "coding": [
-            {
-              "system": "http://fhir.de/CodeSystem/ifa/pzn",
-              "code": "08585997"
-            }
-          ],
-          "text": "Prospan® Hustensaft 100ml"
-        },
-        "form": {
-          "coding": [
-            {
-              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM",
-              "code": "FLE"
-            }
-          ]
-        }
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
+                  "code": "GKV"
+                }
+              ]
+            },
+            "system": "http://fhir.de/sid/gkv/kvid-10",
+            "value": "X234567890"
+          }
+        ],
+        "address": [
+          {
+            "type": "both",
+            "line": [
+              "Musterstr. 1"
+            ],
+            "_line": [
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                    "valueString": "1"
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                    "valueString": "Musterstr."
+                  }
+                ]
+              }
+            ],
+            "city": "Berlin",
+            "postalCode": "10623"
+          }
+        ],
+        "birthDate": "1935-06-22"
       }
     }
   ]

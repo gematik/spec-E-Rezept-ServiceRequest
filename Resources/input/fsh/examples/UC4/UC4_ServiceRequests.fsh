@@ -22,7 +22,7 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * status = RequestStatus#active
 * intent = RequestIntent#order
 * code = ServiceRequestTypeCS#prescription-request
-* subject = Reference(Patient/Example-Patient)
+* subject = Reference(Example-Patient)
 * occurrenceDateTime = "2023-02-01"
 * authoredOn = "2023-01-27"
 * requester = Reference(Example-Pharmacy-Organization)

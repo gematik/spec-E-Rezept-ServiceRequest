@@ -47,14 +47,7 @@
         },
         "destination": [
           {
-            "receiver": {
-              "reference": "Organization/Example-HealthCareService-Organization",
-              "identifier": {
-                "system": "https://gematik.de/fhir/sid/telematik-id",
-                "value": "5-test-telematik-id"
-              },
-              "display": "Pflegeheim Immergrün"
-            },
+            "name": "Pflegeheim Immergrün",
             "endpoint": "healthcare-service@test.kim.de"
           }
         ],

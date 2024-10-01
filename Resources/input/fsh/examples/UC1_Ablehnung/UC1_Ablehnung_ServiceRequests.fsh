@@ -5,13 +5,14 @@ Usage: #inline
 Title: "Rejected Prescription Request"
 Description: "This ServiceRequest is sent initially to the prescribing practitioner"
 * identifier[requestId].value = "1"
-* basedOn = Reference(Example-Initial-Medication-Request)
 * requisition.value = "GroupID-UC1"
 * status = RequestStatus#revoked
 * intent = RequestIntent#order
 * code = ServiceRequestTypeCS#prescription-request
-* subject = Reference(Patient/Example-Patient)
-* occurrenceDateTime = "2023-02-01"
-* authoredOn = "2023-01-27"
-* note[+].text = "Hr. Müller braucht das Medikament nicht mehr"
-* note[=].time = "2025-01-16T12:23:12+02:00"
+* subject = Reference(Example-Patient)
+* authoredOn = "2025-05-13"
+* reasonCode.text = "Hr. Müller braucht das Medikament nicht mehr"
+* note[+].text = "Sehr geehrter Herr Topp Glücklich,\n Wir möchten gerne die angehangene Medikation bei ihnen schnellstmöglich anfragen."
+* note[=].time = "2025-05-13T14:23:12+02:00"
+* note[+].text = "Sehr geehrter Kollegen Immgergrün,\n Ihre Rezeptanforderung habe ich abgelehnt, siehe Grund."
+* note[=].time = "2025-05-13T16:12:54+02:00"

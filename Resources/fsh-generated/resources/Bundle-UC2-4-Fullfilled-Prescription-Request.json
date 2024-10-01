@@ -47,14 +47,7 @@
         },
         "destination": [
           {
-            "receiver": {
-              "reference": "Organization/Example-Pharmacy-Organization",
-              "identifier": {
-                "system": "https://gematik.de/fhir/sid/telematik-id",
-                "value": "3-test-telematik-id"
-              },
-              "display": "Test Apotheke"
-            },
+            "name": "Test Apotheke",
             "endpoint": "pharmacy@test.kim.dee"
           }
         ],
