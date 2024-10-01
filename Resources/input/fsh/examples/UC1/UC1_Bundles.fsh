@@ -1,6 +1,7 @@
 //TODO: Beispiel für mehrere Rezeptanfragen in einem Bundle
 //TODO: Beispiel für andere Medikation verschrieben (Flag)
-//TODO: Alle Beispiele durchgehen
+//TODO: Beispiel für Anfrage MVO
+// TODO: Beispiel mehrere Token
 
 Instance: UC1-1-Prescription-Request-To-Prescriber
 InstanceOf: ERPServiceRequestMessageContainer
@@ -9,20 +10,26 @@ Title: "Medication Request To Prescriber"
 Description: "Request sent to Prescriber to get a Prescription"
 * identifier.value = "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
 * timestamp = "2015-02-07T13:28:17.239+02:00"
+// Header
 * entry[0].fullUrl = "http://erp-servicerequest-test.de/MessageHeader/UC1-HealthCareService-to-Practitioner-MessageHeader"
 * entry[=].resource = UC1-HealthCareService-to-Practitioner-MessageHeader
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/Organization/Example-Practitioner-Organization"
+* entry[=].resource = Example-Practitioner-Organization
+
+// ServiceRequest
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/ServiceRequest/UC1-Initial-Prescription-Request"
 * entry[=].resource = UC1-Initial-Prescription-Request
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/MedicationRequest/Example-Initial-Medication-Request"
-* entry[=].resource = Example-Initial-Medication-Request
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/Medication/Example-Initial-Medication"
-* entry[=].resource = Example-Initial-Medication
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Patient/Example-Patient"
 * entry[=].resource = Example-Patient
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Organization/Example-HealthCareService-Organization"
 * entry[=].resource = Example-HealthCareService-Organization
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/Organization/Example-Practitioner-Organization"
-* entry[=].resource = Example-Practitioner-Organization
+
+//Medication Request
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/MedicationRequest/Example-Initial-Medication-Request"
+* entry[=].resource = Example-Initial-Medication-Request
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/Medication/Example-Initial-Medication"
+* entry[=].resource = Example-Initial-Medication
+
 
 Instance: UC1-2-Fullfilled-Prescription-Request
 InstanceOf: ERPServiceRequestMessageContainer

@@ -58,10 +58,6 @@
             "endpoint": "mailto:practitioner@test.kim.de"
           }
         ],
-        "eventCoding": {
-          "code": "eRezept_Rezeptanforderung;Rezeptanfrage_Storno",
-          "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
-        },
         "responsible": {
           "reference": "Organization/Example-Practitioner-Organization"
         }
@@ -161,15 +157,6 @@
         },
         "subject": {
           "reference": "Patient/Example-Patient"
-        },
-        "authoredOn": "2022-05-20",
-        "dosageInstruction": [
-          {
-            "text": "2mal tägl. 5ml"
-          }
-        ],
-        "substitution": {
-          "allowedBoolean": true
         }
       }
     },

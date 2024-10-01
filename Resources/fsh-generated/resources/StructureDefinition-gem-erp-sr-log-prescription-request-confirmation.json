@@ -360,9 +360,9 @@
         "id": "gem-erp-sr-log-prescription-request-confirmation.ERezeptToken",
         "path": "gem-erp-sr-log-prescription-request-confirmation.ERezeptToken",
         "short": "E-Rezept-Token",
-        "definition": "Token der für die Einlösung der Verordnung gebraucht wird. Angabe nach gemSpec_DM_eRp#A_19554.",
+        "definition": "Token der für die Einlösung der Verordnung gebraucht wird. Angabe nach gemSpec_DM_eRp#A_19554. Ein Arzt kann sich entscheiden für eine Anfrage mehrere Rezepte auszustellen, daher ist die Angabe von mehreren Token erlaubt",
         "min": 1,
-        "max": "1",
+        "max": "*",
         "type": [
           {
             "code": "string"

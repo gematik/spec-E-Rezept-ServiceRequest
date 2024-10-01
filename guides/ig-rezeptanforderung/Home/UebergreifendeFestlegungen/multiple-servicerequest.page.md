@@ -51,6 +51,8 @@ Eine Nachricht enthält:
 
 **Hinweis**: Mehrere **ServiceRequests** innerhalb einer Nachricht können denselben Identifier unter `ServiceRequest.requisition` haben. Diese Identifier können verwendet werden, um mehrere ServiceRequests einer einzelnen "Anfrage" zuzuordnen.
 
+**Hinweis**: Wenn ein Arzt mehrere Anfragen bekommt und einzelne davon ablehnen möchte ist das auf grundlage des einzelnen ServiceRequests möglich. Bestätigte ServiceRequest erhalten den Status `#completed` und abgelehnte Anfragen den Status `#revoked`.
+
 ## Beispiele
 
 Beispielhaft sollen stark vereinfacht zwei Szenarien als Klassendiagramm dargestellt werden, die die Kardinalitäten und Beziehungen in einem Bundle ausdrücken.

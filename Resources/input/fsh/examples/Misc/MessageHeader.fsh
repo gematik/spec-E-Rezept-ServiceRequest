@@ -14,8 +14,6 @@ RuleSet: HealthCareService-to-Practitioner(SR)
 * source.contact.value = "info@hcs.email"
 * source.endpoint = "mailto:healthcare-service@test.kim.de"
 
-//TODO: MessageHeader ändern .identifier = telematik-id und endpoint = kim-adresse
-
 RuleSet: Practitioner-to-HealthCareService(SR)
 * focus[+] = Reference(ServiceRequest/{SR})
 * sender.identifier = Hans-Topp-Glücklich-Identifier
@@ -122,11 +120,3 @@ RuleSet: Pharmacy2-to-Pharmacy1(SR)
 * destination.receiver.display = "Test Apotheke-2"
 * destination.endpoint = "mailto:pharmacy@test.kim.de"
 
-/*
-Instance: UC4-Pharmacy-to-Practitioner-MessageHeader
-InstanceOf: ERPServiceRequestRequestHeader
-Usage: #inline
-Title: "Pharmacy-to-Practitioner-MessageHeader"
-Description: "Message Header from Pharmacy to Practitioner"
-* insert HealthCareService-to-Practitioner(UC1-Initial-Prescription-Request)
-*/

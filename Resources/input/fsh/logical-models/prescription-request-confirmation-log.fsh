@@ -11,7 +11,7 @@ Description: "Fachliches Modell zur Beschreibung einer Bestätigung einer Rezept
 * obeys log-prescription-request-4
 
 // Administrative Informationen
-* ERezeptToken 1..1 string "E-Rezept-Token" "Token der für die Einlösung der Verordnung gebraucht wird. Angabe nach gemSpec_DM_eRp#A_19554."
+* ERezeptToken 1..* string "E-Rezept-Token" "Token der für die Einlösung der Verordnung gebraucht wird. Angabe nach gemSpec_DM_eRp#A_19554. Ein Arzt kann sich entscheiden für eine Anfrage mehrere Rezepte auszustellen, daher ist die Angabe von mehreren Token erlaubt"
   * obeys log-prescription-request-4
 
 * Status 1..1 code "Status" "Status der Anforderung. Wird genutzt, um den Bearbeitungsstand einer Anfrage zu verfolgen. Im Falle der Bestätigung der Rezeptanforderung wird eine Anfrage mit dem Status 'completed' geschickt."

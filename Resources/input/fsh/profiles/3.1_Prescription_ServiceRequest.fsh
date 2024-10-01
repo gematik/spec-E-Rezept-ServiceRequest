@@ -14,12 +14,13 @@ Description: "ServiceRequest, which is used to request a recipe"
 
 * extension MS
 * extension contains
-    EPrescriptionTokenEX named EPrescriptionToken 0..1 MS
+    EPrescriptionTokenEX named EPrescriptionToken 0..* MS
     and ChangedMedicationEX named medicationChanged 0..1 MS ?!
     and RedeemByPatientEX named redeemByPatient 0..1 MS ?!
 
 * extension[EPrescriptionTokenEX]
-  * ^short = "Here the e-prescription token can be made available for processing in a pharmacy."
+  * ^short = "Here the e-prescription token(s) can be made available for processing in a pharmacy."
+  * ^definition = "One ServiceRequest must adress exactly one request for a medication. However the practitioner might choose to issue multiple prescriptions for that request, therefore the cardinality is 1..*."
   * ^comment = "The token is of the form '/Task/{PrescriptionID}/$accept?ac={AccessCode}. See [gemSpec_DM_eRp](https://fachportal.gematik.de/fachportal-import/files/gemSpec_DM_eRp_V1.5.0.pdf)'."
 * extension[medicationChanged]
   * ^short = "Indicates whether the medication has been changed by the prescriber."

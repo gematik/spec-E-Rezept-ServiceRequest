@@ -69,6 +69,53 @@
       }
     },
     {
+      "fullUrl": "http://erp-servicerequest-test.de/Organization/Example-Practitioner-Organization",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "Example-Practitioner-Organization",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
+          ]
+        },
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "0307654321"
+              }
+            ]
+          }
+        ],
+        "address": [
+          {
+            "type": "both",
+            "line": [
+              "Musterarztstr. 3"
+            ],
+            "_line": [
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                    "valueString": "3"
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                    "valueString": "Musterarztstr."
+                  }
+                ]
+              }
+            ],
+            "city": "Berlin",
+            "postalCode": "10623"
+          }
+        ],
+        "name": "Test Arztpraxis"
+      }
+    },
+    {
       "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/UC1-Initial-Prescription-Request",
       "resource": {
         "resourceType": "ServiceRequest",
@@ -113,7 +160,8 @@
                 "code": "exhausted-range",
                 "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-request-reason-cs"
               }
-            ]
+            ],
+            "text": "Medikament läuft am 15.05.2025 aus. Es sind noch 7 stk übrig."
           }
         ],
         "basedOn": [
@@ -125,12 +173,13 @@
         "subject": {
           "reference": "Patient/Example-Patient"
         },
-        "occurrenceDateTime": "2023-02-01",
-        "authoredOn": "2023-01-27",
+        "occurrenceDateTime": "2025-05-14T12:00:00+02:00",
+        "authoredOn": "2025-05-13",
         "requester": {
           "reference": "Organization/Example-HealthCareService-Organization",
           "type": "PFL"
         },
+        "priority": "urgent",
         "performer": [
           {
             "identifier": {
@@ -141,105 +190,10 @@
         ],
         "note": [
           {
-            "text": "Medikament läuft am 31.01.2023 aus. Es sind noch 7 stk übrig.",
-            "time": "2025-01-16T12:23:12+02:00"
+            "text": "Sehr geehrter Herr Topp Glücklich,\n Wir möchten gerne die angehangene Medikation bei ihnen schnellstmöglich anfragen.",
+            "time": "2025-05-13T14:23:12+02:00"
           }
         ]
-      }
-    },
-    {
-      "fullUrl": "http://erp-servicerequest-test.de/MedicationRequest/Example-Initial-Medication-Request",
-      "resource": {
-        "resourceType": "MedicationRequest",
-        "id": "Example-Initial-Medication-Request",
-        "meta": {
-          "profile": [
-            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request"
-          ]
-        },
-        "dispenseRequest": {
-          "quantity": {
-            "system": "http://unitsofmeasure.org",
-            "code": "{Package}",
-            "value": 1
-          }
-        },
-        "status": "active",
-        "intent": "order",
-        "medicationReference": {
-          "reference": "Medication/Example-Initial-Medication"
-        },
-        "subject": {
-          "reference": "Patient/Example-Patient"
-        },
-        "authoredOn": "2022-05-20",
-        "dosageInstruction": [
-          {
-            "text": "2mal tägl. 5ml"
-          }
-        ],
-        "substitution": {
-          "allowedBoolean": true
-        }
-      }
-    },
-    {
-      "fullUrl": "http://erp-servicerequest-test.de/Medication/Example-Initial-Medication",
-      "resource": {
-        "resourceType": "Medication",
-        "id": "Example-Initial-Medication",
-        "meta": {
-          "profile": [
-            "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.1.0"
-          ]
-        },
-        "extension": [
-          {
-            "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Medication_Type",
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "http://snomed.info/sct",
-                  "version": "http://snomed.info/sct/900000000000207008/version/20220331",
-                  "code": "763158003",
-                  "display": "Medicinal product (product)"
-                }
-              ]
-            }
-          },
-          {
-            "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Category",
-            "valueCoding": {
-              "code": "00",
-              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Category"
-            }
-          },
-          {
-            "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Vaccine",
-            "valueBoolean": false
-          },
-          {
-            "url": "http://fhir.de/StructureDefinition/normgroesse",
-            "valueCode": "N1"
-          }
-        ],
-        "code": {
-          "coding": [
-            {
-              "system": "http://fhir.de/CodeSystem/ifa/pzn",
-              "code": "08585997"
-            }
-          ],
-          "text": "Prospan® Hustensaft 100ml"
-        },
-        "form": {
-          "coding": [
-            {
-              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM",
-              "code": "FLE"
-            }
-          ]
-        }
       }
     },
     {
@@ -362,50 +316,89 @@
       }
     },
     {
-      "fullUrl": "http://erp-servicerequest-test.de/Organization/Example-Practitioner-Organization",
+      "fullUrl": "http://erp-servicerequest-test.de/MedicationRequest/Example-Initial-Medication-Request",
       "resource": {
-        "resourceType": "Organization",
-        "id": "Example-Practitioner-Organization",
+        "resourceType": "MedicationRequest",
+        "id": "Example-Initial-Medication-Request",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request"
           ]
         },
-        "contact": [
+        "dispenseRequest": {
+          "quantity": {
+            "system": "http://unitsofmeasure.org",
+            "code": "{Package}",
+            "value": 1
+          }
+        },
+        "status": "active",
+        "intent": "order",
+        "medicationReference": {
+          "reference": "Medication/Example-Initial-Medication"
+        },
+        "subject": {
+          "reference": "Patient/Example-Patient"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://erp-servicerequest-test.de/Medication/Example-Initial-Medication",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "Example-Initial-Medication",
+        "meta": {
+          "profile": [
+            "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.1.0"
+          ]
+        },
+        "extension": [
           {
-            "telecom": [
-              {
-                "system": "phone",
-                "value": "0307654321"
-              }
-            ]
+            "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Medication_Type",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "version": "http://snomed.info/sct/900000000000207008/version/20220331",
+                  "code": "763158003",
+                  "display": "Medicinal product (product)"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Category",
+            "valueCoding": {
+              "code": "00",
+              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Category"
+            }
+          },
+          {
+            "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Vaccine",
+            "valueBoolean": false
+          },
+          {
+            "url": "http://fhir.de/StructureDefinition/normgroesse",
+            "valueCode": "N1"
           }
         ],
-        "address": [
-          {
-            "type": "both",
-            "line": [
-              "Musterarztstr. 3"
-            ],
-            "_line": [
-              {
-                "extension": [
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-                    "valueString": "3"
-                  },
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-                    "valueString": "Musterarztstr."
-                  }
-                ]
-              }
-            ],
-            "city": "Berlin",
-            "postalCode": "10623"
-          }
-        ],
-        "name": "Test Arztpraxis"
+        "code": {
+          "coding": [
+            {
+              "system": "http://fhir.de/CodeSystem/ifa/pzn",
+              "code": "08585997"
+            }
+          ],
+          "text": "Prospan® Hustensaft 100ml"
+        },
+        "form": {
+          "coding": [
+            {
+              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM",
+              "code": "FLE"
+            }
+          ]
+        }
       }
     }
   ]

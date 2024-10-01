@@ -75,10 +75,11 @@
         "id": "ServiceRequest.extension:EPrescriptionToken",
         "path": "ServiceRequest.extension",
         "sliceName": "EPrescriptionToken",
-        "short": "Here the e-prescription token can be made available for processing in a pharmacy.",
+        "short": "Here the e-prescription token(s) can be made available for processing in a pharmacy.",
+        "definition": "One ServiceRequest must adress exactly one request for a medication. However the practitioner might choose to issue multiple prescriptions for that request, therefore the cardinality is 1..*.",
         "comment": "The token is of the form '/Task/{PrescriptionID}/$accept?ac={AccessCode}. See [gemSpec_DM_eRp](https://fachportal.gematik.de/fachportal-import/files/gemSpec_DM_eRp_V1.5.0.pdf)'.",
         "min": 0,
-        "max": "1",
+        "max": "*",
         "type": [
           {
             "code": "Extension",

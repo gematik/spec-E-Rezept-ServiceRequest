@@ -26,12 +26,12 @@
         "source": {
           "contact": {
             "system": "email",
-            "value": "info@hcs.email"
+            "value": "info@pvs.email"
           },
-          "name": "HealthCare-Source",
-          "software": "HealthCare-Software",
+          "name": "Practitioner-Source",
+          "software": "Practitioner-Software",
           "version": "1.0.0",
-          "endpoint": "mailto:healthcare-service@test.kim.de"
+          "endpoint": "mailto:practitioner@test.kim.de"
         },
         "focus": [
           {
@@ -41,21 +41,21 @@
         "sender": {
           "identifier": {
             "system": "https://gematik.de/fhir/sid/telematik-id",
-            "value": "5-test-telematik-id"
+            "value": "1-test-telematik-id"
           },
-          "display": "Pflegeheim Immergrün"
+          "display": "Praxis Hans Topp-Glücklich"
         },
         "destination": [
           {
             "receiver": {
-              "reference": "Organization/Example-Practitioner-Organization",
+              "reference": "Organization/Example-HealthCareService-Organization",
               "identifier": {
                 "system": "https://gematik.de/fhir/sid/telematik-id",
-                "value": "1-test-telematik-id"
+                "value": "5-test-telematik-id"
               },
-              "display": "Praxis Hans Topp-Glücklich"
+              "display": "Pflegeheim Immergrün"
             },
-            "endpoint": "mailto:practitioner@test.kim.de"
+            "endpoint": "mailto:healthcare-service@test.kim.de"
           }
         ],
         "eventCoding": {
@@ -108,13 +108,23 @@
         "status": "completed",
         "basedOn": [
           {
-            "reference": "Example-Response-KBV-Prescription"
+            "reference": "MedicationRequest/Example-Response-Medication-Request"
           }
         ],
         "subject": {
           "reference": "Patient/Example-Patient"
         },
-        "authoredOn": "2023-01-28"
+        "authoredOn": "2025-05-13",
+        "note": [
+          {
+            "text": "Sehr geehrter Herr Topp Glücklich,\n Wir möchten gerne die angehangene Medikation bei ihnen anfragen.",
+            "time": "2025-05-13T12:23:12+02:00"
+          },
+          {
+            "text": "Sehr geehrte Damen und Herren,\n Wir haben alles entsprechend im Rezept hinterlegt. Es wurden 2 Packungen statt einer verschrieben.\n Mit kollegialen Grüßen,\n Topp Glücklich.",
+            "time": "2025-05-14T08:12:23+02:00"
+          }
+        ]
       }
     },
     {

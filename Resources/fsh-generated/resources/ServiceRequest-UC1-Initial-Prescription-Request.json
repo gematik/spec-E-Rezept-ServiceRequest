@@ -41,7 +41,8 @@
           "code": "exhausted-range",
           "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-request-reason-cs"
         }
-      ]
+      ],
+      "text": "Medikament läuft am 15.05.2025 aus. Es sind noch 7 stk übrig."
     }
   ],
   "basedOn": [
@@ -53,12 +54,13 @@
   "subject": {
     "reference": "Patient/Example-Patient"
   },
-  "occurrenceDateTime": "2023-02-01",
-  "authoredOn": "2023-01-27",
+  "occurrenceDateTime": "2025-05-14T12:00:00+02:00",
+  "authoredOn": "2025-05-13",
   "requester": {
     "reference": "Organization/Example-HealthCareService-Organization",
     "type": "PFL"
   },
+  "priority": "urgent",
   "performer": [
     {
       "identifier": {
@@ -69,8 +71,8 @@
   ],
   "note": [
     {
-      "text": "Medikament läuft am 31.01.2023 aus. Es sind noch 7 stk übrig.",
-      "time": "2025-01-16T12:23:12+02:00"
+      "text": "Sehr geehrter Herr Topp Glücklich,\n Wir möchten gerne die angehangene Medikation bei ihnen schnellstmöglich anfragen.",
+      "time": "2025-05-13T14:23:12+02:00"
     }
   ]
 }

@@ -26,12 +26,12 @@
         "source": {
           "contact": {
             "system": "email",
-            "value": "info@hcs.email"
+            "value": "info@avs.email"
           },
-          "name": "HealthCare-Source",
-          "software": "HealthCare-Software",
+          "name": "Pharmacy-Source",
+          "software": "Pharmacy-Software",
           "version": "1.0.0",
-          "endpoint": "mailto:healthcare-service@test.kim.de"
+          "endpoint": "mailto:pharmacy@test.kim.de"
         },
         "focus": [
           {
@@ -41,21 +41,21 @@
         "sender": {
           "identifier": {
             "system": "https://gematik.de/fhir/sid/telematik-id",
-            "value": "5-test-telematik-id"
+            "value": "3-test-telematik-id"
           },
-          "display": "Pflegeheim Immergrün"
+          "display": "Test Apotheke"
         },
         "destination": [
           {
             "receiver": {
-              "reference": "Organization/Example-Practitioner-Organization",
+              "reference": "Organization/Example-HealthCareService-Organization",
               "identifier": {
                 "system": "https://gematik.de/fhir/sid/telematik-id",
-                "value": "1-test-telematik-id"
+                "value": "5-test-telematik-id"
               },
-              "display": "Praxis Hans Topp-Glücklich"
+              "display": "Pflegeheim Immergrün"
             },
-            "endpoint": "mailto:practitioner@test.kim.de"
+            "endpoint": "mailto:healthcare-service@test.kim.de"
           }
         ],
         "eventCoding": {
@@ -99,7 +99,7 @@
         "supportingInfo": [
           {
             "type": "MedicationDispense",
-            "reference": "UC1-Medication-Dispense"
+            "reference": "MedicationDispense/UC1-Medication-Dispense"
           },
           {
             "type": "Medication",
@@ -110,7 +110,17 @@
         "subject": {
           "reference": "Patient/Example-Patient"
         },
-        "authoredOn": "2023-01-29"
+        "authoredOn": "2025-05-14",
+        "note": [
+          {
+            "text": "Sehr geehrter Kollegen der Test Apotheke,\n Anbei das E-Rezept, was wir bitte schnellstmöglich beliefert bekommen möchten.",
+            "time": "2025-05-14T08:22:05+02:00"
+          },
+          {
+            "text": "Sehr geehrter Kollegen des Pflegeheim Immgergrün,\n Die Arzneimittel lagern vor Ort. Anbei, was wir bis 13:00 heute per Botendienst liefern werden..",
+            "time": "2025-05-14T08:27:05+02:00"
+          }
+        ]
       }
     },
     {

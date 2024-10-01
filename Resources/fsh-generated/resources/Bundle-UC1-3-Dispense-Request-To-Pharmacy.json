@@ -48,14 +48,14 @@
         "destination": [
           {
             "receiver": {
-              "reference": "Organization/Example-Practitioner-Organization",
+              "reference": "Organization/Example-Pharmacy-Organization",
               "identifier": {
                 "system": "https://gematik.de/fhir/sid/telematik-id",
-                "value": "1-test-telematik-id"
+                "value": "3-test-telematik-id"
               },
-              "display": "Praxis Hans Topp-Glücklich"
+              "display": "Test Apotheke"
             },
-            "endpoint": "mailto:practitioner@test.kim.de"
+            "endpoint": "mailto:pharmacy@test.kim.de"
           }
         ],
         "eventCoding": {
@@ -113,7 +113,14 @@
         "subject": {
           "reference": "Patient/Example-Patient"
         },
-        "authoredOn": "2023-01-28"
+        "authoredOn": "2025-05-14",
+        "priority": "urgent",
+        "note": [
+          {
+            "text": "Sehr geehrter Kollegen der Test Apotheke,\n Anbei das E-Rezept, was wir bitte schnellstmöglich beliefert bekommen möchten.",
+            "time": "2025-05-14T08:22:05+02:00"
+          }
+        ]
       }
     }
   ]
