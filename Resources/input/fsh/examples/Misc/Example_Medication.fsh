@@ -15,6 +15,18 @@ Usage: #inline
 * code.text = "Prospan® Hustensaft 100ml"
 * form = https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM#FLE
 
+Instance: Example-Initial-Medication-2
+InstanceOf: $KBV_PR_ERP_Medication_PZN
+Usage: #inline
+* meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.1.0"
+* extension[Kategorie].valueCodeableConcept.coding = http://snomed.info/sct#763158003 "Medicinal product (product)"
+* extension[Arzneimittelkategorie].valueCoding = https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Category#00
+* extension[Impfstoff].valueBoolean = false
+* extension[Normgroesse].valueCode = #N1
+* code = http://fhir.de/CodeSystem/ifa/pzn#02483617
+* code.text = "Buscopan PLUS 20 St"
+* form = https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM#FTA
+
 Instance: Example-Zyto-Medication
 InstanceOf: $KBV_PR_ERP_Medication_Compounding
 Usage: #inline

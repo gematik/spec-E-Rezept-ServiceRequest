@@ -7,6 +7,15 @@ Usage: #example
 * subject = Reference(Example-Patient)
 * dispenseRequest.quantity = 1 '{Package}'
 
+Instance: Example-Initial-Medication-Request-2
+InstanceOf: ERPServiceRequestMedicationRequest
+Usage: #inline
+* status = #active
+* intent = #order
+* medicationReference = Reference(Example-Initial-Medication-2)
+* subject = Reference(Example-Patient-2)
+* dispenseRequest.quantity = 2 '{Package}'
+
 Instance: Example-Response-Medication-Request
 InstanceOf: ERPServiceRequestMedicationRequest
 Usage: #example

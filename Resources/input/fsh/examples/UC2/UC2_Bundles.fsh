@@ -1,4 +1,3 @@
-
 Instance: UC2-1-Prescription-Request-To-HealthCareService
 InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example

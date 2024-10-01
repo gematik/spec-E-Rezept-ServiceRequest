@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "id": "UC1-Rejection-Of-Prescriber",
+  "id": "UC1-MULTI-2-Response-Prescription-Request-2",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
@@ -11,13 +11,13 @@
     "system": "urn:ietf:rfc:3986",
     "value": "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
   },
-  "timestamp": "2025-05-13T16:15:54.239+02:00",
+  "timestamp": "2025-05-14T08:15:12+02:00",
   "entry": [
     {
-      "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/UC1-Practitioner-to-HealthCareService-MessageHeader-Storno",
+      "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/UC1-MULTI-Practitioner-to-HealthCareService-MessageHeader",
       "resource": {
         "resourceType": "MessageHeader",
-        "id": "UC1-Practitioner-to-HealthCareService-MessageHeader-Rejection",
+        "id": "UC1-MULTI-Practitioner-to-HealthCareService-MessageHeader-2",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
@@ -26,33 +26,33 @@
         "source": {
           "contact": {
             "system": "email",
-            "value": "info@practitioner.email"
+            "value": "info@pvs.email"
           },
           "name": "Practitioner-Source",
           "software": "Practitioner-Software",
           "version": "1.0.0",
-          "endpoint": "http://practitioner.endpoint"
+          "endpoint": "practitioner@test.kim.de"
         },
         "focus": [
           {
-            "reference": "ServiceRequest/UC1-Rejection-Prescription-Request"
+            "reference": "ServiceRequest/UC1-Response-Prescription-Request"
           }
         ],
         "sender": {
           "identifier": {
             "system": "https://gematik.de/fhir/sid/telematik-id",
-            "value": "5-test-telematik-id"
+            "value": "1-test-telematik-id"
           },
-          "display": "Pflegeheim Immergrün"
+          "display": "Praxis Hans Topp-Glücklich"
         },
         "destination": [
           {
-            "name": "Praxis Hans Topp-Glücklich",
-            "endpoint": "practitioner@test.kim.de"
+            "name": "Pflegeheim Immergrün",
+            "endpoint": "healthcare-service@test.kim.de"
           }
         ],
         "eventCoding": {
-          "code": "eRezept_Rezeptanforderung;Rezeptanfrage_Ablehnung",
+          "code": "eRezept_Rezeptanforderung;Rezeptanfrage_Storno",
           "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
         },
         "responsible": {
@@ -108,10 +108,10 @@
       }
     },
     {
-      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequestUC1-Rejection-Prescription-Request",
+      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/UC1-MULTI-Response-Prescription-Request",
       "resource": {
         "resourceType": "ServiceRequest",
-        "id": "UC1-Rejection-Prescription-Request",
+        "id": "UC1-MULTI-Response-Prescription-Request-2",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
@@ -121,7 +121,7 @@
         "identifier": [
           {
             "system": "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier",
-            "value": "1"
+            "value": "2"
           }
         ],
         "requisition": {
@@ -143,17 +143,17 @@
         "authoredOn": "2025-05-13",
         "reasonCode": [
           {
-            "text": "Hr. Königsstein braucht das Medikament nicht mehr"
+            "text": "Hr. Edgarson braucht das Buscopan nicht mehr, wird abgesetzt und aus dem Medkationsplan entfernt."
           }
         ],
         "note": [
           {
-            "text": "Sehr geehrter Herr Topp Glücklich,\n Wir möchten gerne die angehangene Medikation bei ihnen schnellstmöglich anfragen.",
-            "time": "2025-05-13T14:23:12+02:00"
+            "text": "Sehr geehrter Herr Topp Glücklich,\n Wir möchten gerne die angehangene Medikation bei ihnen anfragen.",
+            "time": "2025-05-13T12:23:12+02:00"
           },
           {
-            "text": "Sehr geehrter Kollegen Immgergrün,\n Ihre Rezeptanforderung habe ich abgelehnt, siehe Grund.",
-            "time": "2025-05-13T16:12:54+02:00"
+            "text": "Sehr geehrte Damen und Herren,\n Die Rezeptanfrage wurde abgelehnt, s. Grund.",
+            "time": "2025-05-14T08:12:23+02:00"
           }
         ]
       }
@@ -162,7 +162,7 @@
       "fullUrl": "http://erp-servicerequest-test.de/Patient/Example-Patient",
       "resource": {
         "resourceType": "Patient",
-        "id": "Example-Patient",
+        "id": "Example-Patient-2",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-patient"
@@ -171,17 +171,17 @@
         "name": [
           {
             "use": "official",
-            "family": "Königsstein",
+            "family": "Edgarson",
             "_family": {
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
-                  "valueString": "Königsstein"
+                  "valueString": "Edgarson"
                 }
               ]
             },
             "given": [
-              "Ludger"
+              "Peter"
             ]
           }
         ],
@@ -196,34 +196,34 @@
               ]
             },
             "system": "http://fhir.de/sid/gkv/kvid-10",
-            "value": "X234567890"
+            "value": "X098765432"
           }
         ],
         "address": [
           {
             "type": "both",
             "line": [
-              "Musterstr. 1"
+              "Erikastraße 43"
             ],
             "_line": [
               {
                 "extension": [
                   {
                     "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-                    "valueString": "1"
+                    "valueString": "43"
                   },
                   {
                     "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-                    "valueString": "Musterstr."
+                    "valueString": "Erikastraße"
                   }
                 ]
               }
             ],
             "city": "Berlin",
-            "postalCode": "10623"
+            "postalCode": "10742"
           }
         ],
-        "birthDate": "1935-06-22"
+        "birthDate": "1974-01-31"
       }
     }
   ]
