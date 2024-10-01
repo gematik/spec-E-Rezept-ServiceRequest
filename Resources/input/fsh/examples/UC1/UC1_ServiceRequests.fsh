@@ -32,7 +32,7 @@ Title: "Completed Response Prescription Request"
 Description: "ServiceRequest that is returned to the requester"
 * identifier[requestId].value = "1"
 * requisition.value = "GroupID-UC1"
-* extension[EPrescriptionToken].valueIdentifier.value = "Task/160.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
+* extension[EPrescriptionToken].valueIdentifier.value = "Task/169.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
 * status = RequestStatus#completed
 * basedOn = Reference(Example-Response-Medication-Request)
 * subject = Reference(Example-Patient)
@@ -50,7 +50,7 @@ InstanceOf: ERPServiceRequestDispenseRequest
 Usage: #inline
 Title: "Initial Dispense Request"
 Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
-* extension[EPrescriptionToken].valueIdentifier.value = "Task/160.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
+* extension[EPrescriptionToken].valueIdentifier.value = "Task/169.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
 * identifier[requestId].value = "2"
 * requisition.value = "GroupID-UC1"
 * status = RequestStatus#active

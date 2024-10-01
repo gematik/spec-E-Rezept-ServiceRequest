@@ -121,18 +121,18 @@
         "identifier": [
           {
             "system": "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier",
-            "value": "1"
+            "value": "multi-1"
           }
         ],
         "requisition": {
           "system": "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier",
-          "value": "GroupID-UC1"
+          "value": "GroupID-UC1-MULTI"
         },
         "extension": [
           {
             "valueIdentifier": {
               "system": "https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken",
-              "value": "Task/160.100.000.000.543.72/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
+              "value": "Task/169.100.000.000.543.72/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
             },
             "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex"
           }

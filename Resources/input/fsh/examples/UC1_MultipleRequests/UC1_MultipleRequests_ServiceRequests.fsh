@@ -4,9 +4,9 @@ InstanceOf: ERPServiceRequestPrescriptionRequest
 Usage: #example
 Title: "Initial Prescription Request Mutli 1"
 Description: "This ServiceRequest is sent initially to the prescribing practitioner"
-* identifier[requestId].value = "1"
+* identifier[requestId].value = "multi-1"
 * basedOn = Reference(Example-Initial-Medication-Request)
-* requisition.value = "GroupID-UC1"
+* requisition.value = "GroupID-UC1-MULTI"
 * status = RequestStatus#active
 * intent = RequestIntent#order
 * code = ServiceRequestTypeCS#prescription-request
@@ -21,9 +21,9 @@ InstanceOf: ERPServiceRequestPrescriptionRequest
 Usage: #example
 Title: "Initial Prescription Request Multi 2"
 Description: "This ServiceRequest is sent initially to the prescribing practitioner"
-* identifier[requestId].value = "2"
+* identifier[requestId].value = "multi-2"
 * basedOn = Reference(Example-Initial-Medication-Request-2)
-* requisition.value = "GroupID-UC1"
+* requisition.value = "GroupID-UC1-MULTI"
 * status = RequestStatus#active
 * intent = RequestIntent#order
 * code = ServiceRequestTypeCS#prescription-request
@@ -38,9 +38,9 @@ InstanceOf: ERPServiceRequestPrescriptionRequest
 Usage: #inline
 Title: "Completed Response Prescription Request"
 Description: "ServiceRequest that is returned to the requester"
-* identifier[requestId].value = "1"
-* requisition.value = "GroupID-UC1"
-* extension[EPrescriptionToken].valueIdentifier.value = "Task/160.100.000.000.543.72/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
+* identifier[requestId].value = "multi-1"
+* requisition.value = "GroupID-UC1-MULTI"
+* extension[EPrescriptionToken].valueIdentifier.value = "Task/169.100.000.000.543.72/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
 * status = RequestStatus#completed
 * basedOn = Reference(Example-Response-Medication-Request)
 * subject = Reference(Example-Patient)
@@ -57,8 +57,8 @@ InstanceOf: ERPServiceRequestPrescriptionRequest
 Usage: #inline
 Title: "Completed Response Prescription Request"
 Description: "ServiceRequest that is returned to the requester"
-* identifier[requestId].value = "2"
-* requisition.value = "GroupID-UC1"
+* identifier[requestId].value = "multi-2"
+* requisition.value = "GroupID-UC1-MULTI"
 * status = RequestStatus#revoked
 * subject = Reference(Example-Patient)
 * authoredOn = "2025-05-13"

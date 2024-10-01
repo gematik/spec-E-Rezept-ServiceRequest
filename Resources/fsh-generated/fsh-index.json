@@ -72,44 +72,20 @@
     "endLine": 17
   },
   {
-    "outputFile": "Bundle-UC2-1-Prescription-Request-To-HealthCareService.json",
-    "fshName": "UC2-1-Prescription-Request-To-HealthCareService",
+    "outputFile": "Bundle-UC2-1-Prescription-Request-To-Prescriber.json",
+    "fshName": "UC2-1-Prescription-Request-To-Prescriber",
     "fshType": "Instance",
     "fshFile": "examples/UC2/UC2_Bundles.fsh",
     "startLine": 1,
-    "endLine": 15
+    "endLine": 26
   },
   {
-    "outputFile": "Bundle-UC2-2-Prescription-Request-To-Prescriber.json",
-    "fshName": "UC2-2-Prescription-Request-To-Prescriber",
+    "outputFile": "Bundle-UC2-2-Fullfilled-Prescription-Request.json",
+    "fshName": "UC2-2-Fullfilled-Prescription-Request",
     "fshType": "Instance",
     "fshFile": "examples/UC2/UC2_Bundles.fsh",
-    "startLine": 17,
-    "endLine": 31
-  },
-  {
-    "outputFile": "Bundle-UC2-3-Fullfilled-Prescription-Request.json",
-    "fshName": "UC2-3-Fullfilled-Prescription-Request",
-    "fshType": "Instance",
-    "fshFile": "examples/UC2/UC2_Bundles.fsh",
-    "startLine": 33,
-    "endLine": 45
-  },
-  {
-    "outputFile": "Bundle-UC2-4-Fullfilled-Prescription-Request.json",
-    "fshName": "UC2-4-Fullfilled-Prescription-Request",
-    "fshType": "Instance",
-    "fshFile": "examples/UC2/UC2_Bundles.fsh",
-    "startLine": 47,
-    "endLine": 59
-  },
-  {
-    "outputFile": "Bundle-UC2-5-Fullfilled-DispenseRequest-To-HealthCareService.json",
-    "fshName": "UC2-5-Fullfilled-DispenseRequest-To-HealthCareService",
-    "fshType": "Instance",
-    "fshFile": "examples/UC2/UC2_Bundles.fsh",
-    "startLine": 61,
-    "endLine": 73
+    "startLine": 29,
+    "endLine": 52
   },
   {
     "outputFile": "Bundle-UC3-1-Prescription-Request-To-Prescriber.json",
@@ -224,6 +200,14 @@
     "endLine": 9
   },
   {
+    "outputFile": "MessageHeader-UC2-HealthCareService-to-Practitioner-MessageHeader.json",
+    "fshName": "UC2-HealthCareService-to-Practitioner-MessageHeader",
+    "fshType": "Instance",
+    "fshFile": "examples/UC2/UC2_MessageHeader.fsh",
+    "startLine": 1,
+    "endLine": 8
+  },
+  {
     "outputFile": "NamingSystem-NamingSystemEPrescriptionToken.json",
     "fshName": "NamingSystemEPrescriptionToken",
     "fshType": "Instance",
@@ -278,6 +262,14 @@
     "fshFile": "examples/UC1_MultipleRequests/UC1_MultipleRequests_ServiceRequests.fsh",
     "startLine": 19,
     "endLine": 34
+  },
+  {
+    "outputFile": "ServiceRequest-UC2-Initial-Prescription-Request.json",
+    "fshName": "UC2-Initial-Prescription-Request",
+    "fshType": "Instance",
+    "fshFile": "examples/UC2/UC2_ServiceRequests.fsh",
+    "startLine": 2,
+    "endLine": 20
   },
   {
     "outputFile": "StructureDefinition-changed-medication-ex.json",

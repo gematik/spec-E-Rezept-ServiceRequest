@@ -10,12 +10,12 @@
   "identifier": [
     {
       "system": "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier",
-      "value": "1"
+      "value": "multi-1"
     }
   ],
   "requisition": {
     "system": "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier",
-    "value": "GroupID-UC1"
+    "value": "GroupID-UC1-MULTI"
   },
   "code": {
     "coding": [

@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "id": "UC1-MULTI-1-Prescription-Request-To-Prescriber",
+  "id": "UC2-1-Prescription-Request-To-Prescriber",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
@@ -14,10 +14,10 @@
   "timestamp": "2025-05-13T14:25:12+02:00",
   "entry": [
     {
-      "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/UC1-MULTI-HealthCareService-to-Practitioner-MessageHeader",
+      "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/UC2-HealthCareService-to-Practitioner-MessageHeader",
       "resource": {
         "resourceType": "MessageHeader",
-        "id": "UC1-MULTI-HealthCareService-to-Practitioner-MessageHeader",
+        "id": "UC2-HealthCareService-to-Practitioner-MessageHeader",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
@@ -35,10 +35,7 @@
         },
         "focus": [
           {
-            "reference": "ServiceRequest/UC1-MULTI-Initial-Prescription-Request-1"
-          },
-          {
-            "reference": "ServiceRequest/UC1-MULTI-Initial-Prescription-Request-2"
+            "reference": "ServiceRequest/UC2-Initial-Prescription-Request"
           }
         ],
         "sender": {
@@ -116,10 +113,10 @@
       }
     },
     {
-      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/UC1-MULTI-Initial-Prescription-Request-1",
+      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/UC2-Initial-Prescription-Request",
       "resource": {
         "resourceType": "ServiceRequest",
-        "id": "UC1-MULTI-Initial-Prescription-Request-1",
+        "id": "UC2-Initial-Prescription-Request",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
@@ -129,13 +126,19 @@
         "identifier": [
           {
             "system": "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier",
-            "value": "multi-1"
+            "value": "1"
           }
         ],
         "requisition": {
           "system": "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier",
-          "value": "GroupID-UC1-MULTI"
+          "value": "GroupID-UC2"
         },
+        "extension": [
+          {
+            "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/prescription-id-ex",
+            "valueBoolean": true
+          }
+        ],
         "code": {
           "coding": [
             {
@@ -165,58 +168,11 @@
               "value": "1-test-telematik-id"
             }
           }
-        ]
-      }
-    },
-    {
-      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/UC1-MULTI-Initial-Prescription-Request-1",
-      "resource": {
-        "resourceType": "ServiceRequest",
-        "id": "UC1-MULTI-Initial-Prescription-Request-2",
-        "meta": {
-          "profile": [
-            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
-          ]
-        },
-        "intent": "order",
-        "identifier": [
-          {
-            "system": "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier",
-            "value": "multi-2"
-          }
         ],
-        "requisition": {
-          "system": "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier",
-          "value": "GroupID-UC1-MULTI"
-        },
-        "code": {
-          "coding": [
-            {
-              "code": "prescription-request",
-              "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
-            }
-          ]
-        },
-        "basedOn": [
+        "note": [
           {
-            "reference": "MedicationRequest/Example-Initial-Medication-Request-2"
-          }
-        ],
-        "status": "active",
-        "subject": {
-          "reference": "Patient/Example-Patient-2"
-        },
-        "authoredOn": "2025-05-13",
-        "requester": {
-          "reference": "Organization/Example-HealthCareService-Organization",
-          "type": "PFL"
-        },
-        "performer": [
-          {
-            "identifier": {
-              "system": "https://gematik.de/fhir/sid/telematik-id",
-              "value": "1-test-telematik-id"
-            }
+            "text": "Sehr geehrter Herr Topp Glücklich,\n Anbei folgende Rezeptanfrage zur Einlösung von Herrn Königsstein.",
+            "time": "2025-05-13T14:23:12+02:00"
           }
         ]
       }
@@ -287,74 +243,6 @@
           }
         ],
         "birthDate": "1935-06-22"
-      }
-    },
-    {
-      "fullUrl": "http://erp-servicerequest-test.de/Patient/Example-Patient-2",
-      "resource": {
-        "resourceType": "Patient",
-        "id": "Example-Patient-2",
-        "meta": {
-          "profile": [
-            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-patient"
-          ]
-        },
-        "name": [
-          {
-            "use": "official",
-            "family": "Edgarson",
-            "_family": {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
-                  "valueString": "Edgarson"
-                }
-              ]
-            },
-            "given": [
-              "Peter"
-            ]
-          }
-        ],
-        "identifier": [
-          {
-            "type": {
-              "coding": [
-                {
-                  "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
-                  "code": "GKV"
-                }
-              ]
-            },
-            "system": "http://fhir.de/sid/gkv/kvid-10",
-            "value": "X098765432"
-          }
-        ],
-        "address": [
-          {
-            "type": "both",
-            "line": [
-              "Erikastraße 43"
-            ],
-            "_line": [
-              {
-                "extension": [
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-                    "valueString": "43"
-                  },
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-                    "valueString": "Erikastraße"
-                  }
-                ]
-              }
-            ],
-            "city": "Berlin",
-            "postalCode": "10742"
-          }
-        ],
-        "birthDate": "1974-01-31"
       }
     },
     {
@@ -489,92 +377,6 @@
             {
               "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM",
               "code": "FLE"
-            }
-          ]
-        }
-      }
-    },
-    {
-      "fullUrl": "http://erp-servicerequest-test.de/MedicationRequest/Example-Initial-Medication-Request-2",
-      "resource": {
-        "resourceType": "MedicationRequest",
-        "id": "Example-Initial-Medication-Request-2",
-        "meta": {
-          "profile": [
-            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request"
-          ]
-        },
-        "dispenseRequest": {
-          "quantity": {
-            "system": "http://unitsofmeasure.org",
-            "code": "{Package}",
-            "value": 2
-          }
-        },
-        "status": "active",
-        "intent": "order",
-        "medicationReference": {
-          "reference": "Medication/Example-Initial-Medication-2"
-        },
-        "subject": {
-          "reference": "Patient/Example-Patient-2"
-        }
-      }
-    },
-    {
-      "fullUrl": "http://erp-servicerequest-test.de/Medication/Example-Initial-Medication-2",
-      "resource": {
-        "resourceType": "Medication",
-        "id": "Example-Initial-Medication-2",
-        "meta": {
-          "profile": [
-            "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.1.0"
-          ]
-        },
-        "extension": [
-          {
-            "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Medication_Type",
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "http://snomed.info/sct",
-                  "version": "http://snomed.info/sct/900000000000207008/version/20220331",
-                  "code": "763158003",
-                  "display": "Medicinal product (product)"
-                }
-              ]
-            }
-          },
-          {
-            "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Category",
-            "valueCoding": {
-              "code": "00",
-              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Category"
-            }
-          },
-          {
-            "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Vaccine",
-            "valueBoolean": false
-          },
-          {
-            "url": "http://fhir.de/StructureDefinition/normgroesse",
-            "valueCode": "N1"
-          }
-        ],
-        "code": {
-          "coding": [
-            {
-              "system": "http://fhir.de/CodeSystem/ifa/pzn",
-              "code": "02483617"
-            }
-          ],
-          "text": "Buscopan PLUS 20 St"
-        },
-        "form": {
-          "coding": [
-            {
-              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM",
-              "code": "FTA"
             }
           ]
         }

@@ -1,6 +1,6 @@
 {
   "resourceType": "ServiceRequest",
-  "id": "UC1-MULTI-Initial-Prescription-Request-2",
+  "id": "UC2-Initial-Prescription-Request",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
@@ -10,13 +10,19 @@
   "identifier": [
     {
       "system": "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier",
-      "value": "multi-2"
+      "value": "1"
     }
   ],
   "requisition": {
     "system": "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier",
-    "value": "GroupID-UC1-MULTI"
+    "value": "GroupID-UC2"
   },
+  "extension": [
+    {
+      "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/prescription-id-ex",
+      "valueBoolean": true
+    }
+  ],
   "code": {
     "coding": [
       {
@@ -27,12 +33,12 @@
   },
   "basedOn": [
     {
-      "reference": "MedicationRequest/Example-Initial-Medication-Request-2"
+      "reference": "MedicationRequest/Example-Initial-Medication-Request"
     }
   ],
   "status": "active",
   "subject": {
-    "reference": "Patient/Example-Patient-2"
+    "reference": "Patient/Example-Patient"
   },
   "authoredOn": "2025-05-13",
   "requester": {
@@ -45,6 +51,12 @@
         "system": "https://gematik.de/fhir/sid/telematik-id",
         "value": "1-test-telematik-id"
       }
+    }
+  ],
+  "note": [
+    {
+      "text": "Sehr geehrter Herr Topp Glücklich,\n Anbei folgende Rezeptanfrage zur Einlösung von Herrn Königsstein.",
+      "time": "2025-05-13T14:23:12+02:00"
     }
   ]
 }
