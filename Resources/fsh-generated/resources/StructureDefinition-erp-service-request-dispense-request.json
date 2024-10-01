@@ -228,7 +228,7 @@
         "id": "ServiceRequest.requester",
         "path": "ServiceRequest.requester",
         "short": "Inquiring facility or practitioner.",
-        "comment": "The KIM address is already stored in the message header. Therefore, the preferred specification is to store a KBV_PR_FOR_Practitioner.",
+        "comment": "The KIM address is already stored in the message header.",
         "type": [
           {
             "code": "Reference",

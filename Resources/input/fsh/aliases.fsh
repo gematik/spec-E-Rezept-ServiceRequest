@@ -1,9 +1,5 @@
 Alias: $UNITSOFMEASURE = http://unitsofmeasure.org
 
-Alias: $KBV_PR_FOR_Patient = https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient
-Alias: $KBV_PR_FOR_Practitioner = https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner
-Alias: $KBV_PR_FOR_Coverage = https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Coverage
-
 Alias: $KBV_PR_Base_Organization = https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization
 
 Alias: $KBV_PR_ERP_Medication_Compounding = https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_Compounding

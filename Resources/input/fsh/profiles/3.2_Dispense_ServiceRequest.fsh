@@ -65,7 +65,7 @@ Description: "ServiceRequest that is used to supply a recipe"
 * requester 0..1 MS
 * requester only Reference(ERPServiceRequestOrganization)
   * ^short = "Inquiring facility or practitioner."
-  * ^comment = "The KIM address is already stored in the message header. Therefore, the preferred specification is to store a KBV_PR_FOR_Practitioner."
+  * ^comment = "The KIM address is already stored in the message header."
 
 * requester.type 1..1 MS
 * requester.type = #PFL (exactly)
