@@ -17,7 +17,6 @@ Alias: $GEM_ERP_PR_MedicationDispense = https://gematik.de/fhir/erp/StructureDef
 Alias: $GEM_PR_ATF_MessageBundle = https://gematik.de/fhir/atf/StructureDefinition/bundle-app-transport-framework
 Alias: $GEM_PR_ATF_MessageHeader = https://gematik.de/fhir/atf/StructureDefinition/message-header-app-transport
 
-Alias: $IHEXDShealthcareFacilityTypeCode = http://ihe-d.de/ValueSets/IHEXDShealthcareFacilityTypeCode
 Alias: $CSIHEPatientBezogenenGesundheitsversorgung = http://ihe-d.de/CodeSystems/PatientBezogenenGesundheitsversorgung
 
 // Alias für Beispiele

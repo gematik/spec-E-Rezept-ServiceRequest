@@ -14,7 +14,6 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * occurrenceDateTime = "2025-05-14T12:00:00+02:00"
 * authoredOn = "2025-05-13"
 * requester = Reference(Example-HealthCareService-Organization)
-* requester.type = #PFL
 * priority = #urgent
 * performer.identifier = Hans-Topp-Glücklich-Identifier
 * reasonCode = MedicationRequestReasonCS#exhausted-range
@@ -58,7 +57,6 @@ Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
 * subject = Reference(Example-Patient)
 * code = ServiceRequestTypeCS#dispense-request
 * requester = Reference(Example-HealthCareService-Organization)
-* requester.type = #PFL
 * authoredOn = "2025-05-14"
 * priority = #urgent
 * note[+].text = "Sehr geehrter Kollegen der Test Apotheke,\n Anbei das E-Rezept, was wir bitte schnellstmöglich beliefert bekommen möchten."

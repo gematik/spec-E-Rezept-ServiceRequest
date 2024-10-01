@@ -36,8 +36,7 @@
   },
   "authoredOn": "2025-05-13",
   "requester": {
-    "reference": "Organization/Example-HealthCareService-Organization",
-    "type": "PFL"
+    "reference": "Organization/Example-HealthCareService-Organization"
   },
   "performer": [
     {

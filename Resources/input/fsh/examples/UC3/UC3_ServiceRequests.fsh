@@ -13,7 +13,6 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * subject = Reference(Example-Patient)
 * authoredOn = "2025-05-13"
 * requester = Reference(Example-Pharmacy-Organization)
-* requester.type = #APO
 * performer.identifier = Hans-Topp-Glücklich-Identifier
 
 Instance: UC3-Response-Prescription-Request

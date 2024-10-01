@@ -70,6 +70,17 @@
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
           ]
         },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihe-d.de/CodeSystems/PatientBezogenenGesundheitsversorgung",
+                "code": "APO",
+                "display": "Apotheke"
+              }
+            ]
+          }
+        ],
         "contact": [
           {
             "telecom": [
@@ -104,18 +115,7 @@
             "postalCode": "10623"
           }
         ],
-        "name": "Test Apotheke",
-        "type": [
-          {
-            "coding": [
-              {
-                "code": "APO",
-                "system": "http://ihe-d.de/CodeSystems/PatientBezogenenGesundheitsversorgung",
-                "display": "Apotheke"
-              }
-            ]
-          }
-        ]
+        "name": "Test Apotheke"
       }
     },
     {
@@ -158,8 +158,7 @@
         },
         "authoredOn": "2025-05-13",
         "requester": {
-          "reference": "Organization/Example-Pharmacy-Organization",
-          "type": "APO"
+          "reference": "Organization/Example-Pharmacy-Organization"
         },
         "performer": [
           {

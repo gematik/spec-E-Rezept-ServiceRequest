@@ -57,8 +57,7 @@
   "occurrenceDateTime": "2025-05-14T12:00:00+02:00",
   "authoredOn": "2025-05-13",
   "requester": {
-    "reference": "Organization/Example-HealthCareService-Organization",
-    "type": "PFL"
+    "reference": "Organization/Example-HealthCareService-Organization"
   },
   "priority": "urgent",
   "performer": [

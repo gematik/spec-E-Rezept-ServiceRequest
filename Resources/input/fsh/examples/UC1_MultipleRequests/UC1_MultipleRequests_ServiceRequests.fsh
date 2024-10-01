@@ -13,7 +13,6 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * subject = Reference(Example-Patient)
 * authoredOn = "2025-05-13"
 * requester = Reference(Example-HealthCareService-Organization)
-* requester.type = #PFL
 * performer.identifier = Hans-Topp-Glücklich-Identifier
 
 Instance: UC1-MULTI-Initial-Prescription-Request-2
@@ -30,7 +29,6 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * subject = Reference(Example-Patient-2)
 * authoredOn = "2025-05-13"
 * requester = Reference(Example-HealthCareService-Organization)
-* requester.type = #PFL
 * performer.identifier = Hans-Topp-Glücklich-Identifier
 
 Instance: UC1-MULTI-Response-Prescription-Request-1

@@ -14,7 +14,6 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * subject = Reference(Example-Patient)
 * authoredOn = "2025-05-13"
 * requester = Reference(Example-HealthCareService-Organization)
-* requester.type = #PFL
 * performer.identifier = Hans-Topp-Glücklich-Identifier
 * note[+].text = "Sehr geehrter Herr Topp Glücklich,\n Anbei folgende Rezeptanfrage zur Einlösung von Herrn Königsstein."
 * note[=].time = "2025-05-13T14:23:12+02:00"

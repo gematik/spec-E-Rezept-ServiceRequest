@@ -13,7 +13,7 @@
   "compose": {
     "include": [
       {
-        "system": "http://ihe-d.de/ValueSets/IHEXDShealthcareFacilityTypeCode",
+        "system": "http://ihe-d.de/CodeSystems/PatientBezogenenGesundheitsversorgung",
         "concept": [
           {
             "code": "APO",

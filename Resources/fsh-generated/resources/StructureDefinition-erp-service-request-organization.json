@@ -31,8 +31,8 @@
         "slicing": {
           "discriminator": [
             {
-              "type": "value",
-              "path": "$this"
+              "type": "pattern",
+              "path": "system"
             }
           ],
           "rules": "open",
@@ -55,6 +55,17 @@
           "strength": "required",
           "valueSet": "https://gematik.de/fhir/erp-servicerequest/ValueSet/service-request-organization-type-vs"
         }
+      },
+      {
+        "id": "Organization.type.coding:organization-type.system",
+        "path": "Organization.type.coding.system",
+        "min": 1,
+        "patternString": "http://ihe-d.de/CodeSystems/PatientBezogenenGesundheitsversorgung"
+      },
+      {
+        "id": "Organization.type.coding:organization-type.code",
+        "path": "Organization.type.coding.code",
+        "min": 1
       },
       {
         "id": "Organization.name",

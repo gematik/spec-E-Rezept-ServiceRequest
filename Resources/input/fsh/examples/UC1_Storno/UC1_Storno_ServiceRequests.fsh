@@ -12,7 +12,6 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * subject = Reference(Example-Patient)
 * authoredOn = "2025-05-13"
 * requester = Reference(Example-HealthCareService-Organization)
-* requester.type = #PFL
 * performer.identifier = Hans-Topp-Glücklich-Identifier
 * reasonCode
   * text = "Falsche Medikation angefragt, neuer Antrag wird erstellt."

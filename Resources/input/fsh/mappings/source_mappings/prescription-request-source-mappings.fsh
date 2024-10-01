@@ -24,7 +24,7 @@ Description: "Beschreibt die Quelle der Rezeptanforderungsinformationen"
 * VorgangsID -> "Anfragendes PS" "Erzeugt einen Vorgang und generiert eine VorgangsID"
 * VersichertenEinloesung -> "Nutzer des PS" "Angabemöglichkeit im Moment der Anforderung"
 
-* involvierteParteien -> ""
+* involvierteParteien
   * PatientenInformationen -> "Anfragendes PS" "Abfrage aus Stammdatenmanagement"
     * PatientenIdentifierKVNR -> "Anfragendes PS"
     * PatientenName -> "Anfragendes PS"

@@ -6,6 +6,17 @@
       "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
     ]
   },
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://ihe-d.de/CodeSystems/PatientBezogenenGesundheitsversorgung",
+          "code": "PFL",
+          "display": "Pflegeheim"
+        }
+      ]
+    }
+  ],
   "contact": [
     {
       "telecom": [
@@ -44,16 +55,5 @@
       "postalCode": "10623"
     }
   ],
-  "name": "Pflegeheim Immergrün",
-  "type": [
-    {
-      "coding": [
-        {
-          "code": "PFL",
-          "system": "http://ihe-d.de/CodeSystems/PatientBezogenenGesundheitsversorgung",
-          "display": "Pflegeheim"
-        }
-      ]
-    }
-  ]
+  "name": "Pflegeheim Immergrün"
 }

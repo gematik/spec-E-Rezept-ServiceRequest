@@ -24,7 +24,7 @@ Description: "Beschreibt die Quelle der Dispensieranforderungsinformationen. Wir
 * VorgangsID -> "Initiale Rezeptanforderung"
 * ERezeptToken -> "Rezeptanforderung_Bestätigung" "Wurde vom verordnenden Arzt bereitgestellt"
 
-* involvierteParteien -> ""
+* involvierteParteien
   * Anfragender -> "Anfragendes PS"
     * Name -> "Anfragendes PS"
     * Adresse -> "Anfragendes PS"

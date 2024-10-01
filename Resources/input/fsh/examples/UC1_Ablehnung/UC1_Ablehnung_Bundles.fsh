@@ -11,7 +11,7 @@ Description: "Response sent from Practitioner back to HealthCareService"
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Organization/Example-Practitioner-Organization"
 * entry[=].resource = Example-Practitioner-Organization
 // ServiceRequest
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/ServiceRequestUC1-Rejection-Prescription-Request"
+* entry[+].fullUrl = "http://erp-servicerequest-test.deUC1-Rejection-Prescription-Request"
 * entry[=].resource = UC1-Rejection-Prescription-Request
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Patient/Example-Patient"
 * entry[=].resource = Example-Patient
