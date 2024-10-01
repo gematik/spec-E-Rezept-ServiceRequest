@@ -1,0 +1,50 @@
+@startuml "MultipleRequests for same Patient"
+package "MessageBundle" {
+
+
+  class MessageHeader {
+      sender: string
+      recipient: string
+      eventcode: string
+      focus: reference<ServiceRequest>
+  }
+
+  class ServiceRequest1 {
+      id: #id-1
+      requisition: #group-1
+      basedOn: reference<MedicationRequest>
+      subject: reference<Patient>
+  }
+
+  class ServiceRequest2 {
+      id: #id-2
+      requisition: #group-1
+      basedOn: reference<MedicationRequest>
+      subject: reference<Patient>
+  }
+
+  class Patient {
+      id: string
+      name: string
+  }
+
+  class MedicationRequest1 {
+      id: string
+      medicationCodeableConcept: string
+  }
+
+  class MedicationRequest2 {
+      id: string
+      medicationCodeableConcept: string
+  }
+
+}
+
+MessageHeader ..> ServiceRequest1
+MessageHeader ..> ServiceRequest2
+ServiceRequest1 ..> Patient
+ServiceRequest1 ..> MedicationRequest1
+ServiceRequest2 ..> Patient
+ServiceRequest2 ..> MedicationRequest2
+
+@enduml

@@ -54,9 +54,9 @@ for differential.element
 Generell sind die Identifier in den Profilen offen spezifiziert. Daher können beliebige Identifier vergeben werden.
 WICHTIG: Wenn ein Objekt (z.B. ein ServiceRequest) bearbeitet, modifiziert und dann weitergeleitet wird sind alle Identifier, die unter `ServiceRequest.identifier` vergeben wurden zu kopieren und weiterzureichen.
 
-### Anwendungsfall Parenterale Zubereitung
+### Anwendungsfall Rezeptanforderung für anwendungsfertige Zytostatikazubereitungen
 
-Im Anwendungsfall {{pagelink:Home/Anwendungsfaelle/2_Parenterale-Zubereitung}} sind folgende Identifier zu verwenden:
+Im Anwendungsfall {{pagelink:Home/Anwendungsfaelle/4_Rezeptanforderung_Zyto}} sind folgende Identifier zu verwenden:
 
 |Fachliche Beschreibung|.identifier.system|
 |---|---|
