@@ -45,6 +45,7 @@ Instance: SimpleMedication
 InstanceOf: GEM_ERP_PR_Medication
 Title:   "Sample Simple Medication"
 Usage: #example
-* code.coding[pzn].system = "http://fhir.de/CodeSystem/ifa/pzn"
-* code.coding[pzn].code = #08585997
-  * text = "Prospan® Hustensaft 100ml"
+* code.coding[pzn]
+  * system = "http://fhir.de/CodeSystem/ifa/pzn"
+  * code = #08585997
+* code.text = "Prospan® Hustensaft 100ml"

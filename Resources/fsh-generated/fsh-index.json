@@ -13,23 +13,23 @@
     "fshType": "Instance",
     "fshFile": "examples/UC1/UC1_Bundles.fsh",
     "startLine": 34,
-    "endLine": 46
+    "endLine": 57
   },
   {
     "outputFile": "Bundle-UC1-3-Dispense-Request-To-Pharmacy.json",
     "fshName": "UC1-3-Dispense-Request-To-Pharmacy",
     "fshType": "Instance",
     "fshFile": "examples/UC1/UC1_Bundles.fsh",
-    "startLine": 48,
-    "endLine": 58
+    "startLine": 59,
+    "endLine": 76
   },
   {
     "outputFile": "Bundle-UC1-4-Fullfilled-DispenseRequest-To-Pharmacy.json",
     "fshName": "UC1-4-Fullfilled-DispenseRequest-To-Pharmacy",
     "fshType": "Instance",
     "fshFile": "examples/UC1/UC1_Bundles.fsh",
-    "startLine": 60,
-    "endLine": 72
+    "startLine": 78,
+    "endLine": 97
   },
   {
     "outputFile": "Bundle-UC1-Storno-1-Cancellation-Of-Prescription-Requester.json",
@@ -205,7 +205,7 @@
     "fshType": "Instance",
     "fshFile": "examples/Misc/Example_Medication.fsh",
     "startLine": 44,
-    "endLine": 50
+    "endLine": 51
   },
   {
     "outputFile": "MedicationDispense-UC1-Medication-Dispense.json",
@@ -309,7 +309,7 @@
     "fshType": "Profile",
     "fshFile": "profiles/3.2_Dispense_ServiceRequest.fsh",
     "startLine": 1,
-    "endLine": 102
+    "endLine": 97
   },
   {
     "outputFile": "StructureDefinition-erp-service-request-eprescription-token.json",

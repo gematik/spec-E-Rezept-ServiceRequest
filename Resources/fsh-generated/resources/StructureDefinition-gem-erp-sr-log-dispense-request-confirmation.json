@@ -504,10 +504,6 @@
             "map": "ERPServiceRequestDispenseRequest.supportingInfo:AbgabeDaten"
           },
           {
-            "identity": "Dispensieranforderung-Bestaetigung-Fachliches-Mapping",
-            "map": "ERPServiceRequestDispenseRequest.supportingInfo:AbgabeArzneimittel"
-          },
-          {
             "identity": "Quelle-Dispensieranforderung-Bestaetigung-Mapping",
             "map": "AVS",
             "comment": "Informationen aus Abgabedatensatz (MedicationDispense und Medication)"

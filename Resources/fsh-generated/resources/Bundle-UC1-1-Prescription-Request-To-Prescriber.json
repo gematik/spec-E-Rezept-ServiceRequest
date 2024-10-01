@@ -11,7 +11,7 @@
     "system": "urn:ietf:rfc:3986",
     "value": "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
   },
-  "timestamp": "2015-02-07T13:28:17.239+02:00",
+  "timestamp": "2025-05-13T14:25:12+02:00",
   "entry": [
     {
       "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/UC1-HealthCareService-to-Practitioner-MessageHeader",
@@ -69,10 +69,10 @@
       }
     },
     {
-      "fullUrl": "http://erp-servicerequest-test.de/Organization/Example-Practitioner-Organization",
+      "fullUrl": "http://erp-servicerequest-test.de/Organization/Example-HealthCareService-Organization",
       "resource": {
         "resourceType": "Organization",
-        "id": "Example-Practitioner-Organization",
+        "id": "Example-HealthCareService-Organization",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
@@ -83,7 +83,11 @@
             "telecom": [
               {
                 "system": "phone",
-                "value": "0307654321"
+                "value": "0301234567"
+              },
+              {
+                "system": "email",
+                "value": "arbeitsplatz-1@test-pflegeheim.kim.telematik"
               }
             ]
           }
@@ -92,18 +96,18 @@
           {
             "type": "both",
             "line": [
-              "Musterarztstr. 3"
+              "Musterstr. 2"
             ],
             "_line": [
               {
                 "extension": [
                   {
                     "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-                    "valueString": "3"
+                    "valueString": "2"
                   },
                   {
                     "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-                    "valueString": "Musterarztstr."
+                    "valueString": "Musterstr."
                   }
                 ]
               }
@@ -112,7 +116,7 @@
             "postalCode": "10623"
           }
         ],
-        "name": "Test Arztpraxis"
+        "name": "Pflegeheim Immergrün"
       }
     },
     {

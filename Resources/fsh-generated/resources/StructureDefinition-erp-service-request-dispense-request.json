@@ -287,29 +287,6 @@
         "fixedUri": "MedicationDispense"
       },
       {
-        "id": "ServiceRequest.supportingInfo:AbgabeArzneimittel",
-        "path": "ServiceRequest.supportingInfo",
-        "sliceName": "AbgabeArzneimittel",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication"
-            ]
-          }
-        ],
-        "mustSupport": true
-      },
-      {
-        "id": "ServiceRequest.supportingInfo:AbgabeArzneimittel.type",
-        "path": "ServiceRequest.supportingInfo.type",
-        "short": "Medication data that is also sent to the e-prescription server.",
-        "min": 1,
-        "fixedUri": "Medication"
-      },
-      {
         "id": "ServiceRequest.note",
         "path": "ServiceRequest.note",
         "short": "Further information on the dispense request.",

@@ -16,4 +16,3 @@ Description: "Mapping des Fachmodells aus GEM_ERP_SR_LOG_DispenseRequest_Confirm
 
 * Medikation -> "ERPServiceRequestDispenseRequest.supportingInfo"
   * Abgabeinformationen -> "ERPServiceRequestDispenseRequest.supportingInfo:AbgabeDaten"
-  * Abgabeinformationen -> "ERPServiceRequestDispenseRequest.supportingInfo:AbgabeArzneimittel"

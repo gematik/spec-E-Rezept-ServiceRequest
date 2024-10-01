@@ -12,6 +12,7 @@
         "system": "http://fhir.de/CodeSystem/ifa/pzn",
         "code": "08585997"
       }
-    ]
+    ],
+    "text": "Prospan® Hustensaft 100ml"
   }
 }

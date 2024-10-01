@@ -11,7 +11,7 @@
     "system": "urn:ietf:rfc:3986",
     "value": "urn:uuid:c80f6c55-92f8-4518-ba66-cb193da09336"
   },
-  "timestamp": "2023-02-01T13:28:17.239+02:00",
+  "timestamp": "2025-05-14T08:30:12+02:00",
   "entry": [
     {
       "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/UC1-Pharmacy-to-HealthCareService-MessageHeader",
@@ -68,6 +68,53 @@
       }
     },
     {
+      "fullUrl": "http://erp-servicerequest-test.de/Organization/Example-Pharmacy-Organization",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "Example-Pharmacy-Organization",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
+          ]
+        },
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "0301234567"
+              }
+            ]
+          }
+        ],
+        "address": [
+          {
+            "type": "both",
+            "line": [
+              "Musterstr. 2"
+            ],
+            "_line": [
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                    "valueString": "2"
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                    "valueString": "Musterstr."
+                  }
+                ]
+              }
+            ],
+            "city": "Berlin",
+            "postalCode": "10623"
+          }
+        ],
+        "name": "Test Apotheke"
+      }
+    },
+    {
       "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/UC1-Response-Dispense-Request",
       "resource": {
         "resourceType": "ServiceRequest",
@@ -100,10 +147,6 @@
           {
             "type": "MedicationDispense",
             "reference": "MedicationDispense/UC1-Medication-Dispense"
-          },
-          {
-            "type": "Medication",
-            "reference": "Medication/Example-Response-Medication"
           }
         ],
         "status": "completed",
@@ -124,45 +167,54 @@
       }
     },
     {
-      "fullUrl": "http://erp-servicerequest-test.de/Medication/Example-Response-Medication",
+      "fullUrl": "http://erp-servicerequest-test.de/Medication/UC1-Medication-Dispense",
       "resource": {
-        "resourceType": "Medication",
-        "id": "Example-Response-Medication",
+        "resourceType": "MedicationDispense",
+        "id": "UC1-Medication-Dispense",
         "meta": {
           "profile": [
-            "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.1.0"
+            "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|1.4"
           ]
         },
-        "extension": [
+        "identifier": [
           {
-            "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Medication_Type",
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "http://snomed.info/sct",
-                  "version": "http://snomed.info/sct/900000000000207008/version/20220331",
-                  "code": "763158003",
-                  "display": "Medicinal product (product)"
-                }
-              ]
-            }
-          },
-          {
-            "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Category",
-            "valueCoding": {
-              "code": "00",
-              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Category"
-            }
-          },
-          {
-            "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Vaccine",
-            "valueBoolean": false
-          },
-          {
-            "url": "http://fhir.de/StructureDefinition/normgroesse",
-            "valueCode": "N1"
+            "system": "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
+            "value": "160.100.000.000.002.36"
           }
         ],
+        "status": "completed",
+        "subject": {
+          "identifier": {
+            "system": "http://fhir.de/sid/gkv/kvid-10",
+            "value": "X234567890"
+          }
+        },
+        "performer": [
+          {
+            "actor": {
+              "identifier": {
+                "system": "https://gematik.de/fhir/sid/telematik-id",
+                "value": "3-test-telematik-id"
+              }
+            }
+          }
+        ],
+        "whenHandedOver": "2025-05-14",
+        "medicationReference": {
+          "reference": "Medication/SimpleMedication"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://erp-servicerequest-test.de/Medication/SimpleMedication",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "SimpleMedication",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication|1.4"
+          ]
+        },
         "code": {
           "coding": [
             {
@@ -170,15 +222,7 @@
               "code": "08585997"
             }
           ],
-          "text": "Prospan® Hustensaft 100ml N1"
-        },
-        "form": {
-          "coding": [
-            {
-              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM",
-              "code": "FLE"
-            }
-          ]
+          "text": "Prospan® Hustensaft 100ml"
         }
       }
     }

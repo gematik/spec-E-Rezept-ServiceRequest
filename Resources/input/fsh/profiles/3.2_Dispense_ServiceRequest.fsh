@@ -85,15 +85,10 @@ Description: "ServiceRequest that is used to supply a recipe"
 
 * supportingInfo MS
 * supportingInfo contains AbgabeDaten 0..1 MS
-* supportingInfo contains AbgabeArzneimittel 0..1 MS
 
 * supportingInfo[AbgabeDaten] only Reference(GEM_ERP_PR_MedicationDispense)
 * supportingInfo[AbgabeDaten].type = "MedicationDispense" (exactly)
   * ^short = "Dispense data that is also sent to the e-prescription server."
-
-* supportingInfo[AbgabeArzneimittel] only Reference(GEM_ERP_PR_Medication)
-* supportingInfo[AbgabeArzneimittel].type = "Medication" (exactly)
-  * ^short = "Medication data that is also sent to the e-prescription server."
 
 * note MS
   * ^short = "Further information on the dispense request."
