@@ -14,4 +14,4 @@ Diese kann das Rezept am E-Rezept-Fachdienst einlösen.
 
 ### Hinweis zu Identifiern
 
-Für diesen Fall gibt es Festlegungen zur Nutzung von Identifern im {{pagelink:Home/Datenobjekte/Profile/profile_definitions/erp-service-request-prescription-request.page.md}}, siehe {{pagelink:identifier_festlegungen}}.
+Für diesen Fall gibt es Festlegungen zur Nutzung von Identifern im {{pagelink:Home/Datenobjekte/Profile/profile_definitions/erp-service-request-prescription-request.page.md}}, siehe {{pagelink:Home/UebergreifendeFestlegungen/identifier.page.md}}.
