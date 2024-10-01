@@ -39,8 +39,7 @@
   ],
   "eventCoding": {
     "code": "eRezept_Rezeptanforderung;Rezeptanfrage",
-    "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs",
-    "display": "Anfrage zur Ausstellung eines E-Rezepts"
+    "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
   },
   "responsible": {
     "reference": "Organization/Example-HealthCareService-Organization"

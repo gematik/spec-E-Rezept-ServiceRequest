@@ -56,8 +56,7 @@
         ],
         "eventCoding": {
           "code": "eRezept_Rezeptanforderung;Rezeptanfrage",
-          "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs",
-          "display": "Anfrage zur Ausstellung eines E-Rezepts"
+          "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
         },
         "responsible": {
           "reference": "Organization/Example-HealthCareService-Organization"
@@ -112,7 +111,18 @@
             "postalCode": "10623"
           }
         ],
-        "name": "Pflegeheim Immergrün"
+        "name": "Pflegeheim Immergrün",
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "PFL",
+                "system": "http://ihe-d.de/CodeSystems/PatientBezogenenGesundheitsversorgung",
+                "display": "Pflegeheim"
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -355,57 +365,6 @@
           }
         ],
         "birthDate": "1974-01-31"
-      }
-    },
-    {
-      "fullUrl": "http://erp-servicerequest-test.de/Organization/Example-HealthCareService-Organization",
-      "resource": {
-        "resourceType": "Organization",
-        "id": "Example-HealthCareService-Organization",
-        "meta": {
-          "profile": [
-            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
-          ]
-        },
-        "contact": [
-          {
-            "telecom": [
-              {
-                "system": "phone",
-                "value": "0301234567"
-              },
-              {
-                "system": "email",
-                "value": "arbeitsplatz-1@test-pflegeheim.kim.telematik"
-              }
-            ]
-          }
-        ],
-        "address": [
-          {
-            "type": "both",
-            "line": [
-              "Musterstr. 2"
-            ],
-            "_line": [
-              {
-                "extension": [
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-                    "valueString": "2"
-                  },
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-                    "valueString": "Musterstr."
-                  }
-                ]
-              }
-            ],
-            "city": "Berlin",
-            "postalCode": "10623"
-          }
-        ],
-        "name": "Pflegeheim Immergrün"
       }
     },
     {

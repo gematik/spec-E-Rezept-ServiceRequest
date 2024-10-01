@@ -19,54 +19,6 @@
   "differential": {
     "element": [
       {
-        "id": "ServiceRequest",
-        "path": "ServiceRequest",
-        "constraint": [
-          {
-            "key": "servicerequest-prescription-request-1",
-            "severity": "error",
-            "human": "If the status is active, the requester must be present.",
-            "expression": "status = 'active' implies requester.exists()",
-            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
-          },
-          {
-            "key": "servicerequest-prescription-request-2",
-            "severity": "error",
-            "human": "If the status is completed and the prescription should not be redeemed by the patient, the e-prescription-token must be present.",
-            "expression": "(status = 'completed' and extension('redeemByPatient') = true) implies extension('EPrescriptionToken').exists()",
-            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
-          },
-          {
-            "key": "servicerequest-prescription-request-3",
-            "severity": "error",
-            "human": "If the status is active, then the request must be based on an ERP MedicationRequest.",
-            "expression": "status = 'active' implies basedOn.exists() and basedOn is ERPServiceRequestMedicationRequest",
-            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
-          },
-          {
-            "key": "servicerequest-prescription-request-5",
-            "severity": "error",
-            "human": "If the requester is a pharmacy then the KIM-adress of the care facility must be stated in order to receive a copy of the message.",
-            "expression": "requester.type = 'APO' implies supportingInfo.where(type='pflegeeinrichtungKopie').exists()",
-            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
-          },
-          {
-            "key": "servicerequest-prescription-request-6",
-            "severity": "error",
-            "human": "If the status is revoked or entered-in-error, then the reasonCode or note must be present.",
-            "expression": "(status = 'revoked' or status = 'entered-in-error') implies (reasonCode.text.exists() or note.exists())",
-            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
-          },
-          {
-            "key": "servicerequest-prescription-request-7",
-            "severity": "error",
-            "human": "If the status is completed, the performer must be present.",
-            "expression": "status = 'completed' implies performer.exists()",
-            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
-          }
-        ]
-      },
-      {
         "id": "ServiceRequest.extension",
         "path": "ServiceRequest.extension",
         "mustSupport": true
@@ -305,18 +257,6 @@
           }
         ],
         "mustSupport": true
-      },
-      {
-        "id": "ServiceRequest.requester.type",
-        "path": "ServiceRequest.requester.type",
-        "short": "Type of Requester (Pharmacy or Care Facility).",
-        "comment": "This value helps the receiving Systems to identify the source of the request.",
-        "min": 1,
-        "mustSupport": true,
-        "binding": {
-          "strength": "required",
-          "valueSet": "https://gematik.de/fhir/erp-servicerequest/ValueSet/service-request-organization-type-vs"
-        }
       },
       {
         "id": "ServiceRequest.performer",

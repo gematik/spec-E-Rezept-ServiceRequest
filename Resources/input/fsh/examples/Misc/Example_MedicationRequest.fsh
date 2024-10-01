@@ -21,7 +21,7 @@ InstanceOf: ERPServiceRequestMedicationRequest
 Usage: #example
 * status = #active
 * intent = #order
-* medicationReference = Reference(Example-Initial-Medication)
+* medicationReference = Reference(Example-Response-Medication)
 * subject = Reference(Example-Patient)
 * dispenseRequest.quantity = 2 '{Package}'
 

@@ -16,8 +16,6 @@ Description: "Request sent to Prescriber to get a Prescription"
 * entry[=].resource = UC2-Initial-Prescription-Request
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Patient/Example-Patient"
 * entry[=].resource = Example-Patient
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/Organization/Example-HealthCareService-Organization"
-* entry[=].resource = Example-HealthCareService-Organization
 
 //Medication Request
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/MedicationRequest/Example-Initial-Medication-Request"

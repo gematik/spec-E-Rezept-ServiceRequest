@@ -5,12 +5,12 @@ Title: "ERP Service Request Prescription Request"
 Description: "ServiceRequest, which is used to request a recipe"
 * insert Meta (erp-service-request-prescription-request)
 
-* obeys servicerequest-prescription-request-1
-* obeys servicerequest-prescription-request-2
-* obeys servicerequest-prescription-request-3
-* obeys servicerequest-prescription-request-5
-* obeys servicerequest-prescription-request-6
-* obeys servicerequest-prescription-request-7
+// * obeys servicerequest-prescription-request-1
+// * obeys servicerequest-prescription-request-2
+// * obeys servicerequest-prescription-request-3
+// * obeys servicerequest-prescription-request-5
+// * obeys servicerequest-prescription-request-6
+// * obeys servicerequest-prescription-request-7
 
 * extension MS
 * extension contains
@@ -88,11 +88,6 @@ Description: "ServiceRequest, which is used to request a recipe"
 * requester only Reference(ERPServiceRequestOrganization)
   * ^short = "Inquiring facility or practitioner."
   * ^comment = "The KIM address is already stored in the message header."
-
-* requester.type 1..1 MS
-* requester.type from ServiceRequestOrganizationTypeVS (required)
-  * ^short = "Type of Requester (Pharmacy or Care Facility)."
-  * ^comment = "This value helps the receiving Systems to identify the source of the request."
 
 * performer MS
 * performer only Reference(ERPServiceRequestPractitioner)

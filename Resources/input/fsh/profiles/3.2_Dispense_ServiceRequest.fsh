@@ -5,11 +5,11 @@ Title: "ERP Service Request Dispense Request"
 Description: "ServiceRequest that is used to supply a recipe"
 * insert Meta (erp-service-request-dispense-request)
 
-* obeys servicerequest-dispense-request-1
-* obeys servicerequest-dispense-request-2
-* obeys servicerequest-dispense-request-3
-* obeys servicerequest-dispense-request-4
-* obeys servicerequest-dispense-request-5
+// * obeys servicerequest-dispense-request-1
+// * obeys servicerequest-dispense-request-2
+// * obeys servicerequest-dispense-request-3
+// * obeys servicerequest-dispense-request-4
+// * obeys servicerequest-dispense-request-5
 
 * extension MS
 * extension contains
@@ -66,11 +66,6 @@ Description: "ServiceRequest that is used to supply a recipe"
 * requester only Reference(ERPServiceRequestOrganization)
   * ^short = "Inquiring facility or practitioner."
   * ^comment = "The KIM address is already stored in the message header."
-
-* requester.type 1..1 MS
-* requester.type = #PFL (exactly)
-  * ^short = "Care Facility as requester for the dispensation of the prescription"
-  * ^comment = "This value helps the receiving Systems to identify the source of the request."
 
 * priority 0..1 MS
   * ^short = "Indicates the urgency of the request."

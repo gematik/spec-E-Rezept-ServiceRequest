@@ -5,7 +5,7 @@ Title: "HealthCareService-to-Practitioner-MessageHeader"
 Description: "Message Header from HealthCareService to Practitioner"
 * insert HealthCareService-to-Practitioner(UC1-MULTI-Initial-Prescription-Request-1)
 * focus[+] = Reference(UC1-MULTI-Initial-Prescription-Request-2)
-* eventCoding = ServiceIdentifierCS#eRezept_Rezeptanforderung;Rezeptanfrage "Anfrage zur Ausstellung eines E-Rezepts"
+* eventCoding = ServiceIdentifierCS#eRezept_Rezeptanforderung;Rezeptanfrage
 * responsible = Reference(Example-HealthCareService-Organization)
 
 Instance: UC1-MULTI-Practitioner-to-HealthCareService-MessageHeader-1

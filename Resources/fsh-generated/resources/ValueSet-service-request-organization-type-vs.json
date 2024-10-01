@@ -20,6 +20,10 @@
             "display": "Apotheke"
           },
           {
+            "code": "PRA",
+            "display": "Arztpraxis"
+          },
+          {
             "code": "PFL",
             "display": "Pflegeheim"
           }

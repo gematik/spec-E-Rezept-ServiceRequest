@@ -44,5 +44,16 @@
       "postalCode": "10623"
     }
   ],
-  "name": "Pflegeheim Immergrün"
+  "name": "Pflegeheim Immergrün",
+  "type": [
+    {
+      "coding": [
+        {
+          "code": "PFL",
+          "system": "http://ihe-d.de/CodeSystems/PatientBezogenenGesundheitsversorgung",
+          "display": "Pflegeheim"
+        }
+      ]
+    }
+  ]
 }

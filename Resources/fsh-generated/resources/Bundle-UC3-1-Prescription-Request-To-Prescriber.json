@@ -104,7 +104,18 @@
             "postalCode": "10623"
           }
         ],
-        "name": "Test Apotheke"
+        "name": "Test Apotheke",
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "APO",
+                "system": "http://ihe-d.de/CodeSystems/PatientBezogenenGesundheitsversorgung",
+                "display": "Apotheke"
+              }
+            ]
+          }
+        ]
       }
     },
     {

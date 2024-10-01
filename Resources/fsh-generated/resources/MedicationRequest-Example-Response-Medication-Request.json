@@ -16,7 +16,7 @@
   "status": "active",
   "intent": "order",
   "medicationReference": {
-    "reference": "Medication/Example-Initial-Medication"
+    "reference": "Medication/Example-Response-Medication"
   },
   "subject": {
     "reference": "Patient/Example-Patient"

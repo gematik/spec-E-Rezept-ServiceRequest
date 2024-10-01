@@ -104,7 +104,18 @@
             "postalCode": "10623"
           }
         ],
-        "name": "Test Arztpraxis"
+        "name": "Test Arztpraxis",
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "PRA",
+                "system": "http://ihe-d.de/CodeSystems/PatientBezogenenGesundheitsversorgung",
+                "display": "Arztpraxis"
+              }
+            ]
+          }
+        ]
       }
     },
     {

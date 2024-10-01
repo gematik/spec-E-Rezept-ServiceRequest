@@ -4,7 +4,7 @@ Usage: #example
 Title: "HealthCareService-to-Practitioner-MessageHeader"
 Description: "Message Header from HealthCareService to Practitioner"
 * insert HealthCareService-to-Practitioner(UC1-Initial-Prescription-Request)
-* eventCoding = ServiceIdentifierCS#eRezept_Rezeptanforderung;Rezeptanfrage "Anfrage zur Ausstellung eines E-Rezepts"
+* eventCoding = ServiceIdentifierCS#eRezept_Rezeptanforderung;Rezeptanfrage
 * responsible = Reference(Example-HealthCareService-Organization)
 
 Instance: UC1-Practitioner-to-HealthCareService-MessageHeader
