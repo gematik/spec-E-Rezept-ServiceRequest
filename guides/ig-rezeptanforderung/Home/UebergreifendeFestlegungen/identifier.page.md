@@ -1,62 +1,16 @@
 # {{page-title}}
 
-## Request Identifier
+## Identifier Profile
 
-### Motivation
+Die in diesem Projekt profilierten Identifier sind hier einsehbar: {{pagelink:Home/Datenobjekte/Identifier}}.
 
-Dieser Identifier wird in `ServiceRequest.identifier[requestId]` verwendet, um einen einzelnen ServiceRequest zu identifizieren.
+Darüber hinaus gibt es in ServiceRequest.identifier durch die offene Profilierung die Möglichkeit weitere Identifier einem Request anzuhängen. Diese können z.B. aus regionalen Kooperationen entstehen oder aus fachlichen Gründen definiert worden sein.
 
-Dieses Vorgehen soll Systeme dabei unterstützen Informationen zu Vorgängen korrekt zu referenzieren.
-
-### Profil
-
-{{tree:https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-identifier, diff}}
-
-Folgende Felder sind entsprechend zu befüllen, bzw. können befüllt werden:
-
-@```
-
-from StructureDefinition
-where name = 'ERPServiceRequestRequestIdentifier'
-for differential.element
-    select id, short, comment
-
-```
-
-## Vorgangs Identifier
-
-### Motivation
-
-Dieser Identifier bildet eine Vorgangs-ID ab und wird unter `ServiceRequest.requisition` angegeben. Innerhalb eines Vorgangs können verschiedene Medikamente angefragt werden für die jeweils ein ServiceRequest erstellt wird. Diese Vorgangs-ID verknüpft nun alle ServiceRequests, die diesem Vorgang zugeordnet sind.
-
-Diese Vorgangs-ID wird vom schreibenden System vergeben und ist von den anderen Sytemen, die den ServiceRequest bearbeiten nicht zu verändern!
-
-Falls ein anderes System als das ursprünglich anfragende einen neuen ServiceRequest erstellt, ist die Vorgangs-ID von vorhandenen ServiceRequests zu übernehmen.
-
-### Profil
-
-{{tree:https://gematik.de/fhir/erp-servicerequest/StructureDefinition/identifier-procedure-identifier, diff}}
-
-Folgende Felder sind entsprechend zu befüllen, bzw. können befüllt werden:
-
-@```
-
-from StructureDefinition
-where name = 'ERPServiceRequestProcedureIdentifier'
-for differential.element
-    where exists(comment | short)
-    select id, short, comment
-
-```
-
-## Festlegungen zu Identifiern
-
-Generell sind die Identifier in den Profilen offen spezifiziert. Daher können beliebige Identifier vergeben werden.
-WICHTIG: Wenn ein Objekt (z.B. ein ServiceRequest) bearbeitet, modifiziert und dann weitergeleitet wird sind alle Identifier, die unter `ServiceRequest.identifier` vergeben wurden zu kopieren und weiterzureichen.
+WICHTIG: Wenn ein Objekt (z.B. ein ServiceRequest) bearbeitet, modifiziert und dann weitergeleitet wird MÜSSEN alle Identifier, die unter `ServiceRequest.identifier` angegeben wurden verarbeitet und in einer Antwort angehangen werden.
 
 ### Anwendungsfall Rezeptanforderung für anwendungsfertige Zytostatikazubereitungen
 
-Im Anwendungsfall {{pagelink:Home/Anwendungsfaelle/4_Rezeptanforderung_Zyto}} sind folgende Identifier zu verwenden:
+In Abstimmung mit den Industriepartnern wurden für den Anwendungsfall {{pagelink:Home/Anwendungsfaelle/4_Rezeptanforderung_Zyto}} folgende Identifier definiert:
 
 |Fachliche Beschreibung|.identifier.system|
 |---|---|
