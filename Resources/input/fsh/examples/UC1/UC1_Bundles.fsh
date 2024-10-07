@@ -89,7 +89,11 @@ Description: "Response sent from pharmacy to requester"
 // ServiceRequest
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/ServiceRequest/UC1-Response-Dispense-Request"
 * entry[=].resource = UC1-Response-Dispense-Request
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/Medication/UC1-Medication-Dispense"
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/Patient/Example-Patient"
+* entry[=].resource = Example-Patient
+
+// Medication Dispense
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/MedicationDispense/UC1-Medication-Dispense"
 * entry[=].resource = UC1-Medication-Dispense
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Medication/SimpleMedication"
 * entry[=].resource = SimpleMedication

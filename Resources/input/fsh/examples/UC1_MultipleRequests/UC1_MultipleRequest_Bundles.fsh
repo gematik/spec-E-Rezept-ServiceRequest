@@ -14,7 +14,7 @@ Description: "Request sent to Prescriber to get a Prescription. Same Medicat"
 // ServiceRequest
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/ServiceRequest/UC1-MULTI-Initial-Prescription-Request-1"
 * entry[=].resource = UC1-MULTI-Initial-Prescription-Request-1
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/ServiceRequest/UC1-MULTI-Initial-Prescription-Request-1"
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/ServiceRequest/UC1-MULTI-Initial-Prescription-Request-2"
 * entry[=].resource = UC1-MULTI-Initial-Prescription-Request-2
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Patient/Example-Patient"
 * entry[=].resource = Example-Patient
@@ -31,7 +31,6 @@ Description: "Request sent to Prescriber to get a Prescription. Same Medicat"
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Medication/Example-Initial-Medication-2"
 * entry[=].resource = Example-Initial-Medication-2
 
-
 Instance: UC1-MULTI-2-Response-Prescription-Request-1
 InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
@@ -40,13 +39,13 @@ Description: "Response from Practitioner containing the completed prescriptions"
 * identifier.value = "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
 * timestamp = "2025-05-14T08:15:12+02:00"
 // Header
-* entry[0].fullUrl = "http://erp-servicerequest-test.de/MessageHeader/UC1-MULTI-Practitioner-to-HealthCareService-MessageHeader"
+* entry[0].fullUrl = "http://erp-servicerequest-test.de/MessageHeader/UC1-MULTI-Practitioner-to-HealthCareService-MessageHeader-1"
 * entry[=].resource = UC1-MULTI-Practitioner-to-HealthCareService-MessageHeader-1
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Organization/Example-Practitioner-Organization"
 * entry[=].resource = Example-Practitioner-Organization
 
 // ServiceRequest
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/ServiceRequest/UC1-MULTI-Response-Prescription-Request"
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/ServiceRequest/UC1-MULTI-Response-Prescription-Request-1"
 * entry[=].resource = UC1-MULTI-Response-Prescription-Request-1
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Patient/Example-Patient"
 * entry[=].resource = Example-Patient
@@ -65,13 +64,13 @@ Description: "Response from Practitioner containing the rejected prescription re
 * identifier.value = "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
 * timestamp = "2025-05-14T08:15:12+02:00"
 // Header
-* entry[0].fullUrl = "http://erp-servicerequest-test.de/MessageHeader/UC1-MULTI-Practitioner-to-HealthCareService-MessageHeader"
+* entry[0].fullUrl = "http://erp-servicerequest-test.de/MessageHeader/UC1-MULTI-Practitioner-to-HealthCareService-MessageHeader-2"
 * entry[=].resource = UC1-MULTI-Practitioner-to-HealthCareService-MessageHeader-2
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Organization/Example-Practitioner-Organization"
 * entry[=].resource = Example-Practitioner-Organization
 
 // ServiceRequest
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/ServiceRequest/UC1-MULTI-Response-Prescription-Request"
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/ServiceRequest/UC1-MULTI-Response-Prescription-Request-2"
 * entry[=].resource = UC1-MULTI-Response-Prescription-Request-2
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Patient/Example-Patient"
 * entry[=].resource = Example-Patient-2

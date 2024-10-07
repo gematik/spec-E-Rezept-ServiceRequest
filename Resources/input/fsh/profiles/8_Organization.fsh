@@ -21,7 +21,7 @@ Description: "Organization that can be used to specify a KIM address"
     * ^definition = "Hier kann der Typus der Einrichtung anhand eines Codes aus dem Codesystem IHE Deutschland e.V. angegeben werden. Erlaubt sind Pflegeeinrichtung, Apotheke und Arztpraxis"
     * code 1..1
     * system 1..1
-      * ^patternString = $CSIHEPatientBezogenenGesundheitsversorgung
+    * system = $CSIHEPatientBezogenenGesundheitsversorgung
 
 
 * contact 1..* MS

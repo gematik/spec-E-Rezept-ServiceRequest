@@ -13,23 +13,24 @@ Description: "ServiceRequest, which is used to request a recipe"
 // * obeys servicerequest-prescription-request-7
 
 * extension MS
-* extension contains
-    EPrescriptionTokenEX named EPrescriptionToken 0..* MS
-    and ChangedMedicationEX named medicationChanged 0..1 MS ?!
+* extension contains EPrescriptionTokenEX named EPrescriptionToken 0..* MS
+* modifierExtension contains ChangedMedicationEX named medicationChanged 0..1 MS ?!
     and RedeemByPatientEX named redeemByPatient 0..1 MS ?!
 
 * extension[EPrescriptionTokenEX]
   * ^short = "Here the e-prescription token(s) can be made available for processing in a pharmacy."
   * ^definition = "One ServiceRequest must adress exactly one request for a medication. However the practitioner might choose to issue multiple prescriptions for that request, therefore the cardinality is 1..*."
   * ^comment = "The token is of the form '/Task/{PrescriptionID}/$accept?ac={AccessCode}. See [gemSpec_DM_eRp](https://fachportal.gematik.de/fachportal-import/files/gemSpec_DM_eRp_V1.5.0.pdf)'."
-* extension[medicationChanged]
+* modifierExtension[medicationChanged]
   * ^short = "Indicates whether the medication has been changed by the prescriber."
   * ^definition = "If the medication has been changed, the value is set to true."
   * ^comment = "If the medication has been changed, the receiving system must display the changed medication to the receiving user."
-* extension[redeemByPatient]
+  * ^isModifierReason = "If the medication has been changed, the receiving system must display the changed medication to the receiving user."
+* modifierExtension[redeemByPatient]
   * ^short = "Redeem By Patient"
   * ^definition = "Indicates whether the prescription should be redeemed by the patient."
   * ^comment = "This determines the Flow Type of the prescription to be set to 160/200 so that the patient can redeem the prescription himself. If not set the Flow Type is set to 169/209."
+  * ^isModifierReason = "This determines the Flow Type of the prescription to be set to 160/200 so that the patient can redeem the prescription himself. If not set the Flow Type is set to 169/209."
 
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "system"

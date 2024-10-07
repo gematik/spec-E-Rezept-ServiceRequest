@@ -60,7 +60,7 @@
         "id": "Organization.type.coding:organization-type.system",
         "path": "Organization.type.coding.system",
         "min": 1,
-        "patternString": "http://ihe-d.de/CodeSystems/PatientBezogenenGesundheitsversorgung"
+        "patternUri": "http://ihe-d.de/CodeSystems/PatientBezogenenGesundheitsversorgung"
       },
       {
         "id": "Organization.type.coding:organization-type.code",

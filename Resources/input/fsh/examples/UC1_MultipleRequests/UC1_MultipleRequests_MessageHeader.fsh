@@ -13,7 +13,7 @@ InstanceOf: ERPServiceRequestRequestHeader
 Usage: #inline
 Title: "Practitioner-to-HealthCareService-MessageHeader"
 Description: "Message Header from Practitioner to HealthCareService"
-* insert Practitioner-to-HealthCareService(UC1-Response-Prescription-Request)
+* insert Practitioner-to-HealthCareService(UC1-MULTI-Response-Prescription-Request-1)
 * eventCoding = ServiceIdentifierCS#eRezept_Rezeptanforderung;Rezeptbestaetigung
 * responsible = Reference(Example-Practitioner-Organization)
 
@@ -22,6 +22,6 @@ InstanceOf: ERPServiceRequestRequestHeader
 Usage: #inline
 Title: "Practitioner-to-HealthCareService-MessageHeader"
 Description: "Message Header from Practitioner to HealthCareService"
-* insert Practitioner-to-HealthCareService(UC1-Response-Prescription-Request)
+* insert Practitioner-to-HealthCareService(UC1-MULTI-Response-Prescription-Request-2)
 * eventCoding = ServiceIdentifierCS#eRezept_Rezeptanforderung;Rezeptanfrage_Storno
 * responsible = Reference(Example-Practitioner-Organization)

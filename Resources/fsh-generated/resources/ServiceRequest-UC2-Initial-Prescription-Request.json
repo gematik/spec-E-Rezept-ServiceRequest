@@ -17,7 +17,7 @@
     "system": "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier",
     "value": "GroupID-UC2"
   },
-  "extension": [
+  "modifierExtension": [
     {
       "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/prescription-id-ex",
       "valueBoolean": true

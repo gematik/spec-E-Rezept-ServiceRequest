@@ -14,7 +14,7 @@
   "timestamp": "2025-05-14T08:15:12+02:00",
   "entry": [
     {
-      "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/UC1-MULTI-Practitioner-to-HealthCareService-MessageHeader",
+      "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/UC1-MULTI-Practitioner-to-HealthCareService-MessageHeader-2",
       "resource": {
         "resourceType": "MessageHeader",
         "id": "UC1-MULTI-Practitioner-to-HealthCareService-MessageHeader-2",
@@ -35,7 +35,7 @@
         },
         "focus": [
           {
-            "reference": "ServiceRequest/UC1-Response-Prescription-Request"
+            "reference": "ServiceRequest/UC1-MULTI-Response-Prescription-Request-2"
           }
         ],
         "sender": {
@@ -119,7 +119,7 @@
       }
     },
     {
-      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/UC1-MULTI-Response-Prescription-Request",
+      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/UC1-MULTI-Response-Prescription-Request-2",
       "resource": {
         "resourceType": "ServiceRequest",
         "id": "UC1-MULTI-Response-Prescription-Request-2",

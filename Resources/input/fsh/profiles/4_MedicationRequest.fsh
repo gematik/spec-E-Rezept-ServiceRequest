@@ -7,9 +7,8 @@ Description: "Medical and pharmaceutical information for the prescription reques
 
 * extension MS
   * ^comment = "If the previous recipe ID is known, it can be named here"
-* extension contains
-    PrescriptionIdEx named PriorPrescriptionID 0..1 MS
-    and KBV_EX_ERP_Multiple_Prescription named requestMVO 0..1 MS ?!
+* extension contains PrescriptionIdEx named PriorPrescriptionID 0..1 MS
+* modifierExtension contains RequestMVOEX named requestMVO 0..1 MS ?! 
 
 * subject MS
 * subject only Reference(ERPServiceRequestPatient)
@@ -23,14 +22,11 @@ The MedicationRequest can contain a PrescriptionId of a prescription that has al
 If a previous prescription ID is known, the writing system MAY indicate this in the medication request.
 If this ID is available, the receiving system MUST be able to search for the previous regulation and give the user the opportunity to display and compare the content.
 "
-* extension[requestMVO]
+* modifierExtension[requestMVO]
   * ^short = "Multiple prescription order"
   * ^definition = "If the prescription is should be a multiple prescription order. Only the 'Kennzeichen' should be stated, indicating that the prescription is requested to be a multiple prescription order."
   * ^comment = "When this extension is received by a PVS, the prescriber has to be visually notified about the request for a multiple prescription order."
-  * extension[Kennzeichen] MS
-  * extension[Nummerierung] 0..0
-  * extension[Zeitraum] 0..0
-  * extension[ID] 0..0
+  * ^isModifierReason = "When this extension is received by a PVS, the prescriber has to be visually notified about the request for a multiple prescription order."
 
 * medication[x] MS
 * medication[x] only Reference(KBV_PR_ERP_Medication_PZN or KBV_PR_ERP_Medication_Compounding or KBV_PR_ERP_Medication_Ingredient or KBV_PR_ERP_Medication_FreeText)

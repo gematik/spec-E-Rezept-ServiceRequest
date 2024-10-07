@@ -45,6 +45,12 @@
   "differential": {
     "element": [
       {
+        "id": "Extension",
+        "path": "Extension",
+        "isModifier": true,
+        "isModifierReason": "If the medication has been changed, the receiving system must display that the medication has been changed."
+      },
+      {
         "id": "Extension.extension",
         "path": "Extension.extension",
         "max": "0"

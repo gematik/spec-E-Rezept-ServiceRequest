@@ -337,10 +337,10 @@
       }
     },
     {
-      "fullUrl": "http://erp-servicerequest-test.de/Medication/Example-Initial-Medication",
+      "fullUrl": "http://erp-servicerequest-test.de/Medication/Example-Response-Medication",
       "resource": {
         "resourceType": "Medication",
-        "id": "Example-Initial-Medication",
+        "id": "Example-Response-Medication",
         "meta": {
           "profile": [
             "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.1.0"
@@ -383,7 +383,7 @@
               "code": "08585997"
             }
           ],
-          "text": "Prospan® Hustensaft 100ml"
+          "text": "Prospan® Hustensaft 100ml N1"
         },
         "form": {
           "coding": [

@@ -47,5 +47,5 @@ Description: "Response sent from Practitioner back to Pharmacy"
 // MedicationRequest
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/MedicationRequest/Example-Response-Medication-Request"
 * entry[=].resource = Example-Response-Medication-Request
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/Medication/Example-Initial-Medication"
-* entry[=].resource = Example-Initial-Medication
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/Medication/Example-Response-Medication"
+* entry[=].resource = Example-Response-Medication

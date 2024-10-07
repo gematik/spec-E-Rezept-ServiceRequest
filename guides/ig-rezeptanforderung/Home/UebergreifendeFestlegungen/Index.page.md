@@ -36,7 +36,7 @@ select
     Name: link(url, name),
     join for differential.element 
     where isModifier = true
-    select { Extension: link(type.profile, id), 'Verarbeitungshinweis': comment }
+    select { Extension: link(type.profile, id), 'Verarbeitungshinweis': isModifierReason }
 ```
 
 

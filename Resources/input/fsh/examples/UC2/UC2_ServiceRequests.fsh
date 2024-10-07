@@ -5,7 +5,7 @@ Usage: #example
 Title: "Initial Prescription Request"
 Description: "This ServiceRequest is sent initially to the prescribing practitioner"
 * identifier[requestId].value = "1"
-* extension[redeemByPatient].valueBoolean = true
+* modifierExtension[redeemByPatient].valueBoolean = true
 * basedOn = Reference(Example-Initial-Medication-Request)
 * requisition.value = "GroupID-UC2"
 * status = RequestStatus#active

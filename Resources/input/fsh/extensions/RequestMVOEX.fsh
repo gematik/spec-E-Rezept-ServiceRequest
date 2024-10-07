@@ -1,7 +1,7 @@
-Extension: RedeemByPatientEX
-Id: redeem-by-patient-ex
-Title: "Redeem By Patient (EX)"
-Description: "Extension to indicate if the prescription should be redeemed by the patient."
+Extension: RequestMVOEX
+Id: request-mvo-ex
+Title: "Request MVO (EX)"
+Description: "Extension to indicate if the prescription should be issued as a multiple prescription order (MVO)."
 * ^context[0].type = #element
 * ^context[=].expression = "ServiceRequest"
 * ^context[+].type = #element
@@ -16,8 +16,8 @@ Description: "Extension to indicate if the prescription should be redeemed by th
 * ^context[=].expression = "ServiceDelivery"
 * ^context[+].type = #element
 * ^context[=].expression = "Medication"
-* insert Meta (prescription-id-ex)
+* insert Meta (request-mvo-ex)
 * . ^isModifier = true
-* . ^isModifierReason = "This determines the Flow Type of the prescription to be set to 160/200 so that the patient can redeem the prescription himself. If not set the Flow Type is set to 169/209."
+* . ^isModifierReason = "This determines if the prescription is to be issued as a normal prescription or as a multiple prescription order (MVO)."
 * value[x] only boolean
 * value[x] 1..1 MS

@@ -41,7 +41,8 @@
           }
         ],
         "mustSupport": true,
-        "isModifier": true
+        "isModifier": true,
+        "isModifierReason": "If this is set to true, the receiver of the message must be informed that is is a copy and not a request. The receiving system should not allow any further processing of the message."
       },
       {
         "id": "MessageHeader.event[x]",

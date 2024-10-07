@@ -43,8 +43,8 @@
         "mustSupport": true
       },
       {
-        "id": "ServiceRequest.extension:medicationChanged",
-        "path": "ServiceRequest.extension",
+        "id": "ServiceRequest.modifierExtension:medicationChanged",
+        "path": "ServiceRequest.modifierExtension",
         "sliceName": "medicationChanged",
         "short": "Indicates whether the medication has been changed by the prescriber.",
         "definition": "If the medication has been changed, the value is set to true.",
@@ -60,11 +60,11 @@
           }
         ],
         "mustSupport": true,
-        "isModifier": true
+        "isModifierReason": "If the medication has been changed, the receiving system must display the changed medication to the receiving user."
       },
       {
-        "id": "ServiceRequest.extension:redeemByPatient",
-        "path": "ServiceRequest.extension",
+        "id": "ServiceRequest.modifierExtension:redeemByPatient",
+        "path": "ServiceRequest.modifierExtension",
         "sliceName": "redeemByPatient",
         "short": "Redeem By Patient",
         "definition": "Indicates whether the prescription should be redeemed by the patient.",
@@ -80,7 +80,7 @@
           }
         ],
         "mustSupport": true,
-        "isModifier": true
+        "isModifierReason": "This determines the Flow Type of the prescription to be set to 160/200 so that the patient can redeem the prescription himself. If not set the Flow Type is set to 169/209."
       },
       {
         "id": "ServiceRequest.identifier",

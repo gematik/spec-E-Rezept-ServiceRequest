@@ -44,8 +44,8 @@
         "mustSupport": true
       },
       {
-        "id": "MedicationRequest.extension:requestMVO",
-        "path": "MedicationRequest.extension",
+        "id": "MedicationRequest.modifierExtension:requestMVO",
+        "path": "MedicationRequest.modifierExtension",
         "sliceName": "requestMVO",
         "short": "Multiple prescription order",
         "definition": "If the prescription is should be a multiple prescription order. Only the 'Kennzeichen' should be stated, indicating that the prescription is requested to be a multiple prescription order.",
@@ -56,36 +56,12 @@
           {
             "code": "Extension",
             "profile": [
-              "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Multiple_Prescription"
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/request-mvo-ex"
             ]
           }
         ],
         "mustSupport": true,
-        "isModifier": true
-      },
-      {
-        "id": "MedicationRequest.extension:requestMVO.extension:Kennzeichen",
-        "path": "MedicationRequest.extension.extension",
-        "sliceName": "Kennzeichen",
-        "mustSupport": true
-      },
-      {
-        "id": "MedicationRequest.extension:requestMVO.extension:Nummerierung",
-        "path": "MedicationRequest.extension.extension",
-        "sliceName": "Nummerierung",
-        "max": "0"
-      },
-      {
-        "id": "MedicationRequest.extension:requestMVO.extension:Zeitraum",
-        "path": "MedicationRequest.extension.extension",
-        "sliceName": "Zeitraum",
-        "max": "0"
-      },
-      {
-        "id": "MedicationRequest.extension:requestMVO.extension:ID",
-        "path": "MedicationRequest.extension.extension",
-        "sliceName": "ID",
-        "max": "0"
+        "isModifierReason": "When this extension is received by a PVS, the prescriber has to be visually notified about the request for a multiple prescription order."
       },
       {
         "id": "MedicationRequest.medication[x]",

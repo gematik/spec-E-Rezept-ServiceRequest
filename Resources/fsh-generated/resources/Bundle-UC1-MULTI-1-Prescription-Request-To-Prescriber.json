@@ -178,7 +178,7 @@
       }
     },
     {
-      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/UC1-MULTI-Initial-Prescription-Request-1",
+      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/UC1-MULTI-Initial-Prescription-Request-2",
       "resource": {
         "resourceType": "ServiceRequest",
         "id": "UC1-MULTI-Initial-Prescription-Request-2",
