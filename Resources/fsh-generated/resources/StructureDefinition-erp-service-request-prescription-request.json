@@ -75,7 +75,7 @@
           {
             "code": "Extension",
             "profile": [
-              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/prescription-id-ex"
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex"
             ]
           }
         ],

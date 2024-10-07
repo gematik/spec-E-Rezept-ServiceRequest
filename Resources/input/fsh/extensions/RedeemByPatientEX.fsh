@@ -16,7 +16,7 @@ Description: "Extension to indicate if the prescription should be redeemed by th
 * ^context[=].expression = "ServiceDelivery"
 * ^context[+].type = #element
 * ^context[=].expression = "Medication"
-* insert Meta (prescription-id-ex)
+* insert Meta (redeem-by-patient-ex)
 * . ^isModifier = true
 * . ^isModifierReason = "This determines the Flow Type of the prescription to be set to 160/200 so that the patient can redeem the prescription himself. If not set the Flow Type is set to 169/209."
 * value[x] only boolean

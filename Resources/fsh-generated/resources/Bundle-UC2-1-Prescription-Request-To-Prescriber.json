@@ -145,7 +145,7 @@
         },
         "modifierExtension": [
           {
-            "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/prescription-id-ex",
+            "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex",
             "valueBoolean": true
           }
         ],

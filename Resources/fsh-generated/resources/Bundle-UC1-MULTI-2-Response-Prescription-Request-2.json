@@ -149,7 +149,7 @@
         },
         "status": "revoked",
         "subject": {
-          "reference": "Patient/Example-Patient"
+          "reference": "Patient/Example-Patient-2"
         },
         "authoredOn": "2025-05-13",
         "reasonCode": [
