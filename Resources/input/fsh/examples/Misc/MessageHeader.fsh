@@ -1,6 +1,6 @@
 
 RuleSet: HealthCareService-to-Practitioner(SR)
-* focus[+] = Reference(ServiceRequest/{SR})
+* focus[0] = Reference(ServiceRequest/{SR})
 * sender.identifier = Pflegeheim-Immergrün-Identifier
 * sender.display = "Pflegeheim Immergrün"
 * destination.name = "Praxis Hans Topp-Glücklich"
@@ -13,7 +13,7 @@ RuleSet: HealthCareService-to-Practitioner(SR)
 * source.endpoint = "healthcare-service@test.kim.de"
 
 RuleSet: Practitioner-to-HealthCareService(SR)
-* focus[+] = Reference(ServiceRequest/{SR})
+* focus[0] = Reference(ServiceRequest/{SR})
 * sender.identifier = Hans-Topp-Glücklich-Identifier
 * sender.display = "Praxis Hans Topp-Glücklich"
 * source.name = "Practitioner-Source"
@@ -26,7 +26,7 @@ RuleSet: Practitioner-to-HealthCareService(SR)
 * destination.endpoint = "healthcare-service@test.kim.de"
 
 RuleSet: HealthCareService-to-Pharmacy(SR)
-* focus[+] = Reference(ServiceRequest/{SR})
+* focus[0] = Reference(ServiceRequest/{SR})
 * sender.identifier = Pflegeheim-Immergrün-Identifier
 * sender.display = "Pflegeheim Immergrün"
 * source.name = "HealthCare-Source"
@@ -39,7 +39,7 @@ RuleSet: HealthCareService-to-Pharmacy(SR)
 * destination.endpoint = "pharmacy@test.kim.de"
 
 RuleSet: Pharmacy-to-HealthCareService(SR)
-* focus[+] = Reference(ServiceRequest/{SR})
+* focus[0] = Reference(ServiceRequest/{SR})
 * sender.identifier = Test-Apotheke-Identifier
 * sender.display = "Test Apotheke"
 * source.name = "Pharmacy-Source"
@@ -52,7 +52,7 @@ RuleSet: Pharmacy-to-HealthCareService(SR)
 * destination.endpoint = "healthcare-service@test.kim.de"
 
 RuleSet: Pharmacy-to-Practitioner(SR)
-* focus[+] = Reference(ServiceRequest/{SR})
+* focus[0] = Reference(ServiceRequest/{SR})
 * sender.identifier = Test-Apotheke-Identifier
 * sender.display = "Test Apotheke"
 * source.name = "Pharmacy-Source"
@@ -65,7 +65,7 @@ RuleSet: Pharmacy-to-Practitioner(SR)
 * destination.endpoint = "practitioner@test.kim.de"
 
 RuleSet: Practitioner-to-Pharmacy(SR)
-* focus[+] = Reference(ServiceRequest/{SR})
+* focus[0] = Reference(ServiceRequest/{SR})
 * sender.identifier = Hans-Topp-Glücklich-Identifier
 * sender.display = "Praxis Hans Topp-Glücklich"
 * source.name = "Practitioner-Source"
@@ -78,7 +78,7 @@ RuleSet: Practitioner-to-Pharmacy(SR)
 * destination.endpoint = "pharmacy@test.kim.dee"
 
 RuleSet: Pharmacy1-to-Pharmacy2(SR)
-* focus[+] = Reference(ServiceRequest/{SR})
+* focus[0] = Reference(ServiceRequest/{SR})
 * sender.identifier = Test-Apotheke-Identifier
 * sender.display = "Test Apotheke"
 * source.name = "Pharmacy-Source"
@@ -91,7 +91,7 @@ RuleSet: Pharmacy1-to-Pharmacy2(SR)
 * destination.endpoint = "pharamacy_2@test.kim.de"
 
 RuleSet: Pharmacy2-to-Pharmacy1(SR)
-* focus[+] = Reference(ServiceRequest/{SR})
+* focus[0] = Reference(ServiceRequest/{SR})
 * sender.identifier = Test-Apotheke2-Identifier
 * sender.display = "Test Apotheke 2"
 * sender.display = "Test Apotheke"

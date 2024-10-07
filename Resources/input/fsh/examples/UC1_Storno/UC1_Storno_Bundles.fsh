@@ -6,7 +6,7 @@ Description: "Cancellationrequest sent to Prescriber to get a Prescription"
 * identifier.value = "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
 * timestamp = "2025-05-13T15:32:12.239+02:00"
 // Header
-* entry[0].fullUrl = "http://erp-servicerequest-test.de/MessageHeader/UC1-HealthCareService-to-Practitioner-MessageHeader-Storno"
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/MessageHeader/UC1-HealthCareService-to-Practitioner-MessageHeader-Storno"
 * entry[=].resource = UC1-HealthCareService-to-Practitioner-MessageHeader-Storno
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Organization/Example-HealthCareService-Organization"
 * entry[=].resource = Example-HealthCareService-Organization

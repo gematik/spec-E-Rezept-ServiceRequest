@@ -1,5 +1,13 @@
 [
   {
+    "outputFile": "Bundle-InvalidConstraintBundle.json",
+    "fshName": "InvalidConstraintBundle",
+    "fshType": "Instance",
+    "fshFile": "examples/Constraint_Tests/Constraint_MainBundle.fsh",
+    "startLine": 1,
+    "endLine": 8
+  },
+  {
     "outputFile": "Bundle-UC1-1-Prescription-Request-To-Prescriber.json",
     "fshName": "UC1-1-Prescription-Request-To-Prescriber",
     "fshType": "Instance",
@@ -88,6 +96,14 @@
     "endLine": 50
   },
   {
+    "outputFile": "Bundle-UC3-1-Prescription-Request-To-Prescriber-COPY.json",
+    "fshName": "UC3-1-Prescription-Request-To-Prescriber-COPY",
+    "fshType": "Instance",
+    "fshFile": "examples/UC3/UC3_Bundles.fsh",
+    "startLine": 26,
+    "endLine": 39
+  },
+  {
     "outputFile": "Bundle-UC3-1-Prescription-Request-To-Prescriber.json",
     "fshName": "UC3-1-Prescription-Request-To-Prescriber",
     "fshType": "Instance",
@@ -96,12 +112,20 @@
     "endLine": 24
   },
   {
+    "outputFile": "Bundle-UC3-2-Fullfilled-Prescription-Request-COPY.json",
+    "fshName": "UC3-2-Fullfilled-Prescription-Request-COPY",
+    "fshType": "Instance",
+    "fshFile": "examples/UC3/UC3_Bundles.fsh",
+    "startLine": 68,
+    "endLine": 81
+  },
+  {
     "outputFile": "Bundle-UC3-2-Fullfilled-Prescription-Request.json",
     "fshName": "UC3-2-Fullfilled-Prescription-Request",
     "fshType": "Instance",
     "fshFile": "examples/UC3/UC3_Bundles.fsh",
-    "startLine": 26,
-    "endLine": 51
+    "startLine": 41,
+    "endLine": 66
   },
   {
     "outputFile": "Bundle-UC4-1-Prescription-and-Dispense-Request-To-Prescriber.json",
@@ -118,6 +142,14 @@
     "fshFile": "examples/UC4/UC4_Bundles.fsh",
     "startLine": 27,
     "endLine": 52
+  },
+  {
+    "outputFile": "Bundle-ValidConstraintBundle.json",
+    "fshName": "ValidConstraintBundle",
+    "fshType": "Instance",
+    "fshFile": "examples/Constraint_Tests/Constraint_MainBundle.fsh",
+    "startLine": 10,
+    "endLine": 17
   },
   {
     "outputFile": "CodeSystem-medication-request-reason-cs.json",

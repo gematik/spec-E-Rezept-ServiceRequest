@@ -6,7 +6,7 @@ Description: "Request sent to Prescriber to get a Prescription"
 * identifier.value = "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
 * timestamp = "2025-05-13T14:25:12+02:00"
 // Header
-* entry[0].fullUrl = "http://erp-servicerequest-test.de/MessageHeader/UC2-HealthCareService-to-Practitioner-MessageHeader"
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/MessageHeader/UC2-HealthCareService-to-Practitioner-MessageHeader"
 * entry[=].resource = UC2-HealthCareService-to-Practitioner-MessageHeader
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Organization/Example-HealthCareService-Organization"
 * entry[=].resource = Example-HealthCareService-Organization
@@ -32,7 +32,7 @@ Description: "Response sent from Practitioner back to HealthCareService"
 * identifier.value = "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
 * timestamp = "2025-05-14T08:15:12+02:00"
 // Header
-* entry[0].fullUrl = "http://erp-servicerequest-test.de/MessageHeader/UC2-Practitioner-to-HealthCareService-MessageHeader"
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/MessageHeader/UC2-Practitioner-to-HealthCareService-MessageHeader"
 * entry[=].resource = UC2-Practitioner-to-HealthCareService-MessageHeader
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Organization/Example-Practitioner-Organization"
 * entry[=].resource = Example-Practitioner-Organization

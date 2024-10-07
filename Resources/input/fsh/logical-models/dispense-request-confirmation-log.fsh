@@ -22,7 +22,7 @@ Description: "Fachliches Modell zur Beschreibung einer Bestätigung einer Dispen
   * obeys log-dispense-request-3
   * Abgabeinformationen 1..1 Reference(MedicationDispense) "Medizinische Verordnungsinformationen" "MedicationDispense und Medication Objekt aus den Abgabedaten."
 
-
+//TODO: Check if all log-invariants are in the profiles
 Invariant: log-dispense-request-3
 Description: "Wenn eine Anfrage erfüllt wird (status = 'completed'), müssen Abgabeinformationen vorhanden sein."
 Severity: #error

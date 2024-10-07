@@ -35,8 +35,8 @@ Description: "Header containing information about the sender and addressee"
   * ^comment = "For more information see [ATF ImplementationGuide](https://simplifier.net/app-transport-framework/~guides)"
 
 Invariant: service-request-message-header-1
-Description: "If the eventCode is message-copy then the focus must be a Bundle, otherwise a ServiceRequest."
-Expression: "(event.coding.code = 'message-copy' implies focus.resolve().is(Bundle)) and (event.coding.code != 'message-copy' implies focus.resolve().is(ServiceRequest))" //TODO: Testen
+Description: "If the Message is a copy then the focus must be a Bundle, otherwise a ServiceRequest."
+Expression: "(event.coding.code = 'eRezept_Rezeptanforderung;NachrichtKopie' implies focus.resolve().is(Bundle)) and (event.coding.code != 'eRezept_Rezeptanforderung;NachrichtKopie' implies focus.resolve().is(ServiceRequest))" //TODO: Testen
 Severity: #error
 
 //TODO if eventCode is Storno then ServiceRequest.status = revoked ODER entered-in-error
