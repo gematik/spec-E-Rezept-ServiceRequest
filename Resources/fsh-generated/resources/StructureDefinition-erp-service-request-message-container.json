@@ -19,6 +19,19 @@
   "differential": {
     "element": [
       {
+        "id": "Bundle",
+        "path": "Bundle",
+        "constraint": [
+          {
+            "key": "service-request-message-container-1",
+            "severity": "error",
+            "human": "If the Message is a copy then the focus of the MessageHeader must be a Bundle, otherwise a ServiceRequest.",
+            "expression": "(Bundle.entry[0].resource.event.code = 'eRezept_Rezeptanforderung;NachrichtKopie' implies (Bundle.entry[0].resource.focus.all($this.resolve() is Bundle))) and (Bundle.entry[0].resource.event.code != 'eRezept_Rezeptanforderung;NachrichtKopie' implies Bundle.entry[0].resource.focus.all($this.resolve() is ServiceRequest))",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
+          }
+        ]
+      },
+      {
         "id": "Bundle.entry:MessageHeader",
         "path": "Bundle.entry",
         "sliceName": "MessageHeader"

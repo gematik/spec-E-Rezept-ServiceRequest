@@ -4,26 +4,11 @@ Id: erp-service-request-message-container
 Title: "ERP Service Request Message Container"
 Description: "Bundle, which contains all resources of a message"
 * insert Meta (erp-service-request-message-container)
+* obeys service-request-message-container-1
 
 * entry[MessageHeader].resource only ERPServiceRequestRequestHeader
 
-/*
-Beispielinstanzen finden sich unter ../examples
-
-Folgende UseCases sind beschrieben:
-UC1: Pflegeeinrichtung -> Arzt -> Pflegeeinrichtung -> Apotheke
-UC2: Pflegeeinrichtung -> Arzt -> Apotheke -> Pflegeeinrichtung
-UC3: Pflegeeinrichtung -> Arzt -> Pflegeeinrichtung (Patient geht selbst zur Apotheke)
-UC4(parenterele Zubereitung): Apotheke -> Arzt -> Apotheke
-*/
-
-
-/*
-
-UC2:
-* PrescriptionRequest zum Arzt
-* PrescriptionRequest (complete, ohne Token) an Pflegeeinrichtung
-* DispenseRequest (da generiert, active, mit Token) an Apotheke
-* DispenseRequest (active ohne Token) an Pflegeeinrichtung
-* DispenseRequest (complete) an Pflegeeinrichtung
-*/
+Invariant: service-request-message-container-1
+Description: "If the Message is a copy then the focus of the MessageHeader must be a Bundle, otherwise a ServiceRequest."
+Expression: "(Bundle.entry[0].resource.event.code = 'eRezept_Rezeptanforderung;NachrichtKopie' implies (Bundle.entry[0].resource.focus.all($this.resolve() is Bundle))) and (Bundle.entry[0].resource.event.code != 'eRezept_Rezeptanforderung;NachrichtKopie' implies Bundle.entry[0].resource.focus.all($this.resolve() is ServiceRequest))"
+Severity: #error

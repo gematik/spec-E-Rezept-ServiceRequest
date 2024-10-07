@@ -131,6 +131,10 @@
         "intent": "order",
         "identifier": [
           {
+            "system": "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier",
+            "value": "1"
+          },
+          {
             "system": "https://gematik.de/fhir/erp-servicerequest/sid/patient-id",
             "value": "Patient-ID-e15232e9-01e0-4ce8-b628-71adb9023b21"
           },

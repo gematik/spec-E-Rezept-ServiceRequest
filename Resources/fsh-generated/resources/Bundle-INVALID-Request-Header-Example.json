@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "id": "UC4-1-Prescription-and-Dispense-Request-To-Prescriber",
+  "id": "INVALID-Request-Header-Example",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
@@ -9,15 +9,15 @@
   "type": "message",
   "identifier": {
     "system": "urn:ietf:rfc:3986",
-    "value": "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
+    "value": "urn:uuid:39850775-6726-44fe-9739-c5114ebf0a93"
   },
   "timestamp": "2025-05-13T14:25:12+02:00",
   "entry": [
     {
-      "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/UC4-1-Pharmacy-to-Practitioner-MessageHeader",
+      "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/INVALID-Pharmacy-to-Practitioner-MessageHeader-1",
       "resource": {
         "resourceType": "MessageHeader",
-        "id": "UC4-1-Pharmacy-to-Practitioner-MessageHeader",
+        "id": "INVALID-Pharmacy-to-Practitioner-MessageHeader-1",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
@@ -35,7 +35,7 @@
         },
         "focus": [
           {
-            "reference": "ServiceRequest/UC4-Initial-Prescription-Request"
+            "reference": "ServiceRequest/UC3-Initial-Prescription-Request"
           }
         ],
         "sender": {
@@ -52,7 +52,7 @@
           }
         ],
         "eventCoding": {
-          "code": "eRezept_ParenteraleZubereitung;Rezeptanfrage",
+          "code": "eRezept_Rezeptanforderung;NachrichtKopie",
           "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
         },
         "responsible": {
@@ -119,10 +119,10 @@
       }
     },
     {
-      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/UC4-Initial-Prescription-Request",
+      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/UC3-Initial-Prescription-Request",
       "resource": {
         "resourceType": "ServiceRequest",
-        "id": "UC4-Initial-Prescription-Request",
+        "id": "UC3-Initial-Prescription-Request",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
@@ -133,27 +133,11 @@
           {
             "system": "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier",
             "value": "1"
-          },
-          {
-            "system": "https://gematik.de/fhir/erp-servicerequest/sid/patient-id",
-            "value": "Patient-ID-e15232e9-01e0-4ce8-b628-71adb9023b21"
-          },
-          {
-            "system": "https://gematik.de/fhir/erp-servicerequest/sid/case-id",
-            "value": "Case-ID-85d39ff7-2f02-4bfc-85d5-0ba2752f6076"
-          },
-          {
-            "system": "https://gematik.de/fhir/erp-servicerequest/sid/process-id",
-            "value": "Process-ID-db6fd21d-cc85-4411-8567-479a7dc1ef74"
-          },
-          {
-            "system": "https://my-very-own-zyto-identifier",
-            "value": "My-ID-bdbdf8a1-ffa4-4f16-a6c4-38e690ac5548"
           }
         ],
         "requisition": {
           "system": "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier",
-          "value": "GroupID-UC4"
+          "value": "GroupID-UC3"
         },
         "code": {
           "coding": [
@@ -165,7 +149,7 @@
         },
         "basedOn": [
           {
-            "reference": "MedicationRequest/Example-Zyto-Medication-Request"
+            "reference": "MedicationRequest/Example-Initial-Medication-Request"
           }
         ],
         "status": "active",
@@ -255,37 +239,40 @@
       }
     },
     {
-      "fullUrl": "http://erp-servicerequest-test.de/MedicationRequest/Example-Zyto-Medication-Request",
+      "fullUrl": "http://erp-servicerequest-test.de/MedicationRequest/Example-Initial-Medication-Request",
       "resource": {
         "resourceType": "MedicationRequest",
-        "id": "Example-Zyto-Medication-Request",
+        "id": "Example-Initial-Medication-Request",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request"
           ]
         },
+        "dispenseRequest": {
+          "quantity": {
+            "system": "http://unitsofmeasure.org",
+            "code": "{Package}",
+            "value": 1
+          }
+        },
         "status": "active",
         "intent": "order",
         "medicationReference": {
-          "reference": "Medication/Example-Zyto-Medication"
+          "reference": "Medication/Example-Initial-Medication"
         },
         "subject": {
           "reference": "Patient/Example-Patient"
-        },
-        "authoredOn": "2022-05-20",
-        "substitution": {
-          "allowedBoolean": false
         }
       }
     },
     {
-      "fullUrl": "http://erp-servicerequest-test.de/Medication/Example-Zyto-Medication",
+      "fullUrl": "http://erp-servicerequest-test.de/Medication/Example-Initial-Medication",
       "resource": {
         "resourceType": "Medication",
-        "id": "Example-Zyto-Medication",
+        "id": "Example-Initial-Medication",
         "meta": {
           "profile": [
-            "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_Compounding|1.1.0"
+            "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.1.0"
           ]
         },
         "extension": [
@@ -296,8 +283,8 @@
                 {
                   "system": "http://snomed.info/sct",
                   "version": "http://snomed.info/sct/900000000000207008/version/20220331",
-                  "code": "373873005:860781008=362943005",
-                  "display": "Pharmaceutical / biologic product (product) : Has product characteristic (attribute) = Manual method (qualifier value)"
+                  "code": "763158003",
+                  "display": "Medicinal product (product)"
                 }
               ]
             }
@@ -312,62 +299,28 @@
           {
             "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Vaccine",
             "valueBoolean": false
+          },
+          {
+            "url": "http://fhir.de/StructureDefinition/normgroesse",
+            "valueCode": "N1"
           }
         ],
         "code": {
           "coding": [
             {
-              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Type",
-              "code": "rezeptur"
+              "system": "http://fhir.de/CodeSystem/ifa/pzn",
+              "code": "08585997"
+            }
+          ],
+          "text": "Prospan® Hustensaft 100ml"
+        },
+        "form": {
+          "coding": [
+            {
+              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM",
+              "code": "FLE"
             }
           ]
-        },
-        "amount": {
-          "denominator": {
-            "value": 1
-          },
-          "numerator": {
-            "extension": [
-              {
-                "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_PackagingSize",
-                "valueString": "500"
-              }
-            ],
-            "unit": "ml"
-          }
-        },
-        "ingredient": [
-          {
-            "strength": {
-              "denominator": {
-                "value": 1
-              },
-              "numerator": {
-                "value": 180,
-                "unit": "mg"
-              }
-            },
-            "itemCodeableConcept": {
-              "text": "Etoposid"
-            }
-          },
-          {
-            "strength": {
-              "denominator": {
-                "value": 1
-              },
-              "numerator": {
-                "value": 500,
-                "unit": "ml"
-              }
-            },
-            "itemCodeableConcept": {
-              "text": "NaCl 0,9 %"
-            }
-          }
-        ],
-        "form": {
-          "text": "Infusionslösung"
         }
       }
     }

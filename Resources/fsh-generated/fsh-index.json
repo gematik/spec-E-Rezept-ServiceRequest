@@ -1,11 +1,19 @@
 [
   {
-    "outputFile": "Bundle-InvalidConstraintBundle.json",
-    "fshName": "InvalidConstraintBundle",
+    "outputFile": "Bundle-INVALID-Request-Header-Example-2.json",
+    "fshName": "INVALID-Request-Header-Example-2",
     "fshType": "Instance",
-    "fshFile": "examples/Constraint_Tests/Constraint_MainBundle.fsh",
-    "startLine": 1,
-    "endLine": 8
+    "fshFile": "examples/Constraint_Tests/inv-service-request-message-header-1.fsh",
+    "startLine": 42,
+    "endLine": 55
+  },
+  {
+    "outputFile": "Bundle-INVALID-Request-Header-Example.json",
+    "fshName": "INVALID-Request-Header-Example",
+    "fshType": "Instance",
+    "fshFile": "examples/Constraint_Tests/inv-service-request-message-header-1.fsh",
+    "startLine": 9,
+    "endLine": 30
   },
   {
     "outputFile": "Bundle-UC1-1-Prescription-Request-To-Prescriber.json",
@@ -142,14 +150,6 @@
     "fshFile": "examples/UC4/UC4_Bundles.fsh",
     "startLine": 27,
     "endLine": 52
-  },
-  {
-    "outputFile": "Bundle-ValidConstraintBundle.json",
-    "fshName": "ValidConstraintBundle",
-    "fshType": "Instance",
-    "fshFile": "examples/Constraint_Tests/Constraint_MainBundle.fsh",
-    "startLine": 10,
-    "endLine": 17
   },
   {
     "outputFile": "CodeSystem-medication-request-reason-cs.json",
@@ -349,7 +349,7 @@
     "fshType": "Profile",
     "fshFile": "profiles/1_Bundle.fsh",
     "startLine": 1,
-    "endLine": 8
+    "endLine": 9
   },
   {
     "outputFile": "StructureDefinition-erp-service-request-organization.json",

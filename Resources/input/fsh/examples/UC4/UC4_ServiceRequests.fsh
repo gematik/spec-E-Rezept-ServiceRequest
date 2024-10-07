@@ -4,7 +4,9 @@ InstanceOf: ERPServiceRequestPrescriptionRequest
 Usage: #inline
 Title: "Initial Prescription Request"
 Description: "This ServiceRequest is sent initially to the prescribing practitioner"
-* identifier[requestId].value = "1"
+* identifier[+]
+  * system = "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier"
+  * value = "1"
 * identifier[+]
   * system = "https://gematik.de/fhir/erp-servicerequest/sid/patient-id"
   * value = "Patient-ID-e15232e9-01e0-4ce8-b628-71adb9023b21"
@@ -33,7 +35,9 @@ Usage: #inline
 Title: "Fullfilled Prescription Request"
 Description: "ServiceRequest that is returned to the requester"
 * extension[EPrescriptionToken].valueIdentifier.value = "Task/169.100.000.000.004.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
-* identifier[requestId].value = "1"
+* identifier[+]
+  * system = "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier"
+  * value = "1"
 * identifier[+]
   * system = "https://gematik.de/fhir/erp-servicerequest/sid/patient-id"
   * value = "Patient-ID-e15232e9-01e0-4ce8-b628-71adb9023b21"
