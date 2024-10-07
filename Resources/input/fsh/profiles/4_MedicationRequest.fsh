@@ -26,6 +26,7 @@ If this ID is available, the receiving system MUST be able to search for the pre
   * ^short = "Multiple prescription order"
   * ^definition = "If the prescription is should be a multiple prescription order. Only the 'Kennzeichen' should be stated, indicating that the prescription is requested to be a multiple prescription order."
   * ^comment = "When this extension is received by a PVS, the prescriber has to be visually notified about the request for a multiple prescription order."
+  * ^isModifier = true
   * ^isModifierReason = "When this extension is received by a PVS, the prescriber has to be visually notified about the request for a multiple prescription order."
 
 * medication[x] MS

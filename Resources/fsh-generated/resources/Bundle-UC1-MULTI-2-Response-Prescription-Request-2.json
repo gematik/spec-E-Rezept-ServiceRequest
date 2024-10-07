@@ -170,7 +170,7 @@
       }
     },
     {
-      "fullUrl": "http://erp-servicerequest-test.de/Patient/Example-Patient",
+      "fullUrl": "http://erp-servicerequest-test.de/Patient/Example-Patient-2",
       "resource": {
         "resourceType": "Patient",
         "id": "Example-Patient-2",

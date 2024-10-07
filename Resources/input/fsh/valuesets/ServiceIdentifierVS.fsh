@@ -8,5 +8,3 @@ Description: "Identifiers for specifying an application of e-prescription commun
 
 // Anwendungsfertige Zytostatikazubereitungen
 * include codes from system ServiceIdentifierCS where concept is-a #eRezept_ParenteraleZubereitung
-
-* include codes from system ServiceRequestServiceIdentifierCS

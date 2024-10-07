@@ -31,9 +31,6 @@
             "value": "eRezept_ParenteraleZubereitung"
           }
         ]
-      },
-      {
-        "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-service-identifier-cs"
       }
     ]
   }
