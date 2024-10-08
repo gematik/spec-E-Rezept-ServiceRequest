@@ -32,22 +32,29 @@
           {
             "key": "service-request-message-container-2",
             "severity": "error",
-            "human": "If the the ServiceRequest contains the health-care service as a reference, then the e-mail contact must be present.",
-            "expression": "Bundle.entry.resource.children().reference.where($this.startsWith('ServiceRequest')).all($this.resolve().supportingInfo.where($this.type = 'Organization').exists() implies $this.resolve().supportingInfo.where($this.type = 'Organization').reference.resolve().contact.telecom.where(system = 'email').exists())",
+            "human": "If the the Prescription-ServiceRequest contains the health-care service as a reference, then the e-mail contact must be present.",
+            "expression": "Bundle.entry.resource.children().reference.where($this.startsWith('ServiceRequest')).all(($this.resolve().supportingInfo.where($this.type = 'Organization').exists() and $this.resolve().code.coding.code = 'prescription-request')implies $this.resolve().supportingInfo.where($this.type = 'Organization').reference.resolve().contact.telecom.where(system = 'email').exists())",
             "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
           },
           {
             "key": "service-request-message-container-3",
             "severity": "error",
-            "human": "If the the ServiceRequest contains the health-care service as a reference, then the organization must have the respective type.",
-            "expression": "Bundle.entry.resource.children().reference.where($this.startsWith('ServiceRequest')).all($this.resolve().supportingInfo.where($this.type = 'Organization').exists() implies $this.resolve().supportingInfo.where($this.type = 'Organization').reference.resolve().type.coding.code = 'PFL')",
+            "human": "If the the Prescription-ServiceRequest contains the health-care service as a reference, then the organization must have the respective type.",
+            "expression": "Bundle.entry.resource.children().reference.where($this.startsWith('ServiceRequest')).all(($this.resolve().code.coding.code = 'prescription-request' and $this.resolve().supportingInfo.where($this.type = 'Organization').exists()) implies $this.resolve().supportingInfo.where($this.type = 'Organization').reference.resolve().type.coding.code = 'PFL')",
             "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
           },
           {
             "key": "service-request-message-container-4",
             "severity": "error",
-            "human": "If the the ServiceRequest is active and the requester is a pharmacy, then the Healthcare Service to receive a copy must be stated.",
-            "expression": "Bundle.entry.resource.children().reference.where($this.startsWith('ServiceRequest')).all(($this.resolve().status = 'active' and $this.resolve().requester.resolve().type.coding.code = 'APO') implies $this.resolve().supportingInfo.where($this.type = 'Organization').exists())",
+            "human": "If the the Prescription-ServiceRequest is active and the requester is a pharmacy, then the Healthcare Service to receive a copy must be stated.",
+            "expression": "Bundle.entry.resource.children().reference.where($this.startsWith('ServiceRequest')).all(($this.resolve().code.coding.code = 'prescription-request' and $this.resolve().status = 'active' and $this.resolve().requester.resolve().type.coding.code = 'APO') implies $this.resolve().supportingInfo.where($this.type = 'Organization').exists())",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
+          },
+          {
+            "key": "service-request-message-container-5",
+            "severity": "error",
+            "human": "If the the Dispense-ServiceRequest is active then the requester must be a Health Care Service.",
+            "expression": "Bundle.entry.resource.children().reference.where($this.startsWith('ServiceRequest')).all(($this.resolve().code.coding.code = 'dispense-request' and $this.resolve().status = 'active') implies $this.resolve().requester.resolve().type.coding.code = 'PFL')",
             "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
           }
         ]

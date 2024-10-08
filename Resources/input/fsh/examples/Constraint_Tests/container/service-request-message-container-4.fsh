@@ -9,7 +9,7 @@ Instance: INVALID-message-container-4
 InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
 Title: "INVALID-service-request-message-container-4"
-Description: "Test for constraint service-request-message-container-3"
+Description: "Test for constraint service-request-message-container-4"
 * identifier.value = "urn:uuid:f6ecd2e0-2fd0-4017-8797-9140fea018b5"
 * timestamp = "2025-05-13T14:25:12+02:00"
 // Header

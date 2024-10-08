@@ -40,6 +40,14 @@
     "endLine": 33
   },
   {
+    "outputFile": "Bundle-INVALID-message-container-5.json",
+    "fshName": "INVALID-message-container-5",
+    "fshType": "Instance",
+    "fshFile": "examples/Constraint_Tests/container/service-request-message-container-5.fsh",
+    "startLine": 8,
+    "endLine": 31
+  },
+  {
     "outputFile": "Bundle-UC1-1-Prescription-Request-To-Prescriber.json",
     "fshName": "UC1-1-Prescription-Request-To-Prescriber",
     "fshType": "Instance",
@@ -288,6 +296,30 @@
     "endLine": 19
   },
   {
+    "outputFile": "ServiceRequest-INVALID-dispense-request-1.json",
+    "fshName": "INVALID-dispense-request-1",
+    "fshType": "Instance",
+    "fshFile": "examples/Constraint_Tests/servicerequest/servicerequest-dispense-request-1.fsh",
+    "startLine": 8,
+    "endLine": 19
+  },
+  {
+    "outputFile": "ServiceRequest-INVALID-dispense-request-2.json",
+    "fshName": "INVALID-dispense-request-2",
+    "fshType": "Instance",
+    "fshFile": "examples/Constraint_Tests/servicerequest/servicerequest-dispense-request-2.fsh",
+    "startLine": 8,
+    "endLine": 19
+  },
+  {
+    "outputFile": "ServiceRequest-INVALID-dispense-request-3.json",
+    "fshName": "INVALID-dispense-request-3",
+    "fshType": "Instance",
+    "fshFile": "examples/Constraint_Tests/servicerequest/servicerequest-dispense-request-3.fsh",
+    "startLine": 8,
+    "endLine": 19
+  },
+  {
     "outputFile": "ServiceRequest-INVALID-prescription-request-1.json",
     "fshName": "INVALID-prescription-request-1",
     "fshType": "Instance",
@@ -405,7 +437,7 @@
     "fshType": "Profile",
     "fshFile": "profiles/3.2_Dispense_ServiceRequest.fsh",
     "startLine": 1,
-    "endLine": 92
+    "endLine": 90
   },
   {
     "outputFile": "StructureDefinition-erp-service-request-eprescription-token.json",
@@ -429,7 +461,7 @@
     "fshType": "Profile",
     "fshFile": "profiles/1_Bundle.fsh",
     "startLine": 1,
-    "endLine": 12
+    "endLine": 13
   },
   {
     "outputFile": "StructureDefinition-erp-service-request-organization.json",

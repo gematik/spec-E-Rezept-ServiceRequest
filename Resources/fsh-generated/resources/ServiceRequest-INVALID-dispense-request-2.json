@@ -1,0 +1,36 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "INVALID-dispense-request-2",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"
+    ]
+  },
+  "intent": "filler-order",
+  "identifier": [
+    {
+      "system": "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier",
+      "value": "INVALID-dispense-request-2"
+    }
+  ],
+  "requisition": {
+    "system": "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier",
+    "value": "GroupID-UC1"
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "dispense-request",
+        "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
+      }
+    ]
+  },
+  "status": "active",
+  "subject": {
+    "reference": "Patient/Example-Patient"
+  },
+  "requester": {
+    "reference": "Organization/Example-HealthCareService-Organization"
+  },
+  "authoredOn": "2025-05-14"
+}
