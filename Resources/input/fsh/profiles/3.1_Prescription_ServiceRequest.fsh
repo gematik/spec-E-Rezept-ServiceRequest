@@ -5,12 +5,13 @@ Title: "ERP Service Request Prescription Request"
 Description: "ServiceRequest, which is used to request a recipe"
 * insert Meta (erp-service-request-prescription-request)
 
-// * obeys servicerequest-prescription-request-1
-// * obeys servicerequest-prescription-request-2
-// * obeys servicerequest-prescription-request-3
-// * obeys servicerequest-prescription-request-5
-// * obeys servicerequest-prescription-request-6
-// * obeys servicerequest-prescription-request-7
+* obeys servicerequest-prescription-request-1
+* obeys servicerequest-prescription-request-2
+* obeys servicerequest-prescription-request-3
+* obeys servicerequest-prescription-request-4
+* obeys servicerequest-prescription-request-5
+* obeys servicerequest-prescription-request-6
+* obeys servicerequest-prescription-request-7
 
 * extension MS
 * extension contains EPrescriptionTokenEX named EPrescriptionToken 0..* MS
@@ -139,12 +140,6 @@ Description: "ServiceRequest, which is used to request a recipe"
   * ^comment = "This needs to be set if the initiating Requester is a pharmacy."
   * type = "Organization"
 
-
-//TODO: Test Prescription Invariants!
-
-//TODO: Wenn Organization referenziert aus SR:supportingInformation:pflegeeinrichtungKopie, dann muss kim adresse vorhanden sein
-// TODO: wenn status active oder completed dann basedOn vorhanden
-
 Invariant: servicerequest-prescription-request-1
 Description: "If the status is active, the requester must be present."
 Expression: "status = 'active' implies requester.exists()"
@@ -158,6 +153,11 @@ Severity: #error
 Invariant: servicerequest-prescription-request-3
 Description: "If the status is active, then the request must be based on an ERP MedicationRequest."
 Expression: "status = 'active' implies basedOn.exists() and basedOn is ERPServiceRequestMedicationRequest"
+Severity: #error
+
+Invariant: servicerequest-prescription-request-4
+Description: "If the status is active or completed, then basedOn is required."
+Expression: "(status = 'active' or status = 'completed') implies basedOn.exists()"
 Severity: #error
 
 Invariant: servicerequest-prescription-request-5
@@ -174,3 +174,4 @@ Invariant: servicerequest-prescription-request-7
 Description: "If the status is completed, the performer must be present."
 Expression: "status = 'completed' implies performer.exists()"
 Severity: #error
+

@@ -10,6 +10,8 @@ Description: "Request sent from Pharmacy to Prescriber to get a Prescription"
 * entry[=].resource = UC3-Pharmacy-to-Practitioner-MessageHeader
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Organization/Example-Pharmacy-Organization"
 * entry[=].resource = Example-Pharmacy-Organization
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/Organization/Example-HealthCareService-Organization"
+* entry[=].resource = Example-HealthCareService-Organization
 
 // ServiceRequest
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/ServiceRequest/UC3-Initial-Prescription-Request"

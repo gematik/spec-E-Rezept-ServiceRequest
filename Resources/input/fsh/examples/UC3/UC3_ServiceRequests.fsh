@@ -14,6 +14,7 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * authoredOn = "2025-05-13"
 * requester = Reference(Example-Pharmacy-Organization)
 * performer.identifier = Hans-Topp-Glücklich-Identifier
+* supportingInfo[pflegeeinrichtungKopie] = Reference(Example-HealthCareService-Organization)
 
 Instance: UC3-Response-Prescription-Request
 InstanceOf: ERPServiceRequestPrescriptionRequest

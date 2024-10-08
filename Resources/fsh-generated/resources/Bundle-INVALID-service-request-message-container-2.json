@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "id": "INVALID-Request-Header-Example",
+  "id": "INVALID-service-request-message-container-2",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
@@ -9,15 +9,15 @@
   "type": "message",
   "identifier": {
     "system": "urn:ietf:rfc:3986",
-    "value": "urn:uuid:39850775-6726-44fe-9739-c5114ebf0a93"
+    "value": "urn:uuid:4e7026da-2498-4b29-ad5c-02451161e404"
   },
   "timestamp": "2025-05-13T14:25:12+02:00",
   "entry": [
     {
-      "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/INVALID-Pharmacy-to-Practitioner-MessageHeader-1",
+      "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/UC3-Pharmacy-to-Practitioner-MessageHeader",
       "resource": {
         "resourceType": "MessageHeader",
-        "id": "INVALID-Pharmacy-to-Practitioner-MessageHeader-1",
+        "id": "UC3-Pharmacy-to-Practitioner-MessageHeader",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
@@ -52,7 +52,7 @@
           }
         ],
         "eventCoding": {
-          "code": "eRezept_Rezeptanforderung;NachrichtKopie",
+          "code": "eRezept_Rezeptanforderung;Rezeptanfrage",
           "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
         },
         "responsible": {
@@ -119,10 +119,72 @@
       }
     },
     {
-      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/UC3-Initial-Prescription-Request",
+      "fullUrl": "http://erp-servicerequest-test.de/Organization/Example-HealthCareService-Organization",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "Example-HealthCareService-Organization",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
+          ]
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihe-d.de/CodeSystems/PatientBezogenenGesundheitsversorgung",
+                "code": "PFL",
+                "display": "Pflegeheim"
+              }
+            ]
+          }
+        ],
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "0301234567"
+              },
+              {
+                "system": "email",
+                "value": "arbeitsplatz-1@test-pflegeheim.kim.telematik"
+              }
+            ]
+          }
+        ],
+        "address": [
+          {
+            "type": "both",
+            "line": [
+              "Musterstr. 2"
+            ],
+            "_line": [
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                    "valueString": "2"
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                    "valueString": "Musterstr."
+                  }
+                ]
+              }
+            ],
+            "city": "Berlin",
+            "postalCode": "10623"
+          }
+        ],
+        "name": "Pflegeheim Immergrün"
+      }
+    },
+    {
+      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/invalid-Initial-Prescription-Request",
       "resource": {
         "resourceType": "ServiceRequest",
-        "id": "UC3-Initial-Prescription-Request",
+        "id": "invalid-Initial-Prescription-Request",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
@@ -150,7 +212,7 @@
         "supportingInfo": [
           {
             "type": "Organization",
-            "reference": "Organization/Example-HealthCareService-Organization"
+            "reference": "Organization/Example-Pharmacy-Organization"
           }
         ],
         "basedOn": [
