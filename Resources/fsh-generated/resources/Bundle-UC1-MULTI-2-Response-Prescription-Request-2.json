@@ -152,6 +152,14 @@
           "reference": "Patient/Example-Patient-2"
         },
         "authoredOn": "2025-05-13",
+        "performer": [
+          {
+            "identifier": {
+              "system": "https://gematik.de/fhir/sid/telematik-id",
+              "value": "1-test-telematik-id"
+            }
+          }
+        ],
         "reasonCode": [
           {
             "text": "Hr. Edgarson braucht das Buscopan nicht mehr, wird abgesetzt und aus dem Medkationsplan entfernt."

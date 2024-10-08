@@ -14,7 +14,6 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * subject = Reference(Example-Patient)
 * authoredOn = "2025-05-13"
 * requester = Reference(Example-HealthCareService-Organization)
-* performer.identifier = Hans-Topp-Glücklich-Identifier
 * note[+].text = "Sehr geehrter Herr Topp Glücklich,\n Anbei folgende Rezeptanfrage zur Einlösung von Herrn Königsstein."
 * note[=].time = "2025-05-13T14:23:12+02:00"
 
@@ -32,6 +31,7 @@ Description: "ServiceRequest that is returned to the requester"
 * authoredOn = "2025-05-13"
 * intent = RequestIntent#order
 * code = ServiceRequestTypeCS#prescription-request
+* performer.identifier = Hans-Topp-Glücklich-Identifier
 * note[+].text = "Sehr geehrter Herr Topp Glücklich,\n Anbei folgende Rezeptanfrage zur Einlösung von Herrn Königsstein."
 * note[=].time = "2025-05-13T12:23:12+02:00"
 * note[+].text = "Sehr geehrte Damen und Herren,\n Die Verordnung steht für Herr Königsstein bereit\n Mit kollegialen Grüßen,\n Topp Glücklich."

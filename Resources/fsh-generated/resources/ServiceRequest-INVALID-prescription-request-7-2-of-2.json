@@ -1,6 +1,6 @@
 {
   "resourceType": "ServiceRequest",
-  "id": "INVALID-prescription-request-4",
+  "id": "INVALID-prescription-request-7-2-of-2",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
@@ -10,20 +10,17 @@
   "identifier": [
     {
       "system": "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier",
-      "value": "INVALID-prescription-request-4"
+      "value": "INVALID-prescription-request-7-2-of-2"
     }
   ],
   "requisition": {
     "system": "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier",
     "value": "GroupID-UC3"
   },
-  "extension": [
+  "modifierExtension": [
     {
-      "valueIdentifier": {
-        "system": "https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken",
-        "value": "Task/169.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
-      },
-      "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex"
+      "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex",
+      "valueBoolean": false
     }
   ],
   "code": {
@@ -34,12 +31,14 @@
       }
     ]
   },
+  "basedOn": [
+    {
+      "reference": "MedicationRequest/Example-Initial-Medication-Request"
+    }
+  ],
   "status": "completed",
   "subject": {
     "reference": "Patient/Example-Patient"
-  },
-  "requester": {
-    "reference": "Organization/Example-HealthCareService-Organization"
   },
   "authoredOn": "2025-05-13",
   "performer": [

@@ -28,8 +28,8 @@ Expression: "Bundle.entry.resource.children().reference.where($this.startsWith('
 Severity: #error
 
 Invariant: service-request-message-container-4
-Description: "If the the Prescription-ServiceRequest is active and the requester is a pharmacy, then the Healthcare Service to receive a copy must be stated."
-Expression: "Bundle.entry.resource.children().reference.where($this.startsWith('ServiceRequest')).all(($this.resolve().code.coding.code = 'prescription-request' and $this.resolve().status = 'active' and $this.resolve().requester.resolve().type.coding.code = 'APO') implies $this.resolve().supportingInfo.where($this.type = 'Organization').exists())"
+Description: "If the the Prescription-ServiceRequest is active, not Zyto and the requester is a pharmacy, then the Healthcare Service to receive a copy must be stated."
+Expression: "(Bundle.entry[0].resource.event.code != 'eRezept_ParenteraleZubereitung;Rezeptanfrage') implies Bundle.entry.resource.children().reference.where($this.startsWith('ServiceRequest')).all(($this.resolve().code.coding.code = 'prescription-request' and $this.resolve().status = 'active' and $this.resolve().requester.resolve().type.coding.code = 'APO') implies $this.resolve().supportingInfo.where($this.type = 'Organization').exists())"
 Severity: #error
 
 Invariant: service-request-message-container-5

@@ -15,7 +15,6 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * authoredOn = "2025-05-13"
 * requester = Reference(Example-HealthCareService-Organization)
 * priority = #urgent
-* performer.identifier = Hans-Topp-Glücklich-Identifier
 * reasonCode = MedicationRequestReasonCS#exhausted-range
   * text = "Medikament läuft am 15.05.2025 aus. Es sind noch 7 stk übrig."
   * extension[remainingSupply].valueQuantity
@@ -37,6 +36,7 @@ Description: "ServiceRequest that is returned to the requester"
 * subject = Reference(Example-Patient)
 * authoredOn = "2025-05-13"
 * intent = RequestIntent#order
+* performer.identifier = Hans-Topp-Glücklich-Identifier
 * code = ServiceRequestTypeCS#prescription-request
 * note[+].text = "Sehr geehrter Herr Topp Glücklich,\n Wir möchten gerne die angehangene Medikation bei ihnen anfragen."
 * note[=].time = "2025-05-13T12:23:12+02:00"

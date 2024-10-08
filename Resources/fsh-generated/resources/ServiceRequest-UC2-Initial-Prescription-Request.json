@@ -44,14 +44,6 @@
   "requester": {
     "reference": "Organization/Example-HealthCareService-Organization"
   },
-  "performer": [
-    {
-      "identifier": {
-        "system": "https://gematik.de/fhir/sid/telematik-id",
-        "value": "1-test-telematik-id"
-      }
-    }
-  ],
   "note": [
     {
       "text": "Sehr geehrter Herr Topp Glücklich,\n Anbei folgende Rezeptanfrage zur Einlösung von Herrn Königsstein.",

@@ -11,6 +11,7 @@ Description: "ServiceRequest, which is used to request a recipe"
 * obeys servicerequest-prescription-request-4
 * obeys servicerequest-prescription-request-5
 * obeys servicerequest-prescription-request-6
+* obeys servicerequest-prescription-request-7
 
 * extension MS
 * extension contains EPrescriptionTokenEX named EPrescriptionToken 0..* MS
@@ -145,8 +146,8 @@ Expression: "status = 'active' implies requester.exists()"
 Severity: #error
 
 Invariant: servicerequest-prescription-request-2
-Description: "If the status is completed and the prescription should not be redeemed by the patient, the e-prescription-token must be present."
-Expression: "(status = 'completed' and modifierExtension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex').value = true) implies extension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex').exists().not()"
+Description: "If the status is completed and the prescription should be redeemed by the patient, the e-prescription-token must not be present."
+Expression: "(status = 'completed' and modifierExtension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex').exists() and modifierExtension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex').value = true) implies extension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex').exists().not()"
 Severity: #error
 
 Invariant: servicerequest-prescription-request-3
@@ -167,5 +168,10 @@ Severity: #error
 Invariant: servicerequest-prescription-request-6
 Description: "If the status is completed, the performer must be present."
 Expression: "status = 'completed' implies performer.exists()"
+Severity: #error
+
+Invariant: servicerequest-prescription-request-7
+Description: "If the status is completed and the prescription should not be redeemed by the patient, the e-prescription-token must be present."
+Expression: "(status = 'completed' and (modifierExtension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex').value = false or modifierExtension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex').exists().not())) implies extension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex').exists()"
 Severity: #error
 

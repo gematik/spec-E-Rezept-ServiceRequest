@@ -1,7 +1,7 @@
 /*
 This file contains Tests for servicerequest-prescription-request-2
 
-Description: "If the status is completed and the prescription should not be redeemed by the patient, the e-prescription-token must be present."
+Description: "If the status is completed and the prescription should be redeemed by the patient, the e-prescription-token must not be present."
 Expression: "(status = 'completed' and modifierExtension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex').value = true) implies extension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex').exists().not()"
 */
 

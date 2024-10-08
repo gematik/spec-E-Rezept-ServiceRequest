@@ -13,7 +13,6 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * subject = Reference(Example-Patient)
 * authoredOn = "2025-05-13"
 * requester = Reference(Example-HealthCareService-Organization)
-* performer.identifier = Hans-Topp-Glücklich-Identifier
 
 Instance: UC1-MULTI-Initial-Prescription-Request-2
 InstanceOf: ERPServiceRequestPrescriptionRequest
@@ -29,7 +28,6 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * subject = Reference(Example-Patient-2)
 * authoredOn = "2025-05-13"
 * requester = Reference(Example-HealthCareService-Organization)
-* performer.identifier = Hans-Topp-Glücklich-Identifier
 
 Instance: UC1-MULTI-Response-Prescription-Request-1
 InstanceOf: ERPServiceRequestPrescriptionRequest
@@ -45,6 +43,7 @@ Description: "ServiceRequest that is returned to the requester"
 * authoredOn = "2025-05-13"
 * intent = RequestIntent#order
 * code = ServiceRequestTypeCS#prescription-request
+* performer.identifier = Hans-Topp-Glücklich-Identifier
 * note[+].text = "Sehr geehrter Herr Topp Glücklich,\n Wir möchten gerne die angehangene Medikation bei ihnen anfragen."
 * note[=].time = "2025-05-13T12:23:12+02:00"
 * note[+].text = "Sehr geehrte Damen und Herren,\n Wir haben alles entsprechend im Rezept hinterlegt. Es wurden 2 Packungen statt einer verschrieben.\n Mit kollegialen Grüßen,\n Topp Glücklich."
@@ -62,6 +61,7 @@ Description: "ServiceRequest that is returned to the requester"
 * authoredOn = "2025-05-13"
 * intent = RequestIntent#order
 * code = ServiceRequestTypeCS#prescription-request
+* performer.identifier = Hans-Topp-Glücklich-Identifier
 * reasonCode.text = "Hr. Edgarson braucht das Buscopan nicht mehr, wird abgesetzt und aus dem Medkationsplan entfernt."
 * note[+].text = "Sehr geehrter Herr Topp Glücklich,\n Wir möchten gerne die angehangene Medikation bei ihnen anfragen."
 * note[=].time = "2025-05-13T12:23:12+02:00"

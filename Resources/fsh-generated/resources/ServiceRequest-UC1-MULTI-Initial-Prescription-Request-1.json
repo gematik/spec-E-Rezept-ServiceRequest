@@ -37,13 +37,5 @@
   "authoredOn": "2025-05-13",
   "requester": {
     "reference": "Organization/Example-HealthCareService-Organization"
-  },
-  "performer": [
-    {
-      "identifier": {
-        "system": "https://gematik.de/fhir/sid/telematik-id",
-        "value": "1-test-telematik-id"
-      }
-    }
-  ]
+  }
 }

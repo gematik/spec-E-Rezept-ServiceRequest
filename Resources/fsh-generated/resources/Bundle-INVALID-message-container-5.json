@@ -35,7 +35,7 @@
         },
         "focus": [
           {
-            "reference": "ServiceRequest/invalid-Initial-Prescription-Request-5"
+            "reference": "ServiceRequest/invalid-Initial-Dispense-Request-5"
           }
         ],
         "sender": {
@@ -120,6 +120,64 @@
           }
         ],
         "name": "Pflegeheim Immergrün"
+      }
+    },
+    {
+      "fullUrl": "http://erp-servicerequest-test.de/Organization/Example-Pharmacy-Organization",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "Example-Pharmacy-Organization",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
+          ]
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihe-d.de/CodeSystems/PatientBezogenenGesundheitsversorgung",
+                "code": "APO",
+                "display": "Apotheke"
+              }
+            ]
+          }
+        ],
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "0301234567"
+              }
+            ]
+          }
+        ],
+        "address": [
+          {
+            "type": "both",
+            "line": [
+              "Musterstr. 2"
+            ],
+            "_line": [
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                    "valueString": "2"
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                    "valueString": "Musterstr."
+                  }
+                ]
+              }
+            ],
+            "city": "Berlin",
+            "postalCode": "10623"
+          }
+        ],
+        "name": "Test Apotheke"
       }
     },
     {

@@ -17,6 +17,8 @@ Description: "Test for constraint service-request-message-container-5"
 * entry[=].resource = INVALID-message-container-5-MessageHeader
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Organization/Example-HealthCareService-Organization"
 * entry[=].resource = Example-HealthCareService-Organization
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/Organization/Example-Pharmacy-Organization"
+* entry[=].resource = Example-Pharmacy-Organization
 
 // ServiceRequest
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/ServiceRequest/invalid-Initial-Dispense-Request-5"
@@ -36,7 +38,7 @@ InstanceOf: ERPServiceRequestRequestHeader
 Usage: #inline
 Title: "INVALID-message-container-5-MessageHeader"
 Description: "INVALID-message-container-5-MessageHeader"
-* insert HealthCareService-to-Pharmacy(invalid-Initial-Prescription-Request-5)
+* insert HealthCareService-to-Pharmacy(invalid-Initial-Dispense-Request-5)
 * eventCoding = ServiceIdentifierCS#eRezept_Rezeptanforderung;Abgabeanfrage
 * responsible = Reference(Example-HealthCareService-Organization)
 
