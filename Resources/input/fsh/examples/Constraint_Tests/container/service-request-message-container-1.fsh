@@ -37,7 +37,7 @@ Usage: #inline
 Title: "INVALID-Pharmacy-to-Practitioner-MessageHeader-1"
 Description: "Invalid Message Header from Pharmacy to HealthCareService"
 * insert Pharmacy-to-Practitioner(UC3-Initial-Prescription-Request)
-* eventCoding = ServiceIdentifierCS#eRezept_Rezeptanforderung;NachrichtKopie
+* eventCoding = ServiceIdentifierCS#eRezept_Rezeptanforderung;NachrichtKopie "Kopie einer Nachricht innerhalb des Prozesses der Rezeptanforderung"
 * responsible = Reference(Example-Pharmacy-Organization)
 
 //TEST: No Copy Message but Bundle is in focus
@@ -63,5 +63,5 @@ Title: "INVALID-Pharmacy-to-Practitioner-MessageHeader-2"
 Description: "Invalid Message Header from Pharmacy to HealthCareService"
 * insert Pharmacy-to-Practitioner(UC3-Initial-Prescription-Request)
 * focus[0] = Reference(Bundle/UC3-1-Prescription-Request-To-Prescriber)
-* eventCoding = ServiceIdentifierCS#eRezept_Rezeptanforderung;Rezeptanfrage
+* eventCoding = ServiceIdentifierCS#eRezept_Rezeptanforderung;Rezeptanfrage "Anfrage an einen Arzt ein Rezept auszustellen"
 * responsible = Reference(Example-Pharmacy-Organization)

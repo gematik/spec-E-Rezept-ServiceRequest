@@ -34,54 +34,65 @@
                         <div class="receiver-info">
                             <xsl:call-template name="receiver-info"/>
                         </div>
+
+                        <div class="letter-subject-info">
+                            <xsl:call-template name="letter-subject-info"/>
+                        </div>
                 </div>
             </body>
         </html>
     </xsl:template>
 
     <xsl:template name="sender-info">
-        <!-- Find the MessageHeader in the Bundle -->
-        <xsl:for-each select="fhir:entry/fhir:resource/fhir:MessageHeader">
-            <!-- Retrieve the responsible reference, which points to the Organization -->
-            <xsl:variable name="respRef" select="fhir:responsible/fhir:reference"/>
-            <!-- Find the corresponding Organization by matching the reference -->
-            <xsl:for-each select="/fhir:Bundle/fhir:entry[fhir:fullUrl = $respRef]">
-                <xsl:for-each select="fhir:resource/fhir:Organization">
-                    <div class="sender">
-                        <!-- Output the organization's info -->
-                        <xsl:value-of select="fhir:name/@value"/>
-                        <br/>
-                        <xsl:value-of select="fhir:address/fhir:line/@value"/>
-                        <br/>
-                        <xsl:value-of select="fhir:address/fhir:postalCode/@value"/>
-                        <xsl:value-of select="fhir:address/fhir:city/@value"/>
-                    </div>
-                </xsl:for-each>
+    <!-- Find the MessageHeader in the Bundle -->
+    <xsl:for-each select="fhir:entry/fhir:resource/fhir:MessageHeader">
+        <!-- Retrieve the responsible reference, which points to the Organization -->
+        <xsl:variable name="respRef" select="fhir:responsible/fhir:reference"/>
+        <!-- Find the corresponding Organization by matching the reference -->
+        <xsl:for-each select="/fhir:Bundle/fhir:entry[fhir:fullUrl = $respRef]">
+            <xsl:for-each select="fhir:resource/fhir:Organization">
+                <div class="sender">
+                    <!-- Output the organization's info -->
+                    <xsl:value-of select="fhir:name/@value"/>
+                    <br/>
+                    <xsl:value-of select="fhir:address/fhir:line/@value"/>
+                    <br/>
+                    <xsl:value-of select="fhir:address/fhir:postalCode/@value"/>
+                    <span>&#160;</span>
+                    <xsl:value-of select="fhir:address/fhir:city/@value"/>
+                </div>
+                <div class="contact-info" style="float: right; text-align: right;">
+                    <!-- Assuming the phone number is located under telecom with system='phone' -->
+                    Tel.: 
+                    <xsl:value-of select="fhir:contact/fhir:telecom[fhir:system/@value = 'phone']/fhir:value/@value"/>
+                    <br/>
+                    <!-- Assuming the KIM address is located under telecom with system='email' -->
+                    KIM: 
+                    <xsl:value-of select="fhir:contact/fhir:telecom[fhir:system/@value = 'email']/fhir:value/@value"/>
+                </div>
             </xsl:for-each>
         </xsl:for-each>
-    </xsl:template>
+    </xsl:for-each>
+</xsl:template>
 
     <xsl:template name="receiver-info">
         <!-- Find the MessageHeader in the Bundle -->
         <xsl:for-each select="fhir:entry/fhir:resource/fhir:MessageHeader">
             <!-- Retrieve the responsible reference, which points to the Organization -->
-            <xsl:variable name="receiverRef" select="fhir:destination/fhir:receiver/fhir:reference"/>
-            <p>hello</p>
-            <!-- Find the corresponding Organization by matching the reference -->
-            <xsl:for-each select="/fhir:Bundle/fhir:entry[fhir:fullUrl = $receiverRef]">
-                <xsl:for-each select="fhir:resource/fhir:Organization">
-                    <div class="receiver">
-                        <p>hello</p>
-                        <!-- Output the organization's info -->
-                        <xsl:value-of select="fhir:name/@value"/>
-                        <br/>
-                        <xsl:value-of select="fhir:address/fhir:line/@value"/>
-                        <br/>
-                        <xsl:value-of select="fhir:address/fhir:postalCode/@value"/>
-                        <xsl:value-of select="fhir:address/fhir:city/@value"/>
-                    </div>
-                </xsl:for-each>
-            </xsl:for-each>
+            <div class="receiver">
+                <xsl:value-of select="fhir:destination/fhir:name/@value"/>
+            </div>
+        </xsl:for-each>
+    </xsl:template>
+
+
+    <xsl:template name="letter-subject-info">
+        <!-- Find the MessageHeader in the Bundle -->
+        <xsl:for-each select="fhir:entry/fhir:resource/fhir:MessageHeader">
+            <!-- Retrieve the responsible reference, which points to the Organization -->
+            <div class="receiver">
+                <xsl:value-of select="fhir:destination/fhir:name/@value"/>
+            </div>
         </xsl:for-each>
     </xsl:template>
   

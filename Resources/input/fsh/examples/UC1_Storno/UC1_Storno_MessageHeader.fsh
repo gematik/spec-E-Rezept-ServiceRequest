@@ -4,7 +4,7 @@ Usage: #inline
 Title: "HealthCareService-to-Practitioner-MessageHeader-Storno"
 Description: "Cancellation Message Header from HealthCareService to Practitioner"
 * insert HealthCareService-to-Practitioner(UC1-Cancelled-Prescription-Request)
-* eventCoding = ServiceIdentifierCS#eRezept_Rezeptanforderung;Rezeptanfrage_Storno
+* eventCoding = ServiceIdentifierCS#eRezept_Rezeptanforderung;Rezeptanfrage_Storno "Abbruch der Rezeptanfrage"
 * source.name = "HealthCare-Source"
 * source.software = "HealthCare-Software"
 * source.version = "1.0.0"

@@ -53,7 +53,8 @@
         ],
         "eventCoding": {
           "code": "eRezept_Rezeptanforderung;NachrichtKopie",
-          "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
+          "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs",
+          "display": "Kopie einer Nachricht innerhalb des Prozesses der Rezeptanforderung"
         },
         "responsible": {
           "reference": "Organization/Example-Practitioner-Organization"
@@ -117,7 +118,8 @@
               ],
               "eventCoding": {
                 "code": "eRezept_Rezeptanforderung;Rezeptbestaetigung",
-                "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
+                "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs",
+                "display": "Bestätigung und Übermittlung eines ausgestellten Rezeptes"
               },
               "responsible": {
                 "reference": "Organization/Example-Practitioner-Organization"

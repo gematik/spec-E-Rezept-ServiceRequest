@@ -56,7 +56,8 @@
         ],
         "eventCoding": {
           "code": "eRezept_Rezeptanforderung;Rezeptanfrage",
-          "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
+          "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs",
+          "display": "Anfrage an einen Arzt ein Rezept auszustellen"
         },
         "responsible": {
           "reference": "Organization/Example-HealthCareService-Organization"

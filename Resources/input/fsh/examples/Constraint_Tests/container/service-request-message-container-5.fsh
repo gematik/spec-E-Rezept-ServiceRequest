@@ -39,7 +39,7 @@ Usage: #inline
 Title: "INVALID-message-container-5-MessageHeader"
 Description: "INVALID-message-container-5-MessageHeader"
 * insert HealthCareService-to-Pharmacy(invalid-Initial-Dispense-Request-5)
-* eventCoding = ServiceIdentifierCS#eRezept_Rezeptanforderung;Abgabeanfrage
+* eventCoding = ServiceIdentifierCS#eRezept_Rezeptanforderung;Abgabeanfrage "Anfrage zur Erfüllung eines Rezeptes und Abgabe des Medikaments"
 * responsible = Reference(Example-HealthCareService-Organization)
 
 

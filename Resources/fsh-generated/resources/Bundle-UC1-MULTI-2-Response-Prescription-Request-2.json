@@ -53,7 +53,8 @@
         ],
         "eventCoding": {
           "code": "eRezept_Rezeptanforderung;Rezeptanfrage_Storno",
-          "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
+          "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs",
+          "display": "Abbruch der Rezeptanfrage"
         },
         "responsible": {
           "reference": "Organization/Example-Practitioner-Organization"
