@@ -53,19 +53,12 @@
           {
             "key": "servicerequest-prescription-request-5",
             "severity": "error",
-            "human": "If the requester is a pharmacy then the KIM-adress of the care facility must be stated in order to receive a copy of the message.",
-            "expression": "requester.type = 'APO' implies (supportingInfo.exists() and supportingInfo.where(type='Organization').exists())",
-            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
-          },
-          {
-            "key": "servicerequest-prescription-request-6",
-            "severity": "error",
             "human": "If the status is revoked or entered-in-error, then the reasonCode or note must be present.",
             "expression": "(status = 'revoked' or status = 'entered-in-error') implies (reasonCode.text.exists() or note.exists())",
             "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
           },
           {
-            "key": "servicerequest-prescription-request-7",
+            "key": "servicerequest-prescription-request-6",
             "severity": "error",
             "human": "If the status is completed, the performer must be present.",
             "expression": "status = 'completed' implies performer.exists()",

@@ -1,6 +1,6 @@
 {
   "resourceType": "ServiceRequest",
-  "id": "INVALID-prescription-request-5-1-of-2",
+  "id": "INVALID-prescription-request-6",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
@@ -10,7 +10,7 @@
   "identifier": [
     {
       "system": "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier",
-      "value": "INVALID-prescription-request-5-1-of-2"
+      "value": "INVALID-prescription-request-6"
     }
   ],
   "requisition": {
@@ -27,23 +27,15 @@
   },
   "basedOn": [
     {
-      "reference": "MedicationRequest/Example-Initial-Medication-Request"
+      "reference": "MedicationRequest/Example-Response-Medication-Request"
     }
   ],
-  "status": "revoked",
+  "status": "completed",
   "subject": {
     "reference": "Patient/Example-Patient"
   },
   "requester": {
-    "reference": "Organization/Example-Pharmacy-Organization"
+    "reference": "Organization/Example-HealthCareService-Organization"
   },
-  "authoredOn": "2025-05-13",
-  "performer": [
-    {
-      "identifier": {
-        "system": "https://gematik.de/fhir/sid/telematik-id",
-        "value": "1-test-telematik-id"
-      }
-    }
-  ]
+  "authoredOn": "2025-05-13"
 }

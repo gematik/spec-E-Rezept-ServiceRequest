@@ -19,3 +19,4 @@ Title: "Invalid Prescription Request 2"
 * authoredOn = "2025-05-13"
 * intent = RequestIntent#order
 * code = ServiceRequestTypeCS#prescription-request
+* performer.identifier = Hans-Topp-Glücklich-Identifier

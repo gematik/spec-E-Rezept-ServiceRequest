@@ -49,5 +49,13 @@
   "subject": {
     "reference": "Patient/Example-Patient"
   },
-  "authoredOn": "2025-05-13"
+  "authoredOn": "2025-05-13",
+  "performer": [
+    {
+      "identifier": {
+        "system": "https://gematik.de/fhir/sid/telematik-id",
+        "value": "1-test-telematik-id"
+      }
+    }
+  ]
 }

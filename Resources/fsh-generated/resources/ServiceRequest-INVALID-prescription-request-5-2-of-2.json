@@ -25,18 +25,12 @@
       }
     ]
   },
-  "supportingInfo": [
-    {
-      "type": "Organization",
-      "reference": "Organization/Example-Pharmacy-Organization"
-    }
-  ],
   "basedOn": [
     {
       "reference": "MedicationRequest/Example-Initial-Medication-Request"
     }
   ],
-  "status": "active",
+  "status": "entered-in-error",
   "subject": {
     "reference": "Patient/Example-Patient"
   },

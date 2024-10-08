@@ -301,7 +301,7 @@
     "fshType": "Instance",
     "fshFile": "examples/Constraint_Tests/servicerequest/servicerequest-prescription-request-2.fsh",
     "startLine": 8,
-    "endLine": 21
+    "endLine": 22
   },
   {
     "outputFile": "ServiceRequest-INVALID-prescription-request-3.json",
@@ -333,7 +333,15 @@
     "fshType": "Instance",
     "fshFile": "examples/Constraint_Tests/servicerequest/servicerequest-prescription-request-5.fsh",
     "startLine": 23,
-    "endLine": 37
+    "endLine": 36
+  },
+  {
+    "outputFile": "ServiceRequest-INVALID-prescription-request-6.json",
+    "fshName": "INVALID-prescription-request-6",
+    "fshType": "Instance",
+    "fshFile": "examples/Constraint_Tests/servicerequest/servicerequest-prescription-request-6.fsh",
+    "startLine": 8,
+    "endLine": 20
   },
   {
     "outputFile": "ServiceRequest-UC1-Initial-Prescription-Request.json",
@@ -453,7 +461,7 @@
     "fshType": "Profile",
     "fshFile": "profiles/3.1_Prescription_ServiceRequest.fsh",
     "startLine": 1,
-    "endLine": 141
+    "endLine": 140
   },
   {
     "outputFile": "StructureDefinition-erp-service-request-procedure-identifier.json",
