@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "id": "INVALID-Request-Header-Example",
+  "id": "INVALID-message-container-1-1-of-2",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"

@@ -1,12 +1,12 @@
 /*
-This file contains Tests for service-request-message-header-1
+This file contains Tests for service-request-message-container-1
 
 Description: "If the Message is a copy then the focus must be a Bundle, otherwise a ServiceRequest."
 Expression: "(event.coding.code = 'eRezept_Rezeptanforderung;NachrichtKopie' implies focus.resolve().is(Bundle)) and (event.coding.code != 'eRezept_Rezeptanforderung;NachrichtKopie' implies focus.resolve().is(ServiceRequest))"
 */
 
 //TEST: CopyMessage, but focus is ServiceRequest
-Instance: INVALID-Request-Header-Example
+Instance: INVALID-message-container-1-1-of-2
 InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
 Title: "Invalid Request from Pharmacy To Prescriber"
@@ -39,7 +39,7 @@ Description: "Invalid Message Header from Pharmacy to HealthCareService"
 * responsible = Reference(Example-Pharmacy-Organization)
 
 //TEST: No Copy Message but Bundle is in focus
-Instance: INVALID-Request-Header-Example-2
+Instance: INVALID-message-container-1-2-of-2
 InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
 Title: "Invalid Request from Pharmacy To Prescriber"

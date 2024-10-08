@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "id": "INVALID-service-request-message-container-2",
+  "id": "INVALID-message-container-2",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
@@ -119,10 +119,10 @@
       }
     },
     {
-      "fullUrl": "http://erp-servicerequest-test.de/Organization/Example-HealthCareService-Organization",
+      "fullUrl": "http://erp-servicerequest-test.de/Organization/Example-HealthCareService-Organization-no-kim",
       "resource": {
         "resourceType": "Organization",
-        "id": "Example-HealthCareService-Organization",
+        "id": "Example-HealthCareService-Organization-no-kim",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
@@ -145,10 +145,6 @@
               {
                 "system": "phone",
                 "value": "0301234567"
-              },
-              {
-                "system": "email",
-                "value": "arbeitsplatz-1@test-pflegeheim.kim.telematik"
               }
             ]
           }
@@ -181,10 +177,10 @@
       }
     },
     {
-      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/invalid-Initial-Prescription-Request",
+      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/invalid-Initial-Prescription-Request-1",
       "resource": {
         "resourceType": "ServiceRequest",
-        "id": "invalid-Initial-Prescription-Request",
+        "id": "invalid-Initial-Prescription-Request-1",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
@@ -212,7 +208,7 @@
         "supportingInfo": [
           {
             "type": "Organization",
-            "reference": "Organization/Example-Pharmacy-Organization"
+            "reference": "Organization/Example-HealthCareService-Organization-no-kim"
           }
         ],
         "basedOn": [

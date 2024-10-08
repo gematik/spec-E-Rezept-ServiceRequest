@@ -1,25 +1,33 @@
 [
   {
-    "outputFile": "Bundle-INVALID-Request-Header-Example-2.json",
-    "fshName": "INVALID-Request-Header-Example-2",
-    "fshType": "Instance",
-    "fshFile": "examples/Constraint_Tests/service-request-message-container-1.fsh",
-    "startLine": 42,
-    "endLine": 55
-  },
-  {
-    "outputFile": "Bundle-INVALID-Request-Header-Example.json",
-    "fshName": "INVALID-Request-Header-Example",
+    "outputFile": "Bundle-INVALID-message-container-1-1-of-2.json",
+    "fshName": "INVALID-message-container-1-1-of-2",
     "fshType": "Instance",
     "fshFile": "examples/Constraint_Tests/service-request-message-container-1.fsh",
     "startLine": 9,
     "endLine": 30
   },
   {
-    "outputFile": "Bundle-INVALID-service-request-message-container-2.json",
-    "fshName": "INVALID-service-request-message-container-2",
+    "outputFile": "Bundle-INVALID-message-container-1-2-of-2.json",
+    "fshName": "INVALID-message-container-1-2-of-2",
+    "fshType": "Instance",
+    "fshFile": "examples/Constraint_Tests/service-request-message-container-1.fsh",
+    "startLine": 42,
+    "endLine": 55
+  },
+  {
+    "outputFile": "Bundle-INVALID-message-container-2.json",
+    "fshName": "INVALID-message-container-2",
     "fshType": "Instance",
     "fshFile": "examples/Constraint_Tests/service-request-message-container-2.fsh",
+    "startLine": 9,
+    "endLine": 34
+  },
+  {
+    "outputFile": "Bundle-INVALID-message-container-3.json",
+    "fshName": "INVALID-message-container-3",
+    "fshType": "Instance",
+    "fshFile": "examples/Constraint_Tests/service-request-message-container-3.fsh",
     "startLine": 9,
     "endLine": 34
   },
