@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "id": "INVALID-message-container-3",
+  "id": "INVALID-message-container-4",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
@@ -9,15 +9,15 @@
   "type": "message",
   "identifier": {
     "system": "urn:ietf:rfc:3986",
-    "value": "urn:uuid:cc6db961-116d-4dab-9165-2d09662d1b24"
+    "value": "urn:uuid:f6ecd2e0-2fd0-4017-8797-9140fea018b5"
   },
   "timestamp": "2025-05-13T14:25:12+02:00",
   "entry": [
     {
-      "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/INVALID-message-container-3-MessageHeader",
+      "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/INVALID-message-container-4-MessageHeader",
       "resource": {
         "resourceType": "MessageHeader",
-        "id": "INVALID-message-container-3-MessageHeader",
+        "id": "INVALID-message-container-4-MessageHeader",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
@@ -35,7 +35,7 @@
         },
         "focus": [
           {
-            "reference": "ServiceRequest/invalid-Initial-Prescription-Request-2"
+            "reference": "ServiceRequest/invalid-Initial-Prescription-Request-4"
           }
         ],
         "sender": {
@@ -119,10 +119,10 @@
       }
     },
     {
-      "fullUrl": "http://erp-servicerequest-test.de/Organization/Example-HealthCareService-Organization-wrong-type",
+      "fullUrl": "http://erp-servicerequest-test.de/Organization/Example-HealthCareService-Organization",
       "resource": {
         "resourceType": "Organization",
-        "id": "Example-HealthCareService-Organization-wrong-type",
+        "id": "Example-HealthCareService-Organization",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
@@ -133,8 +133,8 @@
             "coding": [
               {
                 "system": "http://ihe-d.de/CodeSystems/PatientBezogenenGesundheitsversorgung",
-                "code": "APO",
-                "display": "Apotheke"
+                "code": "PFL",
+                "display": "Pflegeheim"
               }
             ]
           }
@@ -181,10 +181,10 @@
       }
     },
     {
-      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/invalid-Initial-Prescription-Request-2",
+      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/invalid-Initial-Prescription-Request-4",
       "resource": {
         "resourceType": "ServiceRequest",
-        "id": "invalid-Initial-Prescription-Request-2",
+        "id": "invalid-Initial-Prescription-Request-4",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
@@ -194,7 +194,7 @@
         "identifier": [
           {
             "system": "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier",
-            "value": "1"
+            "value": "invalid-Initial-Prescription-Request-4"
           }
         ],
         "requisition": {
@@ -209,12 +209,6 @@
             }
           ]
         },
-        "supportingInfo": [
-          {
-            "type": "Organization",
-            "reference": "Organization/Example-HealthCareService-Organization-wrong-type"
-          }
-        ],
         "basedOn": [
           {
             "reference": "MedicationRequest/Example-Initial-Medication-Request"

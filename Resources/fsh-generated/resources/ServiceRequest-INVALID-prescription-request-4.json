@@ -1,0 +1,44 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "INVALID-prescription-request-4",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
+    ]
+  },
+  "intent": "order",
+  "identifier": [
+    {
+      "system": "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier",
+      "value": "INVALID-prescription-request-4"
+    }
+  ],
+  "requisition": {
+    "system": "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier",
+    "value": "GroupID-UC3"
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "prescription-request",
+        "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
+      }
+    ]
+  },
+  "status": "completed",
+  "subject": {
+    "reference": "Patient/Example-Patient"
+  },
+  "requester": {
+    "reference": "Organization/Example-HealthCareService-Organization"
+  },
+  "authoredOn": "2025-05-13",
+  "performer": [
+    {
+      "identifier": {
+        "system": "https://gematik.de/fhir/sid/telematik-id",
+        "value": "1-test-telematik-id"
+      }
+    }
+  ]
+}

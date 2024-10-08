@@ -14,8 +14,8 @@ Description: "Test for constraint service-request-message-container-3"
 * identifier.value = "urn:uuid:cc6db961-116d-4dab-9165-2d09662d1b24"
 * timestamp = "2025-05-13T14:25:12+02:00"
 // Header
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/MessageHeader/UC3-Pharmacy-to-Practitioner-MessageHeader"
-* entry[=].resource = UC3-Pharmacy-to-Practitioner-MessageHeader
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/MessageHeader/INVALID-message-container-3-MessageHeader"
+* entry[=].resource = INVALID-message-container-3-MessageHeader
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Organization/Example-Pharmacy-Organization"
 * entry[=].resource = Example-Pharmacy-Organization
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Organization/Example-HealthCareService-Organization-wrong-type"
@@ -32,6 +32,16 @@ Description: "Test for constraint service-request-message-container-3"
 * entry[=].resource = Example-Initial-Medication-Request
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Medication/Example-Initial-Medication"
 * entry[=].resource = Example-Initial-Medication
+
+// Message Header
+Instance: INVALID-message-container-3-MessageHeader
+InstanceOf: ERPServiceRequestRequestHeader
+Usage: #inline
+Title: "INVALID-message-container-3-MessageHeader"
+Description: "INVALID-message-container-3-MessageHeader"
+* insert Pharmacy-to-Practitioner(invalid-Initial-Prescription-Request-2)
+* eventCoding = ServiceIdentifierCS#eRezept_Rezeptanforderung;Rezeptanfrage
+* responsible = Reference(Example-Pharmacy-Organization)
 
 // Prescription Service Requests
 Instance: invalid-Initial-Prescription-Request-2

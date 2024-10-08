@@ -14,10 +14,10 @@
   "timestamp": "2025-05-13T14:25:12+02:00",
   "entry": [
     {
-      "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/UC3-Pharmacy-to-Practitioner-MessageHeader",
+      "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/INVALID-message-container-2-MessageHeader",
       "resource": {
         "resourceType": "MessageHeader",
-        "id": "UC3-Pharmacy-to-Practitioner-MessageHeader",
+        "id": "INVALID-message-container-2-MessageHeader",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
@@ -35,7 +35,7 @@
         },
         "focus": [
           {
-            "reference": "ServiceRequest/UC3-Initial-Prescription-Request"
+            "reference": "ServiceRequest/invalid-Initial-Prescription-Request-1"
           }
         ],
         "sender": {

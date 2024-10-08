@@ -25,7 +25,7 @@ Title: "Completed Response Prescription Request"
 Description: "ServiceRequest that is returned to the requester"
 * identifier[requestId].value = "1"
 * requisition.value = "GroupID-UC2"
-* extension[EPrescriptionToken].valueIdentifier.value = "Task/160.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
+* modifierExtension[redeemByPatient].valueBoolean = true
 * status = RequestStatus#completed
 * basedOn = Reference(Example-Response-Medication-Request)
 * subject = Reference(Example-Patient)

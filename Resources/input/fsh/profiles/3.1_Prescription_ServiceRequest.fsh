@@ -11,7 +11,6 @@ Description: "ServiceRequest, which is used to request a recipe"
 * obeys servicerequest-prescription-request-4
 * obeys servicerequest-prescription-request-5
 * obeys servicerequest-prescription-request-6
-* obeys servicerequest-prescription-request-7
 
 * extension MS
 * extension contains EPrescriptionTokenEX named EPrescriptionToken 0..* MS
@@ -147,30 +146,25 @@ Severity: #error
 
 Invariant: servicerequest-prescription-request-2
 Description: "If the status is completed and the prescription should not be redeemed by the patient, the e-prescription-token must be present."
-Expression: "(status = 'completed' and extension('redeemByPatient') = true) implies extension('EPrescriptionToken').exists()"
+Expression: "(status = 'completed' and modifierExtension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex').value = true) implies extension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex').exists().not()"
 Severity: #error
 
 Invariant: servicerequest-prescription-request-3
-Description: "If the status is active, then the request must be based on an ERP MedicationRequest."
-Expression: "status = 'active' implies basedOn.exists() and basedOn is ERPServiceRequestMedicationRequest"
+Description: "If the status is active, then basedOn is required."
+Expression: "status = 'active' implies basedOn.exists()"
 Severity: #error
 
 Invariant: servicerequest-prescription-request-4
-Description: "If the status is active or completed, then basedOn is required."
-Expression: "(status = 'active' or status = 'completed') implies basedOn.exists()"
+Description: "If the status is completed, then basedOn is required."
+Expression: "status = 'completed' implies basedOn.exists()"
 Severity: #error
 
 Invariant: servicerequest-prescription-request-5
-Description: "If the requester is a pharmacy then the KIM-adress of the care facility must be stated in order to receive a copy of the message."
-Expression: "requester.type = 'APO' implies supportingInfo.where(type='pflegeeinrichtungKopie').exists()"
-Severity: #error
-
-Invariant: servicerequest-prescription-request-6
 Description: "If the status is revoked or entered-in-error, then the reasonCode or note must be present."
 Expression: "(status = 'revoked' or status = 'entered-in-error') implies (reasonCode.text.exists() or note.exists())"
 Severity: #error
 
-Invariant: servicerequest-prescription-request-7
+Invariant: servicerequest-prescription-request-6
 Description: "If the status is completed, the performer must be present."
 Expression: "status = 'completed' implies performer.exists()"
 Severity: #error

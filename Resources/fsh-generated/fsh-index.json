@@ -3,23 +3,23 @@
     "outputFile": "Bundle-INVALID-message-container-1-1-of-2.json",
     "fshName": "INVALID-message-container-1-1-of-2",
     "fshType": "Instance",
-    "fshFile": "examples/Constraint_Tests/service-request-message-container-1.fsh",
+    "fshFile": "examples/Constraint_Tests/container/service-request-message-container-1.fsh",
     "startLine": 9,
-    "endLine": 30
+    "endLine": 32
   },
   {
     "outputFile": "Bundle-INVALID-message-container-1-2-of-2.json",
     "fshName": "INVALID-message-container-1-2-of-2",
     "fshType": "Instance",
-    "fshFile": "examples/Constraint_Tests/service-request-message-container-1.fsh",
-    "startLine": 42,
-    "endLine": 55
+    "fshFile": "examples/Constraint_Tests/container/service-request-message-container-1.fsh",
+    "startLine": 44,
+    "endLine": 57
   },
   {
     "outputFile": "Bundle-INVALID-message-container-2.json",
     "fshName": "INVALID-message-container-2",
     "fshType": "Instance",
-    "fshFile": "examples/Constraint_Tests/service-request-message-container-2.fsh",
+    "fshFile": "examples/Constraint_Tests/container/service-request-message-container-2.fsh",
     "startLine": 9,
     "endLine": 34
   },
@@ -27,9 +27,17 @@
     "outputFile": "Bundle-INVALID-message-container-3.json",
     "fshName": "INVALID-message-container-3",
     "fshType": "Instance",
-    "fshFile": "examples/Constraint_Tests/service-request-message-container-3.fsh",
+    "fshFile": "examples/Constraint_Tests/container/service-request-message-container-3.fsh",
     "startLine": 9,
     "endLine": 34
+  },
+  {
+    "outputFile": "Bundle-INVALID-message-container-4.json",
+    "fshName": "INVALID-message-container-4",
+    "fshType": "Instance",
+    "fshFile": "examples/Constraint_Tests/container/service-request-message-container-4.fsh",
+    "startLine": 8,
+    "endLine": 33
   },
   {
     "outputFile": "Bundle-UC1-1-Prescription-Request-To-Prescriber.json",
@@ -280,6 +288,54 @@
     "endLine": 19
   },
   {
+    "outputFile": "ServiceRequest-INVALID-prescription-request-1.json",
+    "fshName": "INVALID-prescription-request-1",
+    "fshType": "Instance",
+    "fshFile": "examples/Constraint_Tests/servicerequest/servicerequest-prescription-request-1.fsh",
+    "startLine": 8,
+    "endLine": 20
+  },
+  {
+    "outputFile": "ServiceRequest-INVALID-prescription-request-2.json",
+    "fshName": "INVALID-prescription-request-2",
+    "fshType": "Instance",
+    "fshFile": "examples/Constraint_Tests/servicerequest/servicerequest-prescription-request-2.fsh",
+    "startLine": 8,
+    "endLine": 21
+  },
+  {
+    "outputFile": "ServiceRequest-INVALID-prescription-request-3.json",
+    "fshName": "INVALID-prescription-request-3",
+    "fshType": "Instance",
+    "fshFile": "examples/Constraint_Tests/servicerequest/servicerequest-prescription-request-3.fsh",
+    "startLine": 8,
+    "endLine": 20
+  },
+  {
+    "outputFile": "ServiceRequest-INVALID-prescription-request-4.json",
+    "fshName": "INVALID-prescription-request-4",
+    "fshType": "Instance",
+    "fshFile": "examples/Constraint_Tests/servicerequest/servicerequest-prescription-request-4.fsh",
+    "startLine": 8,
+    "endLine": 20
+  },
+  {
+    "outputFile": "ServiceRequest-INVALID-prescription-request-5-1-of-2.json",
+    "fshName": "INVALID-prescription-request-5-1-of-2",
+    "fshType": "Instance",
+    "fshFile": "examples/Constraint_Tests/servicerequest/servicerequest-prescription-request-5.fsh",
+    "startLine": 8,
+    "endLine": 21
+  },
+  {
+    "outputFile": "ServiceRequest-INVALID-prescription-request-5-2-of-2.json",
+    "fshName": "INVALID-prescription-request-5-2-of-2",
+    "fshType": "Instance",
+    "fshFile": "examples/Constraint_Tests/servicerequest/servicerequest-prescription-request-5.fsh",
+    "startLine": 23,
+    "endLine": 37
+  },
+  {
     "outputFile": "ServiceRequest-UC1-Initial-Prescription-Request.json",
     "fshName": "UC1-Initial-Prescription-Request",
     "fshType": "Instance",
@@ -365,7 +421,7 @@
     "fshType": "Profile",
     "fshFile": "profiles/1_Bundle.fsh",
     "startLine": 1,
-    "endLine": 11
+    "endLine": 12
   },
   {
     "outputFile": "StructureDefinition-erp-service-request-organization.json",

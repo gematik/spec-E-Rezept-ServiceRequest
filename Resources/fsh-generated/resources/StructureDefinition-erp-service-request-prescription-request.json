@@ -33,28 +33,28 @@
             "key": "servicerequest-prescription-request-2",
             "severity": "error",
             "human": "If the status is completed and the prescription should not be redeemed by the patient, the e-prescription-token must be present.",
-            "expression": "(status = 'completed' and extension('redeemByPatient') = true) implies extension('EPrescriptionToken').exists()",
+            "expression": "(status = 'completed' and modifierExtension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex').value = true) implies extension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex').exists().not()",
             "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
           },
           {
             "key": "servicerequest-prescription-request-3",
             "severity": "error",
-            "human": "If the status is active, then the request must be based on an ERP MedicationRequest.",
-            "expression": "status = 'active' implies basedOn.exists() and basedOn is ERPServiceRequestMedicationRequest",
+            "human": "If the status is active, then basedOn is required.",
+            "expression": "status = 'active' implies basedOn.exists()",
             "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
           },
           {
             "key": "servicerequest-prescription-request-4",
             "severity": "error",
-            "human": "If the status is active or completed, then basedOn is required.",
-            "expression": "(status = 'active' or status = 'completed') implies basedOn.exists()",
+            "human": "If the status is completed, then basedOn is required.",
+            "expression": "status = 'completed' implies basedOn.exists()",
             "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
           },
           {
             "key": "servicerequest-prescription-request-5",
             "severity": "error",
             "human": "If the requester is a pharmacy then the KIM-adress of the care facility must be stated in order to receive a copy of the message.",
-            "expression": "requester.type = 'APO' implies supportingInfo.where(type='pflegeeinrichtungKopie').exists()",
+            "expression": "requester.type = 'APO' implies (supportingInfo.exists() and supportingInfo.where(type='Organization').exists())",
             "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
           },
           {

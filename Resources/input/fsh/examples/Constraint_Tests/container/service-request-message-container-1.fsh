@@ -18,6 +18,8 @@ Description: "Invalid Request Header Example"
 * entry[=].resource = INVALID-Pharmacy-to-Practitioner-MessageHeader-1
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Organization/Example-Pharmacy-Organization"
 * entry[=].resource = Example-Pharmacy-Organization
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/Organization/Example-HealthCareService-Organization"
+* entry[=].resource = Example-HealthCareService-Organization
 // ServiceRequest
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/ServiceRequest/UC3-Initial-Prescription-Request"
 * entry[=].resource = UC3-Initial-Prescription-Request
