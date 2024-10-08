@@ -38,13 +38,13 @@
         "definition": "Fachliches Modell zur Beschreibung einer Bestätigung einer Rezeptanforderung",
         "constraint": [
           {
-            "key": "log-prescription-request-3",
+            "key": "log-prescription-request-confirmation-1",
             "severity": "error",
-            "human": "Wenn eine Anfrage bestätigt wird (status = 'completed'), muss das Profil KBV_PR_ERP_Prescription mit einer KBV_Medication genutzt werden.",
+            "human": "Wenn eine Anfrage bestätigt wird (status = 'completed'), müssen medizinische Informationen zur Verordnung vorhanden sein.",
             "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-prescription-request-confirmation"
           },
           {
-            "key": "log-prescription-request-4",
+            "key": "log-prescription-request-confirmation-2",
             "severity": "error",
             "human": "Wenn eine Anfrage bestätigt wird (status = 'completed'), muss der E-Rezept Token vorhanden sein.",
             "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-prescription-request-confirmation"
@@ -370,7 +370,7 @@
         ],
         "constraint": [
           {
-            "key": "log-prescription-request-4",
+            "key": "log-prescription-request-confirmation-2",
             "severity": "error",
             "human": "Wenn eine Anfrage bestätigt wird (status = 'completed'), muss der E-Rezept Token vorhanden sein.",
             "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-prescription-request-confirmation"
@@ -402,13 +402,13 @@
         ],
         "constraint": [
           {
-            "key": "log-prescription-request-3",
+            "key": "log-prescription-request-confirmation-1",
             "severity": "error",
-            "human": "Wenn eine Anfrage bestätigt wird (status = 'completed'), muss das Profil KBV_PR_ERP_Prescription mit einer KBV_Medication genutzt werden.",
+            "human": "Wenn eine Anfrage bestätigt wird (status = 'completed'), müssen medizinische Informationen zur Verordnung vorhanden sein.",
             "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-prescription-request-confirmation"
           },
           {
-            "key": "log-prescription-request-4",
+            "key": "log-prescription-request-confirmation-2",
             "severity": "error",
             "human": "Wenn eine Anfrage bestätigt wird (status = 'completed'), muss der E-Rezept Token vorhanden sein.",
             "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-prescription-request-confirmation"
@@ -591,9 +591,9 @@
         ],
         "constraint": [
           {
-            "key": "log-prescription-request-3",
+            "key": "log-prescription-request-confirmation-1",
             "severity": "error",
-            "human": "Wenn eine Anfrage bestätigt wird (status = 'completed'), muss das Profil KBV_PR_ERP_Prescription mit einer KBV_Medication genutzt werden.",
+            "human": "Wenn eine Anfrage bestätigt wird (status = 'completed'), müssen medizinische Informationen zur Verordnung vorhanden sein.",
             "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-prescription-request-confirmation"
           }
         ],

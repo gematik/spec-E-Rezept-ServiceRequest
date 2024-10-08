@@ -38,7 +38,7 @@
         "definition": "Fachliches Modell zur Beschreibung einer Bestätigung einer Dispenseieranforderung",
         "constraint": [
           {
-            "key": "log-dispense-request-3",
+            "key": "log-dispense-request-confirmation-1",
             "severity": "error",
             "human": "Wenn eine Anfrage erfüllt wird (status = 'completed'), müssen Abgabeinformationen vorhanden sein.",
             "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-dispense-request-confirmation"
@@ -364,7 +364,7 @@
         ],
         "constraint": [
           {
-            "key": "log-dispense-request-3",
+            "key": "log-dispense-request-confirmation-1",
             "severity": "error",
             "human": "Wenn eine Anfrage erfüllt wird (status = 'completed'), müssen Abgabeinformationen vorhanden sein.",
             "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-dispense-request-confirmation"
@@ -465,7 +465,7 @@
         ],
         "constraint": [
           {
-            "key": "log-dispense-request-3",
+            "key": "log-dispense-request-confirmation-1",
             "severity": "error",
             "human": "Wenn eine Anfrage erfüllt wird (status = 'completed'), müssen Abgabeinformationen vorhanden sein.",
             "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-dispense-request-confirmation"
