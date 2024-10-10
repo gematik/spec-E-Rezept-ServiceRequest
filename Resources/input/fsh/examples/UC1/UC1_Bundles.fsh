@@ -97,3 +97,47 @@ Description: "Response sent from pharmacy to requester"
 * entry[=].resource = UC1-Medication-Dispense
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Medication/SimpleMedication"
 * entry[=].resource = SimpleMedication
+
+Instance: UC1-3-Alt-Delivery-Dispense-Request-To-Pharmacy
+InstanceOf: ERPServiceRequestMessageContainer
+Usage: #example
+Title: "DispenseRequestToPharmacy"
+Description: "Request sent to pharmacy to request a dispense of the medication"
+* identifier.value = "urn:uuid:fa23be14-c00a-4ddc-8128-82ace2f9a80b"
+* timestamp = "2025-05-14T08:23:12+02:00"
+// Header
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/MessageHeader/UC1-HealthCareService-to-Pharmacy-MessageHeader"
+* entry[=].resource = UC1-HealthCareService-to-Pharmacy-MessageHeader
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/Organization/Example-HealthCareService-Organization"
+* entry[=].resource = Example-HealthCareService-Organization
+
+// ServiceRequest
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/ServiceRequest/UC1-Initial-Dispense-Request"
+* entry[=].resource = UC1-Alt-Delivery-Initial-Dispense-Request
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/Patient/Example-Patient"
+* entry[=].resource = Example-Patient
+
+Instance: UC1-4-Alt-Delivery-Fullfilled-DispenseRequest-To-Pharmacy
+InstanceOf: ERPServiceRequestMessageContainer
+Usage: #example
+Title: "DispenseRequestToPharmacy"
+Description: "Response sent from pharmacy to requester"
+* identifier.value = "urn:uuid:ebad657e-589f-4386-ad81-19352ca21310"
+* timestamp = "2025-05-14T08:30:12+02:00"
+// Header
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/MessageHeader/UC1-Pharmacy-to-HealthCareService-MessageHeader"
+* entry[=].resource = UC1-Pharmacy-to-HealthCareService-MessageHeader
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/Organization/Example-Pharmacy-Organization"
+* entry[=].resource = Example-Pharmacy-Organization
+
+// ServiceRequest
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/ServiceRequest/UC1-Response-Dispense-Request"
+* entry[=].resource = UC1-Alt-Delivery-Response-Dispense-Request
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/Patient/Example-Patient"
+* entry[=].resource = Example-Patient
+
+// Medication Dispense
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/MedicationDispense/UC1-Medication-Dispense"
+* entry[=].resource = UC1-Medication-Dispense
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/Medication/SimpleMedication"
+* entry[=].resource = SimpleMedication

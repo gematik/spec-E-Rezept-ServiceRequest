@@ -42,6 +42,13 @@
             "human": "If the status is completed, then the dispense data must be present.",
             "expression": "status = 'completed' implies supportingInfo.where(type='MedicationDispense').exists()",
             "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"
+          },
+          {
+            "key": "servicerequest-dispense-request-4",
+            "severity": "error",
+            "human": "If the the code for the delivery type is alternatve-address, then the address must be stated.",
+            "expression": "code.coding.where(system='https://gematik.de/fhir/erp-servicerequest/CodeSystem/DeliveryTypeCS').code = 'delivery-to-alternative-address' implies (extension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/alternative-delivery-address-ex').exists() and extension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/alternative-delivery-address-ex').value.empty().not())",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"
           }
         ]
       },
@@ -63,6 +70,24 @@
             "code": "Extension",
             "profile": [
               "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.extension:alternativeDeliveryAddress",
+        "path": "ServiceRequest.extension",
+        "sliceName": "alternativeDeliveryAddress",
+        "short": "Alternative delivery address.",
+        "definition": "If the ServiceRequest states that the delivery should be delivered to an alternative address, it must be stated here.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/alternative-delivery-address-ex"
             ]
           }
         ],
@@ -149,14 +174,34 @@
         "id": "ServiceRequest.code",
         "path": "ServiceRequest.code",
         "short": "Indicates the type of service request.",
+        "min": 1,
         "mustSupport": true
       },
       {
         "id": "ServiceRequest.code.coding",
         "path": "ServiceRequest.code.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "system"
+            }
+          ],
+          "rules": "open",
+          "description": "Differentiates between the service request type and additional information.",
+          "ordered": false
+        },
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.code.coding:request-type",
+        "path": "ServiceRequest.code.coding",
+        "sliceName": "request-type",
+        "short": "Indicates the type of service request.",
         "min": 1,
         "max": "1",
-        "fixedCoding": {
+        "patternCoding": {
           "code": "dispense-request",
           "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
         },
@@ -167,14 +212,39 @@
         }
       },
       {
-        "id": "ServiceRequest.code.coding.system",
+        "id": "ServiceRequest.code.coding:request-type.system",
         "path": "ServiceRequest.code.coding.system",
         "min": 1
       },
       {
-        "id": "ServiceRequest.code.coding.code",
+        "id": "ServiceRequest.code.coding:request-type.code",
         "path": "ServiceRequest.code.coding.code",
         "comment": "#dispense-request serves as a service request for a pharmacy to deliver a prescription.",
+        "min": 1
+      },
+      {
+        "id": "ServiceRequest.code.coding:dispense-type",
+        "path": "ServiceRequest.code.coding",
+        "sliceName": "dispense-type",
+        "short": "Indicates how the delivery should be made.",
+        "definition": "The delivery type can be used to indicate how the delivery should be made. The following options are available: pickup-by-healthcare-service, pickup-by-patient, delivery-to-healthcare-service, delivery-to-alternative-address.",
+        "comment": "If the delivery type is delivery-to-alternative-address, the alternative address must be specified in location.",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/erp-servicerequest/ValueSet/delivery-type-vs"
+        }
+      },
+      {
+        "id": "ServiceRequest.code.coding:dispense-type.system",
+        "path": "ServiceRequest.code.coding.system",
+        "min": 1
+      },
+      {
+        "id": "ServiceRequest.code.coding:dispense-type.code",
+        "path": "ServiceRequest.code.coding.code",
         "min": 1
       },
       {

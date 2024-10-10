@@ -452,6 +452,32 @@
         ]
       },
       {
+        "id": "gem-erp-sr-log-dispense-request-confirmation.Belieferungsart",
+        "path": "gem-erp-sr-log-dispense-request-confirmation.Belieferungsart",
+        "short": "Belieferungsart",
+        "definition": "Angabe der Belieferungsart",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request-confirmation.Belieferungsart.BelieferungsartCode",
+        "path": "gem-erp-sr-log-dispense-request-confirmation.Belieferungsart.BelieferungsartCode",
+        "short": "Belieferungsart-Code",
+        "definition": "Folgende Codes sind zulässig: Abholung durch Pflegedienst, Lieferung der Apotheke, Abholung durch Patienten",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ]
+      },
+      {
         "id": "gem-erp-sr-log-dispense-request-confirmation.Medikation",
         "path": "gem-erp-sr-log-dispense-request-confirmation.Medikation",
         "short": "Medikation",

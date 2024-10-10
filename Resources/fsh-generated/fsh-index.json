@@ -184,6 +184,14 @@
     "endLine": 52
   },
   {
+    "outputFile": "CodeSystem-delivery-type-cs.json",
+    "fshName": "DeliveryTypeCS",
+    "fshType": "CodeSystem",
+    "fshFile": "codesystems/DeliveryTypeCS.fsh",
+    "startLine": 1,
+    "endLine": 10
+  },
+  {
     "outputFile": "CodeSystem-medication-request-reason-cs.json",
     "fshName": "MedicationRequestReasonCS",
     "fshType": "CodeSystem",
@@ -424,6 +432,14 @@
     "endLine": 18
   },
   {
+    "outputFile": "StructureDefinition-alternative-delivery-address-ex.json",
+    "fshName": "AlternativeDeliveryAddressEX",
+    "fshType": "Extension",
+    "fshFile": "extensions/AlternativeDeliveryAddressEX.fsh",
+    "startLine": 1,
+    "endLine": 8
+  },
+  {
     "outputFile": "StructureDefinition-changed-medication-ex.json",
     "fshName": "ChangedMedicationEX",
     "fshType": "Extension",
@@ -445,7 +461,7 @@
     "fshType": "Profile",
     "fshFile": "profiles/3.2_Dispense_ServiceRequest.fsh",
     "startLine": 1,
-    "endLine": 90
+    "endLine": 116
   },
   {
     "outputFile": "StructureDefinition-erp-service-request-eprescription-token.json",
@@ -533,7 +549,7 @@
     "fshType": "Logical",
     "fshFile": "logical-models/dispense-request-confirmation-log.fsh",
     "startLine": 1,
-    "endLine": 23
+    "endLine": 26
   },
   {
     "outputFile": "StructureDefinition-gem-erp-sr-log-dispense-request.json",
@@ -541,7 +557,7 @@
     "fshType": "Logical",
     "fshFile": "logical-models/dispense-request-log.fsh",
     "startLine": 1,
-    "endLine": 43
+    "endLine": 47
   },
   {
     "outputFile": "StructureDefinition-gem-erp-sr-log-message-copy.json",
@@ -622,6 +638,14 @@
     "fshFile": "extensions/RequestMVOEX.fsh",
     "startLine": 1,
     "endLine": 23
+  },
+  {
+    "outputFile": "ValueSet-delivery-type-vs.json",
+    "fshName": "DeliveryTypeVS",
+    "fshType": "ValueSet",
+    "fshFile": "valuesets/DeliveryTypeVS.fsh",
+    "startLine": 1,
+    "endLine": 6
   },
   {
     "outputFile": "ValueSet-medication-request-reason-vs.json",

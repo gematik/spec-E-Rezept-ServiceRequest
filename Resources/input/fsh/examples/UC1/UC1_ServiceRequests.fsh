@@ -80,3 +80,41 @@ Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
 * note[=].time = "2025-05-14T08:22:05+02:00"
 * note[+].text = "Sehr geehrter Kollegen des Pflegeheim Immgergrün,\n Die Arzneimittel lagern vor Ort. Anbei, was wir bis 13:00 heute per Botendienst liefern werden.."
 * note[=].time = "2025-05-14T08:27:05+02:00"
+
+// Dispense Service Requests - Alternative Delivery
+Instance: UC1-Alt-Delivery-Initial-Dispense-Request
+InstanceOf: ERPServiceRequestDispenseRequest
+Usage: #inline
+Title: "Initial Dispense Request"
+Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
+* extension[EPrescriptionToken].valueIdentifier.value = "Task/169.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
+* identifier[requestId].value = "2"
+* requisition.value = "GroupID-UC1"
+* status = RequestStatus#active
+* intent = RequestIntent#filler-order
+* subject = Reference(Example-Patient)
+* code = ServiceRequestTypeCS#dispense-request
+* requester = Reference(Example-HealthCareService-Organization)
+* authoredOn = "2025-05-14"
+* priority = #urgent
+* note[+].text = "Sehr geehrter Kollegen der Test Apotheke,\n Anbei das E-Rezept, was wir bitte schnellstmöglich beliefert bekommen möchten."
+* note[=].time = "2025-05-14T08:22:05+02:00"
+
+Instance: UC1-Alt-Delivery-Response-Dispense-Request
+InstanceOf: ERPServiceRequestDispenseRequest
+Usage: #inline
+Title: "Initial Dispense Request"
+Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
+* identifier[requestId].value = "2"
+* requisition.value = "GroupID-UC1"
+* status = RequestStatus#completed
+* intent = RequestIntent#filler-order
+* code = ServiceRequestTypeCS#dispense-request
+* subject = Reference(Example-Patient)
+* authoredOn = "2025-05-14"
+* supportingInfo[AbgabeDaten] = Reference (UC1-Medication-Dispense)
+* supportingInfo[AbgabeDaten].type = "MedicationDispense" (exactly)
+* note[+].text = "Sehr geehrter Kollegen der Test Apotheke,\n Anbei das E-Rezept, was wir bitte schnellstmöglich beliefert bekommen möchten."
+* note[=].time = "2025-05-14T08:22:05+02:00"
+* note[+].text = "Sehr geehrter Kollegen des Pflegeheim Immgergrün,\n Die Arzneimittel lagern vor Ort. Anbei, was wir bis 13:00 heute per Botendienst liefern werden.."
+* note[=].time = "2025-05-14T08:27:05+02:00"

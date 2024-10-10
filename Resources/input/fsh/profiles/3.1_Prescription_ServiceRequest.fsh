@@ -64,11 +64,21 @@ Description: "ServiceRequest, which is used to request a recipe"
 * intent MS
 * intent = #order (exactly)
 
-* code MS
+* code 1..1 MS
   * ^short = "Indicates the type of service request."
-  * coding 1..1 MS
-  * coding from ServiceRequestTypeVS
-  * coding = ServiceRequestTypeCS#prescription-request (exactly)
+
+  * coding 1..* MS
+    * ^slicing.discriminator.type = #pattern
+    * ^slicing.discriminator.path = "system"
+    * ^slicing.rules = #open
+    * ^slicing.description = "Differentiates between the service request type and additional information."
+    * ^slicing.ordered = false
+  
+  * coding contains request-type 1..1 MS
+
+  * coding[request-type] from ServiceRequestTypeVS
+  * coding[request-type] = ServiceRequestTypeCS#prescription-request
+    * ^short = "Indicates the type of service request."
     * system 1..1
     * code 1..1
       * ^comment = "#prescription-request defines this ServiceRequest as a prescription request from a requester to a doctor."

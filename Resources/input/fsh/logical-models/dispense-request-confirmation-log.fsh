@@ -17,6 +17,9 @@ Description: "Fachliches Modell zur Beschreibung einer Bestätigung einer Dispen
 * Anhaenge 0..* Attachment "Anhänge" "Anhänge zur Anforderung. Das können PDFs, Bilder oder andere Dokumente sein."
   * ^comment = "Werden auf Ebene der KIM-Nachricht angehangen"
 
+* Belieferungsart 0..1 Coding "Belieferungsart" "Angabe der Belieferungsart"
+  * BelieferungsartCode 1..1 Coding "Belieferungsart-Code" "Folgende Codes sind zulässig: Abholung durch Pflegedienst, Lieferung der Apotheke, Abholung durch Patienten"
+
 // Medizinische Informationen
 * Medikation 1..1 BackboneElement "Medikation" "Angaben zur Medikation"
   * obeys log-dispense-request-confirmation-1

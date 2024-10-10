@@ -34,6 +34,10 @@ Description: "Fachliches Modell zur Beschreibung einer Dispenseieranforderung"
 
 * Freitext 0..1 string "Freitext" "Individuelle Nachricht an den Empfänger"
 
+* Belieferungsart 0..1 Coding "Belieferungsart" "Angabe der Belieferungsart"
+  * BelieferungsartCode 1..1 Coding "Belieferungsart-Code" "Folgende Codes sind zulässig: Abholung durch Pflegedienst, Lieferung der Apotheke, Abholung durch Patienten"
+  * AlternativeAdresse 0..1 Address "Alternative Adresse" "Alternative Adresse für die Lieferung"
+
 * Prioritaet 0..1 BackboneElement "Priorität" "Angabe der Priorität der Anforderung"
   * PrioritaetCode 1..1 Coding "Priorität der Anforderung" "Folgende Prioritäten sind zulässig: Hoch, Normal"
 

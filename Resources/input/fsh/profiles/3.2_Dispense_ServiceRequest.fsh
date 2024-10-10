@@ -8,13 +8,20 @@ Description: "ServiceRequest that is used to supply a recipe"
 * obeys servicerequest-dispense-request-1
 * obeys servicerequest-dispense-request-2
 * obeys servicerequest-dispense-request-3
+* obeys servicerequest-dispense-request-4
 
 * extension MS
 * extension contains
-    EPrescriptionTokenEX named EPrescriptionToken 0..1 MS
+    EPrescriptionTokenEX named EPrescriptionToken 0..1 MS and
+    AlternativeDeliveryAddressEX named alternativeDeliveryAddress 0..1 MS
+
 * extension[EPrescriptionToken]
   * ^short = "The e-prescription token for delivery to the pharmacy can be provided here."
   * ^comment = "The token is of the form '/Task/{PrescriptionID}/$accept?ac={AccessCode}. See [gemSpec_DM_eRp](https://fachportal.gematik.de/fachportal-import/files/gemSpec_DM_eRp_V1.5.0.pdf)'."
+
+* extension[alternativeDeliveryAddress]
+  * ^short = "Alternative delivery address."
+  * ^definition = "If the ServiceRequest states that the delivery should be delivered to an alternative address, it must be stated here."
 
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "system"
@@ -43,14 +50,33 @@ Description: "ServiceRequest that is used to supply a recipe"
 
 * intent = #filler-order (exactly)
 
-* code MS
+* code 1..1 MS
   * ^short = "Indicates the type of service request."
-  * coding 1..1 MS
-  * coding from ServiceRequestTypeVS
-  * coding = ServiceRequestTypeCS#dispense-request (exactly)
+
+  * coding 1..* MS
+    * ^slicing.discriminator.type = #pattern
+    * ^slicing.discriminator.path = "system"
+    * ^slicing.rules = #open
+    * ^slicing.description = "Differentiates between the service request type and additional information."
+    * ^slicing.ordered = false
+  
+  * coding contains
+    request-type 1..1 MS
+    and dispense-type 0..1 MS
+
+  * coding[request-type] from ServiceRequestTypeVS
+  * coding[request-type] = ServiceRequestTypeCS#dispense-request
+    * ^short = "Indicates the type of service request."
     * system 1..1
     * code 1..1
       * ^comment = "#dispense-request serves as a service request for a pharmacy to deliver a prescription."
+
+  * coding[dispense-type] from DeliveryTypeVS
+    * ^short = "Indicates how the delivery should be made."
+    * ^definition = "The delivery type can be used to indicate how the delivery should be made. The following options are available: pickup-by-healthcare-service, pickup-by-patient, delivery-to-healthcare-service, delivery-to-alternative-address."
+    * ^comment = "If the delivery type is delivery-to-alternative-address, the alternative address must be specified in location."
+    * system 1..1
+    * code 1..1
 
 * occurrence[x] 0..1 MS
 * occurrence[x] only dateTime
@@ -102,4 +128,9 @@ Severity: #error
 Invariant: servicerequest-dispense-request-3
 Description: "If the status is completed, then the dispense data must be present."
 Expression: "status = 'completed' implies supportingInfo.where(type='MedicationDispense').exists()"
+Severity: #error
+
+Invariant: servicerequest-dispense-request-4
+Description: "If the the code for the delivery type is alternatve-address, then the address must be stated."
+Expression: "code.coding.where(system='https://gematik.de/fhir/erp-servicerequest/CodeSystem/DeliveryTypeCS').code = 'delivery-to-alternative-address' implies (extension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/alternative-delivery-address-ex').exists() and extension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/alternative-delivery-address-ex').value.empty().not())"
 Severity: #error

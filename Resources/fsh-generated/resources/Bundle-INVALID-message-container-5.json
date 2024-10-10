@@ -201,6 +201,14 @@
           "system": "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier",
           "value": "GroupID-UC1"
         },
+        "code": {
+          "coding": [
+            {
+              "code": "dispense-request",
+              "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
+            }
+          ]
+        },
         "extension": [
           {
             "valueIdentifier": {
@@ -210,14 +218,6 @@
             "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex"
           }
         ],
-        "code": {
-          "coding": [
-            {
-              "code": "dispense-request",
-              "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
-            }
-          ]
-        },
         "status": "active",
         "subject": {
           "reference": "Patient/Example-Patient"
