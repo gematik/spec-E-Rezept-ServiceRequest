@@ -344,6 +344,14 @@
     "endLine": 19
   },
   {
+    "outputFile": "ServiceRequest-INVALID-dispense-request-4.json",
+    "fshName": "INVALID-dispense-request-4",
+    "fshType": "Instance",
+    "fshFile": "examples/Constraint_Tests/servicerequest/servicerequest-dispense-request-4.fsh",
+    "startLine": 8,
+    "endLine": 22
+  },
+  {
     "outputFile": "ServiceRequest-INVALID-prescription-request-1.json",
     "fshName": "INVALID-prescription-request-1",
     "fshType": "Instance",
