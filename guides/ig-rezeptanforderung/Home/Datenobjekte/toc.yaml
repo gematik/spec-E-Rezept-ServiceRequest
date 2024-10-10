@@ -2,6 +2,8 @@
   filename: Index.page.md
 - name: Profile
   filename: Profile
+- name: Extensions
+  filename: Extensions
 - name: Identifier
   filename: Identifier
 - name: Terminologien

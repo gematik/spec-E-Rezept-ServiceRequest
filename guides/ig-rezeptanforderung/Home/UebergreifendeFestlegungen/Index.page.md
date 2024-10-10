@@ -25,21 +25,6 @@ Wenn die entsprechende Information vorliegt, bzw. eingeholt werden kann, MUSS di
 Wenn ein Feld befüllt ist MUSS die entsprechende Information im Frontend sichtbar gemacht, bzw. verarbeitet werden können.
 Felder, die Referenzen zu anderen Objekten aufweisen und mit "MS" gekennzeichnet sind MUSS das referenzierte Objekt verarbeiten und darstellen können.
 
-## Modifier Extensions
-
-Modifier Extensions in FHIR definieren Extensions, deren Inhalt die weitere Verarbeitungslogik eines Datensatzes maßgeblich beeinflussen.
-In diesem Projekt sind folgende Modifier Extensions definiert und müssen entsprechend der Beschreibung verarbeitet werden:
-
-@```
-from StructureDefinition
-select
-    Name: link(url, name),
-    join for differential.element 
-    where isModifier = true
-    select { Extension: link(type.profile, id), 'Verarbeitungshinweis': isModifierReason }
-```
-
-
 ## Weitere Vorgaben:
 Im folgenden werden weitere Festlegungen definiert:
 

@@ -19,32 +19,6 @@
   "differential": {
     "element": [
       {
-        "id": "MessageHeader.extension",
-        "path": "MessageHeader.extension",
-        "max": "1",
-        "mustSupport": true
-      },
-      {
-        "id": "MessageHeader.extension:CopyToCareFacility",
-        "path": "MessageHeader.extension",
-        "sliceName": "CopyToCareFacility",
-        "short": "The contact details of the care facility that receives a copy of the request.",
-        "comment": "If this is set to true, the receiver of the message must be informed that is is a copy and not a request. The receiving system should not allow any further processing of the message.",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/copy-to-care-facility-ex"
-            ]
-          }
-        ],
-        "mustSupport": true,
-        "isModifier": true,
-        "isModifierReason": "If this is set to true, the receiver of the message must be informed that is is a copy and not a request. The receiving system should not allow any further processing of the message."
-      },
-      {
         "id": "MessageHeader.event[x]",
         "path": "MessageHeader.event[x]",
         "slicing": {
