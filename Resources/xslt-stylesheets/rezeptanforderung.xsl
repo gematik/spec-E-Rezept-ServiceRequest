@@ -19,13 +19,11 @@
                     }
                     table { width: 100%; border-collapse: collapse; }
                     th, td { border: 1px solid black; padding: 8px; text-align: left; }
+                    .subject-date { float: right; text-align: right; }
                 </style>
             </head>
             <body>
                 <div id="gesamtseite">
-                    <h1>
-                        <xsl:value-of select="fhir:entry/fhir:resource/fhir:MessageHeader/fhir:eventCoding/fhir:display/@value"/>
-                    </h1>
                     
                         <div class="sender-info">
                             <xsl:call-template name="sender-info"/>
@@ -38,6 +36,10 @@
                         <div class="letter-subject-info">
                             <xsl:call-template name="letter-subject-info"/>
                         </div>
+
+                        <!-- <div class="free-text">
+                            <xsl:call-template name="free-text"/>
+                        </div> -->
                 </div>
             </body>
         </html>
@@ -90,8 +92,25 @@
         <!-- Find the MessageHeader in the Bundle -->
         <xsl:for-each select="fhir:entry/fhir:resource/fhir:MessageHeader">
             <!-- Retrieve the responsible reference, which points to the Organization -->
-            <div class="receiver">
-                <xsl:value-of select="fhir:destination/fhir:name/@value"/>
+            <div class="subject">
+                <xsl:value-of select="fhir:entry/fhir:resource/fhir:MessageHeader/fhir:eventCoding/fhir:display/@value"/>
+            </div>
+            <div class="subject-date">
+                <xsl:value-of select="concat(substring(/fhir:Bundle/fhir:timestamp/@value, 9, 2), '.', substring(/fhir:Bundle/fhir:timestamp/@value, 6, 2), '.', substring(/fhir:Bundle/fhir:timestamp/@value, 1, 4))" />
+            </div>
+        </xsl:for-each>
+    </xsl:template>
+
+
+    <xsl:template name="free-text">
+        <!-- Find the MessageHeader in the Bundle -->
+        <xsl:for-each select="fhir:entry/fhir:resource/fhir:MessageHeader">
+            <!-- Retrieve the responsible reference, which points to the Organization -->
+            <div class="subject">
+                <xsl:value-of select="fhir:entry/fhir:resource/fhir:MessageHeader/fhir:eventCoding/fhir:display/@value"/>
+            </div>
+            <div class="subject-date">
+                <xsl:value-of select="concat(substring(/fhir:Bundle/fhir:timestamp/@value, 9, 2), '.', substring(/fhir:Bundle/fhir:timestamp/@value, 6, 2), '.', substring(/fhir:Bundle/fhir:timestamp/@value, 1, 4))" />
             </div>
         </xsl:for-each>
     </xsl:template>

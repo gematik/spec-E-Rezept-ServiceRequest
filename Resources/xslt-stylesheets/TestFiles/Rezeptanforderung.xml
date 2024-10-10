@@ -22,6 +22,7 @@
                 <eventCoding>
                     <system value="https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"/>
                     <code value="eRezept_Rezeptanforderung;Rezeptanfrage"/>
+                    <display value="Anfrage an einen Arzt ein Rezept auszustellen"/>
                 </eventCoding>
                 <destination>
                     <name value="Praxis Hans Topp-Glücklich"/>
