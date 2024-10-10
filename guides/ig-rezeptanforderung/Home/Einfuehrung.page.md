@@ -16,7 +16,7 @@ Anwendungsf채lle des Features "KIM-Nachrichten f체r das E-Rezept" werden nicht �
 Daher handelt es sich grundlegend, aufbauend auf dem App-Transport-Framework (ATF) der gematik, um ein FHIR Message Konzept (https://www.hl7.org/fhir/messaging.html).
 Aus dem App-Transport-Framework werden die Ressourcen "Bundle" und "MessageHeader" genutzt, um einerseits alle Ressourcen zu 체bermitteln, als auch Informationen 체ber Sender und Empf채nger zu halten. Die Funktionsweise und Implementierung des App-Transport-Framework sind im entsprechenden [Implementation Guide](https://simplifier.net/app-transport-framework/~guides) zu finden.
 
-Dieser Implementation Guide basiert auf Version ==X.X.X //TODO Version und Link!!== des App Transport Frameworks. Die folgende Stufe des ATF MUSS unterst체tzt werden, um konform zu diesem IG zu sein: 
+`Dieser Implementation Guide basiert auf Version ==X.X.X //TODO Version und Link!!== des App Transport Frameworks. Die folgende Stufe des ATF MUSS unterst체tzt werden, um konform zu diesem IG zu sein:`
 
 **Stufe 1** 
 - Datenmodell und Messaging Konzept MUSS unterst체tzt werden
