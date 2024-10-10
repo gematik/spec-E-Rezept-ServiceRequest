@@ -8,10 +8,12 @@ RECTANGLE "MessageHeader" as MH {
 
 
 RECTANGLE "ServiceRequest" as SR {
+    +extension[alternativeDeliveryAddress]
     +identifier:requestId: string
     +status: #active
     +intent: #filler-order
-    +code: #dispense-request
+    +code[request-type]: #dispense-request
+    +code[delivery-type]: code
     +subject: Reference<Patient>
     +occurrence: dateTime
     +authoredOn: Date
@@ -33,7 +35,15 @@ RECTANGLE "ERPServiceRequestOrganization" as O {
     +contact:kim: String
 }
 
+RECTANGLE "AddressDeBasis" as Adr {
+    +line: String
+    +city: String
+    +postalCode: String
+    +country: String
+}
+
 MH .down.> SR : .focus 1..*
 SR .down.> P : .subject 1..1
 SR .down.> O : .requester 1..1
+SR .right.> Adr : .extension 0..1
 @enduml
