@@ -53,8 +53,7 @@
         ],
         "eventCoding": {
           "code": "eRezept_ParenteraleZubereitung;Rezeptanfrage",
-          "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs",
-          "display": "Rezeptanfrage für eine parenterale Zubereitung"
+          "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
         },
         "responsible": {
           "reference": "Organization/Example-Pharmacy-Organization"

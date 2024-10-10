@@ -53,8 +53,7 @@
         ],
         "eventCoding": {
           "code": "eRezept_Rezeptanforderung;Abgabeanfrage",
-          "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs",
-          "display": "Anfrage zur Erfüllung eines Rezeptes und Abgabe des Medikaments"
+          "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
         },
         "responsible": {
           "reference": "Organization/Example-HealthCareService-Organization"

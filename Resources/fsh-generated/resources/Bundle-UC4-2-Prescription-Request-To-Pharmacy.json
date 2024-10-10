@@ -53,8 +53,7 @@
         ],
         "eventCoding": {
           "code": "eRezept_ParenteraleZubereitung;Rezeptbestaetigung",
-          "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs",
-          "display": "Bestätigung und Übermittlung eines ausgestellten Rezeptes für eine parenterale Zubereitung"
+          "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
         },
         "responsible": {
           "reference": "Organization/Example-Practitioner-Organization"

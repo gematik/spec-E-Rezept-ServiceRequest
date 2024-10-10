@@ -53,8 +53,7 @@
         ],
         "eventCoding": {
           "code": "eRezept_Rezeptanforderung;NachrichtKopie",
-          "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs",
-          "display": "Kopie einer Nachricht innerhalb des Prozesses der Rezeptanforderung"
+          "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
         },
         "responsible": {
           "reference": "Organization/Example-Pharmacy-Organization"

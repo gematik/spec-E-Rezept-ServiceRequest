@@ -33,8 +33,5 @@ Description: "Header containing information about the sender and addressee"
 * eventCoding from ServiceIdentifierVS (required)
   * ^short = "The event code that indicates in which application and which transmission path the communication is currently taking place"
   * ^comment = "For more information see [ATF ImplementationGuide](https://simplifier.net/app-transport-framework/~guides)"
-  * display 1..1 MS
-    * ^short = "The human readable name of the event code."
-    * ^comment = "Can be extracted from the CodeSystem ServiceIdentifierCS."
 
 //TODO if eventCode is Storno then ServiceRequest.status = revoked ODER entered-in-error

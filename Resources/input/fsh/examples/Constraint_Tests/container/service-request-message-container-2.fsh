@@ -40,7 +40,7 @@ Usage: #inline
 Title: "INVALID-message-container-2-MessageHeader"
 Description: "INVALID-message-container-2-MessageHeader"
 * insert Pharmacy-to-Practitioner(invalid-Initial-Prescription-Request-1)
-* eventCoding = ServiceIdentifierCS#eRezept_Rezeptanforderung;Rezeptanfrage "Anfrage an einen Arzt ein Rezept auszustellen"
+* eventCoding = ServiceIdentifierCS#eRezept_Rezeptanforderung;Rezeptanfrage
 * responsible = Reference(Example-Pharmacy-Organization)
 
 // Prescription Service Requests

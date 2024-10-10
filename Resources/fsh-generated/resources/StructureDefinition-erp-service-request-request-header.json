@@ -77,14 +77,6 @@
         }
       },
       {
-        "id": "MessageHeader.event[x]:eventCoding.display",
-        "path": "MessageHeader.event[x].display",
-        "short": "The human readable name of the event code.",
-        "comment": "Can be extracted from the CodeSystem ServiceIdentifierCS.",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
         "id": "MessageHeader.destination.receiver.identifier",
         "path": "MessageHeader.destination.receiver.identifier",
         "type": [

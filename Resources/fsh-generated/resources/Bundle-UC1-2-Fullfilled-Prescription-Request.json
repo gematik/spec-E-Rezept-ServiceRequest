@@ -53,8 +53,7 @@
         ],
         "eventCoding": {
           "code": "eRezept_Rezeptanforderung;Rezeptbestaetigung",
-          "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs",
-          "display": "Bestätigung und Übermittlung eines ausgestellten Rezeptes"
+          "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
         },
         "responsible": {
           "reference": "Organization/Example-Practitioner-Organization"
