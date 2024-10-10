@@ -17,6 +17,14 @@
     "system": "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier",
     "value": "GroupID-UC1"
   },
+  "code": {
+    "coding": [
+      {
+        "code": "prescription-request",
+        "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
+      }
+    ]
+  },
   "modifierExtension": [
     {
       "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex",
@@ -32,14 +40,6 @@
       "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex"
     }
   ],
-  "code": {
-    "coding": [
-      {
-        "code": "prescription-request",
-        "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
-      }
-    ]
-  },
   "status": "completed",
   "basedOn": [
     {

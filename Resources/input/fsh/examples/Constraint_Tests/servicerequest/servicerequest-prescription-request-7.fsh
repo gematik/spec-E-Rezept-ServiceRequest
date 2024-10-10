@@ -14,7 +14,7 @@ Title: "Invalid Prescription Request 7-1-of-2"
 * requisition.value = "GroupID-UC3"
 * status = RequestStatus#completed
 * intent = RequestIntent#order
-* code = ServiceRequestTypeCS#prescription-request
+* code.coding[request-type] = ServiceRequestTypeCS#prescription-request
 * subject = Reference(Example-Patient)
 * authoredOn = "2025-05-13"
 * performer.identifier = Hans-Topp-Glücklich-Identifier
@@ -29,7 +29,7 @@ Title: "Invalid Prescription Request 7-2-of-2"
 * requisition.value = "GroupID-UC3"
 * status = RequestStatus#completed
 * intent = RequestIntent#order
-* code = ServiceRequestTypeCS#prescription-request
+* code.coding[request-type] = ServiceRequestTypeCS#prescription-request
 * subject = Reference(Example-Patient)
 * authoredOn = "2025-05-13"
 * performer.identifier = Hans-Topp-Glücklich-Identifier

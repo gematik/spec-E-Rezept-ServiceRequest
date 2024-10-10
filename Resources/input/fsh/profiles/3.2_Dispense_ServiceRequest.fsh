@@ -62,7 +62,7 @@ Description: "ServiceRequest that is used to supply a recipe"
   
   * coding contains
     request-type 1..1 MS
-    and dispense-type 0..1 MS
+    and delivery-type 0..1 MS
 
   * coding[request-type] from ServiceRequestTypeVS
   * coding[request-type] = ServiceRequestTypeCS#dispense-request
@@ -71,7 +71,7 @@ Description: "ServiceRequest that is used to supply a recipe"
     * code 1..1
       * ^comment = "#dispense-request serves as a service request for a pharmacy to deliver a prescription."
 
-  * coding[dispense-type] from DeliveryTypeVS
+  * coding[delivery-type] from DeliveryTypeVS
     * ^short = "Indicates how the delivery should be made."
     * ^definition = "The delivery type can be used to indicate how the delivery should be made. The following options are available: pickup-by-healthcare-service, pickup-by-patient, delivery-to-healthcare-service, delivery-to-alternative-address."
     * ^comment = "If the delivery type is delivery-to-alternative-address, the alternative address must be specified in location."

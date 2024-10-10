@@ -9,7 +9,7 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * requisition.value = "GroupID-UC1-MULTI"
 * status = RequestStatus#active
 * intent = RequestIntent#order
-* code = ServiceRequestTypeCS#prescription-request
+* code.coding[request-type] = ServiceRequestTypeCS#prescription-request
 * subject = Reference(Example-Patient)
 * authoredOn = "2025-05-13"
 * requester = Reference(Example-HealthCareService-Organization)
@@ -24,7 +24,7 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * requisition.value = "GroupID-UC1-MULTI"
 * status = RequestStatus#active
 * intent = RequestIntent#order
-* code = ServiceRequestTypeCS#prescription-request
+* code.coding[request-type] = ServiceRequestTypeCS#prescription-request
 * subject = Reference(Example-Patient-2)
 * authoredOn = "2025-05-13"
 * requester = Reference(Example-HealthCareService-Organization)
@@ -42,7 +42,7 @@ Description: "ServiceRequest that is returned to the requester"
 * subject = Reference(Example-Patient)
 * authoredOn = "2025-05-13"
 * intent = RequestIntent#order
-* code = ServiceRequestTypeCS#prescription-request
+* code.coding[request-type] = ServiceRequestTypeCS#prescription-request
 * performer.identifier = Hans-Topp-Glücklich-Identifier
 * note[+].text = "Sehr geehrter Herr Topp Glücklich,\n Wir möchten gerne die angehangene Medikation bei ihnen anfragen."
 * note[=].time = "2025-05-13T12:23:12+02:00"
@@ -60,7 +60,7 @@ Description: "ServiceRequest that is returned to the requester"
 * subject = Reference(Example-Patient-2)
 * authoredOn = "2025-05-13"
 * intent = RequestIntent#order
-* code = ServiceRequestTypeCS#prescription-request
+* code.coding[request-type] = ServiceRequestTypeCS#prescription-request
 * performer.identifier = Hans-Topp-Glücklich-Identifier
 * reasonCode.text = "Hr. Edgarson braucht das Buscopan nicht mehr, wird abgesetzt und aus dem Medkationsplan entfernt."
 * note[+].text = "Sehr geehrter Herr Topp Glücklich,\n Wir möchten gerne die angehangene Medikation bei ihnen anfragen."

@@ -14,7 +14,7 @@ Title: "Invalid Prescription Request 4"
 * requisition.value = "GroupID-UC3"
 * status = RequestStatus#completed
 * intent = RequestIntent#order
-* code = ServiceRequestTypeCS#prescription-request
+* code.coding[request-type] = ServiceRequestTypeCS#prescription-request
 * subject = Reference(Example-Patient)
 * requester = Reference(Example-HealthCareService-Organization)
 * authoredOn = "2025-05-13"

@@ -14,7 +14,7 @@ Title: "Invalid Prescription Request 5"
 * basedOn = Reference(Example-Initial-Medication-Request)
 * status = RequestStatus#revoked
 * intent = RequestIntent#order
-* code = ServiceRequestTypeCS#prescription-request
+* code.coding[request-type] = ServiceRequestTypeCS#prescription-request
 * subject = Reference(Example-Patient)
 * requester = Reference(Example-Pharmacy-Organization)
 * authoredOn = "2025-05-13"
@@ -29,7 +29,7 @@ Title: "Invalid Prescription Request 5"
 * basedOn = Reference(Example-Initial-Medication-Request)
 * status = RequestStatus#entered-in-error
 * intent = RequestIntent#order
-* code = ServiceRequestTypeCS#prescription-request
+* code.coding[request-type] = ServiceRequestTypeCS#prescription-request
 * subject = Reference(Example-Patient)
 * requester = Reference(Example-Pharmacy-Organization)
 * authoredOn = "2025-05-13"

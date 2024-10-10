@@ -55,6 +55,6 @@ Description: "This ServiceRequest is sent initially to the dispensing Pharmacy"
 * status = RequestStatus#active
 * intent = RequestIntent#filler-order
 * subject = Reference(Example-Patient)
-* code = ServiceRequestTypeCS#dispense-request
+* code.coding[request-type] = ServiceRequestTypeCS#dispense-request
 * requester = Reference(Example-Pharmacy-Organization)
 * authoredOn = "2025-05-14"

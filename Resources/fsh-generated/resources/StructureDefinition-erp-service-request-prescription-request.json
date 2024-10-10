@@ -236,14 +236,34 @@
         "id": "ServiceRequest.code",
         "path": "ServiceRequest.code",
         "short": "Indicates the type of service request.",
+        "min": 1,
         "mustSupport": true
       },
       {
         "id": "ServiceRequest.code.coding",
         "path": "ServiceRequest.code.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "system"
+            }
+          ],
+          "rules": "open",
+          "description": "Differentiates between the service request type and additional information.",
+          "ordered": false
+        },
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.code.coding:request-type",
+        "path": "ServiceRequest.code.coding",
+        "sliceName": "request-type",
+        "short": "Indicates the type of service request.",
         "min": 1,
         "max": "1",
-        "fixedCoding": {
+        "patternCoding": {
           "code": "prescription-request",
           "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
         },
@@ -254,12 +274,12 @@
         }
       },
       {
-        "id": "ServiceRequest.code.coding.system",
+        "id": "ServiceRequest.code.coding:request-type.system",
         "path": "ServiceRequest.code.coding.system",
         "min": 1
       },
       {
-        "id": "ServiceRequest.code.coding.code",
+        "id": "ServiceRequest.code.coding:request-type.code",
         "path": "ServiceRequest.code.coding.code",
         "comment": "#prescription-request defines this ServiceRequest as a prescription request from a requester to a doctor.",
         "min": 1

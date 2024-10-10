@@ -155,6 +155,14 @@
           "system": "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier",
           "value": "GroupID-UC4"
         },
+        "code": {
+          "coding": [
+            {
+              "code": "prescription-request",
+              "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
+            }
+          ]
+        },
         "extension": [
           {
             "valueIdentifier": {
@@ -164,14 +172,6 @@
             "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex"
           }
         ],
-        "code": {
-          "coding": [
-            {
-              "code": "prescription-request",
-              "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
-            }
-          ]
-        },
         "basedOn": [
           {
             "reference": "MedicationRequest/Example-Zyto-Medication-Request"

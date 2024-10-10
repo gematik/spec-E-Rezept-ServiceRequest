@@ -223,9 +223,9 @@
         "min": 1
       },
       {
-        "id": "ServiceRequest.code.coding:dispense-type",
+        "id": "ServiceRequest.code.coding:delivery-type",
         "path": "ServiceRequest.code.coding",
-        "sliceName": "dispense-type",
+        "sliceName": "delivery-type",
         "short": "Indicates how the delivery should be made.",
         "definition": "The delivery type can be used to indicate how the delivery should be made. The following options are available: pickup-by-healthcare-service, pickup-by-patient, delivery-to-healthcare-service, delivery-to-alternative-address.",
         "comment": "If the delivery type is delivery-to-alternative-address, the alternative address must be specified in location.",
@@ -238,12 +238,12 @@
         }
       },
       {
-        "id": "ServiceRequest.code.coding:dispense-type.system",
+        "id": "ServiceRequest.code.coding:delivery-type.system",
         "path": "ServiceRequest.code.coding.system",
         "min": 1
       },
       {
-        "id": "ServiceRequest.code.coding:dispense-type.code",
+        "id": "ServiceRequest.code.coding:delivery-type.code",
         "path": "ServiceRequest.code.coding.code",
         "min": 1
       },

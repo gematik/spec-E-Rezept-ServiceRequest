@@ -14,6 +14,6 @@ Title: "Invalid Dispense Request 1"
 * status = RequestStatus#active
 * intent = RequestIntent#filler-order
 * subject = Reference(Example-Patient)
-* code = ServiceRequestTypeCS#dispense-request
+* code.coding[request-type] = ServiceRequestTypeCS#dispense-request
 * requester = Reference(Example-HealthCareService-Organization)
 * authoredOn = "2025-05-14"

@@ -10,7 +10,7 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * requisition.value = "GroupID-UC2"
 * status = RequestStatus#active
 * intent = RequestIntent#order
-* code = ServiceRequestTypeCS#prescription-request
+* code.coding[request-type] = ServiceRequestTypeCS#prescription-request
 * subject = Reference(Example-Patient)
 * authoredOn = "2025-05-13"
 * requester = Reference(Example-HealthCareService-Organization)
@@ -30,7 +30,7 @@ Description: "ServiceRequest that is returned to the requester"
 * subject = Reference(Example-Patient)
 * authoredOn = "2025-05-13"
 * intent = RequestIntent#order
-* code = ServiceRequestTypeCS#prescription-request
+* code.coding[request-type] = ServiceRequestTypeCS#prescription-request
 * performer.identifier = Hans-Topp-Glücklich-Identifier
 * note[+].text = "Sehr geehrter Herr Topp Glücklich,\n Anbei folgende Rezeptanfrage zur Einlösung von Herrn Königsstein."
 * note[=].time = "2025-05-13T12:23:12+02:00"

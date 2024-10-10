@@ -18,5 +18,5 @@ Title: "Invalid Prescription Request 2"
 * subject = Reference(Example-Patient)
 * authoredOn = "2025-05-13"
 * intent = RequestIntent#order
-* code = ServiceRequestTypeCS#prescription-request
+* code.coding[request-type] = ServiceRequestTypeCS#prescription-request
 * performer.identifier = Hans-Topp-Glücklich-Identifier

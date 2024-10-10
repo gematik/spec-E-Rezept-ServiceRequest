@@ -17,12 +17,6 @@
     "system": "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier",
     "value": "GroupID-UC3"
   },
-  "modifierExtension": [
-    {
-      "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex",
-      "valueBoolean": false
-    }
-  ],
   "code": {
     "coding": [
       {
@@ -31,6 +25,12 @@
       }
     ]
   },
+  "modifierExtension": [
+    {
+      "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex",
+      "valueBoolean": false
+    }
+  ],
   "basedOn": [
     {
       "reference": "MedicationRequest/Example-Initial-Medication-Request"

@@ -64,12 +64,28 @@
     "endLine": 55
   },
   {
+    "outputFile": "Bundle-UC1-3-Alt-Delivery-Dispense-Request-To-Pharmacy.json",
+    "fshName": "UC1-3-Alt-Delivery-Dispense-Request-To-Pharmacy",
+    "fshType": "Instance",
+    "fshFile": "examples/UC1/UC1_Bundles.fsh",
+    "startLine": 101,
+    "endLine": 118
+  },
+  {
     "outputFile": "Bundle-UC1-3-Dispense-Request-To-Pharmacy.json",
     "fshName": "UC1-3-Dispense-Request-To-Pharmacy",
     "fshType": "Instance",
     "fshFile": "examples/UC1/UC1_Bundles.fsh",
     "startLine": 57,
     "endLine": 74
+  },
+  {
+    "outputFile": "Bundle-UC1-4-Alt-Delivery-Fullfilled-DispenseRequest-To-Pharmacy.json",
+    "fshName": "UC1-4-Alt-Delivery-Fullfilled-DispenseRequest-To-Pharmacy",
+    "fshType": "Instance",
+    "fshFile": "examples/UC1/UC1_Bundles.fsh",
+    "startLine": 120,
+    "endLine": 143
   },
   {
     "outputFile": "Bundle-UC1-4-Fullfilled-DispenseRequest-To-Pharmacy.json",
@@ -517,7 +533,7 @@
     "fshType": "Profile",
     "fshFile": "profiles/3.1_Prescription_ServiceRequest.fsh",
     "startLine": 1,
-    "endLine": 141
+    "endLine": 151
   },
   {
     "outputFile": "StructureDefinition-erp-service-request-procedure-identifier.json",
