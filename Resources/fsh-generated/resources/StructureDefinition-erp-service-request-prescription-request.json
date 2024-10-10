@@ -246,7 +246,7 @@
           "discriminator": [
             {
               "type": "pattern",
-              "path": "system"
+              "path": "$this"
             }
           ],
           "rules": "open",

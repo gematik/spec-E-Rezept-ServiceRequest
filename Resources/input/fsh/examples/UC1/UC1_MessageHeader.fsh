@@ -34,3 +34,22 @@ Description: "Message Header from Pharmacy to HealthCareService"
 * eventCoding = ServiceIdentifierCS#eRezept_Rezeptanforderung;Abgabebestaetigung
 * responsible = Reference(Example-Pharmacy-Organization)
 
+// Alternative Addresse
+Instance: UC1-Alt-Delivery-HealthCareService-to-Pharmacy-MessageHeader
+InstanceOf: ERPServiceRequestRequestHeader
+Usage: #inline
+Title: "Alt-Delivery-HealthCareService-to-Pharmacy-MessageHeader"
+Description: "Message Header from HealthCareService to Pharmacy"
+* insert HealthCareService-to-Pharmacy(UC1-Alt-Delivery-Initial-Dispense-Request)
+* eventCoding = ServiceIdentifierCS#eRezept_Rezeptanforderung;Abgabeanfrage
+* responsible = Reference(Example-HealthCareService-Organization)
+
+Instance: UC1-Alt-Delivery-Pharmacy-to-HealthCareService-MessageHeader
+InstanceOf: ERPServiceRequestRequestHeader
+Usage: #inline
+Title: "Alt-Delivery-Pharmacy-to-HealthCareService-MessageHeader"
+Description: "Message Header from Pharmacy to HealthCareService"
+* insert Pharmacy-to-HealthCareService(UC1-Alt-Delivery-Response-Dispense-Request)
+* eventCoding = ServiceIdentifierCS#eRezept_Rezeptanforderung;Abgabebestaetigung
+* responsible = Reference(Example-Pharmacy-Organization)
+

@@ -27,5 +27,9 @@ Description: "Mapping des Fachmodells aus GEM_ERP_SR_LOG_DispenseRequest auf das
 
 * Freitext -> "ERPServiceRequestDispenseRequest.note"
 
+* Belieferungsart -> "ERPServiceRequestDispenseRequest.code.coding[delivery-type]"
+  * BelieferungsartCode -> "ERPServiceRequestDispenseRequest.code.coding[delivery-type].code"
+  * AlternativeAdresse -> "ERPServiceRequestDispenseRequest.extension[alternativeDeliveryAddress]"
+
 * Prioritaet -> "ERPServiceRequestDispenseRequest.priority"
   * PrioritaetCode -> "ERPServiceRequestDispenseRequest.priority"

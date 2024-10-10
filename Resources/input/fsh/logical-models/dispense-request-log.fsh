@@ -8,6 +8,7 @@ Description: "Fachliches Modell zur Beschreibung einer Dispenseieranforderung"
 
 * obeys log-dispense-request-1
 * obeys log-dispense-request-2
+* obeys log-dispense-request-3
 
 // Administrative Informationen
 * Status 1..1 code "Status" "Status der Anforderung. Wird genutzt, um den Bearbeitungsstand einer Anfrage zu verfolgen. Im Falle der initialen Dispensieranforderung wird eine Anfrage mit dem Status 'active' erstellt und geschickt und signalisiert somit eine neue Anfrage."
@@ -35,6 +36,7 @@ Description: "Fachliches Modell zur Beschreibung einer Dispenseieranforderung"
 * Freitext 0..1 string "Freitext" "Individuelle Nachricht an den Empfänger"
 
 * Belieferungsart 0..1 Coding "Belieferungsart" "Angabe der Belieferungsart"
+  * obeys log-dispense-request-3
   * BelieferungsartCode 1..1 Coding "Belieferungsart-Code" "Folgende Codes sind zulässig: Abholung durch Pflegedienst, Lieferung der Apotheke, Abholung durch Patienten"
   * AlternativeAdresse 0..1 Address "Alternative Adresse" "Alternative Adresse für die Lieferung"
 
@@ -52,4 +54,8 @@ Severity: #error
 
 Invariant: log-dispense-request-2
 Description: "Wenn eine Anfrage gestellt wird (status = 'active'), muss auch der E-Rezept-Token vorhanden sein."
+Severity: #error
+
+Invariant: log-dispense-request-3
+Description: "Wenn als Belieferungsart 'Lieferung an Alternative Addresse' angegeben wird, dann muss die Adresse auch angegeben werden."
 Severity: #error

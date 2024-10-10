@@ -14,10 +14,10 @@
   "timestamp": "2025-05-14T08:23:12+02:00",
   "entry": [
     {
-      "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/UC1-HealthCareService-to-Pharmacy-MessageHeader",
+      "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/UC1-Alt-Delivery-HealthCareService-to-Pharmacy-MessageHeader",
       "resource": {
         "resourceType": "MessageHeader",
-        "id": "UC1-HealthCareService-to-Pharmacy-MessageHeader",
+        "id": "UC1-Alt-Delivery-HealthCareService-to-Pharmacy-MessageHeader",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
@@ -35,7 +35,7 @@
         },
         "focus": [
           {
-            "reference": "ServiceRequest/UC1-Initial-Dispense-Request"
+            "reference": "ServiceRequest/UC1-Alt-Delivery-Initial-Dispense-Request"
           }
         ],
         "sender": {
@@ -123,7 +123,7 @@
       }
     },
     {
-      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/UC1-Initial-Dispense-Request",
+      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/UC1-Alt-Delivery-Initial-Dispense-Request",
       "resource": {
         "resourceType": "ServiceRequest",
         "id": "UC1-Alt-Delivery-Initial-Dispense-Request",

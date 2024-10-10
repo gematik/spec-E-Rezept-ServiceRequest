@@ -462,6 +462,12 @@
           {
             "code": "Coding"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequest.code.coding[delivery-type]"
+          }
         ]
       },
       {
@@ -474,6 +480,12 @@
         "type": [
           {
             "code": "Coding"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequest.code.coding[delivery-type].code"
           }
         ]
       },

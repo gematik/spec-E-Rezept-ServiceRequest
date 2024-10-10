@@ -69,7 +69,7 @@ Description: "ServiceRequest, which is used to request a recipe"
 
   * coding 1..* MS
     * ^slicing.discriminator.type = #pattern
-    * ^slicing.discriminator.path = "system"
+    * ^slicing.discriminator.path = "$this"
     * ^slicing.rules = #open
     * ^slicing.description = "Differentiates between the service request type and additional information."
     * ^slicing.ordered = false

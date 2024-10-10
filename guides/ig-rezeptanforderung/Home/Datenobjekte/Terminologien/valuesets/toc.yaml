@@ -10,3 +10,5 @@
   filename: service-request-status-vs.page.md
 - name: "VS - Request Type"
   filename: service-request-type-vs.page.md
+- name: "VS - Delivery Type"
+  filename: delivery-type-vs.page.md

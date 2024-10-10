@@ -55,7 +55,7 @@ Description: "ServiceRequest that is used to supply a recipe"
 
   * coding 1..* MS
     * ^slicing.discriminator.type = #pattern
-    * ^slicing.discriminator.path = "system"
+    * ^slicing.discriminator.path = "$this"
     * ^slicing.rules = #open
     * ^slicing.description = "Differentiates between the service request type and additional information."
     * ^slicing.ordered = false
@@ -132,5 +132,5 @@ Severity: #error
 
 Invariant: servicerequest-dispense-request-4
 Description: "If the the code for the delivery type is alternatve-address, then the address must be stated."
-Expression: "code.coding.where(system='https://gematik.de/fhir/erp-servicerequest/CodeSystem/DeliveryTypeCS').code = 'delivery-to-alternative-address' implies (extension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/alternative-delivery-address-ex').exists() and extension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/alternative-delivery-address-ex').value.empty().not())"
+Expression: "(code.coding.where(system='https://gematik.de/fhir/erp-servicerequest/CodeSystem/delivery-type-cs').exists() and code.coding.where(system='https://gematik.de/fhir/erp-servicerequest/CodeSystem/delivery-type-cs').code = 'delivery-to-alternative-address') implies (extension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/alternative-delivery-address-ex').exists() and extension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/alternative-delivery-address-ex').value.empty().not())"
 Severity: #error
