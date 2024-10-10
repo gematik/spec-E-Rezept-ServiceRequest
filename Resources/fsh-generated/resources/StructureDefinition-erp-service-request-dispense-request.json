@@ -47,7 +47,7 @@
             "key": "servicerequest-dispense-request-4",
             "severity": "error",
             "human": "If the the code for the delivery type is alternatve-address, then the address must be stated.",
-            "expression": "(code.coding.where(system='https://gematik.de/fhir/erp-servicerequest/CodeSystem/delivery-type-cs').exists() and code.coding.where(system='https://gematik.de/fhir/erp-servicerequest/CodeSystem/delivery-type-cs').code = 'delivery-to-alternative-address') implies (extension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/alternative-delivery-address-ex').exists() and extension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/alternative-delivery-address-ex').value.empty().not())",
+            "expression": "(status = 'active' and code.coding.where(system='https://gematik.de/fhir/erp-servicerequest/CodeSystem/delivery-type-cs').exists() and code.coding.where(system='https://gematik.de/fhir/erp-servicerequest/CodeSystem/delivery-type-cs').code = 'delivery-to-alternative-address') implies (extension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/alternative-delivery-address-ex').exists() and extension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/alternative-delivery-address-ex').value.empty().not())",
             "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"
           }
         ]
@@ -231,6 +231,9 @@
         "comment": "If the delivery type is delivery-to-alternative-address, the alternative address must be specified in location.",
         "min": 0,
         "max": "1",
+        "patternCoding": {
+          "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/delivery-type-cs"
+        },
         "mustSupport": true,
         "binding": {
           "strength": "required",

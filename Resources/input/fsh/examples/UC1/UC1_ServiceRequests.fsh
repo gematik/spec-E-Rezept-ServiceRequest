@@ -112,6 +112,7 @@ Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
 * status = RequestStatus#completed
 * intent = RequestIntent#filler-order
 * code.coding[request-type] = ServiceRequestTypeCS#dispense-request
+* code.coding[delivery-type] = DeliveryTypeCS#delivery-to-alternative-address
 * subject = Reference(Example-Patient)
 * authoredOn = "2025-05-14"
 * supportingInfo[AbgabeDaten] = Reference (UC1-Medication-Dispense)

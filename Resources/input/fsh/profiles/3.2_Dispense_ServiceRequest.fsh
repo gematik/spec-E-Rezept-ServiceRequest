@@ -72,6 +72,7 @@ Description: "ServiceRequest that is used to supply a recipe"
       * ^comment = "#dispense-request serves as a service request for a pharmacy to deliver a prescription."
 
   * coding[delivery-type] from DeliveryTypeVS
+    * ^patternCoding.system = https://gematik.de/fhir/erp-servicerequest/CodeSystem/delivery-type-cs
     * ^short = "Indicates how the delivery should be made."
     * ^definition = "The delivery type can be used to indicate how the delivery should be made. The following options are available: pickup-by-healthcare-service, pickup-by-patient, delivery-to-healthcare-service, delivery-to-alternative-address."
     * ^comment = "If the delivery type is delivery-to-alternative-address, the alternative address must be specified in location."
@@ -132,5 +133,5 @@ Severity: #error
 
 Invariant: servicerequest-dispense-request-4
 Description: "If the the code for the delivery type is alternatve-address, then the address must be stated."
-Expression: "(code.coding.where(system='https://gematik.de/fhir/erp-servicerequest/CodeSystem/delivery-type-cs').exists() and code.coding.where(system='https://gematik.de/fhir/erp-servicerequest/CodeSystem/delivery-type-cs').code = 'delivery-to-alternative-address') implies (extension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/alternative-delivery-address-ex').exists() and extension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/alternative-delivery-address-ex').value.empty().not())"
+Expression: "(status = 'active' and code.coding.where(system='https://gematik.de/fhir/erp-servicerequest/CodeSystem/delivery-type-cs').exists() and code.coding.where(system='https://gematik.de/fhir/erp-servicerequest/CodeSystem/delivery-type-cs').code = 'delivery-to-alternative-address') implies (extension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/alternative-delivery-address-ex').exists() and extension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/alternative-delivery-address-ex').value.empty().not())"
 Severity: #error

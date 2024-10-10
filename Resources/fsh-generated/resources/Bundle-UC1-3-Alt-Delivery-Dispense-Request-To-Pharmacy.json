@@ -150,8 +150,8 @@
               "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
             },
             {
-              "code": "delivery-to-alternative-address",
-              "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/delivery-type-cs"
+              "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/delivery-type-cs",
+              "code": "delivery-to-alternative-address"
             }
           ]
         },
