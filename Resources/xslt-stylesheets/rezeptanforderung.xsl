@@ -173,6 +173,8 @@
                                     select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($patientRef) + 1) = $patientRef]/fhir:resource/fhir:Patient">
                                     <xsl:value-of
                                         select="fhir:name[fhir:use/@value='official']/fhir:family/@value" />
+                                    <span>, </span>
+                                    <xsl:value-of select="fhir:name[fhir:use/@value='official']/fhir:given/@value" />
                                 </xsl:for-each>
                             </td>
                             <td>
