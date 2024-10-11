@@ -13,36 +13,115 @@
             <head>
                 <title>FHIR Message Bundle</title>
                 <style>
-                    /* Basic styling to match the image */
-                    body { font-family: Arial, sans-serif; }
-                    .sender-info, .recipient-info, .subject-info, .date-info { margin-bottom: 20px;
+                    /* Enhanced styling for a more professional letter-like look optimized for A4
+           size */
+                    @page {
+                    size: A4;
+                    margin: 20mm;
                     }
-                    table { width: 100%; border-collapse: collapse; }
-                    th, td { border: 1px solid black; padding: 8px; text-align: left; }
-                    .subject-date { float: right; text-align: right; }
+                    body {
+                    font-family: 'Roboto', sans-serif;
+                    line-height: 1.6;
+                    background-color: #f9f9f9;
+                    color: #333;
+                    margin: 0;
+                    padding: 0;
+                    }
+                    #gesamtseite {
+                    width: 100%;
+                    max-width: 800px;
+                    margin: 60px auto;
+                    background: white;
+                    padding: 40px;
+                    border: 1px solid #ccc;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                    position: relative;
+                    }
+                    .sender-info, .recipient-info, .subject-info, .service-request-info, .date-info
+                    {
+                    margin-bottom: 60px;
+                    }
+                    .contact-info {
+                    margin-top: 10px;
+                    float: left;
+                    width: 40%;
+                    position: relative;
+                    }
+                    .sender-info {
+                    float: left;
+                    width: 60%;
+                    position: relative;
+                    }
+                    .receiver {
+                        margin-bottom: 40px;
+                        }
+                        .receiver .name {
+                        font-weight: bold;
+                        }
+                        .receiver .email {
+                        font-weight: normal;
+                        }
+                    .clearfix::after {
+                    content: "";
+                    display: table;
+                    clear: both;
+                    }
+                    table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin-top: 20px;
+                    }
+                    th {
+                    background-color: #f2f2f2;
+                    padding: 12px;
+                    border-bottom: 2px solid #ccc;
+                    }
+                    td {
+                    padding: 12px;
+                    border-bottom: 1px solid #ddd;
+                    }
+                    th, td {
+                    text-align: left;
+                    }
+                    .subject-date {
+                    float: right;
+                    text-align: right;
+                    font-size: 0.9em;
+                    color: #777;
+                    }
+                    .subject h1 {
+                    font-size: 1.8em;
+                    margin: 0;
+                    }
+                    .service-request {
+                    margin-top: 40px;
+                    }
+                    .note-section {
+                    margin-top: 15px;
+                    font-style: italic;
+                    color: #333;
+                    }
                 </style>
             </head>
             <body>
                 <div id="gesamtseite">
-
-                    <div class="sender-info">
-                        <xsl:call-template name="sender-info" />
+                    <div class="clearfix">
+                        <div class="sender-info">
+                            <xsl:call-template name="sender-info" />
+                        </div>
+                        <div class="contact-info">
+                            <xsl:call-template name="contact-info" />
+                        </div>
                     </div>
-
                     <div class="receiver-info">
                         <xsl:call-template name="receiver-info" />
                     </div>
-
                     <div class="letter-subject-info">
                         <xsl:call-template name="letter-subject-info" />
                     </div>
-                    <!-- Template reference for each ServiceRequest Resource in the Bundle -->
-                    
-                        <div class="service-request-info">
-                            <xsl:call-template name="service-request-info" />
-                        </div>
-                    
-
+                    <div class="service-request-info">
+                        <xsl:call-template name="service-request-info" />
+                    </div>
                 </div>
             </body>
         </html>
@@ -50,16 +129,16 @@
 
     <xsl:template name="sender-info">
         <!-- Find the MessageHeader in the Bundle -->
-    <xsl:for-each
+        <xsl:for-each
             select="fhir:entry/fhir:resource/fhir:MessageHeader">
             <!-- Retrieve the responsible reference, which points to the Organization -->
-        <xsl:variable name="respRef"
+            <xsl:variable name="respRef"
                 select="fhir:responsible/fhir:reference" />
             <!-- Find the corresponding Organization by matching the reference -->
-        <xsl:for-each
+            <xsl:for-each
                 select="/fhir:Bundle/fhir:entry[fhir:fullUrl = $respRef]">
                 <xsl:for-each select="fhir:resource/fhir:Organization">
-                    <div class="sender">
+                    <div class="sender-info">
                         <!-- Output the organization's info -->
                         <xsl:value-of select="fhir:name/@value" />
                         <br />
@@ -69,18 +148,30 @@
                         <span>&#160;</span>
                         <xsl:value-of select="fhir:address/fhir:city/@value" />
                     </div>
-                <div
-                        class="contact-info" style="float: right; text-align: right;">
-                        <!-- Assuming the phone number is located under telecom with system='phone' --> Tel.: <xsl:value-of
-                            select="fhir:contact/fhir:telecom[fhir:system/@value = 'phone']/fhir:value/@value" />
-                    <br />
-                        <!-- Assuming the KIM address is located under telecom with system='email' -->
-        KIM: <xsl:value-of
-                            select="fhir:contact/fhir:telecom[fhir:system/@value = 'email']/fhir:value/@value" />
-                    </div>
                 </xsl:for-each>
             </xsl:for-each>
         </xsl:for-each>
+    </xsl:template>
+
+    <xsl:template name="contact-info">
+        
+            <xsl:for-each select="fhir:entry/fhir:resource/fhir:MessageHeader">
+                <!-- Retrieve the responsible reference, which points to the Organization -->
+            <xsl:variable
+                    name="respRef" select="fhir:responsible/fhir:reference" />
+                <!-- Find the corresponding Organization by matching the reference -->
+            <xsl:for-each
+                    select="/fhir:Bundle/fhir:entry[fhir:fullUrl = $respRef]">
+                    <xsl:for-each select="fhir:resource/fhir:Organization">
+                        <!-- Assuming the phone number is located under telecom with system='phone' --> Tel.: <xsl:value-of
+                            select="fhir:contact/fhir:telecom[fhir:system/@value = 'phone']/fhir:value/@value" />
+            <br />
+                        <!-- Assuming the KIM address is located under telecom with system='email' -->
+        KIM: <xsl:value-of
+                            select="fhir:contact/fhir:telecom[fhir:system/@value = 'email']/fhir:value/@value" />
+                    </xsl:for-each>
+                </xsl:for-each>
+            </xsl:for-each>
     </xsl:template>
 
     <xsl:template name="receiver-info">
@@ -89,56 +180,61 @@
             select="fhir:entry/fhir:resource/fhir:MessageHeader">
             <!-- Retrieve the responsible reference, which points to the Organization -->
             <div class="receiver">
-                <xsl:value-of select="fhir:destination/fhir:name/@value" />
+                <span class="name">
+                    <xsl:value-of select="fhir:destination/fhir:name/@value" />
+                </span>
+                <br />
+                <span class="email">
+                    <xsl:value-of select="fhir:destination/fhir:endpoint/@value" />
+                </span>
             </div>
         </xsl:for-each>
     </xsl:template>
 
-
     <xsl:template name="letter-subject-info">
         <!-- Find the MessageHeader in the Bundle -->
-    <xsl:for-each
+        <xsl:for-each
             select="fhir:entry/fhir:resource/fhir:MessageHeader">
             <div class="subject">
-                <h1>
-                <xsl:choose>
-                    <!-- Specific codes and corresponding subject values -->
-                    <xsl:when
-                        test="fhir:eventCoding/fhir:code/@value = 'eRezept_Rezeptanforderung;Rezeptanfrage'">
-                        <xsl:text>Anfrage zur Ausstellung eines E-Rezepts</xsl:text>
-                    </xsl:when>
-                    <xsl:when
-                        test="fhir:eventCoding/fhir:code/@value = 'eRezept_Rezeptanforderung;Rezeptanfrage_Storno'">
-                        <xsl:text>Stornierung einer Rezeptanfrage</xsl:text>
-                    </xsl:when>
-                    <xsl:when
-                        test="fhir:eventCoding/fhir:code/@value = 'eRezept_Rezeptanforderung;Rezeptanfrage_Ablehnung'">
-                        <xsl:text>Ablehnung einer Rezeptanfrage</xsl:text>
-                    </xsl:when>
-                    <xsl:when
-                        test="fhir:eventCoding/fhir:code/@value = 'eRezept_Rezeptanforderung;Rezeptbestaetigung'">
-                        <xsl:text>Rezeptbestätigung und Übermittlung</xsl:text>
-                    </xsl:when>
-                    <xsl:when
-                        test="fhir:eventCoding/fhir:code/@value = 'eRezept_Rezeptanforderung;Abgabeanfrage'">
-                        <xsl:text>Anfrage zur Abgabe eines Medikaments</xsl:text>
-                    </xsl:when>
-                    <xsl:when
-                        test="fhir:eventCoding/fhir:code/@value = 'eRezept_Rezeptanforderung;Abgabebestaetigung'">
-                        <xsl:text>Bestätigung der Medikamentenabgabe</xsl:text>
-                    </xsl:when>
-                    <xsl:when
-                        test="fhir:eventCoding/fhir:code/@value = 'eRezept_Rezeptanforderung;NachrichtKopie'">
-                        <xsl:text>Kopie einer Rezept- oder Abgabeanforderung</xsl:text>
-                    </xsl:when>
-                    <!-- Default subject if no matching code is found -->
-                    <xsl:otherwise>
-                        <xsl:text>Unknown Subject</xsl:text>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </h1>
+                <h2>
+                    <xsl:choose>
+                        <!-- Specific codes and corresponding subject values -->
+                        <xsl:when
+                            test="fhir:eventCoding/fhir:code/@value = 'eRezept_Rezeptanforderung;Rezeptanfrage'">
+                            <xsl:text>Anfrage zur Ausstellung eines E-Rezepts</xsl:text>
+                        </xsl:when>
+                        <xsl:when
+                            test="fhir:eventCoding/fhir:code/@value = 'eRezept_Rezeptanforderung;Rezeptanfrage_Storno'">
+                            <xsl:text>Stornierung einer Rezeptanfrage</xsl:text>
+                        </xsl:when>
+                        <xsl:when
+                            test="fhir:eventCoding/fhir:code/@value = 'eRezept_Rezeptanforderung;Rezeptanfrage_Ablehnung'">
+                            <xsl:text>Ablehnung einer Rezeptanfrage</xsl:text>
+                        </xsl:when>
+                        <xsl:when
+                            test="fhir:eventCoding/fhir:code/@value = 'eRezept_Rezeptanforderung;Rezeptbestaetigung'">
+                            <xsl:text>Rezeptbestätigung und Übermittlung</xsl:text>
+                        </xsl:when>
+                        <xsl:when
+                            test="fhir:eventCoding/fhir:code/@value = 'eRezept_Rezeptanforderung;Abgabeanfrage'">
+                            <xsl:text>Anfrage zur Abgabe eines Medikaments</xsl:text>
+                        </xsl:when>
+                        <xsl:when
+                            test="fhir:eventCoding/fhir:code/@value = 'eRezept_Rezeptanforderung;Abgabebestaetigung'">
+                            <xsl:text>Bestätigung der Medikamentenabgabe</xsl:text>
+                        </xsl:when>
+                        <xsl:when
+                            test="fhir:eventCoding/fhir:code/@value = 'eRezept_Rezeptanforderung;NachrichtKopie'">
+                            <xsl:text>Kopie einer Rezept- oder Abgabeanforderung</xsl:text>
+                        </xsl:when>
+                        <!-- Default subject if no matching code is found -->
+                        <xsl:otherwise>
+                            <xsl:text>Unknown Subject</xsl:text>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </h2>
             </div>
-        <div
+            <div
                 class="subject-date">
                 <xsl:value-of
                     select="concat(substring(/fhir:Bundle/fhir:timestamp/@value, 9, 2), '.', substring(/fhir:Bundle/fhir:timestamp/@value, 6, 2), '.', substring(/fhir:Bundle/fhir:timestamp/@value, 1, 4))" />
@@ -173,7 +269,8 @@
                                     select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($patientRef) + 1) = $patientRef]/fhir:resource/fhir:Patient">
                                     <xsl:value-of
                                         select="fhir:name[fhir:use/@value='official']/fhir:family/@value" />
-                                    <span>, </span>
+                                    <span>
+        , </span>
                                     <xsl:value-of select="fhir:name[fhir:use/@value='official']/fhir:given/@value" />
                                 </xsl:for-each>
                             </td>
@@ -190,7 +287,7 @@
                                     select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medReqRef) + 1) = $medReqRef]/fhir:resource/fhir:MedicationRequest">
                                     <xsl:variable name="medicationRef"
                                         select="fhir:medicationReference/fhir:reference/@value" />
-                                        <xsl:for-each
+                                    <xsl:for-each
                                         select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medicationRef) + 1) = $medicationRef]/fhir:resource/fhir:Medication">
                                         <xsl:value-of select="fhir:code/fhir:text/@value" />
                                     </xsl:for-each>
@@ -203,7 +300,7 @@
                                     select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medReqRef) + 1) = $medReqRef]/fhir:resource/fhir:MedicationRequest">
                                     <xsl:variable name="medicationRef"
                                         select="fhir:medicationReference/fhir:reference/@value" />
-                                        <xsl:for-each
+                                    <xsl:for-each
                                         select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medicationRef) + 1) = $medicationRef]/fhir:resource/fhir:Medication">
                                         <xsl:value-of
                                             select="fhir:form/fhir:coding/fhir:code/@value" />
@@ -225,11 +322,10 @@
                                         </xsl:when>
                                     </xsl:choose>
                                 </xsl:for-each>
-
                                 <xsl:if test="fhir:occurrenceDateTime">
                                     <span>(</span>
                                     <xsl:value-of
-                                    select="fhir:occurrenceDateTime/@value" />
+                                        select="fhir:occurrenceDateTime/@value" />
                                     <span>)</span>
                                 </xsl:if>
                             </td>
@@ -240,27 +336,29 @@
                                     select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medReqRef) + 1) = $medReqRef]/fhir:resource/fhir:MedicationRequest">
                                     <xsl:value-of
                                         select="fhir:dispenseRequest/fhir:quantity/fhir:value/@value" />
-                                    <span>&#160;</span>
+                                    <span>
+        &#160;</span>
                                     <xsl:value-of select="fhir:dispenseRequest/fhir:quantity/fhir:unit/@value" />
                                     <xsl:if
                                         test="fhir:dispenseRequest/fhir:quantity/fhir:code/@value">
                                         <span>(</span>
                                         <xsl:value-of
                                             select="fhir:dispenseRequest/fhir:quantity/fhir:code/@value" />
-                                        <span>)</span>
+                                        <span>
+        )</span>
                                     </xsl:if>
-
                                 </xsl:for-each>
                             </td>
                         </tr>
                         <!-- Note section below row if there is a note -->
-                    <xsl:if test="fhir:note/fhir:text">
-                        <tr>
-                            <td colspan="7">
-                                <xsl:value-of select="fhir:note/fhir:text/@value" />
-                            </td>
-                        </tr>
-                    </xsl:if>
+                        <xsl:if
+                            test="fhir:note/fhir:text">
+                            <tr class="note-section">
+                                <td colspan="7">
+                                    <xsl:value-of select="fhir:note/fhir:text/@value" />
+                                </td>
+                            </tr>
+                        </xsl:if>
                     </xsl:for-each>
                 </tbody>
             </table>
