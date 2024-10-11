@@ -452,8 +452,8 @@
     "fshName": "Komplex-MULTI-Initial-Prescription-Request-3",
     "fshType": "Instance",
     "fshFile": "examples/UC1_MultipleRequests/UC1_MultipleRequests_ServiceRequests.fsh",
-    "startLine": 70,
-    "endLine": 86
+    "startLine": 75,
+    "endLine": 89
   },
   {
     "outputFile": "ServiceRequest-UC1-Initial-Prescription-Request.json",
@@ -469,15 +469,15 @@
     "fshType": "Instance",
     "fshFile": "examples/UC1_MultipleRequests/UC1_MultipleRequests_ServiceRequests.fsh",
     "startLine": 2,
-    "endLine": 18
+    "endLine": 21
   },
   {
     "outputFile": "ServiceRequest-UC1-MULTI-Initial-Prescription-Request-2.json",
     "fshName": "UC1-MULTI-Initial-Prescription-Request-2",
     "fshType": "Instance",
     "fshFile": "examples/UC1_MultipleRequests/UC1_MultipleRequests_ServiceRequests.fsh",
-    "startLine": 20,
-    "endLine": 33
+    "startLine": 23,
+    "endLine": 38
   },
   {
     "outputFile": "ServiceRequest-UC2-Initial-Prescription-Request.json",

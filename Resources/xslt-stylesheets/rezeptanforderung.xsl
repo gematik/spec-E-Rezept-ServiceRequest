@@ -100,6 +100,7 @@
     <xsl:for-each
             select="fhir:entry/fhir:resource/fhir:MessageHeader">
             <div class="subject">
+                <h1>
                 <xsl:choose>
                     <!-- Specific codes and corresponding subject values -->
                     <xsl:when
@@ -135,6 +136,7 @@
                         <xsl:text>Unknown Subject</xsl:text>
                     </xsl:otherwise>
                 </xsl:choose>
+            </h1>
             </div>
         <div
                 class="subject-date">
@@ -155,7 +157,7 @@
                         <th>Geb.Dat</th>
                         <th>Artikel</th>
                         <th>DAR</th>
-                        <th>Reichweite</th>
+                        <th>Reichweite (Bedarfszeitraum)</th>
                         <th>Bedarf</th>
                     </tr>
                 </thead>
@@ -211,16 +213,23 @@
                                 <xsl:for-each select="fhir:reasonCode/fhir:extension">
                                     <xsl:choose>
                                         <xsl:when
-                                            test="@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/remaining-supply-free-text-ex'">
-                                            <xsl:value-of select="fhir:valueString/@value" />
-                                        </xsl:when>
-                                        <xsl:when
                                             test="@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/remaining-supply-ex'">
                                             <xsl:value-of
                                                 select="concat(fhir:value/@value, ' ', fhir:value/fhir:unit/@value)" />
                                         </xsl:when>
+                                        <xsl:when
+                                            test="@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/remaining-supply-free-text-ex'">
+                                            <xsl:value-of select="fhir:valueString/@value" />
+                                        </xsl:when>
                                     </xsl:choose>
                                 </xsl:for-each>
+
+                                <xsl:if test="fhir:occurrenceDateTime">
+                                    <span>(</span>
+                                    <xsl:value-of
+                                    select="fhir:occurrenceDateTime/@value" />
+                                    <span>)</span>
+                                </xsl:if>
                             </td>
                             <td>
                                 <xsl:variable name="medReqRef"

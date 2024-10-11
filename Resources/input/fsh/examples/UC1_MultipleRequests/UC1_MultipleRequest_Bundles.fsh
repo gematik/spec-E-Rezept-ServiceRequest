@@ -91,10 +91,10 @@ Description: "Request sent to Prescriber to get a Prescription. Same Medicat"
 // ServiceRequest
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/ServiceRequest/UC1-MULTI-Initial-Prescription-Request-1"
 * entry[=].resource = UC1-MULTI-Initial-Prescription-Request-1
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/ServiceRequest/UC1-MULTI-Initial-Prescription-Request-2"
-* entry[=].resource = UC1-MULTI-Initial-Prescription-Request-2
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/ServiceRequest/Komplex-MULTI-Initial-Prescription-Request-3"
 * entry[=].resource = Komplex-MULTI-Initial-Prescription-Request-3
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/ServiceRequest/UC1-MULTI-Initial-Prescription-Request-2"
+* entry[=].resource = UC1-MULTI-Initial-Prescription-Request-2
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Patient/Example-Patient"
 * entry[=].resource = Example-Patient
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Patient/Example-Patient-2"

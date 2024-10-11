@@ -176,10 +176,17 @@
         "subject": {
           "reference": "Patient/Example-Patient"
         },
+        "occurrenceDateTime": "2025-05-15",
         "authoredOn": "2025-05-13",
         "requester": {
           "reference": "Organization/Example-HealthCareService-Organization"
-        }
+        },
+        "note": [
+          {
+            "text": "Für die Nacht sehr hilfreich.",
+            "time": "2025-05-13T12:23:12+02:00"
+          }
+        ]
       }
     },
     {
@@ -223,7 +230,13 @@
         "authoredOn": "2025-05-13",
         "requester": {
           "reference": "Organization/Example-HealthCareService-Organization"
-        }
+        },
+        "note": [
+          {
+            "text": "Für den Bedarfsfall",
+            "time": "2025-05-13T12:23:12+02:00"
+          }
+        ]
       }
     },
     {

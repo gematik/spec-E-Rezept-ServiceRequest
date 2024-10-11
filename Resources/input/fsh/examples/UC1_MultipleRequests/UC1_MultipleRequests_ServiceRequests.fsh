@@ -11,11 +11,14 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * intent = RequestIntent#order
 * code.coding[request-type] = ServiceRequestTypeCS#prescription-request
 * subject = Reference(Example-Patient)
+* occurrenceDateTime = "2025-05-15"
 * reasonCode.extension[remainingSupply].valueQuantity
   * value = 2
   * unit = "Tabletten"
 * authoredOn = "2025-05-13"
 * requester = Reference(Example-HealthCareService-Organization)
+* note[+].text = "Für die Nacht sehr hilfreich."
+* note[=].time = "2025-05-13T12:23:12+02:00"
 
 Instance: UC1-MULTI-Initial-Prescription-Request-2
 InstanceOf: ERPServiceRequestPrescriptionRequest
@@ -31,6 +34,8 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * subject = Reference(Example-Patient-2)
 * authoredOn = "2025-05-13"
 * requester = Reference(Example-HealthCareService-Organization)
+* note[+].text = "Für den Bedarfsfall"
+* note[=].time = "2025-05-13T12:23:12+02:00"
 
 Instance: UC1-MULTI-Response-Prescription-Request-1
 InstanceOf: ERPServiceRequestPrescriptionRequest
@@ -82,5 +87,3 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * subject = Reference(Example-Patient)
 * authoredOn = "2025-05-13"
 * requester = Reference(Example-HealthCareService-Organization)
-* note[+].text = "Sehr geehrter Herr Topp Glücklich,\n Wir möchten gerne die angehangene Medikation bei ihnen anfragen."
-* note[=].time = "2025-05-13T12:23:12+02:00"
