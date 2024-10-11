@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "id": "UC1-MULTI-1-Prescription-Request-To-Prescriber",
+  "id": "Komplex-MULTI-1-Prescription-Request",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
@@ -9,15 +9,15 @@
   "type": "message",
   "identifier": {
     "system": "urn:ietf:rfc:3986",
-    "value": "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
+    "value": "urn:uuid:7a6f9dc9-9aa9-4ee0-bec4-64460d3edb94"
   },
   "timestamp": "2025-05-13T14:25:12+02:00",
   "entry": [
     {
-      "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/UC1-MULTI-HealthCareService-to-Practitioner-MessageHeader",
+      "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/Komplex-MULTI-HealthCareService-to-Practitioner-MessageHeader",
       "resource": {
         "resourceType": "MessageHeader",
-        "id": "UC1-MULTI-HealthCareService-to-Practitioner-MessageHeader",
+        "id": "Komplex-MULTI-HealthCareService-to-Practitioner-MessageHeader",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
@@ -39,6 +39,9 @@
           },
           {
             "reference": "ServiceRequest/UC1-MULTI-Initial-Prescription-Request-2"
+          },
+          {
+            "reference": "ServiceRequest/Komplex-MULTI-Initial-Prescription-Request-3"
           }
         ],
         "sender": {
@@ -227,6 +230,60 @@
       }
     },
     {
+      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/Komplex-MULTI-Initial-Prescription-Request-3",
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "Komplex-MULTI-Initial-Prescription-Request-3",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
+          ]
+        },
+        "intent": "order",
+        "identifier": [
+          {
+            "system": "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier",
+            "value": "komplex-multi"
+          }
+        ],
+        "requisition": {
+          "system": "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier",
+          "value": "GroupID-UC1-MULTI"
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "prescription-request",
+              "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
+            }
+          ]
+        },
+        "reasonCode": [
+          {
+            "extension": [
+              {
+                "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/remaining-supply-free-text-ex",
+                "valueString": "2 Tabletten"
+              }
+            ]
+          }
+        ],
+        "basedOn": [
+          {
+            "reference": "MedicationRequest/Example-Komplex-Medication-Request"
+          }
+        ],
+        "status": "active",
+        "subject": {
+          "reference": "Patient/Example-Patient"
+        },
+        "authoredOn": "2025-05-13",
+        "requester": {
+          "reference": "Organization/Example-HealthCareService-Organization"
+        }
+      }
+    },
+    {
       "fullUrl": "http://erp-servicerequest-test.de/Patient/Example-Patient",
       "resource": {
         "resourceType": "Patient",
@@ -377,6 +434,33 @@
             "system": "http://unitsofmeasure.org",
             "code": "{Package}",
             "value": 1
+          }
+        },
+        "status": "active",
+        "intent": "order",
+        "medicationReference": {
+          "reference": "Medication/Example-Initial-Medication"
+        },
+        "subject": {
+          "reference": "Patient/Example-Patient"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://erp-servicerequest-test.de/MedicationRequest/Example-Komplex-Medication-Request",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "Example-Komplex-Medication-Request",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request"
+          ]
+        },
+        "dispenseRequest": {
+          "quantity": {
+            "system": "http://unitsofmeasure.org",
+            "code": "{Package}",
+            "value": 3
           }
         },
         "status": "active",

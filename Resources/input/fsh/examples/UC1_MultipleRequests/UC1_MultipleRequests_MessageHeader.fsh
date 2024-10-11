@@ -25,3 +25,14 @@ Description: "Message Header from Practitioner to HealthCareService"
 * insert Practitioner-to-HealthCareService(UC1-MULTI-Response-Prescription-Request-2)
 * eventCoding = ServiceIdentifierCS#eRezept_Rezeptanforderung;Rezeptanfrage_Storno
 * responsible = Reference(Example-Practitioner-Organization)
+
+Instance: Komplex-MULTI-HealthCareService-to-Practitioner-MessageHeader
+InstanceOf: ERPServiceRequestRequestHeader
+Usage: #example
+Title: "HealthCareService-to-Practitioner-MessageHeader"
+Description: "Message Header from HealthCareService to Practitioner"
+* insert HealthCareService-to-Practitioner(UC1-MULTI-Initial-Prescription-Request-1)
+* focus[+] = Reference(UC1-MULTI-Initial-Prescription-Request-2)
+* focus[+] = Reference(Komplex-MULTI-Initial-Prescription-Request-3)
+* eventCoding = ServiceIdentifierCS#eRezept_Rezeptanforderung;Rezeptanfrage
+* responsible = Reference(Example-HealthCareService-Organization)

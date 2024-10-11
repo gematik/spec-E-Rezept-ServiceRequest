@@ -48,6 +48,14 @@
     "endLine": 33
   },
   {
+    "outputFile": "Bundle-Komplex-MULTI-1-Prescription-Request.json",
+    "fshName": "Komplex-MULTI-1-Prescription-Request",
+    "fshType": "Instance",
+    "fshFile": "examples/UC1_MultipleRequests/UC1_MultipleRequest_Bundles.fsh",
+    "startLine": 78,
+    "endLine": 113
+  },
+  {
     "outputFile": "Bundle-UC1-1-Prescription-Request-To-Prescriber.json",
     "fshName": "UC1-1-Prescription-Request-To-Prescriber",
     "fshType": "Instance",
@@ -256,12 +264,28 @@
     "endLine": 8
   },
   {
+    "outputFile": "MedicationRequest-Example-Komplex-Medication-Request.json",
+    "fshName": "Example-Komplex-Medication-Request",
+    "fshType": "Instance",
+    "fshFile": "examples/Misc/Example_MedicationRequest.fsh",
+    "startLine": 10,
+    "endLine": 17
+  },
+  {
     "outputFile": "MedicationRequest-Example-Response-Medication-Request.json",
     "fshName": "Example-Response-Medication-Request",
     "fshType": "Instance",
     "fshFile": "examples/Misc/Example_MedicationRequest.fsh",
-    "startLine": 19,
-    "endLine": 26
+    "startLine": 28,
+    "endLine": 35
+  },
+  {
+    "outputFile": "MessageHeader-Komplex-MULTI-HealthCareService-to-Practitioner-MessageHeader.json",
+    "fshName": "Komplex-MULTI-HealthCareService-to-Practitioner-MessageHeader",
+    "fshType": "Instance",
+    "fshFile": "examples/UC1_MultipleRequests/UC1_MultipleRequests_MessageHeader.fsh",
+    "startLine": 29,
+    "endLine": 38
   },
   {
     "outputFile": "MessageHeader-UC1-HealthCareService-to-Practitioner-MessageHeader.json",
@@ -424,6 +448,14 @@
     "endLine": 35
   },
   {
+    "outputFile": "ServiceRequest-Komplex-MULTI-Initial-Prescription-Request-3.json",
+    "fshName": "Komplex-MULTI-Initial-Prescription-Request-3",
+    "fshType": "Instance",
+    "fshFile": "examples/UC1_MultipleRequests/UC1_MultipleRequests_ServiceRequests.fsh",
+    "startLine": 74,
+    "endLine": 88
+  },
+  {
     "outputFile": "ServiceRequest-UC1-Initial-Prescription-Request.json",
     "fshName": "UC1-Initial-Prescription-Request",
     "fshType": "Instance",
@@ -437,15 +469,15 @@
     "fshType": "Instance",
     "fshFile": "examples/UC1_MultipleRequests/UC1_MultipleRequests_ServiceRequests.fsh",
     "startLine": 2,
-    "endLine": 15
+    "endLine": 18
   },
   {
     "outputFile": "ServiceRequest-UC1-MULTI-Initial-Prescription-Request-2.json",
     "fshName": "UC1-MULTI-Initial-Prescription-Request-2",
     "fshType": "Instance",
     "fshFile": "examples/UC1_MultipleRequests/UC1_MultipleRequests_ServiceRequests.fsh",
-    "startLine": 17,
-    "endLine": 30
+    "startLine": 20,
+    "endLine": 33
   },
   {
     "outputFile": "ServiceRequest-UC2-Initial-Prescription-Request.json",

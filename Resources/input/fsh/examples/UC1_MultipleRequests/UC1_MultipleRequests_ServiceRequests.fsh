@@ -11,6 +11,9 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * intent = RequestIntent#order
 * code.coding[request-type] = ServiceRequestTypeCS#prescription-request
 * subject = Reference(Example-Patient)
+* reasonCode.extension[remainingSupply].valueQuantity
+  * value = 2
+  * unit = "Tabletten"
 * authoredOn = "2025-05-13"
 * requester = Reference(Example-HealthCareService-Organization)
 
@@ -67,3 +70,19 @@ Description: "ServiceRequest that is returned to the requester"
 * note[=].time = "2025-05-13T12:23:12+02:00"
 * note[+].text = "Sehr geehrte Damen und Herren,\n Die Rezeptanfrage wurde abgelehnt, s. Grund."
 * note[=].time = "2025-05-14T08:12:23+02:00"
+
+Instance: Komplex-MULTI-Initial-Prescription-Request-3
+InstanceOf: ERPServiceRequestPrescriptionRequest
+Usage: #example
+Title: "Komplex-MULTI-Initial-Prescription-Request-3"
+Description: "This ServiceRequest is sent initially to the prescribing practitioner"
+* identifier[requestId].value = "komplex-multi"
+* basedOn = Reference(Example-Komplex-Medication-Request)
+* requisition.value = "GroupID-UC1-MULTI"
+* status = RequestStatus#active
+* intent = RequestIntent#order
+* code.coding[request-type] = ServiceRequestTypeCS#prescription-request
+* reasonCode.extension[remainingSupplyFreeText].valueString = "2 Tabletten" 
+* subject = Reference(Example-Patient)
+* authoredOn = "2025-05-13"
+* requester = Reference(Example-HealthCareService-Organization)
