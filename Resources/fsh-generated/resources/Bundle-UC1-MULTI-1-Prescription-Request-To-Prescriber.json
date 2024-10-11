@@ -372,13 +372,6 @@
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request"
           ]
         },
-        "dispenseRequest": {
-          "quantity": {
-            "system": "http://unitsofmeasure.org",
-            "code": "{Package}",
-            "value": 1
-          }
-        },
         "status": "active",
         "intent": "order",
         "medicationReference": {
@@ -386,6 +379,12 @@
         },
         "subject": {
           "reference": "Patient/Example-Patient"
+        },
+        "dispenseRequest": {
+          "quantity": {
+            "value": 1,
+            "unit": "Packung"
+          }
         }
       }
     },
@@ -458,13 +457,6 @@
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request"
           ]
         },
-        "dispenseRequest": {
-          "quantity": {
-            "system": "http://unitsofmeasure.org",
-            "code": "{Package}",
-            "value": 2
-          }
-        },
         "status": "active",
         "intent": "order",
         "medicationReference": {
@@ -472,6 +464,14 @@
         },
         "subject": {
           "reference": "Patient/Example-Patient-2"
+        },
+        "dispenseRequest": {
+          "quantity": {
+            "value": 2,
+            "code": "{Package}",
+            "system": "http://unitsofmeasure.org",
+            "unit": "Packungen"
+          }
         }
       }
     },

@@ -172,7 +172,7 @@
         },
         "note": [
           {
-            "text": "Sehr geehrter Herr Topp Glücklich,\n Anbei folgende Rezeptanfrage zur Einlösung von Herrn Königsstein.",
+            "text": "Rezeptanfrage zur Einlösung von Herrn Königsstein.",
             "time": "2025-05-13T14:23:12+02:00"
           }
         ]
@@ -256,13 +256,6 @@
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request"
           ]
         },
-        "dispenseRequest": {
-          "quantity": {
-            "system": "http://unitsofmeasure.org",
-            "code": "{Package}",
-            "value": 1
-          }
-        },
         "status": "active",
         "intent": "order",
         "medicationReference": {
@@ -270,6 +263,12 @@
         },
         "subject": {
           "reference": "Patient/Example-Patient"
+        },
+        "dispenseRequest": {
+          "quantity": {
+            "value": 1,
+            "unit": "Packung"
+          }
         }
       }
     },

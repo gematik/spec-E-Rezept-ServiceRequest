@@ -101,35 +101,37 @@
       {
         "id": "MedicationRequest.dispenseRequest.quantity",
         "path": "MedicationRequest.dispenseRequest.quantity",
+        "short": "Number of prescribed units",
+        "definition": "The number of units of the medication to be supplied per dispense. Usually value and unit are stated which are free text variants. If a structured code is used it must be from UnitsOfMeasure.",
         "min": 1,
         "mustSupport": true
       },
       {
         "id": "MedicationRequest.dispenseRequest.quantity.value",
         "path": "MedicationRequest.dispenseRequest.quantity.value",
-        "short": "Number of packs prescribed",
-        "definition": "Number of packs prescribed",
+        "short": "Number prescribed",
+        "definition": "Number prescribed",
         "min": 1,
         "mustSupport": true
       },
       {
         "id": "MedicationRequest.dispenseRequest.quantity.unit",
         "path": "MedicationRequest.dispenseRequest.quantity.unit",
-        "max": "0"
+        "short": "Requested units of the prescription",
+        "definition": "This is a free text field that can be used to specify the units of the prescription.",
+        "min": 1,
+        "mustSupport": true
       },
       {
         "id": "MedicationRequest.dispenseRequest.quantity.system",
         "path": "MedicationRequest.dispenseRequest.quantity.system",
-        "min": 1,
-        "fixedUri": "http://unitsofmeasure.org",
-        "mustSupport": true
+        "fixedUri": "http://unitsofmeasure.org"
       },
       {
         "id": "MedicationRequest.dispenseRequest.quantity.code",
         "path": "MedicationRequest.dispenseRequest.quantity.code",
-        "min": 1,
-        "fixedCode": "{Package}",
-        "mustSupport": true
+        "short": "Code from Unit of measure",
+        "definition": "If a structured code is used it must be from UnitsOfMeasure"
       }
     ]
   }

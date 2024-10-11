@@ -34,11 +34,16 @@ If this ID is available, the receiving system MUST be able to search for the pre
 
 * dispenseRequest 0..1 MS
   * quantity 1..1 MS
+    * ^short = "Number of prescribed units"
+    * ^definition = "The number of units of the medication to be supplied per dispense. Usually value and unit are stated which are free text variants. If a structured code is used it must be from UnitsOfMeasure."
     * value 1..1 MS
-      * ^short = "Number of packs prescribed"
-      * ^definition = "Number of packs prescribed"
-    * system 1..1 MS
+      * ^short = "Number prescribed"
+      * ^definition = "Number prescribed"
+    * system 0..1
     * system = $UNITSOFMEASURE (exactly)
-    * code 1..1 MS
-    * code = #{Package} (exactly)
-    * unit 0..0
+    * code 0..1
+      * ^short = "Code from Unit of measure"
+      * ^definition = "If a structured code is used it must be from UnitsOfMeasure"
+    * unit 1..1 MS
+      * ^short = "Requested units of the prescription"
+      * ^definition = "This is a free text field that can be used to specify the units of the prescription."

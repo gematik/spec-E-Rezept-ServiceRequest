@@ -37,11 +37,11 @@
                         <xsl:call-template name="letter-subject-info" />
                     </div>
                     <!-- Template reference for each ServiceRequest Resource in the Bundle -->
-                    <xsl:for-each select="fhir:entry/fhir:resource/fhir:ServiceRequest">
+                    
                         <div class="service-request-info">
                             <xsl:call-template name="service-request-info" />
                         </div>
-                    </xsl:for-each>
+                    
 
                 </div>
             </body>
@@ -155,36 +155,101 @@
                         <th>Geb.Dat</th>
                         <th>Artikel</th>
                         <th>DAR</th>
+                        <th>Reichweite</th>
+                        <th>Bedarf</th>
                     </tr>
                 </thead>
                 <tbody>
                     <xsl:for-each select="/fhir:Bundle/fhir:entry/fhir:resource/fhir:ServiceRequest">
                         <xsl:variable name="patientRef" select="fhir:subject/fhir:reference/@value" />
                         <tr>
-                            <td><xsl:value-of select="position()" /></td>
                             <td>
-                                <xsl:for-each select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($patientRef) + 1) = $patientRef]/fhir:resource/fhir:Patient">
-                                    <xsl:value-of select="fhir:name[fhir:use/@value='official']/fhir:family/@value" />
+                                <xsl:value-of select="position()" />
+                            </td>
+                            <td>
+                                <xsl:for-each
+                                    select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($patientRef) + 1) = $patientRef]/fhir:resource/fhir:Patient">
+                                    <xsl:value-of
+                                        select="fhir:name[fhir:use/@value='official']/fhir:family/@value" />
                                 </xsl:for-each>
                             </td>
                             <td>
-                                <xsl:for-each select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($patientRef) + 1) = $patientRef]/fhir:resource/fhir:Patient">
+                                <xsl:for-each
+                                    select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($patientRef) + 1) = $patientRef]/fhir:resource/fhir:Patient">
                                     <xsl:value-of select="fhir:birthDate/@value" />
                                 </xsl:for-each>
                             </td>
                             <td>
-                                <xsl:variable name="medReqRef" select="fhir:basedOn/fhir:reference/@value" />
-                                <xsl:for-each select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medReqRef) + 1) = $medReqRef]/fhir:resource/fhir:MedicationRequest">
-                                    <xsl:for-each select="fhir:medicationReference/fhir:reference/@value">
-                                        <xsl:variable name="medicationRef" select="." />
-                                        <xsl:for-each select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medicationRef) + 1) = $medicationRef]/fhir:resource/fhir:Medication">
-                                            <xsl:value-of select="fhir:code/fhir:text/@value" />
-                                        </xsl:for-each>
+                                <xsl:variable name="medReqRef"
+                                    select="fhir:basedOn/fhir:reference/@value" />
+                                <xsl:for-each
+                                    select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medReqRef) + 1) = $medReqRef]/fhir:resource/fhir:MedicationRequest">
+                                    <xsl:variable name="medicationRef"
+                                        select="fhir:medicationReference/fhir:reference/@value" />
+                                        <xsl:for-each
+                                        select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medicationRef) + 1) = $medicationRef]/fhir:resource/fhir:Medication">
+                                        <xsl:value-of select="fhir:code/fhir:text/@value" />
                                     </xsl:for-each>
                                 </xsl:for-each>
                             </td>
-                          
+                            <td>
+                                <xsl:variable name="medReqRef"
+                                    select="fhir:basedOn/fhir:reference/@value" />
+                                <xsl:for-each
+                                    select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medReqRef) + 1) = $medReqRef]/fhir:resource/fhir:MedicationRequest">
+                                    <xsl:variable name="medicationRef"
+                                        select="fhir:medicationReference/fhir:reference/@value" />
+                                        <xsl:for-each
+                                        select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medicationRef) + 1) = $medicationRef]/fhir:resource/fhir:Medication">
+                                        <xsl:value-of
+                                            select="fhir:form/fhir:coding/fhir:code/@value" />
+                                    </xsl:for-each>
+                                </xsl:for-each>
+                            </td>
+                            <td>
+                                <!-- Reichweite: reasonCode extension for remaining supply -->
+                                <xsl:for-each select="fhir:reasonCode/fhir:extension">
+                                    <xsl:choose>
+                                        <xsl:when
+                                            test="@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/remaining-supply-free-text-ex'">
+                                            <xsl:value-of select="fhir:valueString/@value" />
+                                        </xsl:when>
+                                        <xsl:when
+                                            test="@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/remaining-supply-ex'">
+                                            <xsl:value-of
+                                                select="concat(fhir:value/@value, ' ', fhir:value/fhir:unit/@value)" />
+                                        </xsl:when>
+                                    </xsl:choose>
+                                </xsl:for-each>
+                            </td>
+                            <td>
+                                <xsl:variable name="medReqRef"
+                                    select="fhir:basedOn/fhir:reference/@value" />
+                                <xsl:for-each
+                                    select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medReqRef) + 1) = $medReqRef]/fhir:resource/fhir:MedicationRequest">
+                                    <xsl:value-of
+                                        select="fhir:dispenseRequest/fhir:quantity/fhir:value/@value" />
+                                    <span>&#160;</span>
+                                    <xsl:value-of select="fhir:dispenseRequest/fhir:quantity/fhir:unit/@value" />
+                                    <xsl:if
+                                        test="fhir:dispenseRequest/fhir:quantity/fhir:code/@value">
+                                        <span>(</span>
+                                        <xsl:value-of
+                                            select="fhir:dispenseRequest/fhir:quantity/fhir:code/@value" />
+                                        <span>)</span>
+                                    </xsl:if>
+
+                                </xsl:for-each>
+                            </td>
                         </tr>
+                        <!-- Note section below row if there is a note -->
+                    <xsl:if test="fhir:note/fhir:text">
+                        <tr>
+                            <td colspan="7">
+                                <xsl:value-of select="fhir:note/fhir:text/@value" />
+                            </td>
+                        </tr>
+                    </xsl:if>
                     </xsl:for-each>
                 </tbody>
             </table>

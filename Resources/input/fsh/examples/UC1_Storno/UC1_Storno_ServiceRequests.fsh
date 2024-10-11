@@ -15,7 +15,5 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * performer.identifier = Hans-Topp-Glücklich-Identifier
 * reasonCode
   * text = "Falsche Medikation angefragt, neuer Antrag wird erstellt."
-* note[+].text = "Sehr geehrter Herr Topp Glücklich,\n Wir möchten gerne die angehangene Medikation bei ihnen schnellstmöglich anfragen."
-* note[=].time = "2025-05-13T14:23:12+02:00"
-* note[+].text = "Sehr geehrter Herr Topp Glücklich,\n Bitte entschuldigen Sie die vorherige anfrage, nach Möglichkeit bitte stornieren, eine neue Anfrage wird erstellt."
+* note[+].text = "Bitte um stornierung der Anfrage."
 * note[=].time = "2025-05-13T15:31:12+02:00"

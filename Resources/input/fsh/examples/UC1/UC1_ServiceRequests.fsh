@@ -20,7 +20,7 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
   * extension[remainingSupply].valueQuantity
     * value = 7
     * unit = "Stück"
-* note[+].text = "Sehr geehrter Herr Topp Glücklich,\n Wir möchten gerne die angehangene Medikation bei ihnen schnellstmöglich anfragen."
+* note[+].text = "Wird weiterhin benötigt, bitte um Verlängerung."
 * note[=].time = "2025-05-13T14:23:12+02:00"
 
 Instance: UC1-Response-Prescription-Request
@@ -38,9 +38,7 @@ Description: "ServiceRequest that is returned to the requester"
 * intent = RequestIntent#order
 * performer.identifier = Hans-Topp-Glücklich-Identifier
 * code.coding[request-type] = ServiceRequestTypeCS#prescription-request
-* note[+].text = "Sehr geehrter Herr Topp Glücklich,\n Wir möchten gerne die angehangene Medikation bei ihnen anfragen."
-* note[=].time = "2025-05-13T12:23:12+02:00"
-* note[+].text = "Sehr geehrte Damen und Herren,\n Wir haben alles entsprechend im Rezept hinterlegt. Es wurden 2 Packungen statt einer verschrieben.\n Mit kollegialen Grüßen,\n Topp Glücklich."
+* note[+].text = "Wird weiterhin benötigt, bitte um Verlängerung."
 * note[=].time = "2025-05-14T08:12:23+02:00"
 
 // Dispense Service Requests
@@ -59,7 +57,7 @@ Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
 * requester = Reference(Example-HealthCareService-Organization)
 * authoredOn = "2025-05-14"
 * priority = #urgent
-* note[+].text = "Sehr geehrter Kollegen der Test Apotheke,\n Anbei das E-Rezept, was wir bitte schnellstmöglich beliefert bekommen möchten."
+* note[+].text = "Wird weiterhin benötigt, bitte um Verlängerung. Bitte um schnelle Bearbeitung"
 * note[=].time = "2025-05-14T08:22:05+02:00"
 
 Instance: UC1-Response-Dispense-Request
@@ -76,9 +74,7 @@ Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
 * authoredOn = "2025-05-14"
 * supportingInfo[AbgabeDaten] = Reference (UC1-Medication-Dispense)
 * supportingInfo[AbgabeDaten].type = "MedicationDispense" (exactly)
-* note[+].text = "Sehr geehrter Kollegen der Test Apotheke,\n Anbei das E-Rezept, was wir bitte schnellstmöglich beliefert bekommen möchten."
-* note[=].time = "2025-05-14T08:22:05+02:00"
-* note[+].text = "Sehr geehrter Kollegen des Pflegeheim Immgergrün,\n Die Arzneimittel lagern vor Ort. Anbei, was wir bis 13:00 heute per Botendienst liefern werden.."
+* note[+].text = "Lagert vor Ort. Kann bis 13:00 heute per Botendienst geliefert werden."
 * note[=].time = "2025-05-14T08:27:05+02:00"
 
 // Dispense Service Requests - Alternative Delivery
@@ -99,7 +95,7 @@ Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
 * requester = Reference(Example-HealthCareService-Organization)
 * authoredOn = "2025-05-14"
 * priority = #urgent
-* note[+].text = "Sehr geehrter Kollegen der Test Apotheke,\n Anbei das E-Rezept, was wir bitte schnellstmöglich beliefert bekommen möchten."
+* note[+].text = "Bitte um schnelle Bearbeitung"
 * note[=].time = "2025-05-14T08:22:05+02:00"
 
 Instance: UC1-Alt-Delivery-Response-Dispense-Request
@@ -117,7 +113,5 @@ Description: "This ServiceRequest is sent initially to the dispensing pharmacy"
 * authoredOn = "2025-05-14"
 * supportingInfo[AbgabeDaten] = Reference (UC1-Medication-Dispense)
 * supportingInfo[AbgabeDaten].type = "MedicationDispense" (exactly)
-* note[+].text = "Sehr geehrter Kollegen der Test Apotheke,\n Anbei das E-Rezept, was wir bitte schnellstmöglich beliefert bekommen möchten."
-* note[=].time = "2025-05-14T08:22:05+02:00"
-* note[+].text = "Sehr geehrter Kollegen des Pflegeheim Immgergrün,\n Die Arzneimittel lagern vor Ort. Anbei, was wir bis 13:00 heute per Botendienst liefern werden.."
+* note[+].text = "Lagert vor Ort. Kommt mit Extra Botendienst."
 * note[=].time = "2025-05-14T08:27:05+02:00"

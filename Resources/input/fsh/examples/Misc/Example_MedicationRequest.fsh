@@ -5,7 +5,9 @@ Usage: #example
 * intent = #order
 * medicationReference = Reference(Example-Initial-Medication)
 * subject = Reference(Example-Patient)
-* dispenseRequest.quantity = 1 '{Package}'
+* dispenseRequest.quantity
+  * value = 1
+  * unit = "Packung"
 
 Instance: Example-Komplex-Medication-Request
 InstanceOf: ERPServiceRequestMedicationRequest
@@ -14,7 +16,9 @@ Usage: #example
 * intent = #order
 * medicationReference = Reference(Example-Initial-Medication)
 * subject = Reference(Example-Patient)
-* dispenseRequest.quantity = 3 '{Package}'
+* dispenseRequest.quantity
+  * value = 2
+  * unit = "Packungen"
 
 Instance: Example-Initial-Medication-Request-2
 InstanceOf: ERPServiceRequestMedicationRequest
@@ -23,7 +27,7 @@ Usage: #inline
 * intent = #order
 * medicationReference = Reference(Example-Initial-Medication-2)
 * subject = Reference(Example-Patient-2)
-* dispenseRequest.quantity = 2 '{Package}'
+* dispenseRequest.quantity = 2 '{Package}' "Packungen"
 
 Instance: Example-Response-Medication-Request
 InstanceOf: ERPServiceRequestMedicationRequest
@@ -32,7 +36,7 @@ Usage: #example
 * intent = #order
 * medicationReference = Reference(Example-Response-Medication)
 * subject = Reference(Example-Patient)
-* dispenseRequest.quantity = 2 '{Package}'
+* dispenseRequest.quantity = 65 'mL' "Milliliter"
 
 Instance: Example-Zyto-Medication-Request
 InstanceOf: ERPServiceRequestMedicationRequest
