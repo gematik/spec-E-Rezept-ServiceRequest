@@ -49,6 +49,8 @@
                 </responsible>
                 <focus>
                     <reference value="ServiceRequest/UC1-Alt-Delivery-Initial-Dispense-Request"/>
+                    <reference value="ServiceRequest/UC1-Alt-Delivery-Initial-Dispense-Request-1"/>
+                    <reference value="ServiceRequest/UC1-Alt-Delivery-Initial-Dispense-Request-2"/>
                 </focus>
             </MessageHeader>
         </resource>
@@ -121,6 +123,108 @@
                 <identifier>
                     <system value="https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier"/>
                     <value value="2"/>
+                </identifier>
+                <requisition>
+                    <system value="https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier"/>
+                    <value value="GroupID-UC1"/>
+                </requisition>
+                <status value="active"/>
+                <intent value="filler-order"/>
+                <priority value="urgent"/>
+                <code>
+                    <coding>
+                        <system value="https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"/>
+                        <code value="dispense-request"/>
+                    </coding>
+                    <coding>
+                        <system value="https://gematik.de/fhir/erp-servicerequest/CodeSystem/delivery-type-cs"/>
+                        <code value="delivery-to-alternative-address"/>
+                    </coding>
+                </code>
+                <subject>
+                    <reference value="Patient/Example-Patient"/>
+                </subject>
+                <authoredOn value="2025-05-14"/>
+                <requester>
+                    <reference value="Organization/Example-HealthCareService-Organization"/>
+                </requester>
+                <note>
+                    <time value="2025-05-14T08:22:05+02:00"/>
+                    <text value="Bitte um schnelle Bearbeitung"/>
+                </note>
+            </ServiceRequest>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://erp-servicerequest-test.de/ServiceRequest/UC1-Alt-Delivery-Initial-Dispense-Request-1"/>
+        <resource>
+            <ServiceRequest>
+                <id value="UC1-Alt-Delivery-Initial-Dispense-Request-1"/>
+                <meta>
+                    <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"/>
+                </meta>
+                <extension url="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex">
+                    <valueIdentifier>
+                        <system value="https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken"/>
+                        <value value="Task/169.100.000.000.003.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"/>
+                    </valueIdentifier>
+                </extension>
+                <identifier>
+                    <system value="https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier"/>
+                    <value value="5c41763b-a842-4185-8028-849c26b1d443"/>
+                </identifier>
+                <requisition>
+                    <system value="https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier"/>
+                    <value value="GroupID-UC1"/>
+                </requisition>
+                <status value="active"/>
+                <intent value="filler-order"/>
+                <priority value="urgent"/>
+                <code>
+                    <coding>
+                        <system value="https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"/>
+                        <code value="dispense-request"/>
+                    </coding>
+                </code>
+                <subject>
+                    <reference value="Patient/Example-Patient"/>
+                </subject>
+                <authoredOn value="2025-05-14"/>
+                <requester>
+                    <reference value="Organization/Example-HealthCareService-Organization"/>
+                </requester>
+                <note>
+                    <time value="2025-05-14T08:22:05+02:00"/>
+                    <text value="Bitte um schnelle Bearbeitung"/>
+                </note>
+            </ServiceRequest>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://erp-servicerequest-test.de/ServiceRequest/UC1-Alt-Delivery-Initial-Dispense-Request-2"/>
+        <resource>
+            <ServiceRequest>
+                <id value="UC1-Alt-Delivery-Initial-Dispense-Request-2"/>
+                <meta>
+                    <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"/>
+                </meta>
+                <extension url="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex">
+                    <valueIdentifier>
+                        <system value="https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken"/>
+                        <value value="Task/169.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"/>
+                    </valueIdentifier>
+                </extension>
+                <extension url="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/alternative-delivery-address-ex">
+                    <valueAddress>
+                        <line value="Nebenstraße 1"/>
+                        <city value="Berlin"/>
+                        <postalCode value="12345"/>
+                        <country value="Germany"/>
+                    </valueAddress>
+                </extension>
+                <identifier>
+                    <system value="https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier"/>
+                    <value value="661ecbf3-55e5-4d7e-89a2-6c42a8da5b23"/>
                 </identifier>
                 <requisition>
                     <system value="https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier"/>
