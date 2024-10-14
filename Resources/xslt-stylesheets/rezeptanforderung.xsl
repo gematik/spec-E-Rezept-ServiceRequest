@@ -330,21 +330,9 @@
     </xsl:template>
     <xsl:template name="service-request-info">
         <xsl:param name="patientRef" />
-        <div class="sr-patient-info">
-            <span>Bezüglich </span>
-            <xsl:for-each
-                select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($patientRef) + 1) = $patientRef]/fhir:resource/fhir:Patient">
-                <xsl:value-of select="fhir:name[fhir:use/@value='official']/fhir:family/@value" />
-                <span>
-        , </span>
-                <xsl:value-of select="fhir:name[fhir:use/@value='official']/fhir:given/@value" />
-            </xsl:for-each>
-            <span>, geb. (</span>
-            <xsl:variable name="birthDate" select="fhir:birthDate/@value" />
-            <xsl:value-of
-                select="concat(substring($birthDate, 9, 2), '.', substring($birthDate, 6, 2), '.', substring($birthDate, 1, 4))" />
-            <span>)</span>
-        </div>
+        <xsl:call-template name="sr-patient-info">
+                <xsl:with-param name="patientRef" select="$patientRef" />
+            </xsl:call-template>
         <!-- Template for displaying information about each ServiceRequest in the Bundle -->
         <div class="service-request">
             <xsl:for-each
@@ -378,6 +366,36 @@
                                 </xsl:for-each>
                             </div>
                         </div>
+                    </div>
+                    <div class ="reason-section">
+                        <xsl:if
+                                test="fhir:reasonCode/fhir:coding">
+                                <p><strong>Begründungscode: </strong> 
+                                    <xsl:choose>
+                                        <xsl:when test="fhir:reasonCode/fhir:coding[fhir:system/@value = 'https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-request-reason-cs']/fhir:code/@value = 'exhausted-range'">
+                                            <span>Reichweite erschöpft (Dauermedikation)</span>
+                                        </xsl:when>
+                                        <xsl:when test="fhir:reasonCode/fhir:coding[fhir:system/@value = 'https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-request-reason-cs']/fhir:code/@value = 'correction'">
+                                            <span>Korrektur</span>
+                                        </xsl:when>
+                                        <xsl:when test="fhir:reasonCode/fhir:coding[fhir:system/@value = 'https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-request-reason-cs']/fhir:code/@value = 'vital-value-measurement'">
+                                            <span>nach Vitalwertmessung</span>
+                                        </xsl:when>
+                                        <xsl:when test="fhir:reasonCode/fhir:coding[fhir:system/@value = 'https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-request-reason-cs']/fhir:code/@value = 'on-demand'">
+                                            <span>nach Bedarf</span>
+                                        </xsl:when>
+                                    </xsl:choose>
+                                    <xsl:for-each select="fhir:reasonCode/fhir:coding">
+                                        <xsl:value-of select="/fhir:code/@value" />
+                                    </xsl:for-each>
+                                </p>
+                            </xsl:if>
+                            <xsl:if
+                                test="fhir:reasonCode/fhir:text">
+                                <p><strong>Begründungstext: </strong>
+                                    <xsl:value-of select="fhir:reasonCode/fhir:text/@value" />
+                                </p>
+                            </xsl:if>
                     </div>
                     <table>
                         <thead>
@@ -466,21 +484,9 @@
     </xsl:template>
     <xsl:template name="dispense-request-info">
         <xsl:param name="patientRef" />
-        <div class="sr-patient-info">
-            <span>Bezüglich </span>
-            <xsl:for-each
-                select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($patientRef) + 1) = $patientRef]/fhir:resource/fhir:Patient">
-                <xsl:value-of select="fhir:name[fhir:use/@value='official']/fhir:family/@value" />
-                <span>
-        , </span>
-                <xsl:value-of select="fhir:name[fhir:use/@value='official']/fhir:given/@value" />
-            </xsl:for-each>
-            <span>, geb. (</span>
-            <xsl:variable name="birthDate" select="fhir:birthDate/@value" />
-            <xsl:value-of
-                select="concat(substring($birthDate, 9, 2), '.', substring($birthDate, 6, 2), '.', substring($birthDate, 1, 4))" />
-            <span>)</span>
-        </div>
+            <xsl:call-template name="sr-patient-info">
+                <xsl:with-param name="patientRef" select="$patientRef" />
+            </xsl:call-template>
         <!-- Template for displaying information about each ServiceRequest in the Bundle -->
         <div class="service-request">
             <xsl:for-each
@@ -579,6 +585,26 @@
                     </table>
                 </div>
             </xsl:for-each>
+        </div>
+    </xsl:template>
+    <xsl:template name="sr-patient-info">
+        <xsl:param name="patientRef" />
+        <div class="sr-patient-info">
+            <span>Bezüglich </span>
+            <xsl:for-each
+                select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($patientRef) + 1) = $patientRef]/fhir:resource/fhir:Patient">
+                <xsl:value-of select="fhir:name[fhir:use/@value='official']/fhir:family/@value" />
+                <span>, </span>
+                <xsl:value-of select="fhir:name[fhir:use/@value='official']/fhir:given/@value" />
+                <span> (KVNR: </span>
+                <xsl:value-of select="fhir:identifier[fhir:system/@value='http://fhir.de/sid/gkv/kvid-10']/fhir:value/@value" />
+                <span>)</span>
+            </xsl:for-each>
+            <span>, geb. (</span>
+            <xsl:variable name="birthDate" select="fhir:birthDate/@value" />
+            <xsl:value-of
+                select="concat(substring($birthDate, 9, 2), '.', substring($birthDate, 6, 2), '.', substring($birthDate, 1, 4))" />
+            <span>)</span>
         </div>
     </xsl:template>
     <xsl:template match="fhir:ingredient" mode="rezeptur">

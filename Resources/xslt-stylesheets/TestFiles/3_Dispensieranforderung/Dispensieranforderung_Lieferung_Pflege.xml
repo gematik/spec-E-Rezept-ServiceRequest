@@ -119,11 +119,14 @@
                 </requisition>
                 <status value="active"/>
                 <intent value="filler-order"/>
-                <priority value="urgent"/>
                 <code>
                     <coding>
                         <system value="https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"/>
                         <code value="dispense-request"/>
+                    </coding>
+                    <coding>
+                        <system value="https://gematik.de/fhir/erp-servicerequest/CodeSystem/delivery-type-cs"/>
+                        <code value="delivery-to-healthcare-service"/>
                     </coding>
                 </code>
                 <subject>
