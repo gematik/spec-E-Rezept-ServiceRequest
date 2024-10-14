@@ -3,16 +3,34 @@
     xmlns:fhir="http://hl7.org/fhir">
     <!-- Root template -->
     <xsl:template match="/">
-        <xsl:apply-templates select="/fhir:Bundle" />
+        <!-- Extract the eventCode -->
+        <xsl:variable name="eventCode" select="/fhir:Bundle/fhir:entry/fhir:resource/fhir:MessageHeader/fhir:eventCoding/fhir:code/@value" />
+        <!-- Determine the rootBundle based on the eventCode -->
+        <xsl:choose>
+            <xsl:when test="$eventCode = 'eRezept_Rezeptanforderung;NachrichtKopie'">
+                <xsl:call-template name="peter">
+                    <xsl:with-param name="eventCode" select="$eventCode" />
+                    <xsl:with-param name="rootBundle" select="/fhir:Bundle/fhir:entry/fhir:resource/fhir:Bundle" />
+                </xsl:call-template>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:call-template name="peter">
+                    <xsl:with-param name="eventCode" select="$eventCode" />
+                    <xsl:with-param name="rootBundle" select="/fhir:Bundle" />
+                </xsl:call-template>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
+
     <!-- Master template for Bundle -->
-    <xsl:template match="fhir:Bundle[not(ancestor::fhir:Bundle)]">
+    <xsl:template name="peter">
+        <xsl:param name="eventCode" />
+        <xsl:param name="rootBundle" />
         <html>
             <head>
                 <title>FHIR Message Bundle</title>
                 <style>
-                    /* Enhanced styling for a more professional letter-like look optimized for A4
-        size */
+                    /* Enhanced styling for a more professional letter-like look optimized for A4 size */
                     @page {
                     size: A4;
                     margin: 20mm;
@@ -180,28 +198,36 @@
                 <div id="gesamtseite">
                     <div class="clearfix">
                         <div class="sender-info">
-                            <xsl:call-template name="sender-info" />
+                            <xsl:call-template name="sender-info">
+                                <xsl:with-param name="rootBundle" select="$rootBundle" />
+                            </xsl:call-template>
                         </div>
                         <div class="contact-info">
-                            <xsl:call-template name="contact-info" />
+                            <xsl:call-template name="contact-info">
+                                <xsl:with-param name="rootBundle" select="$rootBundle" />
+                            </xsl:call-template>
                         </div>
                     </div>
                     <div class="receiver-info">
-                        <xsl:call-template name="receiver-info" />
+                        <xsl:call-template name="receiver-info">
+                            <xsl:with-param name="rootBundle" select="$rootBundle" />
+                        </xsl:call-template>
                     </div>
                     <div class="letter-subject-info">
-                        <xsl:call-template name="letter-subject-info" />
+                        <xsl:call-template name="letter-subject-info">
+                            <xsl:with-param name="rootBundle" select="$rootBundle" />
+                        </xsl:call-template>
                     </div>
-                    <!-- Loop through unique patient references and call service-request-info with
-                    patientRef -->
-                    <xsl:for-each select="fhir:entry/fhir:resource/fhir:Patient">
+
+                    <!-- Loop through unique patient references in the rootBundle -->
+                    <xsl:for-each select="$rootBundle/fhir:entry/fhir:resource/fhir:Patient">
                         <xsl:variable name="patientRef" select="fhir:id/@value" />
                         <xsl:choose>
-                            <xsl:when
-                                test="/fhir:Bundle/fhir:entry/fhir:resource/fhir:MessageHeader/fhir:eventCoding/fhir:code/@value = 'eRezept_Rezeptanforderung;Abgabeanfrage'">
+                            <xsl:when test="$eventCode = 'eRezept_Rezeptanforderung;Abgabeanfrage'">
                                 <div class="dispense-request-info">
                                     <xsl:call-template name="dispense-request-info">
                                         <xsl:with-param name="patientRef" select="$patientRef" />
+                                        <xsl:with-param name="rootBundle" select="$rootBundle" />
                                     </xsl:call-template>
                                 </div>
                             </xsl:when>
@@ -209,6 +235,7 @@
                                 <div class="service-request-info">
                                     <xsl:call-template name="service-request-info">
                                         <xsl:with-param name="patientRef" select="$patientRef" />
+                                        <xsl:with-param name="rootBundle" select="$rootBundle" />
                                     </xsl:call-template>
                                 </div>
                             </xsl:otherwise>
@@ -218,16 +245,16 @@
             </body>
         </html>
     </xsl:template>
+
+    <!-- Adjust sender-info template to use rootBundle -->
     <xsl:template name="sender-info">
-        <!-- Find the MessageHeader in the Bundle -->
-        <xsl:for-each
-            select="fhir:entry/fhir:resource/fhir:MessageHeader">
+        <xsl:param name="rootBundle" />
+        <!-- Find the MessageHeader in the rootBundle -->
+        <xsl:for-each select="$rootBundle/fhir:entry/fhir:resource/fhir:MessageHeader">
             <!-- Retrieve the responsible reference, which points to the Organization -->
-            <xsl:variable name="respRef"
-                select="fhir:responsible/fhir:reference" />
+            <xsl:variable name="respRef" select="fhir:responsible/fhir:reference" />
             <!-- Find the corresponding Organization by matching the reference -->
-            <xsl:for-each
-                select="/fhir:Bundle/fhir:entry[fhir:fullUrl = $respRef]">
+            <xsl:for-each select="$rootBundle/fhir:entry[fhir:fullUrl = $respRef]">
                 <xsl:for-each select="fhir:resource/fhir:Organization">
                     <div class="sender-info">
                         <!-- Output the organization's info -->
@@ -243,29 +270,31 @@
             </xsl:for-each>
         </xsl:for-each>
     </xsl:template>
+
+    <!-- Adjust contact-info template to use rootBundle -->
     <xsl:template name="contact-info">
-        <xsl:for-each select="fhir:entry/fhir:resource/fhir:MessageHeader">
+        <xsl:param name="rootBundle" />
+        <xsl:for-each select="$rootBundle/fhir:entry/fhir:resource/fhir:MessageHeader">
             <!-- Retrieve the responsible reference, which points to the Organization -->
-            <xsl:variable
-                name="respRef" select="fhir:responsible/fhir:reference" />
+            <xsl:variable name="respRef" select="fhir:responsible/fhir:reference" />
             <!-- Find the corresponding Organization by matching the reference -->
-            <xsl:for-each
-                select="/fhir:Bundle/fhir:entry[fhir:fullUrl = $respRef]">
+            <xsl:for-each select="$rootBundle/fhir:entry[fhir:fullUrl = $respRef]">
                 <xsl:for-each select="fhir:resource/fhir:Organization">
-                    <!-- Assuming the phone number is located under telecom with system='phone' --> Tel.: <xsl:value-of
-                        select="fhir:contact/fhir:telecom[fhir:system/@value = 'phone']/fhir:value/@value" />
+                    <!-- Assuming the phone number is located under telecom with system='phone' -->
+                    Tel.: <xsl:value-of select="fhir:contact/fhir:telecom[fhir:system/@value = 'phone']/fhir:value/@value" />
                     <br />
                     <!-- Assuming the KIM address is located under telecom with system='email' -->
-        KIM: <xsl:value-of
-                        select="fhir:contact/fhir:telecom[fhir:system/@value = 'email']/fhir:value/@value" />
+                    KIM: <xsl:value-of select="fhir:contact/fhir:telecom[fhir:system/@value = 'email']/fhir:value/@value" />
                 </xsl:for-each>
             </xsl:for-each>
         </xsl:for-each>
     </xsl:template>
+
+    <!-- Adjust receiver-info template to use rootBundle -->
     <xsl:template name="receiver-info">
-        <!-- Find the MessageHeader in the Bundle -->
-        <xsl:for-each
-            select="fhir:entry/fhir:resource/fhir:MessageHeader">
+        <xsl:param name="rootBundle" />
+        <!-- Find the MessageHeader in the rootBundle -->
+        <xsl:for-each select="$rootBundle/fhir:entry/fhir:resource/fhir:MessageHeader">
             <!-- Retrieve the responsible reference, which points to the Organization -->
             <div class="receiver">
                 <span class="name">
@@ -278,40 +307,34 @@
             </div>
         </xsl:for-each>
     </xsl:template>
+
+    <!-- Adjust letter-subject-info template to use rootBundle -->
     <xsl:template name="letter-subject-info">
-        <!-- Find the MessageHeader in the Bundle -->
-        <xsl:for-each
-            select="fhir:entry/fhir:resource/fhir:MessageHeader">
+        <xsl:param name="rootBundle" />
+        <xsl:for-each select="$rootBundle/fhir:entry/fhir:resource/fhir:MessageHeader">
             <div class="subject">
                 <h2>
                     <xsl:choose>
                         <!-- Specific codes and corresponding subject values -->
-                        <xsl:when
-                            test="fhir:eventCoding/fhir:code/@value = 'eRezept_Rezeptanforderung;Rezeptanfrage'">
+                        <xsl:when test="fhir:eventCoding/fhir:code/@value = 'eRezept_Rezeptanforderung;Rezeptanfrage'">
                             <xsl:text>Rezeptanforderung</xsl:text>
                         </xsl:when>
-                        <xsl:when
-                            test="fhir:eventCoding/fhir:code/@value = 'eRezept_Rezeptanforderung;Rezeptanfrage_Storno'">
+                        <xsl:when test="fhir:eventCoding/fhir:code/@value = 'eRezept_Rezeptanforderung;Rezeptanfrage_Storno'">
                             <xsl:text>Stornierung einer Rezeptanfrage</xsl:text>
                         </xsl:when>
-                        <xsl:when
-                            test="fhir:eventCoding/fhir:code/@value = 'eRezept_Rezeptanforderung;Rezeptanfrage_Ablehnung'">
+                        <xsl:when test="fhir:eventCoding/fhir:code/@value = 'eRezept_Rezeptanforderung;Rezeptanfrage_Ablehnung'">
                             <xsl:text>Ablehnung einer Rezeptanfrage</xsl:text>
                         </xsl:when>
-                        <xsl:when
-                            test="fhir:eventCoding/fhir:code/@value = 'eRezept_Rezeptanforderung;Rezeptbestaetigung'">
+                        <xsl:when test="fhir:eventCoding/fhir:code/@value = 'eRezept_Rezeptanforderung;Rezeptbestaetigung'">
                             <xsl:text>Rezeptbestätigung und Übermittlung</xsl:text>
                         </xsl:when>
-                        <xsl:when
-                            test="fhir:eventCoding/fhir:code/@value = 'eRezept_Rezeptanforderung;Abgabeanfrage'">
+                        <xsl:when test="fhir:eventCoding/fhir:code/@value = 'eRezept_Rezeptanforderung;Abgabeanfrage'">
                             <xsl:text>Anfrage zur Abgabe eines Medikaments</xsl:text>
                         </xsl:when>
-                        <xsl:when
-                            test="fhir:eventCoding/fhir:code/@value = 'eRezept_Rezeptanforderung;Abgabebestaetigung'">
+                        <xsl:when test="fhir:eventCoding/fhir:code/@value = 'eRezept_Rezeptanforderung;Abgabebestaetigung'">
                             <xsl:text>Bestätigung der Medikamentenabgabe</xsl:text>
                         </xsl:when>
-                        <xsl:when
-                            test="fhir:eventCoding/fhir:code/@value = 'eRezept_Rezeptanforderung;NachrichtKopie'">
+                        <xsl:when test="fhir:eventCoding/fhir:code/@value = 'eRezept_Rezeptanforderung;NachrichtKopie'">
                             <xsl:text>Kopie einer Rezept- oder Abgabeanforderung</xsl:text>
                         </xsl:when>
                         <!-- Default subject if no matching code is found -->
@@ -321,22 +344,25 @@
                     </xsl:choose>
                 </h2>
             </div>
-            <div
-                class="subject-date">
-                <xsl:value-of
-                    select="concat(substring(/fhir:Bundle/fhir:timestamp/@value, 9, 2), '.', substring(/fhir:Bundle/fhir:timestamp/@value, 6, 2), '.', substring(/fhir:Bundle/fhir:timestamp/@value, 1, 4))" />
+            <div class="subject-date">
+                <xsl:value-of select="concat(substring($rootBundle/fhir:timestamp/@value, 9, 2), '.', substring($rootBundle/fhir:timestamp/@value, 6, 2), '.', substring($rootBundle/fhir:timestamp/@value, 1, 4))" />
             </div>
         </xsl:for-each>
     </xsl:template>
+
+    <!-- Adjust service-request-info template to use rootBundle -->
     <xsl:template name="service-request-info">
         <xsl:param name="patientRef" />
+        <xsl:param name="rootBundle" />
+    
         <xsl:call-template name="sr-patient-info">
-                <xsl:with-param name="patientRef" select="$patientRef" />
-            </xsl:call-template>
+            <xsl:with-param name="patientRef" select="$patientRef" />
+            <xsl:with-param name="rootBundle" select="$rootBundle" />
+        </xsl:call-template>
+
         <!-- Template for displaying information about each ServiceRequest in the Bundle -->
         <div class="service-request">
-            <xsl:for-each
-                select="/fhir:Bundle/fhir:entry/fhir:resource/fhir:ServiceRequest[fhir:subject/fhir:reference/@value = concat('Patient/', $patientRef)]">
+            <xsl:for-each select="$rootBundle/fhir:entry/fhir:resource/fhir:ServiceRequest[fhir:subject/fhir:reference/@value = concat('Patient/', $patientRef)]">
                 <div class="service-request-box">
                     <div class="service-request-header">
                         <span># <xsl:value-of
@@ -358,7 +384,7 @@
                                 select="fhir:basedOn/fhir:reference/@value" />
                             <div>
                                 <xsl:for-each
-                                    select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medReqRef) + 1) = $medReqRef]/fhir:resource/fhir:MedicationRequest">
+                                    select="$rootBundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medReqRef) + 1) = $medReqRef]/fhir:resource/fhir:MedicationRequest">
                                     <xsl:if
                                         test="fhir:modifierExtension[@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/request-mvo-ex']/fhir:valueBoolean/@value = 'true'">
                                         <div class="mvo-pill">MVO</div>
@@ -413,13 +439,15 @@
                                         select="fhir:basedOn/fhir:reference/@value" />
                                     <div>
                                         <xsl:for-each
-                                            select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medReqRef) + 1) = $medReqRef]/fhir:resource/fhir:MedicationRequest">
+                                            select="$rootBundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medReqRef) + 1) = $medReqRef]/fhir:resource/fhir:MedicationRequest">
                                             <xsl:variable name="medicationRef"
                                                 select="fhir:medicationReference/fhir:reference/@value" />
                                             <xsl:call-template
                                                 name="medication-info">
                                                 <xsl:with-param name="medicationRef"
                                                     select="$medicationRef" />
+                                                <xsl:with-param name="rootBundle"
+                                                    select="$rootBundle" />
                                             </xsl:call-template>
                                         </xsl:for-each>
                                     </div>
@@ -453,7 +481,7 @@
                                     <xsl:variable name="medReqRef"
                                         select="fhir:basedOn/fhir:reference/@value" />
                                     <xsl:for-each
-                                        select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medReqRef) + 1) = $medReqRef]/fhir:resource/fhir:MedicationRequest">
+                                        select="$rootBundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medReqRef) + 1) = $medReqRef]/fhir:resource/fhir:MedicationRequest">
                                         <xsl:value-of
                                             select="fhir:dispenseRequest/fhir:quantity/fhir:value/@value" />
                                         <span>
@@ -482,15 +510,18 @@
             </xsl:for-each>
         </div>
     </xsl:template>
+
     <xsl:template name="dispense-request-info">
         <xsl:param name="patientRef" />
+        <xsl:param name="rootBundle" />
             <xsl:call-template name="sr-patient-info">
                 <xsl:with-param name="patientRef" select="$patientRef" />
+                <xsl:with-param name="rootBundle" select="$rootBundle" />
             </xsl:call-template>
         <!-- Template for displaying information about each ServiceRequest in the Bundle -->
         <div class="service-request">
             <xsl:for-each
-                select="/fhir:Bundle/fhir:entry/fhir:resource/fhir:ServiceRequest[fhir:subject/fhir:reference/@value = concat('Patient/', $patientRef)]">
+                select="$rootBundle/fhir:entry/fhir:resource/fhir:ServiceRequest[fhir:subject/fhir:reference/@value = concat('Patient/', $patientRef)]">
                 <div class="service-request-box">
                     <div class="service-request-header">
                         <span># <xsl:value-of
@@ -509,7 +540,7 @@
                                 <div class="changed-pill">Verändertes Arzneimittel</div>
                             </xsl:if>
                             <xsl:for-each
-                                select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length(fhir:basedOn/fhir:reference/@value) + 1) = fhir:basedOn/fhir:reference/@value]/fhir:resource/fhir:MedicationRequest">
+                                select="$rootBundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length(fhir:basedOn/fhir:reference/@value) + 1) = fhir:basedOn/fhir:reference/@value]/fhir:resource/fhir:MedicationRequest">
                                 <xsl:if
                                     test="fhir:modifierExtension[@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/request-mvo-ex']/fhir:valueBoolean/@value = 'true'">
                                     <div class="mvo-pill">MVO</div>
@@ -589,10 +620,11 @@
     </xsl:template>
     <xsl:template name="sr-patient-info">
         <xsl:param name="patientRef" />
+        <xsl:param name="rootBundle" />
         <div class="sr-patient-info">
             <span>Bezüglich </span>
             <xsl:for-each
-                select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($patientRef) + 1) = $patientRef]/fhir:resource/fhir:Patient">
+                select="$rootBundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($patientRef) + 1) = $patientRef]/fhir:resource/fhir:Patient">
                 <xsl:value-of select="fhir:name[fhir:use/@value='official']/fhir:family/@value" />
                 <span>, </span>
                 <xsl:value-of select="fhir:name[fhir:use/@value='official']/fhir:given/@value" />
@@ -665,33 +697,14 @@
     </xsl:template>
     <xsl:template name="medication-info">
         <xsl:param name="medicationRef" />
+        <xsl:param name="rootBundle" />
         <xsl:for-each
-            select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medicationRef) + 1) = $medicationRef]/fhir:resource/fhir:Medication">
+            select="$rootBundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medicationRef) + 1) = $medicationRef]/fhir:resource/fhir:Medication">
             <xsl:choose>
                 <xsl:when
                     test="fhir:code/fhir:coding/fhir:system[@value='http://fhir.de/CodeSystem/ifa/pzn']">
-                    <!--						
-				[Anzahl der verordneten Packungen]x [Handelsname] [Darreichungsform entsprechend der Daten nach §
-                    131 Abs. 4 SGB V] [Packungsgröße nach abgeteilter Menge] [Einheit]
-                    [Therapiegerechte Packungsgröße nach N-Bezeichnung] (PZN: [PZN])
-				[Kennzeichen Dosierung] [Dosieranweisung] s. u.
-				[Abgabehinweise] s. u.
-				-->
                     <p
                         class="daten" style="max-width: 50em;">
-                        <xsl:if
-                            test="//fhir:MedicationRequest/fhir:dispenseRequest/fhir:quantity/fhir:value/@value">
-                            <xsl:value-of
-                                select="//fhir:MedicationRequest/fhir:dispenseRequest/fhir:quantity/fhir:value/@value" />
-                            <text>
-        x&#160;</text>
-                        </xsl:if>
-                        <xsl:if test="//fhir:SupplyRequest/fhir:quantity/fhir:value/@value">
-                            <xsl:value-of
-                                select="//fhir:SupplyRequest/fhir:quantity/fhir:value/@value" />
-                            <text>
-        x&#160;</text>
-                        </xsl:if>
                         <xsl:call-template name="getPossibleEmptyValue">
                             <xsl:with-param name="path" select="fhir:code/fhir:text/@value" />
                         </xsl:call-template>
@@ -718,28 +731,8 @@
                 </xsl:when>
                 <xsl:when
                     test="fhir:code/fhir:coding/fhir:system[@value='https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Type']/following-sibling::fhir:code[@value='wirkstoff']">
-                    <!--
-				[Anzahl der verordneten Packungen]x ( [Wirkstoffname] [Wirkstärke] [Wirkstärkeneinheit] ASK-Nr:
-                    [Wirkstoffnummer] ) [Darreichungsform Freitext] [Packungsgröße nach abgeteilter
-                    Menge] [Einheit] [Therapiegerechte Packungsgröße nach N-Bezeichnung]
-				[Kennzeichen Dosierung] [Dosieranweisung] s. u.
-				[Abgabehinweise] s. u.
-				-->
                     <p
                         class="daten" style="max-width: 50em;">
-                        <xsl:if
-                            test="//fhir:MedicationRequest/fhir:dispenseRequest/fhir:quantity/fhir:value/@value">
-                            <xsl:value-of
-                                select="//fhir:MedicationRequest/fhir:dispenseRequest/fhir:quantity/fhir:value/@value" />
-                            <text>
-        x&#160;</text>
-                        </xsl:if>
-                        <xsl:if test="//fhir:SupplyRequest/fhir:quantity/fhir:value/@value">
-                            <xsl:value-of
-                                select="//fhir:SupplyRequest/fhir:quantity/fhir:value/@value" />
-                            <text>
-        x&#160;</text>
-                        </xsl:if>
                         <xsl:if test="count(fhir:ingredient)&gt;1">
                             <text>(</text>
                         </xsl:if>
@@ -767,26 +760,8 @@
                 </xsl:when>
                 <xsl:when
                     test="fhir:code/fhir:coding/fhir:system[@value='https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Type']/following-sibling::fhir:code[@value='freitext']">
-                    <!--
-				[Anzahl der verordneten Packungen]x [Freitextverordnung] [Darreichungsform Freitext]
-				[Kennzeichen Dosierung] [Dosieranweisung] s. u.
-				[Abgabehinweise] s. u.
-				-->
                     <p
                         class="daten" style="max-width: 50em;">
-                        <xsl:if
-                            test="//fhir:MedicationRequest/fhir:dispenseRequest/fhir:quantity/fhir:value/@value">
-                            <xsl:value-of
-                                select="//fhir:MedicationRequest/fhir:dispenseRequest/fhir:quantity/fhir:value/@value" />
-                            <text>
-        x&#160;</text>
-                        </xsl:if>
-                        <xsl:if test="//fhir:SupplyRequest/fhir:quantity/fhir:value/@value">
-                            <xsl:value-of
-                                select="//fhir:SupplyRequest/fhir:quantity/fhir:value/@value" />
-                            <text>
-        x&#160;</text>
-                        </xsl:if>
                         <xsl:call-template name="getPossibleEmptyValue">
                             <xsl:with-param name="path" select="fhir:code/fhir:text/@value" />
                         </xsl:call-template>
@@ -797,30 +772,8 @@
                 </xsl:when>
                 <xsl:when
                     test="fhir:code/fhir:coding/fhir:system[@value='https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Type']/following-sibling::fhir:code[@value='rezeptur']">
-                    <!--					
-				[Anzahl der verordneten Packungen]x [Rezepturname] [Gesamtmenge der Rezeptur] [Einheit der
-                    Gesamtmenge] [Darreichungsform Freitext] [Herstellungsanweisung] [Verpackung]
-				*[Name des Bestandteils] [Menge des Bestandteils] [Einheit des Bestandteils] [Menge und Einheit des
-                    Bestandteils Freitext] [Darreichungsform des Bestandteils Freitext] (PZN: [PZN
-                    des Bestandteils])
-				[Gebrauchsanweisung]
-				[Abgabehinweise]
-				-->
                     <p
                         class="daten kein_abstand" style="max-width: 50em;">
-                        <xsl:if
-                            test="//fhir:MedicationRequest/fhir:dispenseRequest/fhir:quantity/fhir:value/@value">
-                            <xsl:value-of
-                                select="//fhir:MedicationRequest/fhir:dispenseRequest/fhir:quantity/fhir:value/@value" />
-                            <text>
-        x&#160;</text>
-                        </xsl:if>
-                        <xsl:if test="//fhir:SupplyRequest/fhir:quantity/fhir:value/@value">
-                            <xsl:value-of
-                                select="//fhir:SupplyRequest/fhir:quantity/fhir:value/@value" />
-                            <text>
-        x&#160;</text>
-                        </xsl:if>
                         <xsl:call-template name="getPossibleEmptyValue">
                             <xsl:with-param name="path" select="fhir:code/fhir:text/@value" />
                         </xsl:call-template>
@@ -848,13 +801,6 @@
                         class="daten">
                         <xsl:apply-templates select="fhir:ingredient" mode="rezeptur" />
                     </ul>
-                    <xsl:if
-                        test="//fhir:MedicationRequest/fhir:dosageInstruction/fhir:patientInstruction/@value">
-                        <p class="daten" style="max-width: 50em;">
-                            <xsl:value-of
-                                select="//fhir:MedicationRequest/fhir:dosageInstruction/fhir:patientInstruction/@value" />
-                        </p>
-                    </xsl:if>
                 </xsl:when>
             </xsl:choose>
         </xsl:for-each>
