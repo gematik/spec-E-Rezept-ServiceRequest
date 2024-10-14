@@ -106,7 +106,7 @@
                 </meta>
                 <identifier>
                     <system value="https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier"/>
-                    <value value="1"/>
+                    <value value="78826d27-511a-4f52-87a8-4b454d48d194"/>
                 </identifier>
                 <basedOn>
                     <reference value="MedicationRequest/Example-Initial-Medication-Request"/>

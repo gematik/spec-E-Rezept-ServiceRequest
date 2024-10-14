@@ -111,7 +111,7 @@
                 </extension>
                 <identifier>
                     <system value="https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier"/>
-                    <value value="2"/>
+                    <value value="a1d5cb70-f724-4aff-81bd-bb936d7ba8aa"/>
                 </identifier>
                 <requisition>
                     <system value="https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier"/>

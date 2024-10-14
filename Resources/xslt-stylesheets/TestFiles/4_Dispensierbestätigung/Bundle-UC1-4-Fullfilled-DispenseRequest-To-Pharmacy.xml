@@ -101,7 +101,7 @@
                 </meta>
                 <identifier>
                     <system value="https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier"/>
-                    <value value="2"/>
+                    <value value="8eb789f1-d8bc-4212-88fd-2d27499cac79"/>
                 </identifier>
                 <requisition>
                     <system value="https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier"/>

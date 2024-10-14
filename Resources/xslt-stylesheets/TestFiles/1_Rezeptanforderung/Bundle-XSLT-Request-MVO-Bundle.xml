@@ -105,7 +105,7 @@
                 </meta>
                 <identifier>
                     <system value="https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier"/>
-                    <value value="1"/>
+                    <value value="295d874c-315d-4647-9f80-c6073f606f17"/>
                 </identifier>
                 <basedOn>
                     <reference value="MedicationRequest/XSLT-Request-MVO-Medication-Request"/>

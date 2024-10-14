@@ -105,7 +105,7 @@
                 </meta>
                 <identifier>
                     <system value="https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier"/>
-                    <value value="1"/>
+                    <value value="6446f835-469e-4d96-b302-65ca959c89dc"/>
                 </identifier>
                 <basedOn>
                     <reference value="MedicationRequest/XSLT-Prior-Prescription-ID-Medication-Request"/>

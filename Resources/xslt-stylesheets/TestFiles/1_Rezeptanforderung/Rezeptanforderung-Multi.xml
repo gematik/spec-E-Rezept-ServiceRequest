@@ -108,7 +108,7 @@
                 </meta>
                 <identifier>
                     <system value="https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier"/>
-                    <value value="multi-1"/>
+                    <value value="f452569d-c41d-4e48-bb4d-b28cdfb0ddcc"/>
                 </identifier>
                 <basedOn>
                     <reference value="MedicationRequest/Example-Initial-Medication-Request"/>
@@ -145,7 +145,7 @@
                 </meta>
                 <identifier>
                     <system value="https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier"/>
-                    <value value="multi-2"/>
+                    <value value="ce217521-ea3e-4067-8ea1-e21307704f0d"/>
                 </identifier>
                 <basedOn>
                     <reference value="MedicationRequest/Example-Initial-Medication-Request-2"/>
