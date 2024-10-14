@@ -36,3 +36,4 @@ Description: "Message Header from HealthCareService to Practitioner"
 * focus[+] = Reference(Komplex-MULTI-Initial-Prescription-Request-3)
 * eventCoding = ServiceIdentifierCS#eRezept_Rezeptanforderung;Rezeptanfrage
 * responsible = Reference(Example-HealthCareService-Organization)
+

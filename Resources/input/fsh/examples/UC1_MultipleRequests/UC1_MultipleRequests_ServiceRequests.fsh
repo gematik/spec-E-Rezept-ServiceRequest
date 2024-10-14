@@ -87,3 +87,19 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * subject = Reference(Example-Patient)
 * authoredOn = "2025-05-13"
 * requester = Reference(Example-HealthCareService-Organization)
+
+// Instance: Komplex-MULTI-Response-Prescription-Request-3
+// InstanceOf: ERPServiceRequestPrescriptionRequest
+// Usage: #inline
+// Title: "Komplex-MULTI-Initial-Prescription-Request-3"
+// Description: "This ServiceRequest is sent initially to the prescribing practitioner"
+// * identifier[requestId].value = "komplex-multi"
+// * basedOn = Reference(Example-Komplex-Medication-Request)
+// * extension[EPrescriptionToken].valueIdentifier.value = "Task/169.555.000.000.333.21/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
+// * requisition.value = "GroupID-UC1-MULTI"
+// * status = RequestStatus#active
+// * intent = RequestIntent#order
+// * code.coding[request-type] = ServiceRequestTypeCS#prescription-request
+// * subject = Reference(Example-Patient)
+// * authoredOn = "2025-05-13"
+// * requester = Reference(Example-HealthCareService-Organization)
