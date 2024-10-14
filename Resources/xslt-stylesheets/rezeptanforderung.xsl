@@ -104,6 +104,18 @@
                     font-style: italic;
                     color: #333;
                     }
+                    .urgent-pill {
+                    display: inline-block;
+                    background-color: #ff4d4d;
+                    color: white;
+                    padding: 2px 8px;
+                    border-radius: 12px;
+                    font-style: italic;
+                    font-size: 0.9em;
+                    margin-bottom: 1px;
+                    position: relative;
+                    top: -5px;
+                    }
                 </style>
             </head>
             <body>
@@ -294,20 +306,25 @@
                 </thead>
                 <tbody>
                     <xsl:for-each select="/fhir:Bundle/fhir:entry/fhir:resource/fhir:ServiceRequest[fhir:subject/fhir:reference/@value = concat('Patient/', $patientRef)]">
-
                         <tr>
                             <td>
                                 <xsl:variable name="medReqRef"
                                     select="fhir:basedOn/fhir:reference/@value" />
-                                <xsl:for-each
-                                    select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medReqRef) + 1) = $medReqRef]/fhir:resource/fhir:MedicationRequest">
-                                    <xsl:variable name="medicationRef"
-                                        select="fhir:medicationReference/fhir:reference/@value" />
+                                <!-- Display "dringend" pill if priority is urgent -->
+                                <xsl:if test="fhir:priority/@value = 'urgent'">
+                                    <div class="urgent-pill">dringend</div>
+                                </xsl:if>
+                                <div>
                                     <xsl:for-each
-                                        select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medicationRef) + 1) = $medicationRef]/fhir:resource/fhir:Medication">
-                                        <xsl:value-of select="fhir:code/fhir:text/@value" />
+                                        select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medReqRef) + 1) = $medReqRef]/fhir:resource/fhir:MedicationRequest">
+                                        <xsl:variable name="medicationRef"
+                                            select="fhir:medicationReference/fhir:reference/@value" />
+                                        <xsl:for-each
+                                            select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medicationRef) + 1) = $medicationRef]/fhir:resource/fhir:Medication">
+                                            <xsl:value-of select="fhir:code/fhir:text/@value" />
+                                        </xsl:for-each>
                                     </xsl:for-each>
-                                </xsl:for-each>
+                                </div>
                             </td>
                             <td>
                                 <xsl:variable name="medReqRef"

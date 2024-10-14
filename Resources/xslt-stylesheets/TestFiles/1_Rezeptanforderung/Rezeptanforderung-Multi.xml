@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="../rezeptanforderung.xsl" ?>
+<?xml-stylesheet type="text/xsl" href="../../rezeptanforderung.xsl" ?>
 <Bundle xmlns="http://hl7.org/fhir">
     <id value="UC1-MULTI-1-Prescription-Request-To-Prescriber"/>
     <meta>
