@@ -106,9 +106,6 @@
                 <modifierExtension url="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex">
                     <valueBoolean value="true"/>
                 </modifierExtension>
-                <modifierExtension url="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/changed-medication-ex">
-                    <valueBoolean value="true"/>
-                </modifierExtension>
                 <identifier>
                     <system value="https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier"/>
                     <value value="d42cf276-5f2a-4148-a3f4-1af623db7846"/>

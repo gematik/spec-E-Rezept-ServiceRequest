@@ -38,7 +38,7 @@
                     position: relative;
                     }
                     .sender-info, .recipient-info, .subject-info, .service-request-info, .date-info
-        {
+                    {
                     margin-bottom: 40px;
                     }
                     .contact-info {
@@ -467,6 +467,17 @@
                                     <xsl:value-of select="fhir:note/fhir:text/@value" />
                                 </td>
                             </tr>
+                            <!-- Token section below row if there is a note -->
+                            <xsl:if
+                                test="fhir:extension[@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex']">
+                                <tr class="token-section">
+                                    <td colspan="5">
+                                        <p>E-Rezept Token:</p>
+                                        <xsl:value-of
+                                            select="fhir:extension[@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex']/fhir:valueIdentifier/fhir:value/@value" />
+                                    </td>
+                                </tr>
+                            </xsl:if>
                         </tbody>
                     </table>
                 </div>
