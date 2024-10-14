@@ -1,12 +1,10 @@
 <xsl:stylesheet version="1.0"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:fhir="http://hl7.org/fhir">
-
     <!-- Root template -->
     <xsl:template match="/">
         <xsl:apply-templates select="/fhir:Bundle" />
     </xsl:template>
-
     <!-- Master template for Bundle -->
     <xsl:template match="fhir:Bundle[not(ancestor::fhir:Bundle)]">
         <html>
@@ -220,7 +218,6 @@
             </body>
         </html>
     </xsl:template>
-
     <xsl:template name="sender-info">
         <!-- Find the MessageHeader in the Bundle -->
         <xsl:for-each
@@ -246,7 +243,6 @@
             </xsl:for-each>
         </xsl:for-each>
     </xsl:template>
-
     <xsl:template name="contact-info">
         <xsl:for-each select="fhir:entry/fhir:resource/fhir:MessageHeader">
             <!-- Retrieve the responsible reference, which points to the Organization -->
@@ -266,7 +262,6 @@
             </xsl:for-each>
         </xsl:for-each>
     </xsl:template>
-
     <xsl:template name="receiver-info">
         <!-- Find the MessageHeader in the Bundle -->
         <xsl:for-each
@@ -283,7 +278,6 @@
             </div>
         </xsl:for-each>
     </xsl:template>
-
     <xsl:template name="letter-subject-info">
         <!-- Find the MessageHeader in the Bundle -->
         <xsl:for-each
@@ -334,7 +328,6 @@
             </div>
         </xsl:for-each>
     </xsl:template>
-
     <xsl:template name="service-request-info">
         <xsl:param name="patientRef" />
         <div class="sr-patient-info">
@@ -358,8 +351,9 @@
                 select="/fhir:Bundle/fhir:entry/fhir:resource/fhir:ServiceRequest[fhir:subject/fhir:reference/@value = concat('Patient/', $patientRef)]">
                 <div class="service-request-box">
                     <div class="service-request-header">
-                        <span>#<xsl:value-of
-                                select="fhir:identifier[fhir:system/@value = 'https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier']/fhir:value/@value" /></span>
+                        <span># <xsl:value-of
+                                select="fhir:identifier[fhir:system/@value = 'https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier']/fhir:value/@value" />
+                        </span>
                         <div class="pill-container">
                             <xsl:if test="fhir:priority/@value = 'urgent'">
                                 <div class="urgent-pill">dringend</div>
@@ -389,7 +383,6 @@
                         <thead>
                             <tr>
                                 <th>Artikel</th>
-                                <th>DAR</th>
                                 <th>Reichweite/ Bedarfszeitraum</th>
                                 <th>Bedarf</th>
                                 <th>Notiz</th>
@@ -405,26 +398,13 @@
                                             select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medReqRef) + 1) = $medReqRef]/fhir:resource/fhir:MedicationRequest">
                                             <xsl:variable name="medicationRef"
                                                 select="fhir:medicationReference/fhir:reference/@value" />
-                                            <xsl:for-each
-                                                select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medicationRef) + 1) = $medicationRef]/fhir:resource/fhir:Medication">
-                                                <xsl:value-of select="fhir:code/fhir:text/@value" />
-                                            </xsl:for-each>
+                                            <xsl:call-template
+                                                name="medication-info">
+                                                <xsl:with-param name="medicationRef"
+                                                    select="$medicationRef" />
+                                            </xsl:call-template>
                                         </xsl:for-each>
                                     </div>
-                                </td>
-                                <td>
-                                    <xsl:variable name="medReqRef"
-                                        select="fhir:basedOn/fhir:reference/@value" />
-                                    <xsl:for-each
-                                        select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medReqRef) + 1) = $medReqRef]/fhir:resource/fhir:MedicationRequest">
-                                        <xsl:variable name="medicationRef"
-                                            select="fhir:medicationReference/fhir:reference/@value" />
-                                        <xsl:for-each
-                                            select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medicationRef) + 1) = $medicationRef]/fhir:resource/fhir:Medication">
-                                            <xsl:value-of
-                                                select="fhir:form/fhir:coding/fhir:code/@value" />
-                                        </xsl:for-each>
-                                    </xsl:for-each>
                                 </td>
                                 <td>
                                     <!-- Reichweite: reasonCode extension for remaining supply -->
@@ -484,7 +464,6 @@
             </xsl:for-each>
         </div>
     </xsl:template>
-
     <xsl:template name="dispense-request-info">
         <xsl:param name="patientRef" />
         <div class="sr-patient-info">
@@ -508,8 +487,9 @@
                 select="/fhir:Bundle/fhir:entry/fhir:resource/fhir:ServiceRequest[fhir:subject/fhir:reference/@value = concat('Patient/', $patientRef)]">
                 <div class="service-request-box">
                     <div class="service-request-header">
-                        <span>#<xsl:value-of
-                                select="fhir:identifier[fhir:system/@value = 'https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier']/fhir:value/@value" /></span>
+                        <span># <xsl:value-of
+                                select="fhir:identifier[fhir:system/@value = 'https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier']/fhir:value/@value" />
+                        </span>
                         <div class="pill-container">
                             <xsl:if test="fhir:priority/@value = 'urgent'">
                                 <div class="urgent-pill">dringend</div>
@@ -545,9 +525,10 @@
                                         test="fhir:code/fhir:coding[fhir:system/@value = 'https://gematik.de/fhir/erp-servicerequest/CodeSystem/delivery-type-cs']/fhir:code/@value">
                                         <th>Lieferung</th>
                                     </xsl:when>
-                                    <xsl:otherwise><th></th></xsl:otherwise>
+                                    <xsl:otherwise>
+                                        <th></th>
+                                    </xsl:otherwise>
                                 </xsl:choose>
-
                             </tr>
                         </thead>
                         <tbody>
@@ -575,11 +556,14 @@
                                         </xsl:when>
                                         <xsl:when
                                             test="fhir:code/fhir:coding[fhir:system/@value = 'https://gematik.de/fhir/erp-servicerequest/CodeSystem/delivery-type-cs']/fhir:code/@value = 'delivery-to-alternative-address'">
-                                            <i><xsl:text>Lieferung an: </xsl:text></i>
+                                            <i>
+                                                <xsl:text>Lieferung an: </xsl:text>
+                                            </i>
                                             <xsl:for-each
                                                 select="fhir:extension[@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/alternative-delivery-address-ex']/fhir:valueAddress">
                                                 <xsl:for-each select="fhir:line">
-                                                    <xsl:value-of select="@value" /><br />
+                                                    <xsl:value-of select="@value" />
+                                                    <br />
                                                 </xsl:for-each>
                                                 <xsl:value-of
                                                     select="fhir:city/@value" />, <xsl:value-of
@@ -597,5 +581,285 @@
             </xsl:for-each>
         </div>
     </xsl:template>
-
+    <xsl:template match="fhir:ingredient" mode="rezeptur">
+        <li style="margin-left:2em;">
+            <xsl:call-template name="getPossibleEmptyValue">
+                <xsl:with-param name="path" select="fhir:itemCodeableConcept/fhir:text/@value" />
+            </xsl:call-template>
+            <xsl:call-template name="getPossibleEmptyValue">
+                <xsl:with-param name="path" select="fhir:strength/fhir:numerator/fhir:value/@value" />
+            </xsl:call-template>
+            <xsl:call-template name="getPossibleEmptyValue">
+                <xsl:with-param name="path" select="fhir:strength/fhir:numerator/fhir:unit/@value" />
+            </xsl:call-template>
+            <xsl:call-template name="getPossibleEmptyValue">
+                <xsl:with-param name="path"
+                    select="fhir:strength/fhir:extension[@url='https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Ingredient_Amount']/fhir:valueString/@value" />
+            </xsl:call-template>
+            <xsl:call-template name="getPossibleEmptyValue">
+                <xsl:with-param name="path"
+                    select="fhir:extension[@url='https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Ingredient_Form']/fhir:valueString/@value" />
+            </xsl:call-template>
+            <xsl:if test="fhir:itemCodeableConcept/fhir:coding/fhir:code/@value">
+                <text>(PZN:&#160;</text>
+                <xsl:value-of
+                    select="fhir:itemCodeableConcept/fhir:coding/fhir:code/@value" />
+                <text>)</text>
+            </xsl:if>
+        </li>
+    </xsl:template>
+    <xsl:template match="fhir:ingredient" mode="wirkstoff">
+        <xsl:if test="position()&gt;1">
+            <text>&#32;+&#32;</text>
+        </xsl:if>
+        <xsl:call-template name="getPossibleEmptyValue">
+            <xsl:with-param name="path" select="fhir:itemCodeableConcept/fhir:text/@value" />
+        </xsl:call-template>
+        <xsl:call-template
+            name="getPossibleEmptyValue">
+            <xsl:with-param name="path" select="fhir:strength/fhir:numerator/fhir:value/@value" />
+        </xsl:call-template>
+        <xsl:choose>
+            <xsl:when test="not(fhir:itemCodeableConcept/fhir:coding/fhir:code/@value)">
+                <xsl:value-of select="fhir:strength/fhir:numerator/fhir:unit/@value" />
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:call-template name="getPossibleEmptyValue">
+                    <xsl:with-param name="path"
+                        select="fhir:strength/fhir:numerator/fhir:unit/@value" />
+                </xsl:call-template>
+            </xsl:otherwise>
+        </xsl:choose>
+        <xsl:if
+            test="fhir:itemCodeableConcept/fhir:coding/fhir:code/@value">
+            <text>ASK-Nr:&#160;</text>
+            <xsl:value-of
+                select="fhir:itemCodeableConcept/fhir:coding/fhir:code/@value" />
+        </xsl:if>
+    </xsl:template>
+    <xsl:template name="medication-info">
+        <xsl:param name="medicationRef" />
+        <xsl:for-each
+            select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medicationRef) + 1) = $medicationRef]/fhir:resource/fhir:Medication">
+            <xsl:choose>
+                <xsl:when
+                    test="fhir:code/fhir:coding/fhir:system[@value='http://fhir.de/CodeSystem/ifa/pzn']">
+                    <!--						
+				[Anzahl der verordneten Packungen]x [Handelsname] [Darreichungsform entsprechend der Daten nach §
+                    131 Abs. 4 SGB V] [Packungsgröße nach abgeteilter Menge] [Einheit]
+                    [Therapiegerechte Packungsgröße nach N-Bezeichnung] (PZN: [PZN])
+				[Kennzeichen Dosierung] [Dosieranweisung] s. u.
+				[Abgabehinweise] s. u.
+				-->
+                    <p
+                        class="daten" style="max-width: 50em;">
+                        <xsl:if
+                            test="//fhir:MedicationRequest/fhir:dispenseRequest/fhir:quantity/fhir:value/@value">
+                            <xsl:value-of
+                                select="//fhir:MedicationRequest/fhir:dispenseRequest/fhir:quantity/fhir:value/@value" />
+                            <text>
+        x&#160;</text>
+                        </xsl:if>
+                        <xsl:if test="//fhir:SupplyRequest/fhir:quantity/fhir:value/@value">
+                            <xsl:value-of
+                                select="//fhir:SupplyRequest/fhir:quantity/fhir:value/@value" />
+                            <text>
+        x&#160;</text>
+                        </xsl:if>
+                        <xsl:call-template name="getPossibleEmptyValue">
+                            <xsl:with-param name="path" select="fhir:code/fhir:text/@value" />
+                        </xsl:call-template>
+                        <xsl:call-template name="getPossibleEmptyValue">
+                            <xsl:with-param name="path"
+                                select="fhir:form/fhir:coding/fhir:code/@value" />
+                        </xsl:call-template>
+                        <xsl:call-template name="getPossibleEmptyValue">
+                            <xsl:with-param name="path"
+                                select="fhir:amount/fhir:numerator/fhir:extension[@url='https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_PackagingSize']/fhir:valueString/@value" />
+                        </xsl:call-template>
+                        <xsl:call-template name="getPossibleEmptyValue">
+                            <xsl:with-param name="path"
+                                select="fhir:amount/fhir:numerator/fhir:unit/@value" />
+                        </xsl:call-template>
+                        <xsl:call-template name="getPossibleEmptyValue">
+                            <xsl:with-param name="path"
+                                select="fhir:extension[@url='http://fhir.de/StructureDefinition/normgroesse']/fhir:valueCode/@value" />
+                        </xsl:call-template>
+                        <text>(PZN: </text>
+                        <xsl:value-of select="fhir:code/fhir:coding/fhir:code/@value" />
+                        <text>)</text>
+                    </p>
+                </xsl:when>
+                <xsl:when
+                    test="fhir:code/fhir:coding/fhir:system[@value='https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Type']/following-sibling::fhir:code[@value='wirkstoff']">
+                    <!--
+				[Anzahl der verordneten Packungen]x ( [Wirkstoffname] [Wirkstärke] [Wirkstärkeneinheit] ASK-Nr:
+                    [Wirkstoffnummer] ) [Darreichungsform Freitext] [Packungsgröße nach abgeteilter
+                    Menge] [Einheit] [Therapiegerechte Packungsgröße nach N-Bezeichnung]
+				[Kennzeichen Dosierung] [Dosieranweisung] s. u.
+				[Abgabehinweise] s. u.
+				-->
+                    <p
+                        class="daten" style="max-width: 50em;">
+                        <xsl:if
+                            test="//fhir:MedicationRequest/fhir:dispenseRequest/fhir:quantity/fhir:value/@value">
+                            <xsl:value-of
+                                select="//fhir:MedicationRequest/fhir:dispenseRequest/fhir:quantity/fhir:value/@value" />
+                            <text>
+        x&#160;</text>
+                        </xsl:if>
+                        <xsl:if test="//fhir:SupplyRequest/fhir:quantity/fhir:value/@value">
+                            <xsl:value-of
+                                select="//fhir:SupplyRequest/fhir:quantity/fhir:value/@value" />
+                            <text>
+        x&#160;</text>
+                        </xsl:if>
+                        <xsl:if test="count(fhir:ingredient)&gt;1">
+                            <text>(</text>
+                        </xsl:if>
+                        <xsl:apply-templates select="fhir:ingredient" mode="wirkstoff" />
+                        <xsl:if test="count(fhir:ingredient)&gt;1">
+                            <text>)</text>
+                        </xsl:if>
+                        <text>&#160;</text>
+                        <xsl:call-template name="getPossibleEmptyValue">
+                            <xsl:with-param name="path" select="fhir:form/fhir:text/@value" />
+                        </xsl:call-template>
+                        <xsl:call-template name="getPossibleEmptyValue">
+                            <xsl:with-param name="path"
+                                select="fhir:amount/fhir:numerator/fhir:extension[@url='https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_PackagingSize']/fhir:valueString/@value" />
+                        </xsl:call-template>
+                        <xsl:call-template name="getPossibleEmptyValue">
+                            <xsl:with-param name="path"
+                                select="fhir:amount/fhir:numerator/fhir:unit/@value" />
+                        </xsl:call-template>
+                        <xsl:call-template name="getPossibleEmptyValue">
+                            <xsl:with-param name="path"
+                                select="fhir:extension[@url='http://fhir.de/StructureDefinition/normgroesse']/fhir:valueCode/@value" />
+                        </xsl:call-template>
+                    </p>
+                </xsl:when>
+                <xsl:when
+                    test="fhir:code/fhir:coding/fhir:system[@value='https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Type']/following-sibling::fhir:code[@value='freitext']">
+                    <!--
+				[Anzahl der verordneten Packungen]x [Freitextverordnung] [Darreichungsform Freitext]
+				[Kennzeichen Dosierung] [Dosieranweisung] s. u.
+				[Abgabehinweise] s. u.
+				-->
+                    <p
+                        class="daten" style="max-width: 50em;">
+                        <xsl:if
+                            test="//fhir:MedicationRequest/fhir:dispenseRequest/fhir:quantity/fhir:value/@value">
+                            <xsl:value-of
+                                select="//fhir:MedicationRequest/fhir:dispenseRequest/fhir:quantity/fhir:value/@value" />
+                            <text>
+        x&#160;</text>
+                        </xsl:if>
+                        <xsl:if test="//fhir:SupplyRequest/fhir:quantity/fhir:value/@value">
+                            <xsl:value-of
+                                select="//fhir:SupplyRequest/fhir:quantity/fhir:value/@value" />
+                            <text>
+        x&#160;</text>
+                        </xsl:if>
+                        <xsl:call-template name="getPossibleEmptyValue">
+                            <xsl:with-param name="path" select="fhir:code/fhir:text/@value" />
+                        </xsl:call-template>
+                        <xsl:call-template name="getPossibleEmptyValue">
+                            <xsl:with-param name="path" select="fhir:form/fhir:text/@value" />
+                        </xsl:call-template>
+                    </p>
+                </xsl:when>
+                <xsl:when
+                    test="fhir:code/fhir:coding/fhir:system[@value='https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Type']/following-sibling::fhir:code[@value='rezeptur']">
+                    <!--					
+				[Anzahl der verordneten Packungen]x [Rezepturname] [Gesamtmenge der Rezeptur] [Einheit der
+                    Gesamtmenge] [Darreichungsform Freitext] [Herstellungsanweisung] [Verpackung]
+				*[Name des Bestandteils] [Menge des Bestandteils] [Einheit des Bestandteils] [Menge und Einheit des
+                    Bestandteils Freitext] [Darreichungsform des Bestandteils Freitext] (PZN: [PZN
+                    des Bestandteils])
+				[Gebrauchsanweisung]
+				[Abgabehinweise]
+				-->
+                    <p
+                        class="daten kein_abstand" style="max-width: 50em;">
+                        <xsl:if
+                            test="//fhir:MedicationRequest/fhir:dispenseRequest/fhir:quantity/fhir:value/@value">
+                            <xsl:value-of
+                                select="//fhir:MedicationRequest/fhir:dispenseRequest/fhir:quantity/fhir:value/@value" />
+                            <text>
+        x&#160;</text>
+                        </xsl:if>
+                        <xsl:if test="//fhir:SupplyRequest/fhir:quantity/fhir:value/@value">
+                            <xsl:value-of
+                                select="//fhir:SupplyRequest/fhir:quantity/fhir:value/@value" />
+                            <text>
+        x&#160;</text>
+                        </xsl:if>
+                        <xsl:call-template name="getPossibleEmptyValue">
+                            <xsl:with-param name="path" select="fhir:code/fhir:text/@value" />
+                        </xsl:call-template>
+                        <xsl:call-template name="getPossibleEmptyValue">
+                            <xsl:with-param name="path"
+                                select="fhir:amount/fhir:numerator/fhir:extension[@url='https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_PackagingSize']/fhir:valueString/@value" />
+                        </xsl:call-template>
+                        <xsl:call-template name="getPossibleEmptyValue">
+                            <xsl:with-param name="path"
+                                select="fhir:amount/fhir:numerator/fhir:unit/@value" />
+                        </xsl:call-template>
+                        <xsl:call-template name="getPossibleEmptyValue">
+                            <xsl:with-param name="path" select="fhir:form/fhir:text/@value" />
+                        </xsl:call-template>
+                        <xsl:call-template name="getPossibleEmptyValue">
+                            <xsl:with-param name="path"
+                                select="fhir:extension[@url='https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_CompoundingInstruction']/fhir:valueString/@value" />
+                        </xsl:call-template>
+                        <xsl:call-template name="getPossibleEmptyValue">
+                            <xsl:with-param name="path"
+                                select="fhir:extension[@url='https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Packaging']/fhir:valueString/@value" />
+                        </xsl:call-template>
+                    </p>
+                    <ul
+                        class="daten">
+                        <xsl:apply-templates select="fhir:ingredient" mode="rezeptur" />
+                    </ul>
+                    <xsl:if
+                        test="//fhir:MedicationRequest/fhir:dosageInstruction/fhir:patientInstruction/@value">
+                        <p class="daten" style="max-width: 50em;">
+                            <xsl:value-of
+                                select="//fhir:MedicationRequest/fhir:dosageInstruction/fhir:patientInstruction/@value" />
+                        </p>
+                    </xsl:if>
+                </xsl:when>
+            </xsl:choose>
+        </xsl:for-each>
+    </xsl:template>
+    <xsl:template name="getPossibleEmptyValue">
+        <xsl:param name="path" />
+        <xsl:choose>
+            <xsl:when test="$path">
+                <xsl:value-of select="$path" />
+                <text>&#160;</text>
+            </xsl:when>
+        </xsl:choose>
+    </xsl:template>
+    <xsl:template name="getIdFromReference">
+        <xsl:param name="ref" />
+        <xsl:choose>
+            <xsl:when test="contains($ref,'/')">
+                <xsl:call-template name="substring-after-last">
+                    <xsl:with-param name="input" select="$ref" />
+                    <xsl:with-param name="substr" select="'/'" />
+                </xsl:call-template>
+            </xsl:when>
+            <xsl:when test="contains($ref,':')">
+                <xsl:call-template name="substring-after-last">
+                    <xsl:with-param name="input" select="$ref" />
+                    <xsl:with-param name="substr" select="':'" />
+                </xsl:call-template>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="$ref" />
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
 </xsl:stylesheet>
