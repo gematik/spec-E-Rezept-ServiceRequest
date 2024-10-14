@@ -459,7 +459,7 @@
                                             <xsl:when
                                                 test="@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/remaining-supply-ex'">
                                                 <xsl:value-of
-                                                    select="concat(fhir:value/@value, ' ', fhir:value/fhir:unit/@value)" />
+                                                    select="concat(fhir:valueQuantity/fhir:value/@value, ' ', fhir:valueQuantity/fhir:unit/@value)" />
                                             </xsl:when>
                                             <xsl:when
                                                 test="@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/remaining-supply-free-text-ex'">
@@ -468,13 +468,11 @@
                                         </xsl:choose>
                                     </xsl:for-each>
                                     <xsl:if test="fhir:occurrenceDateTime">
-                                        <span>(</span>
+                                        <span>/</span>
                                         <xsl:variable name="occurrenceDateTime"
                                             select="fhir:occurrenceDateTime/@value" />
                                         <xsl:value-of
                                             select="concat(substring($occurrenceDateTime, 9, 2), '.', substring($occurrenceDateTime, 6, 2), '.', substring($occurrenceDateTime, 1, 4))" />
-                                        <span>
-        )</span>
                                     </xsl:if>
                                 </td>
                                 <td>

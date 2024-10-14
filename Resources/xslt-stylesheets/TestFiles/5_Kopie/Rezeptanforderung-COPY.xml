@@ -223,10 +223,22 @@
                             <requester>
                                 <reference value="Organization/Example-Pharmacy-Organization"/>
                             </requester>
+                            <priority value="urgent"/>
                             <supportingInfo>
                                 <reference value="Organization/Example-HealthCareService-Organization"/>
                                 <type value="Organization"/>
                             </supportingInfo>
+                            <occurrenceDateTime value="2025-01-15"/>
+                            <reasonCode>
+                                <extension url="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/remaining-supply-ex">
+                                    <valueQuantity>
+                                        <value value="2"/>
+                                        <unit value="Tabletten"/>
+                                    </valueQuantity>
+                                </extension>
+                                <text value="Hallo" />
+                            </reasonCode>
+                            
                         </ServiceRequest>
                     </resource>
                 </entry>
