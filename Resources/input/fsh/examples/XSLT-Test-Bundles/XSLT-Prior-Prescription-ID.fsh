@@ -38,7 +38,7 @@ Usage: #inline
 Title: "Initial Prescription Request"
 Description: "This ServiceRequest is sent initially to the prescribing practitioner"
 * identifier[requestId].value = "1"
-* basedOn = Reference(Example-Initial-Medication-Request)
+* basedOn = Reference(XSLT-Prior-Prescription-ID-Medication-Request)
 * requisition.value = "XSLT-Prior-Prescription-ID"
 * status = RequestStatus#active
 * intent = RequestIntent#order

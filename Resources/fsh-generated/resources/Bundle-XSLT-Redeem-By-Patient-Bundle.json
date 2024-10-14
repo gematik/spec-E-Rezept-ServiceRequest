@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "id": "XSLT-Prior-Prescription-ID-Bundle",
+  "id": "XSLT-Redeem-By-Patient-Bundle",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
@@ -14,10 +14,10 @@
   "timestamp": "2025-05-13T14:25:12+02:00",
   "entry": [
     {
-      "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/XSLT-Prior-Prescription-ID-Header",
+      "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/XSLT-Redeem-By-Patient-Header",
       "resource": {
         "resourceType": "MessageHeader",
-        "id": "XSLT-Prior-Prescription-ID-Header",
+        "id": "XSLT-Redeem-By-Patient-Header",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
@@ -35,7 +35,7 @@
         },
         "focus": [
           {
-            "reference": "ServiceRequest/XSLT-Prior-Prescription-ID-ServiceRequest"
+            "reference": "ServiceRequest/XSLT-Redeem-By-Patient-ServiceRequest"
           }
         ],
         "sender": {
@@ -123,10 +123,10 @@
       }
     },
     {
-      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/XSLT-Prior-Prescription-ID-ServiceRequest",
+      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/XSLT-Redeem-By-Patient-ServiceRequest",
       "resource": {
         "resourceType": "ServiceRequest",
-        "id": "XSLT-Prior-Prescription-ID-ServiceRequest",
+        "id": "XSLT-Redeem-By-Patient-ServiceRequest",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
@@ -141,7 +141,7 @@
         ],
         "requisition": {
           "system": "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier",
-          "value": "XSLT-Prior-Prescription-ID"
+          "value": "XSLT-Redeem-By-Patient"
         },
         "code": {
           "coding": [
@@ -151,9 +151,15 @@
             }
           ]
         },
+        "modifierExtension": [
+          {
+            "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex",
+            "valueBoolean": true
+          }
+        ],
         "basedOn": [
           {
-            "reference": "MedicationRequest/XSLT-Prior-Prescription-ID-Medication-Request"
+            "reference": "MedicationRequest/Example-Initial-Medication-Request"
           }
         ],
         "status": "active",
@@ -236,24 +242,15 @@
       }
     },
     {
-      "fullUrl": "http://erp-servicerequest-test.de/MedicationRequest/XSLT-Prior-Prescription-ID-Medication-Request",
+      "fullUrl": "http://erp-servicerequest-test.de/MedicationRequest/Example-Initial-Medication-Request",
       "resource": {
         "resourceType": "MedicationRequest",
-        "id": "XSLT-Prior-Prescription-ID-Medication-Request",
+        "id": "Example-Initial-Medication-Request",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request"
           ]
         },
-        "extension": [
-          {
-            "valueIdentifier": {
-              "system": "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
-              "value": "160.000.033.491.280.78"
-            },
-            "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/prescription-id-ex"
-          }
-        ],
         "status": "active",
         "intent": "order",
         "medicationReference": {

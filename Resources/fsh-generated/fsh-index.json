@@ -160,10 +160,26 @@
     "endLine": 52
   },
   {
+    "outputFile": "Bundle-XSLT-Changed-Medication-Bundle.json",
+    "fshName": "XSLT-Changed-Medication-Bundle",
+    "fshType": "Instance",
+    "fshFile": "examples/XSLT-Test-Bundles/XSLT-Changed-Medication.fsh",
+    "startLine": 1,
+    "endLine": 24
+  },
+  {
     "outputFile": "Bundle-XSLT-Prior-Prescription-ID-Bundle.json",
     "fshName": "XSLT-Prior-Prescription-ID-Bundle",
     "fshType": "Instance",
     "fshFile": "examples/XSLT-Test-Bundles/XSLT-Prior-Prescription-ID.fsh",
+    "startLine": 1,
+    "endLine": 24
+  },
+  {
+    "outputFile": "Bundle-XSLT-Redeem-By-Patient-Bundle.json",
+    "fshName": "XSLT-Redeem-By-Patient-Bundle",
+    "fshType": "Instance",
+    "fshFile": "examples/XSLT-Test-Bundles/XSLT-Redeem-By-Patient.fsh",
     "startLine": 1,
     "endLine": 24
   },

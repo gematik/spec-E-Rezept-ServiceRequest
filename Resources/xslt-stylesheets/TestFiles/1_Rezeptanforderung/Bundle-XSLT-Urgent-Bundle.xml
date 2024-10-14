@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bundle xmlns="http://hl7.org/fhir">
-    <id value="UC2-1-Prescription-Request-To-Prescriber"/>
+    <id value="XSLT-Urgent-Bundle"/>
     <meta>
         <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"/>
     </meta>
     <identifier>
         <system value="urn:ietf:rfc:3986"/>
-        <value value="urn:uuid:29888885-6639-481c-934e-4b7b51745084"/>
+        <value value="urn:uuid:c881f35a-2463-4b0b-9164-0f7fc2e35136"/>
     </identifier>
     <type value="message"/>
     <timestamp value="2025-05-13T14:25:12+02:00"/>
     <entry>
-        <fullUrl value="http://erp-servicerequest-test.de/MessageHeader/UC2-HealthCareService-to-Practitioner-MessageHeader"/>
+        <fullUrl value="http://erp-servicerequest-test.de/MessageHeader/XSLT-Urgent-Header"/>
         <resource>
             <MessageHeader>
-                <id value="UC2-HealthCareService-to-Practitioner-MessageHeader"/>
+                <id value="XSLT-Urgent-Header"/>
                 <meta>
                     <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"/>
                 </meta>
@@ -47,7 +47,7 @@
                     <reference value="Organization/Example-HealthCareService-Organization"/>
                 </responsible>
                 <focus>
-                    <reference value="ServiceRequest/UC2-Initial-Prescription-Request"/>
+                    <reference value="ServiceRequest/XSLT-Urgent-ServiceRequest"/>
                 </focus>
             </MessageHeader>
         </resource>
@@ -95,16 +95,13 @@
         </resource>
     </entry>
     <entry>
-        <fullUrl value="http://erp-servicerequest-test.de/ServiceRequest/UC2-Initial-Prescription-Request"/>
+        <fullUrl value="http://erp-servicerequest-test.de/ServiceRequest/XSLT-Urgent-ServiceRequest"/>
         <resource>
             <ServiceRequest>
-                <id value="UC2-Initial-Prescription-Request"/>
+                <id value="XSLT-Urgent-ServiceRequest"/>
                 <meta>
                     <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"/>
                 </meta>
-                <modifierExtension url="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex">
-                    <valueBoolean value="true"/>
-                </modifierExtension>
                 <identifier>
                     <system value="https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier"/>
                     <value value="1"/>
@@ -114,10 +111,11 @@
                 </basedOn>
                 <requisition>
                     <system value="https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier"/>
-                    <value value="GroupID-UC2"/>
+                    <value value="XSLT-Urgent"/>
                 </requisition>
                 <status value="active"/>
                 <intent value="order"/>
+                <priority value="urgent"/>
                 <code>
                     <coding>
                         <system value="https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"/>
@@ -127,14 +125,11 @@
                 <subject>
                     <reference value="Patient/Example-Patient"/>
                 </subject>
+                <occurrenceDateTime value="2025-05-14T12:00:00+02:00"/>
                 <authoredOn value="2025-05-13"/>
                 <requester>
                     <reference value="Organization/Example-HealthCareService-Organization"/>
                 </requester>
-                <note>
-                    <time value="2025-05-13T14:23:12+02:00"/>
-                    <text value="Rezeptanfrage zur Einlösung von Herrn Königsstein."/>
-                </note>
             </ServiceRequest>
         </resource>
     </entry>

@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bundle xmlns="http://hl7.org/fhir">
-    <id value="UC1-4-Fullfilled-DispenseRequest-To-Pharmacy"/>
+    <id value="XSLT-Changed-Medication-Bundle"/>
     <meta>
         <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"/>
     </meta>
     <identifier>
         <system value="urn:ietf:rfc:3986"/>
-        <value value="urn:uuid:c80f6c55-92f8-4518-ba66-cb193da09336"/>
+        <value value="urn:uuid:29888885-6639-481c-934e-4b7b51745084"/>
     </identifier>
     <type value="message"/>
-    <timestamp value="2025-05-14T08:30:12+02:00"/>
+    <timestamp value="2025-05-14T08:15:12+02:00"/>
     <entry>
-        <fullUrl value="http://erp-servicerequest-test.de/MessageHeader/UC1-Pharmacy-to-HealthCareService-MessageHeader"/>
+        <fullUrl value="http://erp-servicerequest-test.de/MessageHeader/XSLT-Changed-Medication-Header"/>
         <resource>
             <MessageHeader>
-                <id value="UC1-Pharmacy-to-HealthCareService-MessageHeader"/>
+                <id value="XSLT-Changed-Medication-Header"/>
                 <meta>
                     <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"/>
                 </meta>
                 <eventCoding>
                     <system value="https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"/>
-                    <code value="eRezept_Rezeptanforderung;Abgabebestaetigung"/>
+                    <code value="eRezept_Rezeptanforderung;Rezeptbestaetigung"/>
                 </eventCoding>
                 <destination>
                     <name value="Pflegeheim Immergrün"/>
@@ -29,53 +29,53 @@
                 <sender>
                     <identifier>
                         <system value="https://gematik.de/fhir/sid/telematik-id"/>
-                        <value value="3-test-telematik-id"/>
+                        <value value="1-test-telematik-id"/>
                     </identifier>
-                    <display value="Test Apotheke"/>
+                    <display value="Praxis Hans Topp-Glücklich"/>
                 </sender>
                 <source>
-                    <name value="Pharmacy-Source"/>
-                    <software value="Pharmacy-Software"/>
+                    <name value="Practitioner-Source"/>
+                    <software value="Practitioner-Software"/>
                     <version value="1.0.0"/>
                     <contact>
                         <system value="email"/>
-                        <value value="info@avs.email"/>
+                        <value value="info@pvs.email"/>
                     </contact>
-                    <endpoint value="pharmacy@test.kim.de"/>
+                    <endpoint value="practitioner@test.kim.de"/>
                 </source>
                 <responsible>
-                    <reference value="Organization/Example-Pharmacy-Organization"/>
+                    <reference value="Organization/Example-Practitioner-Organization"/>
                 </responsible>
                 <focus>
-                    <reference value="ServiceRequest/UC1-Response-Dispense-Request"/>
+                    <reference value="ServiceRequest/XSLT-Changed-Medication-ServiceRequest"/>
                 </focus>
             </MessageHeader>
         </resource>
     </entry>
     <entry>
-        <fullUrl value="http://erp-servicerequest-test.de/Organization/Example-Pharmacy-Organization"/>
+        <fullUrl value="http://erp-servicerequest-test.de/Organization/Example-Practitioner-Organization"/>
         <resource>
             <Organization>
-                <id value="Example-Pharmacy-Organization"/>
+                <id value="Example-Practitioner-Organization"/>
                 <meta>
                     <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"/>
                 </meta>
                 <type>
                     <coding>
                         <system value="http://ihe-d.de/CodeSystems/PatientBezogenenGesundheitsversorgung"/>
-                        <code value="APO"/>
-                        <display value="Apotheke"/>
+                        <code value="PRA"/>
+                        <display value="Arztpraxis"/>
                     </coding>
                 </type>
-                <name value="Test Apotheke"/>
+                <name value="Test Arztpraxis"/>
                 <address>
                     <type value="both"/>
-                    <line value="Musterstr. 2">
+                    <line value="Musterarztstr. 3">
                         <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
-                            <valueString value="2"/>
+                            <valueString value="3"/>
                         </extension>
                         <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
-                            <valueString value="Musterstr."/>
+                            <valueString value="Musterarztstr."/>
                         </extension>
                     </line>
                     <city value="Berlin"/>
@@ -84,48 +84,58 @@
                 <contact>
                     <telecom>
                         <system value="phone"/>
-                        <value value="0301234567"/>
+                        <value value="0307654321"/>
                     </telecom>
                 </contact>
             </Organization>
         </resource>
     </entry>
     <entry>
-        <fullUrl value="http://erp-servicerequest-test.de/ServiceRequest/UC1-Response-Dispense-Request"/>
+        <fullUrl value="http://erp-servicerequest-test.de/ServiceRequest/XSLT-Changed-Medication-ServiceRequest"/>
         <resource>
             <ServiceRequest>
-                <id value="UC1-Response-Dispense-Request"/>
+                <id value="XSLT-Changed-Medication-ServiceRequest"/>
                 <meta>
-                    <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"/>
+                    <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"/>
                 </meta>
+                <extension url="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex">
+                    <valueIdentifier>
+                        <system value="https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken"/>
+                        <value value="Task/169.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"/>
+                    </valueIdentifier>
+                </extension>
+                <modifierExtension url="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/changed-medication-ex">
+                    <valueBoolean value="true"/>
+                </modifierExtension>
                 <identifier>
                     <system value="https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier"/>
-                    <value value="2"/>
+                    <value value="1"/>
                 </identifier>
+                <basedOn>
+                    <reference value="MedicationRequest/Example-Response-Medication-Request"/>
+                </basedOn>
                 <requisition>
                     <system value="https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier"/>
-                    <value value="GroupID-UC1"/>
+                    <value value="XSLT-Changed-Medication"/>
                 </requisition>
                 <status value="completed"/>
-                <intent value="filler-order"/>
+                <intent value="order"/>
                 <code>
                     <coding>
                         <system value="https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"/>
-                        <code value="dispense-request"/>
+                        <code value="prescription-request"/>
                     </coding>
                 </code>
                 <subject>
                     <reference value="Patient/Example-Patient"/>
                 </subject>
-                <authoredOn value="2025-05-14"/>
-                <supportingInfo>
-                    <reference value="MedicationDispense/UC1-Medication-Dispense"/>
-                    <type value="MedicationDispense"/>
-                </supportingInfo>
-                <note>
-                    <time value="2025-05-14T08:27:05+02:00"/>
-                    <text value="Lagert vor Ort. Kann bis 13:00 heute per Botendienst geliefert werden."/>
-                </note>
+                <authoredOn value="2025-05-13"/>
+                <performer>
+                    <identifier>
+                        <system value="https://gematik.de/fhir/sid/telematik-id"/>
+                        <value value="1-test-telematik-id"/>
+                    </identifier>
+                </performer>
             </ServiceRequest>
         </resource>
     </entry>
@@ -174,54 +184,75 @@
         </resource>
     </entry>
     <entry>
-        <fullUrl value="http://erp-servicerequest-test.de/MedicationDispense/UC1-Medication-Dispense"/>
+        <fullUrl value="http://erp-servicerequest-test.de/MedicationRequest/Example-Response-Medication-Request"/>
         <resource>
-            <MedicationDispense>
-                <id value="UC1-Medication-Dispense"/>
+            <MedicationRequest>
+                <id value="Example-Response-Medication-Request"/>
                 <meta>
-                    <profile value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|1.4"/>
+                    <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request"/>
                 </meta>
-                <identifier>
-                    <system value="https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"/>
-                    <value value="160.100.000.000.002.36"/>
-                </identifier>
-                <status value="completed"/>
+                <status value="active"/>
+                <intent value="order"/>
                 <medicationReference>
-                    <reference value="Medication/SimpleMedication"/>
+                    <reference value="Medication/Example-Response-Medication"/>
                 </medicationReference>
                 <subject>
-                    <identifier>
-                        <system value="http://fhir.de/sid/gkv/kvid-10"/>
-                        <value value="X234567890"/>
-                    </identifier>
+                    <reference value="Patient/Example-Patient"/>
                 </subject>
-                <performer>
-                    <actor>
-                        <identifier>
-                            <system value="https://gematik.de/fhir/sid/telematik-id"/>
-                            <value value="3-test-telematik-id"/>
-                        </identifier>
-                    </actor>
-                </performer>
-                <whenHandedOver value="2025-05-14"/>
-            </MedicationDispense>
+                <dispenseRequest>
+                    <quantity>
+                        <value value="65"/>
+                        <unit value="Milliliter"/>
+                        <system value="http://unitsofmeasure.org"/>
+                        <code value="mL"/>
+                    </quantity>
+                </dispenseRequest>
+            </MedicationRequest>
         </resource>
     </entry>
     <entry>
-        <fullUrl value="http://erp-servicerequest-test.de/Medication/SimpleMedication"/>
+        <fullUrl value="http://erp-servicerequest-test.de/Medication/Example-Response-Medication"/>
         <resource>
             <Medication>
-                <id value="SimpleMedication"/>
+                <id value="Example-Response-Medication"/>
                 <meta>
-                    <profile value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication|1.4"/>
+                    <profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.1.0"/>
                 </meta>
+                <extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Medication_Type">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="http://snomed.info/sct"/>
+                            <version value="http://snomed.info/sct/900000000000207008/version/20220331"/>
+                            <code value="763158003"/>
+                            <display value="Medicinal product (product)"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+                <extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Category">
+                    <valueCoding>
+                        <system value="https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Category"/>
+                        <code value="00"/>
+                    </valueCoding>
+                </extension>
+                <extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Vaccine">
+                    <valueBoolean value="false"/>
+                </extension>
+                <extension url="http://fhir.de/StructureDefinition/normgroesse">
+                    <valueCode value="N1"/>
+                </extension>
                 <code>
                     <coding>
                         <system value="http://fhir.de/CodeSystem/ifa/pzn"/>
                         <code value="08585997"/>
                     </coding>
-                    <text value="Prospan® Hustensaft 100ml"/>
+                    <text value="Prospan® Hustensaft 100ml N1"/>
                 </code>
+                <form>
+                    <coding>
+                        <system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM"/>
+                        <code value="FLE"/>
+                    </coding>
+                </form>
             </Medication>
         </resource>
     </entry>
