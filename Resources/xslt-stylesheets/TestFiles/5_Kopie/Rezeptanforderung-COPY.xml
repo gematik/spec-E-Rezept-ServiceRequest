@@ -14,7 +14,7 @@
     <entry>
         <fullUrl value="http://erp-servicerequest-test.de/MessageHeader/UC3-Pharmacy-to-HealthCareService-MessageHeader"/>
         <resource>
-            <MessageHeader>
+            <MessageHeader>~
                 <id value="UC3-Pharmacy-to-HealthCareService-MessageHeader"/>
                 <meta>
                     <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"/>

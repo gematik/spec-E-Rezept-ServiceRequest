@@ -104,7 +104,9 @@
                                 <reference value="Organization/Example-Practitioner-Organization"/>
                             </responsible>
                             <focus>
-                                <reference value="ServiceRequest/UC3-Response-Prescription-Request"/>
+                                <reference value="ServiceRequest/UC3-Response-Prescription-Request-1"/>
+                                <reference value="ServiceRequest/UC3-Response-Prescription-Request-2"/>
+                                <reference value="ServiceRequest/UC3-Response-Prescription-Request-3"/>
                             </focus>
                         </MessageHeader>
                     </resource>
@@ -148,10 +150,10 @@
                     </resource>
                 </entry>
                 <entry>
-                    <fullUrl value="http://erp-servicerequest-test.de/ServiceRequest/UC3-Response-Prescription-Request"/>
+                    <fullUrl value="http://erp-servicerequest-test.de/ServiceRequest/UC3-Response-Prescription-Request-1"/>
                     <resource>
                         <ServiceRequest>
-                            <id value="UC3-Response-Prescription-Request"/>
+                            <id value="UC3-Response-Prescription-Request-1"/>
                             <meta>
                                 <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"/>
                             </meta>
@@ -163,7 +165,93 @@
                             </extension>
                             <identifier>
                                 <system value="https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier"/>
-                                <value value="1"/>
+                                <value value="4e3d4303-c374-4f7f-820d-88453670049b"/>
+                            </identifier>
+                            <basedOn>
+                                <reference value="MedicationRequest/Example-Response-Medication-Request"/>
+                            </basedOn>
+                            <requisition>
+                                <system value="https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier"/>
+                                <value value="GroupID-UC3"/>
+                            </requisition>
+                            <status value="completed"/>
+                            <intent value="order"/>
+                            <code>
+                                <coding>
+                                    <system value="https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"/>
+                                    <code value="prescription-request"/>
+                                </coding>
+                            </code>
+                            <subject>
+                                <reference value="Patient/Example-Patient"/>
+                            </subject>
+                            <authoredOn value="2025-05-13"/>
+                            <performer>
+                                <reference value="Practitioner/Example-Practitioner"/>
+                            </performer>
+                        </ServiceRequest>
+                    </resource>
+                </entry>
+                <entry>
+                    <fullUrl value="http://erp-servicerequest-test.de/ServiceRequest/UC3-Response-Prescription-Request-2"/>
+                    <resource>
+                        <ServiceRequest>
+                            <id value="UC3-Response-Prescription-Request-2"/>
+                            <meta>
+                                <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"/>
+                            </meta>
+                            <extension url="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex">
+                                <valueIdentifier>
+                                    <system value="https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken"/>
+                                    <value value="Task/169.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"/>
+                                </valueIdentifier>
+                            </extension>
+                            <identifier>
+                                <system value="https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier"/>
+                                <value value="06180d0c-cb8c-4b91-a34f-7eedf0e102fa"/>
+                            </identifier>
+                            <basedOn>
+                                <reference value="MedicationRequest/Example-Response-Medication-Request"/>
+                            </basedOn>
+                            <requisition>
+                                <system value="https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier"/>
+                                <value value="GroupID-UC3"/>
+                            </requisition>
+                            <status value="completed"/>
+                            <intent value="order"/>
+                            <code>
+                                <coding>
+                                    <system value="https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"/>
+                                    <code value="prescription-request"/>
+                                </coding>
+                            </code>
+                            <subject>
+                                <reference value="Patient/Example-Patient"/>
+                            </subject>
+                            <authoredOn value="2025-05-13"/>
+                            <performer>
+                                <reference value="Practitioner/Example-Practitioner"/>
+                            </performer>
+                        </ServiceRequest>
+                    </resource>
+                </entry>
+                <entry>
+                    <fullUrl value="http://erp-servicerequest-test.de/ServiceRequest/UC3-Response-Prescription-Request-3"/>
+                    <resource>
+                        <ServiceRequest>
+                            <id value="UC3-Response-Prescription-Request-1"/>
+                            <meta>
+                                <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"/>
+                            </meta>
+                            <extension url="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex">
+                                <valueIdentifier>
+                                    <system value="https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken"/>
+                                    <value value="Task/169.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"/>
+                                </valueIdentifier>
+                            </extension>
+                            <identifier>
+                                <system value="https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier"/>
+                                <value value="f1134578-24a1-40ee-a864-f584788dd3e7"/>
                             </identifier>
                             <basedOn>
                                 <reference value="MedicationRequest/Example-Response-Medication-Request"/>

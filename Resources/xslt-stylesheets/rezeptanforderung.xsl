@@ -195,6 +195,9 @@
                     display: flex;
                     flex-wrap: wrap;
                     }
+                    .copy-sender-info {
+                        display: block;
+                    }
                 </style>
             </head>
             <body>
@@ -211,7 +214,7 @@
                             </xsl:call-template>
                         </div>
                     </div>
-                    <div class="receiver-info">
+                    <div class="receiver-info clear">
                         <xsl:call-template name="receiver-info">
                             <xsl:with-param name="rootBundle" select="/fhir:Bundle"/>
                         </xsl:call-template>
