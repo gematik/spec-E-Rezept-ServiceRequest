@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "id": "INVALID-message-container-1-1-of-2",
+  "id": "XSLT-Request-MVO-Bundle",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
@@ -9,15 +9,15 @@
   "type": "message",
   "identifier": {
     "system": "urn:ietf:rfc:3986",
-    "value": "urn:uuid:39850775-6726-44fe-9739-c5114ebf0a93"
+    "value": "urn:uuid:c881f35a-2463-4b0b-9164-0f7fc2e35136"
   },
   "timestamp": "2025-05-13T14:25:12+02:00",
   "entry": [
     {
-      "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/INVALID-Pharmacy-to-Practitioner-MessageHeader-1",
+      "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/XSLT-Request-MVO-Header",
       "resource": {
         "resourceType": "MessageHeader",
-        "id": "INVALID-Pharmacy-to-Practitioner-MessageHeader-1",
+        "id": "XSLT-Request-MVO-Header",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
@@ -26,24 +26,24 @@
         "source": {
           "contact": {
             "system": "email",
-            "value": "info@avs.email"
+            "value": "info@hcs.email"
           },
-          "name": "Pharmacy-Source",
-          "software": "Pharmacy-Software",
+          "name": "HealthCare-Source",
+          "software": "HealthCare-Software",
           "version": "1.0.0",
-          "endpoint": "pharmacy@test.kim.de"
+          "endpoint": "healthcare-service@test.kim.de"
         },
         "focus": [
           {
-            "reference": "ServiceRequest/UC3-Initial-Prescription-Request"
+            "reference": "ServiceRequest/XSLT-Request-MVO-ServiceRequest"
           }
         ],
         "sender": {
           "identifier": {
             "system": "https://gematik.de/fhir/sid/telematik-id",
-            "value": "3-test-telematik-id"
+            "value": "5-test-telematik-id"
           },
-          "display": "Test Apotheke"
+          "display": "Pflegeheim Immergrün"
         },
         "destination": [
           {
@@ -52,70 +52,12 @@
           }
         ],
         "eventCoding": {
-          "code": "eRezept_Rezeptanforderung;NachrichtKopie",
+          "code": "eRezept_Rezeptanforderung;Rezeptanfrage",
           "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
         },
         "responsible": {
-          "reference": "Organization/Example-Pharmacy-Organization"
+          "reference": "Organization/Example-HealthCareService-Organization"
         }
-      }
-    },
-    {
-      "fullUrl": "http://erp-servicerequest-test.de/Organization/Example-Pharmacy-Organization",
-      "resource": {
-        "resourceType": "Organization",
-        "id": "Example-Pharmacy-Organization",
-        "meta": {
-          "profile": [
-            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
-          ]
-        },
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://ihe-d.de/CodeSystems/PatientBezogenenGesundheitsversorgung",
-                "code": "APO",
-                "display": "Apotheke"
-              }
-            ]
-          }
-        ],
-        "contact": [
-          {
-            "telecom": [
-              {
-                "system": "phone",
-                "value": "0301234567"
-              }
-            ]
-          }
-        ],
-        "address": [
-          {
-            "type": "both",
-            "line": [
-              "Musterstr. 2"
-            ],
-            "_line": [
-              {
-                "extension": [
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-                    "valueString": "2"
-                  },
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-                    "valueString": "Musterstr."
-                  }
-                ]
-              }
-            ],
-            "city": "Berlin",
-            "postalCode": "10623"
-          }
-        ],
-        "name": "Test Apotheke"
       }
     },
     {
@@ -181,10 +123,10 @@
       }
     },
     {
-      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/UC3-Initial-Prescription-Request",
+      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/XSLT-Request-MVO-ServiceRequest",
       "resource": {
         "resourceType": "ServiceRequest",
-        "id": "UC3-Initial-Prescription-Request",
+        "id": "XSLT-Request-MVO-ServiceRequest",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
@@ -199,7 +141,7 @@
         ],
         "requisition": {
           "system": "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier",
-          "value": "GroupID-UC3"
+          "value": "XSLT-Request-MVO"
         },
         "code": {
           "coding": [
@@ -209,12 +151,6 @@
             }
           ]
         },
-        "supportingInfo": [
-          {
-            "type": "Organization",
-            "reference": "Organization/Example-HealthCareService-Organization"
-          }
-        ],
         "basedOn": [
           {
             "reference": "MedicationRequest/Example-Initial-Medication-Request"
@@ -224,9 +160,10 @@
         "subject": {
           "reference": "Patient/Example-Patient"
         },
+        "occurrenceDateTime": "2025-05-14T12:00:00+02:00",
         "authoredOn": "2025-05-13",
         "requester": {
-          "reference": "Organization/Example-Pharmacy-Organization"
+          "reference": "Organization/Example-HealthCareService-Organization"
         }
       }
     },
@@ -299,15 +236,21 @@
       }
     },
     {
-      "fullUrl": "http://erp-servicerequest-test.de/MedicationRequest/Example-Initial-Medication-Request",
+      "fullUrl": "http://erp-servicerequest-test.de/MedicationRequest/XSLT-Request-MVO-Medication-Request",
       "resource": {
         "resourceType": "MedicationRequest",
-        "id": "Example-Initial-Medication-Request",
+        "id": "XSLT-Request-MVO-Medication-Request",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request"
           ]
         },
+        "modifierExtension": [
+          {
+            "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/request-mvo-ex",
+            "valueBoolean": true
+          }
+        ],
         "status": "active",
         "intent": "order",
         "medicationReference": {

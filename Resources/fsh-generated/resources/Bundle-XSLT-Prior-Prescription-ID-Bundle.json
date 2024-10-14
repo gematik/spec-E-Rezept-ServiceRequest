@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "id": "INVALID-message-container-5",
+  "id": "XSLT-Prior-Prescription-ID-Bundle",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
@@ -9,15 +9,15 @@
   "type": "message",
   "identifier": {
     "system": "urn:ietf:rfc:3986",
-    "value": "urn:uuid:853b56ef-6a22-4b79-9c2f-0f4adba08ac1"
+    "value": "urn:uuid:c881f35a-2463-4b0b-9164-0f7fc2e35136"
   },
   "timestamp": "2025-05-13T14:25:12+02:00",
   "entry": [
     {
-      "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/INVALID-message-container-5-MessageHeader",
+      "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/XSLT-Prior-Prescription-ID-Header",
       "resource": {
         "resourceType": "MessageHeader",
-        "id": "INVALID-message-container-5-MessageHeader",
+        "id": "XSLT-Prior-Prescription-ID-Header",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
@@ -35,7 +35,7 @@
         },
         "focus": [
           {
-            "reference": "ServiceRequest/invalid-Initial-Dispense-Request-5"
+            "reference": "ServiceRequest/XSLT-Prior-Prescription-ID-ServiceRequest"
           }
         ],
         "sender": {
@@ -47,12 +47,12 @@
         },
         "destination": [
           {
-            "name": "Test Apotheke",
-            "endpoint": "pharmacy@test.kim.de"
+            "name": "Praxis Hans Topp-Glücklich",
+            "endpoint": "practitioner@test.kim.de"
           }
         ],
         "eventCoding": {
-          "code": "eRezept_Rezeptanforderung;Abgabeanfrage",
+          "code": "eRezept_Rezeptanforderung;Rezeptanfrage",
           "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
         },
         "responsible": {
@@ -123,109 +123,48 @@
       }
     },
     {
-      "fullUrl": "http://erp-servicerequest-test.de/Organization/Example-Pharmacy-Organization",
-      "resource": {
-        "resourceType": "Organization",
-        "id": "Example-Pharmacy-Organization",
-        "meta": {
-          "profile": [
-            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
-          ]
-        },
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://ihe-d.de/CodeSystems/PatientBezogenenGesundheitsversorgung",
-                "code": "APO",
-                "display": "Apotheke"
-              }
-            ]
-          }
-        ],
-        "contact": [
-          {
-            "telecom": [
-              {
-                "system": "phone",
-                "value": "0301234567"
-              }
-            ]
-          }
-        ],
-        "address": [
-          {
-            "type": "both",
-            "line": [
-              "Musterstr. 2"
-            ],
-            "_line": [
-              {
-                "extension": [
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-                    "valueString": "2"
-                  },
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-                    "valueString": "Musterstr."
-                  }
-                ]
-              }
-            ],
-            "city": "Berlin",
-            "postalCode": "10623"
-          }
-        ],
-        "name": "Test Apotheke"
-      }
-    },
-    {
-      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/invalid-Initial-Dispense-Request-5",
+      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/XSLT-Prior-Prescription-ID-ServiceRequest",
       "resource": {
         "resourceType": "ServiceRequest",
-        "id": "invalid-Initial-Dispense-Request-5",
+        "id": "XSLT-Prior-Prescription-ID-ServiceRequest",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
           ]
         },
-        "intent": "filler-order",
+        "intent": "order",
         "identifier": [
           {
             "system": "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier",
-            "value": "invalid-Initial-Dispense-Request-5"
+            "value": "1"
           }
         ],
         "requisition": {
           "system": "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier",
-          "value": "GroupID-UC1"
+          "value": "XSLT-Prior-Prescription-ID"
         },
         "code": {
           "coding": [
             {
-              "code": "dispense-request",
+              "code": "prescription-request",
               "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
             }
           ]
         },
-        "extension": [
+        "basedOn": [
           {
-            "valueIdentifier": {
-              "system": "https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken",
-              "value": "Task/169.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
-            },
-            "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex"
+            "reference": "MedicationRequest/Example-Initial-Medication-Request"
           }
         ],
         "status": "active",
         "subject": {
           "reference": "Patient/Example-Patient"
         },
+        "occurrenceDateTime": "2025-05-14T12:00:00+02:00",
+        "authoredOn": "2025-05-13",
         "requester": {
-          "reference": "Organization/Example-Pharmacy-Organization"
-        },
-        "authoredOn": "2025-05-14"
+          "reference": "Organization/Example-HealthCareService-Organization"
+        }
       }
     },
     {
@@ -297,15 +236,24 @@
       }
     },
     {
-      "fullUrl": "http://erp-servicerequest-test.de/MedicationRequest/Example-Initial-Medication-Request",
+      "fullUrl": "http://erp-servicerequest-test.de/MedicationRequest/XSLT-Prior-Prescription-ID-Medication-Request",
       "resource": {
         "resourceType": "MedicationRequest",
-        "id": "Example-Initial-Medication-Request",
+        "id": "XSLT-Prior-Prescription-ID-Medication-Request",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request"
           ]
         },
+        "extension": [
+          {
+            "valueIdentifier": {
+              "system": "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
+              "value": "160.000.033.491.280.78"
+            },
+            "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/prescription-id-ex"
+          }
+        ],
         "status": "active",
         "intent": "order",
         "medicationReference": {
