@@ -116,6 +116,42 @@
                     position: relative;
                     top: -5px;
                     }
+                    .mvo-pill {
+                        display: inline-block;
+                        background-color: #FFC759;
+                        color: white;
+                        padding: 2px 8px;
+                        border-radius: 12px;
+                        font-style: italic;
+                        font-size: 0.9em;
+                        margin-bottom: 1px;
+                        position: relative;
+                        top: -5px;
+                        }
+                        .redeem-pill {
+                            display: inline-block;
+                            background-color: #607196;
+                            color: white;
+                            padding: 2px 8px;
+                            border-radius: 12px;
+                            font-style: italic;
+                            font-size: 0.9em;
+                            margin-bottom: 1px;
+                            position: relative;
+                            top: -5px;
+                            }
+                            .changed-pill {
+                                display: inline-block;
+                                background-color: #ff4d4d;
+                                color: white;
+                                padding: 2px 8px;
+                                border-radius: 12px;
+                                font-style: italic;
+                                font-size: 0.9em;
+                                margin-bottom: 1px;
+                                position: relative;
+                                top: -5px;
+                                }
                 </style>
             </head>
             <body>
@@ -314,9 +350,18 @@
                                 <xsl:if test="fhir:priority/@value = 'urgent'">
                                     <div class="urgent-pill">dringend</div>
                                 </xsl:if>
+                                <xsl:if test="fhir:modifierExtension[@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex']/fhir:valueBoolean/@value = 'true'">
+                                    <div class="redeem-pill">Patienteneinlösung</div>
+                                </xsl:if>
+                                <xsl:if test="fhir:modifierExtension[@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/changed-medication-ex']/fhir:valueBoolean/@value = 'true'">
+                                    <div class="changed-pill">Verändertes Arzneimittel</div>
+                                </xsl:if>
                                 <div>
                                     <xsl:for-each
                                         select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medReqRef) + 1) = $medReqRef]/fhir:resource/fhir:MedicationRequest">
+                                    <xsl:if test="fhir:modifierExtension[@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/request-mvo-ex']/fhir:valueBoolean/@value = 'true'">
+                                        <div class="mvo-pill">MVO</div>
+                                    </xsl:if>
                                         <xsl:variable name="medicationRef"
                                             select="fhir:medicationReference/fhir:reference/@value" />
                                         <xsl:for-each
