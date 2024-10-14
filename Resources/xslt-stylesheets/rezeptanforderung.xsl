@@ -111,8 +111,8 @@
                     padding: 2px 8px;
                     border-radius: 12px;
                     font-style: italic;
-                    font-size: 0.9em;
-                    margin-left: 10px;
+                    font-size: 0.7em;
+                    margin-left: 5px;
                     }
                     .mvo-pill {
                     display: inline-block;
@@ -121,8 +121,8 @@
                     padding: 2px 8px;
                     border-radius: 12px;
                     font-style: italic;
-                    font-size: 0.9em;
-                    margin-left: 10px;
+                    font-size: 0.7em;
+                    margin-left: 5px;
                     }
                     .redeem-pill {
                     display: inline-block;
@@ -131,8 +131,8 @@
                     padding: 2px 8px;
                     border-radius: 12px;
                     font-style: italic;
-                    font-size: 0.9em;
-                    margin-left: 10px;
+                    font-size: 0.7em;
+                    margin-left: 5px;
                     }
                     .changed-pill {
                     display: inline-block;
@@ -141,8 +141,8 @@
                     padding: 2px 8px;
                     border-radius: 12px;
                     font-style: italic;
-                    font-size: 0.9em;
-                    margin-left: 10px;
+                    font-size: 0.7em;
+                    margin-left: 5px;
                     }
                     .identifier-info {
                     display: block;
@@ -150,7 +150,7 @@
                     color: #333;
                     padding: 5px;
                     border-radius: 5px;
-                    font-size: 0.9em;
+                    font-size: 0.7em;
                     margin-top: 10px;
                     text-align: center;
                     font-weight: bold;
