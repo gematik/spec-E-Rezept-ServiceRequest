@@ -14,7 +14,7 @@
                 <title>FHIR Message Bundle</title>
                 <style>
                     /* Enhanced styling for a more professional letter-like look optimized for A4
-           size */
+        size */
                     @page {
                     size: A4;
                     margin: 20mm;
@@ -53,14 +53,14 @@
                     position: relative;
                     }
                     .receiver {
-                        margin-bottom: 40px;
-                        }
-                        .receiver .name {
-                        font-weight: bold;
-                        }
-                        .receiver .email {
-                        font-weight: normal;
-                        }
+                    margin-bottom: 40px;
+                    }
+                    .receiver .name {
+                    font-weight: bold;
+                    }
+                    .receiver .email {
+                    font-weight: normal;
+                    }
                     .clearfix::after {
                     content: "";
                     display: table;
@@ -117,41 +117,52 @@
                     top: -5px;
                     }
                     .mvo-pill {
-                        display: inline-block;
-                        background-color: #FFC759;
-                        color: white;
-                        padding: 2px 8px;
-                        border-radius: 12px;
-                        font-style: italic;
-                        font-size: 0.9em;
-                        margin-bottom: 1px;
-                        position: relative;
-                        top: -5px;
-                        }
-                        .redeem-pill {
-                            display: inline-block;
-                            background-color: #607196;
-                            color: white;
-                            padding: 2px 8px;
-                            border-radius: 12px;
-                            font-style: italic;
-                            font-size: 0.9em;
-                            margin-bottom: 1px;
-                            position: relative;
-                            top: -5px;
-                            }
-                            .changed-pill {
-                                display: inline-block;
-                                background-color: #ff4d4d;
-                                color: white;
-                                padding: 2px 8px;
-                                border-radius: 12px;
-                                font-style: italic;
-                                font-size: 0.9em;
-                                margin-bottom: 1px;
-                                position: relative;
-                                top: -5px;
-                                }
+                    display: inline-block;
+                    background-color: #FFC759;
+                    color: white;
+                    padding: 2px 8px;
+                    border-radius: 12px;
+                    font-style: italic;
+                    font-size: 0.9em;
+                    margin-bottom: 1px;
+                    position: relative;
+                    top: -5px;
+                    }
+                    .redeem-pill {
+                    display: inline-block;
+                    background-color: #607196;
+                    color: white;
+                    padding: 2px 8px;
+                    border-radius: 12px;
+                    font-style: italic;
+                    font-size: 0.9em;
+                    margin-bottom: 1px;
+                    position: relative;
+                    top: -5px;
+                    }
+                    .changed-pill {
+                    display: inline-block;
+                    background-color: #ff4d4d;
+                    color: white;
+                    padding: 2px 8px;
+                    border-radius: 12px;
+                    font-style: italic;
+                    font-size: 0.9em;
+                    margin-bottom: 1px;
+                    position: relative;
+                    top: -5px;
+                    }
+                    .identifier-info {
+                    display: block;
+                    background-color: #e0e0e0;
+                    color: #333;
+                    padding: 5px;
+                    border-radius: 5px;
+                    font-size: 0.9em;
+                    margin-top: 10px;
+                    text-align: center;
+                    font-weight: bold;
+                    }
                 </style>
             </head>
             <body>
@@ -170,28 +181,30 @@
                     <div class="letter-subject-info">
                         <xsl:call-template name="letter-subject-info" />
                     </div>
-                    <!-- Loop through unique patient references and call service-request-info with patientRef -->
-                     
-                     <xsl:for-each select="fhir:entry/fhir:resource/fhir:Patient">
-                                <xsl:variable name="patientRef" select="fhir:id/@value" />
+                    <!-- Loop through unique patient references and call service-request-info with
+                    patientRef -->
+
+                    <xsl:for-each select="fhir:entry/fhir:resource/fhir:Patient">
+                        <xsl:variable name="patientRef" select="fhir:id/@value" />
                                 <xsl:choose>
-                                <xsl:when test="/fhir:Bundle/fhir:entry/fhir:resource/fhir:MessageHeader/fhir:eventCoding/fhir:code/@value = 'eRezept_Rezeptanforderung;Abgabeanfrage'">
-                            <div class="dispense-request-info">
-                                <xsl:call-template name="dispense-request-info">
-                                    <xsl:with-param name="patientRef" select="$patientRef" />
-                                </xsl:call-template>
-                            </div>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <div class="service-request-info">
-                                <xsl:call-template name="service-request-info">
-                                    <xsl:with-param name="patientRef" select="$patientRef" />
-                                </xsl:call-template>
-                            </div>
-                        </xsl:otherwise>
-                     </xsl:choose>
-                                    
-                            </xsl:for-each>
+                            <xsl:when
+                                test="/fhir:Bundle/fhir:entry/fhir:resource/fhir:MessageHeader/fhir:eventCoding/fhir:code/@value = 'eRezept_Rezeptanforderung;Abgabeanfrage'">
+                                <div class="dispense-request-info">
+                                    <xsl:call-template name="dispense-request-info">
+                                        <xsl:with-param name="patientRef" select="$patientRef" />
+                                    </xsl:call-template>
+                                </div>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <div class="service-request-info">
+                                    <xsl:call-template name="service-request-info">
+                                        <xsl:with-param name="patientRef" select="$patientRef" />
+                                    </xsl:call-template>
+                                </div>
+                            </xsl:otherwise>
+                        </xsl:choose>
+
+                    </xsl:for-each>
                 </div>
             </body>
         </html>
@@ -224,24 +237,24 @@
     </xsl:template>
 
     <xsl:template name="contact-info">
-        
-            <xsl:for-each select="fhir:entry/fhir:resource/fhir:MessageHeader">
-                <!-- Retrieve the responsible reference, which points to the Organization -->
+
+        <xsl:for-each select="fhir:entry/fhir:resource/fhir:MessageHeader">
+            <!-- Retrieve the responsible reference, which points to the Organization -->
             <xsl:variable
-                    name="respRef" select="fhir:responsible/fhir:reference" />
-                <!-- Find the corresponding Organization by matching the reference -->
+                name="respRef" select="fhir:responsible/fhir:reference" />
+            <!-- Find the corresponding Organization by matching the reference -->
             <xsl:for-each
-                    select="/fhir:Bundle/fhir:entry[fhir:fullUrl = $respRef]">
-                    <xsl:for-each select="fhir:resource/fhir:Organization">
-                        <!-- Assuming the phone number is located under telecom with system='phone' --> Tel.: <xsl:value-of
-                            select="fhir:contact/fhir:telecom[fhir:system/@value = 'phone']/fhir:value/@value" />
+                select="/fhir:Bundle/fhir:entry[fhir:fullUrl = $respRef]">
+                <xsl:for-each select="fhir:resource/fhir:Organization">
+                    <!-- Assuming the phone number is located under telecom with system='phone' --> Tel.: <xsl:value-of
+                        select="fhir:contact/fhir:telecom[fhir:system/@value = 'phone']/fhir:value/@value" />
             <br />
-                        <!-- Assuming the KIM address is located under telecom with system='email' -->
+                    <!-- Assuming the KIM address is located under telecom with system='email' -->
         KIM: <xsl:value-of
-                            select="fhir:contact/fhir:telecom[fhir:system/@value = 'email']/fhir:value/@value" />
-                    </xsl:for-each>
+                        select="fhir:contact/fhir:telecom[fhir:system/@value = 'email']/fhir:value/@value" />
                 </xsl:for-each>
             </xsl:for-each>
+        </xsl:for-each>
     </xsl:template>
 
     <xsl:template name="receiver-info">
@@ -317,16 +330,18 @@
         <div class="sr-patient-info">
             <span>Bezüglich </span>
             <xsl:for-each
-                                    select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($patientRef) + 1) = $patientRef]/fhir:resource/fhir:Patient">
-                                    <xsl:value-of
-                                        select="fhir:name[fhir:use/@value='official']/fhir:family/@value" />
+                select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($patientRef) + 1) = $patientRef]/fhir:resource/fhir:Patient">
+                <xsl:value-of
+                    select="fhir:name[fhir:use/@value='official']/fhir:family/@value" />
                                     <span>, </span>
-                                    <xsl:value-of select="fhir:name[fhir:use/@value='official']/fhir:given/@value" />
-                                </xsl:for-each>
-                                <span>, geb. (</span>
-                                <xsl:variable name="birthDate" select="fhir:birthDate/@value" />
-    <xsl:value-of select="concat(substring($birthDate, 9, 2), '.', substring($birthDate, 6, 2), '.', substring($birthDate, 1, 4))" />
-                                <span>)</span>
+                                    <xsl:value-of
+                    select="fhir:name[fhir:use/@value='official']/fhir:given/@value" />
+            </xsl:for-each>
+            <span>, geb. (</span>
+            <xsl:variable name="birthDate" select="fhir:birthDate/@value" />
+            <xsl:value-of
+                select="concat(substring($birthDate, 9, 2), '.', substring($birthDate, 6, 2), '.', substring($birthDate, 1, 4))" />
+            <span>)</span>
         </div>
         <!-- Template for displaying information about each ServiceRequest in the Bundle -->
         <div class="service-request">
@@ -341,7 +356,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <xsl:for-each select="/fhir:Bundle/fhir:entry/fhir:resource/fhir:ServiceRequest[fhir:subject/fhir:reference/@value = concat('Patient/', $patientRef)]">
+                    <xsl:for-each
+                        select="/fhir:Bundle/fhir:entry/fhir:resource/fhir:ServiceRequest[fhir:subject/fhir:reference/@value = concat('Patient/', $patientRef)]">
                         <tr>
                             <td>
                                 <xsl:variable name="medReqRef"
@@ -350,19 +366,23 @@
                                 <xsl:if test="fhir:priority/@value = 'urgent'">
                                     <div class="urgent-pill">dringend</div>
                                 </xsl:if>
-                                <xsl:if test="fhir:modifierExtension[@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex']/fhir:valueBoolean/@value = 'true'">
+                                <xsl:if
+                                    test="fhir:modifierExtension[@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex']/fhir:valueBoolean/@value = 'true'">
                                     <div class="redeem-pill">Patienteneinlösung</div>
                                 </xsl:if>
-                                <xsl:if test="fhir:modifierExtension[@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/changed-medication-ex']/fhir:valueBoolean/@value = 'true'">
+                                <xsl:if
+                                    test="fhir:modifierExtension[@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/changed-medication-ex']/fhir:valueBoolean/@value = 'true'">
                                     <div class="changed-pill">Verändertes Arzneimittel</div>
                                 </xsl:if>
                                 <div>
                                     <xsl:for-each
                                         select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medReqRef) + 1) = $medReqRef]/fhir:resource/fhir:MedicationRequest">
-                                    <xsl:if test="fhir:modifierExtension[@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/request-mvo-ex']/fhir:valueBoolean/@value = 'true'">
-                                        <div class="mvo-pill">MVO</div>
-                                    </xsl:if>
-                                        <xsl:variable name="medicationRef"
+                                        <xsl:if
+                                            test="fhir:modifierExtension[@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/request-mvo-ex']/fhir:valueBoolean/@value = 'true'">
+                                            <div class="mvo-pill">MVO</div>
+                                        </xsl:if>
+                                        <xsl:variable
+                                            name="medicationRef"
                                             select="fhir:medicationReference/fhir:reference/@value" />
                                         <xsl:for-each
                                             select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medicationRef) + 1) = $medicationRef]/fhir:resource/fhir:Medication">
@@ -401,11 +421,14 @@
                                     </xsl:choose>
                                 </xsl:for-each>
                                 <xsl:if test="fhir:occurrenceDateTime">
-    <span>(</span>
-    <xsl:variable name="occurrenceDateTime" select="fhir:occurrenceDateTime/@value" />
-    <xsl:value-of select="concat(substring($occurrenceDateTime, 9, 2), '.', substring($occurrenceDateTime, 6, 2), '.', substring($occurrenceDateTime, 1, 4))" />
-    <span>)</span>
-</xsl:if>
+                                    <span>(</span>
+    <xsl:variable name="occurrenceDateTime"
+                                        select="fhir:occurrenceDateTime/@value" />
+    <xsl:value-of
+                                        select="concat(substring($occurrenceDateTime, 9, 2), '.', substring($occurrenceDateTime, 6, 2), '.', substring($occurrenceDateTime, 1, 4))" />
+    <span>
+        )</span>
+                                </xsl:if>
                             </td>
                             <td>
                                 <xsl:variable name="medReqRef"
@@ -414,7 +437,8 @@
                                     select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medReqRef) + 1) = $medReqRef]/fhir:resource/fhir:MedicationRequest">
                                     <xsl:value-of
                                         select="fhir:dispenseRequest/fhir:quantity/fhir:value/@value" />
-                                    <span>&#160;</span>
+                                    <span>
+        &#160;</span>
                                     <xsl:value-of select="fhir:dispenseRequest/fhir:quantity/fhir:unit/@value" />
                                 </xsl:for-each>
                             </td>
@@ -422,15 +446,26 @@
                                 <xsl:value-of select="fhir:note/fhir:text/@value" />
                             </td>
                         </tr>
-                       <!-- Token section below row if there is a note -->
-                       <xsl:if test="fhir:extension[@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex']">
-                           
-                       <tr class="token-section">
-                            <td colspan="5">
-                                <xsl:value-of select="fhir:extension[@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex']/fhir:valueIdentifier/fhir:value/@value" />
-                            </td>
-                        </tr>
-                    </xsl:if>
+                         <!-- Identifier section below row if identifier with specific system is present -->
+                        <xsl:for-each select="fhir:identifier[fhir:system/@value = 'https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier']">
+                            <tr>
+                                <td colspan="5" class="identifier-info">
+                                    <xsl:text>Anfragenummer: </xsl:text>
+                                    <xsl:value-of select="fhir:value/@value" />
+                                </td>
+                            </tr>
+                        </xsl:for-each>
+                        <!-- Token section below row if there is a note -->
+                       <xsl:if
+                            test="fhir:extension[@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex']">
+
+                            <tr class="token-section">
+                                <td colspan="5">
+                                    <xsl:value-of
+                                        select="fhir:extension[@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex']/fhir:valueIdentifier/fhir:value/@value" />
+                                </td>
+                            </tr>
+                        </xsl:if>
                     </xsl:for-each>
                 </tbody>
             </table>
@@ -442,16 +477,18 @@
         <div class="sr-patient-info">
             <span>Bezüglich </span>
             <xsl:for-each
-                                    select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($patientRef) + 1) = $patientRef]/fhir:resource/fhir:Patient">
-                                    <xsl:value-of
-                                        select="fhir:name[fhir:use/@value='official']/fhir:family/@value" />
+                select="/fhir:Bundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($patientRef) + 1) = $patientRef]/fhir:resource/fhir:Patient">
+                <xsl:value-of
+                    select="fhir:name[fhir:use/@value='official']/fhir:family/@value" />
                                     <span>, </span>
-                                    <xsl:value-of select="fhir:name[fhir:use/@value='official']/fhir:given/@value" />
-                                </xsl:for-each>
-                                <span>, geb. (</span>
-                                <xsl:variable name="birthDate" select="fhir:birthDate/@value" />
-    <xsl:value-of select="concat(substring($birthDate, 9, 2), '.', substring($birthDate, 6, 2), '.', substring($birthDate, 1, 4))" />
-                                <span>)</span>
+                                    <xsl:value-of
+                    select="fhir:name[fhir:use/@value='official']/fhir:given/@value" />
+            </xsl:for-each>
+            <span>, geb. (</span>
+            <xsl:variable name="birthDate" select="fhir:birthDate/@value" />
+            <xsl:value-of
+                select="concat(substring($birthDate, 9, 2), '.', substring($birthDate, 6, 2), '.', substring($birthDate, 1, 4))" />
+            <span>)</span>
         </div>
         <!-- Template for displaying information about each ServiceRequest in the Bundle -->
         <div class="service-request">
@@ -463,13 +500,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <xsl:for-each select="/fhir:Bundle/fhir:entry/fhir:resource/fhir:ServiceRequest[fhir:subject/fhir:reference/@value = concat('Patient/', $patientRef)]">
+                    <xsl:for-each
+                        select="/fhir:Bundle/fhir:entry/fhir:resource/fhir:ServiceRequest[fhir:subject/fhir:reference/@value = concat('Patient/', $patientRef)]">
                         <tr>
                             <td>
                                 <xsl:value-of select="position()" />
                             </td>
                             <td>
-                                <xsl:value-of select="fhir:extension[@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex']/fhir:valueIdentifier/fhir:value/@value" />
+                                <xsl:value-of
+                                    select="fhir:extension[@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex']/fhir:valueIdentifier/fhir:value/@value" />
                             </td>
                         </tr>
                     </xsl:for-each>
