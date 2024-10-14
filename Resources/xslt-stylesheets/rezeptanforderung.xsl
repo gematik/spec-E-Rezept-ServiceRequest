@@ -536,10 +536,18 @@
                             <tr>
                                 <th>Nr.</th>
                                 <th>E-Rezept-Token</th>
-                                <xsl:if
-                                    test="fhir:extension[@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/alternative-delivery-address-ex']">
-                                    <th>Lieferadresse</th>
-                                </xsl:if>
+                                <xsl:choose>
+                                    <xsl:when
+                                        test="fhir:code/fhir:coding[fhir:system/@value = 'https://gematik.de/fhir/erp-servicerequest/CodeSystem/delivery-type-cs']/fhir:code/@value = 'delivery-to-alternative-address'">
+                                        <th>Lieferadresse</th>
+                                    </xsl:when>
+                                    <xsl:when
+                                        test="fhir:code/fhir:coding[fhir:system/@value = 'https://gematik.de/fhir/erp-servicerequest/CodeSystem/delivery-type-cs']/fhir:code/@value">
+                                        <th>Lieferung</th>
+                                    </xsl:when>
+                                    <xsl:otherwise><th></th></xsl:otherwise>
+                                </xsl:choose>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -551,20 +559,37 @@
                                     <xsl:value-of
                                         select="fhir:extension[@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex']/fhir:valueIdentifier/fhir:value/@value" />
                                 </td>
-                                <xsl:if
-                                    test="fhir:extension[@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/alternative-delivery-address-ex']">
-                                    <td>
-                                        <xsl:for-each
-                                            select="fhir:extension[@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/alternative-delivery-address-ex']/fhir:valueAddress">
-                                            <xsl:value-of select="fhir:line/@value" /><br />
-                                            <xsl:value-of
-                                                select="fhir:city/@value" />, <xsl:value-of
-                                                select="fhir:postalCode/@value" />
-                                            <xsl:value-of
-                                                select="fhir:country/@value" />
-                                        </xsl:for-each>
-                                    </td>
-                                </xsl:if>
+                                <td>
+                                    <xsl:choose>
+                                        <xsl:when
+                                            test="fhir:code/fhir:coding[fhir:system/@value = 'https://gematik.de/fhir/erp-servicerequest/CodeSystem/delivery-type-cs']/fhir:code/@value = 'pickup-by-healthcare-service'">
+                                            <xsl:text>Abholung durch Pflegeeinrichtung</xsl:text>
+                                        </xsl:when>
+                                        <xsl:when
+                                            test="fhir:code/fhir:coding[fhir:system/@value = 'https://gematik.de/fhir/erp-servicerequest/CodeSystem/delivery-type-cs']/fhir:code/@value = 'pickup-by-patient'">
+                                            <xsl:text>Abholung durch Patient</xsl:text>
+                                        </xsl:when>
+                                        <xsl:when
+                                            test="fhir:code/fhir:coding[fhir:system/@value = 'https://gematik.de/fhir/erp-servicerequest/CodeSystem/delivery-type-cs']/fhir:code/@value = 'delivery-to-healthcare-service'">
+                                            <xsl:text>Lieferung an Pflegeeinrichtung</xsl:text>
+                                        </xsl:when>
+                                        <xsl:when
+                                            test="fhir:code/fhir:coding[fhir:system/@value = 'https://gematik.de/fhir/erp-servicerequest/CodeSystem/delivery-type-cs']/fhir:code/@value = 'delivery-to-alternative-address'">
+                                            <i><xsl:text>Lieferung an: </xsl:text></i>
+                                            <xsl:for-each
+                                                select="fhir:extension[@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/alternative-delivery-address-ex']/fhir:valueAddress">
+                                                <xsl:for-each select="fhir:line">
+                                                    <xsl:value-of select="@value" /><br />
+                                                </xsl:for-each>
+                                                <xsl:value-of
+                                                    select="fhir:city/@value" />, <xsl:value-of
+                                                    select="fhir:postalCode/@value" />
+                                                <xsl:value-of
+                                                    select="fhir:country/@value" />
+                                            </xsl:for-each>
+                                        </xsl:when>
+                                    </xsl:choose>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
