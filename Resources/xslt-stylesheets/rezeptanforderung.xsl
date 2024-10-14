@@ -448,12 +448,9 @@
                         </tr>
                          <!-- Identifier section below row if identifier with specific system is present -->
                         <xsl:for-each select="fhir:identifier[fhir:system/@value = 'https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier']">
-                            <tr>
-                                <td colspan="5" class="identifier-info">
-                                    <xsl:text>Anfragenummer: </xsl:text>
-                                    <xsl:value-of select="fhir:value/@value" />
-                                </td>
-                            </tr>
+                            <xsl:call-template name="anfragenummer">
+                                <xsl:with-param name="colspan" select="5" />
+                            </xsl:call-template>
                         </xsl:for-each>
                         <!-- Token section below row if there is a note -->
                        <xsl:if
@@ -497,6 +494,9 @@
                     <tr>
                         <th>Nr.</th>
                         <th>E-Rezept-Token</th>
+                        <xsl:if test="/fhir:Bundle/fhir:entry/fhir:resource/fhir:ServiceRequest/fhir:extension[@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/alternative-delivery-address-ex']">
+                            <th>Lieferadresse</th>
+                        </xsl:if>
                     </tr>
                 </thead>
                 <tbody>
@@ -510,11 +510,38 @@
                                 <xsl:value-of
                                     select="fhir:extension[@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex']/fhir:valueIdentifier/fhir:value/@value" />
                             </td>
+                            <xsl:if test="fhir:extension[@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/alternative-delivery-address-ex']">
+                                <td>
+                                    <xsl:for-each select="fhir:extension[@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/alternative-delivery-address-ex']/fhir:valueAddress">
+                                        <xsl:value-of select="fhir:line/@value" /><br />
+                                        <xsl:value-of select="fhir:city/@value" />, 
+                                        <xsl:value-of select="fhir:postalCode/@value" />
+                                        <xsl:value-of select="fhir:country/@value" />
+                                    </xsl:for-each>
+                                </td>
+                            </xsl:if>
                         </tr>
+                         <!-- Identifier section below row if identifier with specific system is present -->
+                         <xsl:for-each select="fhir:identifier[fhir:system/@value = 'https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier']">
+                            <xsl:call-template name="anfragenummer">
+                                <xsl:with-param name="colspan" select="3" />
+                            </xsl:call-template>
+                        </xsl:for-each>
                     </xsl:for-each>
                 </tbody>
             </table>
         </div>
+    </xsl:template>
+
+    <xsl:template name="anfragenummer">
+        <xsl:param name="colspan"/>
+        <tr>
+            <td colspan="{ $colspan }" class="identifier-info">
+                
+                <xsl:text>Anfragenummer: </xsl:text>
+                <xsl:value-of select="fhir:value/@value" />
+            </td>
+        </tr>
     </xsl:template>
 
 </xsl:stylesheet>
