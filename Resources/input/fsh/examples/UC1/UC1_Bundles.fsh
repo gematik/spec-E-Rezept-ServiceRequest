@@ -95,8 +95,8 @@ Description: "Response sent from pharmacy to requester"
 // Medication Dispense
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/MedicationDispense/UC1-Medication-Dispense"
 * entry[=].resource = UC1-Medication-Dispense
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/Medication/SimpleMedication"
-* entry[=].resource = SimpleMedication
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/Medication/Example-Initial-Medication"
+* entry[=].resource = Example-Initial-Medication
 
 Instance: UC1-3-Alt-Delivery-Dispense-Request-To-Pharmacy
 InstanceOf: ERPServiceRequestMessageContainer
@@ -139,5 +139,5 @@ Description: "Response sent from pharmacy to requester"
 // Medication Dispense
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/MedicationDispense/UC1-Medication-Dispense"
 * entry[=].resource = UC1-Medication-Dispense
-* entry[+].fullUrl = "http://erp-servicerequest-test.de/Medication/SimpleMedication"
-* entry[=].resource = SimpleMedication
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/Medication/Example-Initial-Medication"
+* entry[=].resource = Example-Initial-Medication

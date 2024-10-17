@@ -241,48 +241,64 @@
         "id": "UC1-Medication-Dispense",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|1.4"
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-dispense"
           ]
         },
         "identifier": [
           {
             "system": "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
-            "value": "160.100.000.000.002.36"
+            "value": "169.100.000.000.002.36"
           }
         ],
-        "status": "completed",
         "subject": {
-          "identifier": {
-            "system": "http://fhir.de/sid/gkv/kvid-10",
-            "value": "X234567890"
-          }
+          "reference": "Patient/Example-Patient"
         },
-        "performer": [
-          {
-            "actor": {
-              "identifier": {
-                "system": "https://gematik.de/fhir/sid/telematik-id",
-                "value": "3-test-telematik-id"
-              }
-            }
-          }
-        ],
-        "whenHandedOver": "2025-05-14",
+        "status": "completed",
         "medicationReference": {
-          "reference": "Medication/SimpleMedication"
+          "reference": "Medication/Example-Initial-Medication"
         }
       }
     },
     {
-      "fullUrl": "http://erp-servicerequest-test.de/Medication/SimpleMedication",
+      "fullUrl": "http://erp-servicerequest-test.de/Medication/Example-Initial-Medication",
       "resource": {
         "resourceType": "Medication",
-        "id": "SimpleMedication",
+        "id": "Example-Initial-Medication",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication|1.4"
+            "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.1.0"
           ]
         },
+        "extension": [
+          {
+            "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Medication_Type",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "version": "http://snomed.info/sct/900000000000207008/version/20220331",
+                  "code": "763158003",
+                  "display": "Medicinal product (product)"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Category",
+            "valueCoding": {
+              "code": "00",
+              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Category"
+            }
+          },
+          {
+            "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Vaccine",
+            "valueBoolean": false
+          },
+          {
+            "url": "http://fhir.de/StructureDefinition/normgroesse",
+            "valueCode": "N1"
+          }
+        ],
         "code": {
           "coding": [
             {
@@ -291,6 +307,14 @@
             }
           ],
           "text": "Prospan® Hustensaft 100ml"
+        },
+        "form": {
+          "coding": [
+            {
+              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM",
+              "code": "FLE"
+            }
+          ]
         }
       }
     }

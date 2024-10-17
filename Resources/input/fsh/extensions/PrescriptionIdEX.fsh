@@ -18,4 +18,4 @@ Description: "Extension for Prescription ID"
 * insert Meta (prescription-id-ex)
 * value[x] 1..1 MS
 * value[x] only Identifier
-* valueIdentifier only GEM_ERP_PR_PrescriptionId
+* valueIdentifier only $GEM_ERP_PR_PrescriptionId

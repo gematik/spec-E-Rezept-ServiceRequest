@@ -232,20 +232,12 @@
     "endLine": 50
   },
   {
-    "outputFile": "Medication-SimpleMedication.json",
-    "fshName": "SimpleMedication",
-    "fshType": "Instance",
-    "fshFile": "examples/Misc/Example_Medication.fsh",
-    "startLine": 56,
-    "endLine": 63
-  },
-  {
     "outputFile": "MedicationDispense-UC1-Medication-Dispense.json",
     "fshName": "UC1-Medication-Dispense",
     "fshType": "Instance",
     "fshFile": "examples/Misc/Example_MedicationDispense.fsh",
     "startLine": 1,
-    "endLine": 13
+    "endLine": 10
   },
   {
     "outputFile": "MedicationRequest-Example-Initial-Medication-Request.json",
@@ -416,10 +408,18 @@
     "endLine": 11
   },
   {
+    "outputFile": "StructureDefinition-erp-service-request-medication-dispense.json",
+    "fshName": "ERPServiceRequestMedicationDispense",
+    "fshType": "Profile",
+    "fshFile": "profiles/4.2_MedicationDispense.fsh",
+    "startLine": 1,
+    "endLine": 24
+  },
+  {
     "outputFile": "StructureDefinition-erp-service-request-medication-request.json",
     "fshName": "ERPServiceRequestMedicationRequest",
     "fshType": "Profile",
-    "fshFile": "profiles/4_MedicationRequest.fsh",
+    "fshFile": "profiles/4.1_MedicationRequest.fsh",
     "startLine": 1,
     "endLine": 59
   },

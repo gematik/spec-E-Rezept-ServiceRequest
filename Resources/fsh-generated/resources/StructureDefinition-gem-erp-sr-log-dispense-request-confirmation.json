@@ -512,7 +512,7 @@
         "mapping": [
           {
             "identity": "Dispensieranforderung-Bestaetigung-Fachliches-Mapping",
-            "map": "ERPServiceRequestDispenseRequest.supportingInfo"
+            "map": "ERPServiceRequestDispenseRequest.supportingInfo:Abgabedaten"
           },
           {
             "identity": "Quelle-Dispensieranforderung-Bestaetigung-Mapping",
@@ -539,7 +539,7 @@
         "mapping": [
           {
             "identity": "Dispensieranforderung-Bestaetigung-Fachliches-Mapping",
-            "map": "ERPServiceRequestDispenseRequest.supportingInfo:AbgabeDaten"
+            "map": "ERPServiceRequestMedicationDispense"
           },
           {
             "identity": "Quelle-Dispensieranforderung-Bestaetigung-Mapping",

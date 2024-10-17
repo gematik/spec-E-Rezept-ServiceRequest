@@ -1,5 +1,5 @@
 Instance: Example-Initial-Medication
-InstanceOf: $KBV_PR_ERP_Medication_PZN
+InstanceOf: KBV_PR_ERP_Medication_PZN
 Usage: #inline
 * meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.1.0"
 * extension[Kategorie].url = "https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Medication_Type"
@@ -16,7 +16,7 @@ Usage: #inline
 * form = https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM#FLE
 
 Instance: Example-Initial-Medication-2
-InstanceOf: $KBV_PR_ERP_Medication_PZN
+InstanceOf: KBV_PR_ERP_Medication_PZN
 Usage: #inline
 * meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.1.0"
 * extension[Kategorie].valueCodeableConcept.coding = http://snomed.info/sct#763158003 "Medicinal product (product)"
@@ -28,7 +28,7 @@ Usage: #inline
 * form = https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM#FTA
 
 Instance: Example-Zyto-Medication
-InstanceOf: $KBV_PR_ERP_Medication_Compounding
+InstanceOf: KBV_PR_ERP_Medication_Compounding
 Usage: #inline
 * meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_Compounding|1.1.0"
 * extension[Kategorie].url = "https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Medication_Type"
@@ -52,12 +52,3 @@ Usage: #inline
 * ingredient[=].strength.numerator.value = 500
 * ingredient[=].strength.numerator.unit = "ml"
 * ingredient[=].strength.denominator.value = 1
-
-Instance: SimpleMedication
-InstanceOf: GEM_ERP_PR_Medication
-Title:   "Sample Simple Medication"
-Usage: #example
-* code.coding[pzn]
-  * system = "http://fhir.de/CodeSystem/ifa/pzn"
-  * code = #08585997
-* code.text = "Prospan® Hustensaft 100ml"

@@ -323,7 +323,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense"
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-dispense"
             ]
           }
         ],

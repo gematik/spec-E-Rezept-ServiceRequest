@@ -3,34 +3,20 @@
   "id": "UC1-Medication-Dispense",
   "meta": {
     "profile": [
-      "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|1.4"
+      "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-dispense"
     ]
   },
   "identifier": [
     {
       "system": "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
-      "value": "160.100.000.000.002.36"
+      "value": "169.100.000.000.002.36"
     }
   ],
-  "status": "completed",
   "subject": {
-    "identifier": {
-      "system": "http://fhir.de/sid/gkv/kvid-10",
-      "value": "X234567890"
-    }
+    "reference": "Patient/Example-Patient"
   },
-  "performer": [
-    {
-      "actor": {
-        "identifier": {
-          "system": "https://gematik.de/fhir/sid/telematik-id",
-          "value": "3-test-telematik-id"
-        }
-      }
-    }
-  ],
-  "whenHandedOver": "2025-05-14",
+  "status": "completed",
   "medicationReference": {
-    "reference": "Medication/SimpleMedication"
+    "reference": "Medication/Example-Initial-Medication"
   }
 }
