@@ -8,6 +8,7 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * requisition.value = "GroupID-UC1"
 * status = RequestStatus#revoked
 * intent = RequestIntent#order
+* basedOn = Reference(Example-Initial-Medication-Request)
 * code.coding[request-type] = ServiceRequestTypeCS#prescription-request
 * subject = Reference(Example-Patient)
 * authoredOn = "2025-05-13"

@@ -64,6 +64,7 @@ Description: "ServiceRequest that is returned to the requester"
 * requisition.value = "GroupID-UC1-MULTI"
 * status = RequestStatus#revoked
 * subject = Reference(Example-Patient-2)
+* basedOn = Reference(Example-Initial-Medication-Request-2)
 * authoredOn = "2025-05-13"
 * intent = RequestIntent#order
 * code.coding[request-type] = ServiceRequestTypeCS#prescription-request

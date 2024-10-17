@@ -151,6 +151,11 @@
         "subject": {
           "reference": "Patient/Example-Patient-2"
         },
+        "basedOn": [
+          {
+            "reference": "MedicationRequest/Example-Initial-Medication-Request-2"
+          }
+        ],
         "authoredOn": "2025-05-13",
         "performer": [
           {
@@ -176,69 +181,88 @@
     {
       "fullUrl": "http://erp-servicerequest-test.de/Patient/Example-Patient-2",
       "resource": {
-        "resourceType": "Patient",
-        "id": "Example-Patient-2",
+        "resourceType": "MedicationRequest",
+        "id": "Example-Initial-Medication-Request-2",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-patient"
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request"
           ]
         },
-        "name": [
-          {
-            "use": "official",
-            "family": "Edgarson",
-            "_family": {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
-                  "valueString": "Edgarson"
-                }
-              ]
-            },
-            "given": [
-              "Peter"
-            ]
+        "status": "active",
+        "intent": "order",
+        "medicationReference": {
+          "reference": "Medication/Example-Initial-Medication-2"
+        },
+        "subject": {
+          "reference": "Patient/Example-Patient-2"
+        },
+        "dispenseRequest": {
+          "quantity": {
+            "value": 2,
+            "code": "{Package}",
+            "system": "http://unitsofmeasure.org",
+            "unit": "Packungen"
           }
-        ],
-        "identifier": [
+        }
+      }
+    },
+    {
+      "fullUrl": "http://erp-servicerequest-test.de/Medication/Example-Initial-Medication-2",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "Example-Initial-Medication-2",
+        "meta": {
+          "profile": [
+            "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.1.0"
+          ]
+        },
+        "extension": [
           {
-            "type": {
+            "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Medication_Type",
+            "valueCodeableConcept": {
               "coding": [
                 {
-                  "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
-                  "code": "GKV"
+                  "system": "http://snomed.info/sct",
+                  "version": "http://snomed.info/sct/900000000000207008/version/20220331",
+                  "code": "763158003",
+                  "display": "Medicinal product (product)"
                 }
               ]
-            },
-            "system": "http://fhir.de/sid/gkv/kvid-10",
-            "value": "X098765432"
-          }
-        ],
-        "address": [
+            }
+          },
           {
-            "type": "both",
-            "line": [
-              "Erikastraße 43"
-            ],
-            "_line": [
-              {
-                "extension": [
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-                    "valueString": "43"
-                  },
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-                    "valueString": "Erikastraße"
-                  }
-                ]
-              }
-            ],
-            "city": "Berlin",
-            "postalCode": "10742"
+            "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Category",
+            "valueCoding": {
+              "code": "00",
+              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Category"
+            }
+          },
+          {
+            "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Vaccine",
+            "valueBoolean": false
+          },
+          {
+            "url": "http://fhir.de/StructureDefinition/normgroesse",
+            "valueCode": "N1"
           }
         ],
-        "birthDate": "1974-01-31"
+        "code": {
+          "coding": [
+            {
+              "system": "http://fhir.de/CodeSystem/ifa/pzn",
+              "code": "02483617"
+            }
+          ],
+          "text": "Buscopan PLUS 20 St"
+        },
+        "form": {
+          "coding": [
+            {
+              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM",
+              "code": "FTA"
+            }
+          ]
+        }
       }
     }
   ]

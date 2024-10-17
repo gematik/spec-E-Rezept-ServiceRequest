@@ -9,6 +9,7 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 * status = RequestStatus#entered-in-error
 * intent = RequestIntent#order
 * code.coding[request-type] = ServiceRequestTypeCS#prescription-request
+* basedOn = Reference(Example-Initial-Medication-Request)
 * subject = Reference(Example-Patient)
 * authoredOn = "2025-05-13"
 * requester = Reference(Example-HealthCareService-Organization)

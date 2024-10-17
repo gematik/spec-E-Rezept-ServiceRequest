@@ -15,3 +15,8 @@ Description: "Cancellationrequest sent to Prescriber to get a Prescription"
 * entry[=].resource = UC1-Cancelled-Prescription-Request
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Patient/Example-Patient"
 * entry[=].resource = Example-Patient
+//Medication Request
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/MedicationRequest/Example-Initial-Medication-Request"
+* entry[=].resource = Example-Initial-Medication-Request
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/Medication/Example-Initial-Medication"
+* entry[=].resource = Example-Initial-Medication

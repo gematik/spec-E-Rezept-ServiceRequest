@@ -4,8 +4,8 @@
     "fshName": "Komplex-MULTI-1-Prescription-Request",
     "fshType": "Instance",
     "fshFile": "examples/UC1_MultipleRequests/UC1_MultipleRequest_Bundles.fsh",
-    "startLine": 78,
-    "endLine": 113
+    "startLine": 82,
+    "endLine": 117
   },
   {
     "outputFile": "Bundle-UC1-1-Prescription-Request-To-Prescriber.json",
@@ -77,7 +77,7 @@
     "fshType": "Instance",
     "fshFile": "examples/UC1_MultipleRequests/UC1_MultipleRequest_Bundles.fsh",
     "startLine": 59,
-    "endLine": 76
+    "endLine": 80
   },
   {
     "outputFile": "Bundle-UC1-Rejection-Of-Prescriber.json",
@@ -85,7 +85,7 @@
     "fshType": "Instance",
     "fshFile": "examples/UC1_Ablehnung/UC1_Ablehnung_Bundles.fsh",
     "startLine": 1,
-    "endLine": 17
+    "endLine": 22
   },
   {
     "outputFile": "Bundle-UC1-Storno-1-Cancellation-Of-Prescription-Requester.json",
@@ -93,7 +93,7 @@
     "fshType": "Instance",
     "fshFile": "examples/UC1_Storno/UC1_Storno_Bundles.fsh",
     "startLine": 1,
-    "endLine": 17
+    "endLine": 22
   },
   {
     "outputFile": "Bundle-UC2-1-Prescription-Request-To-Prescriber.json",
@@ -340,8 +340,8 @@
     "fshName": "Komplex-MULTI-Initial-Prescription-Request-3",
     "fshType": "Instance",
     "fshFile": "examples/UC1_MultipleRequests/UC1_MultipleRequests_ServiceRequests.fsh",
-    "startLine": 75,
-    "endLine": 89
+    "startLine": 76,
+    "endLine": 90
   },
   {
     "outputFile": "ServiceRequest-UC1-Initial-Prescription-Request.json",

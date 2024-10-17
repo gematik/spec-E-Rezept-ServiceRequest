@@ -37,20 +37,6 @@
             "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
           },
           {
-            "key": "servicerequest-prescription-request-3",
-            "severity": "error",
-            "human": "If the status is active, then basedOn is required.",
-            "expression": "status = 'active' implies basedOn.exists()",
-            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
-          },
-          {
-            "key": "servicerequest-prescription-request-4",
-            "severity": "error",
-            "human": "If the status is completed, then basedOn is required.",
-            "expression": "status = 'completed' implies basedOn.exists()",
-            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
-          },
-          {
             "key": "servicerequest-prescription-request-5",
             "severity": "error",
             "human": "If the status is revoked or entered-in-error, then the reasonCode or note must be present.",
@@ -174,8 +160,9 @@
         "id": "ServiceRequest.basedOn",
         "path": "ServiceRequest.basedOn",
         "short": "Requested or fulfilled MedicationRequest.",
-        "definition": "This field references the underlying MedicationRequest, which contains the medical information for the prescription request. For active requests ERPServiceRequestMedicationRequest may be used, otherwise KBV_PR_ERP_MedicationRequest.",
+        "definition": "This field references the underlying MedicationRequest, which contains the medical information for the prescription request.",
         "comment": "Exactly one MedicationRequest is assigned to a ServiceRequest, so that independent processing is possible.",
+        "min": 1,
         "max": "1",
         "type": [
           {

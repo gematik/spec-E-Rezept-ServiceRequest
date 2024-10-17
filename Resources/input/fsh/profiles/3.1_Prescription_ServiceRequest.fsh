@@ -7,8 +7,8 @@ Description: "ServiceRequest, which is used to request a recipe"
 
 * obeys servicerequest-prescription-request-1
 * obeys servicerequest-prescription-request-2
-* obeys servicerequest-prescription-request-3
-* obeys servicerequest-prescription-request-4
+// * obeys servicerequest-prescription-request-3
+// * obeys servicerequest-prescription-request-4
 * obeys servicerequest-prescription-request-5
 * obeys servicerequest-prescription-request-6
 * obeys servicerequest-prescription-request-7
@@ -45,10 +45,10 @@ Description: "ServiceRequest, which is used to request a recipe"
   * ^short = "Identifier that uniquely references a ServiceRequest."
   * ^comment = "For referencing and assignment of ServiceRequest, e.g. if one ServiceRequest is to replace another, it is important to be able to make this assignment with the identifier. Can be mapped via a UUID, for example."
 
-* basedOn 0..1 MS
+* basedOn 1..1 MS
   * ^short = "Requested or fulfilled MedicationRequest."
   * ^comment = "Exactly one MedicationRequest is assigned to a ServiceRequest, so that independent processing is possible."
-  * ^definition = "This field references the underlying MedicationRequest, which contains the medical information for the prescription request. For active requests ERPServiceRequestMedicationRequest may be used, otherwise KBV_PR_ERP_MedicationRequest."
+  * ^definition = "This field references the underlying MedicationRequest, which contains the medical information for the prescription request."
 * basedOn only Reference(ERPServiceRequestMedicationRequest)
 
 * requisition 1..1 MS
@@ -160,15 +160,16 @@ Description: "If the status is completed and the prescription should be redeemed
 Expression: "(status = 'completed' and modifierExtension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex').exists() and modifierExtension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex').value = true) implies extension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex').exists().not()"
 Severity: #error
 
-Invariant: servicerequest-prescription-request-3
-Description: "If the status is active, then basedOn is required."
-Expression: "status = 'active' implies basedOn.exists()"
-Severity: #error
+// Wird aktuell nicht gebraucht, da basedOn immer vorhanden ist. Wenn PDFs nicht mehr gebraucht werden, könnte das wieder genutzt werden.
+// Invariant: servicerequest-prescription-request-3
+// Description: "If the status is active, then basedOn is required."
+// Expression: "status = 'active' implies basedOn.exists()"
+// Severity: #error
 
-Invariant: servicerequest-prescription-request-4
-Description: "If the status is completed, then basedOn is required."
-Expression: "status = 'completed' implies basedOn.exists()"
-Severity: #error
+// Invariant: servicerequest-prescription-request-4
+// Description: "If the status is completed, then basedOn is required."
+// Expression: "status = 'completed' implies basedOn.exists()"
+// Severity: #error
 
 Invariant: servicerequest-prescription-request-5
 Description: "If the status is revoked or entered-in-error, then the reasonCode or note must be present."
