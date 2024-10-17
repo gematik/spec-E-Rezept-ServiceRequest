@@ -8,5 +8,5 @@
   filename: 1.3-Anfragender-an-Apotheke.page.md
 - name: Apotheke an Pflegeeinrichtung
   filename: 1.4-Apotheke-an-Anfragenden.page.md
-- name: Beispiele
+- name: Beispiele der verwendeten FHIR-Ressourcen
   filename: 1.5-Beispiele.page.md

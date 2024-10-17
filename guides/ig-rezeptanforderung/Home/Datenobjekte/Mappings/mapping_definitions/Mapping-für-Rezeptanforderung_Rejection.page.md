@@ -1,6 +1,6 @@
 ## {{page-title}}
 
-Diese Seite zeigt das Mapping der fachlichen Informationen aus dem {{pagelink:Home/Datenobjekte/Logical-Models/gem-erp-sr-log-prescription-request-rejection.page.md}}: {{tree:GEM_ERP_SR_LOG_PrescriptionRequest_Rejection}}
+Diese Seite zeigt das Mapping der fachlichen Informationen aus dem {{pagelink:Home/Datenobjekte/Logical-Models/logical_definitions/gem-erp-sr-log-prescription-request-rejection.page.md}}: {{tree:GEM_ERP_SR_LOG_PrescriptionRequest_Rejection}}
 
 ### MetaDaten zur Nachricht
 Im folgenden werden die Mappings der Metainformationen einer Rezeptanforderungs Ablehnung zu den Profilen gelistet.

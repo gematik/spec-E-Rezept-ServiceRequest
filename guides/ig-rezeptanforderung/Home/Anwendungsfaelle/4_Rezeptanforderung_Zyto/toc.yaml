@@ -4,5 +4,5 @@
   filename: 4.1-Anfrage-an-Verordnenden.page.md
 - name: Rezeptanforderung_Bestätigung
   filename: 4.2-Verordnender-an-Anfragenden.page.md
-- name: Beispiele
+- name: Beispiele der verwendeten FHIR-Ressourcen
   filename: 4.3-Beispiele.page.md

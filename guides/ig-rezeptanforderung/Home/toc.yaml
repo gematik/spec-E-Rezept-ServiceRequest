@@ -8,7 +8,7 @@
   filename: UebergreifendeFestlegungen
 - name: FHIR-Profile
   filename: Datenobjekte
-- name: Beispiele
+- name: Beispieldateien
   filename: Examples.page.md
 - name: Release Notes
   filename: Release-Notes.page.md
