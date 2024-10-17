@@ -269,7 +269,7 @@
     "fshType": "Instance",
     "fshFile": "examples/Misc/Example_MedicationRequest.fsh",
     "startLine": 32,
-    "endLine": 39
+    "endLine": 40
   },
   {
     "outputFile": "MessageHeader-Komplex-MULTI-HealthCareService-to-Practitioner-MessageHeader.json",
@@ -421,7 +421,7 @@
     "fshType": "Profile",
     "fshFile": "profiles/4_MedicationRequest.fsh",
     "startLine": 1,
-    "endLine": 49
+    "endLine": 59
   },
   {
     "outputFile": "StructureDefinition-erp-service-request-message-container.json",

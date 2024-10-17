@@ -37,6 +37,7 @@ Usage: #example
 * medicationReference = Reference(Example-Response-Medication)
 * subject = Reference(Example-Patient)
 * dispenseRequest.quantity = 65 'mL' "Milliliter"
+* dosageInstruction.text = "1-1-1-0"
 
 Instance: Example-Zyto-Medication-Request
 InstanceOf: ERPServiceRequestMedicationRequest

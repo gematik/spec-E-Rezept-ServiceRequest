@@ -47,3 +47,13 @@ If this ID is available, the receiving system MUST be able to search for the pre
     * unit 1..1 MS
       * ^short = "Requested units of the prescription"
       * ^definition = "This is a free text field that can be used to specify the units of the prescription."
+
+* dosageInstruction MS
+  * text MS
+    * ^short = "Dosieranweisung"
+    * ^definition = "Dosieranweisung einer Verordnung"
+    * ^maxLength = 500
+  * patientInstruction MS
+    * ^short = "Gebrauchsanweisung einer Rezeptur"
+    * ^definition = "Gebrauchsanweisung einer Rezeptur"
+    * ^maxLength = 500

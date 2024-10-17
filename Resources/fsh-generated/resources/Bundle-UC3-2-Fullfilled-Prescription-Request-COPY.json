@@ -398,7 +398,12 @@
                   "system": "http://unitsofmeasure.org",
                   "unit": "Milliliter"
                 }
-              }
+              },
+              "dosageInstruction": [
+                {
+                  "text": "1-1-1-0"
+                }
+              ]
             }
           },
           {

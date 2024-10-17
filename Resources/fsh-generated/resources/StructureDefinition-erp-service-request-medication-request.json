@@ -94,6 +94,27 @@
         "mustSupport": true
       },
       {
+        "id": "MedicationRequest.dosageInstruction",
+        "path": "MedicationRequest.dosageInstruction",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.text",
+        "path": "MedicationRequest.dosageInstruction.text",
+        "short": "Dosieranweisung",
+        "definition": "Dosieranweisung einer Verordnung",
+        "maxLength": 500,
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.patientInstruction",
+        "path": "MedicationRequest.dosageInstruction.patientInstruction",
+        "short": "Gebrauchsanweisung einer Rezeptur",
+        "definition": "Gebrauchsanweisung einer Rezeptur",
+        "maxLength": 500,
+        "mustSupport": true
+      },
+      {
         "id": "MedicationRequest.dispenseRequest",
         "path": "MedicationRequest.dispenseRequest",
         "mustSupport": true
