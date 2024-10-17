@@ -494,6 +494,7 @@
                             <tr>
                                 <th>Artikel</th>
                                 <th>Reichweite/ Bedarfszeitraum</th>
+                                <th>Dosieranweisungen</th>
                                 <th>Anzahl Packungen</th>
                                 <th>Notiz</th>
                             </tr>
@@ -540,6 +541,20 @@
                                         <xsl:value-of
                                             select="concat(substring($occurrenceDateTime, 9, 2), '.', substring($occurrenceDateTime, 6, 2), '.', substring($occurrenceDateTime, 1, 4))" />
                                     </xsl:if>
+                                </td>
+                                <td>
+                                    <xsl:variable name="medReqRef"
+                                        select="fhir:basedOn/fhir:reference/@value" />
+                                    <xsl:for-each
+                                        select="$rootBundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medReqRef) + 1) = $medReqRef]/fhir:resource/fhir:MedicationRequest">
+                                        <xsl:value-of
+                                            select="fhir:dosageInstruction/fhir:text/@value" />
+                                            <xsl:if test="fhir:dosageInstruction/fhir:patientInstruction/@value">
+                                            <br/>
+                                            <xsl:value-of
+                                                select="fhir:dosageInstruction/fhir:patientInstruction/@value" />
+                                            </xsl:if>
+                                    </xsl:for-each>
                                 </td>
                                 <td>
                                     <xsl:variable name="medReqRef"

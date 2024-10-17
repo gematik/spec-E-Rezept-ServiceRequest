@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="../../rezeptanforderung.xsl" ?>
 <Bundle xmlns="http://hl7.org/fhir">
     <id value="UC1-2-Fullfilled-Prescription-Request"/>
     <meta>
@@ -107,7 +106,7 @@
                 </extension>
                 <identifier>
                     <system value="https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier"/>
-                    <value value="fc58d3f1-591f-4e9b-b2f1-8a1c8c06f80f"/>
+                    <value value="1"/>
                 </identifier>
                 <basedOn>
                     <reference value="MedicationRequest/Example-Response-Medication-Request"/>
@@ -203,7 +202,6 @@
                 </subject>
                 <dosageInstruction>
                     <text value="1-1-1-0"/>
-                    <patientInstruction value="Dünn auftragen"/>
                 </dosageInstruction>
                 <dispenseRequest>
                     <quantity>
