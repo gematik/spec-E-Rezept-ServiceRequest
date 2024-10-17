@@ -14,63 +14,21 @@
   "kind": "resource",
   "abstract": false,
   "type": "Patient",
-  "baseDefinition": "https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Patient",
+  "baseDefinition": "https://gematik.de/fhir/epa/StructureDefinition/epa-patient",
   "derivation": "constraint",
   "differential": {
     "element": [
       {
-        "id": "Patient.identifier",
-        "path": "Patient.identifier",
-        "min": 1,
-        "max": "1",
-        "mustSupport": true
-      },
-      {
-        "id": "Patient.identifier:pid",
-        "path": "Patient.identifier",
-        "sliceName": "pid",
-        "max": "0"
-      },
-      {
-        "id": "Patient.identifier:versichertenId_GKV",
-        "path": "Patient.identifier",
-        "sliceName": "versichertenId_GKV",
-        "mustSupport": true
-      },
-      {
-        "id": "Patient.identifier:versichertennummer_pkv",
-        "path": "Patient.identifier",
-        "sliceName": "versichertennummer_pkv",
-        "mustSupport": true
-      },
-      {
-        "id": "Patient.identifier:reisepassnummer",
-        "path": "Patient.identifier",
-        "sliceName": "reisepassnummer",
-        "max": "0"
-      },
-      {
-        "id": "Patient.identifier:versichertennummer_kvk",
-        "path": "Patient.identifier",
-        "sliceName": "versichertennummer_kvk",
-        "max": "0"
-      },
-      {
-        "id": "Patient.name",
-        "path": "Patient.name",
-        "mustSupport": true
-      },
-      {
-        "id": "Patient.name:name",
-        "path": "Patient.name",
-        "sliceName": "name",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
-        "id": "Patient.birthDate",
-        "path": "Patient.birthDate",
-        "mustSupport": true
+        "id": "Patient.address",
+        "path": "Patient.address",
+        "type": [
+          {
+            "code": "Address",
+            "profile": [
+              "http://fhir.de/StructureDefinition/address-de-basis"
+            ]
+          }
+        ]
       }
     ]
   }

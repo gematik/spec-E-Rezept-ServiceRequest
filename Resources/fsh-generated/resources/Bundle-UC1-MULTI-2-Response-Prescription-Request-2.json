@@ -207,21 +207,12 @@
         ],
         "identifier": [
           {
-            "type": {
-              "coding": [
-                {
-                  "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
-                  "code": "GKV"
-                }
-              ]
-            },
             "system": "http://fhir.de/sid/gkv/kvid-10",
             "value": "X098765432"
           }
         ],
         "address": [
           {
-            "type": "both",
             "line": [
               "Erikastraße 43"
             ],
@@ -239,6 +230,7 @@
                 ]
               }
             ],
+            "type": "both",
             "city": "Berlin",
             "postalCode": "10742"
           }

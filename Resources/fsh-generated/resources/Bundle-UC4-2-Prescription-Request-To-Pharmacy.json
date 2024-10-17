@@ -218,21 +218,12 @@
         ],
         "identifier": [
           {
-            "type": {
-              "coding": [
-                {
-                  "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
-                  "code": "GKV"
-                }
-              ]
-            },
             "system": "http://fhir.de/sid/gkv/kvid-10",
             "value": "X234567890"
           }
         ],
         "address": [
           {
-            "type": "both",
             "line": [
               "Musterstr. 1"
             ],
@@ -250,6 +241,7 @@
                 ]
               }
             ],
+            "type": "both",
             "city": "Berlin",
             "postalCode": "10623"
           }

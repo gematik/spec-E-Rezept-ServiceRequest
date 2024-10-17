@@ -445,7 +445,7 @@
     "fshType": "Profile",
     "fshFile": "profiles/9_Patient.fsh",
     "startLine": 1,
-    "endLine": 18
+    "endLine": 8
   },
   {
     "outputFile": "StructureDefinition-erp-service-request-practitioner.json",
