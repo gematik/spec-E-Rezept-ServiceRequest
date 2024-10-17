@@ -137,6 +137,10 @@
                     <reference value="Organization/Example-HealthCareService-Organization"/>
                 </requester>
                 <reasonCode>
+                    <coding>
+                        <system value="https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-request-reason-cs" />
+                        <code value="exhausted-range" />
+                    </coding>
                     <extension url="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/remaining-supply-ex">
                         <valueQuantity>
                             <value value="2"/>
@@ -186,9 +190,14 @@
                     <reference value="Organization/Example-HealthCareService-Organization"/>
                 </requester>
                 <reasonCode>
+                    <coding>
+                        <system value="https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-request-reason-cs" />
+                        <code value="vital-value-measurement" />
+                    </coding>
                     <extension url="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/remaining-supply-free-text-ex">
                         <valueString value="2 Tabletten"/>
                     </extension>
+                    <text value="Blutdruck ist vor Allem morgens sehr hoch"/>
                 </reasonCode>
             </ServiceRequest>
         </resource>
