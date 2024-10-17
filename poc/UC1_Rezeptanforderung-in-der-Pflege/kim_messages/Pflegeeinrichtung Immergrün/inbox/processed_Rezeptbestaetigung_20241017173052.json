@@ -1,0 +1,31 @@
+{
+  "kim_message": {
+    "sender": "Arzt_B",
+    "recipient": "Pflegeeinrichtung Immergr\u00fcn",
+    "kim_dienstkennung": "KIM-E-Rezept-Best\u00e4tigung",
+    "subject": "Rezeptbestaetigung",
+    "content": {
+      "eventCode": "#eRezept_Rezeptanforderung;Rezeptbestaetigung",
+      "status": "completed",
+      "ePrescriptionToken": "RX123456:AC987654",
+      "originalRequest": {
+        "eventCode": "#eRezept_Rezeptanforderung;Rezeptanfrage",
+        "status": "active",
+        "patient": {
+          "name": "Max Mustermann",
+          "insuranceNumber": "G123456",
+          "birthDate": "1980-05-15"
+        },
+        "medication": {
+          "medicationName": "Ibuprofen 400mg",
+          "quantity": 2,
+          "instructions": "Take one tablet every 8 hours as needed."
+        },
+        "requester": "Pflegeeinrichtung Immergr\u00fcn",
+        "organizationType": "PFL"
+      }
+    },
+    "attachments": [],
+    "created": "17.10.2024 17:30:52"
+  }
+}

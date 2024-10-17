@@ -1,14 +1,28 @@
 import logging
 import sys
 import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from helper.kim_client import KIMClient
 from helper.logging_setup import setup_logger
 
 # Logger für den Arzt einrichten
 logger = setup_logger("Arzt_B", level=logging.INFO)
 
+
 class PvsKIMClient(KIMClient):
+    def __init__(self, client_name, kim_address):
+        super().__init__(client_name, kim_address)
+        self.software_info = {
+            "name": "DeltaCare Inc.",
+            "product": "PraxisFix",
+            "version": "1.3.2",
+            "email": "issues@praxisfix-deltacare.de",
+            "website": "https://deltacare.de/praxisfix/issues",
+        }
+
+        self.kim_address_details = {"display": client_name, "kim_address": kim_address}
+
     def process_message(self, message_content):
         # Empfangene Nachricht prüfen
         logger.debug("Empfangene Nachricht durch Arzt: %s", message_content)
@@ -19,7 +33,7 @@ class PvsKIMClient(KIMClient):
             logger.info("Arzt hat eine Rezeptanforderung erhalten.")
             prescription_id = "RX123456"
             access_code = "AC987654"
-            
+
             # Sicherstellen, dass der `requester` korrekt aus der eingehenden Nachricht extrahiert wird
             requester = inner_content.get("requester")
             if not requester:
@@ -31,12 +45,14 @@ class PvsKIMClient(KIMClient):
                 "eventCode": "#eRezept_Rezeptanforderung;Rezeptbestaetigung",
                 "status": "completed",
                 "ePrescriptionToken": f"{prescription_id}:{access_code}",
-                "originalRequest": inner_content
+                "originalRequest": inner_content,
             }
 
             # Antwort zurück an die Pflegeeinrichtung senden
             logger.info("Sende E-Rezept-Bestätigung an: %s", requester)
-            self.send_message(requester, "KIM-E-Rezept-Bestätigung", "Rezeptbestaetigung", response)
+            self.send_message(
+                requester, "KIM-E-Rezept-Bestätigung", "Rezeptbestaetigung", response
+            )
 
         else:
             logger.warning("Unerwartete Nachricht empfangen: %s", message_content)

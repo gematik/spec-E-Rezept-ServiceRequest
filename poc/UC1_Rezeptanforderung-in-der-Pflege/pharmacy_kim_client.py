@@ -1,14 +1,28 @@
 import logging
 import sys
 import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from helper.kim_client import KIMClient
 from helper.logging_setup import setup_logger
 
 # Logger für die Apotheke einrichten
 logger = setup_logger("Apotheke_C", level=logging.INFO)
 
+
 class PharmacyKIMClient(KIMClient):
+    def __init__(self, client_name, kim_address):
+        super().__init__(client_name, kim_address)
+        self.software_info = {
+            "name": "ApoSoft Gmbh",
+            "product": "ApoFlott",
+            "version": "1.1.3",
+            "email": "issues@apo-flott.de",
+            "website": "https://aposoft.de/issues",
+        }
+
+        self.kim_address_details = {"display": client_name, "kim_address": kim_address}
+
     def process_message(self, message_content):
         logger.debug("Empfangene Nachricht durch Apotheke: %s", message_content)
 
@@ -23,21 +37,24 @@ class PharmacyKIMClient(KIMClient):
                 # Weiterleiten der Bestätigung an die Pflegeeinrichtung
                 self.send_dispense_confirmation(inner_content.get("requester"))
             else:
-                logger.warning("Kein gültiger E-Rezept-Token gefunden in der Abgabeanfrage.")
+                logger.warning(
+                    "Kein gültiger E-Rezept-Token gefunden in der Abgabeanfrage."
+                )
                 logger.info("Empfangene Nachricht durch Apotheke: %s", message_content)
 
         else:
             logger.warning("Unerwartete Nachricht empfangen: %s", message_content)
 
-        
-        
-
     def send_dispense_confirmation(self, health_care_service):
         response = {
             "eventCode": "#eRezept_Rezeptanforderung;Abgabebestaetigung",
             "status": "completed",
-            "confirmation": "Die Abgabe ist erfolgt."
+            "confirmation": "Die Abgabe ist erfolgt.",
         }
         # Loggen der Abgabebestätigung
-        logger.info("Sende Abgabebestätigung an Pflegeeinrichtung: %s", health_care_service)
-        self.send_message(health_care_service, "KIM-Abgabebestätigung", "Abgabebestaetigung", response)
+        logger.info(
+            "Sende Abgabebestätigung an Pflegeeinrichtung: %s", health_care_service
+        )
+        self.send_message(
+            health_care_service, "KIM-Abgabebestätigung", "Abgabebestaetigung", response
+        )
