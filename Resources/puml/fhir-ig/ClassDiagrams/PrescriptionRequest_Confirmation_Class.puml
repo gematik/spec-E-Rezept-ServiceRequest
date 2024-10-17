@@ -7,7 +7,7 @@ RECTANGLE "MessageHeader" as MH {
 }
 
 
-RECTANGLE "ServiceRequest" as SR {
+RECTANGLE "ERPServiceRequestPrescriptionRequest" as SR {
     +identifier:requestId: string
     +basedOn: Reference<ERPServiceRequestMedicationRequest>
     +status: #completed

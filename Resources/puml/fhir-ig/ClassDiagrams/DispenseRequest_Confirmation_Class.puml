@@ -7,10 +7,10 @@ RECTANGLE "MessageHeader" as MH {
 }
 
 
-RECTANGLE "ServiceRequest" as SR {
+RECTANGLE "ERPServiceRequestDispenseRequest" as SR {
     +identifier:requestId: string
-    +basedOn: Reference<ERPServiceRequestMedicationRequest>
     +status: #completed
+    +supportingInfo: Reference<ERPServiceRequestMedicationDispense>
     +intent: #filler-order
     +code: #dispense-request
     +subject: Reference<Patient>
@@ -19,8 +19,8 @@ RECTANGLE "ServiceRequest" as SR {
     +note: String
 }
 
-RECTANGLE "ERPServiceRequestMedicationRequest" as MR {
-    +dispenseRequest.quantity: Quantity
+RECTANGLE "ERPServiceRequestMedicationDispense" as MR {
+    +identifier:prescriptionID.value: string
     +medicationReference: Reference<KBV_Medication>
 }
 

@@ -1,4 +1,4 @@
 - name: Index
   filename: Index.page.md
-- name: Profile
-  filename: profile_definitions
+- name: Extensions
+  filename: extension_definitions
