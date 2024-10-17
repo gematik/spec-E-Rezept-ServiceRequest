@@ -421,10 +421,6 @@
                 select="$rootBundle/fhir:entry/fhir:resource/fhir:ServiceRequest[fhir:subject/fhir:reference/@value = concat('Patient/', $patientRef)]">
                 <div class="service-request-box">
                     <div class="service-request-header">
-                        <span>#
-                            <xsl:value-of
-                                select="fhir:identifier[fhir:system/@value = 'https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier']/fhir:value/@value" />
-                        </span>
                         <div class="pill-container">
                             <xsl:if test="fhir:priority/@value = 'urgent'">
                                 <div class="urgent-pill">dringend</div>
@@ -451,7 +447,7 @@
                         </div>
                     </div>
                     <div class="reason-section">
-                        <xsl:if test="fhir:reasonCode/fhir:coding">
+                        <xsl:if test="fhir:reasonCode">
                             <span>
                                 <strong>Begründung: </strong>
                             </span>
@@ -492,6 +488,7 @@
                     <table>
                         <thead>
                             <tr>
+                                <th>Nr.</th>
                                 <th>Artikel</th>
                                 <th>Reichweite/ Bedarfszeitraum</th>
                                 <th>Dosieranweisungen</th>
@@ -501,6 +498,9 @@
                         </thead>
                         <tbody>
                             <tr>
+                                <td>
+                                    <xsl:value-of select="position()" />
+                                </td>
                                 <td>
                                     <xsl:variable name="medReqRef"
                                         select="fhir:basedOn/fhir:reference/@value" />
