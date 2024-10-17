@@ -10,6 +10,14 @@ Description: "ServiceRequest that is used to supply a recipe"
 * obeys servicerequest-dispense-request-3
 * obeys servicerequest-dispense-request-4
 
+* modifierExtension contains ChangedMedicationEX named medicationChanged 0..1 MS ?!
+
+* modifierExtension[medicationChanged]
+  * ^short = "Indicates whether the medication has been changed by the pharmacy."
+  * ^definition = "If the medication has been changed, the value is set to true."
+  * ^comment = "If the medication has been changed, the receiving system must display the changed medication to the receiving user."
+  * ^isModifierReason = "If the medication has been changed, the receiving system must display the changed medication to the receiving user."
+
 * extension MS
 * extension contains
     EPrescriptionTokenEX named EPrescriptionToken 0..1 MS and

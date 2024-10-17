@@ -94,6 +94,26 @@
         "mustSupport": true
       },
       {
+        "id": "ServiceRequest.modifierExtension:medicationChanged",
+        "path": "ServiceRequest.modifierExtension",
+        "sliceName": "medicationChanged",
+        "short": "Indicates whether the medication has been changed by the pharmacy.",
+        "definition": "If the medication has been changed, the value is set to true.",
+        "comment": "If the medication has been changed, the receiving system must display the changed medication to the receiving user.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/changed-medication-ex"
+            ]
+          }
+        ],
+        "mustSupport": true,
+        "isModifierReason": "If the medication has been changed, the receiving system must display the changed medication to the receiving user."
+      },
+      {
         "id": "ServiceRequest.identifier",
         "path": "ServiceRequest.identifier",
         "slicing": {
