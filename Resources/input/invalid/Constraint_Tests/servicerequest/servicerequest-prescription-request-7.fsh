@@ -1,35 +1,21 @@
 /*
 This file contains Tests for servicerequest-prescription-request-7
 
-Description: "If the status is completed and the prescription should not be redeemed by the patient, the e-prescription-token must be present."
-Expression: "(status = 'completed' and (modifierExtension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex').value = true or modifierExtension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex').exists().not())) implies extension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex').exists()"
+Description: "If the status is completed, then the request must be based on an ERP MedicationRequest."
+Expression: "status = 'completed' implies basedOn.exists()"
 */
 
-Instance: INVALID-prescription-request-7-1-of-2
+Instance: INVALID-prescription-request-7
 InstanceOf: ERPServiceRequestPrescriptionRequest
 Usage: #example
-Title: "Invalid Prescription Request 7-1-of-2"
-* identifier[requestId].value = "INVALID-prescription-request-7-1-of-2"
-* basedOn = Reference(Example-Initial-Medication-Request)
+Title: "Invalid Prescription Request 4"
+* identifier[requestId].value = "INVALID-prescription-request-7"
+* extension[EPrescriptionToken].valueIdentifier.value = "Task/169.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
 * requisition.value = "GroupID-UC3"
 * status = RequestStatus#completed
 * intent = RequestIntent#order
 * code.coding[request-type] = ServiceRequestTypeCS#prescription-request
 * subject = Reference(Example-Patient)
-* authoredOn = "2025-05-13"
-* performer.identifier = Hans-Topp-Glücklich-Identifier
-
-Instance: INVALID-prescription-request-7-2-of-2
-InstanceOf: ERPServiceRequestPrescriptionRequest
-Usage: #example
-Title: "Invalid Prescription Request 7-2-of-2"
-* identifier[requestId].value = "INVALID-prescription-request-7-2-of-2"
-* modifierExtension[redeemByPatient].valueBoolean = false
-* basedOn = Reference(Example-Initial-Medication-Request)
-* requisition.value = "GroupID-UC3"
-* status = RequestStatus#completed
-* intent = RequestIntent#order
-* code.coding[request-type] = ServiceRequestTypeCS#prescription-request
-* subject = Reference(Example-Patient)
+* requester = Reference(Example-HealthCareService-Organization)
 * authoredOn = "2025-05-13"
 * performer.identifier = Hans-Topp-Glücklich-Identifier
