@@ -181,6 +181,74 @@
     {
       "fullUrl": "http://erp-servicerequest-test.de/Patient/Example-Patient-2",
       "resource": {
+        "resourceType": "Patient",
+        "id": "Example-Patient-2",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-patient"
+          ]
+        },
+        "name": [
+          {
+            "use": "official",
+            "family": "Edgarson",
+            "_family": {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+                  "valueString": "Edgarson"
+                }
+              ]
+            },
+            "given": [
+              "Peter"
+            ]
+          }
+        ],
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
+                  "code": "GKV"
+                }
+              ]
+            },
+            "system": "http://fhir.de/sid/gkv/kvid-10",
+            "value": "X098765432"
+          }
+        ],
+        "address": [
+          {
+            "type": "both",
+            "line": [
+              "Erikastraße 43"
+            ],
+            "_line": [
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                    "valueString": "43"
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                    "valueString": "Erikastraße"
+                  }
+                ]
+              }
+            ],
+            "city": "Berlin",
+            "postalCode": "10742"
+          }
+        ],
+        "birthDate": "1974-01-31"
+      }
+    },
+    {
+      "fullUrl": "http://erp-servicerequest-test.de/MedicationRequest/Example-Initial-Medication-Request-2",
+      "resource": {
         "resourceType": "MedicationRequest",
         "id": "Example-Initial-Medication-Request-2",
         "meta": {

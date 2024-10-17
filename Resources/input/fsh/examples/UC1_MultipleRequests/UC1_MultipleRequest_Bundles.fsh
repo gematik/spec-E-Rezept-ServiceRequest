@@ -75,6 +75,8 @@ Description: "Response from Practitioner containing the rejected prescription re
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Patient/Example-Patient-2"
 * entry[=].resource = Example-Patient-2
 
+// Medication Request
+* entry[+].fullUrl = "http://erp-servicerequest-test.de/MedicationRequest/Example-Initial-Medication-Request-2"
 * entry[=].resource = Example-Initial-Medication-Request-2
 * entry[+].fullUrl = "http://erp-servicerequest-test.de/Medication/Example-Initial-Medication-2"
 * entry[=].resource = Example-Initial-Medication-2
