@@ -130,10 +130,22 @@
               "resourceType": "Organization",
               "id": "Example-Practitioner-Organization",
               "meta": {
+                "tag": [
+                  {
+                    "system": "https://gematik.de/fhir/directory/CodeSystem/Origin",
+                    "code": "owner"
+                  }
+                ],
                 "profile": [
                   "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
                 ]
               },
+              "identifier": [
+                {
+                  "system": "https://gematik.de/fhir/sid/telematik-id",
+                  "value": "123456789"
+                }
+              ],
               "type": [
                 {
                   "coding": [
@@ -155,31 +167,17 @@
                   ]
                 }
               ],
+              "name": "Test Arztpraxis",
               "address": [
                 {
                   "type": "both",
                   "line": [
                     "Musterarztstr. 3"
                   ],
-                  "_line": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-                          "valueString": "3"
-                        },
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-                          "valueString": "Musterarztstr."
-                        }
-                      ]
-                    }
-                  ],
                   "city": "Berlin",
                   "postalCode": "10623"
                 }
-              ],
-              "name": "Test Arztpraxis"
+              ]
             }
           },
           {
@@ -466,10 +464,22 @@
         "resourceType": "Organization",
         "id": "Example-Practitioner-Organization",
         "meta": {
+          "tag": [
+            {
+              "system": "https://gematik.de/fhir/directory/CodeSystem/Origin",
+              "code": "owner"
+            }
+          ],
           "profile": [
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://gematik.de/fhir/sid/telematik-id",
+            "value": "123456789"
+          }
+        ],
         "type": [
           {
             "coding": [
@@ -491,31 +501,17 @@
             ]
           }
         ],
+        "name": "Test Arztpraxis",
         "address": [
           {
             "type": "both",
             "line": [
               "Musterarztstr. 3"
             ],
-            "_line": [
-              {
-                "extension": [
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-                    "valueString": "3"
-                  },
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-                    "valueString": "Musterarztstr."
-                  }
-                ]
-              }
-            ],
             "city": "Berlin",
             "postalCode": "10623"
           }
-        ],
-        "name": "Test Arztpraxis"
+        ]
       }
     }
   ]

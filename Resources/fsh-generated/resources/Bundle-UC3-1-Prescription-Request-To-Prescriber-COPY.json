@@ -130,10 +130,22 @@
               "resourceType": "Organization",
               "id": "Example-Pharmacy-Organization",
               "meta": {
+                "tag": [
+                  {
+                    "system": "https://gematik.de/fhir/directory/CodeSystem/Origin",
+                    "code": "owner"
+                  }
+                ],
                 "profile": [
                   "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
                 ]
               },
+              "identifier": [
+                {
+                  "system": "https://gematik.de/fhir/sid/telematik-id",
+                  "value": "123456789"
+                }
+              ],
               "type": [
                 {
                   "coding": [
@@ -155,31 +167,17 @@
                   ]
                 }
               ],
+              "name": "Test Apotheke",
               "address": [
                 {
                   "type": "both",
                   "line": [
                     "Musterstr. 2"
                   ],
-                  "_line": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-                          "valueString": "2"
-                        },
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-                          "valueString": "Musterstr."
-                        }
-                      ]
-                    }
-                  ],
                   "city": "Berlin",
                   "postalCode": "10623"
                 }
-              ],
-              "name": "Test Apotheke"
+              ]
             }
           },
           {
@@ -188,10 +186,22 @@
               "resourceType": "Organization",
               "id": "Example-HealthCareService-Organization",
               "meta": {
+                "tag": [
+                  {
+                    "system": "https://gematik.de/fhir/directory/CodeSystem/Origin",
+                    "code": "owner"
+                  }
+                ],
                 "profile": [
                   "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
                 ]
               },
+              "identifier": [
+                {
+                  "system": "https://gematik.de/fhir/sid/telematik-id",
+                  "value": "123456789"
+                }
+              ],
               "type": [
                 {
                   "coding": [
@@ -217,31 +227,17 @@
                   ]
                 }
               ],
+              "name": "Pflegeheim Immergrün",
               "address": [
                 {
                   "type": "both",
                   "line": [
                     "Musterstr. 2"
                   ],
-                  "_line": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-                          "valueString": "2"
-                        },
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-                          "valueString": "Musterstr."
-                        }
-                      ]
-                    }
-                  ],
                   "city": "Berlin",
                   "postalCode": "10623"
                 }
-              ],
-              "name": "Pflegeheim Immergrün"
+              ]
             }
           },
           {
@@ -448,10 +444,22 @@
         "resourceType": "Organization",
         "id": "Example-Pharmacy-Organization",
         "meta": {
+          "tag": [
+            {
+              "system": "https://gematik.de/fhir/directory/CodeSystem/Origin",
+              "code": "owner"
+            }
+          ],
           "profile": [
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://gematik.de/fhir/sid/telematik-id",
+            "value": "123456789"
+          }
+        ],
         "type": [
           {
             "coding": [
@@ -473,31 +481,17 @@
             ]
           }
         ],
+        "name": "Test Apotheke",
         "address": [
           {
             "type": "both",
             "line": [
               "Musterstr. 2"
             ],
-            "_line": [
-              {
-                "extension": [
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-                    "valueString": "2"
-                  },
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-                    "valueString": "Musterstr."
-                  }
-                ]
-              }
-            ],
             "city": "Berlin",
             "postalCode": "10623"
           }
-        ],
-        "name": "Test Apotheke"
+        ]
       }
     }
   ]

@@ -309,7 +309,7 @@
     "fshType": "Instance",
     "fshFile": "examples/Misc/Example_Organization.fsh",
     "startLine": 1,
-    "endLine": 17
+    "endLine": 16
   },
   {
     "outputFile": "Patient-Example-Patient.json",

@@ -1,5 +1,5 @@
 Profile: ERPServiceRequestOrganization
-Parent: KBV_PR_Base_Organization
+Parent: OrganizationDirectory
 Id: erp-service-request-organization
 Title: "ERP Service Request Organization"
 Description: "Organization that can be used to specify a KIM address"

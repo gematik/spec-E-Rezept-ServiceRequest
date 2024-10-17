@@ -1,5 +1,5 @@
 {
-  "updated": "2024-10-17T15:11:22.90518+02:00",
+  "updated": "2024-10-17T15:13:12.298631+02:00",
   "dependencies": {
     "hl7.fhir.r4.core": "4.0.1",
     "de.gematik.fhir.atf": "1.4.0-dev",
@@ -8,7 +8,9 @@
     "kbv.ita.for": "1.1.0",
     "de.gematik.epa": "1.1.0",
     "de.basisprofil.r4": "1.5.0",
-    "de.gematik.terminology": "1.0.1"
+    "de.gematik.terminology": "1.0.1",
+    "de.gematik.fhir.directory": "0.11.12",
+    "de.ihe-d.terminology": "3.0.0"
   },
   "missing": {}
 }
