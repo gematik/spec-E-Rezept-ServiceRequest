@@ -13,3 +13,10 @@ Description: "Mapping des Fachmodells aus GEM_ERP_SR_LOG_PrescriptionRequest_Can
 * VorgangsID -> "ERPServiceRequestPrescriptionRequest.identifier:requestId.value"
 
 * Grund -> "ERPServiceRequestPrescriptionRequest.reasonCode.text"
+
+// Medizinische Daten
+* Medikation -> "ERPServiceRequestPrescriptionRequest.basedOn(ERPServiceRequestMedicationRequest)"
+  * MedikationsReferenz -> "ERPServiceRequestMedicationRequest.medicationReference"
+  * AnzahlPackungen -> "ERPServiceRequestMedicationRequest.dispenseRequest.quantity"
+    * Einheit -> "ERPServiceRequestMedicationRequest.dispenseRequest.quantity.unit"
+    * Wert -> "ERPServiceRequestMedicationRequest.dispenseRequest.quantity.value"

@@ -20,4 +20,9 @@ Description: "Mapping des Fachmodells aus GEM_ERP_SR_LOG_PrescriptionRequest_Con
 * Freitext -> "ERPServiceRequestPrescriptionRequest.note"
 
 // Medizinische Informationen
-* Medikation -> "ERPServiceRequestPrescriptionRequest.basedOn(KBV_Prescription)"
+* Medikation -> "ERPServiceRequestPrescriptionRequest.basedOn(ERPServiceRequestMedicationRequest)"
+  * MedizinischeInformationenAusVerordnung -> "ERPServiceRequestMedicationRequest.medicationReference"
+  * AnzahlPackungen -> "ERPServiceRequestMedicationRequest.dispenseRequest.quantity"
+    * Einheit -> "ERPServiceRequestMedicationRequest.dispenseRequest.quantity.unit"
+    * Wert -> "ERPServiceRequestMedicationRequest.dispenseRequest.quantity.value"
+  * Dosieranweisungen -> "ERPServiceRequestMedicationRequest.dosageInstruction"

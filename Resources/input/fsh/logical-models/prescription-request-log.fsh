@@ -9,12 +9,10 @@ Description: "Fachliches Modell zur Beschreibung einer Rezeptanforderung"
 
 * obeys log-prescription-request-1
 * obeys log-prescription-request-2
-* obeys log-prescription-request-3
 
 // Administrative Informationen
 * Status 1..1 code "Status" "Status der Anforderung. Wird genutzt, um den Bearbeitungsstand einer Anfrage zu verfolgen. Im Falle der Rezeptanforderung wird eine Anfrage mit dem Status 'active' erstellt und geschickt und signalisiert somit eine neue Anfrage."
   * obeys log-prescription-request-1
-  * obeys log-prescription-request-2
 * VorgangsID 1..1 string "ID des Vorgangs" "Wird vom initialen Sender gesetzt und muss immer mitgeführt werden."
 * VersichertenEinloesung 0..1 boolean "Versicherten Einlösung" "Angabe, ob der Versicherte das E-Rezept selbst einlösen möchte."
 
@@ -31,13 +29,13 @@ Description: "Fachliches Modell zur Beschreibung einer Rezeptanforderung"
   * Anfragender 1..1 BackboneElement "Anfragender" "Angaben zum anfragenden"
     * obeys log-prescription-request-1
     * AnfragenderTyp 1..1 Coding "Typ des Anfragenden" "Folgende Typen sind zulässig: Apotheke, Pflegeeinrichtung"
-      * obeys log-prescription-request-3
+      * obeys log-prescription-request-2
     * Name 1..1 string "Name des Anfragenden"
     * Adresse 0..1 Address "Straßenadresse des Anfragenden"
     * Telefon 1..1 string "Telefonnummer des Anfragenden"
 
   * PflegeeinrichtungKopie 0..1 BackboneElement "Zu benachrichtigende Pflegeeinrichtung" "Angaben zur Pflegeeinrichtung, die über den Ablauf der Rezeptanforderung per Kopie informiert werden soll. Muss angegeben werden, wenn die Apotheke die Rezeptanforderung stellt."
-    * obeys log-prescription-request-3
+    * obeys log-prescription-request-2
     * Name 1..1 string "Name der Pflegeeinrichtung"
     * Telefon 1..1 string "Telefonnummer der Pflegeeinrichtung"
     * KIMAdresse 1..1 Address "KIM-Adresse der Pflegeeinrichtung"
@@ -61,7 +59,6 @@ Description: "Fachliches Modell zur Beschreibung einer Rezeptanforderung"
 
 // Medizinische Informationen
 * Medikation 1..1 BackboneElement "Medikation" "Angaben zur Medikation"
-  * obeys log-prescription-request-2
   * VorherigeRezeptID 0..1 BackboneElement "ID des vorherigen Rezepts" "Kann bei der Anforderung einer Folgeverordnung verwendet werden, um einen Bezug zu einer vorherigen Verordnung herzustellen."
   * MedikationsReferenz 0..1 Medication "Referenz auf das Medikamentenobjekt" "Referenz auf das Medikamentenobjekt nach KBV_Verordnung (Freitext, PZN, Wirkstoff, Rezeptur)"
     * ^comment = "Folgende Profile aus dem E-Rezept Verordnungsdatensatz sind zulässig: KBV_PR_ERP_Medication_Compounding, KBV_PR_ERP_Medication_FreeText, KBV_PR_ERP_Medication _Ingredient, KBV_PR_ERP_Medication_PZN"
@@ -76,9 +73,5 @@ Description: "Wenn eine Anfrage gestellt wird (status = 'active'), muss auch der
 Severity: #error
 
 Invariant: log-prescription-request-2
-Description: "Wenn eine Anfrage gestellt wird (status = 'active'), müssen medizinische Informationen zur Verordnung vorhanden sein."
-Severity: #error
-
-Invariant: log-prescription-request-3
 Description: "Wenn eine Anfrage von einer Apotheke (involvierteParteien.Anfragender.AnfragenderTyp = 'APO') gestellt wird, muss die Angabe der Pflegeeinrichtung zur Kopie angegeben werden (involvierteParteien.PflegeeinrichtungKopie)."
 Severity: #error

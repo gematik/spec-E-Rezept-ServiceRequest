@@ -517,7 +517,7 @@
     "fshType": "Logical",
     "fshFile": "logical-models/prescription-request-cancellation-log.fsh",
     "startLine": 1,
-    "endLine": 12
+    "endLine": 20
   },
   {
     "outputFile": "StructureDefinition-gem-erp-sr-log-prescription-request-confirmation.json",
@@ -525,7 +525,7 @@
     "fshType": "Logical",
     "fshFile": "logical-models/prescription-request-confirmation-log.fsh",
     "startLine": 1,
-    "endLine": 34
+    "endLine": 36
   },
   {
     "outputFile": "StructureDefinition-gem-erp-sr-log-prescription-request-rejection.json",
@@ -533,7 +533,7 @@
     "fshType": "Logical",
     "fshFile": "logical-models/prescription-request-rejection-log.fsh",
     "startLine": 1,
-    "endLine": 12
+    "endLine": 20
   },
   {
     "outputFile": "StructureDefinition-gem-erp-sr-log-prescription-request.json",
@@ -541,7 +541,7 @@
     "fshType": "Logical",
     "fshFile": "logical-models/prescription-request-log.fsh",
     "startLine": 1,
-    "endLine": 72
+    "endLine": 69
   },
   {
     "outputFile": "StructureDefinition-prescription-id-ex.json",

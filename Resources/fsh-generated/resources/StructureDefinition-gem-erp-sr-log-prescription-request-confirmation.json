@@ -40,12 +40,6 @@
           {
             "key": "log-prescription-request-confirmation-1",
             "severity": "error",
-            "human": "Wenn eine Anfrage bestätigt wird (status = 'completed'), müssen medizinische Informationen zur Verordnung vorhanden sein.",
-            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-prescription-request-confirmation"
-          },
-          {
-            "key": "log-prescription-request-confirmation-2",
-            "severity": "error",
             "human": "Wenn eine Anfrage bestätigt wird (status = 'completed'), muss der E-Rezept Token vorhanden sein.",
             "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-prescription-request-confirmation"
           }
@@ -370,7 +364,7 @@
         ],
         "constraint": [
           {
-            "key": "log-prescription-request-confirmation-2",
+            "key": "log-prescription-request-confirmation-1",
             "severity": "error",
             "human": "Wenn eine Anfrage bestätigt wird (status = 'completed'), muss der E-Rezept Token vorhanden sein.",
             "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-prescription-request-confirmation"
@@ -403,12 +397,6 @@
         "constraint": [
           {
             "key": "log-prescription-request-confirmation-1",
-            "severity": "error",
-            "human": "Wenn eine Anfrage bestätigt wird (status = 'completed'), müssen medizinische Informationen zur Verordnung vorhanden sein.",
-            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-prescription-request-confirmation"
-          },
-          {
-            "key": "log-prescription-request-confirmation-2",
             "severity": "error",
             "human": "Wenn eine Anfrage bestätigt wird (status = 'completed'), muss der E-Rezept Token vorhanden sein.",
             "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-prescription-request-confirmation"
@@ -589,18 +577,10 @@
             "code": "BackboneElement"
           }
         ],
-        "constraint": [
-          {
-            "key": "log-prescription-request-confirmation-1",
-            "severity": "error",
-            "human": "Wenn eine Anfrage bestätigt wird (status = 'completed'), müssen medizinische Informationen zur Verordnung vorhanden sein.",
-            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-prescription-request-confirmation"
-          }
-        ],
         "mapping": [
           {
             "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
-            "map": "ERPServiceRequestPrescriptionRequest.basedOn(KBV_Prescription)"
+            "map": "ERPServiceRequestPrescriptionRequest.basedOn(ERPServiceRequestMedicationRequest)"
           },
           {
             "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
@@ -626,9 +606,89 @@
         ],
         "mapping": [
           {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestMedicationRequest.medicationReference"
+          },
+          {
             "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
             "map": "PVS",
             "comment": "Informationen aus Verordnungsdatensatz (MedicationRequest und Medication)"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-confirmation.Medikation.AnzahlPackungen",
+        "path": "gem-erp-sr-log-prescription-request-confirmation.Medikation.AnzahlPackungen",
+        "short": "Anzahl der Packungen",
+        "definition": "Anzahl der Packungen",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestMedicationRequest.dispenseRequest.quantity"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-confirmation.Medikation.AnzahlPackungen.Einheit",
+        "path": "gem-erp-sr-log-prescription-request-confirmation.Medikation.AnzahlPackungen.Einheit",
+        "short": "Einheit der Menge, fix auf 'Packung' gesetzt",
+        "definition": "Einheit der Menge, fix auf 'Packung' gesetzt",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestMedicationRequest.dispenseRequest.quantity.unit"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-confirmation.Medikation.AnzahlPackungen.Wert",
+        "path": "gem-erp-sr-log-prescription-request-confirmation.Medikation.AnzahlPackungen.Wert",
+        "short": "Anzahl der Packungen",
+        "definition": "Anzahl der Packungen",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestMedicationRequest.dispenseRequest.quantity.value"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-confirmation.Medikation.Dosieranweisungen",
+        "path": "gem-erp-sr-log-prescription-request-confirmation.Medikation.Dosieranweisungen",
+        "short": "Dosieranweisungen",
+        "definition": "Dosieranweisungen, wie sie auch in der Verordnung angegeben sind",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Dosage"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestMedicationRequest.dosageInstruction"
           }
         ]
       }

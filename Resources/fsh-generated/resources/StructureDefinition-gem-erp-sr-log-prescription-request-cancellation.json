@@ -413,6 +413,102 @@
             "comment": "Aus initialer Rezeptanforderung"
           }
         ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-cancellation.Medikation",
+        "path": "gem-erp-sr-log-prescription-request-cancellation.Medikation",
+        "short": "Medikation",
+        "definition": "Angaben zur Medikation",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Stornierung-Fachliches-Mapping",
+            "map": "ERPServiceRequestPrescriptionRequest.basedOn(ERPServiceRequestMedicationRequest)"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-cancellation.Medikation.MedikationsReferenz",
+        "path": "gem-erp-sr-log-prescription-request-cancellation.Medikation.MedikationsReferenz",
+        "short": "Referenz auf das Medikamentenobjekt",
+        "definition": "Referenz auf das Medikamentenobjekt nach KBV_Verordnung (Freitext, PZN, Wirkstoff, Rezeptur)",
+        "comment": "Folgende Profile aus dem E-Rezept Verordnungsdatensatz sind zulässig: KBV_PR_ERP_Medication_Compounding, KBV_PR_ERP_Medication_FreeText, KBV_PR_ERP_Medication _Ingredient, KBV_PR_ERP_Medication_PZN",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Medication"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Stornierung-Fachliches-Mapping",
+            "map": "ERPServiceRequestMedicationRequest.medicationReference"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-cancellation.Medikation.AnzahlPackungen",
+        "path": "gem-erp-sr-log-prescription-request-cancellation.Medikation.AnzahlPackungen",
+        "short": "Anzahl der Packungen",
+        "definition": "Anzahl der Packungen",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Stornierung-Fachliches-Mapping",
+            "map": "ERPServiceRequestMedicationRequest.dispenseRequest.quantity"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-cancellation.Medikation.AnzahlPackungen.Einheit",
+        "path": "gem-erp-sr-log-prescription-request-cancellation.Medikation.AnzahlPackungen.Einheit",
+        "short": "Einheit der Menge, fix auf 'Packung' gesetzt",
+        "definition": "Einheit der Menge, fix auf 'Packung' gesetzt",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Stornierung-Fachliches-Mapping",
+            "map": "ERPServiceRequestMedicationRequest.dispenseRequest.quantity.unit"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-cancellation.Medikation.AnzahlPackungen.Wert",
+        "path": "gem-erp-sr-log-prescription-request-cancellation.Medikation.AnzahlPackungen.Wert",
+        "short": "Anzahl der Packungen",
+        "definition": "Anzahl der Packungen",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Stornierung-Fachliches-Mapping",
+            "map": "ERPServiceRequestMedicationRequest.dispenseRequest.quantity.value"
+          }
+        ]
       }
     ]
   }
