@@ -1,0 +1,65 @@
+@startuml name = "UC1-Rezeptanforderung-Pflege"
+
+
+skinparam maxMessageSize 200
+
+actor "Pflegeeinrichtung" as Pflegeeinrichtung
+actor "Verordnender \nLeistungserbringer" as Arztpraxis
+actor "Abgebender \nLeistungserbringer" as Apotheke
+entity "E-Rezept\nFachdienst" as FD
+
+title UC1-Rezeptanforderung durch Pflegeeinrichtung
+hide footbox
+autonumber "<b>[0]"
+
+legend bottom right
+    __Legende__
+    |<#LightPink> Ergebnis: keine Medikamentabgabe|
+    |*: //ServiceRequest_Nachricht_Kopie// wird versendet|
+endlegend
+
+group "Rezeptanforderung durch Pflegeeinrichtung"
+Pflegeeinrichtung -> Arztpraxis: //Rezeptanforderung//
+
+opt #LightPink Stornierung
+    Pflegeeinrichtung -> Arztpraxis: //Rezeptanforderung_Storno//
+    alt #LightPink E-Rezept noch nicht eingestellt
+    Pflegeeinrichtung -[hidden]-> Arztpraxis: Rezeptanforderung wird verworfen
+        Arztpraxis ->x Arztpraxis: Rezeptanforderung wird verworfen
+    else #LightPink E-Rezept wurde eingestellt
+        Arztpraxis ->x Arztpraxis: E-Rezept wird gelöscht
+    end
+end
+
+alt Arzt ist einverstanden 
+    Arztpraxis <-> FD: E-Rezept einstellen
+    Arztpraxis -> Pflegeeinrichtung: //Rezeptanforderung_Bestätigung//
+    
+else #LightPink Arzt lehnt ab
+    Arztpraxis -> Pflegeeinrichtung: //Rezeptanforderung_Ablehnung//
+end
+
+end
+
+group  "Dispensieranforderung durch Pflegeeinrichtung"
+Pflegeeinrichtung -> Apotheke: //Dispensieranforderung//
+
+opt "Fehler bei der Bearbeitung des E-Rezeptes"
+ Apotheke -> Apotheke: Prüfung des E-Rezeptes Fehlgeschlagen
+ Apotheke -> FD: E-Rezept zurückgeben
+ group "UC3: Rezeptanforderung durch Apotheke"
+  Apotheke -> Arztpraxis: //Rezeptanforderung*//
+  Arztpraxis -> FD: Altes E-Rezept löschen
+  Arztpraxis -> FD: Neues E-Rezept einstellen
+  Arztpraxis -> Apotheke: //Rezeptanforderung_Bestätigung*//
+ end
+end
+
+Apotheke <-> FD: E-Rezept einlösen
+
+Apotheke -> Pflegeeinrichtung: //Dispensieranforderung_Bestätigung//
+Apotheke -> Pflegeeinrichtung: Medikamentbelieferung
+
+end
+
+@enduml

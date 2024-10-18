@@ -1,0 +1,61 @@
+@startuml "PrescriptionRequest_Class"
+!define RECTANGLE class
+
+RECTANGLE "MessageHeader" as MH {
+    +eventCode: #eRezept_Rezeptanforderung;Rezeptanfrage
+    +focus: Reference<ERPServiceRequestPrescriptionRequest>
+}
+
+
+RECTANGLE "ServiceRequest" as SR {
+    +identifier:requestId: string
+    +basedOn: Reference<ERPServiceRequestMedicationRequest>
+    +status: #active
+    +intent: #order
+    +code: #prescription-request
+    +subject: Reference<Patient>
+    +occurrence: dateTime
+    +authoredOn: Date
+    +requester: Reference<ERPServiceRequestOrganization>
+    +performer: Reference<ERPServiceRequestPractitioner>
+    +note: String
+    +reasonCode: String
+    +priority: #routine | #urgent
+}
+
+RECTANGLE "ERPServiceRequestMedicationRequest" as MR {
+    +extension:PriorPrescriptionID: String
+    +extension:requestMVO.extension:Kennzeichen: boolean
+    +dispenseRequest.quantity: Quantity
+    +medicationReference: Reference<KBV_Medication>
+}
+
+RECTANGLE "KBV_Medication" as MED {
+    +(s. eRezept Profile)
+}
+
+RECTANGLE "ERPServiceRequestPatient" as P {
+    +name: String
+    +identifier:kvnr: String
+    +birthDate: Date
+}
+
+RECTANGLE "ERPServiceRequestOrganization" as O {
+    +name: String
+    +address: String
+    +contact:tel: String
+    +contact:kim: String
+}
+
+RECTANGLE "ERPServiceRequestPractitioner" as PR {
+    +name: String
+    +identifier:ANR: String
+}
+
+MH .down.> SR : .focus 1..*
+SR .down.> P : .subject 1..1
+SR .right.> MR : .basedOn 1..1
+MR .down.> MED : .medication 1..1
+SR .down.> O : .requester 1..1
+SR .down.> PR : .performer 0..1
+@enduml

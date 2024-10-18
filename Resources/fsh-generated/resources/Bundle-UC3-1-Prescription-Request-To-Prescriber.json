@@ -11,13 +11,13 @@
     "system": "urn:ietf:rfc:3986",
     "value": "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
   },
-  "timestamp": "2015-02-07T13:28:17.239+02:00",
+  "timestamp": "2025-05-13T14:25:12+02:00",
   "entry": [
     {
-      "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/UC3-HealthCareService-to-Practitioner-MessageHeader",
+      "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/UC3-Pharmacy-to-Practitioner-MessageHeader",
       "resource": {
         "resourceType": "MessageHeader",
-        "id": "UC3-HealthCareService-to-Practitioner-MessageHeader",
+        "id": "UC3-Pharmacy-to-Practitioner-MessageHeader",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
@@ -26,12 +26,12 @@
         "source": {
           "contact": {
             "system": "email",
-            "value": "info@hcs.email"
+            "value": "info@avs.email"
           },
-          "name": "HealthCare-Source",
-          "software": "HealthCare-Software",
+          "name": "Pharmacy-Source",
+          "software": "Pharmacy-Software",
           "version": "1.0.0",
-          "endpoint": "mailto:healthcare-service@test.kim.de"
+          "endpoint": "pharmacy@test.kim.de"
         },
         "focus": [
           {
@@ -41,26 +41,139 @@
         "sender": {
           "identifier": {
             "system": "https://gematik.de/fhir/sid/telematik-id",
-            "value": "5-test-telematik-id"
+            "value": "3-test-telematik-id"
           },
-          "display": "Pflegeheim Immergrün"
+          "display": "Test Apotheke"
         },
         "destination": [
           {
-            "receiver": {
-              "identifier": {
-                "system": "https://gematik.de/fhir/sid/telematik-id",
-                "value": "1-test-telematik-id"
-              },
-              "display": "Praxis Hans Topp-Glücklich"
-            },
-            "endpoint": "mailto:practitioner@test.kim.de"
+            "name": "Praxis Hans Topp-Glücklich",
+            "endpoint": "practitioner@test.kim.de"
           }
         ],
         "eventCoding": {
           "code": "eRezept_Rezeptanforderung;Rezeptanfrage",
           "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
+        },
+        "responsible": {
+          "reference": "Organization/Example-Pharmacy-Organization"
         }
+      }
+    },
+    {
+      "fullUrl": "http://erp-servicerequest-test.de/Organization/Example-Pharmacy-Organization",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "Example-Pharmacy-Organization",
+        "meta": {
+          "tag": [
+            {
+              "system": "https://gematik.de/fhir/directory/CodeSystem/Origin",
+              "code": "owner"
+            }
+          ],
+          "profile": [
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://gematik.de/fhir/sid/telematik-id",
+            "value": "123456789"
+          }
+        ],
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "0301234567"
+              }
+            ]
+          }
+        ],
+        "name": "Test Apotheke",
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "1.2.276.0.76.4.54",
+                "system": "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID",
+                "display": "Öffentliche Apotheke"
+              }
+            ]
+          }
+        ],
+        "address": [
+          {
+            "type": "both",
+            "line": [
+              "Musterstr. 2"
+            ],
+            "city": "Berlin",
+            "postalCode": "10623"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://erp-servicerequest-test.de/Organization/Example-HealthCareService-Organization",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "Example-HealthCareService-Organization",
+        "meta": {
+          "tag": [
+            {
+              "system": "https://gematik.de/fhir/directory/CodeSystem/Origin",
+              "code": "owner"
+            }
+          ],
+          "profile": [
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://gematik.de/fhir/sid/telematik-id",
+            "value": "123456789"
+          }
+        ],
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "0301234567"
+              },
+              {
+                "system": "email",
+                "value": "arbeitsplatz-1@test-pflegeheim.kim.telematik"
+              }
+            ]
+          }
+        ],
+        "name": "Pflegeheim Immergrün",
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "1.2.276.0.76.4.245",
+                "system": "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID",
+                "display": "Betriebsstätte Gesundheits-, Kranken- und Altenpflege"
+              }
+            ]
+          }
+        ],
+        "address": [
+          {
+            "type": "both",
+            "line": [
+              "Musterstr. 2"
+            ],
+            "city": "Berlin",
+            "postalCode": "10623"
+          }
+        ]
       }
     },
     {
@@ -74,8 +187,14 @@
           ]
         },
         "intent": "order",
+        "identifier": [
+          {
+            "system": "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier",
+            "value": "1"
+          }
+        ],
         "requisition": {
-          "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
+          "system": "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier",
           "value": "GroupID-UC3"
         },
         "code": {
@@ -86,10 +205,10 @@
             }
           ]
         },
-        "identifier": [
+        "supportingInfo": [
           {
-            "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier",
-            "value": "1"
+            "type": "Organization",
+            "reference": "Organization/Example-HealthCareService-Organization"
           }
         ],
         "basedOn": [
@@ -101,29 +220,70 @@
         "subject": {
           "reference": "Patient/Example-Patient"
         },
-        "orderDetail": [
+        "authoredOn": "2025-05-13",
+        "requester": {
+          "reference": "Organization/Example-Pharmacy-Organization"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://erp-servicerequest-test.de/Patient/Example-Patient",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "Example-Patient",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-patient"
+          ]
+        },
+        "name": [
           {
-            "coding": [
-              {
-                "code": "issue-prescription",
-                "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/prescription-fullfillment-type-cs"
-              }
+            "use": "official",
+            "family": "Königsstein",
+            "_family": {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+                  "valueString": "Königsstein"
+                }
+              ]
+            },
+            "given": [
+              "Ludger"
             ]
           }
         ],
-        "occurrenceDateTime": "2023-02-01",
-        "authoredOn": "2023-01-27",
-        "requester": {
-          "reference": "Organization/Example-HealthCareService-Organization"
-        },
-        "performer": [
+        "identifier": [
           {
-            "identifier": {
-              "system": "https://gematik.de/fhir/sid/telematik-id",
-              "value": "1-test-telematik-id"
-            }
+            "system": "http://fhir.de/sid/gkv/kvid-10",
+            "value": "X234567890"
           }
-        ]
+        ],
+        "address": [
+          {
+            "line": [
+              "Musterstr. 1"
+            ],
+            "_line": [
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                    "valueString": "1"
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                    "valueString": "Musterstr."
+                  }
+                ]
+              }
+            ],
+            "type": "both",
+            "city": "Berlin",
+            "postalCode": "10623"
+          }
+        ],
+        "birthDate": "1935-06-22"
       }
     },
     {
@@ -136,22 +296,6 @@
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request"
           ]
         },
-        "extension": [
-          {
-            "valueIdentifier": {
-              "system": "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
-              "value": "160.100.000.000.001.36"
-            },
-            "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/prescription-id-ex"
-          }
-        ],
-        "dispenseRequest": {
-          "quantity": {
-            "system": "http://unitsofmeasure.org",
-            "code": "{Package}",
-            "value": 1
-          }
-        },
         "status": "active",
         "intent": "order",
         "medicationReference": {
@@ -160,14 +304,11 @@
         "subject": {
           "reference": "Patient/Example-Patient"
         },
-        "authoredOn": "2022-05-20",
-        "dosageInstruction": [
-          {
-            "text": "2mal tägl. 5ml"
+        "dispenseRequest": {
+          "quantity": {
+            "value": 1,
+            "unit": "Packung"
           }
-        ],
-        "substitution": {
-          "allowedBoolean": true
         }
       }
     },
@@ -228,155 +369,6 @@
             }
           ]
         }
-      }
-    },
-    {
-      "fullUrl": "http://erp-servicerequest-test.de/Patient/Example-Patient",
-      "resource": {
-        "resourceType": "Patient",
-        "id": "Example-Patient",
-        "meta": {
-          "profile": [
-            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
-          ]
-        },
-        "identifier": [
-          {
-            "type": {
-              "coding": [
-                {
-                  "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
-                  "code": "GKV"
-                }
-              ]
-            },
-            "system": "http://fhir.de/sid/gkv/kvid-10",
-            "value": "X234567890"
-          }
-        ],
-        "name": [
-          {
-            "use": "official",
-            "family": "Königsstein",
-            "_family": {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
-                  "valueString": "Königsstein"
-                }
-              ]
-            },
-            "given": [
-              "Ludger"
-            ]
-          }
-        ],
-        "address": [
-          {
-            "type": "both",
-            "line": [
-              "Musterstr. 1"
-            ],
-            "_line": [
-              {
-                "extension": [
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-                    "valueString": "1"
-                  },
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-                    "valueString": "Musterstr."
-                  }
-                ]
-              }
-            ],
-            "city": "Berlin",
-            "postalCode": "10623"
-          }
-        ],
-        "birthDate": "1935-06-22"
-      }
-    },
-    {
-      "fullUrl": "http://erp-servicerequest-test.de/Organization/Example-HealthCareService-Organization",
-      "resource": {
-        "resourceType": "Organization",
-        "id": "Example-HealthCareService-Organization",
-        "meta": {
-          "profile": [
-            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
-          ]
-        },
-        "identifier": [
-          {
-            "type": {
-              "coding": [
-                {
-                  "code": "kim-2.0",
-                  "system": "https://gematik.de/fhir/directory/CodeSystem/EndpointDirectoryConnectionType"
-                }
-              ]
-            },
-            "system": "http://gematik.de/fhir/sid/KIM-Adresse",
-            "value": "pflegeheim.immergrün.arzt@sana-pflegeheime.kim.telematik"
-          },
-          {
-            "type": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-                  "code": "PRN"
-                }
-              ]
-            },
-            "system": "https://gematik.de/fhir/sid/telematik-id",
-            "value": "1-031234567"
-          },
-          {
-            "type": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-                  "code": "BSNR"
-                }
-              ]
-            },
-            "system": "https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR",
-            "value": "031234567"
-          }
-        ],
-        "address": [
-          {
-            "type": "both",
-            "line": [
-              "Musterstr. 2"
-            ],
-            "_line": [
-              {
-                "extension": [
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-                    "valueString": "2"
-                  },
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-                    "valueString": "Musterstr."
-                  }
-                ]
-              }
-            ],
-            "city": "Berlin",
-            "postalCode": "10623"
-          }
-        ],
-        "name": "Pflegeheim Immergrün",
-        "telecom": [
-          {
-            "system": "phone",
-            "value": "0301234567"
-          }
-        ]
       }
     }
   ]

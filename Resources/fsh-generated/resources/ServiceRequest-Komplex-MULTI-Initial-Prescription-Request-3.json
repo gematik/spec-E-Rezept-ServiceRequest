@@ -1,0 +1,51 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "Komplex-MULTI-Initial-Prescription-Request-3",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
+    ]
+  },
+  "intent": "order",
+  "identifier": [
+    {
+      "system": "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier",
+      "value": "komplex-multi"
+    }
+  ],
+  "requisition": {
+    "system": "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier",
+    "value": "GroupID-UC1-MULTI"
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "prescription-request",
+        "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
+      }
+    ]
+  },
+  "reasonCode": [
+    {
+      "extension": [
+        {
+          "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/remaining-supply-free-text-ex",
+          "valueString": "2 Tabletten"
+        }
+      ]
+    }
+  ],
+  "basedOn": [
+    {
+      "reference": "MedicationRequest/Example-Komplex-Medication-Request"
+    }
+  ],
+  "status": "active",
+  "subject": {
+    "reference": "Patient/Example-Patient"
+  },
+  "authoredOn": "2025-05-13",
+  "requester": {
+    "reference": "Organization/Example-HealthCareService-Organization"
+  }
+}

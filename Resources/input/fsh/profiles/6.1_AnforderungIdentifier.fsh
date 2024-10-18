@@ -7,4 +7,5 @@ Description: "This identifier is used to identify a single ServiceRequest"
 * value 1..1 MS
   * ^short = "String that uniquely references the ServiceRequest."
   * ^comment = "It is recommended to use a UUID."
-* system = "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier" (exactly)
+* system 1..1 MS
+* system = "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier"

@@ -1,0 +1,11 @@
+@startuml UC4
+autonumber "<b>[0]"
+participant "Herstellung- / Taxierungssoftware, AVS" as AP #LightGreen
+participant PVS as A #LightYellow
+
+AP -> A++: <b>Rezeptanforderung \n <i>ERPServiceRequestPrescriptionRequest \n.status = #active \n.basedOn = ERPServiceRequestMedicationRequest \n<b>MessageHeader\neventCode = eRezept_ParenteraleZubereitung;Rezeptanfrage
+A -> A: E-Rezept einstellen
+A -> AP--: <b>Rezeptanforderung_Bestätigung \n <i>ERPServiceRequestPrescriptionRequest  \n.status = #completed \n.basedOn = ERPServiceRequestMedicationRequest \n.extension:EPrescriptionToken = E-Rezept Token\n<b>MessageHeader\neventCode = eRezept_ParenteraleZubereitung;Rezeptbestaetigung
+AP -> AP: E-Rezept einlösen
+
+@enduml

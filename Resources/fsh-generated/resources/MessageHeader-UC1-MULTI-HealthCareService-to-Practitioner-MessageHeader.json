@@ -1,0 +1,47 @@
+{
+  "resourceType": "MessageHeader",
+  "id": "UC1-MULTI-HealthCareService-to-Practitioner-MessageHeader",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
+    ]
+  },
+  "source": {
+    "contact": {
+      "system": "email",
+      "value": "info@hcs.email"
+    },
+    "name": "HealthCare-Source",
+    "software": "HealthCare-Software",
+    "version": "1.0.0",
+    "endpoint": "healthcare-service@test.kim.de"
+  },
+  "focus": [
+    {
+      "reference": "ServiceRequest/UC1-MULTI-Initial-Prescription-Request-1"
+    },
+    {
+      "reference": "ServiceRequest/UC1-MULTI-Initial-Prescription-Request-2"
+    }
+  ],
+  "sender": {
+    "identifier": {
+      "system": "https://gematik.de/fhir/sid/telematik-id",
+      "value": "5-test-telematik-id"
+    },
+    "display": "Pflegeheim Immergrün"
+  },
+  "destination": [
+    {
+      "name": "Praxis Hans Topp-Glücklich",
+      "endpoint": "practitioner@test.kim.de"
+    }
+  ],
+  "eventCoding": {
+    "code": "eRezept_Rezeptanforderung;Rezeptanfrage",
+    "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
+  },
+  "responsible": {
+    "reference": "Organization/Example-HealthCareService-Organization"
+  }
+}

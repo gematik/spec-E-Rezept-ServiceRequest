@@ -1,0 +1,80 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "redeem-by-patient-ex",
+  "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex",
+  "version": "1.2",
+  "name": "RedeemByPatientEX",
+  "title": "Redeem By Patient (EX)",
+  "status": "draft",
+  "experimental": false,
+  "date": "2025-01-01",
+  "publisher": "gematik GmbH",
+  "description": "Extension to indicate if the prescription should be redeemed by the patient.",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "ServiceRequest"
+    },
+    {
+      "type": "element",
+      "expression": "MedicationRequest"
+    },
+    {
+      "type": "element",
+      "expression": "DeviceRequest"
+    },
+    {
+      "type": "element",
+      "expression": "Task"
+    },
+    {
+      "type": "element",
+      "expression": "SupplyRequest"
+    },
+    {
+      "type": "element",
+      "expression": "ServiceDelivery"
+    },
+    {
+      "type": "element",
+      "expression": "Medication"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "isModifier": true,
+        "isModifierReason": "This determines the Flow Type of the prescription to be set to 160/200 so that the patient can redeem the prescription himself. If not set the Flow Type is set to 169/209."
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}
