@@ -12,48 +12,48 @@
     "fshName": "UC1-1-Prescription-Request-To-Prescriber",
     "fshType": "Instance",
     "fshFile": "examples/UC1/UC1_Bundles.fsh",
-    "startLine": 6,
-    "endLine": 29
+    "startLine": 1,
+    "endLine": 24
   },
   {
     "outputFile": "Bundle-UC1-2-Fullfilled-Prescription-Request.json",
     "fshName": "UC1-2-Fullfilled-Prescription-Request",
     "fshType": "Instance",
     "fshFile": "examples/UC1/UC1_Bundles.fsh",
-    "startLine": 32,
-    "endLine": 55
+    "startLine": 27,
+    "endLine": 50
   },
   {
     "outputFile": "Bundle-UC1-3-Alt-Delivery-Dispense-Request-To-Pharmacy.json",
     "fshName": "UC1-3-Alt-Delivery-Dispense-Request-To-Pharmacy",
     "fshType": "Instance",
     "fshFile": "examples/UC1/UC1_Bundles.fsh",
-    "startLine": 101,
-    "endLine": 118
+    "startLine": 96,
+    "endLine": 113
   },
   {
     "outputFile": "Bundle-UC1-3-Dispense-Request-To-Pharmacy.json",
     "fshName": "UC1-3-Dispense-Request-To-Pharmacy",
     "fshType": "Instance",
     "fshFile": "examples/UC1/UC1_Bundles.fsh",
-    "startLine": 57,
-    "endLine": 74
+    "startLine": 52,
+    "endLine": 69
   },
   {
     "outputFile": "Bundle-UC1-4-Alt-Delivery-Fullfilled-DispenseRequest-To-Pharmacy.json",
     "fshName": "UC1-4-Alt-Delivery-Fullfilled-DispenseRequest-To-Pharmacy",
     "fshType": "Instance",
     "fshFile": "examples/UC1/UC1_Bundles.fsh",
-    "startLine": 120,
-    "endLine": 143
+    "startLine": 115,
+    "endLine": 138
   },
   {
     "outputFile": "Bundle-UC1-4-Fullfilled-DispenseRequest-To-Pharmacy.json",
     "fshName": "UC1-4-Fullfilled-DispenseRequest-To-Pharmacy",
     "fshType": "Instance",
     "fshFile": "examples/UC1/UC1_Bundles.fsh",
-    "startLine": 76,
-    "endLine": 99
+    "startLine": 71,
+    "endLine": 94
   },
   {
     "outputFile": "Bundle-UC1-MULTI-1-Prescription-Request-To-Prescriber.json",
@@ -389,7 +389,7 @@
     "fshType": "Extension",
     "fshFile": "extensions/EPrescriptionTokenEX.fsh",
     "startLine": 1,
-    "endLine": 20
+    "endLine": 19
   },
   {
     "outputFile": "StructureDefinition-erp-service-request-dispense-request.json",
@@ -477,7 +477,7 @@
     "fshType": "Profile",
     "fshFile": "profiles/2_MessageHeader.fsh",
     "startLine": 1,
-    "endLine": 27
+    "endLine": 25
   },
   {
     "outputFile": "StructureDefinition-erp-service-request-request-identifier.json",
