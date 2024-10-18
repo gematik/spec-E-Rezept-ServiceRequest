@@ -1,5 +1,5 @@
 Profile: ERPServiceRequestMessageContainer
-Parent: $GEM_PR_ATF_MessageBundle
+Parent: BundleAppTransportFramework
 Id: erp-service-request-message-container
 Title: "ERP Service Request Message Container"
 Description: "Bundle, which contains all resources of a message"

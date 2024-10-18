@@ -1,5 +1,5 @@
 Instance: Example-Response-Medication
-InstanceOf: $KBV_PR_ERP_Medication_PZN
+InstanceOf: KBV_PR_ERP_Medication_PZN
 Usage: #inline
 * meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.1.0"
 * extension[Kategorie].url = "https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Medication_Type"
