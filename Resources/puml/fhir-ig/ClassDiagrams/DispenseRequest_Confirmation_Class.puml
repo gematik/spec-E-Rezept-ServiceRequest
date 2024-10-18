@@ -1,0 +1,41 @@
+@startuml "DispenseRequest_Confirmation_Class"
+!define RECTANGLE class
+
+RECTANGLE "MessageHeader" as MH {
+    +eventCode: #eRezept_Rezeptanforderung;Abgabebestaetigung
+    +focus: Reference<ERPServiceRequestDispenseRequest>
+}
+
+
+RECTANGLE "ERPServiceRequestDispenseRequest" as SR {
+    +identifier:requestId: string
+    +status: #completed
+    +supportingInfo: Reference<ERPServiceRequestMedicationDispense>
+    +intent: #filler-order
+    +code: #dispense-request
+    +subject: Reference<Patient>
+    +occurrence: dateTime
+    +authoredOn: Date
+    +note: String
+}
+
+RECTANGLE "ERPServiceRequestMedicationDispense" as MR {
+    +identifier:prescriptionID.value: string
+    +medicationReference: Reference<KBV_Medication>
+}
+
+RECTANGLE "KBV_Medication" as MED {
+    +(s. eRezept Profile)
+}
+
+RECTANGLE "ERPServiceRequestPatient" as P {
+    +name: String
+    +identifier:kvnr: String
+    +birthDate: Date
+}
+
+MH .down.> SR : .focus 1..*
+MR .down.> MED : .medication 1..1
+SR .down.> P : .subject 1..1
+SR .right.> MR : .basedOn 1..1
+@enduml

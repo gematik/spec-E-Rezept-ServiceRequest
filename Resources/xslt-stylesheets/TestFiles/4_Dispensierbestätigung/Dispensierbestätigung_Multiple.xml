@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../rezeptanforderung.xsl" ?>
+<Bundle xmlns="http://hl7.org/fhir">
+    <id value="UC1-4-Fullfilled-DispenseRequest-To-Pharmacy"/>
+    <meta>
+        <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"/>
+    </meta>
+    <identifier>
+        <system value="urn:ietf:rfc:3986"/>
+        <value value="urn:uuid:c80f6c55-92f8-4518-ba66-cb193da09336"/>
+    </identifier>
+    <type value="message"/>
+    <timestamp value="2025-05-14T08:30:12+02:00"/>
+    <entry>
+        <fullUrl value="http://erp-servicerequest-test.de/MessageHeader/UC1-Pharmacy-to-HealthCareService-MessageHeader"/>
+        <resource>
+            <MessageHeader>
+                <id value="UC1-Pharmacy-to-HealthCareService-MessageHeader"/>
+                <meta>
+                    <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"/>
+                </meta>
+                <eventCoding>
+                    <system value="https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"/>
+                    <code value="eRezept_Rezeptanforderung;Abgabebestaetigung"/>
+                </eventCoding>
+                <destination>
+                    <name value="Pflegeheim Immergrün"/>
+                    <endpoint value="healthcare-service@test.kim.de"/>
+                </destination>
+                <sender>
+                    <identifier>
+                        <system value="https://gematik.de/fhir/sid/telematik-id"/>
+                        <value value="3-test-telematik-id"/>
+                    </identifier>
+                    <display value="Test Apotheke"/>
+                </sender>
+                <source>
+                    <name value="Pharmacy-Source"/>
+                    <software value="Pharmacy-Software"/>
+                    <version value="1.0.0"/>
+                    <contact>
+                        <system value="email"/>
+                        <value value="info@avs.email"/>
+                    </contact>
+                    <endpoint value="pharmacy@test.kim.de"/>
+                </source>
+                <responsible>
+                    <reference value="Organization/Example-Pharmacy-Organization"/>
+                </responsible>
+                <focus>
+                    <reference value="ServiceRequest/UC1-Response-Dispense-Request-1"/>
+                    <reference value="ServiceRequest/UC1-Response-Dispense-Request-2"/>
+                    <reference value="ServiceRequest/UC1-Response-Dispense-Request-3"/>
+                </focus>
+            </MessageHeader>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://erp-servicerequest-test.de/Organization/Example-Pharmacy-Organization"/>
+        <resource>
+            <Organization>
+                <id value="Example-Pharmacy-Organization"/>
+                <meta>
+                    <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"/>
+                </meta>
+                <type>
+                    <coding>
+                        <system value="http://ihe-d.de/CodeSystems/PatientBezogenenGesundheitsversorgung"/>
+                        <code value="APO"/>
+                        <display value="Apotheke"/>
+                    </coding>
+                </type>
+                <name value="Test Apotheke"/>
+                <address>
+                    <type value="both"/>
+                    <line value="Musterstr. 2">
+                        <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+                            <valueString value="2"/>
+                        </extension>
+                        <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+                            <valueString value="Musterstr."/>
+                        </extension>
+                    </line>
+                    <city value="Berlin"/>
+                    <postalCode value="10623"/>
+                </address>
+                <contact>
+                    <telecom>
+                        <system value="phone"/>
+                        <value value="0301234567"/>
+                    </telecom>
+                </contact>
+            </Organization>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://erp-servicerequest-test.de/ServiceRequest/UC1-Response-Dispense-Request-1"/>
+        <resource>
+            <ServiceRequest>
+                <id value="UC1-Response-Dispense-Request-1"/>
+                <meta>
+                    <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"/>
+                </meta>
+                <identifier>
+                    <system value="https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier"/>
+                    <value value="8eb789f1-d8bc-4212-88fd-2d27499cac79"/>
+                </identifier>
+                <requisition>
+                    <system value="https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier"/>
+                    <value value="GroupID-UC1"/>
+                </requisition>
+                <status value="completed"/>
+                <intent value="filler-order"/>
+                <code>
+                    <coding>
+                        <system value="https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"/>
+                        <code value="dispense-request"/>
+                    </coding>
+                </code>
+                <subject>
+                    <reference value="Patient/Example-Patient"/>
+                </subject>
+                <authoredOn value="2025-05-14"/>
+                <supportingInfo>
+                    <reference value="MedicationDispense/UC1-Medication-Dispense"/>
+                    <type value="MedicationDispense"/>
+                </supportingInfo>
+                <note>
+                    <time value="2025-05-14T08:27:05+02:00"/>
+                    <text value="Lagert vor Ort. Kann bis 13:00 heute per Botendienst geliefert werden."/>
+                </note>
+            </ServiceRequest>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://erp-servicerequest-test.de/ServiceRequest/UC1-Response-Dispense-Request-2"/>
+        <resource>
+            <ServiceRequest>
+                <id value="UC1-Response-Dispense-Request-2"/>
+                <meta>
+                    <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"/>
+                </meta>
+                <identifier>
+                    <system value="https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier"/>
+                    <value value="8eb789f1-d8bc-4212-88fd-2d27499cac79"/>
+                </identifier>
+                <requisition>
+                    <system value="https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier"/>
+                    <value value="GroupID-UC1"/>
+                </requisition>
+                <status value="completed"/>
+                <intent value="filler-order"/>
+                <code>
+                    <coding>
+                        <system value="https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"/>
+                        <code value="dispense-request"/>
+                    </coding>
+                </code>
+                <subject>
+                    <reference value="Patient/Example-Patient"/>
+                </subject>
+                <authoredOn value="2025-05-14"/>
+                <supportingInfo>
+                    <reference value="MedicationDispense/UC1-Medication-Dispense"/>
+                    <type value="MedicationDispense"/>
+                </supportingInfo>
+                <note>
+                    <time value="2025-05-14T08:27:05+02:00"/>
+                    <text value="Kann erst morgen 10:00 geliefert werden"/>
+                </note>
+            </ServiceRequest>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://erp-servicerequest-test.de/ServiceRequest/UC1-Response-Dispense-Request-3"/>
+        <resource>
+            <ServiceRequest>
+                <id value="UC1-Response-Dispense-Request"/>
+                <meta>
+                    <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"/>
+                </meta>
+                <identifier>
+                    <system value="https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier"/>
+                    <value value="8eb789f1-d8bc-4212-88fd-2d27499cac79"/>
+                </identifier>
+                <requisition>
+                    <system value="https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier"/>
+                    <value value="GroupID-UC1"/>
+                </requisition>
+                <status value="completed"/>
+                <intent value="filler-order"/>
+                <code>
+                    <coding>
+                        <system value="https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"/>
+                        <code value="dispense-request"/>
+                    </coding>
+                </code>
+                <subject>
+                    <reference value="Patient/Example-Patient"/>
+                </subject>
+                <authoredOn value="2025-05-14"/>
+                <supportingInfo>
+                    <reference value="MedicationDispense/UC1-Medication-Dispense"/>
+                    <type value="MedicationDispense"/>
+                </supportingInfo>
+                <note>
+                    <time value="2025-05-14T08:27:05+02:00"/>
+                    <text value="Lagert vor Ort. Kann vom Patienten abgeholt werden."/>
+                </note>
+            </ServiceRequest>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://erp-servicerequest-test.de/Patient/Example-Patient"/>
+        <resource>
+            <Patient>
+                <id value="Example-Patient"/>
+                <meta>
+                    <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-patient"/>
+                </meta>
+                <identifier>
+                    <type>
+                        <coding>
+                            <system value="http://fhir.de/CodeSystem/identifier-type-de-basis"/>
+                            <code value="GKV"/>
+                        </coding>
+                    </type>
+                    <system value="http://fhir.de/sid/gkv/kvid-10"/>
+                    <value value="X234567890"/>
+                </identifier>
+                <name>
+                    <use value="official"/>
+                    <family value="Königsstein">
+                        <extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
+                            <valueString value="Königsstein"/>
+                        </extension>
+                    </family>
+                    <given value="Ludger"/>
+                </name>
+                <birthDate value="1935-06-22"/>
+                <address>
+                    <type value="both"/>
+                    <line value="Musterstr. 1">
+                        <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+                            <valueString value="1"/>
+                        </extension>
+                        <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+                            <valueString value="Musterstr."/>
+                        </extension>
+                    </line>
+                    <city value="Berlin"/>
+                    <postalCode value="10623"/>
+                </address>
+            </Patient>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://erp-servicerequest-test.de/MedicationDispense/UC1-Medication-Dispense"/>
+        <resource>
+            <MedicationDispense>
+                <id value="UC1-Medication-Dispense"/>
+                <meta>
+                    <profile value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|1.4"/>
+                </meta>
+                <identifier>
+                    <system value="https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"/>
+                    <value value="160.100.000.000.002.36"/>
+                </identifier>
+                <status value="completed"/>
+                <medicationReference>
+                    <reference value="Medication/SimpleMedication"/>
+                </medicationReference>
+                <subject>
+                    <identifier>
+                        <system value="http://fhir.de/sid/gkv/kvid-10"/>
+                        <value value="X234567890"/>
+                    </identifier>
+                </subject>
+                <performer>
+                    <actor>
+                        <identifier>
+                            <system value="https://gematik.de/fhir/sid/telematik-id"/>
+                            <value value="3-test-telematik-id"/>
+                        </identifier>
+                    </actor>
+                </performer>
+                <whenHandedOver value="2025-05-14"/>
+            </MedicationDispense>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://erp-servicerequest-test.de/Medication/SimpleMedication"/>
+        <resource>
+            <Medication>
+                <id value="SimpleMedication"/>
+                <meta>
+                    <profile value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication|1.4"/>
+                </meta>
+                <code>
+                    <coding>
+                        <system value="http://fhir.de/CodeSystem/ifa/pzn"/>
+                        <code value="08585997"/>
+                    </coding>
+                    <text value="Prospan® Hustensaft 100ml"/>
+                </code>
+            </Medication>
+        </resource>
+    </entry>
+</Bundle>

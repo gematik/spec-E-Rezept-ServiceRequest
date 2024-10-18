@@ -1,0 +1,47 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "UC1-MULTI-Initial-Prescription-Request-2",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
+    ]
+  },
+  "intent": "order",
+  "identifier": [
+    {
+      "system": "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier",
+      "value": "multi-2"
+    }
+  ],
+  "requisition": {
+    "system": "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier",
+    "value": "GroupID-UC1-MULTI"
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "prescription-request",
+        "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
+      }
+    ]
+  },
+  "basedOn": [
+    {
+      "reference": "MedicationRequest/Example-Initial-Medication-Request-2"
+    }
+  ],
+  "status": "active",
+  "subject": {
+    "reference": "Patient/Example-Patient-2"
+  },
+  "authoredOn": "2025-05-13",
+  "requester": {
+    "reference": "Organization/Example-HealthCareService-Organization"
+  },
+  "note": [
+    {
+      "text": "Für den Bedarfsfall",
+      "time": "2025-05-13T12:23:12+02:00"
+    }
+  ]
+}

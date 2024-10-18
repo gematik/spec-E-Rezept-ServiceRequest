@@ -16,4 +16,6 @@ Description: "Extension for Prescription ID"
 * ^context[+].type = #element
 * ^context[=].expression = "Medication"
 * insert Meta (prescription-id-ex)
-* value[x] only GEM_ERP_PR_PrescriptionId
+* value[x] 1..1 MS
+* value[x] only Identifier
+* valueIdentifier only GEM_ERP_PR_PrescriptionId

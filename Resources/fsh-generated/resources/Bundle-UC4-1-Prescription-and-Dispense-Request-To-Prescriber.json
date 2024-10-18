@@ -11,7 +11,7 @@
     "system": "urn:ietf:rfc:3986",
     "value": "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
   },
-  "timestamp": "2015-02-07T13:28:17.239+02:00",
+  "timestamp": "2025-05-13T14:25:12+02:00",
   "entry": [
     {
       "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/UC4-1-Pharmacy-to-Practitioner-MessageHeader",
@@ -26,12 +26,12 @@
         "source": {
           "contact": {
             "system": "email",
-            "value": "info@avs.email"
+            "value": "info@avs_solutions.com"
           },
           "name": "Pharmacy-Source",
           "software": "Pharmacy-Software",
           "version": "1.0.0",
-          "endpoint": "mailto:pharmacy@test.kim.de"
+          "endpoint": "https://avs_solutions.com/jira_helpdesk"
         },
         "focus": [
           {
@@ -47,60 +47,60 @@
         },
         "destination": [
           {
-            "receiver": {
-              "identifier": {
-                "system": "https://gematik.de/fhir/sid/telematik-id",
-                "value": "1-test-telematik-id"
-              },
-              "display": "Praxis Hans Topp-Glücklich"
-            },
+            "name": "Praxis Hans Topp-Glücklich",
             "endpoint": "mailto:practitioner@test.kim.de"
           }
         ],
         "eventCoding": {
           "code": "eRezept_ParenteraleZubereitung;Rezeptanfrage",
           "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
+        },
+        "responsible": {
+          "reference": "Organization/Example-Pharmacy-Organization"
         }
       }
     },
     {
-      "fullUrl": "http://erp-servicerequest-test.de/Patient/Example-Patient",
+      "fullUrl": "http://erp-servicerequest-test.de/Organization/Example-Pharmacy-Organization",
       "resource": {
-        "resourceType": "Patient",
-        "id": "Example-Patient",
+        "resourceType": "Organization",
+        "id": "Example-Pharmacy-Organization",
         "meta": {
+          "tag": [
+            {
+              "system": "https://gematik.de/fhir/directory/CodeSystem/Origin",
+              "code": "owner"
+            }
+          ],
           "profile": [
-            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
           ]
         },
         "identifier": [
           {
-            "type": {
-              "coding": [
-                {
-                  "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
-                  "code": "GKV"
-                }
-              ]
-            },
-            "system": "http://fhir.de/sid/gkv/kvid-10",
-            "value": "X234567890"
+            "system": "https://gematik.de/fhir/sid/telematik-id",
+            "value": "123456789"
           }
         ],
-        "name": [
+        "contact": [
           {
-            "use": "official",
-            "family": "Königsstein",
-            "_family": {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
-                  "valueString": "Königsstein"
-                }
-              ]
-            },
-            "given": [
-              "Ludger"
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "0301234567"
+              }
+            ]
+          }
+        ],
+        "name": "Test Apotheke",
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "1.2.276.0.76.4.54",
+                "system": "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID",
+                "display": "Öffentliche Apotheke"
+              }
             ]
           }
         ],
@@ -108,27 +108,12 @@
           {
             "type": "both",
             "line": [
-              "Musterstr. 1"
-            ],
-            "_line": [
-              {
-                "extension": [
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-                    "valueString": "1"
-                  },
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-                    "valueString": "Musterstr."
-                  }
-                ]
-              }
+              "Musterstr. 2"
             ],
             "city": "Berlin",
             "postalCode": "10623"
           }
-        ],
-        "birthDate": "1935-06-22"
+        ]
       }
     },
     {
@@ -142,21 +127,9 @@
           ]
         },
         "intent": "order",
-        "requisition": {
-          "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
-          "value": "GroupID-UC4"
-        },
-        "code": {
-          "coding": [
-            {
-              "code": "prescription-request",
-              "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
-            }
-          ]
-        },
         "identifier": [
           {
-            "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier",
+            "system": "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier",
             "value": "1"
           },
           {
@@ -176,6 +149,18 @@
             "value": "My-ID-bdbdf8a1-ffa4-4f16-a6c4-38e690ac5548"
           }
         ],
+        "requisition": {
+          "system": "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier",
+          "value": "GroupID-UC4"
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "prescription-request",
+              "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
+            }
+          ]
+        },
         "basedOn": [
           {
             "reference": "MedicationRequest/Example-Zyto-Medication-Request"
@@ -185,29 +170,70 @@
         "subject": {
           "reference": "Patient/Example-Patient"
         },
-        "orderDetail": [
+        "authoredOn": "2025-05-13",
+        "requester": {
+          "reference": "Organization/Example-Pharmacy-Organization"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://erp-servicerequest-test.de/Patient/Example-Patient",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "Example-Patient",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-patient"
+          ]
+        },
+        "name": [
           {
-            "coding": [
-              {
-                "code": "return-to-requester",
-                "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/prescription-fullfillment-type-cs"
-              }
+            "use": "official",
+            "family": "Königsstein",
+            "_family": {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+                  "valueString": "Königsstein"
+                }
+              ]
+            },
+            "given": [
+              "Ludger"
             ]
           }
         ],
-        "occurrenceDateTime": "2023-02-01",
-        "authoredOn": "2023-01-27",
-        "requester": {
-          "reference": "Organization/Example-Pharmacy-Organization"
-        },
-        "performer": [
+        "identifier": [
           {
-            "identifier": {
-              "system": "https://gematik.de/fhir/sid/telematik-id",
-              "value": "1-test-telematik-id"
-            }
+            "system": "http://fhir.de/sid/gkv/kvid-10",
+            "value": "X234567890"
           }
-        ]
+        ],
+        "address": [
+          {
+            "line": [
+              "Musterstr. 1"
+            ],
+            "_line": [
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                    "valueString": "1"
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                    "valueString": "Musterstr."
+                  }
+                ]
+              }
+            ],
+            "type": "both",
+            "city": "Berlin",
+            "postalCode": "10623"
+          }
+        ],
+        "birthDate": "1935-06-22"
       }
     },
     {
@@ -325,87 +351,6 @@
         "form": {
           "text": "Infusionslösung"
         }
-      }
-    },
-    {
-      "fullUrl": "http://erp-servicerequest-test.de/Organization/Example-Pharmacy-Organization",
-      "resource": {
-        "resourceType": "Organization",
-        "id": "Example-Pharmacy-Organization",
-        "meta": {
-          "profile": [
-            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
-          ]
-        },
-        "identifier": [
-          {
-            "type": {
-              "coding": [
-                {
-                  "code": "kim-2.0",
-                  "system": "https://gematik.de/fhir/directory/CodeSystem/EndpointDirectoryConnectionType"
-                }
-              ]
-            },
-            "system": "http://gematik.de/fhir/sid/KIM-Adresse",
-            "value": "arbeitsplatz-1@test-apotheke.kim.telematik"
-          },
-          {
-            "type": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-                  "code": "PRN"
-                }
-              ]
-            },
-            "system": "https://gematik.de/fhir/sid/telematik-id",
-            "value": "1-57634852"
-          },
-          {
-            "type": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-                  "code": "BSNR"
-                }
-              ]
-            },
-            "system": "https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR",
-            "value": "581463872"
-          }
-        ],
-        "address": [
-          {
-            "type": "both",
-            "line": [
-              "Musterstr. 2"
-            ],
-            "_line": [
-              {
-                "extension": [
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-                    "valueString": "2"
-                  },
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-                    "valueString": "Musterstr."
-                  }
-                ]
-              }
-            ],
-            "city": "Berlin",
-            "postalCode": "10623"
-          }
-        ],
-        "name": "Test Apotheke",
-        "telecom": [
-          {
-            "system": "phone",
-            "value": "0301234567"
-          }
-        ]
       }
     }
   ]

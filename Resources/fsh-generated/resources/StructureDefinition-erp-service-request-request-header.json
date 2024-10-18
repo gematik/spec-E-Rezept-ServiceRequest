@@ -2,31 +2,15 @@
   "resourceType": "StructureDefinition",
   "id": "erp-service-request-request-header",
   "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header",
-  "version": "1.0",
+  "version": "1.2",
   "name": "ERPServiceRequestRequestHeader",
   "title": "ERP Service Request Request Header",
-  "status": "active",
+  "status": "draft",
   "experimental": false,
+  "date": "2025-01-01",
   "publisher": "gematik GmbH",
   "description": "Header containing information about the sender and addressee",
   "fhirVersion": "4.0.1",
-  "mapping": [
-    {
-      "identity": "v2",
-      "uri": "http://hl7.org/v2",
-      "name": "HL7 v2 Mapping"
-    },
-    {
-      "identity": "rim",
-      "uri": "http://hl7.org/v3",
-      "name": "RIM Mapping"
-    },
-    {
-      "identity": "w5",
-      "uri": "http://hl7.org/fhir/fivews",
-      "name": "FiveWs Pattern Mapping"
-    }
-  ],
   "kind": "resource",
   "abstract": false,
   "type": "MessageHeader",
@@ -67,16 +51,57 @@
         }
       },
       {
+        "id": "MessageHeader.destination.receiver.identifier",
+        "path": "MessageHeader.destination.receiver.identifier",
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "http://fhir.de/StructureDefinition/identifier-telematik-id"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MessageHeader.sender.identifier",
+        "path": "MessageHeader.sender.identifier",
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "http://fhir.de/StructureDefinition/identifier-telematik-id"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MessageHeader.responsible",
+        "path": "MessageHeader.responsible",
+        "short": "The organization that is responsible for the request.",
+        "comment": "This organization will be stated in the message header as the sender of the message.",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
         "id": "MessageHeader.focus",
         "path": "MessageHeader.focus",
         "short": "Specification of the ServiceRequest that contains the essential information for a given use case.",
-        "comment": "Since a request should address exactly one medication, a ServiceRequest must also be specified accordingly.",
+        "comment": "One Message can contain multiple ServiceRequests which each are identified with an ID.",
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
               "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request",
-              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request",
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
             ]
           }
         ]

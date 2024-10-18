@@ -2,31 +2,15 @@
   "resourceType": "StructureDefinition",
   "id": "erp-service-request-eprescription-token",
   "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-eprescription-token",
-  "version": "1.0",
+  "version": "1.2",
   "name": "ERPServiceRequestEPrescriptionToken",
   "title": "ERP Service Request EPrescription Token",
-  "status": "active",
+  "status": "draft",
   "experimental": false,
+  "date": "2025-01-01",
   "publisher": "gematik GmbH",
   "description": "Identifier containing an e-prescription token",
   "fhirVersion": "4.0.1",
-  "mapping": [
-    {
-      "identity": "v2",
-      "uri": "http://hl7.org/v2",
-      "name": "HL7 v2 Mapping"
-    },
-    {
-      "identity": "rim",
-      "uri": "http://hl7.org/v3",
-      "name": "RIM Mapping"
-    },
-    {
-      "identity": "servd",
-      "uri": "http://www.omg.org/spec/ServD/1.0/",
-      "name": "ServD"
-    }
-  ],
   "kind": "complex-type",
   "abstract": false,
   "type": "Identifier",
