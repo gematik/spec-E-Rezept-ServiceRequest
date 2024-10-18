@@ -5,8 +5,6 @@ Title: "ERP Service Request Request Header"
 Description: "Header containing information about the sender and addressee"
 * insert Meta (erp-service-request-request-header)
 
-//TODO: überlegen ob sender.reference auch 1..1 sein soll für die XSLTs
-
 * sender
   * identifier only IdentifierTelematikId
 * destination
@@ -25,5 +23,3 @@ Description: "Header containing information about the sender and addressee"
 * eventCoding from ServiceIdentifierVS (required)
   * ^short = "The event code that indicates in which application and which transmission path the communication is currently taking place"
   * ^comment = "For more information see [ATF ImplementationGuide](https://simplifier.net/app-transport-framework/~guides)"
-
-//TODO if eventCode is Storno then ServiceRequest.status = revoked ODER entered-in-error

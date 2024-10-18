@@ -2,7 +2,6 @@ Extension: EPrescriptionTokenEX
 Id: eprescription-token-ex
 Title: "E-Prescription Token Extension"
 Description: "This extension is used to specify an e-prescription token"
-// TODO: Add Context
 * ^context[0].type = #element
 * ^context[=].expression = "ServiceRequest"
 * ^context[+].type = #element

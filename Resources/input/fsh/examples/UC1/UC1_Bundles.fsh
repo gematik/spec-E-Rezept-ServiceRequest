@@ -1,8 +1,3 @@
-//TODO: Beispiel für mehrere Rezeptanfragen in einem Bundle
-//TODO: Beispiel für andere Medikation verschrieben (Flag)
-//TODO: Beispiel für Anfrage MVO
-// TODO: Beispiel mehrere Token
-
 Instance: UC1-1-Prescription-Request-To-Prescriber
 InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
