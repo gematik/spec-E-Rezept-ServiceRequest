@@ -4,7 +4,7 @@ Usage: #example
 * meta.tag[Origin].code = #owner
 * name = "Pflegeheim Immergrün"
 * identifier[TelematikID].value = "123456789"
-* type.coding[organization-type] = $CSIHEPatientBezogenenGesundheitsversorgung#PFL "Pflegeheim"
+* type[profession].coding = $profession-id-cs#1.2.276.0.76.4.245 "Betriebsstätte Gesundheits-, Kranken- und Altenpflege"
 * contact.telecom[tel].system = #phone
 * contact.telecom[tel].value = "0301234567"
 * contact.telecom[kim].system = #email
@@ -20,7 +20,7 @@ InstanceOf: ERPServiceRequestOrganization
 Usage: #inline
 * name = "Pflegeheim Immergrün"
 * meta.tag[Origin].code = #owner
-* type.coding[organization-type] = $CSIHEPatientBezogenenGesundheitsversorgung#PFL "Pflegeheim"
+* type[profession].coding = $profession-id-cs#1.2.276.0.76.4.245 "Betriebsstätte Gesundheits-, Kranken- und Altenpflege"
 * identifier[TelematikID].value = "123456789"
 * contact.telecom[tel].system = #phone
 * contact.telecom[tel].value = "0301234567"
@@ -35,7 +35,7 @@ InstanceOf: ERPServiceRequestOrganization
 Usage: #inline
 * name = "Pflegeheim Immergrün"
 * meta.tag[Origin].code = #owner
-* type.coding[organization-type] = $CSIHEPatientBezogenenGesundheitsversorgung#APO "Apotheke"
+* type[profession].coding = $profession-id-cs#1.2.276.0.76.4.54 "Öffentliche Apotheke"
 * identifier[TelematikID].value = "123456789"
 * contact.telecom[tel].system = #phone
 * contact.telecom[tel].value = "0301234567"
@@ -52,7 +52,7 @@ InstanceOf: ERPServiceRequestOrganization
 Usage: #inline
 * name = "Test Apotheke"
 * meta.tag[Origin].code = #owner
-* type.coding[organization-type] = $CSIHEPatientBezogenenGesundheitsversorgung#APO "Apotheke"
+* type[profession].coding = $profession-id-cs#1.2.276.0.76.4.54 "Öffentliche Apotheke"
 * identifier[TelematikID].value = "123456789"
 * contact.telecom[tel].system = #phone
 * contact.telecom[tel].value = "0301234567"
@@ -67,7 +67,7 @@ InstanceOf: ERPServiceRequestOrganization
 Usage: #inline
 * name = "Test Arztpraxis"
 * meta.tag[Origin].code = #owner
-* type.coding[organization-type] = $CSIHEPatientBezogenenGesundheitsversorgung#PRA "Arztpraxis"
+* type[profession].coding = $profession-id-cs#1.2.276.0.76.4.50 "Betriebsstätte Arzt"
 * identifier[TelematikID].value = "123456789"
 * contact.telecom[tel].system = #phone
 * contact.telecom[tel].value = "0307654321"

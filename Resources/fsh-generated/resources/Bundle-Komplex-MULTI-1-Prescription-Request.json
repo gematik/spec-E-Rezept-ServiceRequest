@@ -88,17 +88,6 @@
             "value": "123456789"
           }
         ],
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://ihe-d.de/CodeSystems/PatientBezogenenGesundheitsversorgung",
-                "code": "PFL",
-                "display": "Pflegeheim"
-              }
-            ]
-          }
-        ],
         "contact": [
           {
             "telecom": [
@@ -114,6 +103,17 @@
           }
         ],
         "name": "Pflegeheim Immergrün",
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "1.2.276.0.76.4.245",
+                "system": "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID",
+                "display": "Betriebsstätte Gesundheits-, Kranken- und Altenpflege"
+              }
+            ]
+          }
+        ],
         "address": [
           {
             "type": "both",

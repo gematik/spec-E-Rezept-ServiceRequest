@@ -437,7 +437,7 @@
     "fshType": "Profile",
     "fshFile": "profiles/8_Organization.fsh",
     "startLine": 1,
-    "endLine": 43
+    "endLine": 24
   },
   {
     "outputFile": "StructureDefinition-erp-service-request-patient.json",

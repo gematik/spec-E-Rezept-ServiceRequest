@@ -5,25 +5,6 @@ Title: "ERP Service Request Organization"
 Description: "Organization that can be used to specify a KIM address"
 * insert Meta (erp-service-request-organization)
 
-* name 1..1 MS
-* address MS
-* type 1..1 MS
-  * coding 1..1 MS
-    * ^slicing.discriminator.type = #pattern
-    * ^slicing.discriminator.path = "system"
-    * ^slicing.rules = #open
-    * ^slicing.description = "Slicing to determine the type of the organization"
-    * ^slicing.ordered = false
-    
-  * coding contains organization-type 1..1 MS
-
-  * coding[organization-type] from ServiceRequestOrganizationTypeVS (required)
-    * ^definition = "Hier kann der Typus der Einrichtung anhand eines Codes aus dem Codesystem IHE Deutschland e.V. angegeben werden. Erlaubt sind Pflegeeinrichtung, Apotheke und Arztpraxis"
-    * code 1..1
-    * system 1..1
-    * system = $CSIHEPatientBezogenenGesundheitsversorgung
-
-
 * contact 1..* MS
   * telecom 1..* MS
     * ^slicing.discriminator.type = #pattern

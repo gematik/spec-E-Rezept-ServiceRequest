@@ -146,17 +146,6 @@
                   "value": "123456789"
                 }
               ],
-              "type": [
-                {
-                  "coding": [
-                    {
-                      "system": "http://ihe-d.de/CodeSystems/PatientBezogenenGesundheitsversorgung",
-                      "code": "PRA",
-                      "display": "Arztpraxis"
-                    }
-                  ]
-                }
-              ],
               "contact": [
                 {
                   "telecom": [
@@ -168,6 +157,17 @@
                 }
               ],
               "name": "Test Arztpraxis",
+              "type": [
+                {
+                  "coding": [
+                    {
+                      "code": "1.2.276.0.76.4.50",
+                      "system": "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID",
+                      "display": "Betriebsstätte Arzt"
+                    }
+                  ]
+                }
+              ],
               "address": [
                 {
                   "type": "both",
@@ -453,17 +453,6 @@
             "value": "123456789"
           }
         ],
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://ihe-d.de/CodeSystems/PatientBezogenenGesundheitsversorgung",
-                "code": "PRA",
-                "display": "Arztpraxis"
-              }
-            ]
-          }
-        ],
         "contact": [
           {
             "telecom": [
@@ -475,6 +464,17 @@
           }
         ],
         "name": "Test Arztpraxis",
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "1.2.276.0.76.4.50",
+                "system": "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID",
+                "display": "Betriebsstätte Arzt"
+              }
+            ]
+          }
+        ],
         "address": [
           {
             "type": "both",

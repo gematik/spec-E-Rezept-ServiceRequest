@@ -25,3 +25,6 @@ Alias: $identifier-telematik-id = https://gematik.de/fhir/sid/telematik-id
 
 // Workflow
 Alias: $prescription-id-ns = https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId
+
+//VZD
+Alias: $profession-id-cs = https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID
