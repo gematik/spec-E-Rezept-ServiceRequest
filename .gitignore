@@ -8,3 +8,4 @@ out/
 project.yaml
 .simplifier/connection.settings.json
 .simplifier/project.snapshot.json
+*.pyc

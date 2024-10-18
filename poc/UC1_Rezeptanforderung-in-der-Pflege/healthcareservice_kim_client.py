@@ -117,7 +117,7 @@ class HealthCareServiceKIMClient(KIMClient):
         
         attachments.append(
             {
-                "filename": '"#eRezept_Rezeptanforderung;Rezeptanfrage.xml',
+                "filename": 'atf_eRezept_Rezeptanforderung.xml',
                 "content": prescription_request_bundle
             }
         )

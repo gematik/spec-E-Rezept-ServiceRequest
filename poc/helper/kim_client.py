@@ -19,7 +19,7 @@ class KIMClient(ABC):
         self.kim_address = kim_address
         self.inbox = f"./kim_messages/{client_name}/inbox"
         self.outbox = f"./kim_messages/{client_name}/outbox"
-        self.attachment_folder = f"./kim_messages/{client_name}/attachments"
+        self.attachment_folder = f"./kim_messages/attachments"
         self.clean_kim_message_folder()
         os.makedirs(self.inbox, exist_ok=True)
         os.makedirs(self.outbox, exist_ok=True)
@@ -66,18 +66,15 @@ class KIMClient(ABC):
         if attachments:
             for attachment in attachments:
                 attachment_path = os.path.join(
-                    self.attachment_folder, f"{attachment['filename']}.json"
+                    self.attachment_folder, f"{attachment['filename']}"
                 )
                 with open(attachment_path, "w", encoding="utf-8") as attachment_file:
-                    attachment_file.write(attachment["content"].json(indent=4))
+                    attachment_file.write(attachment["content"].xml())
 
                 message["kim_message"]["attachments"].append(
                     {
                         "filename": attachment["filename"],
-                        "content": attachment["content"]
-                        .json(indent=4)
-                        .encode()
-                        .decode("unicode_escape"),
+                        "path": attachment_path
                     }
                 )
                 logger.debug(
@@ -88,10 +85,15 @@ class KIMClient(ABC):
         with open(outbox_path, "w") as f:
             json.dump(message, f, indent=2)
 
-        # Transfer the message to the recipient's inbox
-        recipient_inbox = f"./kim_messages/{recipient}/inbox"
-        os.makedirs(recipient_inbox, exist_ok=True)
-        shutil.move(outbox_path, os.path.join(recipient_inbox, message_filename))
+        if not message_filename.startswith("sent_"):
+            # Transfer a copy of the message to the recipient's inbox
+            recipient_inbox = f"./kim_messages/{recipient}/inbox"
+            os.makedirs(recipient_inbox, exist_ok=True)
+            shutil.copy(outbox_path, os.path.join(recipient_inbox, message_filename))
+
+            # Rename the original file in the outbox to indicate it has been sent
+            sent_outbox_path = os.path.join(self.outbox, f"sent_{message_filename}")
+            os.rename(outbox_path, sent_outbox_path)
 
         logger.info(
             f"Message sent from {self.client_name} to {recipient}: {message_filename}"
