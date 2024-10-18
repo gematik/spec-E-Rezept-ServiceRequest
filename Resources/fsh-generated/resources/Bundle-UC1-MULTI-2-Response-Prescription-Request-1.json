@@ -48,7 +48,7 @@
         "destination": [
           {
             "name": "Pflegeheim Immergrün",
-            "endpoint": "healthcare-service@test.kim.de"
+            "endpoint": "mailto:healthcare-service@test.kim.de"
           }
         ],
         "eventCoding": {

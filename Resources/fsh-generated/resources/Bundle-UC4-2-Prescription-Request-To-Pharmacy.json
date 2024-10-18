@@ -48,7 +48,7 @@
         "destination": [
           {
             "name": "Test Apotheke",
-            "endpoint": "pharmacy@test.kim.dee"
+            "endpoint": "mailto:pharmacy@test.kim.dee"
           }
         ],
         "eventCoding": {

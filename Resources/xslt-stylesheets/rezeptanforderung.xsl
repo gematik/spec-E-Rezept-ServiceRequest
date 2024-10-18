@@ -30,7 +30,7 @@
         <html>
             <head>
                 <title>FHIR Message Bundle</title>
-                <style>
+                <style type="text/css">
                     @page {
                         size: A4 landscape;
                         margin: 20mm;
@@ -325,9 +325,18 @@
                             <xsl:value-of
                         select="fhir:contact/fhir:telecom[fhir:system/@value = 'phone']/fhir:value/@value" />
                             <br />
-                            KIM:
-                            <xsl:value-of
-                        select="fhir:contact/fhir:telecom[fhir:system/@value = 'email']/fhir:value/@value" />
+                            
+                            <xsl:choose>
+                                <!-- Check if the string contains a colon -->
+                                <xsl:when test="contains(fhir:contact/fhir:telecom[fhir:system/@value = 'email']/fhir:value/@value, ':')">
+                                    <!-- Print the part after the colon -->
+                                    KIM: <xsl:value-of select="substring-after(fhir:contact/fhir:telecom[fhir:system/@value = 'email']/fhir:value/@value, ':')" />
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <!-- Print the whole string if no colon is present -->
+                                    KIM: <xsl:value-of select="fhir:contact/fhir:telecom[fhir:system/@value = 'email']/fhir:value/@value" />
+                                </xsl:otherwise>
+                            </xsl:choose>
                         </p>
                     </xsl:for-each>
                 </xsl:for-each>
@@ -350,7 +359,17 @@
                 <br />
                 <span class="email">
                     KIM:
-                    <xsl:value-of select="fhir:destination/fhir:endpoint/@value" />
+                    <xsl:choose>
+                        <!-- Check if the string contains a colon -->
+                        <xsl:when test="contains(fhir:destination/fhir:endpoint/@value, ':')">
+                            <!-- Print the part after the colon -->
+                            <xsl:value-of select="substring-after(fhir:destination/fhir:endpoint/@value, ':')" />
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <!-- Print the whole string if no colon is present -->
+                            <xsl:value-of select="fhir:destination/fhir:endpoint/@value" />
+                        </xsl:otherwise>
+                    </xsl:choose>
                 </span>
             </div>
         </xsl:for-each>
