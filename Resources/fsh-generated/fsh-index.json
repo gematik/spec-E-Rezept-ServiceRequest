@@ -621,7 +621,7 @@
     "fshType": "ValueSet",
     "fshFile": "valuesets/ServiceRequestPriorityVS.fsh",
     "startLine": 1,
-    "endLine": 6
+    "endLine": 7
   },
   {
     "outputFile": "ValueSet-service-request-status-vs.json",

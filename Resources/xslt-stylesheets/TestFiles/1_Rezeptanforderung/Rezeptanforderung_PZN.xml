@@ -80,6 +80,7 @@
                             <valueString value="Musterstr."/>
                         </extension>
                     </line>
+                    <line value="Zimmer 123"/>
                     <city value="Berlin"/>
                     <postalCode value="10623"/>
                 </address>

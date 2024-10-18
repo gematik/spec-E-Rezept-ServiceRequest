@@ -9,14 +9,14 @@
         <!-- Determine the rootBundle based on the eventCode -->
         <xsl:choose>
             <xsl:when test="$eventCode = 'eRezept_Rezeptanforderung;NachrichtKopie'">
-                <xsl:call-template name="peter">
+                <xsl:call-template name="main_template">
                     <xsl:with-param name="eventCode" select="$eventCode" />
                     <xsl:with-param name="rootBundle"
                         select="/fhir:Bundle/fhir:entry/fhir:resource/fhir:Bundle" />
                 </xsl:call-template>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:call-template name="peter">
+                <xsl:call-template name="main_template">
                     <xsl:with-param name="eventCode" select="$eventCode" />
                     <xsl:with-param name="rootBundle" select="/fhir:Bundle" />
                 </xsl:call-template>
@@ -24,188 +24,193 @@
         </xsl:choose>
     </xsl:template>
     <!-- Master template for Bundle -->
-    <xsl:template name="peter">
+    <xsl:template name="main_template">
         <xsl:param name="eventCode" />
         <xsl:param name="rootBundle" />
         <html>
             <head>
                 <title>FHIR Message Bundle</title>
                 <style>
-                    /* Enhanced styling for a more professional letter-like look optimized for A4
-        size */
-                    @page {
-                    size: A4;
-                    margin: 20mm;
-                    }
-                    body {
-                    font-family: 'Roboto', sans-serif;
-                    line-height: 1.6;
-                    background-color: #f9f9f9;
-                    color: #333;
-                    margin: 0;
-                    padding: 0;
-                    }
-                    #gesamtseite {
-                    width: 100%;
-                    max-width: 800px;
-                    margin: 60px auto;
-                    background: white;
-                    padding: 20px;
-                    border: 1px solid #ccc;
-                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                    position: relative;
-                    }
-                    .sender-info, .recipient-info, .subject-info, .service-request-info, .date-info
-        {
-                    margin-bottom: 40px;
-                    }
-                    .contact-info {
-                    margin-top: 10px;
-                    float: right;
-                    width: 45%;
-                    position: relative;
-                    }
-                    .sender-info {
-                    float: left;
-                    width: 45%;
-                    position: relative;
-                    }
-                    .receiver {
-                    margin-bottom: 40px;
-                    clear: both;
-                    }
-                    .receiver .name {
-                    font-weight: bold;
-                    }
-                    .receiver .email {
-                    font-weight: normal;
-                    }
-                    .clearfix::after {
-                    content: "";
-                    display: table;
-                    clear: both;
-                    }
-                    .sr-patient-info {
-                    font-style: italic;
-                    }
-                    table {
-                    width: 100%;
-                    border-collapse: collapse;
-                    margin-top: 20px;
-                    }
-                    th {
-                    background-color: #f2f2f2;
-                    padding: 12px;
-                    border-bottom: 2px solid #ccc;
-                    }
-                    td {
-                    padding: 12px;
-                    border-bottom: 1px solid #ddd;
-                    }
-                    th, td {
-                    text-align: left;
-                    }
-                    .clear {
-                    clear: both;
-                    }
-                    .subject-date {
-                    float: right;
-                    text-align: right;
-                    font-size: 0.9em;
-                    color: #777;
-                    }
-                    .subject h1 {
-                    font-size: 1.8em;
-                    margin: 0;
-                    }
-                    .service-request {
-                    margin-top: 40px;
-                    }
-                    .token-section {
-                    margin-top: 15px;
-                    font-style: italic;
-                    color: #333;
-                    }
-                    .urgent-pill {
-                    display: inline-block;
-                    background-color: #ff4d4d;
-                    color: white;
-                    padding: 2px 8px;
-                    border-radius: 12px;
-                    font-style: italic;
-                    font-size: 0.7em;
-                    margin-left: 5px;
-                    }
-                    .mvo-pill {
-                    display: inline-block;
-                    background-color: #FFC759;
-                    color: white;
-                    padding: 2px 8px;
-                    border-radius: 12px;
-                    font-style: italic;
-                    font-size: 0.7em;
-                    margin-left: 5px;
-                    }
-                    .redeem-pill {
-                    display: inline-block;
-                    background-color: #607196;
-                    color: white;
-                    padding: 2px 8px;
-                    border-radius: 12px;
-                    font-style: italic;
-                    font-size: 0.7em;
-                    margin-left: 5px;
-                    }
-                    .changed-pill {
-                    display: inline-block;
-                    background-color: #ff4d4d;
-                    color: white;
-                    padding: 2px 8px;
-                    border-radius: 12px;
-                    font-style: italic;
-                    font-size: 0.7em;
-                    margin-left: 5px;
-                    }
-                    .identifier-info {
-                    display: block;
-                    background-color: #e0e0e0;
-                    color: #333;
-                    padding: 5px;
-                    border-radius: 5px;
-                    font-size: 0.7em;
-                    margin-top: 10px;
-                    text-align: center;
-                    font-weight: bold;
-                    }
-                    .service-request-box {
-                    border: 1px solid #ccc;
-                    padding: 15px;
-                    margin-bottom: 20px;
-                    background-color: #f9f9f9;
-                    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
-                    }
-                    .service-request-header {
-                    font-weight: bold;
-                    font-size: 1.2em;
-                    background-color: #f2f2f2;
-                    padding: 10px;
-                    border-bottom: 1px solid #ccc;
-                    margin-bottom: 10px;
-                    display: flex;
-                    justify-content: space-between;
-                    }
-                    .service-request-header .pill-container {
-                    display: flex;
-                    flex-wrap: wrap;
-                    }
-                    .copy-sender-info {
-                    display: block;
-                    }
+                    <style>
+                        /* Enhanced styling for a more professional letter-like look optimized for A4 size */
+                        @page {
+                            size: A4 landscape;
+                            margin: 20mm;
+                        }
+                        body {
+                            font-family: 'Roboto', sans-serif;
+                            line-height: 1.6;
+                            background-color: #f9f9f9;
+                            color: #333;
+                            margin: 0;
+                            padding: 0;
+                        }
+                        #gesamtseite {
+                            width: 100%;
+                            max-width: 1000px;
+                            margin: 40px auto;
+                            background: white;
+                            padding: 20px;
+                            border: 1px solid #ccc;
+                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                            position: relative;
+                        }
+                        .header-info {
+                            margin-bottom: 30px;
+                            font-size: 0.9em;
+                            line-height: 1.4;
+                        }
+                        .header-info p {
+                            margin: 0;
+                        }
+                        .receiver-info {
+                            margin-bottom: 30px;
+                        }
+                        .receiver .name {
+                            font-weight: bold;
+                        }
+                        .receiver .email {
+                            font-weight: normal;
+                        }
+                        .clearfix::after {
+                            content: "";
+                            display: table;
+                            clear: both;
+                        }
+                        .sr-patient-info {
+                            font-style: italic;
+                            margin-top: 10px;
+                        }
+                        table {
+                            width: 100%;
+                            border-collapse: collapse;
+                            margin-top: 20px;
+                            border: 1px solid #ccc;
+                        }
+                        th {
+                            background-color: #f2f2f2;
+                            padding: 10px;
+                            border-bottom: 2px solid #ccc;
+                            font-size: 0.9em;
+                            text-align: left;
+                            border-right: 1px solid #ccc;
+                        }
+                        td {
+                            padding: 10px;
+                            border-bottom: 1px solid #ddd;
+                            font-size: 0.9em;
+                            text-align: left;
+                            border-right: 1px solid #ccc;
+                        }
+                        td:last-child, th:last-child {
+                            border-right: none;
+                        }
+                        .subject-date {
+                            text-align: right;
+                            font-size: 0.9em;
+                            color: #777;
+                            margin-bottom: 20px;
+                        }
+                        .subject h2 {
+                            font-size: 1.8em;
+                            margin: 0;
+                        }
+                        .service-request {
+                            margin-top: 20px;
+                        }
+                        .token-section {
+                            margin-top: 15px;
+                            font-style: italic;
+                            color: #333;
+                        }
+                        .urgent-pill {
+                            display: inline-block;
+                            background-color: #ff4d4d;
+                            color: white;
+                            padding: 5px 10px;
+                            border-radius: 12px;
+                            font-size: 0.8em;
+                            margin-right: 5px;
+                        }
+                        .mvo-pill {
+                            display: inline-block;
+                            background-color: #1e90ff;
+                            color: white;
+                            padding: 5px 10px;
+                            border-radius: 12px;
+                            font-size: 0.8em;
+                            margin-right: 5px;
+                        }
+                        .redeem-pill {
+                            display: inline-block;
+                            background-color: #3cb371;
+                            color: white;
+                            padding: 5px 10px;
+                            border-radius: 12px;
+                            font-size: 0.8em;
+                            margin-right: 5px;
+                        }
+                        .changed-pill {
+                            display: inline-block;
+                            background-color: #ffa500;
+                            color: white;
+                            padding: 5px 10px;
+                            border-radius: 12px;
+                            font-size: 0.8em;
+                            margin-right: 5px;
+                        }
+                        .identifier-info {
+                            display: block;
+                            background-color: #e0e0e0;
+                            color: #333;
+                            padding: 5px;
+                            border-radius: 5px;
+                            font-size: 0.8em;
+                            margin-top: 10px;
+                            text-align: center;
+                            font-weight: bold;
+                        }
+                        .service-request-box {
+                            border: 1px solid #ccc;
+                            padding: 15px;
+                            margin-bottom: 20px;
+                            background-color: #f9f9f9;
+                            box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+                        }
+                        .service-request-header {
+                            font-weight: bold;
+                            font-size: 1.2em;
+                            padding: 10px;
+                            border-bottom: 1px solid #ccc;
+                            margin-bottom: 10px;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                        }
+                        .service-request-header .pill-container {
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: flex-end;
+                        }
+                        .copy-sender-info {
+                            margin-top: 20px;
+                            padding: 10px;
+                            border-top: 1px dashed #ccc;
+                            font-size: 0.9em;
+                            color: #555;
+                        }
+                        hr {
+                            border: 0;
+                            border-top: 1px dashed #ccc;
+                            margin: 20px 0;
+                        }
+                    </style>
                 </style>
             </head>
             <body>
                 <div id="gesamtseite">
                     <div class="clearfix">
+                        <div class="header-info">
                         <div class="sender-info">
                             <xsl:call-template name="sender-info">
                                 <xsl:with-param name="rootBundle" select="/fhir:Bundle" />
@@ -217,6 +222,7 @@
                             </xsl:call-template>
                         </div>
                     </div>
+                </div>
                     <div class="receiver-info clear">
                         <xsl:call-template name="receiver-info">
                             <xsl:with-param name="rootBundle" select="/fhir:Bundle" />
@@ -268,13 +274,17 @@
                 <xsl:for-each select="fhir:resource/fhir:Organization">
                     <div class="sender-info">
                         <!-- Output the organization's info -->
-                        <xsl:value-of select="fhir:name/@value" />
-                        <br />
-                        <xsl:value-of select="fhir:address/fhir:line/@value" />
-                        <br />
+                        <p>
+                        <strong><xsl:value-of select="fhir:name/@value" /></strong>
+                        <br/>
+                        <xsl:for-each select ="fhir:address/fhir:line">
+                            <span>&#160;</span><xsl:value-of select="@value" />
+                        </xsl:for-each>
+                        <span>,&#160;</span>
                         <xsl:value-of select="fhir:address/fhir:postalCode/@value" />
-                        <span>&#160;</span>
+                        <span>,&#160;</span>
                         <xsl:value-of select="fhir:address/fhir:city/@value" />
+                    </p>
                     </div>
                 </xsl:for-each>
             </xsl:for-each>
@@ -292,14 +302,13 @@
             <xsl:for-each
                 select="$rootBundle/fhir:entry[fhir:fullUrl = $respRef]">
                 <xsl:for-each select="fhir:resource/fhir:Organization">
-                    <!-- Assuming the phone number is located under telecom with system='phone' --> Tel.:
-                    <xsl:value-of
+                    <p>
+                        <span>&#160;</span>Tel.: <xsl:value-of
                         select="fhir:contact/fhir:telecom[fhir:system/@value = 'phone']/fhir:value/@value" />
                     <br />
-                    <!-- Assuming the KIM address is located under telecom with system='email' -->
-        KIM:
-                    <xsl:value-of
+                    <span>&#160;</span>KIM: <xsl:value-of
                         select="fhir:contact/fhir:telecom[fhir:system/@value = 'email']/fhir:value/@value" />
+                    </p>
                 </xsl:for-each>
             </xsl:for-each>
         </xsl:for-each>
@@ -311,15 +320,17 @@
         <xsl:for-each
             select="$rootBundle/fhir:entry/fhir:resource/fhir:MessageHeader">
             <!-- Retrieve the responsible reference, which points to the Organization -->
+            <div class="header-info">
             <div class="receiver">
                 <span class="name">
                     <xsl:value-of select="fhir:destination/fhir:name/@value" />
                 </span>
                 <br />
                 <span class="email">
-                    <xsl:value-of select="fhir:destination/fhir:endpoint/@value" />
+                    <span>&#160;</span>KIM: <xsl:value-of select="fhir:destination/fhir:endpoint/@value" />
                 </span>
             </div>
+        </div>
         </xsl:for-each>
     </xsl:template>
     <!-- Adjust letter-subject-info template to use rootBundle -->
