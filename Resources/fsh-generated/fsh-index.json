@@ -325,7 +325,7 @@
     "fshType": "Instance",
     "fshFile": "examples/Misc/Example_Practitioner.fsh",
     "startLine": 1,
-    "endLine": 19
+    "endLine": 14
   },
   {
     "outputFile": "ServiceRequest-Komplex-MULTI-Initial-Prescription-Request-3.json",
@@ -453,7 +453,7 @@
     "fshType": "Profile",
     "fshFile": "profiles/10_Practitioner.fsh",
     "startLine": 1,
-    "endLine": 13
+    "endLine": 8
   },
   {
     "outputFile": "StructureDefinition-erp-service-request-prescription-request.json",

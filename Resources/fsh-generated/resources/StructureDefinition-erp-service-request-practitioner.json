@@ -14,38 +14,21 @@
   "kind": "resource",
   "abstract": false,
   "type": "Practitioner",
-  "baseDefinition": "https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Practitioner",
+  "baseDefinition": "https://gematik.de/fhir/directory/StructureDefinition/PractitionerDirectory",
   "derivation": "constraint",
   "differential": {
     "element": [
       {
         "id": "Practitioner.identifier",
         "path": "Practitioner.identifier",
-        "mustSupport": true
+        "min": 2
       },
       {
-        "id": "Practitioner.identifier:ANR",
+        "id": "Practitioner.identifier:LANR",
         "path": "Practitioner.identifier",
-        "sliceName": "ANR",
-        "mustSupport": true
-      },
-      {
-        "id": "Practitioner.name",
-        "path": "Practitioner.name",
-        "max": "1",
-        "mustSupport": true
-      },
-      {
-        "id": "Practitioner.name:name",
-        "path": "Practitioner.name",
-        "sliceName": "name",
-        "min": 1
-      },
-      {
-        "id": "Practitioner.name:geburtsname",
-        "path": "Practitioner.name",
-        "sliceName": "geburtsname",
-        "max": "0"
+        "sliceName": "LANR",
+        "min": 1,
+        "max": "1"
       }
     ]
   }
