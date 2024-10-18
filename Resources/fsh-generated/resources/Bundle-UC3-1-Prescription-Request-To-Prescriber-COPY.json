@@ -26,12 +26,12 @@
         "source": {
           "contact": {
             "system": "email",
-            "value": "info@avs.email"
+            "value": "info@avs_solutions.com"
           },
           "name": "Pharmacy-Source",
           "software": "Pharmacy-Software",
           "version": "1.0.0",
-          "endpoint": "pharmacy@test.kim.de"
+          "endpoint": "https://avs_solutions.com/jira_helpdesk"
         },
         "focus": [
           {
@@ -90,12 +90,12 @@
               "source": {
                 "contact": {
                   "system": "email",
-                  "value": "info@avs.email"
+                  "value": "info@avs_solutions.com"
                 },
                 "name": "Pharmacy-Source",
                 "software": "Pharmacy-Software",
                 "version": "1.0.0",
-                "endpoint": "pharmacy@test.kim.de"
+                "endpoint": "https://avs_solutions.com/jira_helpdesk"
               },
               "focus": [
                 {

@@ -134,6 +134,9 @@
                         <value value="1-test-telematik-id"/>
                     </identifier>
                 </performer>
+                <reasonCode>
+                    <text value="Kann weiterhin bei Bedarf verabreicht werden."/>
+                </reasonCode>
                 <note>
                     <time value="2025-05-14T08:12:23+02:00"/>
                     <text value="Wird weiterhin benötigt, bitte um Verlängerung."/>

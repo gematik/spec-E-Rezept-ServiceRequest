@@ -106,6 +106,9 @@
                 <modifierExtension url="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex">
                     <valueBoolean value="true"/>
                 </modifierExtension>
+                <modifierExtension url="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/changed-medication-ex">
+                    <valueBoolean value="true"/>
+                </modifierExtension>
                 <identifier>
                     <system value="https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier"/>
                     <value value="d42cf276-5f2a-4148-a3f4-1af623db7846"/>
@@ -129,6 +132,13 @@
                 <subject>
                     <reference value="Patient/Example-Patient"/>
                 </subject>
+                <reasonCode>
+                    <coding>
+                        <system value="https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-request-reason-cs"/>
+                        <code value="on-demand"/>
+                    </coding>
+                    <text value="Des Nachtens doch ein heilsamer Trunk zur Verbesserung der Schlafqualität"/>
+                </reasonCode>
                 <occurrenceDateTime value="2025-05-14T12:00:00+02:00"/>
                 <authoredOn value="2025-05-13"/>
                 <requester>

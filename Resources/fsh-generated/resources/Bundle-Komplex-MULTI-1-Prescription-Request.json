@@ -26,12 +26,12 @@
         "source": {
           "contact": {
             "system": "email",
-            "value": "info@hcs.email"
+            "value": "info@healthcare_ps_solutions.com"
           },
           "name": "HealthCare-Source",
           "software": "HealthCare-Software",
           "version": "1.0.0",
-          "endpoint": "healthcare-service@test.kim.de"
+          "endpoint": "https://healthcare_ps_solutions.com/jira_helpdesk"
         },
         "focus": [
           {
