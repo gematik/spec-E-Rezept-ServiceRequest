@@ -1,5 +1,5 @@
 {
-  "updated": "2024-10-17T15:13:12.298631+02:00",
+  "updated": "2024-10-18T07:07:28.416652+02:00",
   "dependencies": {
     "hl7.fhir.r4.core": "4.0.1",
     "de.gematik.fhir.atf": "1.4.0-dev",

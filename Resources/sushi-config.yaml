@@ -4,18 +4,18 @@ applyExtensionMetadataToRoot: false
 FSHOnly: true
 version: "1.1.0"
 dependencies:
+  # basisprofile
   hl7.fhir.r4.core: 4.0.1
   de.basisprofil.r4: 1.5.0
+
+  # gematik
   de.gematik.fhir.atf: 1.4.0-dev
-  de.gematik.erezept-workflow.r4: 1.4.x
-  de.gematik.epa.medication: 1.0.x
   de.gematik.fhir.directory: 0.11.12
+  de.gematik.erezept-workflow.r4: 1.4.x
   de.gematik.epa: 1.1.0
-  kbv.basis: 1.3.0
+
+  # kbv
   kbv.ita.erp: 1.1.x
 
-  # Basis: Patient, Practitioner, Organization
-  # Option 1: KBV_Basis
-  # Option 2: EPA Basic und FHIR Directory
-  # Option 3: Selber schreiben
-  # TODO: Option 2 umsetzen
+  # secondary dependencies for the build process
+  kbv.basis: 1.3.0
