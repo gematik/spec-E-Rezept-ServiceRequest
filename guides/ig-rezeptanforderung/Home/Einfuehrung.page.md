@@ -56,6 +56,9 @@ Ein ServiceRequest spiegelt neben den fachlichen Informationen auch den Status d
 | revoked          | Anfrage wurde vom Verordnenden abgelehnt  |
 | completed        | Anfrage wurde von der zu bearbeitenden Partei erfüllt    |
 
+## Visuelle Darstellung
+Die in diesem Projekt erzeugten Ressourcen lassen sich mit einem XSLT-Stylesheet in ein HTML überführen, um sie für Anwender sichtbar zu machen. Notwendigkeit und Voraussetzungen sind im [Featuredokument gemF_eRp_KIM](https://gemspec.gematik.de/docs/gemF/gemF_eRp_KIM/latest/) beschrieben.
+Das Stylesheet findet sich im GitHub Repository: [XSLT-Stylesheet](https://github.com/gematik/spec-E-Rezept-ServiceRequest/tree/master/Resources/xslt-stylesheets).
 
 ## Beispiele
 Beispielinstanzen sind unter {{pagelink:Home/Examples.page.md}} zu finden.
