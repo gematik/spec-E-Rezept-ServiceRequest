@@ -65,20 +65,15 @@ class KIMClient(ABC):
         # If attachments are provided, add them to the message
         if attachments:
             for attachment in attachments:
-                attachment_path = os.path.join(
-                    self.attachment_folder, f"{attachment['filename']}"
-                )
-                with open(attachment_path, "w", encoding="utf-8") as attachment_file:
-                    attachment_file.write(attachment["content"].xml())
-
                 message["kim_message"]["attachments"].append(
                     {
                         "filename": attachment["filename"],
-                        "path": attachment_path
+                        "path": attachment['attachment_path']
                     }
                 )
+
                 logger.debug(
-                    f"Attachment {attachment['filename']} added to message as base64."
+                    f"Attachment {attachment['filename']} added to message."
                 )
 
         # Write the message to the sender's outbox

@@ -21,8 +21,6 @@ class PharmacyKIMClient(KIMClient):
             "website": "https://aposoft.de/issues",
         }
 
-        self.kim_address_details = {"display": client_name, "kim_address": kim_address}
-
     def process_message(self, message_content):
         logger.debug("Empfangene Nachricht durch Apotheke: %s", message_content)
 

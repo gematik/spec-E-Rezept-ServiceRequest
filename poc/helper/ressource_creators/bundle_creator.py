@@ -1,11 +1,17 @@
+from datetime import datetime, timezone
 from typing import List
+from fhir.resources.R4B.messageheader import MessageHeader
 from fhir.resources.R4B.bundle import Bundle, BundleEntry
 from fhir.resources.R4B.fhirtypes import ReferenceType
 from fhir.resources.R4B.messageheader import MessageHeaderDestination, MessageHeaderSource
 from fhir.resources.R4B.servicerequest import ServiceRequest
+
+from fhir.resources.R4B.meta import Meta
+from fhir.resources.R4B.fhirtypes import IdentifierType, Instant
+from uuid import uuid4
+
 from helper.ressource_creators.message_header_creator import MessageHeaderCreator
 from helper.ressource_creators.message_bundle_creator import MessageBundleCreator
-
 
 
 class BundleCreator:
@@ -18,6 +24,7 @@ class BundleCreator:
         source: MessageHeaderSource,
         destinations: List[MessageHeaderDestination],
         service_request: ServiceRequest,
+        requesting_organisation_id,
         additional_bundle_entries: List[BundleEntry],
         code_system: str,
         use_case: str,
@@ -43,6 +50,7 @@ class BundleCreator:
             code_system,
             use_case,
             use_case_display,
+            requesting_organisation_id,
             focus_reference=service_request.id,
         )
 
@@ -59,3 +67,28 @@ class BundleCreator:
         )
 
         return bundle
+    
+
+    def create_message_bundle(message_header: MessageHeader, resources: List[BundleEntry]) -> Bundle:
+        bundle_id = str(uuid4())
+
+        entries = [
+            BundleEntry(
+                fullUrl=f"urn:uuid:{message_header.id}", resource=message_header)
+        ]
+
+        entries.extend(resources)
+
+        message_bundle = Bundle(
+            id=bundle_id,
+            meta=Meta.construct(profile=[
+                "https://gematik.de/fhir/atf/StructureDefinition/bundle-app-transport-framework"
+            ]),
+            type="message",
+            identifier=IdentifierType(
+                system="urn:ietf:rfc:3986", value=f"urn:uuid:{bundle_id}"),
+            entry=entries,
+            timestamp=datetime.now(timezone.utc).isoformat(),
+        )
+
+        return message_bundle

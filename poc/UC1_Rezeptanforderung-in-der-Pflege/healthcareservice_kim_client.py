@@ -1,34 +1,34 @@
 import logging
 import sys
 import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from uuid import uuid4
 
-from helper.ressource_creators.prescription_request_creator import (
-    PrescriptionRequestCreator,
-)
 
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+from helper.ressource_creators.prescription_request_creator import PrescriptionRequestCreator
+from helper.renderer.html_renderer import HTMLRenderer
 from helper.kim_client import KIMClient
 from helper.logging_setup import setup_logger
+from helper.file_handler import FileHandler
 
 # Logger für die Pflegeeinrichtung einrichten
 logger = setup_logger("Pflegeeinrichtung_A", level=logging.INFO)
 
 
 class HealthCareServiceKIMClient(KIMClient):
-    def __init__(self, client_name, kim_address):
+    def __init__(self, client_name, kim_address, pvs_client):
+        self.pvs_client = pvs_client
         super().__init__(client_name, kim_address)
+        self.html_renderer = HTMLRenderer()
+        self.file_handler = FileHandler(self.attachment_folder,self.html_renderer)
         self.software_info = {
-            "name": "PSSolutions",
-            "product": "Globotron 500",
-            "version": "2.1.3",
-            "email": "dev@ps_solutions.de",
+            "name": "HealthCare-Source",
+            "product": "HealthCare-Software",
+            "version": "1.0.0",
+            "email": "info@hcs.email",
             "website": "https://ps_solutions.com/jira_helpdesk",
-        }
-
-        self.kim_address_details = {
-            "display":client_name,
-            "kim_address": kim_address
         }
 
     def process_message(self, message_content):
@@ -94,9 +94,9 @@ class HealthCareServiceKIMClient(KIMClient):
                 "Anfrage an einen Arzt ein Rezept auszustellen",
                 request_id,
                 "return-to-requester",
-                self.kim_address_details,
+                self.kim_address,
                 self.software_info,
-                [arztpraxis.kim_address],
+                arztpraxis.kim_address,
                 "active",
                 "https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-request-reason-cs",
                 "medication-runs-out",
@@ -104,30 +104,18 @@ class HealthCareServiceKIMClient(KIMClient):
             )
         )
 
-        message_content = {
-            "eventCode": "#eRezept_Rezeptanforderung;Rezeptanfrage",
-            "status": "active",
-            "patient": patient_info,
-            "medication": medication_info,
-            "requester": self.client_name,
-            "organizationType": "PFL",
-        }
-
         attachments = []
-        
-        attachments.append(
-            {
-                "filename": 'atf_eRezept_Rezeptanforderung.xml',
-                "content": prescription_request_bundle
-            }
-        )
+        attachments.append(self.file_handler.create_xml_file(prescription_request_bundle.xml(), "atf_eRezept_Rezeptanforderung.xml"))
+        html = self.html_renderer.generate_html(prescription_request_bundle.xml())
+        attachments.append(self.file_handler.write_html_file(html, "atf_eRezept_Rezeptanforderung.html"))
+        attachments.append(self.file_handler.create_pdf_file_from_html(html, "atf_eRezept_Rezeptanforderung.pdf"))
 
         logger.info(
             "Sende Rezeptanforderung von Pflegeeinrichtung an: %s",
             arztpraxis.client_name,
         )
         logger.debug(
-            "Sende Rezeptanforderung von Pflegeeinrichtung an Arzt: %s", message_content
+            "Sende Rezeptanforderung von Pflegeeinrichtung an Arzt: %s", html
         )
 
         # Sende Rezeptanforderung an Arzt
@@ -135,9 +123,11 @@ class HealthCareServiceKIMClient(KIMClient):
             arztpraxis.client_name,
             "KIM-Rezeptanforderung",
             "Rezeptanforderung",
-            message_content,
+            html,
             attachments,
         )
+
+        self.pvs_client.process_prescription_request(prescription_request_bundle)     
 
     def send_dispensation_request(
         self, pharmacy_name, patient_info, medication_info, ePrescriptionToken

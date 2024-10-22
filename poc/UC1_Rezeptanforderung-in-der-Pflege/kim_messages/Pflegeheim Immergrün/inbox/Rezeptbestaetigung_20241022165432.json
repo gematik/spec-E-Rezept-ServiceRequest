@@ -1,0 +1,16 @@
+{
+  "kim_message": {
+    "sender": "Arzt_B",
+    "recipient": "Pflegeheim Immergr\u00fcn",
+    "kim_dienstkennung": "KIM-E-Rezept-Best\u00e4tigung",
+    "subject": "Rezeptbestaetigung",
+    "content": "html",
+    "attachments": [
+      {
+        "filename": "atf_eRezept_Rezeptbest\u00e4tigung.xml",
+        "path": "./kim_messages/attachments/atf_eRezept_Rezeptbest\u00e4tigung.xml"
+      }
+    ],
+    "created": "22.10.2024 16:54:32"
+  }
+}

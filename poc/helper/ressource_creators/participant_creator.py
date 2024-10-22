@@ -32,14 +32,7 @@ class ParticipantsCreator:
         )
 
     @staticmethod
-    def create_destinations(
-        kim_address: str, display: str, endpoint_url: str,
+    def create_destination(
+        name: str, endpoint_url: str
     ) -> List[MessageHeaderDestination]:
-        receiver = ReferenceType(
-            identifier=Identifier(
-                system="http://gematik.de/fhir/sid/KIM-Adresse",
-                value=kim_address,
-            ),
-            display=display,
-        )
-        return [MessageHeaderDestination(endpoint=endpoint_url, receiver=receiver)]
+        return [MessageHeaderDestination(name=name, endpoint=endpoint_url)]

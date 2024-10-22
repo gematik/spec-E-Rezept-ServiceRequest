@@ -10,10 +10,12 @@ logger = setup_logger("Main", level=logging.INFO)
 def main():
     # Instanzen für alle beteiligten Parteien erstellen
     logger.info("Initialisiere Clients...")
+    pvs_client = PvsKIMClient("Arzt_B", {"kim_address": "mailto:practitioner@test.kim.de", "display": "Praxis Hans Topp-Glücklich"})
 
-    health_care_service_client = HealthCareServiceKIMClient("Pflegeeinrichtung Immergrün", "pflegeheim.immergrün.arzt@sana-pflegeheime.kim.telematik")
-    pvs_client = PvsKIMClient("Arzt_B", "praxis.hasenbein@gluecklich.kim.telematik")
-    pharmacy_client = PharmacyKIMClient("Apotheke_C", "arbeitsplatz-1@test-apotheke.kim.telematik")
+    health_care_service_client = HealthCareServiceKIMClient("Pflegeheim Immergrün", {"kim_address": "mailto:healthcare-service@test.kim.de", "display": "Pflegeheim Immergrün"}, pvs_client)
+
+    pharmacy_client = PharmacyKIMClient("Apotheke_C", {"kim_address": "mailto:pharmacy@test.kim.de", "display": "Test Apotheke"})
+
 
     # Schritt 1: Pflegeeinrichtung sendet eine Rezeptanforderung an den Arzt
     logger.info("Schritt 1: Rezeptanforderung von Pflegeeinrichtung an Arzt")

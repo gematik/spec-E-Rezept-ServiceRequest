@@ -64,8 +64,8 @@ class ServiceRequestCreator:
                 ServiceRequestCreator.create_reference(ref=references["based_on"])
             ],
             requisition=ServiceRequestCreator.create_identifier(
-                system="https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
-                value=identifiers["https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier"],
+                system="https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier",
+                value=identifiers["https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier"],
             ),
             status=status,
             subject=ServiceRequestCreator.create_reference(ref=references["patient"]),

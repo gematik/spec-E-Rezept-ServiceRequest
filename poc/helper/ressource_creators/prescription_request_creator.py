@@ -46,13 +46,13 @@ class PrescriptionRequestCreator:
             status,
             order_detail_code,
             identifiers={
-                "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier": identifiers[
+                "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier": identifiers[
                     "request"
                 ],
                 "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemPreDisIdentifier": identifiers[
                     "predis"
                 ],
-                "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier": identifiers[
+                "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier": identifiers[
                     "vorgangs"
                 ],
             },
@@ -102,9 +102,9 @@ class PrescriptionRequestCreator:
         use_case_display,
         request_id,
         type: str,
-        kim_address_details,
+        sender_kim_address,
         software_info,
-        recipients,
+        recipient_kim_address,
         status,
         reason_system,
         reason_code,
@@ -116,7 +116,7 @@ class PrescriptionRequestCreator:
         }
 
         sender = ParticipantsCreator.create_sender(
-            kim_address_details["kim_address"], kim_address_details["display"]
+            sender_kim_address["kim_address"], sender_kim_address["display"]
         )
         source = ParticipantsCreator.create_source(
             software_info["name"],
@@ -126,7 +126,7 @@ class PrescriptionRequestCreator:
             software_info["website"],
         )
 
-        destinations = ParticipantsCreator.create_destinations("recipient", "unknwon", "unknown")
+        destination = ParticipantsCreator.create_destination(recipient_kim_address['display'], recipient_kim_address['kim_address'])
 
         entries = PrescriptionRequestCreator.create_bundle_entries()
         identifiers["request"] = request_id
@@ -158,8 +158,9 @@ class PrescriptionRequestCreator:
                 identifiers["message"],
                 sender,
                 source,
-                destinations,
+                destination,
                 service_request,
+                entries["requesting_organisation"].id,
                 additional_bundle_entries=bundle_entries,
                 code_system="https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs",
                 use_case=use_case,

@@ -46,7 +46,6 @@ class MedicationRequestCreator:
             subject=Reference(reference="urn:uuid:" +patient_reference),
             authoredOn=datetime.now(get_localzone()).isoformat(),
             dosageInstruction=[Dosage(text=dosage_instruction_text)],
-            substitution={"allowedBoolean": substitution_allowed},
         )
 
         return medication_request
