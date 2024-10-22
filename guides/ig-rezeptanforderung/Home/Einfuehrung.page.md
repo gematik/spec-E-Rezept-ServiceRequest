@@ -74,3 +74,13 @@ Die Beispiele tragen jeweils das Präfix zum entsprechenden UseCase und der ents
 Für UC1 gibt es auch Beispiele für Stornierung und Ablehnung.
 
 HINWEIS: Die Beispiele, die in dieser Spezifikation auf Simplifier vorhanden sind verwenden URL-Referenzen. Dies dient der Anschaulichkeit und dem Nachvollziehen von Ressourcen und Referenzen. Für den produktiven Einsatz sollten absolute Referenzen mit UUID's verwendet werden: "urn:uuid:e615aa46-30f3-4d3f-b3f1-3274ad314b5c".
+
+## Veranschaulichung am Demonstrator
+
+Die folgenden Videos demonstrieren die Anwendungsfälle aus Sicht der Akteure der in diesem IG aufgeführten Akteure.
+
+### Rezeptanforderungen im ambulanten Pflegedienst
+<iframe src="https://gematikde-my.sharepoint.com/personal/julia_schaefer_gematik_de/_layouts/15/embed.aspx?UniqueId=f4e4ff34-4888-4b18-8e88-01b40c26e20d&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="1280" height="720" frameborder="0" scrolling="no" allowfullscreen title="Rezeptanforderung_AmbulanterPflegedienst.webm"></iframe>
+
+### Rezeptanforderungen der heimversorgenden Apotheke
+<iframe src="https://gematikde-my.sharepoint.com/personal/julia_schaefer_gematik_de/_layouts/15/embed.aspx?UniqueId=99f56e6b-58db-4aec-b086-db61ccf2cda7&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="1280" height="720" frameborder="0" scrolling="no" allowfullscreen title="RezeptanforderungHeimversorgendeApotheke.webm"></iframe>
