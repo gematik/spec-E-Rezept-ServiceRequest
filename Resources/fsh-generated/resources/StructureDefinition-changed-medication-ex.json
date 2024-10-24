@@ -1,0 +1,76 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "changed-medication-ex",
+  "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/changed-medication-ex",
+  "version": "1.2",
+  "name": "ChangedMedicationEX",
+  "title": "Changed Medication (EX)",
+  "status": "draft",
+  "experimental": false,
+  "date": "2025-01-01",
+  "publisher": "gematik GmbH",
+  "description": "This extension is used to specify if the medication has been changed by the prescriber",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "expression": "ServiceRequest",
+      "type": "element"
+    },
+    {
+      "expression": "MedicationRequest",
+      "type": "element"
+    },
+    {
+      "expression": "DeviceRequest",
+      "type": "element"
+    },
+    {
+      "expression": "Task",
+      "type": "element"
+    },
+    {
+      "expression": "SupplyRequest",
+      "type": "element"
+    },
+    {
+      "expression": "Medication",
+      "type": "element"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "isModifier": true,
+        "isModifierReason": "If the medication has been changed, the receiving system must display that the medication has been changed."
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/changed-medication-ex"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+@startuml name = "UC4-Rezeptanforderung-anwendigungsfertige-Zytostatika"
+
+
+skinparam maxMessageSize 300
+
+title UC4-Rezeptanforderung für anwendungsfertige Zytostatikazubereitungen
+hide footbox
+autonumber "<b>[0]"
+
+actor "Apotheke" as Apotheke
+actor "Verordnender \nLeistungserbringer" as Arzt
+entity "E-Rezept\nFachdienst" as FD
+
+legend bottom right
+    __Legende__
+    |<#LightPink> Ergebnis: keine Ausstellung E-Rezept|
+endlegend
+
+?-> Apotheke: Start der \nZubereitung
+
+Apotheke ->> Apotheke: Zubereitungsdaten
+
+Apotheke ->> Arzt: //Rezeptanforderung//
+
+opt #LightPink Stornierung notwendig
+    Apotheke ->> Arzt: //Rezeptanforderung_Storno//
+    alt #LightPink E-Rezept noch nicht eingestellt
+        Arzt ->x Arzt: Rezeptanforderung wird verworfen
+    else #LightPink E-Rezept wurde eingestellt
+        Arzt ->x Arzt: E-Rezept wird gelöscht
+    end
+end
+
+alt Arzt stimmt Rezeptanforderung zu
+    Arzt ->> Apotheke: //Rezeptanforderung_Rezeptübermittlung//
+else #LightPink Arzt lehnt Rezeptanforderung ab
+    Arzt ->> Apotheke: //Rezeptanforderung_Ablehnung//
+
+end
+
+Apotheke <-> FD: E-Rezept einlösen
+
+@enduml

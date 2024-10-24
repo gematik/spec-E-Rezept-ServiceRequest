@@ -1,18 +1,12 @@
-- name: Rezeptanforderung in der Pflege
-  filename: 0-Index.page.md
-- name: Fachliche Beschreibung
-  filename: 1-Fachliche-Beschreibung.page.md
-- name: Rezeptanforderung
-  filename: 2.1-Anfragender-an-Verordnenden.page.md
-- name: Rezeptanforderung_Rezeptübermittlung
-  filename: 2.2-Verordnender-an-Anfragenden.page.md
-- name: Dispensieranforderung_Rezeptübermittlung
-  filename: 2.3-Anfragender-an-Apotheke.page.md
-- name: Dispensieranforderung_Bestätigung
-  filename: 2.4-Apotheke-an-Anfragenden.page.md
-- name: "Sonderfall: Apotheke als Anfragender"
-  filename: 2.5-Apotheke-als-Anfragender.page.md
-- name: Beispiele
-  filename: 4-Beispiele.page.md
-- name: Mappings
-  filename: 5-Mappings.page.md
+- name: Index
+  filename: Index.page.md
+- name: Pflegeeinrichtung an Verordnenden
+  filename: 1.1-Anfragender-an-Verordnenden.page.md
+- name: Verordnendender an Pflegeeinrichtung
+  filename: 1.2-Verordnender-an-Anfragenden.page.md
+- name: Pflegeeinrichtung an Apotheke
+  filename: 1.3-Anfragender-an-Apotheke.page.md
+- name: Apotheke an Pflegeeinrichtung
+  filename: 1.4-Apotheke-an-Anfragenden.page.md
+- name: Beispiele der verwendeten FHIR-Ressourcen
+  filename: 1.5-Beispiele.page.md

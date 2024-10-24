@@ -11,7 +11,7 @@
     "system": "urn:ietf:rfc:3986",
     "value": "urn:uuid:c80f6c55-92f8-4518-ba66-cb193da09336"
   },
-  "timestamp": "2023-02-01T13:28:17.239+02:00",
+  "timestamp": "2025-05-14T08:23:12+02:00",
   "entry": [
     {
       "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/UC1-HealthCareService-to-Pharmacy-MessageHeader",
@@ -26,12 +26,12 @@
         "source": {
           "contact": {
             "system": "email",
-            "value": "info@hcs.email"
+            "value": "info@healthcare_ps_solutions.com"
           },
           "name": "HealthCare-Source",
           "software": "HealthCare-Software",
           "version": "1.0.0",
-          "endpoint": "mailto:healthcare-service@test.kim.de"
+          "endpoint": "https://healthcare_ps_solutions.com/jira_helpdesk"
         },
         "focus": [
           {
@@ -47,20 +47,132 @@
         },
         "destination": [
           {
-            "receiver": {
-              "identifier": {
-                "system": "https://gematik.de/fhir/sid/telematik-id",
-                "value": "1-test-telematik-id"
-              },
-              "display": "Praxis Hans Topp-Glücklich"
-            },
-            "endpoint": "mailto:practitioner@test.kim.de"
+            "name": "Test Apotheke",
+            "endpoint": "mailto:pharmacy@test.kim.de"
           }
         ],
         "eventCoding": {
           "code": "eRezept_Rezeptanforderung;Abgabeanfrage",
           "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
+        },
+        "responsible": {
+          "reference": "Organization/Example-HealthCareService-Organization"
         }
+      }
+    },
+    {
+      "fullUrl": "http://erp-servicerequest-test.de/Organization/Example-HealthCareService-Organization",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "Example-HealthCareService-Organization",
+        "meta": {
+          "tag": [
+            {
+              "system": "https://gematik.de/fhir/directory/CodeSystem/Origin",
+              "code": "owner"
+            }
+          ],
+          "profile": [
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://gematik.de/fhir/sid/telematik-id",
+            "value": "123456789"
+          }
+        ],
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "0301234567"
+              },
+              {
+                "system": "email",
+                "value": "arbeitsplatz-1@test-pflegeheim.kim.telematik"
+              }
+            ]
+          }
+        ],
+        "name": "Pflegeheim Immergrün",
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "1.2.276.0.76.4.245",
+                "system": "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID",
+                "display": "Betriebsstätte Gesundheits-, Kranken- und Altenpflege"
+              }
+            ]
+          }
+        ],
+        "address": [
+          {
+            "type": "both",
+            "line": [
+              "Musterstr. 2"
+            ],
+            "city": "Berlin",
+            "postalCode": "10623"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/UC1-Initial-Dispense-Request",
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "UC1-Initial-Dispense-Request",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"
+          ]
+        },
+        "intent": "filler-order",
+        "identifier": [
+          {
+            "system": "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier",
+            "value": "2"
+          }
+        ],
+        "requisition": {
+          "system": "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier",
+          "value": "GroupID-UC1"
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "dispense-request",
+              "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "valueIdentifier": {
+              "system": "https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken",
+              "value": "Task/169.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
+            },
+            "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex"
+          }
+        ],
+        "status": "active",
+        "subject": {
+          "reference": "Patient/Example-Patient"
+        },
+        "requester": {
+          "reference": "Organization/Example-HealthCareService-Organization"
+        },
+        "authoredOn": "2025-05-14",
+        "priority": "urgent",
+        "note": [
+          {
+            "text": "Wird weiterhin benötigt, bitte um Verlängerung. Bitte um schnelle Bearbeitung",
+            "time": "2025-05-14T08:22:05+02:00"
+          }
+        ]
       }
     },
     {
@@ -70,23 +182,9 @@
         "id": "Example-Patient",
         "meta": {
           "profile": [
-            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-patient"
           ]
         },
-        "identifier": [
-          {
-            "type": {
-              "coding": [
-                {
-                  "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
-                  "code": "GKV"
-                }
-              ]
-            },
-            "system": "http://fhir.de/sid/gkv/kvid-10",
-            "value": "X234567890"
-          }
-        ],
         "name": [
           {
             "use": "official",
@@ -104,9 +202,14 @@
             ]
           }
         ],
+        "identifier": [
+          {
+            "system": "http://fhir.de/sid/gkv/kvid-10",
+            "value": "X234567890"
+          }
+        ],
         "address": [
           {
-            "type": "both",
             "line": [
               "Musterstr. 1"
             ],
@@ -124,61 +227,12 @@
                 ]
               }
             ],
+            "type": "both",
             "city": "Berlin",
             "postalCode": "10623"
           }
         ],
         "birthDate": "1935-06-22"
-      }
-    },
-    {
-      "fullUrl": "http://erp-servicerequest-test.de/ServiceRequest/UC1-Initial-Dispense-Request",
-      "resource": {
-        "resourceType": "ServiceRequest",
-        "id": "UC1-Initial-Dispense-Request",
-        "meta": {
-          "profile": [
-            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"
-          ]
-        },
-        "intent": "filler-order",
-        "requisition": {
-          "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
-          "value": "GroupID-UC1"
-        },
-        "extension": [
-          {
-            "valueIdentifier": {
-              "system": "https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken",
-              "value": "Task/160.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
-            },
-            "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex"
-          }
-        ],
-        "code": {
-          "coding": [
-            {
-              "code": "dispense-request",
-              "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
-            }
-          ]
-        },
-        "identifier": [
-          {
-            "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier",
-            "value": "2"
-          },
-          {
-            "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemPreDisIdentifier",
-            "value": "PreDis-1"
-          }
-        ],
-        "status": "active",
-        "subject": {
-          "reference": "Patient/Example-Patient"
-        },
-        "occurrenceDateTime": "2023-02-01",
-        "authoredOn": "2023-02-01"
       }
     }
   ]

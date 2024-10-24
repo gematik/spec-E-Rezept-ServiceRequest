@@ -1,0 +1,12 @@
+@startuml UC2
+autonumber "<b>[0]"
+participant Pflegeeinrichtung as PE #LightBlue
+participant Arzt as A #LightYellow
+participant Patient as P #LightGrey
+
+PE -> A++: <b>Rezeptanforderung\n <i>ERPServiceRequestPrescriptionRequest \n.extension:redeemByPatient = true
+A -> A: E-Rezept einstellen
+A -> PE--: <b>Rezeptanforderung_Bestätigung\n <i>ERPServiceRequestPrescriptionRequest  \n.status = #completed
+PE --> P: opt. informieren und Patientenausdruck bereitstellen
+
+@enduml

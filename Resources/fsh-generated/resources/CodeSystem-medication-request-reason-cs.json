@@ -1,20 +1,33 @@
 {
   "resourceType": "CodeSystem",
-  "status": "active",
+  "status": "draft",
   "content": "complete",
   "name": "MedicationRequestReasonCS",
   "id": "medication-request-reason-cs",
   "title": "Reason for medication request (CS)",
   "description": "Provides codes for reasons why medication is requested",
+  "version": "1.2",
   "url": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-request-reason-cs",
   "concept": [
     {
-      "code": "medication-runs-out",
-      "display": "Medikation geht zu neige"
+      "code": "correction",
+      "display": "Korrektur"
+    },
+    {
+      "code": "exhausted-range",
+      "display": "Reichweite erschöpft(Dauermedikation)"
+    },
+    {
+      "code": "vital-value-measurement",
+      "display": "nach Vitalwertmessung"
+    },
+    {
+      "code": "on-demand",
+      "display": "nach Bedarf"
     }
   ],
   "experimental": false,
   "publisher": "gematik GmbH",
-  "version": "1.0",
-  "count": 1
+  "date": "2025-01-01",
+  "count": 4
 }

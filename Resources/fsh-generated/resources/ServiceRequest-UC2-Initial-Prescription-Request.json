@@ -1,0 +1,53 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "UC2-Initial-Prescription-Request",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
+    ]
+  },
+  "intent": "order",
+  "identifier": [
+    {
+      "system": "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier",
+      "value": "1"
+    }
+  ],
+  "requisition": {
+    "system": "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier",
+    "value": "GroupID-UC2"
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "prescription-request",
+        "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
+      }
+    ]
+  },
+  "modifierExtension": [
+    {
+      "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex",
+      "valueBoolean": true
+    }
+  ],
+  "basedOn": [
+    {
+      "reference": "MedicationRequest/Example-Initial-Medication-Request"
+    }
+  ],
+  "status": "active",
+  "subject": {
+    "reference": "Patient/Example-Patient"
+  },
+  "authoredOn": "2025-05-13",
+  "requester": {
+    "reference": "Organization/Example-HealthCareService-Organization"
+  },
+  "note": [
+    {
+      "text": "Rezeptanfrage zur Einlösung von Herrn Königsstein.",
+      "time": "2025-05-13T14:23:12+02:00"
+    }
+  ]
+}
