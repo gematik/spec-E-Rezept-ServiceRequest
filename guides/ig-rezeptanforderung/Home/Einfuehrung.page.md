@@ -83,10 +83,10 @@ Die folgenden Videos demonstrieren die Anwendungsfälle aus Sicht der Akteure de
 
 Im folgenden wird der Anwendungsfall "Rezeptanforderung durch Pflegeeinrichtung" am Demonstrator veranschaulicht.
 
-<iframe src="https://gematikde-my.sharepoint.com/personal/julia_schaefer_gematik_de/_layouts/15/embed.aspx?UniqueId=f4e4ff34-4888-4b18-8e88-01b40c26e20d&embed=%7B%22hvm%22%3Atrue%2C%22ust%22%3Atrue%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="1280" height="720" frameborder="0" scrolling="no" allowfullscreen title="Rezeptanforderung_AmbulanterPflegedienst.webm"></iframe>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/ibP9gmvdIgo?si=-KlkXbqSQ9brOdg-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Rezeptanforderungen der heimversorgenden Apotheke
 
 Im folgenden wird der Anwendungsfall "Rezeptanforderung der heimversorgenden Apotheke" am Demonstrator veranschaulicht.
 
-<iframe src="https://gematikde-my.sharepoint.com/personal/julia_schaefer_gematik_de/_layouts/15/embed.aspx?UniqueId=99f56e6b-58db-4aec-b086-db61ccf2cda7&embed=%7B%22hvm%22%3Atrue%2C%22ust%22%3Atrue%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="1280" height="720" frameborder="0" scrolling="no" allowfullscreen title="RezeptanforderungHeimversorgendeApotheke.webm"></iframe>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/GmM0tghWLKw?si=SmkWJIod__jjxN0F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
