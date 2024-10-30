@@ -37,8 +37,8 @@ logger = setup_logger("Apotheke_C", level=logging.INFO)
 
 
 class PharmacyKIMClient(KIMClient):
-    def __init__(self, client_name, kim_address):
-        super().__init__(client_name, kim_address)
+    def __init__(self, client_name, sender_info):
+        super().__init__(client_name, sender_info)
         self.fhir_bundle_processor = FHIR_Bundle_Processor()
         self.html_renderer = HTMLRenderer()
         self.file_handler = FileHandler(self.attachment_folder, self.html_renderer)
@@ -47,14 +47,14 @@ class PharmacyKIMClient(KIMClient):
             "product": "ApoFlott",
             "version": "1.1.3",
             "email": "issues@apo-flott.de",
-            "website": "https://aposoft.de/issues",
+            "endpoint": "https://aposoft.de/issues",
         }
         self.source = ParticipantsCreator.create_source(
             self.software_info["name"],
             self.software_info["product"],
             self.software_info["version"],
             self.software_info["email"],
-            self.software_info["website"],
+            self.software_info["endpoint"],
         )
 
     def process_message(self, message_content):
@@ -100,7 +100,7 @@ class PharmacyKIMClient(KIMClient):
         response_bundle = self.create_response_dispense_request(
             str(uuid4()),
             ParticipantsCreator.create_sender(
-                self.kim_address["kim_address"], self.kim_address["display"]
+                self.sender_info["telematik_id"], self.sender_info["display"]
             ),
             self.source,
             destinations,

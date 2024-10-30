@@ -14,9 +14,9 @@ logger = setup_logger("KIMClient", level=logging.ERROR)
 
 
 class KIMClient(ABC):
-    def __init__(self, client_name, kim_address):
+    def __init__(self, client_name, sender_info):
         self.client_name = client_name
-        self.kim_address = kim_address
+        self.sender_info = sender_info
         self.inbox = f"./kim_messages/{client_name}/inbox"
         self.outbox = f"./kim_messages/{client_name}/outbox"
         self.attachment_folder = f"./kim_messages/attachments"

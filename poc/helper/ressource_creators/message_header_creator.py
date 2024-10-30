@@ -26,7 +26,7 @@ class MessageHeaderCreator:
             message_header = MessageHeader(
                 id=id,
                 meta=Meta.construct(profile=[
-                    "https://gematik.de/fhir/atf/StructureDefinition/message-header-app-transport"
+                    "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
                 ]),
                 eventCoding=Coding(
                     system=code_system,

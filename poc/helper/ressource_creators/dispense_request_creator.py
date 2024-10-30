@@ -33,8 +33,6 @@ class ResourceExtractor:
         for identifier in service_request.identifier:
             if identifier.system == "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier":
                 identifier_dict["RequestIdentifier"] = identifier.value.replace("urn:uuid:","")
-            elif identifier.system == "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemPreDisIdentifier":
-                identifier_dict["NamingSystemPreDisIdentifier"] = identifier.value.replace("urn:uuid:","")
         if service_request.id:
             identifier_dict["ProcedureIdentifier"] = service_request.id
         return identifier_dict
@@ -75,7 +73,7 @@ class DispenseRequestCreator:
     ) -> Bundle:
         
         sender = ParticipantsCreator.create_sender(
-            sender_kim_address["kim_address"], sender_kim_address["display"]
+            sender_kim_address["telematik_id"], sender_kim_address["display"]
         )
         
         source = ParticipantsCreator.create_source(
@@ -83,12 +81,12 @@ class DispenseRequestCreator:
             software_info["product"],
             software_info["version"],
             software_info["email"],
-            software_info["website"],
+            software_info["endpoint"],
         )
 
         requesting_organisation = OrganizationCreator.get_example_pflegeheim_organization()
 
-        destination = ParticipantsCreator.create_destination(recipient_kim_address['display'], recipient_kim_address['kim_address'])
+        destination = ParticipantsCreator.create_destination(recipient_kim_address['display'], recipient_kim_address['telematik_id'])
 
         
         identifiers = ResourceExtractor.extract_identifiers(prescription_service_request)
@@ -132,9 +130,6 @@ class DispenseRequestCreator:
             identifiers={
                 "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier": identifiers[
                     "RequestIdentifier"
-                ],
-                "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemPreDisIdentifier": identifiers[
-                    "NamingSystemPreDisIdentifier"
                 ],
                 "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier": identifiers[
                     "ProcedureIdentifier"

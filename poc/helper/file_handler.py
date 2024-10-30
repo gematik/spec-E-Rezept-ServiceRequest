@@ -13,9 +13,11 @@ class FileHandler:
 
 
     def create_files(self, prescription_request_response, filename):
+        self.create_file(prescription_request_response.json(ident = 4), filename + ".json")
+
         attachments = []
         attachments.append(
-            self.create_xml_file(
+            self.create_file(
                 prescription_request_response.xml(), filename + ".xml"
             )
         )
@@ -53,8 +55,6 @@ class FileHandler:
             "attachment_path": pdf_path
         }
 
-    def create_xml_file(self, bundle_as_xml, filename):
-        # Assuming `bundle.xml()` gives XML content as string
-
-        return self._write_file(bundle_as_xml, filename)
+    def create_file(self, content, filename):
+        return self._write_file(content, filename)
     

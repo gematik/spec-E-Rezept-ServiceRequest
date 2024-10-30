@@ -10,9 +10,9 @@ logger = setup_logger("Main", level=logging.INFO)
 def main():
     # Instanzen für alle beteiligten Parteien erstellen
     logger.info("Initialisiere Clients...")
-    pvs_client = PvsKIMClient("Arzt_B", {"kim_address": "mailto:practitioner@test.kim.de", "display": "Praxis Hans Topp-Glücklich"})
-    avs_client = PharmacyKIMClient("Apotheke_C", {"kim_address": "mailto:pharmacy@test.kim.de", "display": "Test Apotheke"})
-    health_care_service_client = HealthCareServiceKIMClient("Pflegeheim Immergrün", {"kim_address": "mailto:healthcare-service@test.kim.de", "display": "Pflegeheim Immergrün"}, pvs_client, avs_client)
+    pvs_client = PvsKIMClient("Arzt_B", {"kim_address": "mailto:practitioner@test.kim.de", "telematik_id": "5-test-telematik-id-praxis", "display": "Praxis Hans Topp-Glücklich"})
+    avs_client = PharmacyKIMClient("Apotheke_C", {"kim_address": "mailto:pharmacy@test.kim.de","telematik_id": "5-test-telematik-id-apotheke", "display": "Test Apotheke"})
+    health_care_service_client = HealthCareServiceKIMClient("Pflegeheim Immergrün", {"kim_address": "mailto:pflegeheim@test.kim.de","telematik_id": "5-test-telematik-id-pflegeinrichtung", "display": "Pflegeheim Immergrün"}, pvs_client, avs_client)
 
 
 

@@ -6,11 +6,11 @@ from fhir.resources.R4B.messageheader import MessageHeaderDestination, MessageHe
 
 class ParticipantsCreator:
     @staticmethod
-    def create_sender(kim_address: str, display: str) -> ReferenceType:
+    def create_sender(telematik_id: str, display: str) -> ReferenceType:
         return ReferenceType(
             identifier=Identifier(
-                system="http://gematik.de/fhir/sid/KIM-Adresse",
-                value=kim_address,
+                system="https://gematik.de/fhir/sid/telematik-id",
+                value=telematik_id,
             ),
             display=display,
         )

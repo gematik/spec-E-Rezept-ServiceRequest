@@ -82,7 +82,7 @@ class BundleCreator:
         message_bundle = Bundle(
             id=bundle_id,
             meta=Meta.construct(profile=[
-                "https://gematik.de/fhir/atf/StructureDefinition/bundle-app-transport-framework"
+                "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
             ]),
             type="message",
             identifier=IdentifierType(

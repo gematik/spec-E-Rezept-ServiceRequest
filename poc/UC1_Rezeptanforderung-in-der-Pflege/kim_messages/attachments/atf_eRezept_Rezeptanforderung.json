@@ -1,0 +1,458 @@
+{
+    "resourceType": "Bundle",
+    "id": "7296960a-80da-4f91-90b8-a1d438755e91",
+    "meta": {
+        "profile": [
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
+        ]
+    },
+    "identifier": {
+        "system": "urn:ietf:rfc:3986",
+        "value": "urn:uuid:7296960a-80da-4f91-90b8-a1d438755e91"
+    },
+    "type": "message",
+    "timestamp": "2024-10-30T14:38:30.659281+00:00",
+    "entry": [
+        {
+            "fullUrl": "urn:uuid:746afa98-4685-4260-8ce9-295b0ef6d7a6",
+            "resource": {
+                "resourceType": "MessageHeader",
+                "id": "746afa98-4685-4260-8ce9-295b0ef6d7a6",
+                "meta": {
+                    "profile": [
+                        "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
+                    ]
+                },
+                "eventCoding": {
+                    "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs",
+                    "code": "eRezept_Rezeptanforderung;Rezeptanfrage",
+                    "display": "Anfrage an einen Arzt ein Rezept auszustellen"
+                },
+                "destination": [
+                    {
+                        "name": "Praxis Hans Topp-Glücklich",
+                        "endpoint": "mailto:practitioner@test.kim.de"
+                    }
+                ],
+                "sender": {
+                    "identifier": {
+                        "system": "https://gematik.de/fhir/sid/telematik-id",
+                        "value": "5-test-telematik-id-pflegeinrichtung"
+                    },
+                    "display": "Pflegeheim Immergrün"
+                },
+                "source": {
+                    "name": "HealthCare-Source",
+                    "software": "HealthCare-Software",
+                    "version": "1.0.0",
+                    "contact": {
+                        "system": "email",
+                        "value": "info@hcs.email"
+                    },
+                    "endpoint": "mailto:healthcare-service@test.kim.de"
+                },
+                "responsible": {
+                    "reference": "urn:uuid:7d96144f-c5bf-40b8-9272-fcb3fa5ce3c2"
+                },
+                "focus": [
+                    {
+                        "reference": "urn:uuid:99124356-d833-4d93-96ae-b0e578458c45"
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:99124356-d833-4d93-96ae-b0e578458c45",
+            "resource": {
+                "resourceType": "ServiceRequest",
+                "id": "99124356-d833-4d93-96ae-b0e578458c45",
+                "meta": {
+                    "profile": [
+                        "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
+                    ]
+                },
+                "identifier": [
+                    {
+                        "system": "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier",
+                        "value": "a6dabbb7-be81-4c55-add9-aa30f070d199"
+                    },
+                    {
+                        "system": "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier",
+                        "value": "b4da5f81-e5df-48e7-80ca-f2d3dab79cb6"
+                    }
+                ],
+                "basedOn": [
+                    {
+                        "reference": "urn:uuid:6130900a-0fac-4ea0-86a2-f762d3e7ea05"
+                    }
+                ],
+                "requisition": {
+                    "system": "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier",
+                    "value": "b4da5f81-e5df-48e7-80ca-f2d3dab79cb6"
+                },
+                "status": "active",
+                "intent": "order",
+                "code": {
+                    "coding": [
+                        {
+                            "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs",
+                            "code": "prescription-request"
+                        }
+                    ]
+                },
+                "orderDetail": [
+                    {
+                        "coding": [
+                            {
+                                "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/prescription-fullfillment-type-cs",
+                                "code": "return-to-requester"
+                            }
+                        ]
+                    }
+                ],
+                "subject": {
+                    "reference": "urn:uuid:f91add65-c7a5-4010-8d11-993f7a8a0d33"
+                },
+                "occurrenceDateTime": "2024-10-30T15:38:30.657831+01:00",
+                "authoredOn": "2024-10-30T15:38:30.657836+01:00",
+                "requester": {
+                    "reference": "urn:uuid:7d96144f-c5bf-40b8-9272-fcb3fa5ce3c2"
+                },
+                "performer": [
+                    {
+                        "identifier": {
+                            "system": "http://gematik.de/fhir/sid/KIM-Adresse",
+                            "value": "practitioner@gluecklich.kim.telematik"
+                        }
+                    }
+                ],
+                "reasonCode": [
+                    {
+                        "coding": [
+                            {
+                                "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-request-reason-cs",
+                                "code": "medication-runs-out"
+                            }
+                        ]
+                    }
+                ],
+                "reasonReference": [
+                    {
+                        "reference": "urn:uuid:602ecf1d-4a8a-4580-9a9f-071f9a84b165"
+                    },
+                    {
+                        "reference": "urn:uuid:4f9c11c7-e836-46be-aea5-91868e4538d4"
+                    }
+                ],
+                "note": [
+                    {
+                        "text": "Medikament läuft am 31.01.2025 aus. Es sind noch 7 stk übrig."
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:c605b078-8cc4-40e7-8d7b-af0d26763ebd",
+            "resource": {
+                "resourceType": "Medication",
+                "id": "c605b078-8cc4-40e7-8d7b-af0d26763ebd",
+                "meta": {
+                    "profile": [
+                        "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.1.0"
+                    ]
+                },
+                "extension": [
+                    {
+                        "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Medication_Type",
+                        "valueCodeableConcept": {
+                            "coding": [
+                                {
+                                    "system": "http://snomed.info/sct",
+                                    "version": "http://snomed.info/sct/900000000000207008/version/20220331",
+                                    "code": "763158003",
+                                    "display": "Medicinal product (product)"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Category",
+                        "valueCoding": {
+                            "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Category",
+                            "code": "00"
+                        }
+                    },
+                    {
+                        "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Vaccine",
+                        "valueBoolean": false
+                    },
+                    {
+                        "url": "http://fhir.de/StructureDefinition/normgroesse",
+                        "valueCode": "N1"
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://fhir.de/CodeSystem/ifa/pzn",
+                            "code": "08585997"
+                        }
+                    ],
+                    "text": "Prospan® Hustensaft 100ml"
+                },
+                "form": {
+                    "coding": [
+                        {
+                            "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM",
+                            "code": "FLE"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:f91add65-c7a5-4010-8d11-993f7a8a0d33",
+            "resource": {
+                "resourceType": "Patient",
+                "id": "f91add65-c7a5-4010-8d11-993f7a8a0d33",
+                "meta": {
+                    "profile": [
+                        "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
+                    ]
+                },
+                "identifier": [
+                    {
+                        "type": {
+                            "coding": [
+                                {
+                                    "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
+                                    "code": "GKV"
+                                }
+                            ]
+                        },
+                        "system": "http://fhir.de/sid/gkv/kvid-10",
+                        "value": "X234567890"
+                    }
+                ],
+                "name": [
+                    {
+                        "use": "official",
+                        "family": "Königsstein",
+                        "_family": {
+                            "extension": [
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+                                    "valueString": "Königsstein"
+                                }
+                            ]
+                        },
+                        "given": [
+                            "Ludger"
+                        ]
+                    }
+                ],
+                "birthDate": "1935-06-22",
+                "address": [
+                    {
+                        "type": "both",
+                        "line": [
+                            "Musterstr. 1"
+                        ],
+                        "_line": [
+                            {
+                                "extension": [
+                                    {
+                                        "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                                        "valueString": "1"
+                                    },
+                                    {
+                                        "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                                        "valueString": "Musterstr."
+                                    }
+                                ]
+                            }
+                        ],
+                        "city": "Berlin",
+                        "postalCode": "10623"
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:6130900a-0fac-4ea0-86a2-f762d3e7ea05",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "id": "6130900a-0fac-4ea0-86a2-f762d3e7ea05",
+                "meta": {
+                    "profile": [
+                        "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request"
+                    ]
+                },
+                "extension": [
+                    {
+                        "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/prescription-id-ex",
+                        "valueIdentifier": {
+                            "system": "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
+                            "value": "160.100.000.000.001.36"
+                        }
+                    }
+                ],
+                "status": "active",
+                "intent": "order",
+                "medicationReference": {
+                    "reference": "urn:uuid:c605b078-8cc4-40e7-8d7b-af0d26763ebd"
+                },
+                "subject": {
+                    "reference": "urn:uuid:f91add65-c7a5-4010-8d11-993f7a8a0d33"
+                },
+                "authoredOn": "2024-10-30T15:38:30.657181+01:00",
+                "dosageInstruction": [
+                    {
+                        "text": "2mal tägl. 5ml"
+                    }
+                ],
+                "dispenseRequest": {
+                    "quantity": {
+                        "value": 1,
+                        "system": "http://unitsofmeasure.org",
+                        "code": "{Package}"
+                    }
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:7d96144f-c5bf-40b8-9272-fcb3fa5ce3c2",
+            "resource": {
+                "resourceType": "Organization",
+                "id": "7d96144f-c5bf-40b8-9272-fcb3fa5ce3c2",
+                "meta": {
+                    "profile": [
+                        "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
+                    ]
+                },
+                "identifier": [
+                    {
+                        "type": {
+                            "coding": [
+                                {
+                                    "system": "https://gematik.de/fhir/directory/CodeSystem/EndpointDirectoryConnectionType",
+                                    "code": "kim-2.0"
+                                }
+                            ]
+                        },
+                        "system": "http://gematik.de/fhir/sid/KIM-Adresse",
+                        "value": "pflegeheim.immergrün.arzt@sana-pflegeheime.kim.telematik"
+                    },
+                    {
+                        "type": {
+                            "coding": [
+                                {
+                                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                                    "code": "PRN"
+                                }
+                            ]
+                        },
+                        "system": "https://gematik.de/fhir/sid/telematik-id",
+                        "value": "1-031234567"
+                    },
+                    {
+                        "type": {
+                            "coding": [
+                                {
+                                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                                    "code": "BSNR"
+                                }
+                            ]
+                        },
+                        "system": "https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR",
+                        "value": "031234567"
+                    }
+                ],
+                "name": "Pflegeheim Immergrün",
+                "telecom": [
+                    {
+                        "system": "phone",
+                        "value": "0301234567"
+                    }
+                ],
+                "address": [
+                    {
+                        "type": "both",
+                        "line": [
+                            "Musterstr. 2"
+                        ],
+                        "_line": [
+                            {
+                                "extension": [
+                                    {
+                                        "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                                        "valueString": "2"
+                                    },
+                                    {
+                                        "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                                        "valueString": "Musterstr."
+                                    }
+                                ]
+                            }
+                        ],
+                        "city": "Berlin",
+                        "postalCode": "10623"
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:602ecf1d-4a8a-4580-9a9f-071f9a84b165",
+            "resource": {
+                "resourceType": "Observation",
+                "id": "602ecf1d-4a8a-4580-9a9f-071f9a84b165",
+                "meta": {
+                    "profile": [
+                        "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-remaining-medication"
+                    ]
+                },
+                "status": "final",
+                "code": {
+                    "coding": [
+                        {
+                            "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-observation-cs",
+                            "code": "range-of-medication"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "urn:uuid:f91add65-c7a5-4010-8d11-993f7a8a0d33"
+                },
+                "valueDateTime": "2023-01-31"
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:4f9c11c7-e836-46be-aea5-91868e4538d4",
+            "resource": {
+                "resourceType": "Observation",
+                "id": "4f9c11c7-e836-46be-aea5-91868e4538d4",
+                "meta": {
+                    "profile": [
+                        "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-remaining-medication"
+                    ]
+                },
+                "status": "final",
+                "code": {
+                    "coding": [
+                        {
+                            "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-observation-cs",
+                            "code": "range-of-medication"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "urn:uuid:f91add65-c7a5-4010-8d11-993f7a8a0d33"
+                },
+                "valueQuantity": {
+                    "value": 7,
+                    "unit": "stk"
+                }
+            }
+        }
+    ]
+}

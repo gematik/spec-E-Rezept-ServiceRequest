@@ -41,7 +41,7 @@ class PrescriptionRequestCreator:
     ) -> ServiceRequest:
         
         # Check for required keys
-        required_keys = ["RequestIdentifier", "NamingSystemPreDisIdentifier", "ProcedureIdentifier", "medication_request", "patient", "requesting_organisation"]
+        required_keys = ["RequestIdentifier", "ProcedureIdentifier", "medication_request", "patient", "requesting_organisation"]
         missing_keys = [key for key in required_keys if key not in identifiers]
         if missing_keys:
             raise KeyError(f"Missing required keys in identifiers: {', '.join(missing_keys)}")
@@ -54,7 +54,6 @@ class PrescriptionRequestCreator:
             order_detail_code,
             identifiers={
                 "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier": identifiers.get("RequestIdentifier"),
-                "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemPreDisIdentifier": identifiers.get("NamingSystemPreDisIdentifier"),
                 "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier": identifiers.get("ProcedureIdentifier"),
             },
             references={
@@ -103,7 +102,7 @@ class PrescriptionRequestCreator:
         use_case_display,
         request_id,
         type: str,
-        sender_kim_address,
+        sender_info,
         software_info,
         recipient_kim_address,
         status,
@@ -113,11 +112,11 @@ class PrescriptionRequestCreator:
     ) -> Bundle:
         identifiers = {
             name: PrescriptionRequestCreator.create_identifier()
-            for name in ["message", "NamingSystemPreDisIdentifier", "ProcedureIdentifier"]
+            for name in ["message", "ProcedureIdentifier"]
         }
 
-        sender = ParticipantsCreator.create_sender(
-            sender_kim_address["kim_address"], sender_kim_address["display"]
+        sender_info = ParticipantsCreator.create_sender(
+            sender_info["telematik_id"], sender_info["display"]
         )
 
         source = ParticipantsCreator.create_source(
@@ -125,7 +124,7 @@ class PrescriptionRequestCreator:
             software_info["product"],
             software_info["version"],
             software_info["email"],
-            software_info["website"],
+            software_info["endpoint"],
         )
 
         destination = ParticipantsCreator.create_destination(recipient_kim_address['display'], recipient_kim_address['kim_address'])
@@ -158,7 +157,7 @@ class PrescriptionRequestCreator:
         return (
             BundleCreator.create_request_bundle(
                 identifiers["message"],
-                sender,
+                sender_info,
                 source,
                 destination,
                 service_request,

@@ -25,10 +25,10 @@ logger = setup_logger("Pflegeeinrichtung_A", level=logging.INFO)
 
 
 class HealthCareServiceKIMClient(KIMClient):
-    def __init__(self, client_name, kim_address, pvs_client, avs_client):
+    def __init__(self, client_name, sender_info, pvs_client, avs_client):
         self.pvs_client = pvs_client
         self.avs_client = avs_client
-        super().__init__(client_name, kim_address)
+        super().__init__(client_name, sender_info)
         self.fhir_bundle_processor = FHIR_Bundle_Processor()
         self.html_renderer = HTMLRenderer()
         self.file_handler = FileHandler(self.attachment_folder, self.html_renderer)
@@ -37,7 +37,7 @@ class HealthCareServiceKIMClient(KIMClient):
             "product": "HealthCare-Software",
             "version": "1.0.0",
             "email": "info@hcs.email",
-            "website": "https://ps_solutions.com/jira_helpdesk",
+            "endpoint": "mailto:healthcare-service@test.kim.de",
         }
 
     def process_message(self, message_content):
@@ -51,9 +51,15 @@ class HealthCareServiceKIMClient(KIMClient):
             atf_request_bundle
         )
 
-        if message_header.eventCoding.code == "eRezept_Rezeptanforderung;Rezeptbestaetigung":
+        if (
+            message_header.eventCoding.code
+            == "eRezept_Rezeptanforderung;Rezeptbestaetigung"
+        ):
             return self.handle_prescription_request_response(atf_request_bundle)
-        elif message_header.eventCoding.code == "eRezept_Rezeptanforderung;Abgabebestaetigung":
+        elif (
+            message_header.eventCoding.code
+            == "eRezept_Rezeptanforderung;Abgabebestaetigung"
+        ):
             return self.handle_dispensation_request_response(atf_request_bundle)
         else:
             logger.warning(
@@ -68,9 +74,9 @@ class HealthCareServiceKIMClient(KIMClient):
                 "Anfrage an einen Arzt ein Rezept auszustellen",
                 request_id,
                 "return-to-requester",
-                self.kim_address,
+                self.sender_info,
                 self.software_info,
-                arztpraxis.kim_address,
+                arztpraxis.sender_info,
                 "active",
                 "https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-request-reason-cs",
                 "medication-runs-out",
@@ -78,19 +84,9 @@ class HealthCareServiceKIMClient(KIMClient):
             )
         )
 
-        filename = "atf_eRezept_Rezeptanforderung"
+        attachments, html  = self.file_handler.create_files(prescription_request_bundle, "atf_eRezept_Rezeptanforderung")
 
-        attachments = []
-        attachments.append(
-            self.file_handler.create_xml_file(
-                prescription_request_bundle.xml(), filename + ".xml"
-            )
-        )
-        html = self.html_renderer.generate_html(prescription_request_bundle.xml())
-        attachments.append(self.file_handler.write_html_file(html, filename + ".html"))
-        attachments.append(
-            self.file_handler.create_pdf_file_from_html(html, filename + ".pdf")
-        )
+    
 
         logger.info(
             "Sende Rezeptanforderung von Pflegeeinrichtung an: %s",
@@ -131,18 +127,16 @@ class HealthCareServiceKIMClient(KIMClient):
 
         dispense_request_bundle = DispenseRequestCreator.create_dispense_request_bundle(
             "active",
-            self.kim_address,
+            self.sender_info,
             self.software_info,
-            self.avs_client.kim_address,
+            self.avs_client.sender_info,
             service_request,
             "eRezept_Rezeptanforderung;Abgabeanfrage",
             "Anfrage zur Erfüllung eines Rezeptes und Abgabe des Medikaments",
             "Bitte wie üblich zur Abholung bereitlegen.",
         )
 
-        
-        attachments, html = self.file_handler.create_files(dispense_request_bundle, "atf_eRezept_Abgabeanfrage")
-    
+        attachments, html  = self.file_handler.create_files(dispense_request_bundle, "atf_eRezept_Abgabeanfrage")
 
         # Sende Abgabeanfrage an Apotheke
         self.send_message(
@@ -153,7 +147,9 @@ class HealthCareServiceKIMClient(KIMClient):
             attachments,
         )
 
-        dispensation_bundle = self.avs_client.handle_message_event(dispense_request_bundle)
+        dispensation_bundle = self.avs_client.handle_message_event(
+            dispense_request_bundle
+        )
         self.handle_message_event(dispensation_bundle)
 
     def handle_dispensation_request_response(self, atf_request_bundle):
@@ -161,14 +157,16 @@ class HealthCareServiceKIMClient(KIMClient):
         Verarbeitet eine Abgabebestätigung.
         """
 
-
         service_request: ServiceRequest = (
             self.fhir_bundle_processor.get_resource_by_type(
                 atf_request_bundle.entry, ServiceRequest
             )
         )
 
-        logger.info("Abgabebestätigung erhalten. Diese hatte den Status '%s'", service_request.status)
+        logger.info(
+            "Abgabebestätigung erhalten. Diese hatte den Status '%s'",
+            service_request.status,
+        )
 
 
 if __name__ == "__main__":

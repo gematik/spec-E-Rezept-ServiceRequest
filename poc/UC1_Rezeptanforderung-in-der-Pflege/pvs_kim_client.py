@@ -50,9 +50,9 @@ class PvsKIMClient(KIMClient):
     def __init__(
         self,
         client_name,
-        kim_address,
+        sender_info,
     ):
-        super().__init__(client_name, kim_address)
+        super().__init__(client_name, sender_info)
         self.fhir_bundle_processor = FHIR_Bundle_Processor()
         self.coverage_creator = CoverageCreator()
         self.medication_request_converter = MedicationRequestConverter()
@@ -65,7 +65,7 @@ class PvsKIMClient(KIMClient):
             "product": "PraxisFix",
             "version": "1.3.2",
             "email": "issues@praxisfix-deltacare.de",
-            "website": "https://deltacare.de/praxisfix/issues",
+            "endpoint": "https://deltacare.de/praxisfix/issues",
         }
 
     def process_message(self, message_content):
@@ -115,12 +115,12 @@ class PvsKIMClient(KIMClient):
             self.software_info["product"],
             self.software_info["version"],
             self.software_info["email"],
-            self.software_info["website"],
+            self.software_info["endpoint"],
         )
         prescription_request_response = self.create_prescription_request_response(
             str(uuid4()),
             ParticipantsCreator.create_sender(
-                self.kim_address['kim_address'], self.kim_address['display']
+                self.sender_info['telematik_id'], self.sender_info['display']
             ),
             source,
             destinations,
