@@ -2,7 +2,6 @@
 from typing import List, Dict, Union
 from uuid import uuid4
 from typing import List, Type
-from app_transport_framework_library.models.bundle_content import BundleContent
 from fhir.resources.R4B.fhirtypes import ReferenceType
 from fhir.resources.R4B.messageheader import MessageHeaderDestination, MessageHeaderSource
 from fhir.resources.R4B.bundle import Bundle, BundleEntry
@@ -17,9 +16,11 @@ from fhir.resources.R4B.organization import Organization
 from fhir.resources.R4B.patient import Patient
 from fhir.resources.R4B.identifier import Identifier
 from fhir.resources.R4B.coverage import Coverage
+from helper.ressource_creators.participant_creator import ParticipantsCreator
+from helper.ressource_creators.service_request_creator import ServiceRequestCreator
+from helper.ressource_creators.bundle_creator import BundleCreator
+from helper.ressource_creators.organization_creator import OrganizationCreator
 
-from Pflegeeinrichtung.ressource_creators.message_container_creator import MessageContainerCreator
-from Pflegeeinrichtung.ressource_creators.service_request_creator import ServiceRequestCreator
 
 class ResourceExtractor:
     @staticmethod
@@ -30,12 +31,12 @@ class ResourceExtractor:
     def extract_identifiers(service_request: ServiceRequest):
         identifier_dict = {}
         for identifier in service_request.identifier:
-            if identifier.system == "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier":
-                identifier_dict["https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier"] = identifier.value.replace("urn:uuid:","")
+            if identifier.system == "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier":
+                identifier_dict["RequestIdentifier"] = identifier.value.replace("urn:uuid:","")
             elif identifier.system == "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemPreDisIdentifier":
-                identifier_dict["https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemPreDisIdentifier"] = identifier.value.replace("urn:uuid:","")
+                identifier_dict["NamingSystemPreDisIdentifier"] = identifier.value.replace("urn:uuid:","")
         if service_request.id:
-            identifier_dict["https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier"] = service_request.id
+            identifier_dict["ProcedureIdentifier"] = service_request.id
         return identifier_dict
 
     @staticmethod
@@ -64,30 +65,50 @@ class DispenseRequestCreator:
     @staticmethod
     def create_dispense_request_bundle(
         status,
-        sender: ReferenceType,
-        source: MessageHeaderSource,
-        destinations: List[MessageHeaderDestination],
+        sender_kim_address,
+        software_info,
+        recipient_kim_address,
         prescription_service_request: ServiceRequest,
         use_case,
         use_case_display,
         note_text
     ) -> Bundle:
         
+        sender = ParticipantsCreator.create_sender(
+            sender_kim_address["kim_address"], sender_kim_address["display"]
+        )
+        
+        source = ParticipantsCreator.create_source(
+            software_info["name"],
+            software_info["product"],
+            software_info["version"],
+            software_info["email"],
+            software_info["website"],
+        )
+
+        requesting_organisation = OrganizationCreator.get_example_pflegeheim_organization()
+
+        destination = ParticipantsCreator.create_destination(recipient_kim_address['display'], recipient_kim_address['kim_address'])
+
+        
         identifiers = ResourceExtractor.extract_identifiers(prescription_service_request)
-        identifiers["kim_address_apotheke"] = destinations[0].name
+        identifiers["kim_address_apotheke"] = recipient_kim_address['display']
         references = ResourceExtractor.extract_references(prescription_service_request)
         service_request = DispenseRequestCreator.create_dispense_service_request(status, identifiers, references, note_text)
 
-        build_entries = [prescription_service_request]
+        build_entries = []
+        build_entries.append(prescription_service_request)
+        build_entries.append(requesting_organisation)
 
         dispense_additional_bundle_entries = BundleBuilder.build_entries(build_entries)
 
-        return MessageContainerCreator.create_request_bundle(
+        return BundleCreator.create_request_bundle(
             str(uuid4()),
             sender,
             source,
-            destinations,
+            destination,
             service_request,
+            requesting_organisation.id,
             additional_bundle_entries=dispense_additional_bundle_entries,
             code_system="https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs",
             use_case=use_case,
@@ -109,9 +130,15 @@ class DispenseRequestCreator:
             status,
             None,
             identifiers={
-                "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier": identifiers["https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier"],
-                "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemPreDisIdentifier": identifiers["https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemPreDisIdentifier"],
-                "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier": identifiers["https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier"],
+                "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier": identifiers[
+                    "RequestIdentifier"
+                ],
+                "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemPreDisIdentifier": identifiers[
+                    "NamingSystemPreDisIdentifier"
+                ],
+                "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier": identifiers[
+                    "ProcedureIdentifier"
+                ],
             },
             references={
                 "based_on": references["based_on"],

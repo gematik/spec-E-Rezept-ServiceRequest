@@ -1,13 +1,36 @@
 import os
+import sys
 from fhir.resources.R4B.bundle import Bundle, BundleEntry
+from helper.logging_setup import setup_logger
+import logging
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+logger = setup_logger("FileHandler", level=logging.ERROR)
 
 class FileHandler:
     def __init__(self, attachment_folder, html_renderer=None):
         self.attachment_folder = attachment_folder
         self.html_renderer = html_renderer
 
+
+    def create_files(self, prescription_request_response, filename):
+        attachments = []
+        attachments.append(
+            self.create_xml_file(
+                prescription_request_response.xml(), filename + ".xml"
+            )
+        )
+        html = self.html_renderer.generate_html(prescription_request_response.xml())
+        attachments.append(self.write_html_file(html, filename + ".html"))
+        attachments.append(
+            self.create_pdf_file_from_html(html, filename + ".pdf")
+        )
+        
+        return attachments, html
+
     def _write_file(self, content, filename, mode="w", encoding="utf-8"):
         attachment_path = os.path.join(self.attachment_folder, filename)
+
+        logger.info("Writing File %s",attachment_path )
 
         with open(attachment_path, mode, encoding=encoding) as attachment_file:
             attachment_file.write(content)
@@ -32,4 +55,6 @@ class FileHandler:
 
     def create_xml_file(self, bundle_as_xml, filename):
         # Assuming `bundle.xml()` gives XML content as string
+
         return self._write_file(bundle_as_xml, filename)
+    

@@ -25,13 +25,25 @@ class FHIR_Bundle_Processor:
             (entry.resource for entry in bundle_entries if isinstance(entry.resource, resource_type)),
             None,
         )
+    
+    def extract_message_header(self, atf_request_bundle: Bundle):
+        message_header = self.get_resource_by_type(atf_request_bundle.entry, MessageHeader)
 
-    def get_message_header(self, parsed_bundle: Bundle):
-        return next(
-            (
-                entry.resource
-                for entry in parsed_bundle.entry
-                if isinstance(entry.resource, MessageHeader)
-            ),
-            None,
-        )
+        if message_header is None:
+            logger.error(
+                "Die empfangene Nachricht ist keine gültige ATF-Nachricht. Ein MessageHeader fehlt."
+            )
+            return
+
+        return message_header
+    
+    def get_token_from_service_request(self, service_request: ServiceRequest):
+        token_url = "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex"
+        token_system = "https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken"
+        for extension in service_request.extension:
+            if (
+                extension.url == token_url
+                and extension.valueIdentifier.system == token_system
+            ):
+                return extension.valueIdentifier.value
+        return None

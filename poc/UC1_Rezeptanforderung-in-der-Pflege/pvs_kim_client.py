@@ -68,44 +68,18 @@ class PvsKIMClient(KIMClient):
             "website": "https://deltacare.de/praxisfix/issues",
         }
 
-    def process_prescription_request(self, atf_request_bundle: Bundle):
-        logger.debug("Empfangene Nachricht durch Arzt: %s", atf_request_bundle)
-
-        message_header = self.fhir_bundle_processor.get_resource_by_type(
-            atf_request_bundle.entry, MessageHeader
-        )
-
-        if message_header is None:
-            logger.error(
-                "Die empfangene Nachricht ist keine gültige ATF-Nachricht. Ein MessageHeader fehlt."
-            )
-            return
-
-        self.handle_message_event(message_header, atf_request_bundle)
-
     def process_message(self, message_content):
         return
 
-        # Empfangene Nachricht prüfen
-        logger.debug("Empfangene Nachricht durch Arzt: %s", message_content)
+    def handle_message_event(self, atf_request_bundle: Bundle):
+        logger.debug("Empfangene Nachricht durch Arzt: %s", atf_request_bundle)
 
-        # Suche nach XML-Anhang
-        fhir_attachment_handler = FHIRAttachmentHandler(message_content["attachments"])
-        event_code = fhir_attachment_handler.get_event_code()
+        message_header = self.fhir_bundle_processor.extract_message_header(
+            atf_request_bundle
+        )
 
-        if event_code:
-            logger.info("Gefundener EventCode: %s", event_code)
-            self.handle_message_event(event_code, fhir_attachment_handler)
-        else:
-            logger.error("Kein gültiger EventCode gefunden.")
-
-    def handle_message_event(self, message_header, atf_request_bundle):
-        """
-        Verarbeitet den EventCode und leitet die Nachricht zur weiteren Bearbeitung weiter.
-        """
-        # Basierend auf dem EventCode weiterverarbeiten
         if message_header.eventCoding.code == "eRezept_Rezeptanforderung;Rezeptanfrage":
-            self.handle_prescription_request(message_header, atf_request_bundle)
+            return self.handle_prescription_request(message_header, atf_request_bundle)
         else:
             logger.warning(
                 f"Unbekannter EventCode: {message_header.eventCoding.code}. Keine spezifische Verarbeitung definiert."
@@ -118,12 +92,11 @@ class PvsKIMClient(KIMClient):
         logger.info("Rezeptanforderung erhalten.")
 
         if message_header.sender and message_header.sender.identifier:
-            email_value = message_header.sender.identifier.value
-            logger.info("KIM-Adresse: %s", email_value)
+            sender_email_value = message_header.sender.identifier.value
         else:
             logger.info("Keine KIM-Adresse gefunden.")
-        logger.info("Sender: %s", message_header.sender.display)
-        logger.info("Empfänger: %s", message_header.destination[0].name)
+        # logger.info("Sender: %s", message_header.sender.display)
+        # logger.info("Empfänger: %s", message_header.destination[0].name)
 
         service_request = self.fhir_bundle_processor.get_resource_by_type(
             atf_request_bundle.entry, ServiceRequest
@@ -135,7 +108,7 @@ class PvsKIMClient(KIMClient):
             self.create_prescription(atf_request_bundle)
         )
         destinations = ParticipantsCreator.create_destination(
-            message_header.sender.display, email_value
+            message_header.sender.display, sender_email_value
         )
         source = ParticipantsCreator.create_source(
             self.software_info["name"],
@@ -146,38 +119,23 @@ class PvsKIMClient(KIMClient):
         )
         prescription_request_response = self.create_prescription_request_response(
             str(uuid4()),
-            ParticipantsCreator.create_sender(email_value,message_header.sender.display),
+            ParticipantsCreator.create_sender(
+                self.kim_address['kim_address'], self.kim_address['display']
+            ),
             source,
             destinations,
             response_service_request,
             response_bundle_entries,
             request_organisation_id,
         )
-        prescription_request_response
 
-        attachments = []
-        attachments.append(
-            self.file_handler.create_xml_file(
-                prescription_request_response.xml(), "atf_eRezept_Rezeptbestätigung.xml"
-            )
-        )
-        #html = self.html_renderer.generate_html(prescription_request_response.json(ident=4))
-        """  attachments.append(
-            self.file_handler.write_html_file(
-                html, "atf_eRezept_Rezeptbestätigung.html"
-            )
-        )
-        attachments.append(
-            self.file_handler.create_pdf_file_from_html(
-                html, "atf_eRezept_Rezeptbestätigung.pdf"
-            )
-        ) """
+        attachments, html  = self.file_handler.create_files(prescription_request_response, "atf_eRezept_Rezeptbestätigung")
 
         logger.info(
             "Sende Rezeptbestätigung von Arzt an: %s",
             message_header.sender.display,
         )
-       # logger.debug("Sende Rezeptbestätigung von Arzt an Pflegeeinrichtung: %s", html)
+        # logger.debug("Sende Rezeptbestätigung von Arzt an Pflegeeinrichtung: %s", html)
 
         # Antwort zurück an die Pflegeeinrichtung senden
         logger.info("Sende E-Rezept-Bestätigung an: %s", message_header.sender.display)
@@ -185,9 +143,11 @@ class PvsKIMClient(KIMClient):
             message_header.sender.display,
             "KIM-E-Rezept-Bestätigung",
             "Rezeptbestaetigung",
-            "html",
+            html,
             attachments,
         )
+
+        return prescription_request_response
 
     def create_prescription(
         self, bundle_entries: List[BundleEntry]

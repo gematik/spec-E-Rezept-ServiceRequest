@@ -4,25 +4,34 @@ import os
 from uuid import uuid4
 
 
-
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from helper.ressource_creators.prescription_request_creator import PrescriptionRequestCreator
+from helper.ressource_creators.prescription_request_creator import (
+    PrescriptionRequestCreator,
+)
 from helper.renderer.html_renderer import HTMLRenderer
 from helper.kim_client import KIMClient
 from helper.logging_setup import setup_logger
 from helper.file_handler import FileHandler
+from helper.fhir_bundle_processor import FHIR_Bundle_Processor
+from helper.ressource_creators.dispense_request_creator import DispenseRequestCreator
+
+from fhir.resources.R4B.messageheader import MessageHeader
+from fhir.resources.R4B.bundle import Bundle
+from fhir.resources.R4B.servicerequest import ServiceRequest
 
 # Logger für die Pflegeeinrichtung einrichten
 logger = setup_logger("Pflegeeinrichtung_A", level=logging.INFO)
 
 
 class HealthCareServiceKIMClient(KIMClient):
-    def __init__(self, client_name, kim_address, pvs_client):
+    def __init__(self, client_name, kim_address, pvs_client, avs_client):
         self.pvs_client = pvs_client
+        self.avs_client = avs_client
         super().__init__(client_name, kim_address)
+        self.fhir_bundle_processor = FHIR_Bundle_Processor()
         self.html_renderer = HTMLRenderer()
-        self.file_handler = FileHandler(self.attachment_folder,self.html_renderer)
+        self.file_handler = FileHandler(self.attachment_folder, self.html_renderer)
         self.software_info = {
             "name": "HealthCare-Source",
             "product": "HealthCare-Software",
@@ -32,58 +41,23 @@ class HealthCareServiceKIMClient(KIMClient):
         }
 
     def process_message(self, message_content):
-        logger.debug(
-            "Empfangene Nachricht durch Pflegeeinrichtung: %s", message_content
+        return
+
+    def handle_message_event(self, atf_request_bundle):
+        """
+        Verarbeitet den EventCode und leitet die Nachricht zur weiteren Bearbeitung weiter.
+        """
+        message_header = self.fhir_bundle_processor.extract_message_header(
+            atf_request_bundle
         )
-        inner_content = message_content.get("content", {})
-        if inner_content.get("eventCode") == "#eRezept_Abgabebestaetigung":
-            logger.info("Pflegeeinrichtung hat eine Abgabebestaetigung erhalten.")
 
-        elif (
-            inner_content.get("eventCode")
-            == "#eRezept_Rezeptanforderung;Rezeptbestaetigung"
-        ):
-            logger.info("Pflegeeinrichtung hat eine Rezeptbestaetigung erhalten.")
-
-            # Logik für die Bearbeitung des E-Rezept-Tokens
-            if inner_content.get("ePrescriptionToken"):
-                logger.info(
-                    "E-Rezept-Token erhalten: %s", inner_content["ePrescriptionToken"]
-                )
-                self.send_dispensation_request(
-                    "Apotheke_C",
-                    inner_content.get("requester"),
-                    inner_content.get("medication"),
-                    inner_content.get("ePrescriptionToken"),
-                )
-
-            else:
-                logger.warning(
-                    "Kein gültiger E-Rezept-Token gefunden in der Rezeptbestaetigung."
-                )
-                logger.info(
-                    "Empfangene Nachricht durch Pflegeeinrichtung: %s", message_content
-                )
-
-        elif (
-            inner_content.get("eventCode")
-            == "#eRezept_Rezeptanforderung;Rezeptanfrage_Storno"
-        ):
-            logger.info(
-                "Pflegeeinrichtung hat eine Stornierung der Rezeptanforderung erhalten."
-            )
-
-        elif (
-            inner_content.get("eventCode")
-            == "#eRezept_Rezeptanforderung;Abgabebestaetigung"
-        ):
-            logger.info("Pflegeeinrichtung hat eine Abgabebestaetigung erhalten.")
-
+        if message_header.eventCoding.code == "eRezept_Rezeptanforderung;Rezeptbestaetigung":
+            return self.handle_prescription_request_response(atf_request_bundle)
+        elif message_header.eventCoding.code == "eRezept_Rezeptanforderung;Abgabebestaetigung":
+            return self.handle_dispensation_request_response(atf_request_bundle)
         else:
             logger.warning(
-                "Unerwartete Nachricht mit eventCode '%s' empfangen: %s ",
-                inner_content.get("eventCode"),
-                message_content,
+                f"Unbekannter EventCode: {message_header.eventCoding.code}. Keine spezifische Verarbeitung definiert."
             )
 
     def send_prescription_request(self, arztpraxis, patient_info, medication_info):
@@ -104,19 +78,25 @@ class HealthCareServiceKIMClient(KIMClient):
             )
         )
 
+        filename = "atf_eRezept_Rezeptanforderung"
+
         attachments = []
-        attachments.append(self.file_handler.create_xml_file(prescription_request_bundle.xml(), "atf_eRezept_Rezeptanforderung.xml"))
+        attachments.append(
+            self.file_handler.create_xml_file(
+                prescription_request_bundle.xml(), filename + ".xml"
+            )
+        )
         html = self.html_renderer.generate_html(prescription_request_bundle.xml())
-        attachments.append(self.file_handler.write_html_file(html, "atf_eRezept_Rezeptanforderung.html"))
-        attachments.append(self.file_handler.create_pdf_file_from_html(html, "atf_eRezept_Rezeptanforderung.pdf"))
+        attachments.append(self.file_handler.write_html_file(html, filename + ".html"))
+        attachments.append(
+            self.file_handler.create_pdf_file_from_html(html, filename + ".pdf")
+        )
 
         logger.info(
             "Sende Rezeptanforderung von Pflegeeinrichtung an: %s",
             arztpraxis.client_name,
         )
-        logger.debug(
-            "Sende Rezeptanforderung von Pflegeeinrichtung an Arzt: %s", html
-        )
+        logger.debug("Sende Rezeptanforderung von Pflegeeinrichtung an Arzt: %s", html)
 
         # Sende Rezeptanforderung an Arzt
         self.send_message(
@@ -127,32 +107,68 @@ class HealthCareServiceKIMClient(KIMClient):
             attachments,
         )
 
-        self.pvs_client.process_prescription_request(prescription_request_bundle)     
+        response_attachments = self.pvs_client.handle_message_event(
+            prescription_request_bundle
+        )
+        self.handle_message_event(response_attachments)
 
-    def send_dispensation_request(
-        self, pharmacy_name, patient_info, medication_info, ePrescriptionToken
-    ):
-        message_content = {
-            "eventCode": "#eRezept_Rezeptanforderung;Abgabeanfrage",
-            "status": "active",
-            "patient": patient_info,
-            "medication": medication_info,
-            "requester": self.client_name,
-            "ePrescriptionToken": f"{ePrescriptionToken}",
-            "organizationType": "PFL",
-        }
+    def handle_prescription_request_response(self, atf_request_bundle):
+        """
+        Verarbeitet eine Rezeptbestaetigung.
+        """
+        logger.info("Rezeptbestaetigung erhalten.")
 
-        logger.info("Sende Abgabeanfrage von Pflegeeinrichtung an: %s", pharmacy_name)
-        logger.debug(
-            "Sende Abgabeanfrage von Pflegeeinrichtung an %s: %s",
-            pharmacy_name,
-            message_content,
+        service_request: ServiceRequest = (
+            self.fhir_bundle_processor.get_resource_by_type(
+                atf_request_bundle.entry, ServiceRequest
+            )
+        )
+        token = self.fhir_bundle_processor.get_token_from_service_request(
+            service_request
+        )
+        if token is None:
+            return
+
+        dispense_request_bundle = DispenseRequestCreator.create_dispense_request_bundle(
+            "active",
+            self.kim_address,
+            self.software_info,
+            self.avs_client.kim_address,
+            service_request,
+            "eRezept_Rezeptanforderung;Abgabeanfrage",
+            "Anfrage zur Erfüllung eines Rezeptes und Abgabe des Medikaments",
+            "Bitte wie üblich zur Abholung bereitlegen.",
         )
 
-        # Sende Rezeptanforderung an Arzt
+        
+        attachments, html = self.file_handler.create_files(dispense_request_bundle, "atf_eRezept_Abgabeanfrage")
+    
+
+        # Sende Abgabeanfrage an Apotheke
         self.send_message(
-            pharmacy_name, "KIM-Abgabeanfrage", "Abgabeanfrage", message_content
+            self.avs_client.client_name,
+            "KIM-Abgabeanfrage",
+            "Abgabeanfrage",
+            html,
+            attachments,
         )
+
+        dispensation_bundle = self.avs_client.handle_message_event(dispense_request_bundle)
+        self.handle_message_event(dispensation_bundle)
+
+    def handle_dispensation_request_response(self, atf_request_bundle):
+        """
+        Verarbeitet eine Abgabebestätigung.
+        """
+
+
+        service_request: ServiceRequest = (
+            self.fhir_bundle_processor.get_resource_by_type(
+                atf_request_bundle.entry, ServiceRequest
+            )
+        )
+
+        logger.info("Abgabebestätigung erhalten. Diese hatte den Status '%s'", service_request.status)
 
 
 if __name__ == "__main__":

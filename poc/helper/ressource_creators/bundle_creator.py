@@ -92,3 +92,10 @@ class BundleCreator:
         )
 
         return message_bundle
+    
+    def build_bundle_entries( resource_list ):
+        response_bundle_entries = []
+        for resource in resource_list:
+            response_bundle_entries.append(BundleEntry(fullUrl=f"urn:uuid:{resource.id}", resource=resource))
+
+        return response_bundle_entries

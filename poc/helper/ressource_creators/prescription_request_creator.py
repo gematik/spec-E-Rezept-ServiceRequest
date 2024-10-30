@@ -39,6 +39,13 @@ class PrescriptionRequestCreator:
         reason_code,
         note_text,
     ) -> ServiceRequest:
+        
+        # Check for required keys
+        required_keys = ["RequestIdentifier", "NamingSystemPreDisIdentifier", "ProcedureIdentifier", "medication_request", "patient", "requesting_organisation"]
+        missing_keys = [key for key in required_keys if key not in identifiers]
+        if missing_keys:
+            raise KeyError(f"Missing required keys in identifiers: {', '.join(missing_keys)}")
+
         return ServiceRequestCreator.create_service_request(
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request",
             "order",
@@ -46,20 +53,14 @@ class PrescriptionRequestCreator:
             status,
             order_detail_code,
             identifiers={
-                "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier": identifiers[
-                    "request"
-                ],
-                "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemPreDisIdentifier": identifiers[
-                    "predis"
-                ],
-                "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier": identifiers[
-                    "vorgangs"
-                ],
+                "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier": identifiers.get("RequestIdentifier"),
+                "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemPreDisIdentifier": identifiers.get("NamingSystemPreDisIdentifier"),
+                "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier": identifiers.get("ProcedureIdentifier"),
             },
             references={
-                "based_on": identifiers["medication_request"],
-                "patient": identifiers["patient"],
-                "requester": identifiers["requesting_organisation"],
+                "based_on": identifiers.get("medication_request"),
+                "patient": identifiers.get("patient"),
+                "requester": identifiers.get("requesting_organisation"),
                 "performer": Identifier(
                     system="http://gematik.de/fhir/sid/KIM-Adresse",
                     value="practitioner@gluecklich.kim.telematik",
@@ -82,7 +83,7 @@ class PrescriptionRequestCreator:
             "2mal tägl. 5ml",
             True,
         )
-        requesting_organisation = OrganizationCreator.get_example_organization()
+        requesting_organisation = OrganizationCreator.get_example_pflegeheim_organization()
         observations = [
             ObservationCreator.get_example_observation_datetime(patient.id),
             ObservationCreator.get_example_observation_quantity(patient.id),
@@ -112,12 +113,13 @@ class PrescriptionRequestCreator:
     ) -> Bundle:
         identifiers = {
             name: PrescriptionRequestCreator.create_identifier()
-            for name in ["message", "predis", "vorgangs"]
+            for name in ["message", "NamingSystemPreDisIdentifier", "ProcedureIdentifier"]
         }
 
         sender = ParticipantsCreator.create_sender(
             sender_kim_address["kim_address"], sender_kim_address["display"]
         )
+
         source = ParticipantsCreator.create_source(
             software_info["name"],
             software_info["product"],
@@ -129,7 +131,7 @@ class PrescriptionRequestCreator:
         destination = ParticipantsCreator.create_destination(recipient_kim_address['display'], recipient_kim_address['kim_address'])
 
         entries = PrescriptionRequestCreator.create_bundle_entries()
-        identifiers["request"] = request_id
+        identifiers["RequestIdentifier"] = request_id
         identifiers["patient"] = entries["patient"].id
         identifiers["medication_request"] = entries["medication_request"].id
         identifiers["requesting_organisation"] = entries["requesting_organisation"].id

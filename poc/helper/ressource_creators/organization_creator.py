@@ -97,7 +97,7 @@ class OrganizationCreator:
         return organization
 
     @staticmethod
-    def get_example_organization():
+    def get_example_pflegeheim_organization():
         return OrganizationCreator.create_organization(
             org_id=str(uuid4()),
             kim_address="pflegeheim.immergrün.arzt@sana-pflegeheime.kim.telematik",
@@ -108,4 +108,18 @@ class OrganizationCreator:
             postal_code="10623",
             name="Pflegeheim Immergrün",
             phone="0301234567",
+        )
+    
+    @staticmethod
+    def get_example_apotheken_organization():
+        return OrganizationCreator.create_organization(
+            org_id=str(uuid4()),
+            kim_address="apotheke@kim.telematik.de",
+            telematik_id="1-431234567",
+            bsnr="544234567",
+            address_line="Malerstraße. 1",
+            city="Berlin",
+            postal_code="10523",
+            name="Adler Apotheke",
+            phone="0305234567",
         )
