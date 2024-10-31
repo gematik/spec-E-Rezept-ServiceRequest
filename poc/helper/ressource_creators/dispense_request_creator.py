@@ -1,9 +1,11 @@
-
 from typing import List, Dict, Union
 from uuid import uuid4
 from typing import List, Type
 from fhir.resources.R4B.fhirtypes import ReferenceType
-from fhir.resources.R4B.messageheader import MessageHeaderDestination, MessageHeaderSource
+from fhir.resources.R4B.messageheader import (
+    MessageHeaderDestination,
+    MessageHeaderSource,
+)
 from fhir.resources.R4B.bundle import Bundle, BundleEntry
 from fhir.resources.R4B.servicerequest import ServiceRequest
 from fhir.resources.R4B.identifier import Identifier
@@ -20,19 +22,31 @@ from helper.ressource_creators.participant_creator import ParticipantsCreator
 from helper.ressource_creators.service_request_creator import ServiceRequestCreator
 from helper.ressource_creators.bundle_creator import BundleCreator
 from helper.ressource_creators.organization_creator import OrganizationCreator
+from helper.ressource_creators.patient_creator import PatientCreator
 
 
 class ResourceExtractor:
     @staticmethod
-    def get_by_type(bundle_entries: List[BundleEntry], type: Type) -> Union[ServiceRequest, MedicationRequest, Medication, Organization, Patient, Coverage]:
-        return next((entry for entry in bundle_entries if isinstance(entry, type)), None)
+    def get_by_type(
+        bundle_entries: List[BundleEntry], type: Type
+    ) -> Union[
+        ServiceRequest, MedicationRequest, Medication, Organization, Patient, Coverage
+    ]:
+        return next(
+            (entry for entry in bundle_entries if isinstance(entry, type)), None
+        )
 
     @staticmethod
     def extract_identifiers(service_request: ServiceRequest):
         identifier_dict = {}
         for identifier in service_request.identifier:
-            if identifier.system == "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier":
-                identifier_dict["RequestIdentifier"] = identifier.value.replace("urn:uuid:","")
+            if (
+                identifier.system
+                == "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier"
+            ):
+                identifier_dict["RequestIdentifier"] = identifier.value.replace(
+                    "urn:uuid:", ""
+                )
         if service_request.id:
             identifier_dict["ProcedureIdentifier"] = service_request.id
         return identifier_dict
@@ -41,23 +55,21 @@ class ResourceExtractor:
     def extract_references(service_request: ServiceRequest):
         reference_dict = {}
         if service_request.basedOn:
-            reference_dict["based_on"] = service_request.basedOn[0].reference.replace("urn:uuid:","")
+            reference_dict["based_on"] = service_request.basedOn[0].reference.replace(
+                "urn:uuid:", ""
+            )
         if service_request.subject:
-            reference_dict["patient"] = service_request.subject.reference.replace("urn:uuid:","")
+            reference_dict["patient"] = service_request.subject.reference.replace(
+                "urn:uuid:", ""
+            )
         if service_request.requester:
-            reference_dict["requester"] = service_request.requester.reference.replace("urn:uuid:","")
+            reference_dict["requester"] = service_request.requester.reference.replace(
+                "urn:uuid:", ""
+            )
         if service_request.performer:
             reference_dict["performer"] = service_request.performer[0].identifier
         return reference_dict
 
-class BundleBuilder:
-    @staticmethod
-    def build_entries( resource_list ):
-        response_bundle_entries = []
-        for resource in resource_list:
-            response_bundle_entries.append(BundleEntry(fullUrl=f"urn:uuid:{resource.id}", resource=resource))
-
-        return response_bundle_entries
 
 class DispenseRequestCreator:
     @staticmethod
@@ -67,15 +79,13 @@ class DispenseRequestCreator:
         software_info,
         recipient_kim_address,
         prescription_service_request: ServiceRequest,
+        token_extension,
         use_case,
         use_case_display,
-        note_text
+        note_text,
+        reason_text,
     ) -> Bundle:
-        
-        sender = ParticipantsCreator.create_sender(
-            sender_kim_address["telematik_id"], sender_kim_address["display"]
-        )
-        
+
         source = ParticipantsCreator.create_source(
             software_info["name"],
             software_info["product"],
@@ -84,25 +94,35 @@ class DispenseRequestCreator:
             software_info["endpoint"],
         )
 
-        requesting_organisation = OrganizationCreator.get_example_pflegeheim_organization()
+        destination = ParticipantsCreator.create_destination(
+            recipient_kim_address["display"], recipient_kim_address["telematik_id"]
+        )
 
-        destination = ParticipantsCreator.create_destination(recipient_kim_address['display'], recipient_kim_address['telematik_id'])
+        requesting_organisation = (
+            OrganizationCreator.get_example_pflegeheim_organization()
+        )
 
-        
-        identifiers = ResourceExtractor.extract_identifiers(prescription_service_request)
-        identifiers["kim_address_apotheke"] = recipient_kim_address['display']
+        identifiers = ResourceExtractor.extract_identifiers(
+            prescription_service_request
+        )
+        identifiers["kim_address_apotheke"] = recipient_kim_address["display"]
+        patient = PatientCreator.get_example_patient()
         references = ResourceExtractor.extract_references(prescription_service_request)
-        service_request = DispenseRequestCreator.create_dispense_service_request(status, identifiers, references, note_text)
+        references["patient"] = patient.id
 
-        build_entries = []
-        build_entries.append(prescription_service_request)
-        build_entries.append(requesting_organisation)
+        service_request = DispenseRequestCreator.create_dispense_service_request(
+            status, token_extension, identifiers, references, note_text, reason_text
+        )
 
-        dispense_additional_bundle_entries = BundleBuilder.build_entries(build_entries)
+        dispense_additional_bundle_entries = BundleCreator.build_bundle_entries(
+            [patient, requesting_organisation]
+        )
 
         return BundleCreator.create_request_bundle(
             str(uuid4()),
-            sender,
+            ParticipantsCreator.create_sender(
+                sender_kim_address["telematik_id"], sender_kim_address["display"]
+            ),
             source,
             destination,
             service_request,
@@ -110,18 +130,19 @@ class DispenseRequestCreator:
             additional_bundle_entries=dispense_additional_bundle_entries,
             code_system="https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs",
             use_case=use_case,
-            use_case_display=use_case_display
+            use_case_display=use_case_display,
         )
-    
-    
+
     @staticmethod
     def create_dispense_service_request(
         status,
+        token_extension,
         identifiers: Dict[str, str],
         references: Dict[str, str],
-        note_text
+        note_text,
+        reason_text,
     ) -> ServiceRequest:
-        return ServiceRequestCreator.create_service_request(
+        service_request = ServiceRequestCreator.create_service_request(
             "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request",
             "filler-order",
             "dispense-request",
@@ -147,5 +168,10 @@ class DispenseRequestCreator:
             reason_system=None,
             reason_code=None,
             reason_references=None,
-            note_text=note_text
+            note_text=note_text,
+            reason_text=reason_text,
         )
+        service_request.extension = []
+        service_request.extension.append(token_extension)
+
+        return service_request

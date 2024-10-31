@@ -428,8 +428,9 @@
         <!-- Template for displaying information about each ServiceRequest in the Bundle -->
         <div
             class="service-request">
+            <xsl:variable name="patientFullRef" select="concat('Patient/', $patientRef)" />
             <xsl:for-each
-                select="$rootBundle/fhir:entry/fhir:resource/fhir:ServiceRequest[fhir:subject/fhir:reference/@value = concat('Patient/', $patientRef)]">
+                select="$rootBundle/fhir:entry/fhir:resource/fhir:ServiceRequest[fhir:subject/fhir:reference/@value = $patientFullRef]">
                 <div class="service-request-box">
                     <div class="service-request-header">
                         <div class="pill-container">

@@ -37,7 +37,8 @@ class PrescriptionRequestCreator:
         identifiers: Dict[str, str],
         reason_system,
         reason_code,
-        note_text,
+        reason_text,
+        note_text
     ) -> ServiceRequest:
         
         # Check for required keys
@@ -68,7 +69,8 @@ class PrescriptionRequestCreator:
             reason_system=reason_system,
             reason_code=reason_code,
             reason_references=reason_references,
-            note_text=note_text,
+            reason_text=reason_text,
+            note_text=note_text
         )
 
     @staticmethod
@@ -108,7 +110,8 @@ class PrescriptionRequestCreator:
         status,
         reason_system,
         reason_code,
-        note_text,
+        reason_text,
+        note_text
     ) -> Bundle:
         identifiers = {
             name: PrescriptionRequestCreator.create_identifier()
@@ -142,7 +145,8 @@ class PrescriptionRequestCreator:
             identifiers,
             reason_system,
             reason_code,
-            note_text,
+            reason_text,
+            note_text
         )
 
         bundle_entries = [

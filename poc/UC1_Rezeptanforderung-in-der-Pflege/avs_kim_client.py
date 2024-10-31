@@ -26,6 +26,8 @@ from fhir.resources.R4B.bundle import Bundle
 from fhir.resources.R4B.servicerequest import ServiceRequest
 from fhir.resources.R4B.bundle import Bundle, BundleEntry
 from fhir.resources.R4B.fhirtypes import ReferenceType
+from fhir.resources.R4B.patient import Patient
+
 from fhir.resources.R4B.messageheader import (
     MessageHeaderDestination,
     MessageHeaderSource,
@@ -62,7 +64,7 @@ class PharmacyKIMClient(KIMClient):
         return
 
     def handle_message_event(self, atf_request_bundle: Bundle):
-        logger.info("Aptheke hat einen Abgabeanfrage erhalten")
+        logger.info("Apotheke hat einen Abgabeanfrage erhalten")
 
         message_header = self.fhir_bundle_processor.extract_message_header(
             atf_request_bundle
@@ -73,6 +75,8 @@ class PharmacyKIMClient(KIMClient):
                 atf_request_bundle.entry, ServiceRequest
             )
         )
+
+        patient: Patient = self.fhir_bundle_processor.get_resource_by_type(atf_request_bundle.entry, Patient)
 
         if message_header.sender and message_header.sender.identifier:
             sender_email_value = message_header.sender.identifier.value
@@ -89,14 +93,17 @@ class PharmacyKIMClient(KIMClient):
         completed_dispense_service_request = self.update_dispense_request(
             dispense_service_request
         )
-        build_entries = [completed_dispense_service_request, medication_dispense]
+
 
         requesting_organisation = OrganizationCreator.get_example_apotheken_organization()
         
 
         dispense_additional_bundle_entries = BundleCreator.build_bundle_entries(
-            build_entries
+            [completed_dispense_service_request, medication_dispense, patient, requesting_organisation]
         )
+
+
+
         response_bundle = self.create_response_dispense_request(
             str(uuid4()),
             ParticipantsCreator.create_sender(
@@ -105,8 +112,8 @@ class PharmacyKIMClient(KIMClient):
             self.source,
             destinations,
             dispense_service_request,
-            requesting_organisation,
-            dispense_additional_bundle_entries,
+            requesting_organisation.id,
+            additional_bundle_entries=dispense_additional_bundle_entries
         )
 
         attachments, html = self.file_handler.create_files(response_bundle, "atf_eRezept_Abgabebestaetigung")
@@ -134,7 +141,7 @@ class PharmacyKIMClient(KIMClient):
         source: MessageHeaderSource,
         destinations: List[MessageHeaderDestination],
         service_request: ServiceRequest,
-        requesting_organisation,
+        requesting_organisation_id,
         additional_bundle_entries: List[BundleEntry],
     ) -> Bundle:
         message_header = MessageHeaderCreator.create_message_header(
@@ -145,14 +152,12 @@ class PharmacyKIMClient(KIMClient):
             code_system="https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs",
             use_case="eRezept_Rezeptanforderung;Abgabebestaetigung",
             use_case_display="Bestätigung der Erfüllung und Abgabe eines Medikamentes",
-            requesting_organisation_id=requesting_organisation.id,
+            requesting_organisation_id=requesting_organisation_id,
             focus_reference=service_request.id,
         )
 
         resources = [
-            BundleEntry(
-                fullUrl=f"urn:uuid:{service_request.id}", resource=service_request
-            )
+            
         ]
 
         resources.extend(additional_bundle_entries)

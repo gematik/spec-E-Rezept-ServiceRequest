@@ -7,6 +7,7 @@ from uuid import uuid4
 from helper.ressource_creators.message_header_creator import MessageHeaderCreator
 from helper.ressource_creators.message_bundle_creator import MessageBundleCreator
 from helper.ressource_creators.participant_creator import ParticipantsCreator
+from helper.ressource_creators.bundle_creator import BundleCreator
 
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
@@ -120,7 +121,7 @@ class PvsKIMClient(KIMClient):
         prescription_request_response = self.create_prescription_request_response(
             str(uuid4()),
             ParticipantsCreator.create_sender(
-                self.sender_info['telematik_id'], self.sender_info['display']
+                self.sender_info["telematik_id"], self.sender_info["display"]
             ),
             source,
             destinations,
@@ -129,7 +130,9 @@ class PvsKIMClient(KIMClient):
             request_organisation_id,
         )
 
-        attachments, html  = self.file_handler.create_files(prescription_request_response, "atf_eRezept_Rezeptbestätigung")
+        attachments, html = self.file_handler.create_files(
+            prescription_request_response, "atf_eRezept_Rezeptbestätigung"
+        )
 
         logger.info(
             "Sende Rezeptbestätigung von Arzt an: %s",
@@ -176,26 +179,28 @@ class PvsKIMClient(KIMClient):
             coverage.id,
         )
         response_service_request = self.update_service_request(
-            service_request, kbv_prescription.id
+            service_request, kbv_prescription.id, patient.id
         )
         request_organisation = self.fhir_bundle_processor.get_resource_by_type(
             bundle_entries.entry, Organization
         )
         return (
             response_service_request,
-            self.build_response_bundle_entries(
-                kbv_prescription,
-                medication,
-                patient,
-                coverage,
-                request_organisation,
-                response_service_request,
+            BundleCreator.build_bundle_entries(
+                [
+                    kbv_prescription,
+                    medication,
+                    self.practitioner,
+                    patient,
+                    coverage,
+                    request_organisation,
+                ]
             ),
             request_organisation.id,
         )
 
     def update_service_request(
-        self, service_request: ServiceRequest, kbv_prescription_id
+        self, service_request: ServiceRequest, kbv_prescription_id, patient_id
     ) -> ServiceRequest:
         service_request.status = "completed"
         e_prescription_token = self.fachdienst_mock.activate()
@@ -214,51 +219,9 @@ class PvsKIMClient(KIMClient):
             Reference(reference="urn:uuid:" + kbv_prescription_id)
         ]
 
+        service_request.subject = Reference(reference="Patient/" + patient_id)
+
         return service_request
-
-    def build_response_bundle_entries(
-        self,
-        kbv_prescription,
-        medication,
-        patient,
-        coverage,
-        request_organisation,
-        response_service_request,
-    ):
-        response_bundle_entries = []
-        response_bundle_entries.append(
-            BundleEntry(
-                fullUrl=f"urn:uuid:{kbv_prescription.id}", resource=kbv_prescription
-            )
-        )
-        response_bundle_entries.append(
-            BundleEntry(fullUrl=f"urn:uuid:{medication.id}", resource=medication)
-        )
-        response_bundle_entries.append(
-            BundleEntry(
-                fullUrl=f"urn:uuid:{self.practitioner.id}", resource=self.practitioner
-            )
-        )
-        response_bundle_entries.append(
-            BundleEntry(fullUrl=f"urn:uuid:{patient.id}", resource=patient)
-        )
-        response_bundle_entries.append(
-            BundleEntry(fullUrl=f"urn:uuid:{coverage.id}", resource=coverage)
-        )
-        response_bundle_entries.append(
-            BundleEntry(
-                fullUrl=f"urn:uuid:{request_organisation.id}",
-                resource=request_organisation,
-            )
-        )
-        response_bundle_entries.append(
-            BundleEntry(
-                fullUrl=f"urn:uuid:{response_service_request.id}",
-                resource=response_service_request,
-            )
-        )
-
-        return response_bundle_entries
 
     def create_prescription_request_response(
         self,

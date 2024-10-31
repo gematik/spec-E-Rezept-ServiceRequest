@@ -1,51 +1,52 @@
 <?xml version='1.0' encoding='utf-8'?>
+<?xml-stylesheet type="text/xsl" href="../../rezeptanforderung.xsl" ?>
 <Bundle xmlns="http://hl7.org/fhir">
-    <id value="d1dab01a-85ae-4530-a5da-2593c3d6baaa"/>
+    <id value="3929ba49-4343-4b93-bbc1-ca6ff13bbebc"/>
     <meta>
         <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"/>
     </meta>
     <identifier>
         <system value="urn:ietf:rfc:3986"/>
-        <value value="urn:uuid:d1dab01a-85ae-4530-a5da-2593c3d6baaa"/>
+        <value value="urn:uuid:3929ba49-4343-4b93-bbc1-ca6ff13bbebc"/>
     </identifier>
     <type value="message"/>
-    <timestamp value="2024-10-31T14:53:03.837366+00:00"/>
+    <timestamp value="2024-10-31T14:53:04.964835+00:00"/>
     <entry>
-        <fullUrl value="urn:uuid:93724936-643b-4bc2-8fef-5baffc21b69d"/>
+        <fullUrl value="urn:uuid:178bc554-ce46-4e7d-ac20-13088ab50af7"/>
         <resource>
             <MessageHeader>
-                <id value="93724936-643b-4bc2-8fef-5baffc21b69d"/>
+                <id value="178bc554-ce46-4e7d-ac20-13088ab50af7"/>
                 <meta>
                     <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"/>
                 </meta>
                 <eventCoding>
                     <system value="https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"/>
-                    <code value="eRezept_Rezeptanforderung;Abgabeanfrage"/>
-                    <display value="Anfrage zur Erfüllung eines Rezeptes und Abgabe des Medikaments"/>
+                    <code value="eRezept_Rezeptanforderung;Abgabebestaetigung"/>
+                    <display value="Bestätigung der Erfüllung und Abgabe eines Medikamentes"/>
                 </eventCoding>
                 <destination>
-                    <name value="Test Apotheke"/>
-                    <endpoint value="5-test-telematik-id-apotheke"/>
+                    <name value="Pflegeheim Immergrün"/>
+                    <endpoint value="5-test-telematik-id-pflegeinrichtung"/>
                 </destination>
                 <sender>
                     <identifier>
                         <system value="https://gematik.de/fhir/sid/telematik-id"/>
-                        <value value="5-test-telematik-id-pflegeinrichtung"/>
+                        <value value="5-test-telematik-id-apotheke"/>
                     </identifier>
-                    <display value="Pflegeheim Immergrün"/>
+                    <display value="Test Apotheke"/>
                 </sender>
                 <source>
-                    <name value="HealthCare-Source"/>
-                    <software value="HealthCare-Software"/>
-                    <version value="1.0.0"/>
+                    <name value="ApoSoft Gmbh"/>
+                    <software value="ApoFlott"/>
+                    <version value="1.1.3"/>
                     <contact>
                         <system value="email"/>
-                        <value value="info@hcs.email"/>
+                        <value value="issues@apo-flott.de"/>
                     </contact>
-                    <endpoint value="mailto:healthcare-service@test.kim.de"/>
+                    <endpoint value="https://aposoft.de/issues"/>
                 </source>
                 <responsible>
-                    <reference value="urn:uuid:e9cdf535-5032-4eb0-a161-a9e12ad62a09"/>
+                    <reference value="urn:uuid:1619cd88-6b51-4a60-a432-31a078a4fbf7"/>
                 </responsible>
                 <focus>
                     <reference value="urn:uuid:75508c16-a224-4da0-a1b7-acaa08c2ffaa"/>
@@ -61,12 +62,6 @@
                 <meta>
                     <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"/>
                 </meta>
-                <extension url="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex">
-                    <valueIdentifier>
-                        <system value="https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken"/>
-                        <value value="Task/160.308.184.642.434/$accept?ac=EF4A9cc4ef0fA87d4c8d1DCCeDB8E0CCEEc0aeB8Ac1Ad452Aeeb4AD5A5Fa20c6"/>
-                    </valueIdentifier>
-                </extension>
                 <identifier>
                     <system value="https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier"/>
                     <value value="f1574863-2bd9-4018-a3ff-27cc01f875ad"/>
@@ -82,7 +77,7 @@
                     <system value="https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier"/>
                     <value value="0455ff78-ff45-4c31-8dc4-9415844ad543"/>
                 </requisition>
-                <status value="active"/>
+                <status value="completed"/>
                 <intent value="filler-order"/>
                 <priority value="urgent"/>
                 <code>
@@ -110,6 +105,83 @@
                     <text value="Bitte wie üblich zur Abholung bereitlegen."/>
                 </note>
             </ServiceRequest>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="urn:uuid:None"/>
+        <resource>
+            <Bundle>
+                <type value="transaction"/>
+                <entry>
+                    <fullUrl value="http://erp-servicerequest-test.de/MedicationDispense/8246f9be-acea-4da4-b441-a18185463066"/>
+                    <resource>
+                        <MedicationDispense>
+                            <id value="8246f9be-acea-4da4-b441-a18185463066"/>
+                            <meta>
+                                <profile value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|1.2"/>
+                            </meta>
+                            <contained>
+                                <Medication>
+                                    <id value="de7f0e53-3959-4b2e-9f8b-30bc4a599ca7"/>
+                                    <meta>
+                                        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.1.0"/>
+                                    </meta>
+                                    <code>
+                                        <coding>
+                                            <system value="http://fhir.de/CodeSystem/ifa/pzn"/>
+                                            <code value="08585997"/>
+                                        </coding>
+                                        <text value="Prospan® Hustensaft 100ml N1"/>
+                                    </code>
+                                </Medication>
+                            </contained>
+                            <identifier>
+                                <use value="official"/>
+                                <system value="https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"/>
+                                <value value="160.100.000.000.002.36"/>
+                            </identifier>
+                            <status value="completed"/>
+                            <medicationReference>
+                                <reference value="urn:uuid:#de7f0e53-3959-4b2e-9f8b-30bc4a599ca7"/>
+                            </medicationReference>
+                            <subject>
+                                <reference value="urn:uuid:X123456789"/>
+                            </subject>
+                            <performer>
+                                <actor>
+                                    <identifier>
+                                        <system value="https://gematik.de/fhir/sid/telematik-id"/>
+                                        <value value="12345678901234567890"/>
+                                    </identifier>
+                                </actor>
+                            </performer>
+                            <whenHandedOver value="2020-04-16T13:44:27.957000+00:00"/>
+                            <dosageInstruction>
+                                <sequence value="1"/>
+                                <text value="Eine Tablette täglich"/>
+                                <timing>
+                                    <repeat>
+                                        <frequency value="1"/>
+                                        <period value="1.0"/>
+                                        <periodUnit value="d"/>
+                                    </repeat>
+                                </timing>
+                                <doseAndRate>
+                                    <type>
+                                        <coding>
+                                            <code value="ordered"/>
+                                        </coding>
+                                    </type>
+                                    <doseQuantity>
+                                        <value value="1.0"/>
+                                        <unit value="tablet"/>
+                                    </doseQuantity>
+                                </doseAndRate>
+                            </dosageInstruction>
+                        </MedicationDispense>
+                    </resource>
+                </entry>
+            </Bundle>
         </resource>
     </entry>
     <entry>
@@ -151,10 +223,10 @@
         </resource>
     </entry>
     <entry>
-        <fullUrl value="urn:uuid:e9cdf535-5032-4eb0-a161-a9e12ad62a09"/>
+        <fullUrl value="urn:uuid:1619cd88-6b51-4a60-a432-31a078a4fbf7"/>
         <resource>
             <Organization>
-                <id value="e9cdf535-5032-4eb0-a161-a9e12ad62a09"/>
+                <id value="1619cd88-6b51-4a60-a432-31a078a4fbf7"/>
                 <meta>
                     <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"/>
                     <tag>
@@ -164,23 +236,23 @@
                 </meta>
                 <identifier>
                     <system value="https://gematik.de/fhir/sid/telematik-id"/>
-                    <value value="1-031234567"/>
+                    <value value="1-431234567"/>
                 </identifier>
-                <name value="Pflegeheim Immergrün"/>
+                <name value="Adler Apotheke"/>
                 <address>
                     <type value="both"/>
-                    <line value="Musterstr. 2"/>
+                    <line value="Malerstraße. 1"/>
                     <city value="Berlin"/>
-                    <postalCode value="10623"/>
+                    <postalCode value="10523"/>
                 </address>
                 <contact>
                     <telecom>
                         <system value="phone"/>
-                        <value value="0301234567"/>
+                        <value value="0305234567"/>
                     </telecom>
                     <telecom>
                         <system value="email"/>
-                        <value value="pflegeheim.immergrün.arzt@sana-pflegeheime.kim.telematik"/>
+                        <value value="apotheke@kim.telematik.de"/>
                     </telecom>
                 </contact>
             </Organization>

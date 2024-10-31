@@ -23,25 +23,15 @@ class PatientCreator:
         postal_code: str,
         birth_date: str,
     ) -> Patient:
-        identifier_type = CodeableConcept(
-            coding=[
-                Coding(
-                    system="http://fhir.de/CodeSystem/identifier-type-de-basis",
-                    code=identifier_type_code,
-                ),
-            ],
-        )
-
         patient = Patient(
             id=patient_id,
             meta=Meta(
                 profile=[
-                    "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
+                    "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-patient"
                 ]
             ),
             identifier=[
                 Identifier(
-                    type=identifier_type,
                     system="http://fhir.de/sid/gkv/kvid-10",
                     value=kvnr,
                 )

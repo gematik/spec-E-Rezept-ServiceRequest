@@ -16,8 +16,6 @@ from helper.file_handler import FileHandler
 from helper.fhir_bundle_processor import FHIR_Bundle_Processor
 from helper.ressource_creators.dispense_request_creator import DispenseRequestCreator
 
-from fhir.resources.R4B.messageheader import MessageHeader
-from fhir.resources.R4B.bundle import Bundle
 from fhir.resources.R4B.servicerequest import ServiceRequest
 
 # Logger für die Pflegeeinrichtung einrichten
@@ -79,8 +77,9 @@ class HealthCareServiceKIMClient(KIMClient):
                 arztpraxis.sender_info,
                 "active",
                 "https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-request-reason-cs",
-                "medication-runs-out",
+                "exhausted-range",
                 "Medikament läuft am 31.01.2025 aus. Es sind noch 7 stk übrig.",
+                "Wird weiterhin benötigt, bitte um Verlängerung."
             )
         )
 
@@ -119,10 +118,10 @@ class HealthCareServiceKIMClient(KIMClient):
                 atf_request_bundle.entry, ServiceRequest
             )
         )
-        token = self.fhir_bundle_processor.get_token_from_service_request(
+        token_extension = self.fhir_bundle_processor.get_token_from_service_request(
             service_request
         )
-        if token is None:
+        if token_extension is None:
             return
 
         dispense_request_bundle = DispenseRequestCreator.create_dispense_request_bundle(
@@ -131,9 +130,11 @@ class HealthCareServiceKIMClient(KIMClient):
             self.software_info,
             self.avs_client.sender_info,
             service_request,
+            token_extension,
             "eRezept_Rezeptanforderung;Abgabeanfrage",
             "Anfrage zur Erfüllung eines Rezeptes und Abgabe des Medikaments",
             "Bitte wie üblich zur Abholung bereitlegen.",
+            "Wir kommen zur üblichen Zeit, und parken gerne wieder auf dem Hinterhof"
         )
 
         attachments, html  = self.file_handler.create_files(dispense_request_bundle, "atf_eRezept_Abgabeanfrage")

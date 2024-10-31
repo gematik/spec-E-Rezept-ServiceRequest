@@ -45,5 +45,5 @@ class FHIR_Bundle_Processor:
                 extension.url == token_url
                 and extension.valueIdentifier.system == token_system
             ):
-                return extension.valueIdentifier.value
+                return extension
         return None
