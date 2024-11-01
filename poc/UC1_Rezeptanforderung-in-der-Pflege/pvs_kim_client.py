@@ -99,8 +99,6 @@ class PvsKIMClient(KIMClient):
             sender_email_value = message_header.sender.identifier.value
         else:
             logger.info("Keine KIM-Adresse gefunden.")
-        # logger.info("Sender: %s", message_header.sender.display)
-        # logger.info("Empfänger: %s", message_header.destination[0].name)
 
         service_request = self.fhir_bundle_processor.get_resource_by_type(
             atf_request_bundle.entry, ServiceRequest
@@ -146,6 +144,8 @@ class PvsKIMClient(KIMClient):
             html,
             attachments,
         )
+
+        return True
 
     def create_prescription(
         self, bundle_entries: List[BundleEntry]

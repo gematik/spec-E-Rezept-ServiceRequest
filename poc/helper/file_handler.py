@@ -10,7 +10,7 @@ class FileHandler:
 
 
     def create_files(self, prescription_request_response, filename):
-        self.create_file(prescription_request_response.json(ident = 4), filename + ".json")
+        #self.create_file(prescription_request_response.json(ident = 4), filename + ".json")
 
         attachments = []
         attachments.append(

@@ -180,9 +180,7 @@ class PharmacyKIMClient(KIMClient):
             focus_reference=service_request.id,
         )
 
-        resources = [
-            
-        ]
+        resources = []
 
         resources.extend(additional_bundle_entries)
 
