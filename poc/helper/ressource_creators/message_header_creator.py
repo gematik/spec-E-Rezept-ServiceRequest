@@ -6,7 +6,7 @@ from fhir.resources.R4B.coding import Coding
 from typing import List
 
 # Logger konfigurieren
-logging.basicConfig(level=logging.INFO)
+
 logger = logging.getLogger(__name__)
 
 class MessageHeaderCreator:

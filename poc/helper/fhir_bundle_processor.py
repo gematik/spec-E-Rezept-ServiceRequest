@@ -11,7 +11,6 @@ from fhir.resources.R4B.identifier import Identifier
 from fhir.resources.R4B.reference import Reference
 from fhir.resources.R4B.messageheader import MessageHeader
 
-logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 T = TypeVar('T')

@@ -4,12 +4,12 @@ import os
 from typing import List
 from uuid import uuid4
 
+from helper.fhir_attachment_handler import FHIRAttachmentHandler
 
 
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from helper.kim_client import KIMClient
-from helper.logging_setup import setup_logger
 from helper.fhir_bundle_processor import FHIR_Bundle_Processor
 from helper.ressource_creators.medication_dispense_creator import (
     MedicationDispenseCreator,
@@ -35,12 +35,13 @@ from fhir.resources.R4B.messageheader import (
 from fhir.resources.R4B.servicerequest import ServiceRequest
 
 # Logger für die Apotheke einrichten
-logger = setup_logger("Apotheke_C", level=logging.INFO)
+logger = logging.getLogger("Apotheke")
 
 
 class PharmacyKIMClient(KIMClient):
     def __init__(self, client_name, sender_info):
         super().__init__(client_name, sender_info)
+        logger.debug(f"PharmacyKIMClient für {client_name} initialisiert.")
         self.fhir_bundle_processor = FHIR_Bundle_Processor()
         self.html_renderer = HTMLRenderer()
         self.file_handler = FileHandler(self.attachment_folder, self.html_renderer)
@@ -60,10 +61,33 @@ class PharmacyKIMClient(KIMClient):
         )
 
     def process_message(self, message_content):
-        logger.debug("Empfangene Nachricht durch Apotheke: %s", message_content)
+        FileAttachmentHandler = FHIRAttachmentHandler(message_content["attachments"])
+        fhir_bundle = FileAttachmentHandler.get_fhir_bundle()
+        if fhir_bundle:
+            self.handle_message_event(fhir_bundle)
+        else:
+            logger.error("FHIR Bundle konnte nicht verarbeitet werden.")
         return
-
+    
     def handle_message_event(self, atf_request_bundle: Bundle):
+        """
+        Verarbeitet den EventCode und leitet die Nachricht zur weiteren Bearbeitung weiter.
+        """
+        message_header = self.fhir_bundle_processor.extract_message_header(
+            atf_request_bundle
+        )
+
+        if (
+            message_header.eventCoding.code
+            == "eRezept_Rezeptanforderung;Abgabeanfrage"
+        ):
+            return self.handle_dispensation_request(atf_request_bundle)
+        else:
+            logger.warning(
+                f"Unbekannter EventCode: {message_header.eventCoding.code}. Keine spezifische Verarbeitung definiert."
+            )
+
+    def handle_dispensation_request(self, atf_request_bundle: Bundle):
         logger.info("Apotheke hat einen Abgabeanfrage erhalten")
 
         message_header = self.fhir_bundle_processor.extract_message_header(

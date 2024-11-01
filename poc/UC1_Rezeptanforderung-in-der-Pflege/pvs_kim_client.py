@@ -12,7 +12,6 @@ from helper.ressource_creators.bundle_creator import BundleCreator
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from helper.kim_client import KIMClient
-from helper.logging_setup import setup_logger
 from helper.fhir_attachment_handler import FHIRAttachmentHandler
 from helper.fhir_bundle_processor import FHIR_Bundle_Processor
 from helper.ressource_creators.patient_creator import PatientCreator
@@ -42,10 +41,7 @@ from fhir.resources.R4B.messageheader import (
     MessageHeaderSource,
 )
 
-
-# Logger für den Arzt einrichten
-logger = setup_logger("Arzt_B", level=logging.INFO)
-
+logger = logging.getLogger("Arztpraxis")
 
 class PvsKIMClient(KIMClient):
     def __init__(
@@ -53,6 +49,7 @@ class PvsKIMClient(KIMClient):
         client_name,
         sender_info,
     ):
+        logger.debug(f"PvsKIMClient für {client_name} initialisiert.")
         super().__init__(client_name, sender_info)
         self.fhir_bundle_processor = FHIR_Bundle_Processor()
         self.coverage_creator = CoverageCreator()
@@ -70,6 +67,12 @@ class PvsKIMClient(KIMClient):
         }
 
     def process_message(self, message_content):
+        FileAttachmentHandler = FHIRAttachmentHandler(message_content["attachments"])
+        fhir_bundle = FileAttachmentHandler.get_fhir_bundle()
+        if fhir_bundle:
+            self.handle_message_event(fhir_bundle)
+        else:
+            logger.error("FHIR Bundle konnte nicht verarbeitet werden.")
         return
 
     def handle_message_event(self, atf_request_bundle: Bundle):
@@ -80,7 +83,7 @@ class PvsKIMClient(KIMClient):
         )
 
         if message_header.eventCoding.code == "eRezept_Rezeptanforderung;Rezeptanfrage":
-            return self.handle_prescription_request(message_header, atf_request_bundle)
+            self.handle_prescription_request(message_header, atf_request_bundle)
         else:
             logger.warning(
                 f"Unbekannter EventCode: {message_header.eventCoding.code}. Keine spezifische Verarbeitung definiert."
@@ -134,12 +137,6 @@ class PvsKIMClient(KIMClient):
             prescription_request_response, "atf_eRezept_Rezeptbestätigung"
         )
 
-        logger.info(
-            "Sende Rezeptbestätigung von Arzt an: %s",
-            message_header.sender.display,
-        )
-        # logger.debug("Sende Rezeptbestätigung von Arzt an Pflegeeinrichtung: %s", html)
-
         # Antwort zurück an die Pflegeeinrichtung senden
         logger.info("Sende E-Rezept-Bestätigung an: %s", message_header.sender.display)
         self.send_message(
@@ -149,8 +146,6 @@ class PvsKIMClient(KIMClient):
             html,
             attachments,
         )
-
-        return prescription_request_response
 
     def create_prescription(
         self, bundle_entries: List[BundleEntry]

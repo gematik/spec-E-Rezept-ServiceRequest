@@ -88,6 +88,6 @@ class HTMLRenderer:
                 'zoom': 1.0  # Adjust zoom to fit content better
             }
             pdfkit.from_string(html_content, output_pdf_path, options=options)
-            logger.info(f"PDF successfully created at {output_pdf_path}")
+            logger.debug(f"PDF successfully created at {output_pdf_path}")
         except Exception as e:
             raise RuntimeError(f"Failed to create PDF: {e}")

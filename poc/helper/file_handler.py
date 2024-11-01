@@ -1,10 +1,7 @@
 import os
 import sys
 from fhir.resources.R4B.bundle import Bundle, BundleEntry
-from helper.logging_setup import setup_logger
-import logging
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-logger = setup_logger("FileHandler", level=logging.ERROR)
 
 class FileHandler:
     def __init__(self, attachment_folder, html_renderer=None):
@@ -31,8 +28,6 @@ class FileHandler:
 
     def _write_file(self, content, filename, mode="w", encoding="utf-8"):
         attachment_path = os.path.join(self.attachment_folder, filename)
-
-        logger.info("Writing File %s",attachment_path )
 
         with open(attachment_path, mode, encoding=encoding) as attachment_file:
             attachment_file.write(content)

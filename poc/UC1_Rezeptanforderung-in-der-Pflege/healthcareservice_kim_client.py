@@ -4,6 +4,10 @@ import os
 from uuid import uuid4
 
 
+
+
+
+
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from helper.ressource_creators.prescription_request_creator import (
@@ -11,19 +15,18 @@ from helper.ressource_creators.prescription_request_creator import (
 )
 from helper.renderer.html_renderer import HTMLRenderer
 from helper.kim_client import KIMClient
-from helper.logging_setup import setup_logger
 from helper.file_handler import FileHandler
 from helper.fhir_bundle_processor import FHIR_Bundle_Processor
 from helper.ressource_creators.dispense_request_creator import DispenseRequestCreator
+from helper.fhir_attachment_handler import FHIRAttachmentHandler
 
 from fhir.resources.R4B.servicerequest import ServiceRequest
 
-# Logger für die Pflegeeinrichtung einrichten
-logger = setup_logger("Pflegeeinrichtung_A", level=logging.INFO)
-
+logger = logging.getLogger("Pflegeheim")
 
 class HealthCareServiceKIMClient(KIMClient):
     def __init__(self, client_name, sender_info, pvs_client, avs_client):
+        logger.debug(f"HealthCareServiceKIMClient für {client_name} initialisiert.")
         self.pvs_client = pvs_client
         self.avs_client = avs_client
         super().__init__(client_name, sender_info)
@@ -39,6 +42,12 @@ class HealthCareServiceKIMClient(KIMClient):
         }
 
     def process_message(self, message_content):
+        FileAttachmentHandler = FHIRAttachmentHandler(message_content["attachments"])
+        fhir_bundle = FileAttachmentHandler.get_fhir_bundle()
+        if fhir_bundle:
+            self.handle_message_event(fhir_bundle)
+        else:
+            logger.error("FHIR Bundle konnte nicht verarbeitet werden.")
         return
 
     def handle_message_event(self, atf_request_bundle):
@@ -102,11 +111,6 @@ class HealthCareServiceKIMClient(KIMClient):
             attachments,
         )
 
-        response_attachments = self.pvs_client.handle_message_event(
-            prescription_request_bundle
-        )
-        self.handle_message_event(response_attachments)
-
     def handle_prescription_request_response(self, atf_request_bundle):
         """
         Verarbeitet eine Rezeptbestaetigung.
@@ -139,6 +143,10 @@ class HealthCareServiceKIMClient(KIMClient):
 
         attachments, html  = self.file_handler.create_files(dispense_request_bundle, "atf_eRezept_Abgabeanfrage")
 
+        logger.info(
+            "Sende Abgabeanfrage an: %s",
+            self.avs_client.client_name,
+        )
         # Sende Abgabeanfrage an Apotheke
         self.send_message(
             self.avs_client.client_name,
@@ -148,10 +156,6 @@ class HealthCareServiceKIMClient(KIMClient):
             attachments,
         )
 
-        dispensation_bundle = self.avs_client.handle_message_event(
-            dispense_request_bundle
-        )
-        self.handle_message_event(dispensation_bundle)
 
     def handle_dispensation_request_response(self, atf_request_bundle):
         """
@@ -168,24 +172,3 @@ class HealthCareServiceKIMClient(KIMClient):
             "Abgabebestätigung erhalten. Diese hatte den Status '%s'",
             service_request.status,
         )
-
-
-if __name__ == "__main__":
-    logger.info("Initialisiere Clients...")
-    health_care_service_client = HealthCareServiceKIMClient("Pflegeeinrichtung_A")
-
-    # Schritt 1: Pflegeeinrichtung sendet eine Rezeptanforderung an den Arzt
-    logger.info("Schritt 1: Rezeptanforderung von Pflegeeinrichtung an Arzt")
-    patient_info = {
-        "name": "Max Mustermann",
-        "insuranceNumber": "G123456",
-        "birthDate": "1980-05-15",
-    }
-    medication_info = {
-        "medicationName": "Ibuprofen 400mg",
-        "quantity": 2,
-        "instructions": "Take one tablet every 8 hours as needed.",
-    }
-    health_care_service_client.send_prescription_request(
-        "Arzt_B", patient_info, medication_info
-    )

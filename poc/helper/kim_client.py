@@ -7,14 +7,10 @@ from abc import ABC, abstractmethod
 import sys
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-from helper.logging_setup import setup_logger
-
-# Logger für KIMClient erstellen
-logger = setup_logger("KIMClient", level=logging.ERROR)
-
 
 class KIMClient(ABC):
     def __init__(self, client_name, sender_info):
+        
         self.client_name = client_name
         self.sender_info = sender_info
         self.inbox = f"./kim_messages/{client_name}/inbox"
@@ -23,7 +19,6 @@ class KIMClient(ABC):
         self.clean_kim_message_folder()
         os.makedirs(self.inbox, exist_ok=True)
         os.makedirs(self.outbox, exist_ok=True)
-        logger.info(f"KIM Client initialized: {client_name}")
 
     def clean_kim_message_folder(self):
         if os.path.exists(self.inbox):
@@ -72,10 +67,6 @@ class KIMClient(ABC):
                     }
                 )
 
-                logger.debug(
-                    f"Attachment {attachment['filename']} added to message."
-                )
-
         # Write the message to the sender's outbox
         with open(outbox_path, "w") as f:
             json.dump(message, f, indent=2)
@@ -90,10 +81,6 @@ class KIMClient(ABC):
             sent_outbox_path = os.path.join(self.outbox, f"sent_{message_filename}")
             os.rename(outbox_path, sent_outbox_path)
 
-        logger.info(
-            f"Message sent from {self.client_name} to {recipient}: {message_filename}"
-        )
-
     def process_inbox(self):
         """
         Check if there are new messages in the inbox and process them.
@@ -106,11 +93,8 @@ class KIMClient(ABC):
             with open(message_path, "r") as f:
                 message_content = json.load(f)
 
-            logger.info(f"New message received by {self.client_name}: {message_file}")
-
             # Skip already processed messages
             if message_file.startswith("processed_"):
-                logger.debug(f"Skipping already processed message: {message_file}")
                 continue
 
             # Use the process_message method (must be implemented in subclass)
@@ -121,9 +105,6 @@ class KIMClient(ABC):
                 self.inbox, f"processed_{message_file}"
             )
             os.rename(message_path, processed_message_path)
-            logger.info(
-                f"Message {message_file} processed and renamed to {processed_message_path}."
-            )
 
     @abstractmethod
     def process_message(self, message_content):
