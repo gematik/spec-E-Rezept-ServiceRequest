@@ -254,7 +254,12 @@
         "quantity": {
           "value": 1,
           "unit": "Packung"
-        }
+        },
+        "dosageInstruction": [
+          {
+            "text": "1-1-1-0"
+          }
+        ]
       }
     },
     {

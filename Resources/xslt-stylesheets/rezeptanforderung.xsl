@@ -474,6 +474,31 @@
                 <xsl:for-each
                 select="$rootBundle/fhir:entry/fhir:resource/fhir:ServiceRequest[fhir:subject/fhir:reference/@value = concat('Patient/', $patientRef)]">
                     <div class="service-request-box">
+
+                        <!-- Define Reference for MedicationInformation -->
+                        <xsl:variable name="medReqRef" >
+                            <xsl:choose>
+                                <xsl:when test="fhir:supportingInfo[fhir:type/@value = 'MedicationDispense']">
+                                    <xsl:value-of select="fhir:supportingInfo[fhir:type/@value = 'MedicationDispense']/fhir:reference/@value" />
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:value-of select="fhir:basedOn/fhir:reference/@value" />
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </xsl:variable>
+                        
+                        <!-- Define ResourceType for MedicationInformation -->
+                        <xsl:variable name="resourceType" >
+                            <xsl:choose>
+                                <xsl:when test="fhir:supportingInfo[fhir:type/@value = 'MedicationDispense']">
+                                    <xsl:text>MedicationDispense</xsl:text>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:text>MedicationRequest</xsl:text>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </xsl:variable>
+
                         <table>
                             <thead>
                                 <tr>
@@ -494,49 +519,26 @@
                                     </td>
                                     <!-- Medication -->
                                     <td>
-                                        <xsl:choose>
-                                            <xsl:when test="fhir:supportingInfo[fhir:type/@value = 'MedicationDispense']">
-                                                <xsl:variable name="medReqRef" select="fhir:supportingInfo[fhir:type/@value = 'MedicationDispense']/fhir:reference/@value"/>
-                                                <div>
-                                                    <xsl:for-each
-                                                        select="$rootBundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medReqRef) + 1) = $medReqRef]/fhir:resource/fhir:MedicationDispense">
-                                                        <xsl:variable name="medicationRef"
-                                                            select="fhir:medicationReference/fhir:reference/@value" />
-                                                        <xsl:call-template
-                                                            name="medication-info">
-                                                            <xsl:with-param name="medicationRef"
-                                                                select="$medicationRef" />
-                                                            <xsl:with-param name="rootBundle"
-                                                                select="$rootBundle" />
-                                                        </xsl:call-template>
-                                                    </xsl:for-each>
-                                                </div>
-                                            </xsl:when>
-                                            <xsl:otherwise>
-                                                <xsl:variable name="medReqRef" select="fhir:basedOn/fhir:reference/@value"/>
-                                                <div>
-                                                    <xsl:for-each
-                                                        select="$rootBundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medReqRef) + 1) = $medReqRef]/fhir:resource/fhir:MedicationRequest">
-                                                        <xsl:variable name="medicationRef"
-                                                            select="fhir:medicationReference/fhir:reference/@value" />
-                                                        <xsl:call-template
-                                                            name="medication-info">
-                                                            <xsl:with-param name="medicationRef"
-                                                                select="$medicationRef" />
-                                                            <xsl:with-param name="rootBundle"
-                                                                select="$rootBundle" />
-                                                        </xsl:call-template>
-                                                    </xsl:for-each>
-                                                </div>
-                                            </xsl:otherwise>
-                                        </xsl:choose>
+                                        <div>
+                                             
+                                            <xsl:for-each
+                                                select="$rootBundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medReqRef) + 1) = $medReqRef]/fhir:resource/*[local-name() = $resourceType]">
+                                                <xsl:variable name="medicationRef"
+                                                    select="fhir:medicationReference/fhir:reference/@value" />
+                                                <xsl:call-template
+                                                    name="medication-info">
+                                                    <xsl:with-param name="medicationRef"
+                                                        select="$medicationRef" />
+                                                    <xsl:with-param name="rootBundle"
+                                                        select="$rootBundle" />
+                                                </xsl:call-template>
+                                            </xsl:for-each>
+                                        </div>
                                     </td>
                                     <!-- Menge je Packung -->
                                     <td>
-                                        <xsl:variable name="medReqRef"
-                                        select="fhir:basedOn/fhir:reference/@value" />
                                         <xsl:for-each
-                                        select="$rootBundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medReqRef) + 1) = $medReqRef]/fhir:resource/fhir:MedicationRequest">
+                                        select="$rootBundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medReqRef) + 1) = $medReqRef]/fhir:resource/*[local-name() = $resourceType]">
                                             <xsl:variable name="medicationRef"
                                             select="fhir:medicationReference/fhir:reference/@value" />
                                             <xsl:for-each select="$rootBundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medicationRef) + 1) = $medicationRef]/fhir:resource/fhir:Medication">
@@ -547,29 +549,34 @@
                                     </td>
                                     <!-- Mengeneinheiten -->
                                     <td>
-                                        <xsl:variable name="medReqRef"
-                                        select="fhir:basedOn/fhir:reference/@value" />
                                         <xsl:for-each
-                                        select="$rootBundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medReqRef) + 1) = $medReqRef]/fhir:resource/fhir:MedicationRequest">
-                                            <xsl:value-of
-                                            select="fhir:dispenseRequest/fhir:quantity/fhir:value/@value" />
+                                            select="$rootBundle/fhir:entry[
+                                                substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medReqRef) + 1) = $medReqRef
+                                            ]/fhir:resource/*[local-name() = $resourceType]">
+                                            
+                                            <!-- Define the quantity variable -->
+                                            <xsl:variable name="quantity" select="fhir:dispenseRequest/fhir:quantity | fhir:quantity" />
+                                            
+                                            <!-- Extract the quantity value -->
+                                            <xsl:value-of select="$quantity/fhir:value/@value" />
                                             <span>&#160;</span>
+                                            
+                                            <!-- Extract the unit or code -->
                                             <xsl:choose>
-                                                <xsl:when test="fhir:dispenseRequest/fhir:quantity/fhir:unit/@value">
-                                                    <xsl:value-of select="fhir:dispenseRequest/fhir:quantity/fhir:unit/@value" />
+                                                <xsl:when test="$quantity/fhir:unit/@value">
+                                                    <xsl:value-of select="$quantity/fhir:unit/@value" />
                                                 </xsl:when>
                                                 <xsl:otherwise>
-                                                    <xsl:value-of select="translate(fhir:dispenseRequest/fhir:quantity/fhir:code/@value, '{}', '')" />
+                                                    <xsl:value-of select="translate($quantity/fhir:code/@value, '{}', '')" />
                                                 </xsl:otherwise>
                                             </xsl:choose>
+                                            
                                         </xsl:for-each>
                                     </td>
                                     <!-- Dosieranweisung -->
                                     <td>
-                                        <xsl:variable name="medReqRef"
-                                        select="fhir:basedOn/fhir:reference/@value" />
                                         <xsl:for-each
-                                        select="$rootBundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medReqRef) + 1) = $medReqRef]/fhir:resource/fhir:MedicationRequest">
+                                        select="$rootBundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medReqRef) + 1) = $medReqRef]/fhir:resource/*[local-name() = $resourceType]">
                                             <xsl:value-of
                                             select="fhir:dosageInstruction/fhir:text/@value" />
                                             <xsl:if test="fhir:dosageInstruction/fhir:patientInstruction/@value">
@@ -664,8 +671,6 @@
                                 test="fhir:modifierExtension[@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/changed-medication-ex']/fhir:valueBoolean/@value = 'true'">
                                     <div class="changed-pill">Verändertes Medikament</div>
                                 </xsl:if>
-                                <xsl:variable name="medReqRef"
-                                select="fhir:basedOn/fhir:reference/@value" />
                                 <div>
                                     <xsl:for-each
                                     select="$rootBundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medReqRef) + 1) = $medReqRef]/fhir:resource/fhir:MedicationRequest">

@@ -10,3 +10,4 @@ Description: "Example of a Medication Dispense."
 * medicationReference = Reference(Example-Initial-Medication)
 * quantity.value = 1
 * quantity.unit = "Packung"
+* dosageInstruction.text = "1-1-1-0"

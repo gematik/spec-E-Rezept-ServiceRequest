@@ -196,6 +196,13 @@
                         <value value="X234567890"/>
                     </identifier>
                 </subject>
+                <quantity>
+                    <value value="1"/>
+                    <unit value="Packung"/>
+                </quantity>
+                <dosageInstruction>
+                    <text value="1-1-1-0"/>
+                </dosageInstruction>
                 <performer>
                     <actor>
                         <identifier>

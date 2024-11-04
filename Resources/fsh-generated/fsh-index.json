@@ -237,7 +237,7 @@
     "fshType": "Instance",
     "fshFile": "examples/Misc/Example_MedicationDispense.fsh",
     "startLine": 1,
-    "endLine": 12
+    "endLine": 13
   },
   {
     "outputFile": "MedicationRequest-Example-Initial-Medication-Request.json",
