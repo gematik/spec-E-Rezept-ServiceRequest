@@ -1,0 +1,15 @@
+@startuml "MessageCopy_Class"
+!define RECTANGLE class
+
+RECTANGLE "MessageHeader" as MH {
+    +eventCode: #message-copy
+    +focus: Reference<ERPServiceRequestMessageContainer>
+}
+
+RECTANGLE "MessageContainer" as MC {
+    +entry[]: Reference<>
+}
+
+MH .down.> MC : .focus 1..1
+
+@enduml

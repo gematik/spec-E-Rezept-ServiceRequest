@@ -1,0 +1,47 @@
+@startuml "PrescriptionRequest_Confirmation_Class"
+!define RECTANGLE class
+
+RECTANGLE "MessageHeader" as MH {
+    +eventCode: #eRezept_Rezeptanforderung;Rezeptbestaetigung
+    +focus: Reference<ERPServiceRequestPrescriptionRequest>
+}
+
+
+RECTANGLE "ERPServiceRequestPrescriptionRequest" as SR {
+    +identifier:requestId: string
+    +basedOn: Reference<ERPServiceRequestMedicationRequest>
+    +status: #completed
+    +intent: #order
+    +code: #prescription-request
+    +subject: Reference<Patient>
+    +occurrence: dateTime
+    +authoredOn: Date
+    +note: String
+}
+
+RECTANGLE "ERPServiceRequestMedicationRequest" as MR {
+    +dispenseRequest.quantity: Quantity
+    +medicationReference: Reference<KBV_Medication>
+}
+
+RECTANGLE "KBV_Medication" as MED {
+    +(s. eRezept Profile)
+}
+
+RECTANGLE "ERPServiceRequestPatient" as P {
+    +name: String
+    +identifier:kvnr: String
+    +birthDate: Date
+}
+
+RECTANGLE "ERPServiceRequestPractitioner" as PR {
+    +name: String
+    +identifier:ANR: String
+}
+
+MH .down.> SR : .focus 1..*
+SR .down.> P : .subject 1..1
+SR .right.> MR : .basedOn 1..1
+MR .down.> MED : .medication 1..1
+SR .down.> PR : .performer 1..1
+@enduml

@@ -11,7 +11,7 @@
     "system": "urn:ietf:rfc:3986",
     "value": "urn:uuid:c80f6c55-92f8-4518-ba66-cb193da09336"
   },
-  "timestamp": "2023-02-01T13:28:17.239+02:00",
+  "timestamp": "2025-05-14T08:30:12+02:00",
   "entry": [
     {
       "fullUrl": "http://erp-servicerequest-test.de/MessageHeader/UC1-Pharmacy-to-HealthCareService-MessageHeader",
@@ -26,12 +26,12 @@
         "source": {
           "contact": {
             "system": "email",
-            "value": "info@hcs.email"
+            "value": "info@avs_solutions.com"
           },
-          "name": "HealthCare-Source",
-          "software": "HealthCare-Software",
+          "name": "Pharmacy-Source",
+          "software": "Pharmacy-Software",
           "version": "1.0.0",
-          "endpoint": "mailto:healthcare-service@test.kim.de"
+          "endpoint": "https://avs_solutions.com/jira_helpdesk"
         },
         "focus": [
           {
@@ -41,26 +41,79 @@
         "sender": {
           "identifier": {
             "system": "https://gematik.de/fhir/sid/telematik-id",
-            "value": "5-test-telematik-id"
+            "value": "3-test-telematik-id"
           },
-          "display": "Pflegeheim Immergrün"
+          "display": "Test Apotheke"
         },
         "destination": [
           {
-            "receiver": {
-              "identifier": {
-                "system": "https://gematik.de/fhir/sid/telematik-id",
-                "value": "1-test-telematik-id"
-              },
-              "display": "Praxis Hans Topp-Glücklich"
-            },
-            "endpoint": "mailto:practitioner@test.kim.de"
+            "name": "Pflegeheim Immergrün",
+            "endpoint": "mailto:healthcare-service@test.kim.de"
           }
         ],
         "eventCoding": {
           "code": "eRezept_Rezeptanforderung;Abgabebestaetigung",
           "system": "https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"
+        },
+        "responsible": {
+          "reference": "Organization/Example-Pharmacy-Organization"
         }
+      }
+    },
+    {
+      "fullUrl": "http://erp-servicerequest-test.de/Organization/Example-Pharmacy-Organization",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "Example-Pharmacy-Organization",
+        "meta": {
+          "tag": [
+            {
+              "system": "https://gematik.de/fhir/directory/CodeSystem/Origin",
+              "code": "owner"
+            }
+          ],
+          "profile": [
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://gematik.de/fhir/sid/telematik-id",
+            "value": "123456789"
+          }
+        ],
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "0301234567"
+              }
+            ]
+          }
+        ],
+        "name": "Test Apotheke",
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "1.2.276.0.76.4.54",
+                "system": "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID",
+                "display": "Öffentliche Apotheke"
+              }
+            ]
+          }
+        ],
+        "address": [
+          {
+            "type": "both",
+            "line": [
+              "Musterstr. 2"
+            ],
+            "city": "Berlin",
+            "postalCode": "10623"
+          }
+        ]
       }
     },
     {
@@ -74,8 +127,14 @@
           ]
         },
         "intent": "filler-order",
+        "identifier": [
+          {
+            "system": "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier",
+            "value": "2"
+          }
+        ],
         "requisition": {
-          "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemProcedureIdentifier",
+          "system": "https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier",
           "value": "GroupID-UC1"
         },
         "code": {
@@ -92,22 +151,17 @@
             "reference": "MedicationDispense/UC1-Medication-Dispense"
           }
         ],
-        "identifier": [
-          {
-            "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemRequestIdentifier",
-            "value": "2"
-          },
-          {
-            "system": "https://gematik.de/fhir/erp-servicerequest/sid/NamingSystemPreDisIdentifier",
-            "value": "PreDis-1"
-          }
-        ],
         "status": "completed",
         "subject": {
           "reference": "Patient/Example-Patient"
         },
-        "occurrenceDateTime": "2023-02-01",
-        "authoredOn": "2023-02-01"
+        "authoredOn": "2025-05-14",
+        "note": [
+          {
+            "text": "Lagert vor Ort. Kann bis 13:00 heute per Botendienst geliefert werden.",
+            "time": "2025-05-14T08:27:05+02:00"
+          }
+        ]
       }
     },
     {
@@ -117,23 +171,9 @@
         "id": "Example-Patient",
         "meta": {
           "profile": [
-            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-patient"
           ]
         },
-        "identifier": [
-          {
-            "type": {
-              "coding": [
-                {
-                  "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
-                  "code": "GKV"
-                }
-              ]
-            },
-            "system": "http://fhir.de/sid/gkv/kvid-10",
-            "value": "X234567890"
-          }
-        ],
         "name": [
           {
             "use": "official",
@@ -151,9 +191,14 @@
             ]
           }
         ],
+        "identifier": [
+          {
+            "system": "http://fhir.de/sid/gkv/kvid-10",
+            "value": "X234567890"
+          }
+        ],
         "address": [
           {
-            "type": "both",
             "line": [
               "Musterstr. 1"
             ],
@@ -171,6 +216,7 @@
                 ]
               }
             ],
+            "type": "both",
             "city": "Berlin",
             "postalCode": "10623"
           }
@@ -179,10 +225,35 @@
       }
     },
     {
-      "fullUrl": "http://erp-servicerequest-test.de/Medication/Example-Response-Medication",
+      "fullUrl": "http://erp-servicerequest-test.de/MedicationDispense/UC1-Medication-Dispense",
+      "resource": {
+        "resourceType": "MedicationDispense",
+        "id": "UC1-Medication-Dispense",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-dispense"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
+            "value": "169.100.000.000.002.36"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/Example-Patient"
+        },
+        "status": "completed",
+        "medicationReference": {
+          "reference": "Medication/Example-Initial-Medication"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://erp-servicerequest-test.de/Medication/Example-Initial-Medication",
       "resource": {
         "resourceType": "Medication",
-        "id": "Example-Response-Medication",
+        "id": "Example-Initial-Medication",
         "meta": {
           "profile": [
             "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.1.0"
@@ -225,7 +296,7 @@
               "code": "08585997"
             }
           ],
-          "text": "Prospan® Hustensaft 100ml N1"
+          "text": "Prospan® Hustensaft 100ml"
         },
         "form": {
           "coding": [
@@ -235,133 +306,6 @@
             }
           ]
         }
-      }
-    },
-    {
-      "fullUrl": "http://erp-servicerequest-test.de/MedicationDispense/UC1-Medication-Dispense",
-      "resource": {
-        "resourceType": "MedicationDispense",
-        "id": "UC1-Medication-Dispense",
-        "meta": {
-          "profile": [
-            "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|1.2"
-          ]
-        },
-        "status": "completed",
-        "identifier": [
-          {
-            "use": "official",
-            "system": "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
-            "value": "160.100.000.000.002.36"
-          }
-        ],
-        "performer": [
-          {
-            "actor": {
-              "identifier": {
-                "system": "https://gematik.de/fhir/sid/telematik-id",
-                "value": "12345678901234567890"
-              }
-            }
-          }
-        ],
-        "contained": [
-          {
-            "resourceType": "Medication",
-            "id": "Example-Response-Medication",
-            "meta": {
-              "profile": [
-                "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.1.0"
-              ]
-            },
-            "extension": [
-              {
-                "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Medication_Type",
-                "valueCodeableConcept": {
-                  "coding": [
-                    {
-                      "system": "http://snomed.info/sct",
-                      "version": "http://snomed.info/sct/900000000000207008/version/20220331",
-                      "code": "763158003",
-                      "display": "Medicinal product (product)"
-                    }
-                  ]
-                }
-              },
-              {
-                "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Category",
-                "valueCoding": {
-                  "code": "00",
-                  "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Category"
-                }
-              },
-              {
-                "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Vaccine",
-                "valueBoolean": false
-              },
-              {
-                "url": "http://fhir.de/StructureDefinition/normgroesse",
-                "valueCode": "N1"
-              }
-            ],
-            "code": {
-              "coding": [
-                {
-                  "system": "http://fhir.de/CodeSystem/ifa/pzn",
-                  "code": "08585997"
-                }
-              ],
-              "text": "Prospan® Hustensaft 100ml N1"
-            },
-            "form": {
-              "coding": [
-                {
-                  "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM",
-                  "code": "FLE"
-                }
-              ]
-            }
-          }
-        ],
-        "medicationReference": {
-          "reference": "#Example-Response-Medication"
-        },
-        "subject": {
-          "identifier": {
-            "system": "http://fhir.de/sid/gkv/kvid-10",
-            "value": "X123456789"
-          }
-        },
-        "whenHandedOver": "2020-04-16T13:44:27.957+00:00",
-        "dosageInstruction": [
-          {
-            "sequence": 1,
-            "text": "Eine Tablette täglich",
-            "timing": {
-              "repeat": {
-                "frequency": 1,
-                "period": 1,
-                "periodUnit": "d"
-              }
-            },
-            "doseAndRate": [
-              {
-                "type": {
-                  "coding": [
-                    {
-                      "code": "ordered",
-                      "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type"
-                    }
-                  ]
-                },
-                "doseQuantity": {
-                  "value": 1,
-                  "unit": "tablet"
-                }
-              }
-            ]
-          }
-        ]
       }
     }
   ]

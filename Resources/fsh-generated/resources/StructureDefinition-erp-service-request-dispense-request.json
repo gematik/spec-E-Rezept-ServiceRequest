@@ -2,53 +2,15 @@
   "resourceType": "StructureDefinition",
   "id": "erp-service-request-dispense-request",
   "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request",
-  "version": "1.0",
+  "version": "1.2",
   "name": "ERPServiceRequestDispenseRequest",
   "title": "ERP Service Request Dispense Request",
-  "status": "active",
+  "status": "draft",
   "experimental": false,
+  "date": "2025-01-01",
   "publisher": "gematik GmbH",
   "description": "ServiceRequest that is used to supply a recipe",
   "fhirVersion": "4.0.1",
-  "mapping": [
-    {
-      "identity": "workflow",
-      "uri": "http://hl7.org/fhir/workflow",
-      "name": "Workflow Pattern"
-    },
-    {
-      "identity": "v2",
-      "uri": "http://hl7.org/v2",
-      "name": "HL7 v2 Mapping"
-    },
-    {
-      "identity": "rim",
-      "uri": "http://hl7.org/v3",
-      "name": "RIM Mapping"
-    },
-    {
-      "identity": "w5",
-      "uri": "http://hl7.org/fhir/fivews",
-      "name": "FiveWs Pattern Mapping"
-    },
-    {
-      "identity": "quick",
-      "uri": "http://siframework.org/cqf",
-      "name": "Quality Improvement and Clinical Knowledge (QUICK)"
-    },
-    {
-      "identity": "Dispensieranforderung-Rezeptuebermittlung",
-      "name": "Dispensieranforderung_Rezeptübermittlung",
-      "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
-      "comment": "Mapping for 'fachliche Informationseineit' of the 'Belieferungsanfrage' of the feature document"
-    },
-    {
-      "identity": "Dispensieranforderung-Bestaetigung",
-      "name": "Dispensieranforderung_Bestätigung",
-      "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
-      "comment": "Mapping for 'fachliche Informationseineit' of the 'Belieferungsanfrage' of the feature document"
-    }
-  ],
   "kind": "resource",
   "abstract": false,
   "type": "ServiceRequest",
@@ -59,14 +21,34 @@
       {
         "id": "ServiceRequest",
         "path": "ServiceRequest",
-        "mapping": [
+        "constraint": [
           {
-            "identity": "Dispensieranforderung-Rezeptuebermittlung",
-            "map": "Dispensieranforderung_Rezeptübermittlung"
+            "key": "servicerequest-dispense-request-1",
+            "severity": "error",
+            "human": "If the status is active, then requester must be present.",
+            "expression": "status = 'active' implies requester.exists()",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"
           },
           {
-            "identity": "Dispensieranforderung-Bestaetigung",
-            "map": "Dispensieranforderung_Bestätigung"
+            "key": "servicerequest-dispense-request-2",
+            "severity": "error",
+            "human": "If the status is active, then the e-prescription-token must be present.",
+            "expression": "status = 'active' implies extension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex').exists()",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"
+          },
+          {
+            "key": "servicerequest-dispense-request-3",
+            "severity": "error",
+            "human": "If the status is completed, then the dispense data must be present.",
+            "expression": "status = 'completed' implies supportingInfo.where(type='MedicationDispense').exists()",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"
+          },
+          {
+            "key": "servicerequest-dispense-request-4",
+            "severity": "error",
+            "human": "If the the code for the delivery type is alternatve-address, then the address must be stated.",
+            "expression": "(status = 'active' and code.coding.where(system='https://gematik.de/fhir/erp-servicerequest/CodeSystem/delivery-type-cs').exists() and code.coding.where(system='https://gematik.de/fhir/erp-servicerequest/CodeSystem/delivery-type-cs').code = 'delivery-to-alternative-address') implies (extension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/alternative-delivery-address-ex').exists() and extension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/alternative-delivery-address-ex').value.empty().not())",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"
           }
         ]
       },
@@ -91,17 +73,45 @@
             ]
           }
         ],
-        "mustSupport": true,
-        "mapping": [
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.extension:alternativeDeliveryAddress",
+        "path": "ServiceRequest.extension",
+        "sliceName": "alternativeDeliveryAddress",
+        "short": "Alternative delivery address.",
+        "definition": "If the ServiceRequest states that the delivery should be delivered to an alternative address, it must be stated here.",
+        "min": 0,
+        "max": "1",
+        "type": [
           {
-            "identity": "Dispensieranforderung-Rezeptuebermittlung",
-            "map": "ERezept_Access_Code"
-          },
-          {
-            "identity": "Dispensieranforderung-Rezeptuebermittlung",
-            "map": "ERezept_Task_ID"
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/alternative-delivery-address-ex"
+            ]
           }
-        ]
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.modifierExtension:medicationChanged",
+        "path": "ServiceRequest.modifierExtension",
+        "sliceName": "medicationChanged",
+        "short": "Indicates whether the medication has been changed by the pharmacy.",
+        "definition": "If the medication has been changed, the value is set to true.",
+        "comment": "If the medication has been changed, the receiving system must display the changed medication to the receiving user.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/changed-medication-ex"
+            ]
+          }
+        ],
+        "mustSupport": true,
+        "isModifierReason": "If the medication has been changed, the receiving system must display the changed medication to the receiving user."
       },
       {
         "id": "ServiceRequest.identifier",
@@ -137,34 +147,6 @@
         ]
       },
       {
-        "id": "ServiceRequest.identifier:predisId",
-        "path": "ServiceRequest.identifier",
-        "sliceName": "predisId",
-        "short": "Identifier that connects a prescription and a dispensing request.",
-        "definition": "In some applications, it is necessary to know which prescription request belongs to which delivery request. If, for example, a medication is requested, you want to be able to track which is the corresponding delivery request. The predisIdentifier is used for this purpose, which identifies a pair of ServiceRequest**Prescription**Request and ServiceRequest**Dispense**Request together.",
-        "comment": "Can be mapped via a UUID, for example.",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Identifier",
-            "profile": [
-              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-pre-dis-identifier"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "ServiceRequest.basedOn",
-        "path": "ServiceRequest.basedOn",
-        "mapping": [
-          {
-            "identity": "Dispensieranforderung-Rezeptuebermittlung",
-            "map": "Strukturierter_Verordnungsdatensatz"
-          }
-        ]
-      },
-      {
         "id": "ServiceRequest.requisition",
         "path": "ServiceRequest.requisition",
         "short": "Identifier of the process. All ServiceRequests within a process receive the same ID.",
@@ -174,21 +156,11 @@
           {
             "code": "Identifier",
             "profile": [
-              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/identifier-procedure-identifier"
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-procedure-identifier"
             ]
           }
         ],
-        "mustSupport": true,
-        "mapping": [
-          {
-            "identity": "Dispensieranforderung-Rezeptuebermittlung",
-            "map": "Vorgangs_ID"
-          },
-          {
-            "identity": "Dispensieranforderung-Bestaetigung",
-            "map": "Vorgangs_ID"
-          }
-        ]
+        "mustSupport": true
       },
       {
         "id": "ServiceRequest.status",
@@ -207,16 +179,52 @@
         "fixedCode": "filler-order"
       },
       {
+        "id": "ServiceRequest.priority",
+        "path": "ServiceRequest.priority",
+        "short": "Indicates the urgency of the request.",
+        "definition": "The priority can be used to indicate the urgency of the request.",
+        "comment": "Allowed values: routine | urgent",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/erp-servicerequest/ValueSet/service-request-priority-vs"
+        }
+      },
+      {
         "id": "ServiceRequest.code",
         "path": "ServiceRequest.code",
         "short": "Indicates the type of service request.",
+        "min": 1,
         "mustSupport": true
       },
       {
         "id": "ServiceRequest.code.coding",
         "path": "ServiceRequest.code.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "$this"
+            }
+          ],
+          "rules": "open",
+          "description": "Differentiates between the service request type and additional information.",
+          "ordered": false
+        },
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.code.coding:request-type",
+        "path": "ServiceRequest.code.coding",
+        "sliceName": "request-type",
+        "short": "Indicates the type of service request.",
         "min": 1,
         "max": "1",
+        "patternCoding": {
+          "code": "dispense-request",
+          "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
+        },
         "mustSupport": true,
         "binding": {
           "strength": "required",
@@ -224,26 +232,53 @@
         }
       },
       {
-        "id": "ServiceRequest.code.coding.system",
+        "id": "ServiceRequest.code.coding:request-type.system",
         "path": "ServiceRequest.code.coding.system",
         "min": 1
       },
       {
-        "id": "ServiceRequest.code.coding.code",
+        "id": "ServiceRequest.code.coding:request-type.code",
         "path": "ServiceRequest.code.coding.code",
         "comment": "#dispense-request serves as a service request for a pharmacy to deliver a prescription.",
-        "min": 1,
-        "fixedCode": "dispense-request"
+        "min": 1
+      },
+      {
+        "id": "ServiceRequest.code.coding:delivery-type",
+        "path": "ServiceRequest.code.coding",
+        "sliceName": "delivery-type",
+        "short": "Indicates how the delivery should be made.",
+        "definition": "The delivery type can be used to indicate how the delivery should be made. The following options are available: pickup-by-healthcare-service, pickup-by-patient, delivery-to-healthcare-service, delivery-to-alternative-address.",
+        "comment": "If the delivery type is delivery-to-alternative-address, the alternative address must be specified in location.",
+        "min": 0,
+        "max": "1",
+        "patternCoding": {
+          "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/delivery-type-cs"
+        },
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/erp-servicerequest/ValueSet/delivery-type-vs"
+        }
+      },
+      {
+        "id": "ServiceRequest.code.coding:delivery-type.system",
+        "path": "ServiceRequest.code.coding.system",
+        "min": 1
+      },
+      {
+        "id": "ServiceRequest.code.coding:delivery-type.code",
+        "path": "ServiceRequest.code.coding.code",
+        "min": 1
       },
       {
         "id": "ServiceRequest.subject",
         "path": "ServiceRequest.subject",
-        "short": "Patient for whom a prescription is to be delivered.",
+        "short": "Patient for whom a dispense is requested on behalf of the patient.",
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/Patient"
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-patient"
             ]
           }
         ],
@@ -253,7 +288,6 @@
         "id": "ServiceRequest.occurrence[x]",
         "path": "ServiceRequest.occurrence[x]",
         "short": "Indicates the date when the medication should be delivered.",
-        "min": 1,
         "type": [
           {
             "code": "dateTime"
@@ -270,6 +304,21 @@
         "mustSupport": true
       },
       {
+        "id": "ServiceRequest.requester",
+        "path": "ServiceRequest.requester",
+        "short": "Inquiring facility or practitioner.",
+        "comment": "The KIM address is already stored in the message header.",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
         "id": "ServiceRequest.supportingInfo",
         "path": "ServiceRequest.supportingInfo",
         "slicing": {
@@ -280,7 +329,7 @@
             }
           ],
           "rules": "open",
-          "description": "Supporting information about delivery"
+          "description": "Supporting information about dispense"
         },
         "mustSupport": true
       },
@@ -294,50 +343,32 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/MedicationDispense"
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-dispense"
             ]
           }
         ],
-        "mustSupport": true,
-        "mapping": [
-          {
-            "identity": "Dispensieranforderung-Bestaetigung",
-            "map": "Strukturierter_Dispensierungsdatensatz"
-          }
-        ]
+        "mustSupport": true
       },
       {
         "id": "ServiceRequest.supportingInfo:AbgabeDaten.type",
         "path": "ServiceRequest.supportingInfo.type",
-        "short": "Delivery data that is also sent to the e-prescription specialist service.",
-        "comment": "In this way, the inquiring facility/person can understand which medications are actually supplied.",
+        "short": "Dispense data that is also sent to the e-prescription server.",
         "min": 1,
         "fixedUri": "MedicationDispense"
       },
       {
         "id": "ServiceRequest.note",
         "path": "ServiceRequest.note",
-        "short": "Further information on delivery.",
+        "short": "Further information on the dispense request.",
         "comment": "Any use cases that are not specified can be placed here in free text.",
-        "mustSupport": true,
-        "mapping": [
-          {
-            "identity": "Dispensieranforderung-Rezeptuebermittlung",
-            "map": "Hinweise_fuer_Empfänger"
-          },
-          {
-            "identity": "Dispensieranforderung-Rezeptuebermittlung",
-            "map": "Freitext"
-          },
-          {
-            "identity": "Dispensieranforderung-Bestaetigung",
-            "map": "Hinweise_fuer_Empfänger"
-          },
-          {
-            "identity": "Dispensieranforderung-Bestaetigung",
-            "map": "Freitext"
-          }
-        ]
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.note.time",
+        "path": "ServiceRequest.note.time",
+        "comment": "This is used in order to sort the Annotations",
+        "min": 1,
+        "mustSupport": true
       }
     ]
   }
