@@ -250,6 +250,10 @@
         "status": "completed",
         "medicationReference": {
           "reference": "Medication/Example-Initial-Medication"
+        },
+        "quantity": {
+          "value": 1,
+          "unit": "Packung"
         }
       }
     },

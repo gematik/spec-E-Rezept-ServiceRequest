@@ -237,7 +237,7 @@
     "fshType": "Instance",
     "fshFile": "examples/Misc/Example_MedicationDispense.fsh",
     "startLine": 1,
-    "endLine": 10
+    "endLine": 12
   },
   {
     "outputFile": "MedicationRequest-Example-Initial-Medication-Request.json",
@@ -413,7 +413,7 @@
     "fshType": "Profile",
     "fshFile": "profiles/4.2_MedicationDispense.fsh",
     "startLine": 1,
-    "endLine": 24
+    "endLine": 49
   },
   {
     "outputFile": "StructureDefinition-erp-service-request-medication-request.json",
