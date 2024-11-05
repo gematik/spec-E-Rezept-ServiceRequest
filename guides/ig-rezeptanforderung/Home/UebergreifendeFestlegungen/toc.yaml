@@ -12,3 +12,5 @@
   filename: Ressource-Usage.page.md
 - name: Hinweis zu den Beispielen
   filename: Examples.page.md
+- name: Weitere Hinweise
+  filename: ILF_Description.page.md
