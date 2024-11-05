@@ -140,7 +140,7 @@ class PharmacyKIMClient(KIMClient):
             additional_bundle_entries=dispense_additional_bundle_entries
         )
 
-        attachments, html = self.file_handler.create_files(response_bundle, "atf_eRezept_Abgabebestaetigung")
+        attachments, html = self.file_handler.create_file(response_bundle, "atf_eRezept_Abgabebestaetigung")
 
         # Sende Abgabeanfrage an Apotheke
         self.send_message(

@@ -92,7 +92,7 @@ class HealthCareServiceKIMClient(KIMClient):
             )
         )
 
-        attachments, html  = self.file_handler.create_files(prescription_request_bundle, "atf_eRezept_Rezeptanforderung")
+        attachments, html  = self.file_handler.create_file(prescription_request_bundle, "atf_eRezept_Rezeptanforderung")
 
     
 
@@ -141,7 +141,7 @@ class HealthCareServiceKIMClient(KIMClient):
             "Wir kommen zur üblichen Zeit, und parken gerne wieder auf dem Hinterhof"
         )
 
-        attachments, html  = self.file_handler.create_files(dispense_request_bundle, "atf_eRezept_Abgabeanfrage")
+        attachments, html  = self.file_handler.create_file(dispense_request_bundle, "atf_eRezept_Abgabeanfrage")
 
         logger.info(
             "Sende Abgabeanfrage an: %s",

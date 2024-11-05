@@ -8,6 +8,7 @@ from helper.ressource_creators.message_header_creator import MessageHeaderCreato
 from helper.ressource_creators.message_bundle_creator import MessageBundleCreator
 from helper.ressource_creators.participant_creator import ParticipantsCreator
 from helper.ressource_creators.bundle_creator import BundleCreator
+from helper.app_transport_framework.atf_helper import ATFHelper
 
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
@@ -36,12 +37,14 @@ from fhir.resources.R4B.extension import Extension
 from fhir.resources.R4B.identifier import Identifier
 from fhir.resources.R4B.reference import Reference
 from fhir.resources.R4B.fhirtypes import ReferenceType
+from fhir.resources.R4B.operationoutcome import OperationOutcomeIssue
 from fhir.resources.R4B.messageheader import (
     MessageHeaderDestination,
     MessageHeaderSource,
 )
 
 logger = logging.getLogger("Arztpraxis")
+
 
 class PvsKIMClient(KIMClient):
     def __init__(
@@ -51,13 +54,6 @@ class PvsKIMClient(KIMClient):
     ):
         logger.debug(f"PvsKIMClient für {client_name} initialisiert.")
         super().__init__(client_name, sender_info)
-        self.fhir_bundle_processor = FHIR_Bundle_Processor()
-        self.coverage_creator = CoverageCreator()
-        self.medication_request_converter = MedicationRequestConverter()
-        self.practitioner = PractitionerCreator().get_example_practitioner()
-        self.fachdienst_mock = FachdienstMock()
-        self.html_renderer = HTMLRenderer()
-        self.file_handler = FileHandler(self.attachment_folder, self.html_renderer)
         self.software_info = {
             "name": "DeltaCare Inc.",
             "product": "PraxisFix",
@@ -65,31 +61,119 @@ class PvsKIMClient(KIMClient):
             "email": "issues@praxisfix-deltacare.de",
             "endpoint": "https://deltacare.de/praxisfix/issues",
         }
+        self.atf_helper = ATFHelper(
+            sender_info=self.sender_info, source_info=self.software_info
+        )
+        self.fhir_bundle_processor = FHIR_Bundle_Processor()
+        self.coverage_creator = CoverageCreator()
+        self.medication_request_converter = MedicationRequestConverter()
+        self.practitioner = PractitionerCreator().get_example_practitioner()
+        self.fachdienst_mock = FachdienstMock()
+        self.html_renderer = HTMLRenderer()
+        self.file_handler = FileHandler(self.attachment_folder, self.html_renderer)
+
+    def send_empfangsbestätigung(self, message_header, issues):
+        message_to_send = self.atf_helper.create_empfangsbestätigung(
+            message_header, issues
+        )
+
+        attachment, html = self.file_handler.create_file(message_to_send.atf_bundle, message_to_send.message_type)
+        self.send_message(
+            message_header.sender.display,
+            message_to_send.message_type,
+            "Empfangsbestätigung",
+            html,
+            attachment
+        )
+        
 
     def process_message(self, message_content):
         FileAttachmentHandler = FHIRAttachmentHandler(message_content["attachments"])
         fhir_bundle = FileAttachmentHandler.get_fhir_bundle()
+
         if fhir_bundle:
-            self.handle_message_event(fhir_bundle)
+            try:
+                self.handle_message_event(fhir_bundle)
+            except Exception as e:
+                logger.error("Fehler bei der Nachrichtverarbeitung: %s", str(e))
+                self.send_empfangsbestätigung(
+                    message_header=fhir_bundle.entry[0].resource,
+                    issues=[
+                        OperationOutcomeIssue(
+                            severity="error", code="processing", diagnostics=str(e)
+                        )
+                    ],
+                )
         else:
             logger.error("FHIR Bundle konnte nicht verarbeitet werden.")
+            # Send an error reception confirmation if FHIR Bundle processing fails
+            self.send_empfangsbestätigung(
+                message_header=None,
+                issues=[
+                    OperationOutcomeIssue(
+                        severity="error",
+                        code="invalid",
+                        diagnostics="FHIR Bundle ist ungültig oder fehlend",
+                    )
+                ],
+            )
         return
 
     def handle_message_event(self, atf_request_bundle: Bundle):
         logger.debug("Empfangene Nachricht durch Arzt: %s", atf_request_bundle)
-
         message_header = self.fhir_bundle_processor.extract_message_header(
             atf_request_bundle
         )
 
         if message_header.eventCoding.code == "eRezept_Rezeptanforderung;Rezeptanfrage":
-            self.handle_prescription_request(message_header, atf_request_bundle)
+            if self.validate_prescription_request(message_header, atf_request_bundle):
+                # Send a positive confirmation
+                self.send_empfangsbestätigung(
+                    message_header=message_header,
+                    issues=[
+                    OperationOutcomeIssue(
+                        severity="information",
+                        code="informational",
+                        diagnostics="Nachricht erfolgreich validiert",
+                    )
+                ]
+                )
+                self.process_prescription_request(message_header, atf_request_bundle)
+            else:
+                # Error confirmation sent by validate_prescription_request on failure
+                pass
         else:
             logger.warning(
                 f"Unbekannter EventCode: {message_header.eventCoding.code}. Keine spezifische Verarbeitung definiert."
             )
 
-    def handle_prescription_request(self, message_header, atf_request_bundle):
+    def validate_prescription_request(self, message_header, atf_request_bundle):
+        """
+        Validiert die Rezeptanforderung.
+        """
+        logger.info("Validierung der Rezeptanforderung begonnen.")
+        service_request = self.fhir_bundle_processor.get_resource_by_type(
+            atf_request_bundle.entry, ServiceRequest
+        )
+
+        if not service_request or service_request.status != "active":
+            logger.error("Service Request ist nicht aktiv oder fehlt.")
+            self.send_empfangsbestätigung(
+                message_header=message_header,
+                issues=[
+                    OperationOutcomeIssue(
+                        severity="error",
+                        code="processing",
+                        diagnostics="Service Request ist inaktiv oder ungültig",
+                    )
+                ],
+            )
+            return False
+
+        # Additional validation logic here as needed
+        return True
+
+    def process_prescription_request(self, message_header, atf_request_bundle):
         """
         Verarbeitet eine Rezeptanforderung.
         """
@@ -131,7 +215,7 @@ class PvsKIMClient(KIMClient):
             request_organisation_id,
         )
 
-        attachments, html = self.file_handler.create_files(
+        attachments, html = self.file_handler.create_file(
             prescription_request_response, "atf_eRezept_Rezeptbestätigung"
         )
 

@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Bundle xmlns="http://hl7.org/fhir">
+    <id value="6531d245-2fa9-48db-a293-7c3871a68398"/>
+    <meta>
+        <profile value="https://gematik.de/fhir/atf/StructureDefinition/bundle-app-transport-framework"/>
+    </meta>
+    <identifier>
+        <system value="urn:ietf:rfc:3986"/>
+        <value value="urn:uuid:6531d245-2fa9-48db-a293-7c3871a68398"/>
+    </identifier>
+    <type value="message"/>
+    <timestamp value="2024-11-05T12:56:19.220925+00:00"/>
+    <entry>
+        <fullUrl value="urn:uuid:5d4019ed-c174-4a6c-af5f-7b93629ee8b3"/>
+        <resource>
+            <MessageHeader>
+                <id value="5d4019ed-c174-4a6c-af5f-7b93629ee8b3"/>
+                <meta>
+                    <profile value="https://gematik.de/fhir/atf/StructureDefinition/message-header-app-transport"/>
+                </meta>
+                <eventCoding>
+                    <system value="https://gematik.de/fhir/atf/CodeSystem/operation-identifier-cs"/>
+                    <code value="atf;Empfangsbestaetigung"/>
+                    <display value="Empfangsbestätigung und Auskunft über FHIR Interpretierbarkeit der Nachricht"/>
+                </eventCoding>
+                <destination>
+                    <endpoint value="mailto:healthcare-service@test.kim.de"/>
+                    <receiver>
+                        <identifier>
+                            <system value="https://gematik.de/fhir/sid/telematik-id"/>
+                            <value value="5-test-telematik-id-pflegeinrichtung"/>
+                        </identifier>
+                        <display value="Pflegeheim Immergrün"/>
+                    </receiver>
+                </destination>
+                <sender>
+                    <identifier>
+                        <system value="https://gematik.de/fhir/sid/telematik-id"/>
+                        <value value="5-test-telematik-id-praxis"/>
+                    </identifier>
+                    <display value="Praxis Hans Topp-Glücklich"/>
+                </sender>
+                <source>
+                    <name value="DeltaCare Inc."/>
+                    <software value="PraxisFix"/>
+                    <version value="1.3.2"/>
+                    <contact>
+                        <system value="email"/>
+                        <value value="issues@praxisfix-deltacare.de"/>
+                    </contact>
+                    <endpoint value="https://deltacare.de/praxisfix/issues"/>
+                </source>
+                <focus>
+                    <reference value="urn:uuid:1e383f77-601e-4ac9-823e-6b7cf055b455"/>
+                </focus>
+            </MessageHeader>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="urn:uuid:1e383f77-601e-4ac9-823e-6b7cf055b455"/>
+        <resource>
+            <OperationOutcome>
+                <id value="1e383f77-601e-4ac9-823e-6b7cf055b455"/>
+                <meta>
+                    <profile value="https://gematik.de/fhir/atf/StructureDefinition/atf-operation-outcome"/>
+                </meta>
+                <extension url="https://gematik.de/fhir/atf/StructureDefinition/atf-message-id-ex">
+                    <valueString value="a296cbfe-e61f-4673-8d19-2573e95d2d6e"/>
+                </extension>
+                <issue>
+                    <severity value="information"/>
+                    <code value="informational"/>
+                    <diagnostics value="Nachricht erfolgreich validiert"/>
+                </issue>
+            </OperationOutcome>
+        </resource>
+    </entry>
+</Bundle>
