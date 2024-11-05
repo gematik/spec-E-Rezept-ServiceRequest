@@ -16,7 +16,7 @@ Anwendungsfälle des Features "KIM-Nachrichten für das E-Rezept" werden nicht �
 Daher handelt es sich grundlegend, aufbauend auf dem App-Transport-Framework (ATF) der gematik, um ein FHIR Message Konzept (https://www.hl7.org/fhir/messaging.html).
 Aus dem App-Transport-Framework werden die Ressourcen "Bundle" und "MessageHeader" genutzt, um einerseits alle Ressourcen zu übermitteln, als auch Informationen über Sender und Empfänger zu halten. Die Funktionsweise und Implementierung des App-Transport-Framework sind im entsprechenden [Implementation Guide](https://simplifier.net/app-transport-framework/~guides) zu finden.
 
-`Dieser Implementation Guide basiert auf Version ==X.X.X //TODO Version und Link!!== des App Transport Frameworks. Die folgende Stufe des ATF MUSS unterstützt werden, um konform zu diesem IG zu sein:`
+Dieser Implementation Guide basiert auf Version 1.4.0 des App Transport Frameworks. Die folgende Stufe des ATF MUSS unterstützt werden, um konform zu diesem IG zu sein:
 
 **Stufe 1** 
 - Datenmodell und Messaging Konzept MUSS unterstützt werden
@@ -56,6 +56,9 @@ Ein ServiceRequest spiegelt neben den fachlichen Informationen auch den Status d
 | revoked          | Anfrage wurde vom Verordnenden abgelehnt  |
 | completed        | Anfrage wurde von der zu bearbeitenden Partei erfüllt    |
 
+## Visuelle Darstellung
+Die in diesem Projekt erzeugten Ressourcen lassen sich mit einem XSLT-Stylesheet in ein HTML überführen, um sie für Anwender sichtbar zu machen. Notwendigkeit und Voraussetzungen sind im [Featuredokument gemF_eRp_KIM](https://gemspec.gematik.de/docs/gemF/gemF_eRp_KIM/latest/) beschrieben.
+Das Stylesheet findet sich im GitHub Repository: [XSLT-Stylesheet](https://github.com/gematik/spec-E-Rezept-ServiceRequest/tree/master/Resources/xslt-stylesheets).
 
 ## Beispiele
 Beispielinstanzen sind unter {{pagelink:Home/Examples.page.md}} zu finden.
@@ -71,3 +74,19 @@ Die Beispiele tragen jeweils das Präfix zum entsprechenden UseCase und der ents
 Für UC1 gibt es auch Beispiele für Stornierung und Ablehnung.
 
 HINWEIS: Die Beispiele, die in dieser Spezifikation auf Simplifier vorhanden sind verwenden URL-Referenzen. Dies dient der Anschaulichkeit und dem Nachvollziehen von Ressourcen und Referenzen. Für den produktiven Einsatz sollten absolute Referenzen mit UUID's verwendet werden: "urn:uuid:e615aa46-30f3-4d3f-b3f1-3274ad314b5c".
+
+## Veranschaulichung am Demonstrator
+
+Die folgenden Videos demonstrieren die Anwendungsfälle aus Sicht der Akteure der in diesem IG aufgeführten Akteure.
+
+### Rezeptanforderungen im ambulanten Pflegedienst
+
+Im folgenden wird der Anwendungsfall "Rezeptanforderung durch Pflegeeinrichtung" am Demonstrator veranschaulicht.
+
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/ibP9gmvdIgo?si=-KlkXbqSQ9brOdg-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+### Rezeptanforderungen der heimversorgenden Apotheke
+
+Im folgenden wird der Anwendungsfall "Rezeptanforderung der heimversorgenden Apotheke" am Demonstrator veranschaulicht.
+
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/GmM0tghWLKw?si=SmkWJIod__jjxN0F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

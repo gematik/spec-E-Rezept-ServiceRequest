@@ -26,12 +26,12 @@
         "source": {
           "contact": {
             "system": "email",
-            "value": "info@avs.email"
+            "value": "info@avs_solutions.com"
           },
           "name": "Pharmacy-Source",
           "software": "Pharmacy-Software",
           "version": "1.0.0",
-          "endpoint": "pharmacy@test.kim.de"
+          "endpoint": "https://avs_solutions.com/jira_helpdesk"
         },
         "focus": [
           {
@@ -48,7 +48,7 @@
         "destination": [
           {
             "name": "Pflegeheim Immergrün",
-            "endpoint": "healthcare-service@test.kim.de"
+            "endpoint": "mailto:healthcare-service@test.kim.de"
           }
         ],
         "eventCoding": {
@@ -250,7 +250,16 @@
         "status": "completed",
         "medicationReference": {
           "reference": "Medication/Example-Initial-Medication"
-        }
+        },
+        "quantity": {
+          "value": 1,
+          "unit": "Packung"
+        },
+        "dosageInstruction": [
+          {
+            "text": "1-1-1-0"
+          }
+        ]
       }
     },
     {

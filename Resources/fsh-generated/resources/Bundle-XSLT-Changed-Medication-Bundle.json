@@ -26,12 +26,12 @@
         "source": {
           "contact": {
             "system": "email",
-            "value": "info@pvs.email"
+            "value": "info@pvs_solutions.email"
           },
           "name": "Practitioner-Source",
           "software": "Practitioner-Software",
           "version": "1.0.0",
-          "endpoint": "practitioner@test.kim.de"
+          "endpoint": "https://pvs_solutions.com/jira_helpdesk"
         },
         "focus": [
           {
@@ -48,7 +48,7 @@
         "destination": [
           {
             "name": "Pflegeheim Immergrün",
-            "endpoint": "healthcare-service@test.kim.de"
+            "endpoint": "mailto:healthcare-service@test.kim.de"
           }
         ],
         "eventCoding": {

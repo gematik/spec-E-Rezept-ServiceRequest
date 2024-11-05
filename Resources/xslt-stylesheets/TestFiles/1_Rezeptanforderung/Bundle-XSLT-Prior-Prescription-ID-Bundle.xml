@@ -89,7 +89,7 @@
                     </telecom>
                     <telecom>
                         <system value="email"/>
-                        <value value="arbeitsplatz-1@test-pflegeheim.kim.telematik"/>
+                        <value value="mailto:arbeitsplatz-1@test-pflegeheim.kim.telematik"/>
                     </telecom>
                 </contact>
             </Organization>

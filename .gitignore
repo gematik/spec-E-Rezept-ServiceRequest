@@ -9,3 +9,4 @@ project.yaml
 .simplifier/connection.settings.json
 .simplifier/project.snapshot.json
 *.pyc
+Resources/scripts/pdf_files

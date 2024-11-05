@@ -1,9 +1,9 @@
 {
-  "updated": "2024-10-22T16:15:23.914814+02:00",
+  "updated": "2024-11-04T15:14:48.745894+01:00",
   "dependencies": {
     "hl7.fhir.r4.core": "4.0.1",
     "de.basisprofil.r4": "1.5.0",
-    "de.gematik.fhir.atf": "1.4.0-rc1",
+    "de.gematik.fhir.atf": "1.4.0-rc2",
     "de.gematik.fhir.directory": "0.11.12",
     "de.ihe-d.terminology": "3.0.0",
     "de.gematik.erezept-workflow.r4": "1.4.3",

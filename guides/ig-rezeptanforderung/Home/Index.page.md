@@ -14,6 +14,10 @@ Dem vorliegenden Implementation Guide (IG) liegt das [Featuredokument gemF_eRp_K
 ### FHIR-IG
 Dieser Implementation Guide bietet eine kurze Einführung in das Thema sowie detaillierte technische Anweisungen zur Umsetzung der Anwendungsfälle aus dem Featuredokument. Dabei werden die fachlichen Datenmodelle, relevanten Profile und deren Anwendung beschrieben.
 
+### ATF FHIR-IG
+Dieser Implementation Guide basiert in seinem Konzept auf dem [App Transport Framework](https://simplifier.net/app-transport-framework/~guides).
+Das ATF stellt sicher, dass die Kommunikation zwischen Sender und Empfänger effizient und verlässlich abläuft, indem es die Verarbeitbarkeit der Nachrichten gewährleistet und technische Rückmeldungen über den erfolgreichen Empfang und die Weiterverarbeitung bereitstellt.
+
 ## Wie dieser IG zu lesen ist
 
 Dieser Implementation Guide beschreibt, wie die Use Cases unter Verwendung der FHIR Profile auszuführen sind.
