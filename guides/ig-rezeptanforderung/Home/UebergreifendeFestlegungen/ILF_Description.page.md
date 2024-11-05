@@ -1,5 +1,7 @@
 # {{page-title}}
 
+Diese Seite enthält weitere Hinweise zur UI und Prozessablaufen im Rahmen der in diesem IG beschriebenen Anwendungsfälle.
+
 ## Angabe der LANR fehlt bei Rezeptanforderung
 
 Es ist denkbar, dass bei Übermittlung der Therapiedaten von Krankenhaus an Apotheke, um eine Rezeptanforderung zu erstellen, die Arztnummer des Arztes, welcher die Rezeptanforderung erwartet, nicht angegeben wurde. Dies kann zu Problemen führen, da die Apotheke die Rezeptanforderung nicht eindeutig einem bestimmten Arzt zuordnen kann.
