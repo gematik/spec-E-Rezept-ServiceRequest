@@ -168,7 +168,7 @@
                         font-weight: bold;
                         margin-top: 10px;
                     }
-                    .service-request-info {
+                    .service-request-info, .dispense-request-info {
                         width: 100%;
                     }
                     .service-request-header {
@@ -472,8 +472,10 @@
             <div
             class="service-request">
                 <xsl:for-each
-                select="$rootBundle/fhir:entry/fhir:resource/fhir:ServiceRequest[fhir:subject/fhir:reference/@value = concat('Patient/', $patientRef)]">
+                select="$rootBundle/fhir:entry/fhir:resource/fhir:ServiceRequest[fhir:subject/fhir:reference/@value = concat('Patient/', $patientRef) or fhir:subject/fhir:reference/@value = concat('urn:uuid:', $patientRef)]">
                     <div class="service-request-box">
+
+            
 
                         <!-- Define Reference for MedicationInformation -->
                         <xsl:variable name="medReqRef" >
@@ -498,6 +500,31 @@
                                 </xsl:otherwise>
                             </xsl:choose>
                         </xsl:variable>
+
+                        <div class="service-request-header">
+                            <div class="pill-container">
+                                <xsl:if test="fhir:priority/@value = 'urgent'">
+                                    <div class="urgent-pill">Dringend</div>
+                                </xsl:if>
+                                <xsl:if
+                                test="fhir:modifierExtension[@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex']/fhir:valueBoolean/@value = 'true'">
+                                    <div class="redeem-pill">Patienteneinlösung</div>
+                                </xsl:if>
+                                <xsl:if
+                                test="fhir:modifierExtension[@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/changed-medication-ex']/fhir:valueBoolean/@value = 'true'">
+                                    <div class="changed-pill">Verändertes Medikament</div>
+                                </xsl:if>
+                                <div>
+                                    <xsl:for-each
+                                    select="$rootBundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medReqRef) + 1) = $medReqRef]/fhir:resource/fhir:MedicationRequest">
+                                        <xsl:if
+                                        test="fhir:modifierExtension[@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/request-mvo-ex']/fhir:valueBoolean/@value = 'true'">
+                                            <div class="mvo-pill">MVO</div>
+                                        </xsl:if>
+                                    </xsl:for-each>
+                                </div>
+                            </div>
+                        </div>
 
                         <table>
                             <thead>
@@ -659,28 +686,6 @@
                                     </xsl:if>
                                 </xsl:if>
                             </div>
-                            <div class="pill-container">
-                                <xsl:if test="fhir:priority/@value = 'urgent'">
-                                    <div class="urgent-pill">Dringend</div>
-                                </xsl:if>
-                                <xsl:if
-                                test="fhir:modifierExtension[@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex']/fhir:valueBoolean/@value = 'true'">
-                                    <div class="redeem-pill">Patienteneinlösung</div>
-                                </xsl:if>
-                                <xsl:if
-                                test="fhir:modifierExtension[@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/changed-medication-ex']/fhir:valueBoolean/@value = 'true'">
-                                    <div class="changed-pill">Verändertes Medikament</div>
-                                </xsl:if>
-                                <div>
-                                    <xsl:for-each
-                                    select="$rootBundle/fhir:entry[substring(fhir:fullUrl/@value, string-length(fhir:fullUrl/@value) - string-length($medReqRef) + 1) = $medReqRef]/fhir:resource/fhir:MedicationRequest">
-                                        <xsl:if
-                                        test="fhir:modifierExtension[@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/request-mvo-ex']/fhir:valueBoolean/@value = 'true'">
-                                            <div class="mvo-pill">MVO</div>
-                                        </xsl:if>
-                                    </xsl:for-each>
-                                </div>
-                            </div>
                         </div>
                         <div class="token-section">
                             <!-- Token section below row if there is a note -->
@@ -699,7 +704,7 @@
     <xsl:template name="dispense-request-info">
         <xsl:param name="patientRef" />
         <xsl:param name="rootBundle" />
-        <div class="dispense-request-info">
+        <div class="service-request-info">
             <xsl:call-template
             name="sr-patient-info">
                 <xsl:with-param name="patientRef" select="$patientRef" />
@@ -709,16 +714,12 @@
             <div
             class="service-request">
                 <xsl:for-each
-                select="$rootBundle/fhir:entry/fhir:resource/fhir:ServiceRequest[fhir:subject/fhir:reference/@value = concat('Patient/', $patientRef)]">
+                select="$rootBundle/fhir:entry/fhir:resource/fhir:ServiceRequest[fhir:subject/fhir:reference/@value = concat('Patient/', $patientRef) or fhir:subject/fhir:reference/@value = concat('urn:uuid:', $patientRef)]">
                     <div class="service-request-box">
                         <div class="service-request-header">
-                            <span>#
-                                <xsl:value-of
-                                select="fhir:identifier[fhir:system/@value = 'https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier']/fhir:value/@value" />
-                            </span>
                             <div class="pill-container">
                                 <xsl:if test="fhir:priority/@value = 'urgent'">
-                                    <div class="urgent-pill">dringend</div>
+                                    <div class="urgent-pill">Dringend</div>
                                 </xsl:if>
                                 <xsl:if
                                 test="fhir:modifierExtension[@url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex']/fhir:valueBoolean/@value = 'true'">
@@ -751,9 +752,6 @@
                                         test="fhir:code/fhir:coding[fhir:system/@value = 'https://gematik.de/fhir/erp-servicerequest/CodeSystem/delivery-type-cs']/fhir:code/@value">
                                             <th>Lieferung</th>
                                         </xsl:when>
-                                        <xsl:otherwise>
-                                            <th></th>
-                                        </xsl:otherwise>
                                     </xsl:choose>
                                 </tr>
                             </thead>
