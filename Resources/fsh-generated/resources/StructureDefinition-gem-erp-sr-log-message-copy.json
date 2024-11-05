@@ -1,0 +1,396 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "gem-erp-sr-log-message-copy",
+  "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-message-copy",
+  "version": "1.2",
+  "name": "GEM_ERP_SR_LOG_MessageCopy",
+  "title": "Logical ServiceRequest_Nachricht_Kopie",
+  "status": "draft",
+  "experimental": false,
+  "date": "2025-01-01",
+  "publisher": "gematik GmbH",
+  "description": "Fachliches Modell zur Beschreibung einer Kopie für die Pflegeeinrichtung.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "Nachrichten-Kopie-Fachliches-Mapping",
+      "name": "Nachrichten Kopie Fachliches Mapping",
+      "uri": "ERPServiceRequestRequestHeader",
+      "comment": "Mapping des Fachmodells aus GEM_ERP_SR_LOG_MessageCopy auf das FHIR-Modell ERPServiceRequestRequestHeader"
+    },
+    {
+      "identity": "Quelle-Message-Copy-Mapping",
+      "name": "Quelle der Informationen für die Nachrichtenkopie",
+      "comment": "Beschreibt die Quelle der Informationen für die Nachrichtenkopie. Diese werden immer versendet, wenn die Rezeptanforderung und deren Bestätigung zwischen Arzt und Apotheke ausgetauscht werden."
+    }
+  ],
+  "kind": "logical",
+  "abstract": false,
+  "type": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-message-copy",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Element",
+  "derivation": "specialization",
+  "differential": {
+    "element": [
+      {
+        "id": "gem-erp-sr-log-message-copy",
+        "path": "gem-erp-sr-log-message-copy",
+        "short": "Logical ServiceRequest_Nachricht_Kopie",
+        "definition": "Fachliches Modell zur Beschreibung einer Kopie für die Pflegeeinrichtung."
+      },
+      {
+        "id": "gem-erp-sr-log-message-copy.MetaDaten",
+        "path": "gem-erp-sr-log-message-copy.MetaDaten",
+        "short": "Metadaten im MessageHeader",
+        "definition": "Metadaten im MessageHeader",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Nachrichten-Kopie-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader"
+          },
+          {
+            "identity": "Quelle-Message-Copy-Mapping",
+            "map": "Erstellendes PS"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-message-copy.MetaDaten.Empfaenger",
+        "path": "gem-erp-sr-log-message-copy.MetaDaten.Empfaenger",
+        "short": "Empfänger der Nachricht",
+        "definition": "Empfänger der Nachricht",
+        "min": 1,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Nachrichten-Kopie-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.destination"
+          },
+          {
+            "identity": "Quelle-Message-Copy-Mapping",
+            "map": "VZD oder Rezeptanforderung",
+            "comment": "Wenn die Nachricht initial erstellt wird kann die Apotheke die Informationen aus dem System oder VZD beziehen. Der Verordnende kann die Informationen aus der Rezeptanforderung beziehen."
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-message-copy.MetaDaten.Empfaenger.KIMAdresse",
+        "path": "gem-erp-sr-log-message-copy.MetaDaten.Empfaenger.KIMAdresse",
+        "short": "KIM-Adresse des Empfängers",
+        "definition": "KIM-Adresse des Empfängers",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "url"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Nachrichten-Kopie-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.destination.endpoint"
+          },
+          {
+            "identity": "Quelle-Message-Copy-Mapping",
+            "map": "VZD oder Rezeptanforderung",
+            "comment": "Wenn die Nachricht initial erstellt wird kann die Apotheke die Informationen aus dem System oder VZD beziehen. Der Verordnende kann die Informationen aus der Rezeptanforderung beziehen."
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-message-copy.MetaDaten.Empfaenger.TelematikID",
+        "path": "gem-erp-sr-log-message-copy.MetaDaten.Empfaenger.TelematikID",
+        "short": "Telematik-ID des Absenders",
+        "definition": "Telematik-ID des Absenders",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "url"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Nachrichten-Kopie-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.destination.receiver.identifier.value"
+          },
+          {
+            "identity": "Quelle-Message-Copy-Mapping",
+            "map": "VZD oder Rezeptanforderung",
+            "comment": "Wenn die Nachricht initial erstellt wird kann die Apotheke die Informationen aus dem System oder VZD beziehen. Der Verordnende kann die Informationen aus der Rezeptanforderung beziehen."
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-message-copy.MetaDaten.Absender",
+        "path": "gem-erp-sr-log-message-copy.MetaDaten.Absender",
+        "short": "Absender der Nachricht",
+        "definition": "Absender der Nachricht",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Nachrichten-Kopie-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.sender"
+          },
+          {
+            "identity": "Quelle-Message-Copy-Mapping",
+            "map": "Erstellendes PS"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-message-copy.MetaDaten.Absender.TelematikID",
+        "path": "gem-erp-sr-log-message-copy.MetaDaten.Absender.TelematikID",
+        "short": "Telematik-ID des Absenders",
+        "definition": "Telematik-ID des Absenders",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "url"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Nachrichten-Kopie-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.sender.identifier.value"
+          },
+          {
+            "identity": "Quelle-Message-Copy-Mapping",
+            "map": "Erstellendes PS, SMC-B oder HBA Zertifikat"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-message-copy.MetaDaten.Absender.Name",
+        "path": "gem-erp-sr-log-message-copy.MetaDaten.Absender.Name",
+        "short": "Name des Absenders",
+        "definition": "Name des Absenders",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Nachrichten-Kopie-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.sender.display"
+          },
+          {
+            "identity": "Quelle-Message-Copy-Mapping",
+            "map": "Erstellendes PS"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-message-copy.MetaDaten.AbsendendesSystem",
+        "path": "gem-erp-sr-log-message-copy.MetaDaten.AbsendendesSystem",
+        "short": "Absendendes System",
+        "definition": "Absendendes System",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Nachrichten-Kopie-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.source"
+          },
+          {
+            "identity": "Quelle-Message-Copy-Mapping",
+            "map": "Erstellendes PS",
+            "comment": "Automatisiert durch Software gesetzt"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-message-copy.MetaDaten.AbsendendesSystem.Name",
+        "path": "gem-erp-sr-log-message-copy.MetaDaten.AbsendendesSystem.Name",
+        "short": "Name des Herstellers des absendenden Systems",
+        "definition": "Name des Herstellers des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Nachrichten-Kopie-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.source.name"
+          },
+          {
+            "identity": "Quelle-Message-Copy-Mapping",
+            "map": "Erstellendes PS",
+            "comment": "Automatisiert durch Software gesetzt"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-message-copy.MetaDaten.AbsendendesSystem.Software",
+        "path": "gem-erp-sr-log-message-copy.MetaDaten.AbsendendesSystem.Software",
+        "short": "Name der Software des absendenden Systems",
+        "definition": "Name der Software des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Nachrichten-Kopie-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.source.software"
+          },
+          {
+            "identity": "Quelle-Message-Copy-Mapping",
+            "map": "Erstellendes PS",
+            "comment": "Automatisiert durch Software gesetzt"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-message-copy.MetaDaten.AbsendendesSystem.Version",
+        "path": "gem-erp-sr-log-message-copy.MetaDaten.AbsendendesSystem.Version",
+        "short": "Version des absendenden Systems",
+        "definition": "Version des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Nachrichten-Kopie-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.source.version"
+          },
+          {
+            "identity": "Quelle-Message-Copy-Mapping",
+            "map": "Erstellendes PS",
+            "comment": "Automatisiert durch Software gesetzt"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-message-copy.MetaDaten.AbsendendesSystem.EMailKontakt",
+        "path": "gem-erp-sr-log-message-copy.MetaDaten.AbsendendesSystem.EMailKontakt",
+        "short": "E-Mail-Kontakt des absendenden Systems",
+        "definition": "E-Mail-Kontakt des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Nachrichten-Kopie-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.source.contact.value"
+          },
+          {
+            "identity": "Quelle-Message-Copy-Mapping",
+            "map": "Erstellendes PS",
+            "comment": "Automatisiert durch Software gesetzt"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-message-copy.MetaDaten.AbsendendesSystem.Website",
+        "path": "gem-erp-sr-log-message-copy.MetaDaten.AbsendendesSystem.Website",
+        "short": "Website des absendenden Systems",
+        "definition": "Website des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "url"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Nachrichten-Kopie-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.source.endpoint"
+          },
+          {
+            "identity": "Quelle-Message-Copy-Mapping",
+            "map": "Erstellendes PS",
+            "comment": "Automatisiert durch Software gesetzt"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-message-copy.IndikatorKopie",
+        "path": "gem-erp-sr-log-message-copy.IndikatorKopie",
+        "short": "Indikator Kopie",
+        "definition": "Indikator, ob es sich um eine Kopie handelt.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Nachrichten-Kopie-Fachliches-Mapping",
+            "map": "ERPServiceRequestRequestHeader.eventCoding.code = 'eRezept_Rezeptanforderung;message-copy'"
+          },
+          {
+            "identity": "Quelle-Message-Copy-Mapping",
+            "map": "Erstellendes PS"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-message-copy.Anforderungsinformationen",
+        "path": "gem-erp-sr-log-message-copy.Anforderungsinformationen",
+        "short": "Anforderungsinformationen",
+        "definition": "Kopie der Informationen, die dem Empfänger des Originals übertragen wurden. Dabei wird der komplette Datensatz versendet. Siehe\n- [Logical Model Rezeptanforderung](https://simplifier.net/erezept-servicerequest/gem-erp-sr-log-prescription-request)\n- [Logical Model Rezeptanforderung_Storno](https://simplifier.net/erezept-servicerequest/gem-erp-sr-log-prescription-request-cancellation)\n- [Logical Model Rezeptanforderung_Bestätigung](https://simplifier.net/erezept-servicerequest/gem-erp-sr-log-prescription-request-confirmation)",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Bundle"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Nachrichten-Kopie-Fachliches-Mapping",
+            "map": "ERPServiceRequestRequestHeader.focus(ERPServiceRequestMessageContainer)"
+          },
+          {
+            "identity": "Quelle-Message-Copy-Mapping",
+            "map": "FHIR-Datensatz der zum Empfänger des Originals geschickt wird"
+          }
+        ]
+      }
+    ]
+  }
+}

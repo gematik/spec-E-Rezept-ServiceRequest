@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../rezeptanforderung.xsl" ?>
+<Bundle xmlns="http://hl7.org/fhir">
+    <id value="UC1-3-Alt-Delivery-Dispense-Request-To-Pharmacy"/>
+    <meta>
+        <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"/>
+    </meta>
+    <identifier>
+        <system value="urn:ietf:rfc:3986"/>
+        <value value="urn:uuid:fa23be14-c00a-4ddc-8128-82ace2f9a80b"/>
+    </identifier>
+    <type value="message"/>
+    <timestamp value="2025-05-14T08:23:12+02:00"/>
+    <entry>
+        <fullUrl value="http://erp-servicerequest-test.de/MessageHeader/UC1-Alt-Delivery-HealthCareService-to-Pharmacy-MessageHeader"/>
+        <resource>
+            <MessageHeader>
+                <id value="UC1-Alt-Delivery-HealthCareService-to-Pharmacy-MessageHeader"/>
+                <meta>
+                    <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"/>
+                </meta>
+                <eventCoding>
+                    <system value="https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"/>
+                    <code value="eRezept_Rezeptanforderung;Abgabeanfrage"/>
+                </eventCoding>
+                <destination>
+                    <name value="Test Apotheke"/>
+                    <endpoint value="pharmacy@test.kim.de"/>
+                </destination>
+                <sender>
+                    <identifier>
+                        <system value="https://gematik.de/fhir/sid/telematik-id"/>
+                        <value value="5-test-telematik-id"/>
+                    </identifier>
+                    <display value="Pflegeheim Immergrün"/>
+                </sender>
+                <source>
+                    <name value="HealthCare-Source"/>
+                    <software value="HealthCare-Software"/>
+                    <version value="1.0.0"/>
+                    <contact>
+                        <system value="email"/>
+                        <value value="info@hcs.email"/>
+                    </contact>
+                    <endpoint value="healthcare-service@test.kim.de"/>
+                </source>
+                <responsible>
+                    <reference value="Organization/Example-HealthCareService-Organization"/>
+                </responsible>
+                <focus>
+                    <reference value="ServiceRequest/UC1-Alt-Delivery-Initial-Dispense-Request"/>
+                    <reference value="ServiceRequest/UC1-Alt-Delivery-Initial-Dispense-Request-1"/>
+                    <reference value="ServiceRequest/UC1-Alt-Delivery-Initial-Dispense-Request-2"/>
+                    <reference value="ServiceRequest/UC1-Alt-Delivery-Initial-Dispense-Request-3"/>
+                </focus>
+            </MessageHeader>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://erp-servicerequest-test.de/Organization/Example-HealthCareService-Organization"/>
+        <resource>
+            <Organization>
+                <id value="Example-HealthCareService-Organization"/>
+                <meta>
+                    <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"/>
+                </meta>
+                <type>
+                    <coding>
+                        <system value="http://ihe-d.de/CodeSystems/PatientBezogenenGesundheitsversorgung"/>
+                        <code value="PFL"/>
+                        <display value="Pflegeheim"/>
+                    </coding>
+                </type>
+                <name value="Pflegeheim Immergrün"/>
+                <address>
+                    <type value="both"/>
+                    <line value="Musterstr. 2">
+                        <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+                            <valueString value="2"/>
+                        </extension>
+                        <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+                            <valueString value="Musterstr."/>
+                        </extension>
+                    </line>
+                    <city value="Berlin"/>
+                    <postalCode value="10623"/>
+                </address>
+                <contact>
+                    <telecom>
+                        <system value="phone"/>
+                        <value value="0301234567"/>
+                    </telecom>
+                    <telecom>
+                        <system value="email"/>
+                        <value value="arbeitsplatz-1@test-pflegeheim.kim.telematik"/>
+                    </telecom>
+                </contact>
+            </Organization>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://erp-servicerequest-test.de/ServiceRequest/UC1-Alt-Delivery-Initial-Dispense-Request"/>
+        <resource>
+            <ServiceRequest>
+                <id value="UC1-Alt-Delivery-Initial-Dispense-Request"/>
+                <meta>
+                    <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"/>
+                </meta>
+                <extension url="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex">
+                    <valueIdentifier>
+                        <system value="https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken"/>
+                        <value value="Task/169.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"/>
+                    </valueIdentifier>
+                </extension>
+                <extension url="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/alternative-delivery-address-ex">
+                    <valueAddress>
+                        <line value="Hauptstraße 1"/>
+                        <line value="Zimmer 123"/>
+                        <city value="Berlin"/>
+                        <postalCode value="12345"/>
+                        <country value="Germany"/>
+                    </valueAddress>
+                </extension>
+                <identifier>
+                    <system value="https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier"/>
+                    <value value="9aed4301-e6f8-475d-a649-fa6093f664ec"/>
+                </identifier>
+                <requisition>
+                    <system value="https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier"/>
+                    <value value="GroupID-UC1"/>
+                </requisition>
+                <status value="active"/>
+                <intent value="filler-order"/>
+                <code>
+                    <coding>
+                        <system value="https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"/>
+                        <code value="dispense-request"/>
+                    </coding>
+                    <coding>
+                        <system value="https://gematik.de/fhir/erp-servicerequest/CodeSystem/delivery-type-cs"/>
+                        <code value="delivery-to-alternative-address"/>
+                    </coding>
+                </code>
+                <subject>
+                    <reference value="Patient/Example-Patient"/>
+                </subject>
+                <authoredOn value="2025-05-14"/>
+                <requester>
+                    <reference value="Organization/Example-HealthCareService-Organization"/>
+                </requester>
+                <note>
+                    <time value="2025-05-14T08:22:05+02:00"/>
+                    <text value="Bitte um schnelle Bearbeitung"/>
+                </note>
+            </ServiceRequest>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://erp-servicerequest-test.de/ServiceRequest/UC1-Alt-Delivery-Initial-Dispense-Request-1"/>
+        <resource>
+            <ServiceRequest>
+                <id value="UC1-Alt-Delivery-Initial-Dispense-Request-1"/>
+                <meta>
+                    <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"/>
+                </meta>
+                <extension url="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex">
+                    <valueIdentifier>
+                        <system value="https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken"/>
+                        <value value="Task/169.100.000.000.003.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"/>
+                    </valueIdentifier>
+                </extension>
+                <identifier>
+                    <system value="https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier"/>
+                    <value value="5c41763b-a842-4185-8028-849c26b1d443"/>
+                </identifier>
+                <requisition>
+                    <system value="https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier"/>
+                    <value value="GroupID-UC1"/>
+                </requisition>
+                <status value="active"/>
+                <intent value="filler-order"/>
+                <priority value="urgent"/>
+                <code>
+                    <coding>
+                        <system value="https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"/>
+                        <code value="dispense-request"/>
+                    </coding>
+                </code>
+                <subject>
+                    <reference value="Patient/Example-Patient"/>
+                </subject>
+                <authoredOn value="2025-05-14"/>
+                <requester>
+                    <reference value="Organization/Example-HealthCareService-Organization"/>
+                </requester>
+                <note>
+                    <time value="2025-05-14T08:22:05+02:00"/>
+                    <text value="Bitte um schnelle Bearbeitung"/>
+                </note>
+            </ServiceRequest>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://erp-servicerequest-test.de/ServiceRequest/UC1-Alt-Delivery-Initial-Dispense-Request-2"/>
+        <resource>
+            <ServiceRequest>
+                <id value="UC1-Alt-Delivery-Initial-Dispense-Request-2"/>
+                <meta>
+                    <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"/>
+                </meta>
+                <extension url="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex">
+                    <valueIdentifier>
+                        <system value="https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken"/>
+                        <value value="Task/169.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"/>
+                    </valueIdentifier>
+                </extension>
+                <extension url="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/alternative-delivery-address-ex">
+                    <valueAddress>
+                        <line value="Nebenstraße 1"/>
+                        <city value="Berlin"/>
+                        <postalCode value="12345"/>
+                        <country value="Germany"/>
+                    </valueAddress>
+                </extension>
+                <identifier>
+                    <system value="https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier"/>
+                    <value value="661ecbf3-55e5-4d7e-89a2-6c42a8da5b23"/>
+                </identifier>
+                <requisition>
+                    <system value="https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier"/>
+                    <value value="GroupID-UC1"/>
+                </requisition>
+                <status value="active"/>
+                <intent value="filler-order"/>
+                <priority value="urgent"/>
+                <code>
+                    <coding>
+                        <system value="https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"/>
+                        <code value="dispense-request"/>
+                    </coding>
+                    <coding>
+                        <system value="https://gematik.de/fhir/erp-servicerequest/CodeSystem/delivery-type-cs"/>
+                        <code value="delivery-to-alternative-address"/>
+                    </coding>
+                </code>
+                <subject>
+                    <reference value="Patient/Example-Patient"/>
+                </subject>
+                <authoredOn value="2025-05-14"/>
+                <requester>
+                    <reference value="Organization/Example-HealthCareService-Organization"/>
+                </requester>
+                <note>
+                    <time value="2025-05-14T08:22:05+02:00"/>
+                    <text value="Bitte um schnelle Bearbeitung"/>
+                </note>
+            </ServiceRequest>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://erp-servicerequest-test.de/ServiceRequest/UC1-Alt-Delivery-Initial-Dispense-Request-3"/>
+        <resource>
+            <ServiceRequest>
+                <id value="UC1-Alt-Delivery-Initial-Dispense-Request-3"/>
+                <meta>
+                    <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"/>
+                </meta>
+                <extension url="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex">
+                    <valueIdentifier>
+                        <system value="https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken"/>
+                        <value value="Task/169.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"/>
+                    </valueIdentifier>
+                </extension>
+                <identifier>
+                    <system value="https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier"/>
+                    <value value="7f3497e3-3e96-4134-94ed-c91ad93baba2"/>
+                </identifier>
+                <requisition>
+                    <system value="https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier"/>
+                    <value value="GroupID-UC1"/>
+                </requisition>
+                <status value="active"/>
+                <intent value="filler-order"/>
+                <priority value="urgent"/>
+                <code>
+                    <coding>
+                        <system value="https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"/>
+                        <code value="dispense-request"/>
+                    </coding>
+                    <coding>
+                        <system value="https://gematik.de/fhir/erp-servicerequest/CodeSystem/delivery-type-cs"/>
+                        <code value="pickup-by-healthcare-service"/>
+                    </coding>
+                </code>
+                <subject>
+                    <reference value="Patient/Example-Patient"/>
+                </subject>
+                <authoredOn value="2025-05-14"/>
+                <requester>
+                    <reference value="Organization/Example-HealthCareService-Organization"/>
+                </requester>
+                <note>
+                    <time value="2025-05-14T08:22:05+02:00"/>
+                    <text value="Bitte um schnelle Bearbeitung"/>
+                </note>
+            </ServiceRequest>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://erp-servicerequest-test.de/Patient/Example-Patient"/>
+        <resource>
+            <Patient>
+                <id value="Example-Patient"/>
+                <meta>
+                    <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-patient"/>
+                </meta>
+                <identifier>
+                    <type>
+                        <coding>
+                            <system value="http://fhir.de/CodeSystem/identifier-type-de-basis"/>
+                            <code value="GKV"/>
+                        </coding>
+                    </type>
+                    <system value="http://fhir.de/sid/gkv/kvid-10"/>
+                    <value value="X234567890"/>
+                </identifier>
+                <name>
+                    <use value="official"/>
+                    <family value="Königsstein">
+                        <extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
+                            <valueString value="Königsstein"/>
+                        </extension>
+                    </family>
+                    <given value="Ludger"/>
+                </name>
+                <birthDate value="1935-06-22"/>
+                <address>
+                    <type value="both"/>
+                    <line value="Musterstr. 1">
+                        <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+                            <valueString value="1"/>
+                        </extension>
+                        <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+                            <valueString value="Musterstr."/>
+                        </extension>
+                    </line>
+                    <city value="Berlin"/>
+                    <postalCode value="10623"/>
+                </address>
+            </Patient>
+        </resource>
+    </entry>
+</Bundle>

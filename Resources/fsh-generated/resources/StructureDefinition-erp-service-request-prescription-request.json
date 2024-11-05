@@ -2,65 +2,15 @@
   "resourceType": "StructureDefinition",
   "id": "erp-service-request-prescription-request",
   "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request",
-  "version": "1.0",
+  "version": "1.2",
   "name": "ERPServiceRequestPrescriptionRequest",
   "title": "ERP Service Request Prescription Request",
-  "status": "active",
+  "status": "draft",
   "experimental": false,
+  "date": "2025-01-01",
   "publisher": "gematik GmbH",
   "description": "ServiceRequest, which is used to request a recipe",
   "fhirVersion": "4.0.1",
-  "mapping": [
-    {
-      "identity": "workflow",
-      "uri": "http://hl7.org/fhir/workflow",
-      "name": "Workflow Pattern"
-    },
-    {
-      "identity": "v2",
-      "uri": "http://hl7.org/v2",
-      "name": "HL7 v2 Mapping"
-    },
-    {
-      "identity": "rim",
-      "uri": "http://hl7.org/v3",
-      "name": "RIM Mapping"
-    },
-    {
-      "identity": "w5",
-      "uri": "http://hl7.org/fhir/fivews",
-      "name": "FiveWs Pattern Mapping"
-    },
-    {
-      "identity": "quick",
-      "uri": "http://siframework.org/cqf",
-      "name": "Quality Improvement and Clinical Knowledge (QUICK)"
-    },
-    {
-      "identity": "Rezeptanforderung",
-      "name": "Rezeptanforderung",
-      "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
-      "comment": "Mapping for 'fachliche Informationseinheiten' of the 'Verordnungsanfrage' of the feature document"
-    },
-    {
-      "identity": "Rezeptanforderung-Rezeptuebermittlung",
-      "name": "Rezeptanforderung_Rezeptübermittlung",
-      "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
-      "comment": "Mapping for 'fachliche Informationseinheiten' of the 'Verordnungsanfrage' of the feature document"
-    },
-    {
-      "identity": "Rezeptanforderung-Storno",
-      "name": "Rezeptanforderung_Storno (Anfragender)",
-      "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
-      "comment": "Mapping for 'fachliche Informationseinheiten' of the cancellation of a 'Verordnungsanfrage' of the feature document"
-    },
-    {
-      "identity": "Rezeptanforderung-Ablehnung",
-      "name": "Rezeptanforderung_Storno (Verordnender)",
-      "uri": "gemF_eRp_KIM#3.1.1-Fachliche-Information",
-      "comment": "Mapping for 'fachliche Informationseinheiten' of the refusal of a 'Verordnungsanfrage' of the feature document"
-    }
-  ],
   "kind": "resource",
   "abstract": false,
   "type": "ServiceRequest",
@@ -71,22 +21,41 @@
       {
         "id": "ServiceRequest",
         "path": "ServiceRequest",
-        "mapping": [
+        "constraint": [
           {
-            "identity": "Rezeptanforderung",
-            "map": "Rezeptanforderung"
+            "key": "servicerequest-prescription-request-1",
+            "severity": "error",
+            "human": "If the status is active, the requester must be present.",
+            "expression": "status = 'active' implies requester.exists()",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
           },
           {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung",
-            "map": "Rezeptanforderung_Rezeptübermittlung"
+            "key": "servicerequest-prescription-request-2",
+            "severity": "error",
+            "human": "If the status is completed and the prescription should be redeemed by the patient, the e-prescription-token must not be present.",
+            "expression": "(status = 'completed' and modifierExtension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex').exists() and modifierExtension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex').value = true) implies extension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex').exists().not()",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
           },
           {
-            "identity": "Rezeptanforderung-Storno",
-            "map": "Rezeptanforderung_Storno"
+            "key": "servicerequest-prescription-request-3",
+            "severity": "error",
+            "human": "If the status is revoked or entered-in-error, then the reasonCode or note must be present.",
+            "expression": "(status = 'revoked' or status = 'entered-in-error') implies (reasonCode.text.exists() or note.exists())",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
           },
           {
-            "identity": "Rezeptanforderung-Ablehnung",
-            "map": "Rezeptanforderung_Storno"
+            "key": "servicerequest-prescription-request-4",
+            "severity": "error",
+            "human": "If the status is completed, the performer must be present.",
+            "expression": "status = 'completed' implies performer.exists()",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
+          },
+          {
+            "key": "servicerequest-prescription-request-5",
+            "severity": "error",
+            "human": "If the status is completed and the prescription should not be redeemed by the patient, the e-prescription-token must be present.",
+            "expression": "(status = 'completed' and (modifierExtension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex').value = false or modifierExtension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex').exists().not())) implies extension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex').exists()",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
           }
         ]
       },
@@ -99,10 +68,11 @@
         "id": "ServiceRequest.extension:EPrescriptionToken",
         "path": "ServiceRequest.extension",
         "sliceName": "EPrescriptionToken",
-        "short": "Here the e-prescription token can be made available for processing in a pharmacy.",
+        "short": "Here the e-prescription token(s) can be made available for processing in a pharmacy.",
+        "definition": "One ServiceRequest must adress exactly one request for a medication. However the practitioner might choose to issue multiple prescriptions for that request, therefore the cardinality is 1..*.",
         "comment": "The token is of the form '/Task/{PrescriptionID}/$accept?ac={AccessCode}. See [gemSpec_DM_eRp](https://fachportal.gematik.de/fachportal-import/files/gemSpec_DM_eRp_V1.5.0.pdf)'.",
         "min": 0,
-        "max": "1",
+        "max": "*",
         "type": [
           {
             "code": "Extension",
@@ -111,17 +81,47 @@
             ]
           }
         ],
-        "mustSupport": true,
-        "mapping": [
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.modifierExtension:medicationChanged",
+        "path": "ServiceRequest.modifierExtension",
+        "sliceName": "medicationChanged",
+        "short": "Indicates whether the medication has been changed by the prescriber.",
+        "definition": "If the medication has been changed, the value is set to true.",
+        "comment": "If the medication has been changed, the receiving system must display the changed medication to the receiving user.",
+        "min": 0,
+        "max": "1",
+        "type": [
           {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung",
-            "map": "ERezept_Task_ID"
-          },
-          {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung",
-            "map": "ERezept_Access_Code"
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/changed-medication-ex"
+            ]
           }
-        ]
+        ],
+        "mustSupport": true,
+        "isModifierReason": "If the medication has been changed, the receiving system must display the changed medication to the receiving user."
+      },
+      {
+        "id": "ServiceRequest.modifierExtension:redeemByPatient",
+        "path": "ServiceRequest.modifierExtension",
+        "sliceName": "redeemByPatient",
+        "short": "Redeem By Patient",
+        "definition": "Indicates whether the prescription should be redeemed by the patient.",
+        "comment": "This determines the Flow Type of the prescription to be set to 160/200 so that the patient can redeem the prescription himself. If not set the Flow Type is set to 169/209.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex"
+            ]
+          }
+        ],
+        "mustSupport": true,
+        "isModifierReason": "This determines the Flow Type of the prescription to be set to 160/200 so that the patient can redeem the prescription himself. If not set the Flow Type is set to 169/209."
       },
       {
         "id": "ServiceRequest.identifier",
@@ -157,28 +157,10 @@
         ]
       },
       {
-        "id": "ServiceRequest.identifier:predisId",
-        "path": "ServiceRequest.identifier",
-        "sliceName": "predisId",
-        "short": "Identifier that connects a prescription and a dispensing request.",
-        "definition": "In some applications, it is necessary to know which prescription request belongs to which delivery request. If, for example, a medication is requested, you want to be able to track which is the corresponding delivery request. The predisIdentifier is used for this purpose, which identifies a pair of ServiceRequest**Prescription**Request and ServiceRequest**Dispense**Request together.\n\nDas implementierende System muss in der Lage sein diese Verknüpfung herzustellen als auch zu lesen.",
-        "comment": "Can be mapped via a UUID, for example.",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Identifier",
-            "profile": [
-              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-pre-dis-identifier"
-            ]
-          }
-        ]
-      },
-      {
         "id": "ServiceRequest.basedOn",
         "path": "ServiceRequest.basedOn",
         "short": "Requested or fulfilled MedicationRequest.",
-        "definition": "This field references the underlying MedicationRequest, which contains the medical information for the prescription request. If the prescription request is made, the ERPServiceRequestMedicationRequest profile MAY be used.\nWhen the prescription has been created, the corresponding KBV_PR_ERP_Bundle prescription data record must be referenced.",
+        "definition": "This field references the underlying MedicationRequest, which contains the medical information for the prescription request.",
         "comment": "Exactly one MedicationRequest is assigned to a ServiceRequest, so that independent processing is possible.",
         "min": 1,
         "max": "1",
@@ -186,55 +168,27 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/MedicationRequest"
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request"
             ]
           }
         ],
-        "mustSupport": true,
-        "mapping": [
-          {
-            "identity": "Rezeptanforderung",
-            "map": "Praeparat"
-          },
-          {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung",
-            "map": "Strukturierter_Verordnungsdatensatz"
-          }
-        ]
+        "mustSupport": true
       },
       {
         "id": "ServiceRequest.requisition",
         "path": "ServiceRequest.requisition",
-        "short": "Identifier of the process. All ServiceRequests within a process receive the same ID.",
+        "short": "Identifier of the overall process. Multiple ServiceRequests within a process are allocated the same ID.",
         "comment": "Is to be understood as a case or process ID (see mapping) in order to be able to track which request the ServiceRequest belongs to.",
         "min": 1,
         "type": [
           {
             "code": "Identifier",
             "profile": [
-              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/identifier-procedure-identifier"
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-procedure-identifier"
             ]
           }
         ],
-        "mustSupport": true,
-        "mapping": [
-          {
-            "identity": "Rezeptanforderung",
-            "map": "Vorgangs_ID"
-          },
-          {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung",
-            "map": "Vorgangs_ID"
-          },
-          {
-            "identity": "Rezeptanforderung-Storno",
-            "map": "Vorgangs_ID"
-          },
-          {
-            "identity": "Rezeptanforderung-Ablehnung",
-            "map": "Vorgangs_ID"
-          }
-        ]
+        "mustSupport": true
       },
       {
         "id": "ServiceRequest.status",
@@ -250,29 +204,56 @@
       {
         "id": "ServiceRequest.intent",
         "path": "ServiceRequest.intent",
-        "fixedCode": "order"
+        "fixedCode": "order",
+        "mustSupport": true
       },
       {
         "id": "ServiceRequest.priority",
         "path": "ServiceRequest.priority",
-        "mapping": [
-          {
-            "identity": "Rezeptanforderung",
-            "map": "Prioritaet"
-          }
-        ]
+        "short": "Indicates the urgency of the request.",
+        "definition": "The priority can be used to indicate the urgency of the request.",
+        "comment": "Allowed values: routine | urgent",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/erp-servicerequest/ValueSet/service-request-priority-vs"
+        }
       },
       {
         "id": "ServiceRequest.code",
         "path": "ServiceRequest.code",
         "short": "Indicates the type of service request.",
+        "min": 1,
         "mustSupport": true
       },
       {
         "id": "ServiceRequest.code.coding",
         "path": "ServiceRequest.code.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "$this"
+            }
+          ],
+          "rules": "open",
+          "description": "Differentiates between the service request type and additional information.",
+          "ordered": false
+        },
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.code.coding:request-type",
+        "path": "ServiceRequest.code.coding",
+        "sliceName": "request-type",
+        "short": "Indicates the type of service request.",
         "min": 1,
         "max": "1",
+        "patternCoding": {
+          "code": "prescription-request",
+          "system": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"
+        },
         "mustSupport": true,
         "binding": {
           "strength": "required",
@@ -280,53 +261,34 @@
         }
       },
       {
-        "id": "ServiceRequest.code.coding.system",
+        "id": "ServiceRequest.code.coding:request-type.system",
         "path": "ServiceRequest.code.coding.system",
         "min": 1
       },
       {
-        "id": "ServiceRequest.code.coding.code",
+        "id": "ServiceRequest.code.coding:request-type.code",
         "path": "ServiceRequest.code.coding.code",
-        "comment": "#prescription-request defines this ServiceRequest as a prescription request from a doctor.",
-        "min": 1,
-        "fixedCode": "prescription-request"
-      },
-      {
-        "id": "ServiceRequest.orderDetail",
-        "path": "ServiceRequest.orderDetail",
-        "min": 1,
-        "max": "1",
-        "mustSupport": true
-      },
-      {
-        "id": "ServiceRequest.orderDetail.coding",
-        "path": "ServiceRequest.orderDetail.coding",
-        "short": "Specifies how the recipe request should be fulfilled.",
-        "comment": "If the prescription goes to a pharmacy, a corresponding ServiceRequest must be included in the bundle.",
-        "min": 1,
-        "max": "1",
-        "mustSupport": true,
-        "binding": {
-          "strength": "required",
-          "valueSet": "https://gematik.de/fhir/erp-servicerequest/ValueSet/prescription-fullfillment-type-vs"
-        }
+        "comment": "#prescription-request defines this ServiceRequest as a prescription request from a requester to a doctor.",
+        "min": 1
       },
       {
         "id": "ServiceRequest.subject",
         "path": "ServiceRequest.subject",
         "short": "Patient for whom a prescription is requested on behalf of the patient.",
-        "mustSupport": true,
-        "mapping": [
+        "type": [
           {
-            "identity": "Rezeptanforderung",
-            "map": "Patienteninformationen"
+            "code": "Reference",
+            "targetProfile": [
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-patient"
+            ]
           }
-        ]
+        ],
+        "mustSupport": true
       },
       {
         "id": "ServiceRequest.occurrence[x]",
         "path": "ServiceRequest.occurrence[x]",
-        "short": "Specifies the date on which the prescription is to be issued.",
+        "short": "Specifies the date on which the prescription is to be issued (Bedarfszeitraum).",
         "comment": "Can be used by the requester to make the timely urgency clear.",
         "type": [
           {
@@ -347,93 +309,93 @@
         "id": "ServiceRequest.requester",
         "path": "ServiceRequest.requester",
         "short": "Inquiring facility or practitioner.",
-        "comment": "The KIM address is already stored in the message header. Therefore, the preferred specification is to store a KBV_PR_FOR_Practitioner.",
-        "min": 1,
+        "comment": "The KIM address is already stored in the message header.",
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/Organization",
-              "http://hl7.org/fhir/StructureDefinition/Practitioner"
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
             ]
           }
         ],
-        "mustSupport": true,
-        "mapping": [
-          {
-            "identity": "Rezeptanforderung",
-            "map": "Adressat_der_Rezeptuebermittlung"
-          }
-        ]
+        "mustSupport": true
       },
       {
         "id": "ServiceRequest.performer",
         "path": "ServiceRequest.performer",
-        "short": "Doctor who is to write the prescription.",
+        "short": "Doctor who is to issue the prescription.",
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/Practitioner"
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-practitioner"
             ]
           }
         ],
-        "mustSupport": true,
-        "mapping": [
-          {
-            "identity": "Rezeptanforderung",
-            "map": "Adressat_der_Rezeptanforderung"
-          }
-        ]
+        "mustSupport": true
       },
       {
         "id": "ServiceRequest.reasonCode",
         "path": "ServiceRequest.reasonCode",
-        "short": "Code indicating why a prescription is requested.",
-        "comment": "Also used to indicate why the transaction was canceled in the event of a cancellation.",
-        "mustSupport": true,
-        "binding": {
-          "strength": "required",
-          "valueSet": "https://gematik.de/fhir/erp-servicerequest/ValueSet/request-reason-vs"
-        },
-        "mapping": [
-          {
-            "identity": "Rezeptanforderung",
-            "map": "Bedarfsbegruendung (Code)"
-          },
-          {
-            "identity": "Rezeptanforderung-Storno",
-            "map": "Begründung der Stornierung"
-          },
-          {
-            "identity": "Rezeptanforderung-Ablehnung",
-            "map": "Ablehnungsgrund"
-          }
-        ]
+        "short": "Reason for the prescription request.",
+        "comment": "The reason for the prescription request can be documented here.",
+        "mustSupport": true
       },
       {
-        "id": "ServiceRequest.reasonReference",
-        "path": "ServiceRequest.reasonReference",
-        "short": "Reference to an observation resource that indicates how long the current medication will last.",
-        "comment": "If a reference to the reason is provided, a human-readable entry in .note must also be added in case systems cannot process the referenced observation.",
+        "id": "ServiceRequest.reasonCode.extension",
+        "path": "ServiceRequest.reasonCode.extension",
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.reasonCode.extension:remainingSupply",
+        "path": "ServiceRequest.reasonCode.extension",
+        "sliceName": "remainingSupply",
+        "short": "Remaining supply",
+        "definition": "Indicates the remaining supply of the medication.",
+        "min": 0,
+        "max": "1",
         "type": [
           {
-            "code": "Reference",
-            "targetProfile": [
-              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-remaining-medication"
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/remaining-supply-ex"
             ]
           }
         ],
-        "mapping": [
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.reasonCode.extension:remainingSupplyFreeText",
+        "path": "ServiceRequest.reasonCode.extension",
+        "sliceName": "remainingSupplyFreeText",
+        "short": "Remaining supply as free text",
+        "definition": "Here the remaining supply of the medication can be stated as free text.",
+        "min": 0,
+        "max": "1",
+        "type": [
           {
-            "identity": "Rezeptanforderung",
-            "map": "Bedarfsbegruendung (Observation)"
-          },
-          {
-            "identity": "Rezeptanforderung",
-            "map": "Restreichweite"
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/remaining-supply-free-text-ex"
+            ]
           }
-        ]
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.reasonCode.coding",
+        "path": "ServiceRequest.reasonCode.coding",
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/erp-servicerequest/ValueSet/medication-request-reason-vs"
+        }
+      },
+      {
+        "id": "ServiceRequest.reasonCode.text",
+        "path": "ServiceRequest.reasonCode.text",
+        "mustSupport": true
       },
       {
         "id": "ServiceRequest.supportingInfo",
@@ -446,14 +408,17 @@
             }
           ],
           "rules": "open",
-          "description": "Supporting information for the prescription request"
+          "description": "Additional information on the prescription request.",
+          "ordered": false
         },
         "mustSupport": true
       },
       {
-        "id": "ServiceRequest.supportingInfo:AuslieferndeApotheke",
+        "id": "ServiceRequest.supportingInfo:pflegeeinrichtungKopie",
         "path": "ServiceRequest.supportingInfo",
-        "sliceName": "AuslieferndeApotheke",
+        "sliceName": "pflegeeinrichtungKopie",
+        "short": "Reference to the care facility that receives a copy of the prescription.",
+        "comment": "This needs to be set if the initiating Requester is a pharmacy.",
         "min": 0,
         "max": "1",
         "type": [
@@ -467,7 +432,7 @@
         "mustSupport": true
       },
       {
-        "id": "ServiceRequest.supportingInfo:AuslieferndeApotheke.type",
+        "id": "ServiceRequest.supportingInfo:pflegeeinrichtungKopie.type",
         "path": "ServiceRequest.supportingInfo.type",
         "min": 1,
         "patternUri": "Organization"
@@ -477,25 +442,14 @@
         "path": "ServiceRequest.note",
         "short": "Further information on the prescription request.",
         "comment": "Any use cases that are not specified can be placed here in free text.",
-        "mustSupport": true,
-        "mapping": [
-          {
-            "identity": "Rezeptanforderung",
-            "map": "Freitext"
-          },
-          {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung",
-            "map": "Hinweise_fuer_Empfaenger"
-          },
-          {
-            "identity": "Rezeptanforderung-Rezeptuebermittlung",
-            "map": "Freitext"
-          },
-          {
-            "identity": "Rezeptanforderung-Ablehnung",
-            "map": "Freitext"
-          }
-        ]
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.note.time",
+        "path": "ServiceRequest.note.time",
+        "comment": "This is used in order to sort the Annotations",
+        "min": 1,
+        "mustSupport": true
       }
     ]
   }

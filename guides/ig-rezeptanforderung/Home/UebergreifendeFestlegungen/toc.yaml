@@ -1,16 +1,14 @@
 - name: Index
   filename: Index.page.md
-- name: Methodik
-  filename: Methodik.page.md
-- name: Dateiformat
-  filename: File-Format.page.md
-- name: Must Support
-  filename: MustSupport.page.md
 - name: Transportmedium
   filename: Transportmedium.page.md
 - name: Verwendung der Ressourcen
   filename: Ressource-Usage.page.md
-- name: Hinweis zu den Beispielen
-  filename: Examples.page.md
+- name: Mehrere Anfragen in einer Nachricht
+  filename: multiple-servicerequest.page.md
+- name: Vorgaben zu Identifier
+  filename: Identifier.page.md  
+- name: Modifier Extensions
+  filename: modifier-extensions.page.md
 - name: Weitere Hinweise
   filename: ILF_Description.page.md
