@@ -1,0 +1,190 @@
+<?xml version='1.0' encoding='utf-8'?>
+<?xml-stylesheet type="text/xsl" href="../../rezeptanforderung.xsl" ?>
+<Bundle xmlns="http://hl7.org/fhir">
+    <id value="134dcca5-41d7-4909-a43b-2dcf3927198c"/>
+    <meta>
+        <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"/>
+    </meta>
+    <identifier>
+        <system value="urn:ietf:rfc:3986"/>
+        <value value="urn:uuid:134dcca5-41d7-4909-a43b-2dcf3927198c"/>
+    </identifier>
+    <type value="message"/>
+    <timestamp value="2024-10-31T12:34:06.325326+00:00"/>
+    <entry>
+        <fullUrl value="urn:uuid:c45021cd-71e1-429e-8c4b-ac0804f3b4ac"/>
+        <resource>
+            <MessageHeader>
+                <id value="c45021cd-71e1-429e-8c4b-ac0804f3b4ac"/>
+                <meta>
+                    <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"/>
+                </meta>
+                <eventCoding>
+                    <system value="https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"/>
+                    <code value="eRezept_Rezeptanforderung;Abgabeanfrage"/>
+                    <display value="Anfrage zur Erfüllung eines Rezeptes und Abgabe des Medikaments"/>
+                </eventCoding>
+                <destination>
+                    <name value="Test Apotheke"/>
+                    <endpoint value="5-test-telematik-id-apotheke"/>
+                </destination>
+                <sender>
+                    <identifier>
+                        <system value="https://gematik.de/fhir/sid/telematik-id"/>
+                        <value value="5-test-telematik-id-pflegeinrichtung"/>
+                    </identifier>
+                    <display value="Pflegeheim Immergrün"/>
+                </sender>
+                <source>
+                    <name value="HealthCare-Source"/>
+                    <software value="HealthCare-Software"/>
+                    <version value="1.0.0"/>
+                    <contact>
+                        <system value="email"/>
+                        <value value="info@hcs.email"/>
+                    </contact>
+                    <endpoint value="mailto:healthcare-service@test.kim.de"/>
+                </source>
+                <responsible>
+                    <reference value="urn:uuid:953abc5f-ace4-4e1b-a94c-7ca79820291e"/>
+                </responsible>
+                <focus>
+                    <reference value="urn:uuid:4e53eac0-0162-49d8-bb04-d0465e927f87"/>
+                </focus>
+            </MessageHeader>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="urn:uuid:4e53eac0-0162-49d8-bb04-d0465e927f87"/>
+        <resource>
+            <ServiceRequest>
+                <id value="4e53eac0-0162-49d8-bb04-d0465e927f87"/>
+                <meta>
+                    <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"/>
+                </meta>
+                <extension url="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex">
+                    <valueIdentifier>
+                        <system value="https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken"/>
+                        <value value="Task/160.994.555.220.643/$accept?ac=D6B2Fcddd719EeDFeeDC3c4c5d9321DE6F31e6C4C36FE8F69E1FbF4944eeEEc2"/>
+                    </valueIdentifier>
+                </extension>
+                <identifier>
+                    <system value="https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier"/>
+                    <value value="9f9fef54-91ec-4840-bf08-1443c63db383"/>
+                </identifier>
+                <identifier>
+                    <system value="https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier"/>
+                    <value value="42ae6b25-d188-4de4-95ab-687dfbf2b783"/>
+                </identifier>
+                <basedOn>
+                    <reference value="uuid:37635950-0051-4c2d-a4e1-8a002789ea5d"/>
+                </basedOn>
+                <requisition>
+                    <system value="https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier"/>
+                    <value value="42ae6b25-d188-4de4-95ab-687dfbf2b783"/>
+                </requisition>
+                <status value="active"/>
+                <intent value="filler-order"/>
+                <priority value="urgent"/>
+                <code>
+                    <coding>
+                        <system value="https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"/>
+                        <code value="dispense-request"/>
+                    </coding>
+                </code>
+                <subject>
+                    <reference value="Patient/69c4950c-a45b-45e7-baad-096bf2c24daa"/>
+                </subject>
+                <occurrenceDateTime value="2024-10-31T13:34:06.324785+01:00"/>
+                <authoredOn value="2024-10-31T13:34:06.324795+01:00"/>
+                <requester>
+                    <reference value="Organization/Organization/a5c4e1bf-787c-4d85-a983-cac11d4a576c"/>
+                </requester>
+                <performer>
+                    <identifier>
+                        <system value="http://gematik.de/fhir/sid/KIM-Adresse"/>
+                        <value value="Test Apotheke"/>
+                    </identifier>
+                </performer>
+                <note>
+                    <time value="2024-10-31T13:34:06.324905+01:00"/>
+                    <text value="Bitte wie üblich zur Abholung bereitlegen."/>
+                </note>
+            </ServiceRequest>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="urn:uuid:69c4950c-a45b-45e7-baad-096bf2c24daa"/>
+        <resource>
+            <Patient>
+                <id value="69c4950c-a45b-45e7-baad-096bf2c24daa"/>
+                <meta>
+                    <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-patient"/>
+                </meta>
+                <identifier>
+                    <system value="http://fhir.de/sid/gkv/kvid-10"/>
+                    <value value="X234567890"/>
+                </identifier>
+                <name>
+                    <use value="official"/>
+                    <family value="Königsstein">
+                        <extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
+                            <valueString value="Königsstein"/>
+                        </extension>
+                    </family>
+                    <given value="Ludger"/>
+                </name>
+                <birthDate value="1935-06-22"/>
+                <address>
+                    <type value="both"/>
+                    <line value="Musterstr. 1">
+                        <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+                            <valueString value="1"/>
+                        </extension>
+                        <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+                            <valueString value="Musterstr."/>
+                        </extension>
+                    </line>
+                    <city value="Berlin"/>
+                    <postalCode value="10623"/>
+                </address>
+            </Patient>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="urn:uuid:953abc5f-ace4-4e1b-a94c-7ca79820291e"/>
+        <resource>
+            <Organization>
+                <id value="953abc5f-ace4-4e1b-a94c-7ca79820291e"/>
+                <meta>
+                    <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"/>
+                    <tag>
+                        <system value="https://gematik.de/fhir/directory/CodeSystem/Origin"/>
+                        <code value="owner"/>
+                    </tag>
+                </meta>
+                <identifier>
+                    <system value="https://gematik.de/fhir/sid/telematik-id"/>
+                    <value value="1-031234567"/>
+                </identifier>
+                <name value="Pflegeheim Immergrün"/>
+                <address>
+                    <type value="both"/>
+                    <line value="Musterstr. 2"/>
+                    <city value="Berlin"/>
+                    <postalCode value="10623"/>
+                </address>
+                <contact>
+                    <telecom>
+                        <system value="phone"/>
+                        <value value="0301234567"/>
+                    </telecom>
+                    <telecom>
+                        <system value="email"/>
+                        <value value="pflegeheim.immergrün.arzt@sana-pflegeheime.kim.telematik"/>
+                    </telecom>
+                </contact>
+            </Organization>
+        </resource>
+    </entry>
+</Bundle>
