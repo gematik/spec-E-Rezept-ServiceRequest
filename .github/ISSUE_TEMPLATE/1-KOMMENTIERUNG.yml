@@ -1,6 +1,8 @@
 name: "☝️ Kommentierung für IG 'Rezeptanforderungen für das E-Rezept'"
-description: "Erstellen Sie einen Kommentar, um uns bei der Verbesserung des Implementierungsleitfadens oder der FHIR-Profile für 'Rezeptanforderungen für das E-Rezept' zu helfen.
+description: >
+  "Erstellen Sie einen Kommentar, um uns bei der Verbesserung des Implementierungsleitfadens oder der FHIR-Profile für 'Rezeptanforderungen für das E-Rezept' zu helfen.
   \nDie zu bewertenden Ressourcen sind:\n
+  \n
   * [FHIR IG ServiceRequest](https://simplifier.net/guide/erp-servicerequest-implementation-guide?version=1.2.0-rc2)
   * [FHIR Package ServiceRequest](https://simplifier.net/packages/de.gematik.erp-servicerequest/1.2.0-rc2) 
   * [FHIR IG ATF](https://simplifier.net/guide/atf-implementation-guide/Home/Datenobjekte/MessageHeader?version=1.4.0-rc1)
