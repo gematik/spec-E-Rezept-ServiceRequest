@@ -1,0 +1,494 @@
+<?xml version='1.0' encoding='utf-8'?>
+<?xml-stylesheet type="text/xsl" href="../../rezeptanforderung.xsl" ?>
+<Bundle xmlns="http://hl7.org/fhir">
+    <id value="b350a607-5e88-4ee4-b439-5530a432e6fa"/>
+    <meta>
+        <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"/>
+    </meta>
+    <identifier>
+        <system value="urn:ietf:rfc:3986"/>
+        <value value="urn:uuid:b350a607-5e88-4ee4-b439-5530a432e6fa"/>
+    </identifier>
+    <type value="message"/>
+    <timestamp value="2024-10-31T10:22:21.485716+00:00"/>
+    <entry>
+        <fullUrl value="urn:uuid:76f96d6e-81be-4e56-8a41-3ff032848bad"/>
+        <resource>
+            <MessageHeader>
+                <id value="76f96d6e-81be-4e56-8a41-3ff032848bad"/>
+                <meta>
+                    <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"/>
+                </meta>
+                <eventCoding>
+                    <system value="https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs"/>
+                    <code value="eRezept_Rezeptanforderung;Rezeptbestaetigung"/>
+                    <display value="Bestätigung und Übermittlung eines ausgestellten Rezeptes"/>
+                </eventCoding>
+                <destination>
+                    <name value="Pflegeheim Immergrün"/>
+                    <endpoint value="5-test-telematik-id-pflegeinrichtung"/>
+                </destination>
+                <sender>
+                    <identifier>
+                        <system value="https://gematik.de/fhir/sid/telematik-id"/>
+                        <value value="5-test-telematik-id-praxis"/>
+                    </identifier>
+                    <display value="Praxis Hans Topp-Glücklich"/>
+                </sender>
+                <source>
+                    <name value="DeltaCare Inc."/>
+                    <software value="PraxisFix"/>
+                    <version value="1.3.2"/>
+                    <contact>
+                        <system value="email"/>
+                        <value value="issues@praxisfix-deltacare.de"/>
+                    </contact>
+                    <endpoint value="https://deltacare.de/praxisfix/issues"/>
+                </source>
+                <responsible>
+                    <reference value="urn:uuid:743f3a0f-51c1-4fbc-9818-4f78c4dc27ef"/>
+                </responsible>
+                <focus>
+                    <reference value="urn:uuid:f255c719-cd28-459c-8833-f2116295f78b"/>
+                </focus>
+            </MessageHeader>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="urn:uuid:f255c719-cd28-459c-8833-f2116295f78b"/>
+        <resource>
+            <ServiceRequest>
+                <id value="f255c719-cd28-459c-8833-f2116295f78b"/>
+                <meta>
+                    <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"/>
+                </meta>
+                <extension url="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex">
+                    <valueIdentifier>
+                        <system value="https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken"/>
+                        <value value="Task/160.778.888.981.224/$accept?ac=42ED615DD055f4fA08660a10C293Fe183eeEe0dEbC4F3dDDECB2Cfe0113B0E00"/>
+                    </valueIdentifier>
+                </extension>
+                <identifier>
+                    <system value="https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier"/>
+                    <value value="204f5ca5-a3f8-4fe2-b5c7-0c785cfe97ad"/>
+                </identifier>
+                <identifier>
+                    <system value="https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier"/>
+                    <value value="fc2b2816-2521-49e5-8a65-0451d6af73f0"/>
+                </identifier>
+                <basedOn>
+                    <reference value="urn:uuid:87d89ca0-e872-412b-a5c3-ef2c21d27e2a"/>
+                </basedOn>
+                <requisition>
+                    <system value="https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier"/>
+                    <value value="fc2b2816-2521-49e5-8a65-0451d6af73f0"/>
+                </requisition>
+                <status value="completed"/>
+                <intent value="order"/>
+                <priority value="urgent"/>
+                <code>
+                    <coding>
+                        <system value="https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"/>
+                        <code value="prescription-request"/>
+                    </coding>
+                </code>
+                <orderDetail>
+                    <coding>
+                        <system value="https://gematik.de/fhir/erp-servicerequest/CodeSystem/prescription-fullfillment-type-cs"/>
+                        <code value="return-to-requester"/>
+                    </coding>
+                </orderDetail>
+                <subject>
+                    <reference value="Patient/76a7d69e-f155-42f4-9b54-9c4967c8dc94"/>
+                </subject>
+                <occurrenceDateTime value="2024-10-31T11:22:20.091139+01:00"/>
+                <authoredOn value="2024-10-31T11:22:20.091143+01:00"/>
+                <requester>
+                    <reference value="Organization/743f3a0f-51c1-4fbc-9818-4f78c4dc27ef"/>
+                </requester>
+                <performer>
+                    <identifier>
+                        <system value="http://gematik.de/fhir/sid/KIM-Adresse"/>
+                        <value value="practitioner@gluecklich.kim.telematik"/>
+                    </identifier>
+                </performer>
+                <reasonCode>
+                    <extension url="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/remaining-supply-ex">
+                        <valueQuantity>
+                            <value value="7.0"/>
+                            <unit value="Stück"/>
+                        </valueQuantity>
+                    </extension>
+                    <coding>
+                        <system value="https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-request-reason-cs"/>
+                        <code value="exhausted-range"/>
+                    </coding>
+                    <text value="Medikament läuft am 31.01.2025 aus. Es sind noch 7 stk übrig."/>
+                </reasonCode>
+                <reasonReference>
+                    <reference value="uuid:d42e61aa-8c05-4cd6-81f4-c36153127e4f"/>
+                </reasonReference>
+                <reasonReference>
+                    <reference value="uuid:0f0d3e91-9702-47f4-b324-6df1d955d251"/>
+                </reasonReference>
+                <note>
+                    <time value="2024-10-31T11:22:20.091340+01:00"/>
+                    <text value="Wird weiterhin benötigt, bitte um Verlängerung."/>
+                </note>
+            </ServiceRequest>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="urn:uuid:87d89ca0-e872-412b-a5c3-ef2c21d27e2a"/>
+        <resource>
+            <MedicationRequest>
+                <id value="87d89ca0-e872-412b-a5c3-ef2c21d27e2a"/>
+                <meta>
+                    <profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription|1.1.0"/>
+                </meta>
+                <extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_EmergencyServicesFee">
+                    <valueBoolean value="false"/>
+                </extension>
+                <status value="active"/>
+                <intent value="order"/>
+                <medicationReference>
+                    <reference value="urn:uuid:adca5649-98b5-41b3-bca2-b2aa5d08e698"/>
+                </medicationReference>
+                <subject>
+                    <reference value="urn:uuid:76a7d69e-f155-42f4-9b54-9c4967c8dc94"/>
+                </subject>
+                <authoredOn value="2024-10-31"/>
+                <requester>
+                    <reference value="urn:uuid:b2516269-5621-40bd-a959-6e6ca178a2aa"/>
+                </requester>
+                <insurance>
+                    <reference value="urn:uuid:03317562-41c9-4d97-b040-ca16f8c83948"/>
+                </insurance>
+                <dosageInstruction>
+                    <extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_DosageFlag">
+                        <valueBoolean value="true"/>
+                    </extension>
+                    <text value="2mal tägl. 5ml"/>
+                </dosageInstruction>
+            </MedicationRequest>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="urn:uuid:adca5649-98b5-41b3-bca2-b2aa5d08e698"/>
+        <resource>
+            <Medication>
+                <id value="adca5649-98b5-41b3-bca2-b2aa5d08e698"/>
+                <meta>
+                    <profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.1.0"/>
+                </meta>
+                <extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Medication_Type">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="http://snomed.info/sct"/>
+                            <version value="http://snomed.info/sct/900000000000207008/version/20220331"/>
+                            <code value="763158003"/>
+                            <display value="Medicinal product (product)"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+                <extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Category">
+                    <valueCoding>
+                        <system value="https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Category"/>
+                        <code value="00"/>
+                    </valueCoding>
+                </extension>
+                <extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Vaccine">
+                    <valueBoolean value="false"/>
+                </extension>
+                <extension url="http://fhir.de/StructureDefinition/normgroesse">
+                    <valueCode value="N1"/>
+                </extension>
+                <code>
+                    <coding>
+                        <system value="http://fhir.de/CodeSystem/ifa/pzn"/>
+                        <code value="08585997"/>
+                    </coding>
+                    <text value="Prospan® Hustensaft 100ml"/>
+                </code>
+                <form>
+                    <coding>
+                        <system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM"/>
+                        <code value="FLE"/>
+                    </coding>
+                </form>
+            </Medication>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="urn:uuid:b2516269-5621-40bd-a959-6e6ca178a2aa"/>
+        <resource>
+            <Practitioner>
+                <id value="b2516269-5621-40bd-a959-6e6ca178a2aa"/>
+                <meta>
+                    <profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner|1.1.0"/>
+                </meta>
+                <identifier>
+                    <type>
+                        <coding>
+                            <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+                            <code value="LANR"/>
+                        </coding>
+                    </type>
+                    <system value="https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR"/>
+                    <value value="838382202"/>
+                </identifier>
+                <identifier>
+                    <type>
+                        <coding>
+                            <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+                            <code value="PRN"/>
+                        </coding>
+                    </type>
+                    <system value="https://gematik.de/fhir/sid/telematik-id"/>
+                    <value value="1-838382202"/>
+                </identifier>
+                <name>
+                    <use value="official"/>
+                    <family value="Topp-Glücklich">
+                        <extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
+                            <valueString value="Topp-Glücklich"/>
+                        </extension>
+                    </family>
+                    <given value="Hans"/>
+                    <prefix value="Dr. med."/>
+                </name>
+                <qualification>
+                    <code>
+                        <coding>
+                            <system value="https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type"/>
+                            <code value="00"/>
+                        </coding>
+                        <text value="Arzt"/>
+                    </code>
+                </qualification>
+                <qualification>
+                    <code>
+                        <coding>
+                            <system value="https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Berufsbezeichnung"/>
+                            <code value="Berufsbezeichnung"/>
+                        </coding>
+                        <text value="Hausarzt"/>
+                    </code>
+                </qualification>
+            </Practitioner>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="urn:uuid:76a7d69e-f155-42f4-9b54-9c4967c8dc94"/>
+        <resource>
+            <Patient>
+                <id value="76a7d69e-f155-42f4-9b54-9c4967c8dc94"/>
+                <meta>
+                    <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-patient"/>
+                </meta>
+                <identifier>
+                    <system value="http://fhir.de/sid/gkv/kvid-10"/>
+                    <value value="X234567890"/>
+                </identifier>
+                <name>
+                    <use value="official"/>
+                    <family value="Königsstein">
+                        <extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
+                            <valueString value="Königsstein"/>
+                        </extension>
+                    </family>
+                    <given value="Ludger"/>
+                </name>
+                <birthDate value="1935-06-22"/>
+                <address>
+                    <type value="both"/>
+                    <line value="Musterstr. 1">
+                        <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+                            <valueString value="1"/>
+                        </extension>
+                        <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+                            <valueString value="Musterstr."/>
+                        </extension>
+                    </line>
+                    <city value="Berlin"/>
+                    <postalCode value="10623"/>
+                </address>
+            </Patient>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="urn:uuid:03317562-41c9-4d97-b040-ca16f8c83948"/>
+        <resource>
+            <Coverage>
+                <id value="03317562-41c9-4d97-b040-ca16f8c83948"/>
+                <meta>
+                    <profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Coverage|1.1.0"/>
+                </meta>
+                <extension url="http://fhir.de/StructureDefinition/gkv/besondere-personengruppe">
+                    <valueCoding>
+                        <system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_PERSONENGRUPPE"/>
+                        <code value="00"/>
+                    </valueCoding>
+                </extension>
+                <extension url="http://fhir.de/StructureDefinition/gkv/dmp-kennzeichen">
+                    <valueCoding>
+                        <system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DMP"/>
+                        <code value="00"/>
+                    </valueCoding>
+                </extension>
+                <extension url="http://fhir.de/StructureDefinition/gkv/wop">
+                    <valueCoding>
+                        <system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ITA_WOP"/>
+                        <code value="72"/>
+                    </valueCoding>
+                </extension>
+                <extension url="http://fhir.de/StructureDefinition/gkv/versichertenart">
+                    <valueCoding>
+                        <system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_VERSICHERTENSTATUS"/>
+                        <code value="3"/>
+                    </valueCoding>
+                </extension>
+                <status value="active"/>
+                <type>
+                    <coding>
+                        <system value="http://fhir.de/CodeSystem/versicherungsart-de-basis"/>
+                        <code value="GKV"/>
+                    </coding>
+                </type>
+                <beneficiary>
+                    <reference value="urn:uuid:Patient/Example-Patient"/>
+                </beneficiary>
+                <period>
+                    <end value="2040-04-01"/>
+                </period>
+                <payor>
+                    <identifier>
+                        <system value="http://fhir.de/sid/arge-ik/iknr"/>
+                        <value value="108416214"/>
+                    </identifier>
+                    <display value="AOK Bayern Die Gesundh."/>
+                </payor>
+            </Coverage>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="urn:uuid:743f3a0f-51c1-4fbc-9818-4f78c4dc27ef"/>
+        <resource>
+            <Organization>
+                <id value="743f3a0f-51c1-4fbc-9818-4f78c4dc27ef"/>
+                <meta>
+                    <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"/>
+                    <tag>
+                        <system value="https://gematik.de/fhir/directory/CodeSystem/Origin"/>
+                        <code value="owner"/>
+                    </tag>
+                </meta>
+                <identifier>
+                    <system value="https://gematik.de/fhir/sid/telematik-id"/>
+                    <value value="1-031234567"/>
+                </identifier>
+                <name value="Pflegeheim Immergrün"/>
+                <address>
+                    <type value="both"/>
+                    <line value="Musterstr. 2"/>
+                    <city value="Berlin"/>
+                    <postalCode value="10623"/>
+                </address>
+                <contact>
+                    <telecom>
+                        <system value="phone"/>
+                        <value value="0301234567"/>
+                    </telecom>
+                    <telecom>
+                        <system value="email"/>
+                        <value value="pflegeheim.immergrün.arzt@sana-pflegeheime.kim.telematik"/>
+                    </telecom>
+                </contact>
+            </Organization>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="urn:uuid:f255c719-cd28-459c-8833-f2116295f78b"/>
+        <resource>
+            <ServiceRequest>
+                <id value="f255c719-cd28-459c-8833-f2116295f78b"/>
+                <meta>
+                    <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"/>
+                </meta>
+                <extension url="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex">
+                    <valueIdentifier>
+                        <system value="https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken"/>
+                        <value value="Task/160.778.888.981.224/$accept?ac=42ED615DD055f4fA08660a10C293Fe183eeEe0dEbC4F3dDDECB2Cfe0113B0E00"/>
+                    </valueIdentifier>
+                </extension>
+                <identifier>
+                    <system value="https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier"/>
+                    <value value="204f5ca5-a3f8-4fe2-b5c7-0c785cfe97ad"/>
+                </identifier>
+                <identifier>
+                    <system value="https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier"/>
+                    <value value="fc2b2816-2521-49e5-8a65-0451d6af73f0"/>
+                </identifier>
+                <basedOn>
+                    <reference value="urn:uuid:87d89ca0-e872-412b-a5c3-ef2c21d27e2a"/>
+                </basedOn>
+                <requisition>
+                    <system value="https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier"/>
+                    <value value="fc2b2816-2521-49e5-8a65-0451d6af73f0"/>
+                </requisition>
+                <status value="completed"/>
+                <intent value="order"/>
+                <priority value="urgent"/>
+                <code>
+                    <coding>
+                        <system value="https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs"/>
+                        <code value="prescription-request"/>
+                    </coding>
+                </code>
+                <orderDetail>
+                    <coding>
+                        <system value="https://gematik.de/fhir/erp-servicerequest/CodeSystem/prescription-fullfillment-type-cs"/>
+                        <code value="return-to-requester"/>
+                    </coding>
+                </orderDetail>
+                <subject>
+                    <reference value="Patient/4520f1e9-751d-45c3-8c24-f86db91835f8"/>
+                </subject>
+                <occurrenceDateTime value="2024-10-31T11:22:20.091139+01:00"/>
+                <authoredOn value="2024-10-31T11:22:20.091143+01:00"/>
+                <requester>
+                    <reference value="Organization/743f3a0f-51c1-4fbc-9818-4f78c4dc27ef"/>
+                </requester>
+                <performer>
+                    <identifier>
+                        <system value="http://gematik.de/fhir/sid/KIM-Adresse"/>
+                        <value value="practitioner@gluecklich.kim.telematik"/>
+                    </identifier>
+                </performer>
+                <reasonCode>
+                    <extension url="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/remaining-supply-ex">
+                        <valueQuantity>
+                            <value value="7.0"/>
+                            <unit value="Stück"/>
+                        </valueQuantity>
+                    </extension>
+                    <coding>
+                        <system value="https://gematik.de/fhir/erp-servicerequest/CodeSystem/medication-request-reason-cs"/>
+                        <code value="exhausted-range"/>
+                    </coding>
+                    <text value="Medikament läuft am 31.01.2025 aus. Es sind noch 7 stk übrig."/>
+                </reasonCode>
+                <reasonReference>
+                    <reference value="uuid:d42e61aa-8c05-4cd6-81f4-c36153127e4f"/>
+                </reasonReference>
+                <reasonReference>
+                    <reference value="uuid:0f0d3e91-9702-47f4-b324-6df1d955d251"/>
+                </reasonReference>
+                <note>
+                    <time value="2024-10-31T11:22:20.091340+01:00"/>
+                    <text value="Wird weiterhin benötigt, bitte um Verlängerung."/>
+                </note>
+            </ServiceRequest>
+        </resource>
+    </entry>
+</Bundle>
