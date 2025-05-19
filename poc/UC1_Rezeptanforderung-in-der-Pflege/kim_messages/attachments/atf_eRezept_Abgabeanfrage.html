@@ -1,0 +1,314 @@
+<html xmlns:fhir="http://hl7.org/fhir">
+ <head>
+  <title>
+   FHIR Message Bundle
+  </title>
+  <style>
+   <style>
+                        /* Enhanced styling for a more professional letter-like look optimized for A4 size */
+                        @page {
+                            size: A4 landscape;
+                            margin: 20mm;
+                        }
+                        body {
+                            font-family: 'Roboto', sans-serif;
+                            line-height: 1.6;
+                            background-color: #f9f9f9;
+                            color: #333;
+                            margin: 0;
+                            padding: 0;
+                        }
+                        #gesamtseite {
+                            width: 100%;
+                            max-width: 1000px;
+                            margin: 40px auto;
+                            background: white;
+                            padding: 20px;
+                            border: 1px solid #ccc;
+                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                            position: relative;
+                        }
+                        .header-info {
+                            margin-bottom: 30px;
+                            font-size: 0.9em;
+                            line-height: 1.4;
+                        }
+                        .header-info p {
+                            margin: 0;
+                        }
+                        .receiver-info {
+                            margin-bottom: 30px;
+                        }
+                        .receiver .name {
+                            font-weight: bold;
+                        }
+                        .receiver .email {
+                            font-weight: normal;
+                        }
+                        .clearfix::after {
+                            content: "";
+                            display: table;
+                            clear: both;
+                        }
+                        .sr-patient-info {
+                            font-style: italic;
+                            margin-top: 10px;
+                        }
+                        table {
+                            width: 100%;
+                            border-collapse: collapse;
+                            margin-top: 20px;
+                            border: 1px solid #ccc;
+                        }
+                        th {
+                            background-color: #f2f2f2;
+                            padding: 10px;
+                            border-bottom: 2px solid #ccc;
+                            font-size: 0.9em;
+                            text-align: left;
+                            border-right: 1px solid #ccc;
+                        }
+                        td {
+                            padding: 10px;
+                            border-bottom: 1px solid #ddd;
+                            font-size: 0.9em;
+                            text-align: left;
+                            border-right: 1px solid #ccc;
+                        }
+                        td:last-child, th:last-child {
+                            border-right: none;
+                        }
+                        .subject-date {
+                            text-align: right;
+                            font-size: 0.9em;
+                            color: #777;
+                            margin-bottom: 20px;
+                        }
+                        .subject h2 {
+                            font-size: 1.8em;
+                            margin: 0;
+                        }
+                        .service-request {
+                            margin-top: 20px;
+                        }
+                        .token-section {
+                            margin-top: 15px;
+                            font-style: italic;
+                            color: #333;
+                        }
+                        .urgent-pill {
+                            display: inline-block;
+                            background-color: #ff4d4d;
+                            color: white;
+                            padding: 5px 10px;
+                            border-radius: 12px;
+                            font-size: 0.8em;
+                            margin-right: 5px;
+                        }
+                        .mvo-pill {
+                            display: inline-block;
+                            background-color: #1e90ff;
+                            color: white;
+                            padding: 5px 10px;
+                            border-radius: 12px;
+                            font-size: 0.8em;
+                            margin-right: 5px;
+                        }
+                        .redeem-pill {
+                            display: inline-block;
+                            background-color: #3cb371;
+                            color: white;
+                            padding: 5px 10px;
+                            border-radius: 12px;
+                            font-size: 0.8em;
+                            margin-right: 5px;
+                        }
+                        .changed-pill {
+                            display: inline-block;
+                            background-color: #ffa500;
+                            color: white;
+                            padding: 5px 10px;
+                            border-radius: 12px;
+                            font-size: 0.8em;
+                            margin-right: 5px;
+                        }
+                        .identifier-info {
+                            display: block;
+                            background-color: #e0e0e0;
+                            color: #333;
+                            padding: 5px;
+                            border-radius: 5px;
+                            font-size: 0.8em;
+                            margin-top: 10px;
+                            text-align: center;
+                            font-weight: bold;
+                        }
+                        .service-request-box {
+                            border: 1px solid #ccc;
+                            padding: 15px;
+                            margin-bottom: 20px;
+                            background-color: #f9f9f9;
+                            box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+                        }
+                        .service-request-header {
+                            font-weight: bold;
+                            font-size: 1.2em;
+                            padding: 10px;
+                            border-bottom: 1px solid #ccc;
+                            margin-bottom: 10px;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                        }
+                        .service-request-header .pill-container {
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: flex-end;
+                        }
+                        .copy-sender-info {
+                            margin-top: 20px;
+                            padding: 10px;
+                            border-top: 1px dashed #ccc;
+                            font-size: 0.9em;
+                            color: #555;
+                        }
+                        hr {
+                            border: 0;
+                            border-top: 1px dashed #ccc;
+                            margin: 20px 0;
+                        }
+  </style>
+ </head>
+ <body>
+  <div id="gesamtseite">
+   <div class="clearfix">
+    <div class="header-info">
+     <div class="sender-info">
+      <div class="sender-info">
+       <p>
+        <strong>
+         Pflegeheim Immergrün
+        </strong>
+        <br/>
+        <span>
+        </span>
+        Musterstr. 2
+        <span>
+         ,
+        </span>
+        10623
+        <span>
+         ,
+        </span>
+        Berlin
+       </p>
+      </div>
+     </div>
+     <div class="contact-info">
+      <p>
+       <span>
+       </span>
+       Tel.: 0301234567
+       <br/>
+       <span>
+       </span>
+       KIM: pflegeheim.immergrün.arzt@sana-pflegeheime.kim.telematik
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="receiver-info clear">
+    <div class="header-info">
+     <div class="receiver">
+      <span class="name">
+       Test Apotheke
+      </span>
+      <br/>
+      <span class="email">
+       <span>
+       </span>
+       KIM: 5-test-telematik-id-apotheke
+      </span>
+     </div>
+    </div>
+   </div>
+   <div class="letter-subject-info">
+    <div class="subject">
+     <h2>
+      Anfrage zur Abgabe eines Medikaments
+     </h2>
+    </div>
+    <div class="subject-date">
+     05.11.2024
+    </div>
+   </div>
+   <div class="dispense-request-info">
+    <div class="sr-patient-info">
+     <span>
+      Bezüglich
+     </span>
+     Königsstein
+     <span>
+      ,
+     </span>
+     Ludger
+     <span>
+      (KVNR:
+     </span>
+     X234567890
+     <span>
+      )
+     </span>
+     <span>
+      , geb. (
+     </span>
+     22.06.1935
+     <span>
+      )
+     </span>
+    </div>
+    <div class="service-request">
+     <div class="service-request-box">
+      <div class="service-request-header">
+       <span>
+        #
+                            e10d305c-9c0b-4ebc-89e6-daeddeb40ef7
+       </span>
+       <div class="pill-container">
+        <div class="urgent-pill">
+         dringend
+        </div>
+       </div>
+      </div>
+      <table>
+       <thead>
+        <tr>
+         <th>
+          Nr.
+         </th>
+         <th>
+          E-Rezept-Token
+         </th>
+         <th>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td>
+          1
+         </td>
+         <td>
+          Task/160.980.321.601.199/$accept?ac=C7f29E51c4D6a51B2aab48d3c136E0080EdEFBeBEeC58209AB2FaC46BdB8e2A5
+         </td>
+         <td>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
