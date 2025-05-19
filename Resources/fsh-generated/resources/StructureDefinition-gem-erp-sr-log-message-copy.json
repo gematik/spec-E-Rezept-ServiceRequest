@@ -4,7 +4,7 @@
   "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-message-copy",
   "version": "1.2",
   "name": "GEM_ERP_SR_LOG_MessageCopy",
-  "title": "Logical ServiceRequest_Nachricht_Kopie",
+  "title": "ServiceRequest_Nachricht_Kopie",
   "status": "draft",
   "experimental": false,
   "date": "2025-01-01",
@@ -34,7 +34,7 @@
       {
         "id": "gem-erp-sr-log-message-copy",
         "path": "gem-erp-sr-log-message-copy",
-        "short": "Logical ServiceRequest_Nachricht_Kopie",
+        "short": "ServiceRequest_Nachricht_Kopie",
         "definition": "Fachliches Modell zur Beschreibung einer Kopie für die Pflegeeinrichtung."
       },
       {

@@ -1,7 +1,7 @@
 Logical: GEM_ERP_SR_LOG_PrescriptionRequest
 Parent: Element
 Id: gem-erp-sr-log-prescription-request
-Title: "Logical Model Rezeptanforderung"
+Title: "Rezeptanforderung"
 Description: "Fachliches Modell zur Beschreibung einer Rezeptanforderung"
 * insert Versioning
 

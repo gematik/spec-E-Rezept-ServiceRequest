@@ -1,7 +1,7 @@
 Logical: GEM_ERP_SR_LOG_PrescriptionRequest_Rejection
 Parent: Element
 Id: gem-erp-sr-log-prescription-request-rejection
-Title: "Logical Model Rezeptanforderung_Storno (Ablehnung)"
+Title: "Rezeptanforderung_Storno"
 Description: "Fachliches Modell zur Beschreibung einer Ablehnung einer Rezeptanforderung seitens des Verordnenden."
 * insert Versioning
 * insert RS_LOG_MessageHeader

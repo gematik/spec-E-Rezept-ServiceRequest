@@ -4,7 +4,7 @@
   "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-prescription-request-cancellation",
   "version": "1.2",
   "name": "GEM_ERP_SR_LOG_PrescriptionRequest_Cancellation",
-  "title": "Logical Model Rezeptanforderung_Storno",
+  "title": "Rezeptanforderung_Storno",
   "status": "draft",
   "experimental": false,
   "date": "2025-01-01",
@@ -34,7 +34,7 @@
       {
         "id": "gem-erp-sr-log-prescription-request-cancellation",
         "path": "gem-erp-sr-log-prescription-request-cancellation",
-        "short": "Logical Model Rezeptanforderung_Storno",
+        "short": "Rezeptanforderung_Storno",
         "definition": "Fachliches Modell zur Beschreibung einer Stornierung einer Rezeptanforderung seitens der Pflegeeinrichtung."
       },
       {

@@ -55,6 +55,16 @@
       {
         "id": "ServiceRequest.extension",
         "path": "ServiceRequest.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
         "mustSupport": true
       },
       {
@@ -92,6 +102,20 @@
           }
         ],
         "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.modifierExtension",
+        "path": "ServiceRequest.modifierExtension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
       },
       {
         "id": "ServiceRequest.modifierExtension:medicationChanged",

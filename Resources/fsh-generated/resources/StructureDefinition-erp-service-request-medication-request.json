@@ -21,6 +21,16 @@
       {
         "id": "MedicationRequest.extension",
         "path": "MedicationRequest.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
         "comment": "If the previous recipe ID is known, it can be named here",
         "mustSupport": true
       },
@@ -42,6 +52,20 @@
           }
         ],
         "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.modifierExtension",
+        "path": "MedicationRequest.modifierExtension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
       },
       {
         "id": "MedicationRequest.modifierExtension:requestMVO",
