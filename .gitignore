@@ -9,3 +9,13 @@ project.yaml
 .simplifier/connection.settings.json
 .simplifier/project.snapshot.json
 Resources/scripts/pdf_files
+
+*.sh
+*.bat
+!_updatePublisher.sh
+!_updatePublisher.bat
+input-cache/
+template/
+temp/
+output/
+fsh-generated/
