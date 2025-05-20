@@ -5,10 +5,10 @@
   "id": "service-request-priority-vs",
   "title": "Service Request Priority VS",
   "description": "Provides codes for the priority of a service request",
-  "version": "1.2",
   "url": "https://gematik.de/fhir/erp-servicerequest/ValueSet/service-request-priority-vs",
   "experimental": false,
   "publisher": "gematik GmbH",
+  "version": "1.2.0-rc3",
   "date": "2025-01-01",
   "compose": {
     "include": [

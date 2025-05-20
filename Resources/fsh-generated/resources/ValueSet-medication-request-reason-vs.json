@@ -5,10 +5,10 @@
   "id": "medication-request-reason-vs",
   "title": "Reason for medication request (VS)",
   "description": "Provides codes for reasons why medication is requested",
-  "version": "1.2",
   "url": "https://gematik.de/fhir/erp-servicerequest/ValueSet/medication-request-reason-vs",
   "experimental": false,
   "publisher": "gematik GmbH",
+  "version": "1.2.0-rc3",
   "date": "2025-01-01",
   "compose": {
     "include": [

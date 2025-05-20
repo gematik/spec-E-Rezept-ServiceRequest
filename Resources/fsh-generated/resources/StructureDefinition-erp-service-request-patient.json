@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "erp-service-request-patient",
   "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-patient",
-  "version": "1.2",
+  "version": "1.2.0-rc3",
   "name": "ERPServiceRequestPatient",
   "title": "ERP Service Request Patient",
   "status": "draft",

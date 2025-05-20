@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "remaining-supply-ex",
   "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/remaining-supply-ex",
-  "version": "1.2",
+  "version": "1.2.0-rc3",
   "name": "RemainingSupplyEX",
   "title": "Remaining Supply EX",
   "status": "draft",

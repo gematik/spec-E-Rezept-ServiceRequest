@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "erp-service-request-eprescription-token",
   "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-eprescription-token",
-  "version": "1.2",
+  "version": "1.2.0-rc3",
   "name": "ERPServiceRequestEPrescriptionToken",
   "title": "ERP Service Request EPrescription Token",
   "status": "draft",

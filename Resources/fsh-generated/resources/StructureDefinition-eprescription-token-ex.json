@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "eprescription-token-ex",
   "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex",
-  "version": "1.2",
+  "version": "1.2.0-rc3",
   "name": "EPrescriptionTokenEX",
   "title": "E-Prescription Token Extension",
   "status": "draft",

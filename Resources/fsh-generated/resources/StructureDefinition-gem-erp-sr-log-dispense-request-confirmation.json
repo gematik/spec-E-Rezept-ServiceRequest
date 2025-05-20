@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "gem-erp-sr-log-dispense-request-confirmation",
   "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-dispense-request-confirmation",
-  "version": "1.2",
+  "version": "1.2.0-rc3",
   "name": "GEM_ERP_SR_LOG_DispenseRequest_Confirmation",
   "title": "Dispensieranforderung_Bestätigung",
   "status": "draft",

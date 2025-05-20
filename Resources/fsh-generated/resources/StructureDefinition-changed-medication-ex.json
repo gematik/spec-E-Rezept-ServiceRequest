@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "changed-medication-ex",
   "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/changed-medication-ex",
-  "version": "1.2",
+  "version": "1.2.0-rc3",
   "name": "ChangedMedicationEX",
   "title": "Changed Medication (EX)",
   "status": "draft",

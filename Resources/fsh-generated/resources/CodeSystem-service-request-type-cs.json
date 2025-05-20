@@ -6,7 +6,6 @@
   "id": "service-request-type-cs",
   "title": "Art des ServiceRequests (CS)",
   "description": "Specifies the type of ServiceRequest and is used to identify ServiceRequests",
-  "version": "1.2",
   "url": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs",
   "concept": [
     {
@@ -20,6 +19,7 @@
   ],
   "experimental": false,
   "publisher": "gematik GmbH",
+  "version": "1.2.0-rc3",
   "date": "2025-01-01",
   "count": 2
 }

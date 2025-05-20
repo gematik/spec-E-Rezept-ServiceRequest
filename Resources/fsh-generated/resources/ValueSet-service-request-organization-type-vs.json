@@ -5,10 +5,10 @@
   "id": "service-request-organization-type-vs",
   "title": "ServiceRequest Organization Type (VS)",
   "description": "Defines Organizations in the context of a ServiceRequest",
-  "version": "1.2",
   "url": "https://gematik.de/fhir/erp-servicerequest/ValueSet/service-request-organization-type-vs",
   "experimental": false,
   "publisher": "gematik GmbH",
+  "version": "1.2.0-rc3",
   "date": "2025-01-01",
   "compose": {
     "include": [

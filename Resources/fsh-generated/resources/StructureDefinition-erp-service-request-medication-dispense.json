@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "erp-service-request-medication-dispense",
   "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-dispense",
-  "version": "1.2",
+  "version": "1.2.0-rc3",
   "name": "ERPServiceRequestMedicationDispense",
   "title": "ERP Service Request Medication Dispense",
   "status": "draft",

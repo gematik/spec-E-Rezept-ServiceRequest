@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "erp-service-request-organization",
   "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization",
-  "version": "1.2",
+  "version": "1.2.0-rc3",
   "name": "ERPServiceRequestOrganization",
   "title": "ERP Service Request Organization",
   "status": "draft",

@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "erp-service-request-procedure-identifier",
   "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-procedure-identifier",
-  "version": "1.2",
+  "version": "1.2.0-rc3",
   "name": "ERPServiceRequestProcedureIdentifier",
   "title": "ERP Service Request Procedure Identifier",
   "status": "draft",

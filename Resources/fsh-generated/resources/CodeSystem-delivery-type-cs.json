@@ -6,7 +6,6 @@
   "id": "delivery-type-cs",
   "title": "Art des Belieferung (CS)",
   "description": "Specifies how a dispense request should be fulfilled/ delivered",
-  "version": "1.2",
   "url": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/delivery-type-cs",
   "concept": [
     {
@@ -28,6 +27,7 @@
   ],
   "experimental": false,
   "publisher": "gematik GmbH",
+  "version": "1.2.0-rc3",
   "date": "2025-01-01",
   "count": 4
 }
