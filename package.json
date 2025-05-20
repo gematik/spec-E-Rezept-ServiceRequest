@@ -7,7 +7,7 @@
   ],
   "dependencies": {
     "hl7.fhir.r4.core": "4.0.1",
-    "de.basisprofil.r4": "1.5.0",
+    "de.basisprofil.r4": "1.5.2",
     "de.gematik.fhir.atf": "1.4.0-rc2",
     "de.gematik.fhir.directory": "0.11.12",
     "de.gematik.erezept-workflow.r4": "1.4.3",
