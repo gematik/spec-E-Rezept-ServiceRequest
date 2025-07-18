@@ -1,4 +1,4 @@
-## {{page-title}}
+## Release Notes
 
 |Im Rahmen der Veröffentlichung wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
 

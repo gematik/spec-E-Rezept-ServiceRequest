@@ -1,6 +1,4 @@
-Diese Seite enthält Inhalt
-
-### Generelle Prinzipien
+## Generelle Prinzipien
 
 Dieser Leitfaden verwendet die Schlüsselwörter **MUSS**, **DARF NICHT**, **SOLL NICHT** und **KANN** als deutsche Pendants des [RFC 2119](https://datatracker.ietf.org/doc/html/rfc2119), um Anforderungen als Ausdruck normativer Festlegungen zu kennzeichnen.
 

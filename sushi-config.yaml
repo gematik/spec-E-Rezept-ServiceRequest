@@ -21,21 +21,23 @@ dependencies:
 
 menu:
   Home: index.html
-  # Konzept dgMP: concept.html
-  # Generelle Prinzipien:
-  #   Generelle Prinzipien: general-principles.html
-  #   Validierung: validation.html
-  #   Datenschutz und Sicherheit: privacy-security.html
-  # Medikationsliste:
-  #   Übersicht: medication-list.html
-  #   Auslesen der Medikationsliste (eML): read-medication-list.html
-  # Schnittstellen:
-  #   Query API: query-api.html
-  #   Operation API: operation-api.html
-  #   Render API: render-api-eml.html
+  Einführung: einfuehrung.html
+  Anwendungsfälle:
+    Rezeptanforderung durch Pflegeeinrichtung: usecase-1-pflege.html
+    Rezeptanforderung mit Einlösung durch Patient : usecase-2-patient.html
+    Rezeptanforderung der heimversorgenden Apotheke: usecase-3-apotheke.html
+    Rezeptanforderung für anwendungsfertige Zytostatika Zubereitungen: usecase-4-zyto.html
+  Festlegungen:
+    Allgemeine Festlegungen: festlegungen-misc.html
+    Identifier: festlegungen-identifier.html
+    Modifier Extensions: festlegungen-modifier-extensions.html
+    Mehrere Anfragen: festlegungen-multiple-servicerequest.html
+    Transportmedium: festlegungen-transportmedium.html
+    Ressourcen: festlegungen-resource-usage.html
   FHIR-Artefakte: artifacts.html
   Anhänge:
   #   Referenzen: referenced.html
     Downloads: downloads.html
+    Beispiele: examples.html
   #   Release Notes: release-notes.html
   #   Steckbriefe: spec-sheet.html

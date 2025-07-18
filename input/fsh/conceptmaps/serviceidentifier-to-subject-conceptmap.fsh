@@ -10,44 +10,84 @@ Description: "This Concept Map allows for the mapping of a Service Identifier to
 * sourceCanonical = "https://gematik.de/fhir/erp-servicerequest/ValueSet/service-identifier-vs"
 * targetUri = "Betreffzeile_in_einer_KIM-Nachricht"
 
-* group
+* group[+]
   * source = Canonical(ServiceIdentifierCS)
-  * element[+].code = #eRezept_Rezeptanforderung;Rezeptanfrage
-  * element[=].target.display = "Anfrage zur Ausstellung eines E-Rezepts"
-  * element[=].target.equivalence = #equal
+  * element[+]
+    * code = #eRezept_Rezeptanforderung;Rezeptanfrage
+    * display = "Anfrage an einen Arzt ein Rezept auszustellen"
+    * target
+      * code = #eRezept_Rezeptanforderung;Rezeptanfrage
+      * display = "Anfrage zur Ausstellung eines E-Rezepts"
+      * equivalence = #equal
 
-  * element[+].code = #eRezept_Rezeptanforderung;Rezeptanfrage_Storno
-  * element[=].target.display = "Stornierung einer Rezeptanfrage"
-  * element[=].target.equivalence = #equal
+  * element[+]
+    * code = #eRezept_Rezeptanforderung;Rezeptanfrage_Storno
+    * display = "Stornierung der Rezeptanfrage"
+    * target
+      * code = #eRezept_Rezeptanforderung;Rezeptanfrage_Storno
+      * display = "Stornierung einer Rezeptanfrage"
+      * equivalence = #equal
 
-  * element[+].code = #eRezept_Rezeptanforderung;Rezeptanfrage_Ablehnung
-  * element[=].target.display = "Ablehnung einer Rezeptanfrage"
-  * element[=].target.equivalence = #equal
+  * element[+]
+    * code = #eRezept_Rezeptanforderung;Rezeptanfrage_Ablehnung
+    * display = "Ablehnung der Rezeptanfrage"
+    * target
+      * code = #eRezept_Rezeptanforderung;Rezeptanfrage_Ablehnung
+      * display = "Ablehnung einer Rezeptanfrage"
+      * equivalence = #equal
 
-  * element[+].code = #eRezept_Rezeptanforderung;Rezeptbestaetigung
-  * element[=].target.display = "Rezeptbestätigung und Übermittlung"
-  * element[=].target.equivalence = #equal
+  * element[+]
+    * code = #eRezept_Rezeptanforderung;Rezeptbestaetigung
+    * display = "Bestätigung und Übermittlung eines ausgestellten Rezeptes"
+    * target
+      * code = #eRezept_Rezeptanforderung;Rezeptbestaetigung
+      * display = "Rezeptbestätigung und Übermittlung"
+      * equivalence = #equal
 
-  * element[+].code = #eRezept_Rezeptanforderung;Abgabeanfrage
-  * element[=].target.display = "Anfrage zur Abgabe eines Medikaments"
-  * element[=].target.equivalence = #equal
+  * element[+]
+    * code = #eRezept_Rezeptanforderung;Abgabeanfrage
+    * display = "Anfrage zur Erfüllung eines Rezeptes und Abgabe des Medikaments"
+    * target
+      * code = #eRezept_Rezeptanforderung;Abgabeanfrage
+      * display = "Anfrage zur Abgabe eines Medikaments"
+      * equivalence = #equal
 
-  * element[+].code = #eRezept_Rezeptanforderung;Abgabebestaetigung
-  * element[=].target.display = "Bestätigung der Medikamentenabgabe"
-  * element[=].target.equivalence = #equal
+  * element[+]
+    * code = #eRezept_Rezeptanforderung;Abgabebestaetigung
+    * display = "Bestätigung der Erfüllung und Abgabe eines Medikamentes"
+    * target
+      * code = #eRezept_Rezeptanforderung;Abgabebestaetigung
+      * display = "Bestätigung der Medikamentenabgabe"
+      * equivalence = #equal
 
-  * element[+].code = #eRezept_Rezeptanforderung;NachrichtKopie
-  * element[=].target.display = "Kopie einer Rezeptanforderung"
-  * element[=].target.equivalence = #equal
+  * element[+]
+    * code = #eRezept_Rezeptanforderung;NachrichtKopie
+    * display = "Kopie einer Nachricht innerhalb des Prozesses der Rezeptanforderung"
+    * target
+      * code = #eRezept_Rezeptanforderung;NachrichtKopie
+      * display = "Kopie einer Rezeptanforderung"
+      * equivalence = #equal
 
-  * element[+].code = #eRezept_ParenteraleZubereitung;Rezeptanfrage
-  * element[=].target.display = "Anfrage zur Ausstellung eines E-Rezepts einer Zytostatikazubereitung"
-  * element[=].target.equivalence = #equal
+  * element[+]
+    * code = #eRezept_ParenteraleZubereitung;Rezeptanfrage
+    * display = "Rezeptanfrage für eine anwendungsfertige Zytostatikazubereitung"
+    * target
+      * code = #eRezept_ParenteraleZubereitung;Rezeptanfrage
+      * display = "Anfrage zur Ausstellung eines E-Rezepts einer Zytostatikazubereitung"
+      * equivalence = #equal
 
-  * element[+].code = #eRezept_ParenteraleZubereitung;Rezeptanfrage_Storno
-  * element[=].target.display = "Stornierung einer Rezeptanfrage zur Zytostatikazubereitung"
-  * element[=].target.equivalence = #equal
+  * element[+]
+    * code = #eRezept_ParenteraleZubereitung;Rezeptanfrage_Storno
+    * display = "Abbruch der Rezeptanfrage für eine anwendungsfertige Zytostatikazubereitung"
+    * target
+      * code = #eRezept_ParenteraleZubereitung;Rezeptanfrage_Storno
+      * display = "Stornierung einer Rezeptanfrage zur Zytostatikazubereitung"
+      * equivalence = #equal
 
-  * element[+].code = #eRezept_ParenteraleZubereitung;Rezeptbestaetigung
-  * element[=].target.display = "Rezeptbestätigung einer Rezeptanfrage zur Zytostatikazubereitung"
-  * element[=].target.equivalence = #equal
+  * element[+]
+    * code = #eRezept_ParenteraleZubereitung;Rezeptbestaetigung
+    * display = "Bestätigung und Übermittlung eines ausgestellten Rezeptes für eine anwendungsfertige Zytostatikazubereitung"
+    * target
+      * code = #eRezept_ParenteraleZubereitung;Rezeptbestaetigung
+      * display = "Rezeptbestätigung einer Rezeptanfrage zur Zytostatikazubereitung"
+      * equivalence = #equal
