@@ -13,7 +13,7 @@ Description: "Medical and pharmaceutical information for the dispense informatio
   * ^slicing.ordered = false
 
 * identifier contains prescriptionID 1..1
-* identifier[prescriptionID] only GEM_ERP_PR_PrescriptionId
+* identifier[prescriptionID] only EPrescriptionId
 * identifier[prescriptionID] ^patternIdentifier.system = $prescription-id-ns
 
 * subject MS

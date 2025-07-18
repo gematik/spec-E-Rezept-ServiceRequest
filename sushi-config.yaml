@@ -13,10 +13,11 @@ dependencies:
 
   # gematik
   de.gematik.fhir.atf: 1.4.0-rc2
-  de.gematik.erezept-workflow.r4: 1.5.x # TODO: Update Dependency
   de.gematik.ti: 1.1.0
 
-  kbv.ita.erp: 1.4.0-alpha # TODO: Update Dependency
+  # KBV
+  kbv.ita.erp: 1.3.2 # TODO: Update Dependency
+  kbv.basis: 1.7.0 # TODO: Update Dependency
 
 menu:
   Home: index.html
