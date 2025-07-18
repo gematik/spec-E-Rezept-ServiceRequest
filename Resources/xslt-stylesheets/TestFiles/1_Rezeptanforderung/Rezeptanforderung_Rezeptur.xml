@@ -240,7 +240,7 @@
                   <valueCodeableConcept>
                     <coding>
                     <system value="http://snomed.info/sct"/>
-                    <version value="http://snomed.info/sct/900000000000207008/version/20220331" />
+                    <version value="http://snomed.info/sct/11000274103/version/20240515" />
                     <code value="373873005:860781008=362943005" />
                     <display value="Pharmaceutical / biologic product (product) : Has product characteristic (attribute) = Manual method (qualifier value)" />
                   </coding>

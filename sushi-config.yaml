@@ -1,0 +1,40 @@
+canonical: https://gematik.de/fhir/erp-servicerequest
+fhirVersion: 4.0.1
+id: de.gematik.erp-servicerequest
+name: E-Rezept ServiceRequest
+status: draft # draft | active | retired | unknown
+copyrightYear: 2025
+releaseLabel: draft # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
+applyExtensionMetadataToRoot: false
+version: "1.2.0-rc3"
+dependencies:
+  # basisprofile
+  de.basisprofil.r4: 1.5.2
+
+  # gematik
+  de.gematik.fhir.atf: 1.4.0-rc2
+  de.gematik.erezept-workflow.r4: 1.5.x # TODO: Update Dependency
+  de.gematik.ti: 1.1.0
+
+  kbv.ita.erp: 1.4.0-alpha # TODO: Update Dependency
+
+menu:
+  Home: index.html
+  # Konzept dgMP: concept.html
+  # Generelle Prinzipien:
+  #   Generelle Prinzipien: general-principles.html
+  #   Validierung: validation.html
+  #   Datenschutz und Sicherheit: privacy-security.html
+  # Medikationsliste:
+  #   Übersicht: medication-list.html
+  #   Auslesen der Medikationsliste (eML): read-medication-list.html
+  # Schnittstellen:
+  #   Query API: query-api.html
+  #   Operation API: operation-api.html
+  #   Render API: render-api-eml.html
+  FHIR-Artefakte: artifacts.html
+  Anhänge:
+  #   Referenzen: referenced.html
+    Downloads: downloads.html
+  #   Release Notes: release-notes.html
+  #   Steckbriefe: spec-sheet.html

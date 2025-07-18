@@ -1,8 +1,0 @@
-- name: Index
-  filename: Index.page.md
-- name: Rezeptanforderung
-  filename: 2.1-Anfragender-an-Verordnenden.page.md
-- name: Rezeptanforderung_Bestätigung
-  filename: 2.2-Verordnender-an-Anfragenden.page.md
-- name: Beispiele der verwendeten FHIR-Ressourcen
-  filename: 2.3-Beispiele.page.md
