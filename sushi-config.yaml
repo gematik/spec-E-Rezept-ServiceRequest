@@ -41,3 +41,7 @@ menu:
     Beispiele: examples.html
   #   Release Notes: release-notes.html
   #   Steckbriefe: spec-sheet.html
+
+parameters:
+  path-pages:
+    - input/content
