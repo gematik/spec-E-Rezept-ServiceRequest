@@ -22,21 +22,20 @@ Das ATF stellt sicher, dass die Kommunikation zwischen Sender und Empfänger eff
 
 Dieser Implementation Guide beschreibt, wie die Use Cases unter Verwendung der FHIR Profile auszuführen sind.
 Die folgenden Anwendungsfälle sind beschrieben und umzusetzen:
-* {{pagelink:Home/Anwendungsfaelle/1_Rezeptanforderung}}
-* {{pagelink:Home/Anwendungsfaelle/2_Rezeptanforderung_Patient}}
-* {{pagelink:Home/Anwendungsfaelle/3_Rezeptanforderung_Apotheke}}
-* {{pagelink:Home/Anwendungsfaelle/4_Rezeptanforderung_Zyto}}
+* [Rezeptanforderung der Pflege](./usecase-1-pflege.html)
+* [Rezeptanforderung für Patient](./usecase-2-patient.html)
+* [Rezeptanforderung der Apotheke](./usecase-3-apotheke.html)
+* [Rezeptanforderung für anwendungsfertige Zytostatika Zubereitungen](./usecase-4-zyto.html)
 
-Der Tab {{pagelink:Home/Datenobjekte}} listet alle in diesem Projekt erstellten FHIR Artefakte:
-* {{pagelink:Home/Datenobjekte/Logical-Models}} beschreiben die Nachrichtentypen der Spezifikation aus fachlicher Sicht
-* {{pagelink:Home/Datenobjekte/Profile}} beschreiben die erstellten FHIR-Profile
-* {{pagelink:Home/Datenobjekte/Mappings}} beschreiben die Mappings zwischen den Logischen Modellen und den FHIR-Profilen
-* {{pagelink:Home/Datenobjekte/Identifier}} beschreiben gesonderte Identifier, die für dieses Projekt erstellt wurden
-* {{pagelink:Home/Datenobjekte/Terminologien}} beschreiben die in diesem Projekt erstellten Terminologien
+Der Tab [FHIR-Artefakte](./artifacts.html) listet alle in diesem Projekt erstellten FHIR Artefakte:
+* [Logische Modelle](./artifacts.html#structures-logical-models) beschreiben die Nachrichtentypen der Spezifikation aus fachlicher Sicht
+* [Profile](./artifacts.html#structures-resource-profiles) beschreiben die erstellten FHIR-Profile
+* [Datentypen](./artifacts.html#structures-data-type-profiles) beschreiben gesonderte Datentypen, wie z.B. Identifier
+* [Terminologien](./artifacts.html#terminology-value-sets) beschreiben die in diesem Projekt erstellten Terminologien
 
-Der Tab {{pagelink:Home/UebergreifendeFestlegungen}} und dessen Unterseiten stellen Anforderungen an Systeme dar, die diesen IG umsetzen wollen.
+Beispiele können ebenfalls auf der [FHIR-Artefakte Seite](./artifacts.html#example-example-instances) eingesehen werden.
 
-Beispiele können unter {{pagelink:Home/Examples.page.md}} eingesehen werden.
+Der Tab "Festlegungen" und dessen Unterseiten stellen Anforderungen an Systeme dar, die diesen IG umsetzen wollen.
 
 ### Abhängigkeiten
 

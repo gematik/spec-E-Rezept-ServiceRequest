@@ -12,7 +12,7 @@ Diese kann das Rezept am E-Rezept-Fachdienst einlösen.
 
 ### Hinweis zu Identifiern
 
-Für diesen Fall gibt es Festlegungen zur Nutzung von Identifern im {{pagelink:Home/Datenobjekte/Profile/profile_definitions/erp-service-request-prescription-request.page.md}}, siehe {{pagelink:Home/UebergreifendeFestlegungen/identifier.page.md}}.
+Für diesen Fall gibt es Festlegungen zur Nutzung von Identifern im [Prescription Request](./StructureDefinition-erp-service-request-prescription-request.html), siehe [Festlegungen Identifier](./festlegungen-identifier.html).
 
 ## Anfrage an Verordnenden
 
@@ -27,20 +27,20 @@ Die folgenden Beschreibungen liefern detailiierte Informationen, wie eine Rezept
 
 ### [1] Rezeptanforderung
 
-Zum erstellen müssen die in {{pagelink:Home/Datenobjekte/Mappings/mapping_definitions/Mapping-für-Rezeptanforderung.page.md}} aufgeführten fachlichen Informationen übertragen werden. Das Mapping stellt ebenfalls dar, in welchen Profilen die Informationen angegeben werden müssen.
+Zum Erstellen müssen die in [Fachmodell Rezeptanforderung](./StructureDefinition-gem-erp-sr-log-prescription-request.html) aufgeführten fachlichen Informationen übertragen werden. Das Mapping stellt ebenfalls dar, in welchen Profilen die Informationen angegeben werden müssen.
 
 #### Verwendung von Profilen
 
-Folgende Profile sind für diesen Übertragungsweg zu nutzen und im {{link:https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container}} einzubetten:
+Folgende Profile sind für diesen Übertragungsweg zu nutzen und im [Message Container](./StructureDefinition-erp-service-request-message-container.html) einzubetten:
 
 |Profil|Referenziert in|Optional|
 |---|---|---|
-|{{pagelink:Home/Datenobjekte/Profile/profile_definitions/erp-service-request-request-header.page.md}}|ERPServiceRequestMessageContainer.entry[0]||
-|{{pagelink:Home/Datenobjekte/Profile/profile_definitions/erp-service-request-prescription-request.page.md}}|ERPServiceRequestRequestHeader.focus||
-|{{pagelink:Home/Datenobjekte/Profile/profile_definitions/erp-service-request-patient.page.md}}|ERPServiceRequestPrescriptionRequest.subject||
-|{{pagelink:Home/Datenobjekte/Profile/profile_definitions/erp-service-request-organization.page.md}}, |ERPServiceRequestPrescriptionRequest.requester||
-|{{pagelink:Home/Datenobjekte/Profile/profile_definitions/erp-service-request-practitioner.page.md}} |ERPServiceRequestPrescriptionRequest.performer|x|
-|{{pagelink:Home/Datenobjekte/Profile/profile_definitions/erp-service-request-medication-request.page.md}}|ERPServiceRequestPrescriptionRequest.basedOn||
+|[Message Header](./StructureDefinition-erp-service-request-request-header.html)|ERPServiceRequestMessageContainer.entry[0]||
+|[Prescription Request](./StructureDefinition-erp-service-request-prescription-request.html)|ERPServiceRequestRequestHeader.focus||
+|[Patient](./StructureDefinition-erp-service-request-patient.html)|ERPServiceRequestPrescriptionRequest.subject||
+|[Organization](./StructureDefinition-erp-service-request-organization.html), |ERPServiceRequestPrescriptionRequest.requester||
+|[Practitioner](./StructureDefinition-erp-service-request-practitioner.html) |ERPServiceRequestPrescriptionRequest.performer|x|
+|[MedicationRequest](./StructureDefinition-erp-service-request-medication-request.html)|ERPServiceRequestPrescriptionRequest.basedOn||
 |[KBV_PR_ERP_Medication_PZN](https://simplifier.net/erezept/kbvprerpmedicationpzn), [KBV_PR_ERP_Medication_Compounding](https://simplifier.net/erezept/kbvprerpmedicationcompounding), [KBV_PR_ERP_Medication_Ingredient](https://simplifier.net/erezept/kbvprerpmedicationingredient) oder [KBV_PR_ERP_Medication_FreeText](https://simplifier.net/erezept/kbvprerpmedicationfreetext)|ERPServiceRequestMedicationRequest.medication[x]||
 
 Folgendes Klassendiagramm soll die verwendeten Profile graphisch darstellen:
@@ -58,7 +58,7 @@ Folgende Bedingungen müssen erfüllt, bzw. Felder gesetzt sein, damit die Nachr
 
 #### Angabe der Verordnungsinhalte
 
-Die MedicationRequest Ressource ist nach Profil {{pagelink:Home/Datenobjekte/Profile/profile_definitions/erp-service-request-medication-request.page.md}} anzugeben.
+Die MedicationRequest Ressource ist nach Profil [MedicationRequest](./StructureDefinition-erp-service-request-medication-request.html) anzugeben.
 Die Informationen zum Arzneimittel sind in der referenzierten Medication Ressource nachgehalten, die einem Profil der KBV_Medication entspricht.
 
 ### Stornierung - Verordnungsanfrage
@@ -92,19 +92,19 @@ Der Verordnende kann nach dem Erhalt einer Rezeptanforderung diese prüfen und e
 
 Der Verordnende erhält in der Antwort vom Fachdienst die PrescriptionID und den AccessCode. Beide Informationen werden benötigt, damit die Apotheke das E-Rezept einlösen und zur Abrechnung bringen kann.
 
-Zum Erstellen müssen die in {{pagelink:Home/Datenobjekte/Mappings/mapping_definitions/Mapping-für-Rezeptanforderung_Bestaetigung.page.md}} aufgeführten fachlichen Informationen übertragen werden. Das Mapping stellt ebenfalls dar, in welchen Profilen die Informationen angegeben werden müssen.
+Zum Erstellen müssen die in [Rezeptanforderung_Bestätigung](./StructureDefinition-gem-erp-sr-log-prescription-request-confirmation.html) aufgeführten fachlichen Informationen übertragen werden. Das Mapping stellt ebenfalls dar, in welchen Profilen die Informationen angegeben werden müssen.
 
 #### Verwendung von Profilen
 
-Folgende Profile sind für diesen Übertragungsweg zu nutzen und im {{link:https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container}} einzubetten:
+Folgende Profile sind für diesen Übertragungsweg zu nutzen und im [Message Container](./StructureDefinition-erp-service-request-message-container.html) einzubetten:
 
 |Profil|Referenziert in|Optional|
 |---|---|---|
-|{{pagelink:Home/Datenobjekte/Profile/profile_definitions/erp-service-request-request-header.page.md}}|ERPServiceRequestMessageContainer.entry[0]||
-|{{pagelink:Home/Datenobjekte/Profile/profile_definitions/erp-service-request-prescription-request.page.md}}|ERPServiceRequestRequestHeader.focus||
-|{{pagelink:Home/Datenobjekte/Profile/profile_definitions/erp-service-request-patient.page.md}}|ERPServiceRequestPrescriptionRequest.subject||
-|{{pagelink:Home/Datenobjekte/Profile/profile_definitions/erp-service-request-practitioner.page.md}}|ERPServiceRequestPrescriptionRequest.performer||
-|{{pagelink:Home/Datenobjekte/Profile/profile_definitions/erp-service-request-medication-request.page.md}}|ERPServiceRequestPrescriptionRequest.basedOn||
+|[Message Header](./StructureDefinition-erp-service-request-request-header.html)|ERPServiceRequestMessageContainer.entry[0]||
+|[Prescription Request](./StructureDefinition-erp-service-request-prescription-request.html)|ERPServiceRequestRequestHeader.focus||
+|[Patient](./StructureDefinition-erp-service-request-patient.html)|ERPServiceRequestPrescriptionRequest.subject||
+|[Practitioner](./StructureDefinition-erp-service-request-practitioner.html)|ERPServiceRequestPrescriptionRequest.performer||
+|[MedicationRequest](./StructureDefinition-erp-service-request-medication-request.html)|ERPServiceRequestPrescriptionRequest.basedOn||
 |[KBV_PR_ERP_Medication_PZN](https://simplifier.net/erezept/kbvprerpmedicationpzn), [KBV_PR_ERP_Medication_Compounding](https://simplifier.net/erezept/kbvprerpmedicationcompounding), [KBV_PR_ERP_Medication_Ingredient](https://simplifier.net/erezept/kbvprerpmedicationingredient) oder [KBV_PR_ERP_Medication_FreeText](https://simplifier.net/erezept/kbvprerpmedicationfreetext)|ERPServiceRequestMedicationRequest.medication[x]||
 
 Folgendes Klassendiagramm soll die verwendeten Profile graphisch darstellen:
@@ -141,4 +141,4 @@ Falls der Verordnende die Anfrage abgelehnt hat, ist der Vorgang entsprechend im
 
 ## Beispiele
 
-Beispielhafte FHIR-Ressourcen sind auf der folgenden Seite {{pagelink:Home/Examples.page.md}} verfügbar.
+Beispielhafte FHIR-Ressourcen sind auf der folgenden Seite [Beispiele](./artifacts.html#example-example-instances) verfügbar.

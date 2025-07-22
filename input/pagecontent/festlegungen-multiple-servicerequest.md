@@ -13,7 +13,7 @@ Der **MessageHeader** ist eine spezielle FHIR-Ressource, die verwendet wird, um 
 Die zentrale Ressource, die eine Rezeptanforderung wiedergibt, ist die **ServiceRequest**-Ressource. Diese Ressource repräsentiert die eigentliche Anforderung und referenziert alle relevanten Informationen, wie Patientendaten, Verordnende/r und weitere Details.
 
 ### Identifizieren und Gruppieren von Anfragen
-Wenn mehrere Anfragen gestellt werden, handelt es sich meist um den selben Vorgang. Um diese Zusammengehörigkeit zu kennzeichnen, soll der {{pagelink:Home/Datenobjekte/Identifier/identifier_definitions/erp-service-request-procedure-identifier.page.md}} in `ServiceRequest.requisition` genutzt werden.
+Wenn mehrere Anfragen gestellt werden, handelt es sich meist um den selben Vorgang. Um diese Zusammengehörigkeit zu kennzeichnen, soll der [Request Procedure Identifier](./StructureDefinition-erp-service-request-procedure-identifier.html) in `ServiceRequest.requisition` genutzt werden.
 
 Dieser Identifier ermöglicht es, mehrere ServiceRequests zu einer gemeinsamen Anforderung zu gruppieren. So kann ein identischer requisition-Wert in mehreren ServiceRequest-Objekten verwendet werden, um zu signalisieren, dass diese Anfragen zusammengehören.
 

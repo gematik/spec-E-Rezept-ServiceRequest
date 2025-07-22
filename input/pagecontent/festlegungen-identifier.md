@@ -1,6 +1,7 @@
 ## Identifier Profile
 
-Die in diesem Projekt profilierten Identifier sind hier einsehbar: {{pagelink:Home/Datenobjekte/Identifier}}.
+Folgende Identifier wurden in diesem Projekt definiert:
+{% sql select Title, Description from Resources where id LIKE '%-identifier%' %}
 
 Darüber hinaus gibt es in ServiceRequest.identifier durch die offene Profilierung die Möglichkeit weitere Identifier einem Request anzuhängen. Diese können z.B. aus regionalen Kooperationen entstehen oder aus fachlichen Gründen definiert worden sein.
 
@@ -8,7 +9,7 @@ WICHTIG: Wenn ein Objekt (z.B. ein ServiceRequest) bearbeitet, modifiziert und d
 
 ### Anwendungsfall Rezeptanforderung für anwendungsfertige Zytostatikazubereitungen
 
-In Abstimmung mit den Industriepartnern wurden für den Anwendungsfall {{pagelink:Home/Anwendungsfaelle/4_Rezeptanforderung_Zyto}} folgende Identifier definiert:
+In Abstimmung mit den Industriepartnern wurden für den Anwendungsfall [Rezeptanforderung für anwendungsfertige Zytostatika Zubereitungen](./usecase-4-zyto.html) folgende Identifier definiert:
 
 |Fachliche Beschreibung|.identifier.system|
 |---|---|

@@ -8,7 +8,7 @@ Anforderungen als Ausdruck normativer Festlegungen werden durch die dem [RFC2119
 
 #### Angabe von Codes im IG
 
-In der Beschreibung der Anwendungsfälle werden Codes aus FHIR-CodeSystemen erwähnt. Diese sind in Texten und Bildern mit einem '#' gekennzeichnet, um klarzustellen, dass es sich um einen Code handelt. Beispiel: #issue-prescription aus dem CodeSystem {{pagelink:Home/Datenobjekte/Terminologien/codesystems/service-request-type-cs.page.md}}:
+In der Beschreibung der Anwendungsfälle werden Codes aus FHIR-CodeSystemen erwähnt. Diese sind in Texten und Bildern mit einem '#' gekennzeichnet, um klarzustellen, dass es sich um einen Code handelt. Beispiel: #issue-prescription aus dem CodeSystem [Service Request Type CS](./CodeSystem-service-request-type-cs.html).
 
 
 ### Dateiformat
@@ -24,8 +24,3 @@ Felder der FHIR-Spezifikation, die mit "Must Support" (MS) geflaggt sind, SOLLEN
 Wenn die entsprechende Information vorliegt, bzw. eingeholt werden kann, MUSS dieses Feld befüllt werden.
 Wenn ein Feld befüllt ist MUSS die entsprechende Information im Frontend sichtbar gemacht, bzw. verarbeitet werden können.
 Felder, die Referenzen zu anderen Objekten aufweisen und mit "MS" gekennzeichnet sind MUSS das referenzierte Objekt verarbeiten und darstellen können.
-
-### Weitere Vorgaben:
-Im folgenden werden weitere Festlegungen definiert:
-
-{{index:children}}
