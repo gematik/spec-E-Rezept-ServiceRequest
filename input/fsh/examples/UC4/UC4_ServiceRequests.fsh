@@ -4,7 +4,7 @@ InstanceOf: ERPServiceRequestPrescriptionRequest
 Usage: #inline
 Title: "Initial Prescription Request"
 Description: "This ServiceRequest is sent initially to the prescribing practitioner"
-* identifier[requestId]
+* identifier[+]
   * system = "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier"
   * value = "1"
 * identifier[+]
