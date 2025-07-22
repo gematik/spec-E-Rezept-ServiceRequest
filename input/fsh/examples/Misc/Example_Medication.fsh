@@ -1,6 +1,6 @@
 Instance: Example-Initial-Medication
 InstanceOf: KBV_PR_ERP_Medication_PZN
-Usage: #inline
+Usage: #example
 * extension[Kategorie].valueCodeableConcept.coding.version = "http://snomed.info/sct/11000274103/version/20240515"
 * extension[Kategorie].valueCodeableConcept.coding = http://snomed.info/sct#763158003 "Medicinal product (product)"
 * extension[Arzneimittelkategorie].valueCoding = https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Category#00
@@ -20,7 +20,7 @@ Usage: #inline
 
 Instance: Example-Initial-Medication-2
 InstanceOf: KBV_PR_ERP_Medication_PZN
-Usage: #inline
+Usage: #example
 * extension[Kategorie].valueCodeableConcept.coding = http://snomed.info/sct#763158003 "Medicinal product (product)"
 * extension[Arzneimittelkategorie].valueCoding = https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Category#00
 * extension[Impfstoff].valueBoolean = false
@@ -47,7 +47,7 @@ Usage: #inline
 
 Instance: Example-Zyto-Medication
 InstanceOf: KBV_PR_ERP_Medication_Compounding
-Usage: #inline
+Usage: #example
 * extension[Kategorie].valueCodeableConcept.coding.code = #1208954007
 * extension[Arzneimittelkategorie].valueCoding = https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Category#00
 * extension[Impfstoff].valueBoolean = false

@@ -42,5 +42,7 @@ menu:
   #   Steckbriefe: spec-sheet.html
 
 parameters:
+  no-narrative:
+    - Medication/*
   path-pages:
     - input/content

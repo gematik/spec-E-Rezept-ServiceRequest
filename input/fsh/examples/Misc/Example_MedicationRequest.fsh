@@ -22,7 +22,7 @@ Usage: #example
 
 Instance: Example-Initial-Medication-Request-2
 InstanceOf: ERPServiceRequestMedicationRequest
-Usage: #inline
+Usage: #example
 * status = #active
 * intent = #order
 * medicationReference = Reference(Example-Initial-Medication-2)

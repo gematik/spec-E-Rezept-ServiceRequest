@@ -23,7 +23,7 @@ Description: "Beispiel Patient"
 
 Instance: Example-Patient-2
 InstanceOf: ERPServiceRequestPatient
-Usage: #inline
+Usage: #example
 Title: "Example-Patient-2"
 Description: "Beispiel Patient 2"
 * identifier[KVNR].value = "X098765432"

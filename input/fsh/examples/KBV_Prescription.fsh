@@ -1,6 +1,6 @@
 Instance: Example-Response-Medication
 InstanceOf: KBV_PR_ERP_Medication_PZN
-Usage: #inline
+Usage: #example
 * extension[Kategorie].url = "https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Medication_Type"
 * extension[Kategorie].valueCodeableConcept.coding.version = "http://snomed.info/sct/11000274103/version/20240515"
 * extension[Kategorie].valueCodeableConcept.coding = http://snomed.info/sct#763158003 "Medicinal product (product)"
