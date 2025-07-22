@@ -93,7 +93,7 @@ Der Verordnende erhält in der Antwort vom Fachdienst die PrescriptionID und den
 
 Zum Erstellen müssen die in [Rezeptanforderung_Bestätigung](./StructureDefinition-gem-erp-sr-log-prescription-request-confirmation.html) aufgeführten fachlichen Informationen übertragen werden. Insbesondere muss der Inhalt der Verordnung für die Dokumentation an die Pflegeeinrichtung übertragen werden, da diese keinen Zugriff auf den E-Rezept-Fachdienst hat. Das Mapping stellt ebenfalls dar, in welchen Profilen die Informationen angegeben werden müssen.
 
-Sollte der Arzt nach Prüfung der Rezeptanforderung etwas anderes verordnen, als der Anfragende angefragt hat, muss im Profil [Prescription Request](./StructureDefinition-erp-service-request-prescription-request.html) die modifier Extension "medicationChanged" mit true gesetzt werden (s. [Did Change Medication EX](./StructureDefinition-erp-service-request-did-change-medication-ex.html)). So kann das System des Anfragenden den Nutzer explizit darauf hinweisen, dass die Antwort von der Anfrage abweicht. Das Feld kann automatisch vom System gesetzt werden, wenn der Nutzer eine Angabe in dem Rezept ändert.
+Sollte der Arzt nach Prüfung der Rezeptanforderung etwas anderes verordnen, als der Anfragende angefragt hat, muss im Profil [Prescription Request](./StructureDefinition-erp-service-request-prescription-request.html) die modifier Extension "medicationChanged" mit true gesetzt werden (s. [Did Change Medication EX](./StructureDefinition-changed-medication-ex.html)). So kann das System des Anfragenden den Nutzer explizit darauf hinweisen, dass die Antwort von der Anfrage abweicht. Das Feld kann automatisch vom System gesetzt werden, wenn der Nutzer eine Angabe in dem Rezept ändert.
 
 #### Verwendung von Profilen
 
@@ -191,7 +191,7 @@ Die anfragende Pflegeeinrichtung kann angeben, wie die Belieferung erfolgen soll
 - Lieferung an alternative Lieferadresse
 - Abholung durch Patienten/Vertreter 
 
-als Belieferungsoption angegeben werden. Wenn die Option "Lieferung an alternative Lieferadresse" angegeben wird, dann muss in der Extension [Alternative Delivery Address EX](./StructureDefinition-erp-service-request-alternative-delivery-address-ex.html) die entsprechende Adresse hinterlegt werden.
+als Belieferungsoption angegeben werden. Wenn die Option "Lieferung an alternative Lieferadresse" angegeben wird, dann muss in der Extension [Alternative Delivery Address EX](./StructureDefinition-alternative-delivery-address-ex.html) die entsprechende Adresse hinterlegt werden.
 
 #### Angabe der Verordnungsinhalte
 
@@ -215,7 +215,7 @@ In der Antwort sollen auch die Abgabedaten enthalten sein, damit die Pflegeeinri
 
 Zum Erstellen müssen die in [Fachmodell Dispensieranforderung](./StructureDefinition-gem-erp-sr-log-dispense-request.html) aufgeführten fachlichen Informationen übertragen werden. Das Mapping zeigt zudem, in welchen Profilen die Informationen angegeben werden müssen.
 
-Sollte die Apotheke nach Prüfung des Rezepts und der Arzneimittelverfügbarkeit etwas anderes beliefern, als im E-Rezept verordnet wurde, muss im Profil [Prescription Request](./StructureDefinition-erp-service-request-prescription-request.html) die modifier Extension "medicationChanged" mit true gesetzt werden (s. [Did Change Medication EX](./StructureDefinition-erp-service-request-did-change-medication-ex.html)). So kann das System der Pflege den Nutzer explizit darauf hinweisen. Das Feld kann automatisch vom AVS gesetzt werden, wenn eine entsprechende Abweichung auftritt.
+Sollte die Apotheke nach Prüfung des Rezepts und der Arzneimittelverfügbarkeit etwas anderes beliefern, als im E-Rezept verordnet wurde, muss im Profil [Prescription Request](./StructureDefinition-erp-service-request-prescription-request.html) die modifier Extension "medicationChanged" mit true gesetzt werden (s. [Did Change Medication EX](./StructureDefinition-changed-medication-ex.html)). So kann das System der Pflege den Nutzer explizit darauf hinweisen. Das Feld kann automatisch vom AVS gesetzt werden, wenn eine entsprechende Abweichung auftritt.
 
 #### Verwendung von Profilen
 

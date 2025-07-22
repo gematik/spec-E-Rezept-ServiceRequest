@@ -61,7 +61,7 @@ Die in diesem Projekt erzeugten Ressourcen lassen sich mit einem XSLT-Stylesheet
 Das Stylesheet findet sich im GitHub Repository: [XSLT-Stylesheet](https://github.com/gematik/spec-E-Rezept-ServiceRequest/tree/master/Resources/xslt-stylesheets).
 
 ### Beispiele
-Beispielinstanzen sind unter [Beispiele](./examples.html) zu finden.
+Beispielinstanzen sind unter [Beispiele](./artifacts.html#example-example-instances) zu finden.
 
 Folgende UseCases sind mit entsprechenden Beispielen beschrieben:
 

@@ -72,15 +72,14 @@ Description: "ServiceRequest that is used to supply a recipe"
     request-type 1..1 MS
     and delivery-type 0..1 MS
 
-  * coding[request-type] from ServiceRequestTypeVS
+  * coding[request-type] from ServiceRequestTypeVS (required)
   * coding[request-type] = ServiceRequestTypeCS#dispense-request
     * ^short = "Indicates the type of service request."
     * system 1..1
     * code 1..1
       * ^comment = "#dispense-request serves as a service request for a pharmacy to deliver a prescription."
 
-  * coding[delivery-type] from DeliveryTypeVS
-    * ^patternCoding.system = https://gematik.de/fhir/erp-servicerequest/CodeSystem/delivery-type-cs
+  * coding[delivery-type] from DeliveryTypeVS (required)
     * ^short = "Indicates how the delivery should be made."
     * ^definition = "The delivery type can be used to indicate how the delivery should be made. The following options are available: pickup-by-healthcare-service, pickup-by-patient, delivery-to-healthcare-service, delivery-to-alternative-address."
     * ^comment = "If the delivery type is delivery-to-alternative-address, the alternative address must be specified in location."
