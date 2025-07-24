@@ -77,16 +77,7 @@ HINWEIS: Die Beispiele, die in dieser Spezifikation auf Simplifier vorhanden sin
 
 ### Veranschaulichung am Demonstrator
 
-Die folgenden Videos demonstrieren die Anwendungsfälle aus Sicht der Akteure der in diesem IG aufgeführten Akteure.
+Die folgenden Videos demonstrieren die Anwendungsfälle aus Sicht der Akteure der in diesem IG aufgeführten Akteure (Ein Klick auf den Link führt zum Video auf Youtube):
 
-#### Rezeptanforderungen im ambulanten Pflegedienst
-
-Im folgenden wird der Anwendungsfall "Rezeptanforderung durch Pflegeeinrichtung" am Demonstrator veranschaulicht.
-
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/ibP9gmvdIgo?si=-KlkXbqSQ9brOdg-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-#### Rezeptanforderungen der heimversorgenden Apotheke
-
-Im folgenden wird der Anwendungsfall "Rezeptanforderung der heimversorgenden Apotheke" am Demonstrator veranschaulicht.
-
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/GmM0tghWLKw?si=SmkWJIod__jjxN0F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+- [Demonstrator: Rezeptanforderung durch Pflegeeinrichtung](https://www.youtube.com/watch?v=ibP9gmvdIgo)
+- [Demonstrator: Rezeptanforderung der heimversorgenden Apotheke](https://www.youtube.com/watch?v=GmM0tghWLKw)
