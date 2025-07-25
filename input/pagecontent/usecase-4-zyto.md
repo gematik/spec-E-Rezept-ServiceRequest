@@ -114,7 +114,7 @@ Folgende Profile sind für diesen Übertragungsweg zu nutzen und im [Message Con
 Folgendes Klassendiagramm soll die verwendeten Profile graphisch darstellen:
 
 <div class="gem-ig-svg-container" style="--box-width: 700px;">
-    {% Zyto_PrescriptionRequest_Confirmation_Class.svg %}
+    {% include Zyto_PrescriptionRequest_Confirmation_Class.svg %}
 </div>
 
 

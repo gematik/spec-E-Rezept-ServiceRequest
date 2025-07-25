@@ -11,7 +11,7 @@ Die Pflegeeinrichtung sendet daraufhin eine Anfrage zur Belieferung der Verordnu
 Im ersten Schritt stellt die Pflegeeinrichtung eine Rezeptanforderung an einen verordnenden Leistungserbringer. Der verordnende LE stellt ein E-Rezept am E-Rezept-Fachdienst ein und überträgt den E-Rezept Token als Antwort an die Pflegeeinrichtung.
 
 <div class="gem-ig-svg-container" style="--box-width: 700px;">
-    {% include UC1_1.png.svg %}
+    {% include UC1_1.svg %}
 </div>
 
 
@@ -40,7 +40,7 @@ Folgende Profile sind für diesen Übertragungsweg zu nutzen und im [Message Con
 Folgendes Klassendiagramm soll die verwendeten Profile graphisch darstellen:
 
 <div class="gem-ig-svg-container" style="--box-width: 700px;">
-    {% include PrescriptionRequest_Class.png.svg %}
+    {% include PrescriptionRequest_Class.svg %}
 </div>
 
 
@@ -120,7 +120,7 @@ Folgende Profile sind für diesen Übertragungsweg zu nutzen und im [Message Con
 Folgendes Klassendiagramm soll die verwendeten Profile graphisch darstellen:
 
 <div class="gem-ig-svg-container" style="--box-width: 700px;">
-    {% include PrescriptionRequest_Confirmation_Class.png.svg %}
+    {% include PrescriptionRequest_Confirmation_Class.svg %}
 </div>
 
 
@@ -164,7 +164,7 @@ Die Apotheke löst das E-Rezept am E-Rezept-Fachdienst ein und bestätigt die Be
 
 
 <div class="gem-ig-svg-container" style="--box-width: 700px;">
-    {% include UC1_2.png.svg %}
+    {% include UC1_2.svg %}
 </div>
 
 
@@ -187,7 +187,7 @@ Folgende Profile sind für diesen Übertragungsweg zu nutzen und im [Message Con
 Folgendes Klassendiagramm soll die verwendeten Profile graphisch darstellen:
 
 <div class="gem-ig-svg-container" style="--box-width: 700px;">
-    {% include DispenseRequest_Class.png.svg %}
+    {% include DispenseRequest_Class.svg %}
 </div>
 
 
@@ -252,7 +252,7 @@ Folgende Profile sind für diesen Übertragungsweg zu nutzen und im [Message Con
 Folgendes Klassendiagramm soll die verwendeten Profile graphisch darstellen:
 
 <div class="gem-ig-svg-container" style="--box-width: 700px;">
-    {% include DispenseRequest_Confirmation_Class.png.svg %}
+    {% include DispenseRequest_Confirmation_Class.svg %}
 </div>
 
 
