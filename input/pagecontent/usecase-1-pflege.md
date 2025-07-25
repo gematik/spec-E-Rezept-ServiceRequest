@@ -9,7 +9,11 @@ Die Pflegeeinrichtung sendet daraufhin eine Anfrage zur Belieferung der Verordnu
 ## Anfragender an Verordnenden
 
 Im ersten Schritt stellt die Pflegeeinrichtung eine Rezeptanforderung an einen verordnenden Leistungserbringer. Der verordnende LE stellt ein E-Rezept am E-Rezept-Fachdienst ein und überträgt den E-Rezept Token als Antwort an die Pflegeeinrichtung.
-{{render:guides/ig-rezeptanforderung/images/puml_images/UC1_1.png}}
+
+<div class="gem-ig-svg-container" style="--box-width: 700px;">
+    {% include UC1_1.png.svg %}
+</div>
+
 
 In der Rezeptanforderung sind medizinische Informationen zum angefragten Arzneimittel, wie auch administrative Informationen enthalten.
 Die folgenden Beschreibungen liefern detailiierte Informationen, wie eine Rezeptanforderung zu befüllen und auszuführen ist.
@@ -34,7 +38,11 @@ Folgende Profile sind für diesen Übertragungsweg zu nutzen und im [Message Con
 
 
 Folgendes Klassendiagramm soll die verwendeten Profile graphisch darstellen:
-{{render:guides/ig-rezeptanforderung/images/puml_images/PrescriptionRequest_Class.png}}
+
+<div class="gem-ig-svg-container" style="--box-width: 700px;">
+    {% include PrescriptionRequest_Class.png.svg %}
+</div>
+
 
 #### Wichtige Kennzeichnungen
 
@@ -110,7 +118,11 @@ Folgende Profile sind für diesen Übertragungsweg zu nutzen und im [Message Con
 
 
 Folgendes Klassendiagramm soll die verwendeten Profile graphisch darstellen:
-{{render:guides/ig-rezeptanforderung/images/puml_images/PrescriptionRequest_Confirmation_Class.png}}
+
+<div class="gem-ig-svg-container" style="--box-width: 700px;">
+    {% include PrescriptionRequest_Confirmation_Class.png.svg %}
+</div>
+
 
 #### Wichtige Kennzeichnungen
 
@@ -150,7 +162,11 @@ Die Pflegeeinrichtung kann angeben, wie die Belieferung der Verordnung erfolgen 
 
 Die Apotheke löst das E-Rezept am E-Rezept-Fachdienst ein und bestätigt die Belieferung gegenüber der Pflegeeinrichtung.
 
-{{render:guides/ig-rezeptanforderung/images/puml_images/UC1_2.png}}
+
+<div class="gem-ig-svg-container" style="--box-width: 700px;">
+    {% include UC1_2.png.svg %}
+</div>
+
 
 ### [6] Dispensieranforderung
 
@@ -169,7 +185,11 @@ Folgende Profile sind für diesen Übertragungsweg zu nutzen und im [Message Con
 |{{link:http://fhir.de/StructureDefinition/address-de-basis}}, |ERPServiceRequestDispenseRequest.extension[alternativeDeliveryAddress]|x|
 
 Folgendes Klassendiagramm soll die verwendeten Profile graphisch darstellen:
-{{render:guides/ig-rezeptanforderung/images/puml_images/DispenseRequest_Class.png}}
+
+<div class="gem-ig-svg-container" style="--box-width: 700px;">
+    {% include DispenseRequest_Class.png.svg %}
+</div>
+
 
 
 #### Wichtige Kennzeichnungen
@@ -230,7 +250,11 @@ Folgende Profile sind für diesen Übertragungsweg zu nutzen und im [Message Con
 |[KBV_PR_ERP_Medication_PZN](https://simplifier.net/erezept/kbvprerpmedicationpzn), [KBV_PR_ERP_Medication_Compounding](https://simplifier.net/erezept/kbvprerpmedicationcompounding), [KBV_PR_ERP_Medication_Ingredient](https://simplifier.net/erezept/kbvprerpmedicationingredient) oder [KBV_PR_ERP_Medication_FreeText](https://simplifier.net/erezept/kbvprerpmedicationfreetext)|ERPServiceRequestDispenseRequest.medication[x]||
 
 Folgendes Klassendiagramm soll die verwendeten Profile graphisch darstellen:
-{{render:guides/ig-rezeptanforderung/images/puml_images/DispenseRequest_Confirmation_Class.png}}
+
+<div class="gem-ig-svg-container" style="--box-width: 700px;">
+    {% include DispenseRequest_Confirmation_Class.png.svg %}
+</div>
+
 
 #### Wichtige Kennzeichnungen
 

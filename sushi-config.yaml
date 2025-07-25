@@ -36,10 +36,9 @@ menu:
     Ressourcen: festlegungen-resource-usage.html
   FHIR-Artefakte: artifacts.html
   Anhänge:
-  #   Referenzen: referenced.html
     Downloads: downloads.html
-  #   Release Notes: release-notes.html
-  #   Steckbriefe: spec-sheet.html
+    Beispiel KIM Nachricht: kim_example.html
+    Release Notes: release_notes.html
 
 parameters:
   no-narrative:

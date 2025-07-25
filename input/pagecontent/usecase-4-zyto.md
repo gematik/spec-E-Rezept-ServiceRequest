@@ -8,8 +8,6 @@ Der Arzt übernimmt die angefragte Medikation in die Verordnung und stellt diese
 
 Diese kann das Rezept am E-Rezept-Fachdienst einlösen.
 
-{{render:guides/ig-rezeptanforderung/images/puml_images/UC4.png}}
-
 ### Hinweis zu Identifiern
 
 Für diesen Fall gibt es Festlegungen zur Nutzung von Identifern im [Prescription Request](./StructureDefinition-erp-service-request-prescription-request.html), siehe [Festlegungen Identifier](./festlegungen-identifier.html).
@@ -20,7 +18,9 @@ Die Apotheke erstellt mittels Zytostatika-Programm oder Taxierungssoftware die n
 
 Der verordnende LE stellt ein E-Rezept am E-Rezept-Fachdienst ein und überträgt den E-Rezept Token als Antwort an die anfragende Apotheke. Diese kann das E-Rezept am E-Rezept-Fachdienst einlösen.
 
-{{render:guides/ig-rezeptanforderung/images/puml_images/UC4.png}}
+<div class="gem-ig-svg-container" style="--box-width: 700px;">
+    {% include UC4.svg %}
+</div>
 
 In der Rezeptanforderung sind medizinische Informationen zum angefragten Arzneimittel, wie auch administrative Informationen enthalten.
 Die folgenden Beschreibungen liefern detailiierte Informationen, wie eine Rezeptanforderung zu befüllen und auszuführen ist.
@@ -44,7 +44,11 @@ Folgende Profile sind für diesen Übertragungsweg zu nutzen und im [Message Con
 |[KBV_PR_ERP_Medication_PZN](https://simplifier.net/erezept/kbvprerpmedicationpzn), [KBV_PR_ERP_Medication_Compounding](https://simplifier.net/erezept/kbvprerpmedicationcompounding), [KBV_PR_ERP_Medication_Ingredient](https://simplifier.net/erezept/kbvprerpmedicationingredient) oder [KBV_PR_ERP_Medication_FreeText](https://simplifier.net/erezept/kbvprerpmedicationfreetext)|ERPServiceRequestMedicationRequest.medication[x]||
 
 Folgendes Klassendiagramm soll die verwendeten Profile graphisch darstellen:
-{{render:guides/ig-rezeptanforderung/images/puml_images/Zyto_PrescriptionRequest_Class.png}}
+
+<div class="gem-ig-svg-container" style="--box-width: 700px;">
+    {% include Zyto_PrescriptionRequest_Class.svg %}
+</div>
+
 
 #### Wichtige Kennzeichnungen
 
@@ -108,7 +112,11 @@ Folgende Profile sind für diesen Übertragungsweg zu nutzen und im [Message Con
 |[KBV_PR_ERP_Medication_PZN](https://simplifier.net/erezept/kbvprerpmedicationpzn), [KBV_PR_ERP_Medication_Compounding](https://simplifier.net/erezept/kbvprerpmedicationcompounding), [KBV_PR_ERP_Medication_Ingredient](https://simplifier.net/erezept/kbvprerpmedicationingredient) oder [KBV_PR_ERP_Medication_FreeText](https://simplifier.net/erezept/kbvprerpmedicationfreetext)|ERPServiceRequestMedicationRequest.medication[x]||
 
 Folgendes Klassendiagramm soll die verwendeten Profile graphisch darstellen:
-{{render:guides/ig-rezeptanforderung/images/puml_images/Zyto_PrescriptionRequest_Confirmation_Class.png}}
+
+<div class="gem-ig-svg-container" style="--box-width: 700px;">
+    {% Zyto_PrescriptionRequest_Confirmation_Class.svg %}
+</div>
+
 
 #### Wichtige Kennzeichnungen
 

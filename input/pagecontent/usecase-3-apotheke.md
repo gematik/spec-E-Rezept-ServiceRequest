@@ -12,7 +12,11 @@ In diesem Anwendungsfall erhält die Pflegeeinrichtung eine Kopie der Nachricht 
 
 Die Apotheke stellt eine Rezeptanforderung an einen verordnenden Leistungserbringer. Der verordnende LE stellt ein E-Rezept am E-Rezept-Fachdienst ein und überträgt den E-Rezept Token als Antwort an die Apotheke.
 Die Apotheke löst das E-Rezept ein und informiert die Pflegeeinrichtung über die anstehende Belieferung.
-{{render:guides/ig-rezeptanforderung/images/puml_images/UC3.png}}
+
+<div class="gem-ig-svg-container" style="--box-width: 700px;">
+    {% include UC3.svg %}
+</div>
+
 
 In der Rezeptanforderung sind medizinische Informationen zum angefragten Arzneimittel, wie auch administrative Informationen enthalten.
 Die folgenden Beschreibungen liefern detailiierte Informationen, wie eine Rezeptanforderung zu befüllen und auszuführen ist.
@@ -37,7 +41,11 @@ Folgende Profile sind für diesen Übertragungsweg zu nutzen und im [Message Con
 
 
 Folgendes Klassendiagramm soll die verwendeten Profile graphisch darstellen:
-{{render:guides/ig-rezeptanforderung/images/puml_images/PrescriptionRequest_Class.png}}
+
+<div class="gem-ig-svg-container" style="--box-width: 700px;">
+    {% include PrescriptionRequest_Class.svg %}
+</div>
+
 
 #### Wichtige Kennzeichnungen
 
@@ -100,7 +108,11 @@ Folgende Profile sind für diesen Übertragungsweg zu nutzen und im [Message Con
 |[Message Container](./StructureDefinition-erp-service-request-message-container.html)|ERPServiceRequestRequestHeader.focus||
 
 Folgendes Klassendiagramm soll die verwendeten Profile graphisch darstellen:
-{{render:guides/ig-rezeptanforderung/images/puml_images/MessageCopy_Class.png}}
+
+<div class="gem-ig-svg-container" style="--box-width: 700px;">
+    {% include MessageCopy_Class.svg %}
+</div>
+
 
 #### Wichtige Kennzeichnungen
 
@@ -140,7 +152,11 @@ Folgende Profile sind für diesen Übertragungsweg zu nutzen und im [Message Con
 
 
 Folgendes Klassendiagramm soll die verwendeten Profile graphisch darstellen:
-{{render:guides/ig-rezeptanforderung/images/puml_images/PrescriptionRequest_Confirmation_Class.png}}
+
+<div class="gem-ig-svg-container" style="--box-width: 700px;">
+    {% include PrescriptionRequest_Confirmation_Class.svg %}
+</div>
+
 
 #### Wichtige Kennzeichnungen
 
@@ -198,7 +214,11 @@ Folgende Profile sind für diesen Übertragungsweg zu nutzen und im [Message Con
 |[KBV_PR_ERP_Medication_PZN](https://simplifier.net/erezept/kbvprerpmedicationpzn), [KBV_PR_ERP_Medication_Compounding](https://simplifier.net/erezept/kbvprerpmedicationcompounding), [KBV_PR_ERP_Medication_Ingredient](https://simplifier.net/erezept/kbvprerpmedicationingredient) oder [KBV_PR_ERP_Medication_FreeText](https://simplifier.net/erezept/kbvprerpmedicationfreetext)|ERPServiceRequestMedicationRequest.medication[x]||
 
 Folgendes Klassendiagramm soll die verwendeten Profile graphisch darstellen:
-{{render:guides/ig-rezeptanforderung/images/puml_images/DispenseRequest_Confirmation_Class.png}}
+
+<div class="gem-ig-svg-container" style="--box-width: 700px;">
+    {% include DispenseRequest_Confirmation_Class.svg %}
+</div>
+
 
 #### Wichtige Kennzeichnungen
 

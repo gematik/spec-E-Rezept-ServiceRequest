@@ -56,13 +56,18 @@ Eine Nachricht enthält:
 Beispielhaft sollen stark vereinfacht zwei Szenarien als Klassendiagramm dargestellt werden, die die Kardinalitäten und Beziehungen in einem Bundle ausdrücken.
 
 ### Anfrage mehrerer Rezepte für einen Patienten
-
+å
 Zunächst kann z.B. für einen Patienten mehrere Rezepte angefordert werden. Damit können jeweils ein ServiceRequest (Rezeptanforderung) erstellt werden. Diese können auf die gleiche Patienten -Ressource referenzieren.
 
-{{render:guides/ig-rezeptanforderung/images/puml_images/MultipleRequests for same Patient.png}}
+<div class="gem-ig-svg-container" style="--box-width: 700px;">
+    {% include multiple-request-diagram-1.svg %}
+</div>
 
 ### Anfrage des Selben Medikaments für mehrere Patienten
 Weiterhin ist auch denkbar, dass exakt die gleiche Medikation für mehrere Patienten angefragt wird. In diesem Fall kann die MedicationRequest-Ressource mehrfach verwendet werden.
-{{render:guides/ig-rezeptanforderung/images/puml_images/MultipleRequests for same Medication.png}}
+
+<div class="gem-ig-svg-container" style="--box-width: 700px;">
+    {% include multiple-request-diagram-2.svg %}
+</div>
 
 Hierüber hinaus sind auch Kombinationen denkbar.
