@@ -62,6 +62,15 @@ After successfull installation run:
 ```
 See `../validation_results/` for results.
 
+## Creating PDFs from stylesheets
+
+For the generation of PDFs from XML files the [Rezeptanforderung Stylesheet](./resources/rezeptanforderung-stylesheet.xsl) can be used. This repo contains a script which transforms the [XSLT Test Files](./resources/XSLT-Test-Files/) into PDFs.
+This can be run with
+
+```python
+python3 resources/scripts/convert_to_pdf.py
+```
+
 ## Usage
 See [Usage.md](./USAGE.md)
 
