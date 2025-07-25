@@ -60,6 +60,8 @@ Ein ServiceRequest spiegelt neben den fachlichen Informationen auch den Status d
 Die in diesem Projekt erzeugten Ressourcen lassen sich mit einem XSLT-Stylesheet in ein HTML überführen, um sie für Anwender sichtbar zu machen. Notwendigkeit und Voraussetzungen sind im [Featuredokument gemF_eRp_KIM](https://gemspec.gematik.de/docs/gemF/gemF_eRp_KIM/latest/) beschrieben.
 Das Stylesheet findet sich im GitHub Repository: [XSLT-Stylesheet](https://github.com/gematik/spec-E-Rezept-ServiceRequest/tree/master/Resources/xslt-stylesheets).
 
+Dort sind auch für die Anwendungsfälle PDFs hinterlegt, die eine Beispielhafte Transformation von XML Beispielen zeigen, siehe [XSLT Beispiele](https://github.com/gematik/spec-E-Rezept-ServiceRequest/tree/master/resources/XSLT-Test-Files).
+
 ### Beispiele
 Beispielinstanzen sind unter [Beispiele](./artifacts.html#example-example-instances) zu finden.
 

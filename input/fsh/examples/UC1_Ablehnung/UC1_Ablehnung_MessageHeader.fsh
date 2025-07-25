@@ -12,3 +12,18 @@ Description: "Cancellation Message Header from Practitioner to HealthCareService
 * source.contact.value = "info@practitioner.email"
 * source.endpoint = "http://practitioner.endpoint"
 * responsible = Reference(Example-Practitioner-Organization)
+
+Instance: UC1-Pharmacy-to-HealthCareService-MessageHeader-Rejection
+InstanceOf: ERPServiceRequestRequestHeader
+Usage: #inline
+Title: "Pharmacy-to-HealthCareService-MessageHeader-Rejection"
+Description: "Cancellation Message Header from Practitioner to HealthCareService"
+* insert Pharmacy-to-HealthCareService(UC1-Rejection-Dispense-Request)
+* eventCoding = ServiceIdentifierCS#eRezept_Rezeptanforderung;Abgabeanfrage_Ablehnung
+* source.name = "Practitioner-Source"
+* source.software = "Practitioner-Software"
+* source.version = "1.0.0"
+* source.contact.system = #email
+* source.contact.value = "info@practitioner.email"
+* source.endpoint = "http://practitioner.endpoint"
+* responsible = Reference(Example-Pharmacy-Organization)
