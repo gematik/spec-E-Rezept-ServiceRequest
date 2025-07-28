@@ -1,5 +1,5 @@
 // === AUTO-GENERATED FILE ===
-// Do not edit by hand; edit scripts/generate-heading-links-js.sh and config.common.sh instead.
+// Do not edit by hand; edit scripts/generate-heading-links-js.sh and config.sh instead.
 
 const newIssueGithubLink = "https://github.com/gematik/spec-E-Rezept-ServiceRequest/issues/new?template=3-BUG-IG-REPORT.yml";
 // TODO: make repo and parameters configurable
