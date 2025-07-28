@@ -3,8 +3,8 @@
 
 skinparam maxMessageSize 200
 
-actor Apotheke
-actor "Verordnender \nLeistungserbringer" as Arztpraxis
+actor "heimversorgende\nApotheke" as Apotheke
+actor "Verordnender\nLeistungserbringer" as Arztpraxis
 actor "Pflegeeinrichtung" as Pflegeeinrichtung
 
 title UC3-Rezeptanforderung der heimversorgenden Apotheke

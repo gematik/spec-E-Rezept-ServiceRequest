@@ -1,14 +1,14 @@
-@startuml name = "UC2-Rezeptanforderung-Patienteninvolvierung"
+@startuml name = "UC2-Rezeptanforderung-Versicherteninvolvierung"
 
 
 skinparam maxMessageSize 200
 
 actor "Pflegeeinrichtung" as Pflegeeinrichtung
 actor "Verordnender \nLeistungserbringer" as Arztpraxis
-actor Patient
+actor Versicherter
 actor Apotheke
 
-title UC2-Rezeptanforderung der Pflegeeinrichtung mit Einlösung durch Patient
+title UC2-Rezeptanforderung der Pflegeeinrichtung mit Einlösung durch Versicherten
 hide footbox
 autonumber "<b>[0]"
 
@@ -41,21 +41,21 @@ group "Rezeptanforderung durch Pflegeeinrichtung"
 
 end
 
-group "Einlösung des E-Rezeptes durch Patient"
-    opt Benachrichtigung des Patienten
-        Pflegeeinrichtung --> Patient: opt. Benachrichtigung über Ausstellung des E-Rezepts
+group "Einlösung des E-Rezeptes durch Versicherten"
+    opt Benachrichtigung des Versicherten
+        Pflegeeinrichtung --> Versicherter: opt. Benachrichtigung über Ausstellung des E-Rezepts
     end
 
-    Patient -> Patient: Beziehen des E-Rezept Tokens
+    Versicherter -> Versicherter: Beziehen des E-Rezept Tokens
 
     note left
         möglich via
             1. E-Rezept-FdV
             2. Vorlage der eGK in der Apotheke
-            3. Patientenausdruck
+            3. Versichertenausdruck
     end note
 
-    Patient -> Apotheke: Medikamentabholung
+    Versicherter -> Apotheke: Medikamentabholung
 
 end
 
