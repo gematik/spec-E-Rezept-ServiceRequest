@@ -1,5 +1,7 @@
 ## Beispiel KIM Rezeptanforderung
 
+//TODO: anpassen
+
 Die FHIR-Datensätze in Anfrage- und Antwortnachrichten werden ausschließlich als Anhang in der KIM Nachricht übertragen.
 **siehe unten**
 
