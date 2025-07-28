@@ -9,7 +9,7 @@
   "experimental": false,
   "date": "2025-01-01",
   "publisher": "gematik GmbH",
-  "description": "This identifier is used to identify a single ServiceRequest",
+  "description": "Eine eindeutige Anfrage ID, die eine konkrete Anfrage referenziert. Dieser Wert wird erzeugt, wenn ein Anfragender initial den ServiceRequest erstellt. \nSysteme, die einen ServiceRequest auswerten und bearbeiten müssen bei Antworten den Identifier wieder mit angeben.",
   "fhirVersion": "4.0.1",
   "kind": "complex-type",
   "abstract": false,

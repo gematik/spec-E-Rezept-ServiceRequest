@@ -9,7 +9,7 @@
   "experimental": false,
   "date": "2025-01-01",
   "publisher": "gematik GmbH",
-  "description": "This identifier is used to identify service requests of a process",
+  "description": "Identifiziert einen Fall, der mehrere ServiceRequests verknüpfen kann. Wenn bspw. für einen Versicherten mehrere Arzneimittel angefragt werden, kann in diesen ServiceRequests die gleiche identifier in `.requisition` angegeben werden.\nDer Wert wird vom Anfragenden generiert und muss bei einer Antwort angegeben werden.",
   "fhirVersion": "4.0.1",
   "kind": "complex-type",
   "abstract": false,

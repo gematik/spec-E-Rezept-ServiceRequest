@@ -1,3 +1,4 @@
+
 // === AUTO-GENERATED FILE ===
 // Do not edit by hand; edit scripts/generate-heading-links-js.sh and config.sh instead.
 

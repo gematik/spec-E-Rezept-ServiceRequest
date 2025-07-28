@@ -256,7 +256,7 @@
           "reference": "StructureDefinition/erp-service-request-procedure-identifier"
         },
         "name": "ERP Service Request Procedure Identifier",
-        "description": "This identifier is used to identify service requests of a process",
+        "description": "Identifiziert einen Fall, der mehrere ServiceRequests verknüpfen kann. Wenn bspw. für einen Versicherten mehrere Arzneimittel angefragt werden, kann in diesen ServiceRequests die gleiche identifier in `.requisition` angegeben werden.\nDer Wert wird vom Anfragenden generiert und muss bei einer Antwort angegeben werden.",
         "exampleBoolean": false
       },
       {
@@ -272,7 +272,7 @@
           "reference": "StructureDefinition/erp-service-request-request-identifier"
         },
         "name": "ERP Service Request Request Identifier",
-        "description": "This identifier is used to identify a single ServiceRequest",
+        "description": "Eine eindeutige Anfrage ID, die eine konkrete Anfrage referenziert. Dieser Wert wird erzeugt, wenn ein Anfragender initial den ServiceRequest erstellt. \nSysteme, die einen ServiceRequest auswerten und bearbeiten müssen bei Antworten den Identifier wieder mit angeben.",
         "exampleBoolean": false
       },
       {
