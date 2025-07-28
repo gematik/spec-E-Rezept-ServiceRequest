@@ -1,8 +1,0 @@
-- name: Index
-  filename: Index.page.md
-- name: ValueSets
-  filename: valuesets
-- name: CodeSystems
-  filename: codesystems
-- name: ConceptMaps
-  filename: conceptmaps

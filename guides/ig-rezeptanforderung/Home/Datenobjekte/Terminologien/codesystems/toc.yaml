@@ -1,8 +1,0 @@
-- name: "CS - Medication Request Reason"
-  filename: medication-request-reason-cs.page.md
-- name: "CS - Service Request Identifier"
-  filename: service-request-service-identifier-cs.page.md
-- name: "CS - Service Request Type"
-  filename: service-request-type-cs.page.md
-- name: "CS - Delivery Type"
-  filename: delivery-type-cs.page.md

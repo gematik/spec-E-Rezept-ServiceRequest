@@ -1,0 +1,47 @@
+canonical: https://gematik.de/fhir/erp-servicerequest
+fhirVersion: 4.0.1
+id: de.gematik.erp-servicerequest
+name: E-Rezept ServiceRequest
+status: draft # draft | active | retired | unknown
+copyrightYear: 2025
+releaseLabel: ci-build # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
+applyExtensionMetadataToRoot: false
+version: "1.2.0-rc3"
+dependencies:
+  # basisprofile
+  de.basisprofil.r4: 1.5.2
+
+  # gematik
+  de.gematik.fhir.atf: 1.4.0-rc2
+  de.gematik.ti: 1.1.0
+
+  # KBV
+  kbv.ita.erp: 1.3.2 # TODO: Update Dependency
+  kbv.basis: 1.7.0 # TODO: Update Dependency
+
+menu:
+  Home: index.html
+  Einführung: einfuehrung.html
+  Anwendungsfälle:
+    Rezeptanforderung durch Pflegeeinrichtung: usecase-1-pflege.html
+    Rezeptanforderung mit Einlösung durch Patient : usecase-2-patient.html
+    Rezeptanforderung der heimversorgenden Apotheke: usecase-3-apotheke.html
+    Rezeptanforderung für anwendungsfertige Zytostatika Zubereitungen: usecase-4-zyto.html
+  Festlegungen:
+    Allgemeine Festlegungen: festlegungen-misc.html
+    Identifier: festlegungen-identifier.html
+    Modifier Extensions: festlegungen-modifier-extensions.html
+    Mehrere Anfragen: festlegungen-multiple-servicerequest.html
+    Transportmedium: festlegungen-transportmedium.html
+    Ressourcen: festlegungen-resource-usage.html
+  FHIR-Artefakte: artifacts.html
+  Anhänge:
+    Downloads: downloads.html
+    Beispiel KIM Nachricht: kim_example.html
+    Release Notes: release_notes.html
+
+parameters:
+  no-narrative:
+    - Medication/*
+  path-pages:
+    - input/content

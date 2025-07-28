@@ -1,0 +1,164 @@
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="UC1-Rejection-Of-Pharmacy" />
+  <meta>
+    <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container" />
+  </meta>
+  <identifier>
+    <system value="urn:ietf:rfc:3986" />
+    <value value="urn:uuid:5c1e9aa2-94d2-4f20-9ffb-25e3d4e84c5f" />
+  </identifier>
+  <type value="message" />
+  <timestamp value="2025-05-13T16:15:54.239+02:00" />
+  <entry>
+    <fullUrl value="http://erp-servicerequest-test.de/MessageHeader/UC1-Pharmacy-to-HealthCareService-MessageHeader-Rejection" />
+    <resource>
+      <MessageHeader>
+        <id value="UC1-Pharmacy-to-HealthCareService-MessageHeader-Rejection" />
+        <meta>
+          <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header" />
+        </meta>
+        <eventCoding>
+          <system value="https://gematik.de/fhir/atf/CodeSystem/service-identifier-cs" />
+          <code value="eRezept_Rezeptanforderung;Abgabeanfrage_Ablehnung" />
+        </eventCoding>
+        <destination>
+          <name value="Pflegeheim Immergrün" />
+          <endpoint value="mailto:healthcare-service@test.kim.de" />
+        </destination>
+        <sender>
+          <identifier>
+            <system value="https://gematik.de/fhir/sid/telematik-id" />
+            <value value="3-test-telematik-id" />
+          </identifier>
+          <display value="Test Apotheke" />
+        </sender>
+        <source>
+          <name value="Practitioner-Source" />
+          <software value="Practitioner-Software" />
+          <version value="1.0.0" />
+          <contact>
+            <system value="email" />
+            <value value="info@practitioner.email" />
+          </contact>
+          <endpoint value="http://practitioner.endpoint" />
+        </source>
+        <responsible>
+          <reference value="Organization/Example-Pharmacy-Organization" />
+        </responsible>
+        <focus>
+          <reference value="ServiceRequest/UC1-Rejection-Dispense-Request" />
+        </focus>
+      </MessageHeader>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://erp-servicerequest-test.de/Organization/Example-Pharmacy-Organization" />
+    <resource>
+      <Organization>
+        <id value="Example-Pharmacy-Organization" />
+        <meta>
+          <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization" />
+        </meta>
+        <identifier>
+          <system value="https://gematik.de/fhir/sid/telematik-id" />
+          <value value="123456789" />
+        </identifier>
+        <type>
+          <coding>
+            <system value="https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID" />
+            <code value="1.2.276.0.76.4.54" />
+            <display value="Öffentliche Apotheke" />
+          </coding>
+        </type>
+        <name value="Test Apotheke" />
+        <address>
+          <type value="both" />
+          <line value="Musterstr. 2" />
+          <city value="Berlin" />
+          <postalCode value="10623" />
+        </address>
+        <contact>
+          <telecom>
+            <system value="phone" />
+            <value value="0301234567" />
+          </telecom>
+        </contact>
+      </Organization>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://erp-servicerequest-test.de/ServiceRequest/UC1-Rejection-Dispense-Request" />
+    <resource>
+      <ServiceRequest>
+        <id value="UC1-Rejection-Dispense-Request" />
+        <meta>
+          <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request" />
+        </meta>
+        <identifier>
+          <system value="https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier" />
+          <value value="1" />
+        </identifier>
+        <basedOn>
+          <reference value="MedicationRequest/Example-Initial-Medication-Request" />
+        </basedOn>
+        <requisition>
+          <system value="https://gematik.de/fhir/erp-servicerequest/sid/ProcedureIdentifier" />
+          <value value="GroupID-UC1" />
+        </requisition>
+        <status value="revoked" />
+        <intent value="filler-order" />
+        <code>
+          <coding>
+            <system value="https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs" />
+            <code value="dispense-request" />
+          </coding>
+        </code>
+        <subject>
+          <reference value="Patient/Example-Patient" />
+        </subject>
+        <authoredOn value="2025-05-13" />
+        <reasonCode>
+          <text value="Medikament ist bis auf weiteres nicht lieferbar" />
+        </reasonCode>
+      </ServiceRequest>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://erp-servicerequest-test.de/Patient/Example-Patient" />
+    <resource>
+      <Patient>
+        <id value="Example-Patient" />
+        <meta>
+          <profile value="https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-patient" />
+        </meta>
+        <identifier>
+          <system value="http://fhir.de/sid/gkv/kvid-10" />
+          <value value="X234567890" />
+        </identifier>
+        <name>
+          <use value="official" />
+          <family value="Königsstein">
+            <extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
+              <valueString value="Königsstein" />
+            </extension>
+          </family>
+          <given value="Ludger" />
+        </name>
+        <birthDate value="1935-06-22" />
+        <address>
+          <type value="both" />
+          <line value="Musterstr. 1">
+            <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+              <valueString value="1" />
+            </extension>
+            <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+              <valueString value="Musterstr." />
+            </extension>
+          </line>
+          <city value="Berlin" />
+          <postalCode value="10623" />
+        </address>
+      </Patient>
+    </resource>
+  </entry>
+</Bundle>
