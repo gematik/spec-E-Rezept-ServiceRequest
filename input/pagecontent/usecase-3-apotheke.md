@@ -166,7 +166,7 @@ Folgende Bedingungen müssen erfüllt, bzw. Felder gesetzt sein, damit die Nachr
 |---|---|
 |ERPServiceRequestRequestHeader|.eventCode = `#eRezept_Rezeptanforderung;Rezeptbestaetigung`|
 |ERPServiceRequestPrescriptionRequest|.status = #completed|
-|ERPServiceRequestPrescriptionRequest|.extension:EPrescriptionToken = <E-Rezept Token>|
+|ERPServiceRequestPrescriptionRequest|.extension:EPrescriptionToken = `E-REzept Token`|
 
 #### [5] Nachrichten_Kopie
 

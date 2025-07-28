@@ -63,7 +63,7 @@ Zur Behandlung von gesonderten Fällen kann in der ServiceRequest und Medication
 
 |Profil|Feld|Bedeutung|
 |---|---|---|
-|[Prescription Request](./StructureDefinition-erp-service-request-prescription-request.html)|.extension:redeemByPatient|Angabe, ob die angefragte Verordnung durch den Versicherten eingelöst werden soll. Falls der Wert `true` ist, soll der verordnende das E-Rezept mit Flowtype 160/200 erstellen. Andernfalls wird ein E-Rezept mit Workflow 169/209 erstellt.|
+|[Prescription Request](./StructureDefinition-erp-service-request-prescription-request.html)|.extension:redeemByPatient|Angabe, ob die angefragte Verordnung durch den Versicherten eingelöst werden soll. Die resultierende Verordnung trägt den Flowtype 160/ 200.|
 |[MedicationRequest](./StructureDefinition-erp-service-request-medication-request.html)|.extension:PriorPrescriptionID|Angabe einer vorherigen Task ID auf die sich die Anfrage bezieht|
 |[MedicationRequest](./StructureDefinition-erp-service-request-medication-request.html)|.extension:requestMVO.extension:Kennzeichen|Angabe, ob der Anfragende die Ausstellung des E-Rezeptes im Rahmen einer Mehrfachverordnung wünscht|
 |[MedicationRequest](./StructureDefinition-erp-service-request-medication-request.html)|.dispenseRequest.quantity|Angabe der gewünschten Packungsmenge des Arzneimittels|
@@ -132,7 +132,7 @@ Folgende Bedingungen müssen erfüllt, bzw. Felder gesetzt sein, damit die Nachr
 |---|---|
 |ERPServiceRequestRequestHeader|.eventCode = `#eRezept_Rezeptanforderung;Rezeptbestaetigung`|
 |ERPServiceRequestPrescriptionRequest|.status = #completed|
-|ERPServiceRequestPrescriptionRequest|.extension:EPrescriptionToken = <E-Rezept Token>|
+|ERPServiceRequestPrescriptionRequest|.extension:EPrescriptionToken = `E-Rezept Token`|
 
 ### Ablehnung - Verordnung
 
@@ -200,7 +200,7 @@ Folgende Bedingungen müssen erfüllt, bzw. Felder gesetzt sein, damit die Nachr
 |---|---|
 |ERPServiceRequestRequestHeader|.eventCode = `#eRezept_Rezeptanforderung;Abgabeanfrage`|
 |ERPServiceRequestDispenseRequest|.status = #active|
-|ERPServiceRequestDispenseRequest|.extension:EPrescriptionToken = <E-Rezept Token>|
+|ERPServiceRequestDispenseRequest|.extension:EPrescriptionToken = `E-REzept Token`|
 |ERPServiceRequestDispenseRequest|.requester.type = #PFL|
 
 #### Angabe der Belieferungsart
