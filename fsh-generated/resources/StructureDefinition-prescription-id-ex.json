@@ -1,0 +1,76 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "prescription-id-ex",
+  "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/prescription-id-ex",
+  "version": "1.2.0-rc3",
+  "name": "PrescriptionIdEx",
+  "status": "draft",
+  "experimental": false,
+  "date": "2025-01-01",
+  "publisher": "gematik GmbH",
+  "description": "Extension for Prescription ID",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "expression": "ServiceRequest",
+      "type": "element"
+    },
+    {
+      "expression": "MedicationRequest",
+      "type": "element"
+    },
+    {
+      "expression": "DeviceRequest",
+      "type": "element"
+    },
+    {
+      "expression": "Task",
+      "type": "element"
+    },
+    {
+      "expression": "SupplyRequest",
+      "type": "element"
+    },
+    {
+      "expression": "SupplyDelivery",
+      "type": "element"
+    },
+    {
+      "expression": "Medication",
+      "type": "element"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/prescription-id-ex"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "https://gematik.de/fhir/ti/StructureDefinition/e-prescription-id"
+            ]
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}

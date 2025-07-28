@@ -1,0 +1,28 @@
+{
+  "resourceType": "NamingSystem",
+  "id": "NamingSystemEPrescriptionToken",
+  "description": "NamingSystem for specifying an e-prescription token",
+  "name": "NamingSystemEPrescriptionToken",
+  "status": "active",
+  "kind": "identifier",
+  "date": "2023-02-01",
+  "publisher": "gematik GmbH",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.gematik.de/"
+        }
+      ]
+    }
+  ],
+  "responsible": "gematik GmbH",
+  "uniqueId": [
+    {
+      "type": "uri",
+      "value": "https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken",
+      "preferred": true
+    }
+  ]
+}

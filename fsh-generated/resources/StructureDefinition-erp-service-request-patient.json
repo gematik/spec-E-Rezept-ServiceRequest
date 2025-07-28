@@ -1,0 +1,35 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "erp-service-request-patient",
+  "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-patient",
+  "version": "1.2.0-rc3",
+  "name": "ERPServiceRequestPatient",
+  "title": "ERP Service Request Patient",
+  "status": "draft",
+  "experimental": false,
+  "date": "2025-01-01",
+  "publisher": "gematik GmbH",
+  "description": "Patient that can be used for the UseCase ServiceRequest",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Patient",
+  "baseDefinition": "https://gematik.de/fhir/ti/StructureDefinition/ti-patient",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Patient.address",
+        "path": "Patient.address",
+        "type": [
+          {
+            "code": "Address",
+            "profile": [
+              "http://fhir.de/StructureDefinition/address-de-basis"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

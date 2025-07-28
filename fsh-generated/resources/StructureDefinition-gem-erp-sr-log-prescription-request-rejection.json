@@ -1,0 +1,515 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "gem-erp-sr-log-prescription-request-rejection",
+  "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-prescription-request-rejection",
+  "version": "1.2.0-rc3",
+  "name": "GEM_ERP_SR_LOG_PrescriptionRequest_Rejection",
+  "title": "Rezeptanforderung_Storno",
+  "status": "draft",
+  "experimental": false,
+  "date": "2025-01-01",
+  "publisher": "gematik GmbH",
+  "description": "Fachliches Modell zur Beschreibung einer Ablehnung einer Rezeptanforderung seitens des Verordnenden.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "Rezeptanforderung-Ablehnung-Fachliches-Mapping",
+      "name": "Rezeptanforderung Ablehnung Fachliches Mapping",
+      "uri": "ERPServiceRequestPrescriptionRequest",
+      "comment": "Mapping des Fachmodells aus GEM_ERP_SR_LOG_PrescriptionRequest_Rejection auf das FHIR-Modell ERPServiceRequestPrescriptionRequest"
+    },
+    {
+      "identity": "Quelle-Rezeptanforderung-Ablehnung-Mapping",
+      "name": "Quelle der Rezeptanforderung Ablehnung Informationen",
+      "comment": "Beschreibt die Quelle der Rezeptanforderung Ablehnung Informatione"
+    }
+  ],
+  "kind": "logical",
+  "abstract": false,
+  "type": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-prescription-request-rejection",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Element",
+  "derivation": "specialization",
+  "differential": {
+    "element": [
+      {
+        "id": "gem-erp-sr-log-prescription-request-rejection",
+        "path": "gem-erp-sr-log-prescription-request-rejection",
+        "short": "Rezeptanforderung_Storno",
+        "definition": "Fachliches Modell zur Beschreibung einer Ablehnung einer Rezeptanforderung seitens des Verordnenden."
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-rejection.MetaDaten",
+        "path": "gem-erp-sr-log-prescription-request-rejection.MetaDaten",
+        "short": "Metadaten im MessageHeader",
+        "definition": "Metadaten im MessageHeader",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Ablehnung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Ablehnung-Mapping",
+            "map": "PVS"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.Empfaenger",
+        "path": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.Empfaenger",
+        "short": "Empfänger der Nachricht",
+        "definition": "Empfänger der Nachricht",
+        "min": 1,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Ablehnung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.destination"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Ablehnung-Mapping",
+            "map": "Aus initialer Rezeptanforderung"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.Empfaenger.KIMAdresse",
+        "path": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.Empfaenger.KIMAdresse",
+        "short": "KIM-Adresse des Empfängers",
+        "definition": "KIM-Adresse des Empfängers",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "url"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Ablehnung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.destination.endpoint"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Ablehnung-Mapping",
+            "map": "Aus initialer Rezeptanforderung"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.Empfaenger.TelematikID",
+        "path": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.Empfaenger.TelematikID",
+        "short": "Telematik-ID des Absenders",
+        "definition": "Telematik-ID des Absenders",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "url"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Ablehnung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.destination.receiver.identifier.value"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Ablehnung-Mapping",
+            "map": "Aus initialer Rezeptanforderung"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.Absender",
+        "path": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.Absender",
+        "short": "Absender der Nachricht",
+        "definition": "Absender der Nachricht",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Ablehnung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.sender"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Ablehnung-Mapping",
+            "map": "PVS"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.Absender.TelematikID",
+        "path": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.Absender.TelematikID",
+        "short": "Telematik-ID des Absenders",
+        "definition": "Telematik-ID des Absenders",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "url"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Ablehnung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.sender.identifier.value"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Ablehnung-Mapping",
+            "map": "PVS, SMC-B oder HBA Zertifikat"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.Absender.Name",
+        "path": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.Absender.Name",
+        "short": "Name des Absenders",
+        "definition": "Name des Absenders",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Ablehnung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.sender.display"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Ablehnung-Mapping",
+            "map": "PVS"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.AbsendendesSystem",
+        "path": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.AbsendendesSystem",
+        "short": "Absendendes System",
+        "definition": "Absendendes System",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Ablehnung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.source"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Ablehnung-Mapping",
+            "map": "PVS",
+            "comment": "Automatisiert durch Software gesetzt"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.AbsendendesSystem.Name",
+        "path": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.AbsendendesSystem.Name",
+        "short": "Name des Herstellers des absendenden Systems",
+        "definition": "Name des Herstellers des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Ablehnung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.source.name"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Ablehnung-Mapping",
+            "map": "PVS",
+            "comment": "Automatisiert durch Software gesetzt"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.AbsendendesSystem.Software",
+        "path": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.AbsendendesSystem.Software",
+        "short": "Name der Software des absendenden Systems",
+        "definition": "Name der Software des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Ablehnung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.source.software"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Ablehnung-Mapping",
+            "map": "PVS",
+            "comment": "Automatisiert durch Software gesetzt"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.AbsendendesSystem.Version",
+        "path": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.AbsendendesSystem.Version",
+        "short": "Version des absendenden Systems",
+        "definition": "Version des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Ablehnung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.source.version"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Ablehnung-Mapping",
+            "map": "PVS",
+            "comment": "Automatisiert durch Software gesetzt"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.AbsendendesSystem.EMailKontakt",
+        "path": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.AbsendendesSystem.EMailKontakt",
+        "short": "E-Mail-Kontakt des absendenden Systems",
+        "definition": "E-Mail-Kontakt des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Ablehnung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.source.contact.value"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Ablehnung-Mapping",
+            "map": "PVS",
+            "comment": "Automatisiert durch Software gesetzt"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.AbsendendesSystem.Website",
+        "path": "gem-erp-sr-log-prescription-request-rejection.MetaDaten.AbsendendesSystem.Website",
+        "short": "Website des absendenden Systems",
+        "definition": "Website des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "url"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Ablehnung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.source.endpoint"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Ablehnung-Mapping",
+            "map": "PVS",
+            "comment": "Automatisiert durch Software gesetzt"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-rejection.Status",
+        "path": "gem-erp-sr-log-prescription-request-rejection.Status",
+        "short": "Status",
+        "definition": "Status der Anforderung. Wird genutzt, um den Bearbeitungsstand einer Anfrage zu verfolgen. Im Falle der Storinierung einer Rezeptanforderung wird eine Anfrage mit dem Status 'revoked' erstellt und geschickt.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Ablehnung-Fachliches-Mapping",
+            "map": "ERPServiceRequestPrescriptionRequest.status"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Ablehnung-Mapping",
+            "map": "PVS",
+            "comment": "Setzt den Status der Anfrage auf 'revoked'"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-rejection.Grund",
+        "path": "gem-erp-sr-log-prescription-request-rejection.Grund",
+        "short": "Grund der Ablehnung",
+        "definition": "Der Grund, warum die Rezeptanforderung abgelehnt wurde muss als Freitext hinterlegt werden.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Ablehnung-Fachliches-Mapping",
+            "map": "ERPServiceRequestPrescriptionRequest.reasonCode.text"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Ablehnung-Mapping",
+            "map": "Nutzer des PVS",
+            "comment": "Abfrage im Moment der Ablehnung"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-rejection.VorgangsID",
+        "path": "gem-erp-sr-log-prescription-request-rejection.VorgangsID",
+        "short": "ID des Vorgangs",
+        "definition": "Wird hier genutzt, um die Anfrage die storniert werden soll, zu referenzieren.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Ablehnung-Fachliches-Mapping",
+            "map": "ERPServiceRequestPrescriptionRequest.identifier:requestId.value"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Ablehnung-Mapping",
+            "map": "PVS",
+            "comment": "Aus initialer Rezeptanforderung"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-rejection.Medikation",
+        "path": "gem-erp-sr-log-prescription-request-rejection.Medikation",
+        "short": "Medikation",
+        "definition": "Angaben zur Medikation",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Ablehnung-Fachliches-Mapping",
+            "map": "ERPServiceRequestPrescriptionRequest.basedOn(ERPServiceRequestMedicationRequest)"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-rejection.Medikation.MedikationsReferenz",
+        "path": "gem-erp-sr-log-prescription-request-rejection.Medikation.MedikationsReferenz",
+        "short": "Referenz auf das Medikamentenobjekt",
+        "definition": "Referenz auf das Medikamentenobjekt nach KBV_Verordnung (Freitext, PZN, Wirkstoff, Rezeptur)",
+        "comment": "Folgende Profile aus dem E-Rezept Verordnungsdatensatz sind zulässig: KBV_PR_ERP_Medication_Compounding, KBV_PR_ERP_Medication_FreeText, KBV_PR_ERP_Medication _Ingredient, KBV_PR_ERP_Medication_PZN",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Medication"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Ablehnung-Fachliches-Mapping",
+            "map": "ERPServiceRequestMedicationRequest.medicationReference"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-rejection.Medikation.AnzahlPackungen",
+        "path": "gem-erp-sr-log-prescription-request-rejection.Medikation.AnzahlPackungen",
+        "short": "Anzahl der Packungen",
+        "definition": "Anzahl der Packungen",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Ablehnung-Fachliches-Mapping",
+            "map": "ERPServiceRequestMedicationRequest.dispenseRequest.quantity"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-rejection.Medikation.AnzahlPackungen.Einheit",
+        "path": "gem-erp-sr-log-prescription-request-rejection.Medikation.AnzahlPackungen.Einheit",
+        "short": "Einheit der Menge, fix auf 'Packung' gesetzt",
+        "definition": "Einheit der Menge, fix auf 'Packung' gesetzt",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Ablehnung-Fachliches-Mapping",
+            "map": "ERPServiceRequestMedicationRequest.dispenseRequest.quantity.unit"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-rejection.Medikation.AnzahlPackungen.Wert",
+        "path": "gem-erp-sr-log-prescription-request-rejection.Medikation.AnzahlPackungen.Wert",
+        "short": "Anzahl der Packungen",
+        "definition": "Anzahl der Packungen",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Ablehnung-Fachliches-Mapping",
+            "map": "ERPServiceRequestMedicationRequest.dispenseRequest.quantity.value"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,697 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "gem-erp-sr-log-prescription-request-confirmation",
+  "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-prescription-request-confirmation",
+  "version": "1.2.0-rc3",
+  "name": "GEM_ERP_SR_LOG_PrescriptionRequest_Confirmation",
+  "title": "Rezeptanforderung_Bestätigung",
+  "status": "draft",
+  "experimental": false,
+  "date": "2025-01-01",
+  "publisher": "gematik GmbH",
+  "description": "Fachliches Modell zur Beschreibung einer Bestätigung einer Rezeptanforderung",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+      "name": "Rezeptanforderung Bestätigung Fachliches Mapping",
+      "uri": "ERPServiceRequestPrescriptionRequest",
+      "comment": "Mapping des Fachmodells aus GEM_ERP_SR_LOG_PrescriptionRequest_Confirmation auf das FHIR-Modell ERPServiceRequestPrescriptionRequest"
+    },
+    {
+      "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+      "name": "Quelle der Rezeptanforderung Bestätigung Informationen",
+      "comment": "Beschreibt die Quelle der Rezeptanforderung Bestätigung Informatione"
+    }
+  ],
+  "kind": "logical",
+  "abstract": false,
+  "type": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-prescription-request-confirmation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Element",
+  "derivation": "specialization",
+  "differential": {
+    "element": [
+      {
+        "id": "gem-erp-sr-log-prescription-request-confirmation",
+        "path": "gem-erp-sr-log-prescription-request-confirmation",
+        "short": "Rezeptanforderung_Bestätigung",
+        "definition": "Fachliches Modell zur Beschreibung einer Bestätigung einer Rezeptanforderung",
+        "constraint": [
+          {
+            "key": "log-prescription-request-confirmation-1",
+            "severity": "error",
+            "human": "Wenn eine Anfrage bestätigt wird (status = 'completed'), muss der E-Rezept Token vorhanden sein.",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-prescription-request-confirmation"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-confirmation.MetaDaten",
+        "path": "gem-erp-sr-log-prescription-request-confirmation.MetaDaten",
+        "short": "Metadaten im MessageHeader",
+        "definition": "Metadaten im MessageHeader",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Erstellendes PVS"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-confirmation.MetaDaten.Empfaenger",
+        "path": "gem-erp-sr-log-prescription-request-confirmation.MetaDaten.Empfaenger",
+        "short": "Empfänger der Nachricht",
+        "definition": "Empfänger der Nachricht",
+        "min": 1,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.destination"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Aus initialer Rezeptanforderung"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-confirmation.MetaDaten.Empfaenger.KIMAdresse",
+        "path": "gem-erp-sr-log-prescription-request-confirmation.MetaDaten.Empfaenger.KIMAdresse",
+        "short": "KIM-Adresse des Empfängers",
+        "definition": "KIM-Adresse des Empfängers",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "url"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.destination.endpoint"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Aus initialer Rezeptanforderung (KIM Nachricht)"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-confirmation.MetaDaten.Empfaenger.TelematikID",
+        "path": "gem-erp-sr-log-prescription-request-confirmation.MetaDaten.Empfaenger.TelematikID",
+        "short": "Telematik-ID des Absenders",
+        "definition": "Telematik-ID des Absenders",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "url"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.destination.receiver.identifier.value"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Aus initialer Rezeptanforderung"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-confirmation.MetaDaten.Absender",
+        "path": "gem-erp-sr-log-prescription-request-confirmation.MetaDaten.Absender",
+        "short": "Absender der Nachricht",
+        "definition": "Absender der Nachricht",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.sender"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Erstellendes PVS"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-confirmation.MetaDaten.Absender.TelematikID",
+        "path": "gem-erp-sr-log-prescription-request-confirmation.MetaDaten.Absender.TelematikID",
+        "short": "Telematik-ID des Absenders",
+        "definition": "Telematik-ID des Absenders",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "url"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.sender.identifier.value"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Erstellendes PVS, SMC-B oder HBA Zertifikat"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-confirmation.MetaDaten.Absender.Name",
+        "path": "gem-erp-sr-log-prescription-request-confirmation.MetaDaten.Absender.Name",
+        "short": "Name des Absenders",
+        "definition": "Name des Absenders",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.sender.display"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Erstellendes PVS"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-confirmation.MetaDaten.AbsendendesSystem",
+        "path": "gem-erp-sr-log-prescription-request-confirmation.MetaDaten.AbsendendesSystem",
+        "short": "Absendendes System",
+        "definition": "Absendendes System",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.source"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Erstellendes PVS",
+            "comment": "Automatisiert durch Software gesetzt"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-confirmation.MetaDaten.AbsendendesSystem.Name",
+        "path": "gem-erp-sr-log-prescription-request-confirmation.MetaDaten.AbsendendesSystem.Name",
+        "short": "Name des Herstellers des absendenden Systems",
+        "definition": "Name des Herstellers des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.source.name"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Erstellendes PVS",
+            "comment": "Automatisiert durch Software gesetzt"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-confirmation.MetaDaten.AbsendendesSystem.Software",
+        "path": "gem-erp-sr-log-prescription-request-confirmation.MetaDaten.AbsendendesSystem.Software",
+        "short": "Name der Software des absendenden Systems",
+        "definition": "Name der Software des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.source.software"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Erstellendes PVS",
+            "comment": "Automatisiert durch Software gesetzt"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-confirmation.MetaDaten.AbsendendesSystem.Version",
+        "path": "gem-erp-sr-log-prescription-request-confirmation.MetaDaten.AbsendendesSystem.Version",
+        "short": "Version des absendenden Systems",
+        "definition": "Version des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.source.version"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Erstellendes PVS",
+            "comment": "Automatisiert durch Software gesetzt"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-confirmation.MetaDaten.AbsendendesSystem.EMailKontakt",
+        "path": "gem-erp-sr-log-prescription-request-confirmation.MetaDaten.AbsendendesSystem.EMailKontakt",
+        "short": "E-Mail-Kontakt des absendenden Systems",
+        "definition": "E-Mail-Kontakt des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.source.contact.value"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Erstellendes PVS",
+            "comment": "Automatisiert durch Software gesetzt"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-confirmation.MetaDaten.AbsendendesSystem.Website",
+        "path": "gem-erp-sr-log-prescription-request-confirmation.MetaDaten.AbsendendesSystem.Website",
+        "short": "Website des absendenden Systems",
+        "definition": "Website des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "url"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.source.endpoint"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Erstellendes PVS",
+            "comment": "Automatisiert durch Software gesetzt"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-confirmation.ERezeptToken",
+        "path": "gem-erp-sr-log-prescription-request-confirmation.ERezeptToken",
+        "short": "E-Rezept-Token",
+        "definition": "Token der für die Einlösung der Verordnung gebraucht wird. Angabe nach gemSpec_DM_eRp#A_19554. Ein Arzt kann sich entscheiden für eine Anfrage mehrere Rezepte auszustellen, daher ist die Angabe von mehreren Token erlaubt",
+        "min": 1,
+        "max": "*",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "log-prescription-request-confirmation-1",
+            "severity": "error",
+            "human": "Wenn eine Anfrage bestätigt wird (status = 'completed'), muss der E-Rezept Token vorhanden sein.",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-prescription-request-confirmation"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestPrescriptionRequest.extension:EPrescriptionToken"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "E-Rezept-Fachdienst",
+            "comment": "Token lässt sich aus den Informationen des E-Rezept Fachdienstes erzeugen"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-confirmation.Status",
+        "path": "gem-erp-sr-log-prescription-request-confirmation.Status",
+        "short": "Status",
+        "definition": "Status der Anforderung. Wird genutzt, um den Bearbeitungsstand einer Anfrage zu verfolgen. Im Falle der Bestätigung der Rezeptanforderung wird eine Anfrage mit dem Status 'completed' geschickt.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "log-prescription-request-confirmation-1",
+            "severity": "error",
+            "human": "Wenn eine Anfrage bestätigt wird (status = 'completed'), muss der E-Rezept Token vorhanden sein.",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-prescription-request-confirmation"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestPrescriptionRequest.status"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "PVS",
+            "comment": "Setzt den Status der Anfrage auf 'completed'"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-confirmation.VorgangsID",
+        "path": "gem-erp-sr-log-prescription-request-confirmation.VorgangsID",
+        "short": "ID des Vorgangs",
+        "definition": "Wird vom initialen Sender gesetzt und muss in der Antwort mitgeführt werden.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestPrescriptionRequest.identifier:requestId.value"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Rezeptanforderung",
+            "comment": "VorgangsID aus der initialen Rezeptanforderung"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-confirmation.VersichertenEinloesung",
+        "path": "gem-erp-sr-log-prescription-request-confirmation.VersichertenEinloesung",
+        "short": "Versicherten Einlösung",
+        "definition": "Angabe, ob der Versicherte das E-Rezept selbst einlösen möchte.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestPrescriptionRequest.extension:redeemByPatient.valueBoolean"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Rezeptanforderung",
+            "comment": "Aus der initialen Rezeptanforderung"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-confirmation.Freitext",
+        "path": "gem-erp-sr-log-prescription-request-confirmation.Freitext",
+        "short": "Freitext",
+        "definition": "Individuelle Nachricht an den Empfänger",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestPrescriptionRequest.note"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Nutzer des PVS",
+            "comment": "Abfrage im Moment der Bestätigung"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-confirmation.Anhaenge",
+        "path": "gem-erp-sr-log-prescription-request-confirmation.Anhaenge",
+        "short": "Anhänge",
+        "definition": "Anhänge zur Bestätigung. Das können PDFs, Bilder oder andere Dokumente sein.",
+        "comment": "Werden auf Ebene der KIM-Nachricht angehangen",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Attachment"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Nutzer oder PVS",
+            "comment": "Angabe im Moment der Bestätigung"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-confirmation.Anhaenge.Medikationsplan",
+        "path": "gem-erp-sr-log-prescription-request-confirmation.Anhaenge.Medikationsplan",
+        "short": "Medikationsplan",
+        "definition": "Anhang des Medikationsplans",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Attachment"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Nutzer oder PVS",
+            "comment": "Aktualisierung und ggf. automatische Generierung vom PVS"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-confirmation.Anhaenge.weitereAnhaenge",
+        "path": "gem-erp-sr-log-prescription-request-confirmation.Anhaenge.weitereAnhaenge",
+        "short": "Weitere Anhänge",
+        "definition": "Weitere Anhänge",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Attachment"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "Nutzer oder PVS"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-confirmation.AenderungVerordnung",
+        "path": "gem-erp-sr-log-prescription-request-confirmation.AenderungVerordnung",
+        "short": "Änderung der Verordnung",
+        "definition": "Gibt an, ob das verordnete Arzneimittel von dem angefragten abweicht.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestPrescriptionRequest.extension:medicationChanged"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-confirmation.Medikation",
+        "path": "gem-erp-sr-log-prescription-request-confirmation.Medikation",
+        "short": "Medikation",
+        "definition": "Angaben zur Medikation",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestPrescriptionRequest.basedOn(ERPServiceRequestMedicationRequest)"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "PVS",
+            "comment": "Informationen aus Verordnungsdatensatz"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-confirmation.Medikation.MedizinischeInformationenAusVerordnung",
+        "path": "gem-erp-sr-log-prescription-request-confirmation.Medikation.MedizinischeInformationenAusVerordnung",
+        "short": "Medizinische Verordnungsinformationen",
+        "definition": "MedicationRequest und Medication Objekt aus der KBV_Verordnung.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/MedicationRequest"
+            ]
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestMedicationRequest.medicationReference"
+          },
+          {
+            "identity": "Quelle-Rezeptanforderung-Bestaetigung-Mapping",
+            "map": "PVS",
+            "comment": "Informationen aus Verordnungsdatensatz (MedicationRequest und Medication)"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-confirmation.Medikation.AnzahlPackungen",
+        "path": "gem-erp-sr-log-prescription-request-confirmation.Medikation.AnzahlPackungen",
+        "short": "Anzahl der Packungen",
+        "definition": "Anzahl der Packungen",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestMedicationRequest.dispenseRequest.quantity"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-confirmation.Medikation.AnzahlPackungen.Einheit",
+        "path": "gem-erp-sr-log-prescription-request-confirmation.Medikation.AnzahlPackungen.Einheit",
+        "short": "Einheit der Menge, fix auf 'Packung' gesetzt",
+        "definition": "Einheit der Menge, fix auf 'Packung' gesetzt",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestMedicationRequest.dispenseRequest.quantity.unit"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-confirmation.Medikation.AnzahlPackungen.Wert",
+        "path": "gem-erp-sr-log-prescription-request-confirmation.Medikation.AnzahlPackungen.Wert",
+        "short": "Anzahl der Packungen",
+        "definition": "Anzahl der Packungen",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestMedicationRequest.dispenseRequest.quantity.value"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-prescription-request-confirmation.Medikation.Dosieranweisungen",
+        "path": "gem-erp-sr-log-prescription-request-confirmation.Medikation.Dosieranweisungen",
+        "short": "Dosieranweisungen",
+        "definition": "Dosieranweisungen, wie sie auch in der Verordnung angegeben sind",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Dosage"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Rezeptanforderung-Bestaetigung-Fachliches-Mapping",
+            "map": "ERPServiceRequestMedicationRequest.dosageInstruction"
+          }
+        ]
+      }
+    ]
+  }
+}

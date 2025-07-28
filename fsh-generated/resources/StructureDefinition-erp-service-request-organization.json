@@ -1,0 +1,85 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "erp-service-request-organization",
+  "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization",
+  "version": "1.2.0-rc3",
+  "name": "ERPServiceRequestOrganization",
+  "title": "ERP Service Request Organization",
+  "status": "draft",
+  "experimental": false,
+  "date": "2025-01-01",
+  "publisher": "gematik GmbH",
+  "description": "Organization that can be used to specify a KIM address",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Organization",
+  "baseDefinition": "https://gematik.de/fhir/ti/StructureDefinition/ti-organization",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Organization.contact",
+        "path": "Organization.contact",
+        "min": 1
+      },
+      {
+        "id": "Organization.contact.telecom",
+        "path": "Organization.contact.telecom",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "system"
+            }
+          ],
+          "rules": "open",
+          "description": "Slices on contact options",
+          "ordered": false
+        },
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.contact.telecom:tel",
+        "path": "Organization.contact.telecom",
+        "sliceName": "tel",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.contact.telecom:tel.system",
+        "path": "Organization.contact.telecom.system",
+        "min": 1,
+        "patternCode": "phone"
+      },
+      {
+        "id": "Organization.contact.telecom:tel.value",
+        "path": "Organization.contact.telecom.value",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.contact.telecom:kim",
+        "path": "Organization.contact.telecom",
+        "sliceName": "kim",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.contact.telecom:kim.system",
+        "path": "Organization.contact.telecom.system",
+        "min": 1,
+        "patternCode": "email"
+      },
+      {
+        "id": "Organization.contact.telecom:kim.value",
+        "path": "Organization.contact.telecom.value",
+        "min": 1,
+        "mustSupport": true
+      }
+    ]
+  }
+}

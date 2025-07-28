@@ -1,0 +1,874 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "gem-erp-sr-log-dispense-request",
+  "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-dispense-request",
+  "version": "1.2.0-rc3",
+  "name": "GEM_ERP_SR_LOG_DispenseRequest",
+  "title": "Dispensieranforderung",
+  "status": "draft",
+  "experimental": false,
+  "date": "2025-01-01",
+  "publisher": "gematik GmbH",
+  "description": "Fachliches Modell zur Beschreibung einer Dispenseieranforderung",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "Dispensieranforderung-Fachliches-Mapping",
+      "name": "Dispensieranforderung Fachliches Mapping",
+      "uri": "ERPServiceRequestDispenseRequest",
+      "comment": "Mapping des Fachmodells aus GEM_ERP_SR_LOG_DispenseRequest auf das FHIR-Modell ERPServiceRequestDispenseRequest"
+    },
+    {
+      "identity": "Quelle-Dispensieranforderung-Mapping",
+      "name": "Quelle der Dispensieranforderungsinformationen",
+      "comment": "Beschreibt die Quelle der Dispensieranforderungsinformationen. Wird von der Pflegeeinrichtung zur Anforderung zur Abgabe von Arzneimitteln verwendet."
+    }
+  ],
+  "kind": "logical",
+  "abstract": false,
+  "type": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-dispense-request",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Element",
+  "derivation": "specialization",
+  "differential": {
+    "element": [
+      {
+        "id": "gem-erp-sr-log-dispense-request",
+        "path": "gem-erp-sr-log-dispense-request",
+        "short": "Dispensieranforderung",
+        "definition": "Fachliches Modell zur Beschreibung einer Dispenseieranforderung",
+        "constraint": [
+          {
+            "key": "log-dispense-request-1",
+            "severity": "error",
+            "human": "Wenn eine Anfrage gestellt wird (status = 'active'), muss der Anfragende eine Pflegeeinrichtung sein.",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-dispense-request"
+          },
+          {
+            "key": "log-dispense-request-2",
+            "severity": "error",
+            "human": "Wenn eine Anfrage gestellt wird (status = 'active'), muss auch der E-Rezept-Token vorhanden sein.",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-dispense-request"
+          },
+          {
+            "key": "log-dispense-request-3",
+            "severity": "error",
+            "human": "Wenn als Belieferungsart 'Lieferung an Alternative Addresse' angegeben wird, dann muss die Adresse auch angegeben werden.",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-dispense-request"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.MetaDaten",
+        "path": "gem-erp-sr-log-dispense-request.MetaDaten",
+        "short": "Metadaten im MessageHeader",
+        "definition": "Metadaten im MessageHeader",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader"
+          },
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Erstellendes PS",
+            "comment": "Pflegesystem"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.MetaDaten.Empfaenger",
+        "path": "gem-erp-sr-log-dispense-request.MetaDaten.Empfaenger",
+        "short": "Empfänger der Nachricht",
+        "definition": "Empfänger der Nachricht",
+        "min": 1,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.destination"
+          },
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Aus Kontaktmanagement oder VZD Suche"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.MetaDaten.Empfaenger.KIMAdresse",
+        "path": "gem-erp-sr-log-dispense-request.MetaDaten.Empfaenger.KIMAdresse",
+        "short": "KIM-Adresse des Empfängers",
+        "definition": "KIM-Adresse des Empfängers",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "url"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.destination.endpoint"
+          },
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Aus Kontaktmanagement oder VZD Suche"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.MetaDaten.Empfaenger.TelematikID",
+        "path": "gem-erp-sr-log-dispense-request.MetaDaten.Empfaenger.TelematikID",
+        "short": "Telematik-ID des Absenders",
+        "definition": "Telematik-ID des Absenders",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "url"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.destination.receiver.identifier.value"
+          },
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Aus Kontaktmanagement oder VZD Suche"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.MetaDaten.Absender",
+        "path": "gem-erp-sr-log-dispense-request.MetaDaten.Absender",
+        "short": "Absender der Nachricht",
+        "definition": "Absender der Nachricht",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.sender"
+          },
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Erstellendes PS",
+            "comment": "Pflegesystem"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.MetaDaten.Absender.TelematikID",
+        "path": "gem-erp-sr-log-dispense-request.MetaDaten.Absender.TelematikID",
+        "short": "Telematik-ID des Absenders",
+        "definition": "Telematik-ID des Absenders",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "url"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.sender.identifier.value"
+          },
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Erstellendes PS, SMC-B Zertifikat"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.MetaDaten.Absender.Name",
+        "path": "gem-erp-sr-log-dispense-request.MetaDaten.Absender.Name",
+        "short": "Name des Absenders",
+        "definition": "Name des Absenders",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.sender.display"
+          },
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Erstellendes PS"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.MetaDaten.AbsendendesSystem",
+        "path": "gem-erp-sr-log-dispense-request.MetaDaten.AbsendendesSystem",
+        "short": "Absendendes System",
+        "definition": "Absendendes System",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.source"
+          },
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Erstellendes PS",
+            "comment": "Automatisiert durch Software gesetzt"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.MetaDaten.AbsendendesSystem.Name",
+        "path": "gem-erp-sr-log-dispense-request.MetaDaten.AbsendendesSystem.Name",
+        "short": "Name des Herstellers des absendenden Systems",
+        "definition": "Name des Herstellers des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.source.name"
+          },
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Erstellendes PS",
+            "comment": "Automatisiert durch Software gesetzt"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.MetaDaten.AbsendendesSystem.Software",
+        "path": "gem-erp-sr-log-dispense-request.MetaDaten.AbsendendesSystem.Software",
+        "short": "Name der Software des absendenden Systems",
+        "definition": "Name der Software des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.source.software"
+          },
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Erstellendes PS",
+            "comment": "Automatisiert durch Software gesetzt"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.MetaDaten.AbsendendesSystem.Version",
+        "path": "gem-erp-sr-log-dispense-request.MetaDaten.AbsendendesSystem.Version",
+        "short": "Version des absendenden Systems",
+        "definition": "Version des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.source.version"
+          },
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Erstellendes PS",
+            "comment": "Automatisiert durch Software gesetzt"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.MetaDaten.AbsendendesSystem.EMailKontakt",
+        "path": "gem-erp-sr-log-dispense-request.MetaDaten.AbsendendesSystem.EMailKontakt",
+        "short": "E-Mail-Kontakt des absendenden Systems",
+        "definition": "E-Mail-Kontakt des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.source.contact.value"
+          },
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Erstellendes PS",
+            "comment": "Automatisiert durch Software gesetzt"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.MetaDaten.AbsendendesSystem.Website",
+        "path": "gem-erp-sr-log-dispense-request.MetaDaten.AbsendendesSystem.Website",
+        "short": "Website des absendenden Systems",
+        "definition": "Website des absendenden Systems",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "url"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequestHeader.source.endpoint"
+          },
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Erstellendes PS",
+            "comment": "Automatisiert durch Software gesetzt"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.Status",
+        "path": "gem-erp-sr-log-dispense-request.Status",
+        "short": "Status",
+        "definition": "Status der Anforderung. Wird genutzt, um den Bearbeitungsstand einer Anfrage zu verfolgen. Im Falle der initialen Dispensieranforderung wird eine Anfrage mit dem Status 'active' erstellt und geschickt und signalisiert somit eine neue Anfrage.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "log-dispense-request-1",
+            "severity": "error",
+            "human": "Wenn eine Anfrage gestellt wird (status = 'active'), muss der Anfragende eine Pflegeeinrichtung sein.",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-dispense-request"
+          },
+          {
+            "key": "log-dispense-request-2",
+            "severity": "error",
+            "human": "Wenn eine Anfrage gestellt wird (status = 'active'), muss auch der E-Rezept-Token vorhanden sein.",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-dispense-request"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequest.status"
+          },
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Anfragendes PS",
+            "comment": "Setzt den Status der Anfrage auf 'active'"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.VorgangsID",
+        "path": "gem-erp-sr-log-dispense-request.VorgangsID",
+        "short": "ID des Vorgangs",
+        "definition": "Wird vom initialen Sender gesetzt und muss immer mitgeführt werden.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequest.identifier:requestId.value"
+          },
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Initiale Rezeptanforderung"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.ERezeptToken",
+        "path": "gem-erp-sr-log-dispense-request.ERezeptToken",
+        "short": "E-Rezept-Token",
+        "definition": "Token der für die Einlösung der Verordnung gebraucht wird.",
+        "comment": "Angabe nach gemSpec_DM_eRp#A_19554.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "log-dispense-request-2",
+            "severity": "error",
+            "human": "Wenn eine Anfrage gestellt wird (status = 'active'), muss auch der E-Rezept-Token vorhanden sein.",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-dispense-request"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequest.extension:EPrescriptionToken"
+          },
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Rezeptanforderung_Bestätigung",
+            "comment": "Wurde vom verordnenden Arzt bereitgestellt"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.involvierteParteien",
+        "path": "gem-erp-sr-log-dispense-request.involvierteParteien",
+        "short": "Involvierte Parteien",
+        "definition": "Angaben zu den involvierten Parteien",
+        "min": 1,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequest.requester"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.involvierteParteien.Anfragender",
+        "path": "gem-erp-sr-log-dispense-request.involvierteParteien.Anfragender",
+        "short": "Anfragender",
+        "definition": "Angaben zum anfragenden",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequest.requester(ERPServiceRequestOrganization)"
+          },
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Anfragendes PS"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.involvierteParteien.Anfragender.AnfragenderTyp",
+        "path": "gem-erp-sr-log-dispense-request.involvierteParteien.Anfragender.AnfragenderTyp",
+        "short": "Typ des Anfragenden",
+        "definition": "Folgende Typen sind zulässig: Apotheke, Pflegeeinrichtung",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "log-dispense-request-1",
+            "severity": "error",
+            "human": "Wenn eine Anfrage gestellt wird (status = 'active'), muss der Anfragende eine Pflegeeinrichtung sein.",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-dispense-request"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequest.requester.type"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.involvierteParteien.Anfragender.Name",
+        "path": "gem-erp-sr-log-dispense-request.involvierteParteien.Anfragender.Name",
+        "short": "Name des Anfragenden",
+        "definition": "Name des Anfragenden",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestOrganization.name"
+          },
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Anfragendes PS"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.involvierteParteien.Anfragender.Adresse",
+        "path": "gem-erp-sr-log-dispense-request.involvierteParteien.Anfragender.Adresse",
+        "short": "Straßenadresse des Anfragenden",
+        "definition": "Straßenadresse des Anfragenden",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Address"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestOrganization.address"
+          },
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Anfragendes PS"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.involvierteParteien.Anfragender.Telefon",
+        "path": "gem-erp-sr-log-dispense-request.involvierteParteien.Anfragender.Telefon",
+        "short": "Telefonnummer des Anfragenden",
+        "definition": "Telefonnummer des Anfragenden",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestOrganization.contact.telecom:tel.value"
+          },
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Anfragendes PS"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.involvierteParteien.PatientenInformationen",
+        "path": "gem-erp-sr-log-dispense-request.involvierteParteien.PatientenInformationen",
+        "short": "Patienteninformationen",
+        "definition": "Angaben zum Patienten",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequest.subject(ERPServiceRequestPatient)"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.involvierteParteien.PatientenInformationen.PatientenIdentifierKVNR",
+        "path": "gem-erp-sr-log-dispense-request.involvierteParteien.PatientenInformationen.PatientenIdentifierKVNR",
+        "short": "KVNR des Patienten",
+        "definition": "KVNR des Patienten",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestPatient.identifier.value"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.involvierteParteien.PatientenInformationen.PatientenName",
+        "path": "gem-erp-sr-log-dispense-request.involvierteParteien.PatientenInformationen.PatientenName",
+        "short": "Name des Patienten",
+        "definition": "Strukturierte Angabe des Namens des Patienten",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "HumanName"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestPatient.name"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.involvierteParteien.PatientenInformationen.PatientenGeburtstag",
+        "path": "gem-erp-sr-log-dispense-request.involvierteParteien.PatientenInformationen.PatientenGeburtstag",
+        "short": "Geburtstag des Patienten",
+        "definition": "Angabe des Geburtstags mit Jahr, Monat und Tag",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "date"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestPatient.birthDate"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.Freitext",
+        "path": "gem-erp-sr-log-dispense-request.Freitext",
+        "short": "Freitext",
+        "definition": "Individuelle Nachricht an den Empfänger",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequest.note"
+          },
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Nutzer des PS",
+            "comment": "Abfrage im Moment der Anforderung"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.Belieferungsart",
+        "path": "gem-erp-sr-log-dispense-request.Belieferungsart",
+        "short": "Belieferungsart",
+        "definition": "Angabe der Belieferungsart",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "log-dispense-request-3",
+            "severity": "error",
+            "human": "Wenn als Belieferungsart 'Lieferung an Alternative Addresse' angegeben wird, dann muss die Adresse auch angegeben werden.",
+            "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/gem-erp-sr-log-dispense-request"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequest.code.coding[delivery-type]"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.Belieferungsart.BelieferungsartCode",
+        "path": "gem-erp-sr-log-dispense-request.Belieferungsart.BelieferungsartCode",
+        "short": "Belieferungsart-Code",
+        "definition": "Folgende Codes sind zulässig: Abholung durch Pflegedienst, Lieferung der Apotheke, Abholung durch Patienten",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequest.code.coding[delivery-type].code"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.Belieferungsart.AlternativeAdresse",
+        "path": "gem-erp-sr-log-dispense-request.Belieferungsart.AlternativeAdresse",
+        "short": "Alternative Adresse",
+        "definition": "Alternative Adresse für die Lieferung",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Address"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequest.extension[alternativeDeliveryAddress]"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.Prioritaet",
+        "path": "gem-erp-sr-log-dispense-request.Prioritaet",
+        "short": "Priorität",
+        "definition": "Angabe der Priorität der Anforderung",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequest.priority"
+          },
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Nutzer des PS",
+            "comment": "Abfrage im Moment der Anforderung"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.Prioritaet.PrioritaetCode",
+        "path": "gem-erp-sr-log-dispense-request.Prioritaet.PrioritaetCode",
+        "short": "Priorität der Anforderung",
+        "definition": "Folgende Prioritäten sind zulässig: Hoch, Normal",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Dispensieranforderung-Fachliches-Mapping",
+            "map": "ERPServiceRequestDispenseRequest.priority"
+          },
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Nutzer des PS",
+            "comment": "Abfrage im Moment der Anforderung"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.Anhaenge",
+        "path": "gem-erp-sr-log-dispense-request.Anhaenge",
+        "short": "Anhänge",
+        "definition": "Anhänge zur Bestätigung. Das können PDFs, Bilder oder andere Dokumente sein.",
+        "comment": "Werden auf Ebene der KIM-Nachricht angehangen",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Attachment"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Nutzer oder PS",
+            "comment": "Angabe im Moment der Bestätigung"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.Anhaenge.Medikationsplan",
+        "path": "gem-erp-sr-log-dispense-request.Anhaenge.Medikationsplan",
+        "short": "Medikationsplan",
+        "definition": "Anhang des Medikationsplans",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Attachment"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Nutzer, PS oder Rezeptanforderung_Bestätigung",
+            "comment": "Aktualisierung und ggf. automatische Generierung vom PS"
+          }
+        ]
+      },
+      {
+        "id": "gem-erp-sr-log-dispense-request.Anhaenge.weitereAnhaenge",
+        "path": "gem-erp-sr-log-dispense-request.Anhaenge.weitereAnhaenge",
+        "short": "Weitere Anhänge",
+        "definition": "Weitere Anhänge",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Attachment"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "Quelle-Dispensieranforderung-Mapping",
+            "map": "Nutzer oder PS"
+          }
+        ]
+      }
+    ]
+  }
+}
