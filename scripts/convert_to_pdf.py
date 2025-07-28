@@ -2,6 +2,7 @@ import os
 import logging
 from lxml import etree
 import pdfkit
+import pikepdf  # <-- Add this import
 
 # Setup logging
 logging.basicConfig(
@@ -24,6 +25,16 @@ def transform_xml_with_xslt(xml_content, xslt_file):
     except Exception as e:
         logging.error(f"XSLT transformation failed: {e}")
         return None
+
+def remove_creation_date(pdf_filepath):
+    try:
+        with pikepdf.open(pdf_filepath, allow_overwriting_input=True) as pdf:
+            if '/CreationDate' in pdf.docinfo:
+                del pdf.docinfo['/CreationDate']
+                pdf.save(pdf_filepath)
+                logging.info(f"Removed /CreationDate from {pdf_filepath}")
+    except Exception as e:
+        logging.error(f"Failed to remove /CreationDate from {pdf_filepath}: {e}")
 
 def process_xml_files(input_folder):
     logging.info(f"Scanning for XML files in: {input_folder}")
@@ -52,6 +63,7 @@ def process_xml_files(input_folder):
                 try:
                     pdfkit.from_string(html_content, pdf_filepath)
                     logging.info(f"Created PDF: {pdf_filepath}")
+                    remove_creation_date(pdf_filepath)  # <-- Call the function here
                 except Exception as e:
                     logging.error(f"Failed to create PDF for {xml_filepath}: {e}")
 
