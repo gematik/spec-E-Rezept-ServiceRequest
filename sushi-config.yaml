@@ -6,6 +6,7 @@ status: draft # draft | active | retired | unknown
 copyrightYear: 2025
 releaseLabel: ci-build # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
 applyExtensionMetadataToRoot: false
+jurisdiction: urn:iso:std:iso:3166#DE "Germany" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 version: "1.2.0-rc3"
 dependencies:
   # basisprofile
@@ -42,6 +43,8 @@ menu:
 
 parameters:
   no-narrative:
-    - Medication/*
+    - Medication/* # In order to Avoid the forbidden Medication.text field
+    - Bundle/*
   path-pages:
     - input/content
+  bundle-references-resolve: true

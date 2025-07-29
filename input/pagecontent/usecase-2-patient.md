@@ -95,7 +95,7 @@ Im Falle einer Stornierung sollte das sendende System den Eintrag als "storniert
 
 ## Antwort des Verordnenden
 
-### [4] Rezeptanforderung_Bestätigung
+### [3] Rezeptanforderung_Bestätigung
 
 Der Verordnende kann nach dem Erhalt einer Rezeptanforderung diese prüfen und eine entsprechende Verordnung erstellen, signieren und im E-Rezept-Fachdienst einstellen (**[2]**).
 

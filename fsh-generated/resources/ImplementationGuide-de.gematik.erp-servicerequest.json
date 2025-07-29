@@ -5,6 +5,17 @@
   "version": "1.2.0-rc3",
   "name": "ERezeptServiceRequest",
   "status": "draft",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "DE",
+          "system": "urn:iso:std:iso:3166",
+          "display": "Germany"
+        }
+      ]
+    }
+  ],
   "packageId": "de.gematik.erp-servicerequest",
   "fhirVersion": [
     "4.0.1"
@@ -807,12 +818,24 @@
         "value": "ci-build"
       },
       {
+        "code": "no-validate",
+        "value": "Medication/*"
+      },
+      {
         "code": "no-narrative",
         "value": "Medication/*"
       },
       {
+        "code": "no-narrative",
+        "value": "Bundle/*"
+      },
+      {
         "code": "path-pages",
         "value": "input/content"
+      },
+      {
+        "code": "bundle-references-resolve",
+        "value": "true"
       }
     ]
   }
