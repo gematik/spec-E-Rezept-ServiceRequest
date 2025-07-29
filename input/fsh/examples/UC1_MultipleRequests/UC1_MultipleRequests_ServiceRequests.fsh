@@ -1,7 +1,7 @@
 // Prescription Service Requests
 Instance: UC1-MULTI-Initial-Prescription-Request-1
 InstanceOf: ERPServiceRequestPrescriptionRequest
-Usage: #example
+Usage: #inline
 Title: "Initial Prescription Request Mutli 1"
 Description: "This ServiceRequest is sent initially to the prescribing practitioner"
 * identifier[requestId].value = "multi-1"
@@ -22,7 +22,7 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 
 Instance: UC1-MULTI-Initial-Prescription-Request-2
 InstanceOf: ERPServiceRequestPrescriptionRequest
-Usage: #example
+Usage: #inline
 Title: "Initial Prescription Request Multi 2"
 Description: "This ServiceRequest is sent initially to the prescribing practitioner"
 * identifier[requestId].value = "multi-2"
@@ -75,7 +75,7 @@ Description: "ServiceRequest that is returned to the requester"
 
 Instance: Komplex-MULTI-Initial-Prescription-Request-3
 InstanceOf: ERPServiceRequestPrescriptionRequest
-Usage: #example
+Usage: #inline
 Title: "Komplex-MULTI-Initial-Prescription-Request-3"
 Description: "This ServiceRequest is sent initially to the prescribing practitioner"
 * identifier[requestId].value = "komplex-multi"

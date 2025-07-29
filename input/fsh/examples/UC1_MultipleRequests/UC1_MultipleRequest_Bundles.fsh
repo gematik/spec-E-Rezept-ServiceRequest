@@ -1,8 +1,8 @@
 Instance: UC1-MULTI-1-Prescription-Request-To-Prescriber
 InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
-Title: "Medication Request To Prescriber"
-Description: "Request sent to Prescriber to get a Prescription. Same Medicat"
+Title: "UC1-Multi-1 Initiale Rezeptanforderung"
+Description: "Dieses Beispiel bildet ein Message Bundle einer initialen Rezeptanforderung mit mehreren Anfragen an den Arzt ab."
 * identifier.value = "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
 * timestamp = "2025-05-13T14:25:12+02:00"
 // Header
@@ -34,8 +34,8 @@ Description: "Request sent to Prescriber to get a Prescription. Same Medicat"
 Instance: UC1-MULTI-2-Response-Prescription-Request-1
 InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
-Title: "Response Prescription Request"
-Description: "Response from Practitioner containing the completed prescriptions"
+Title: "UC1-Multi-2 erfüllte Rezeptanforderung"
+Description: "Dieses Beispiel bildet ein Message Bundle einer erfüllten Rezeptanforderung mit den **akzeptierten** Anfragen des Arztes ab."
 * identifier.value = "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
 * timestamp = "2025-05-14T08:15:12+02:00"
 // Header
@@ -59,8 +59,8 @@ Description: "Response from Practitioner containing the completed prescriptions"
 Instance: UC1-MULTI-2-Response-Prescription-Request-2
 InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
-Title: "Response Prescription Request"
-Description: "Response from Practitioner containing the rejected prescription requests"
+Title: "UC1-Multi-2 abgelehnte Rezeptanforderung"
+Description: "Dieses Beispiel bildet ein Message Bundle einer erfüllten Rezeptanforderung mit den **abgelehnten** Anfragen des Arztes ab."
 * identifier.value = "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
 * timestamp = "2025-05-14T08:15:12+02:00"
 // Header
@@ -84,8 +84,8 @@ Description: "Response from Practitioner containing the rejected prescription re
 Instance: Komplex-MULTI-1-Prescription-Request
 InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
-Title: "Medication Request To Prescriber"
-Description: "Request sent to Prescriber to get a Prescription. Same Medicat"
+Title: "Komplex-Multi-1 initiale Rezeptanforderung"
+Description: "Dieses Beispiel bildet ein komplexes Message Bundle einer initialen Rezeptanforderung des Arztes ab."
 * identifier.value = "urn:uuid:7a6f9dc9-9aa9-4ee0-bec4-64460d3edb94"
 * timestamp = "2025-05-13T14:25:12+02:00"
 // Header

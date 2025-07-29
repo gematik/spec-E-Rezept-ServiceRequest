@@ -1,8 +1,8 @@
 Instance: UC1-Rejection-Of-Prescriber
 InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
-Title: "Rejectionrequest sent from Prescriber"
-Description: "Response sent from Practitioner back to HealthCareService"
+Title: "UC1-Rejection Ablehnung einer Rezeptanforderung"
+Description: "Dieses Beispiel bildet ein Message Bundle mit einer Ablehnung des Arztes einer Rezeptanforderung ab."
 * identifier.value = "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
 * timestamp = "2025-05-13T16:15:54.239+02:00"
 // Header

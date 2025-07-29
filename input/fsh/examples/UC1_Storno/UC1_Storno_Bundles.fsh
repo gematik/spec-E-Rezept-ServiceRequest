@@ -1,8 +1,8 @@
 Instance: UC1-Storno-1-Cancellation-Of-Prescription-Requester
 InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
-Title: "Cancelled Medication Request To Prescriber"
-Description: "Cancellationrequest sent to Prescriber to get a Prescription"
+Title: "UC1-Storno-1 stornierte Rezeptanforderung"
+Description: "Dieses Beispiel bildet ein Message Bundle einer **stornierten** Rezeptanforderung an den Arztes ab."
 * identifier.value = "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
 * timestamp = "2025-05-13T15:32:12.239+02:00"
 // Header

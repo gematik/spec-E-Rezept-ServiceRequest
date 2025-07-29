@@ -56,6 +56,22 @@
     "resource": [
       {
         "reference": {
+          "reference": "Bundle/UC1-3-Dispense-Request-To-Pharmacy"
+        },
+        "name": "Abgabeanforderung an Apotheke",
+        "description": "Anfrage der Pflegeeinrichtung an eine Apotheke zur Belieferung mit dem E-Rezept für die Heimversorgung",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/UC1-3-Alt-Delivery-Dispense-Request-To-Pharmacy"
+        },
+        "name": "Abgabeanforderung mit alternativer Lieferadresse",
+        "description": "Anfrage der Pflegeeinrichtung an eine Apotheke zur Belieferung mit alternativer Lieferadresse für die Heimversorgung",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/alternative-delivery-address-ex"
         },
         "name": "Alternative Delivery Address (EX)",
@@ -96,10 +112,74 @@
       },
       {
         "reference": {
-          "reference": "Bundle/UC1-Storno-1-Cancellation-Of-Prescription-Requester"
+          "reference": "MedicationDispense/UC1-Medication-Dispense"
         },
-        "name": "Cancelled Medication Request To Prescriber",
-        "description": "Cancellationrequest sent to Prescriber to get a Prescription",
+        "name": "Beispiel Medication Dispense",
+        "description": "Beispielhafte MedicationDispense eines Arzneimittels, das beliefert werden soll",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-dispense"
+      },
+      {
+        "reference": {
+          "reference": "Patient/Example-Patient"
+        },
+        "name": "Beispiel Patient",
+        "description": "Dieses Beispiel demonstriert einen Patienten einer Rezeptanforderung.",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-patient"
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/Example-Practitioner"
+        },
+        "name": "Beispiel Patient",
+        "description": "Dieses Beispiel demonstriert einen Arzt als Practitioner einer Rezeptanforderung.",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-practitioner"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/UC1-4-Fullfilled-DispenseRequest-To-Pharmacy"
+        },
+        "name": "Bestätigung der Belieferung durch Apotheke",
+        "description": "Antwort der Apotheke an die Pflegeeinrichtung mit Bestätigung der Belieferung für die Heimversorgung",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/UC1-4-Alt-Delivery-Fullfilled-DispenseRequest-To-Pharmacy"
+        },
+        "name": "Bestätigung der Belieferung mit alternativer Lieferadresse",
+        "description": "Antwort der Apotheke an die Pflegeeinrichtung mit Bestätigung der Belieferung an alternative Lieferadresse",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/UC3-2-Fullfilled-Prescription-Request"
+        },
+        "name": "Bestätigung der Rezepterstellung für Apotheke",
+        "description": "Antwort des Verordnenden an die Apotheke mit Bestätigung der E-Rezept-Erstellung",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/UC1-2-Fullfilled-Prescription-Request"
+        },
+        "name": "Bestätigung der Rezepterstellung für Heimversorgung",
+        "description": "Antwort des Verordnenden an die Pflegeeinrichtung mit Bestätigung der E-Rezept-Erstellung für die Heimversorgung",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/UC2-2-Fullfilled-Prescription-Request"
+        },
+        "name": "Bestätigung der Rezepterstellung für Patienteneinlösung",
+        "description": "Antwort des Verordnenden an die Pflegeeinrichtung mit Bestätigung der E-Rezept-Erstellung zur Patienteneinlösung",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/UC4-2-Prescription-Request-To-Pharmacy"
+        },
+        "name": "Bestätigung der Zytostatika-Rezepterstellung",
+        "description": "Antwort des Verordnenden an die Apotheke mit Bestätigung der E-Rezept-Erstellung für Zytostatika-Zubereitungen",
         "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
       },
       {
@@ -109,54 +189,6 @@
         "name": "Changed Medication (EX)",
         "description": "This extension is used to specify if the medication has been changed by the prescriber",
         "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "Bundle/UC3-2-Fullfilled-Prescription-Request-COPY"
-        },
-        "name": "Copy of Fullfilled Prescription Request",
-        "description": "Copy of Response sent from Practitioner back to Pharmacy",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
-      },
-      {
-        "reference": {
-          "reference": "Bundle/UC3-1-Prescription-Request-To-Prescriber-COPY"
-        },
-        "name": "Copy of Medication Request from Pharmacy To Prescriber",
-        "description": "Copy of Request sent from Pharmacy to Prescriber to get a Prescription",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
-      },
-      {
-        "reference": {
-          "reference": "Bundle/UC1-3-Dispense-Request-To-Pharmacy"
-        },
-        "name": "DispenseRequestToPharmacy",
-        "description": "Request sent to pharmacy to request a dispense of the medication",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
-      },
-      {
-        "reference": {
-          "reference": "Bundle/UC1-4-Fullfilled-DispenseRequest-To-Pharmacy"
-        },
-        "name": "DispenseRequestToPharmacy",
-        "description": "Response sent from pharmacy to requester",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
-      },
-      {
-        "reference": {
-          "reference": "Bundle/UC1-3-Alt-Delivery-Dispense-Request-To-Pharmacy"
-        },
-        "name": "DispenseRequestToPharmacy",
-        "description": "Request sent to pharmacy to request a dispense of the medication",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
-      },
-      {
-        "reference": {
-          "reference": "Bundle/UC1-4-Alt-Delivery-Fullfilled-DispenseRequest-To-Pharmacy"
-        },
-        "name": "DispenseRequestToPharmacy",
-        "description": "Response sent from pharmacy to requester",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
       },
       {
         "reference": {
@@ -176,6 +208,14 @@
       },
       {
         "reference": {
+          "reference": "MedicationRequest/Example-Response-Medication-Request"
+        },
+        "name": "Dosierung MedicationRequest einer Rezeptanforderung",
+        "description": "Dieses Beispiel demonstriert einen beispielhaften MedicationRequest einer Angabe der Menge, sowie vorgeschlagene Dosierung.",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request"
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/eprescription-token-ex"
         },
         "name": "E-Prescription Token Extension",
@@ -189,6 +229,14 @@
         "name": "E-Rezept-Token NamingSystem",
         "description": "NamingSystem for specifying an e-prescription token",
         "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "MedicationRequest/Example-Initial-Medication-Request-2"
+        },
+        "name": "Einheitenkodierter MedicationRequest einer Rezeptanforderung",
+        "description": "Dieses Beispiel demonstriert einen beispielhaften MedicationRequest einer intialen Rezeptanforderung.",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request"
       },
       {
         "reference": {
@@ -288,162 +336,10 @@
       },
       {
         "reference": {
-          "reference": "MedicationDispense/UC1-Medication-Dispense"
-        },
-        "name": "Example Medication Dispense",
-        "description": "Example of a Medication Dispense.",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-dispense"
-      },
-      {
-        "reference": {
-          "reference": "Organization/Example-HealthCareService-Organization"
-        },
-        "name": "Example-HealthCareService-Organization",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
-      },
-      {
-        "reference": {
-          "reference": "Medication/Example-Initial-Medication"
-        },
-        "name": "Example-Initial-Medication",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Medication/Example-Initial-Medication-2"
-        },
-        "name": "Example-Initial-Medication-2",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MedicationRequest/Example-Initial-Medication-Request"
-        },
-        "name": "Example-Initial-Medication-Request",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request"
-      },
-      {
-        "reference": {
-          "reference": "MedicationRequest/Example-Initial-Medication-Request-2"
-        },
-        "name": "Example-Initial-Medication-Request-2",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request"
-      },
-      {
-        "reference": {
-          "reference": "MedicationRequest/Example-Komplex-Medication-Request"
-        },
-        "name": "Example-Komplex-Medication-Request",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request"
-      },
-      {
-        "reference": {
-          "reference": "Patient/Example-Patient"
-        },
-        "name": "Example-Patient",
-        "description": "Beispiel Patient",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-patient"
-      },
-      {
-        "reference": {
-          "reference": "Patient/Example-Patient-2"
-        },
-        "name": "Example-Patient-2",
-        "description": "Beispiel Patient 2",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-patient"
-      },
-      {
-        "reference": {
-          "reference": "Practitioner/Example-Practitioner"
-        },
-        "name": "Example-Practitioner",
-        "description": "Beispielarzt zum Ausstellen der Rezepte",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-practitioner"
-      },
-      {
-        "reference": {
           "reference": "Medication/Example-Response-Medication"
         },
         "name": "Example-Response-Medication",
         "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MedicationRequest/Example-Response-Medication-Request"
-        },
-        "name": "Example-Response-Medication-Request",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request"
-      },
-      {
-        "reference": {
-          "reference": "Medication/Example-Zyto-Medication"
-        },
-        "name": "Example-Zyto-Medication",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Bundle/UC1-2-Fullfilled-Prescription-Request"
-        },
-        "name": "Fullfilled Prescription Request",
-        "description": "Response sent from Practitioner back to HealthCareService",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
-      },
-      {
-        "reference": {
-          "reference": "Bundle/UC2-2-Fullfilled-Prescription-Request"
-        },
-        "name": "Fullfilled Prescription Request",
-        "description": "Response sent from Practitioner back to HealthCareService",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
-      },
-      {
-        "reference": {
-          "reference": "Bundle/UC3-2-Fullfilled-Prescription-Request"
-        },
-        "name": "Fullfilled Prescription Request",
-        "description": "Response sent from Practitioner back to Pharmacy",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
-      },
-      {
-        "reference": {
-          "reference": "Bundle/UC4-2-Prescription-Request-To-Pharmacy"
-        },
-        "name": "Fullfilled Zyto Prescription Request",
-        "description": "Request sent to Pharmacy to request a dispense of the medication",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
-      },
-      {
-        "reference": {
-          "reference": "MessageHeader/UC1-HealthCareService-to-Practitioner-MessageHeader"
-        },
-        "name": "HealthCareService-to-Practitioner-MessageHeader",
-        "description": "Message Header from HealthCareService to Practitioner",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
-      },
-      {
-        "reference": {
-          "reference": "MessageHeader/UC1-MULTI-HealthCareService-to-Practitioner-MessageHeader"
-        },
-        "name": "HealthCareService-to-Practitioner-MessageHeader",
-        "description": "Message Header from HealthCareService to Practitioner",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
-      },
-      {
-        "reference": {
-          "reference": "MessageHeader/Komplex-MULTI-HealthCareService-to-Practitioner-MessageHeader"
-        },
-        "name": "HealthCareService-to-Practitioner-MessageHeader",
-        "description": "Message Header from HealthCareService to Practitioner",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
-      },
-      {
-        "reference": {
-          "reference": "MessageHeader/UC2-HealthCareService-to-Practitioner-MessageHeader"
-        },
-        "name": "HealthCareService-to-Practitioner-MessageHeader",
-        "description": "Message Header from HealthCareService to Practitioner",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
       },
       {
         "reference": {
@@ -455,83 +351,75 @@
       },
       {
         "reference": {
-          "reference": "ServiceRequest/UC1-Initial-Prescription-Request"
+          "reference": "Medication/Example-Initial-Medication"
         },
-        "name": "Initial Prescription Request",
-        "description": "This ServiceRequest is sent initially to the prescribing practitioner",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
+        "name": "Initiale PZN Medikation",
+        "description": "Dieses Beispiel demonstriert eine beispielhafte KBV_PZN Medication, die für eine Rezeptanforderung genutzt wird.",
+        "exampleBoolean": true
       },
       {
         "reference": {
-          "reference": "ServiceRequest/UC2-Initial-Prescription-Request"
+          "reference": "MedicationRequest/Example-Initial-Medication-Request"
         },
-        "name": "Initial Prescription Request",
-        "description": "This ServiceRequest is sent initially to the prescribing practitioner",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
-      },
-      {
-        "reference": {
-          "reference": "ServiceRequest/UC1-MULTI-Initial-Prescription-Request-2"
-        },
-        "name": "Initial Prescription Request Multi 2",
-        "description": "This ServiceRequest is sent initially to the prescribing practitioner",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
-      },
-      {
-        "reference": {
-          "reference": "ServiceRequest/UC1-MULTI-Initial-Prescription-Request-1"
-        },
-        "name": "Initial Prescription Request Mutli 1",
-        "description": "This ServiceRequest is sent initially to the prescribing practitioner",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
-      },
-      {
-        "reference": {
-          "reference": "ServiceRequest/Komplex-MULTI-Initial-Prescription-Request-3"
-        },
-        "name": "Komplex-MULTI-Initial-Prescription-Request-3",
-        "description": "This ServiceRequest is sent initially to the prescribing practitioner",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
-      },
-      {
-        "reference": {
-          "reference": "Bundle/UC3-1-Prescription-Request-To-Prescriber"
-        },
-        "name": "Medication Request from Pharmacy To Prescriber",
-        "description": "Request sent from Pharmacy to Prescriber to get a Prescription",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
-      },
-      {
-        "reference": {
-          "reference": "Bundle/UC1-1-Prescription-Request-To-Prescriber"
-        },
-        "name": "Medication Request To Prescriber",
-        "description": "Request sent to Prescriber to get a Prescription",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
-      },
-      {
-        "reference": {
-          "reference": "Bundle/UC1-MULTI-1-Prescription-Request-To-Prescriber"
-        },
-        "name": "Medication Request To Prescriber",
-        "description": "Request sent to Prescriber to get a Prescription. Same Medicat",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
+        "name": "Initialer MedicationRequest einer Rezeptanforderung",
+        "description": "Dieses Beispiel demonstriert einen beispielhaften MedicationRequest einer intialen Rezeptanforderung.",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request"
       },
       {
         "reference": {
           "reference": "Bundle/Komplex-MULTI-1-Prescription-Request"
         },
-        "name": "Medication Request To Prescriber",
-        "description": "Request sent to Prescriber to get a Prescription. Same Medicat",
+        "name": "Komplex-Multi-1 initiale Rezeptanforderung",
+        "description": "Dieses Beispiel bildet ein komplexes Message Bundle einer initialen Rezeptanforderung des Arztes ab.",
         "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
       },
       {
         "reference": {
-          "reference": "Bundle/UC2-1-Prescription-Request-To-Prescriber"
+          "reference": "MedicationRequest/Example-Komplex-Medication-Request"
         },
-        "name": "Medication Request To Prescriber",
-        "description": "Request sent to Prescriber to get a Prescription",
+        "name": "MedicationRequest einer Rezeptanforderung mit 2 Packungen",
+        "description": "Dieses Beispiel demonstriert einen beispielhaften MedicationRequest einer intialen Rezeptanforderung in der 2 Packungen angefragt werden.",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request"
+      },
+      {
+        "reference": {
+          "reference": "MessageHeader/UC1-HealthCareService-to-Practitioner-MessageHeader"
+        },
+        "name": "MessageHeader Pflegeeinrichtung an Verordnenden (UC1)",
+        "description": "Message Header für Rezeptanforderung der Pflegeeinrichtung an Verordnenden für Heimversorgung",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
+      },
+      {
+        "reference": {
+          "reference": "MessageHeader/UC2-HealthCareService-to-Practitioner-MessageHeader"
+        },
+        "name": "MessageHeader Pflegeeinrichtung an Verordnenden (UC2)",
+        "description": "Message Header für Rezeptanforderung zur Patienteneinlösung von Pflegeeinrichtung an Verordnenden",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/UC3-1-Prescription-Request-To-Prescriber-COPY"
+        },
+        "name": "Nachrichtenkopie der Apothekenrezeptanforderung",
+        "description": "Kopie der Rezeptanforderung der Apotheke, die an die Pflegeeinrichtung gesendet wird",
         "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/UC3-2-Fullfilled-Prescription-Request-COPY"
+        },
+        "name": "Nachrichtenkopie der Rezeptbestätigung",
+        "description": "Kopie der Bestätigung der E-Rezept-Erstellung, die an die Pflegeeinrichtung gesendet wird",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
+      },
+      {
+        "reference": {
+          "reference": "Organization/Example-HealthCareService-Organization"
+        },
+        "name": "Pflegeeinrichtung",
+        "description": "Dieses Beispiel demonstriert eine Darstellung der Pflegeeinrichtung als Organization einer Rezeptanforderung.",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
       },
       {
         "reference": {
@@ -607,14 +495,6 @@
       },
       {
         "reference": {
-          "reference": "Bundle/UC1-Rejection-Of-Prescriber"
-        },
-        "name": "Rejectionrequest sent from Prescriber",
-        "description": "Response sent from Practitioner back to HealthCareService",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
-      },
-      {
-        "reference": {
           "reference": "StructureDefinition/remaining-supply-ex"
         },
         "name": "Remaining Supply EX",
@@ -639,27 +519,59 @@
       },
       {
         "reference": {
-          "reference": "Bundle/UC1-MULTI-2-Response-Prescription-Request-1"
-        },
-        "name": "Response Prescription Request",
-        "description": "Response from Practitioner containing the completed prescriptions",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
-      },
-      {
-        "reference": {
-          "reference": "Bundle/UC1-MULTI-2-Response-Prescription-Request-2"
-        },
-        "name": "Response Prescription Request",
-        "description": "Response from Practitioner containing the rejected prescription requests",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
-      },
-      {
-        "reference": {
           "reference": "StructureDefinition/gem-erp-sr-log-prescription-request"
         },
         "name": "Rezeptanforderung",
         "description": "Fachliches Modell zur Beschreibung einer Rezeptanforderung",
         "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Bundle/UC3-1-Prescription-Request-To-Prescriber"
+        },
+        "name": "Rezeptanforderung der Apotheke an Verordnenden",
+        "description": "Anfrage einer heimversorgenden Apotheke an einen Verordnenden zur Erstellung eines E-Rezepts",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
+      },
+      {
+        "reference": {
+          "reference": "ServiceRequest/UC1-Initial-Prescription-Request"
+        },
+        "name": "Rezeptanforderung der Pflegeeinrichtung",
+        "description": "ServiceRequest der Pflegeeinrichtung zur Anforderung eines E-Rezepts beim Verordnenden für die Heimversorgung",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/UC1-1-Prescription-Request-To-Prescriber"
+        },
+        "name": "Rezeptanforderung der Pflegeeinrichtung",
+        "description": "Anfrage einer Pflegeeinrichtung an einen Verordnenden zur Erstellung eines E-Rezepts für die Heimversorgung",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
+      },
+      {
+        "reference": {
+          "reference": "ServiceRequest/UC2-Initial-Prescription-Request"
+        },
+        "name": "Rezeptanforderung für Patienteneinlösung",
+        "description": "ServiceRequest der Pflegeeinrichtung zur Anforderung eines E-Rezepts für Patienteneinlösung",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/UC2-1-Prescription-Request-To-Prescriber"
+        },
+        "name": "Rezeptanforderung für Patienteneinlösung",
+        "description": "Anfrage einer Pflegeeinrichtung an einen Verordnenden zur Erstellung eines E-Rezepts für Patienteneinlösung (Flowtype 160/200)",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/UC4-1-Prescription-and-Dispense-Request-To-Prescriber"
+        },
+        "name": "Rezeptanforderung für Zytostatika-Zubereitung",
+        "description": "Anfrage einer Apotheke an einen Verordnenden zur Erstellung eines E-Rezepts für anwendungsfertige Zytostatika-Zubereitungen",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
       },
       {
         "reference": {
@@ -719,11 +631,59 @@
       },
       {
         "reference": {
-          "reference": "Bundle/UC4-1-Prescription-and-Dispense-Request-To-Prescriber"
+          "reference": "Bundle/UC1-MULTI-1-Prescription-Request-To-Prescriber"
         },
-        "name": "Zyto Medication Request To Prescriber",
-        "description": "Request sent to Prescriber to get a Prescription",
+        "name": "UC1-Multi-1 Initiale Rezeptanforderung",
+        "description": "Dieses Beispiel bildet ein Message Bundle einer initialen Rezeptanforderung mit mehreren Anfragen an den Arzt ab.",
         "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/UC1-MULTI-2-Response-Prescription-Request-2"
+        },
+        "name": "UC1-Multi-2 abgelehnte Rezeptanforderung",
+        "description": "Dieses Beispiel bildet ein Message Bundle einer erfüllten Rezeptanforderung mit den **abgelehnten** Anfragen des Arztes ab.",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/UC1-MULTI-2-Response-Prescription-Request-1"
+        },
+        "name": "UC1-Multi-2 erfüllte Rezeptanforderung",
+        "description": "Dieses Beispiel bildet ein Message Bundle einer erfüllten Rezeptanforderung mit den **akzeptierten** Anfragen des Arztes ab.",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/UC1-Rejection-Of-Prescriber"
+        },
+        "name": "UC1-Rejection Ablehnung einer Rezeptanforderung",
+        "description": "Dieses Beispiel bildet ein Message Bundle mit einer Ablehnung des Arztes einer Rezeptanforderung ab.",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/UC1-Storno-1-Cancellation-Of-Prescription-Requester"
+        },
+        "name": "UC1-Storno-1 stornierte Rezeptanforderung",
+        "description": "Dieses Beispiel bildet ein Message Bundle einer **stornierten** Rezeptanforderung an den Arztes ab.",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
+      },
+      {
+        "reference": {
+          "reference": "Medication/Example-Initial-Medication-2"
+        },
+        "name": "Weitere PZN Medikation",
+        "description": "Dieses Beispiel demonstriert eine beispielhafte KBV_PZN Medication, die für die Antwort einer Rezeptanforderung genutzt wird.",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Medication/Example-Zyto-Medication"
+        },
+        "name": "Zyto Medikation",
+        "description": "Dieses Beispiel demonstriert eine beispielhafte Medikation für eine anwendungsfertige Zytostatikazubereitung.",
+        "exampleBoolean": true
       }
     ],
     "page": {
@@ -816,10 +776,6 @@
       {
         "code": "releaselabel",
         "value": "ci-build"
-      },
-      {
-        "code": "no-validate",
-        "value": "Medication/*"
       },
       {
         "code": "no-narrative",

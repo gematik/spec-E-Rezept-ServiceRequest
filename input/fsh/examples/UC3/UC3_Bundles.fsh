@@ -1,8 +1,8 @@
 Instance: UC3-1-Prescription-Request-To-Prescriber
 InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
-Title: "Medication Request from Pharmacy To Prescriber"
-Description: "Request sent from Pharmacy to Prescriber to get a Prescription"
+Title: "Rezeptanforderung der Apotheke an Verordnenden"
+Description: "Anfrage einer heimversorgenden Apotheke an einen Verordnenden zur Erstellung eines E-Rezepts"
 * identifier.value = "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
 * timestamp = "2025-05-13T14:25:12+02:00"
 // Header
@@ -28,8 +28,8 @@ Description: "Request sent from Pharmacy to Prescriber to get a Prescription"
 Instance: UC3-1-Prescription-Request-To-Prescriber-COPY
 InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
-Title: "Copy of Medication Request from Pharmacy To Prescriber"
-Description: "Copy of Request sent from Pharmacy to Prescriber to get a Prescription"
+Title: "Nachrichtenkopie der Apothekenrezeptanforderung"
+Description: "Kopie der Rezeptanforderung der Apotheke, die an die Pflegeeinrichtung gesendet wird"
 * identifier.value = "urn:uuid:183371e3-e58d-471c-a540-912c94fb0c51"
 * timestamp = "2025-05-13T14:25:12+02:00"
 // Header
@@ -43,8 +43,8 @@ Description: "Copy of Request sent from Pharmacy to Prescriber to get a Prescrip
 Instance: UC3-2-Fullfilled-Prescription-Request
 InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
-Title: "Fullfilled Prescription Request"
-Description: "Response sent from Practitioner back to Pharmacy"
+Title: "Bestätigung der Rezepterstellung für Apotheke"
+Description: "Antwort des Verordnenden an die Apotheke mit Bestätigung der E-Rezept-Erstellung"
 * identifier.value = "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
 * timestamp = "2025-05-14T08:15:12+02:00"
 // Header
@@ -70,8 +70,8 @@ Description: "Response sent from Practitioner back to Pharmacy"
 Instance: UC3-2-Fullfilled-Prescription-Request-COPY
 InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
-Title: "Copy of Fullfilled Prescription Request"
-Description: "Copy of Response sent from Practitioner back to Pharmacy"
+Title: "Nachrichtenkopie der Rezeptbestätigung"
+Description: "Kopie der Bestätigung der E-Rezept-Erstellung, die an die Pflegeeinrichtung gesendet wird"
 * identifier.value = "urn:uuid:2c60b3d3-a901-4df2-92ef-a9c3e525fa43"
 * timestamp = "2025-05-14T08:15:12+02:00"
 // Header

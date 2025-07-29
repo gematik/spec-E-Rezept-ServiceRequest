@@ -2,8 +2,8 @@
 Instance: UC3-Initial-Prescription-Request
 InstanceOf: ERPServiceRequestPrescriptionRequest
 Usage: #inline
-Title: "Initial Prescription Request"
-Description: "This ServiceRequest is sent initially to the prescribing practitioner"
+Title: "Rezeptanforderung der heimversorgenden Apotheke"
+Description: "ServiceRequest der Apotheke zur Anforderung eines E-Rezepts beim Verordnenden"
 * identifier[requestId].value = "1"
 * basedOn = Reference(Example-Initial-Medication-Request)
 * requisition.value = "GroupID-UC3"
@@ -18,8 +18,8 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 Instance: UC3-Response-Prescription-Request
 InstanceOf: ERPServiceRequestPrescriptionRequest
 Usage: #inline
-Title: "Initial Prescription Request"
-Description: "ServiceRequest that is returned to the requester"
+Title: "Bestätigung Rezepterstellung für Apotheke"
+Description: "ServiceRequest-Antwort des Verordnenden mit E-Rezept-Token an die Apotheke"
 * extension[EPrescriptionToken].valueIdentifier.value = "Task/169.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
 * identifier[requestId].value = "1"
 * basedOn = Reference(Example-Response-Medication-Request)
