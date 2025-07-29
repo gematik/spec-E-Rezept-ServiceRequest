@@ -12,13 +12,13 @@
   "dependsOn": [
     {
       "packageId": "de.basisprofil.r4",
-      "version": "1.5.2",
+      "version": "1.5.3",
       "uri": "http://fhir.org/packages/de.basisprofil.r4/ImplementationGuide/de.basisprofil.r4",
       "id": "de_basisprofil_r4"
     },
     {
       "packageId": "de.gematik.fhir.atf",
-      "version": "1.4.0-rc2",
+      "version": "1.4.0",
       "uri": "http://fhir.org/packages/de.gematik.fhir.atf/ImplementationGuide/de.gematik.fhir.atf",
       "id": "de_gematik_fhir_atf"
     },

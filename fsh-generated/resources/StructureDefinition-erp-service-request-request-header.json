@@ -14,7 +14,7 @@
   "kind": "resource",
   "abstract": false,
   "type": "MessageHeader",
-  "baseDefinition": "https://gematik.de/fhir/atf/StructureDefinition/message-header-app-transport",
+  "baseDefinition": "https://gematik.de/fhir/atf/StructureDefinition/atf-message-header",
   "derivation": "constraint",
   "differential": {
     "element": [
