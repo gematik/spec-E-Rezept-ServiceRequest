@@ -1,5 +1,6 @@
 {
   "cSpell.words": [
     "Rezeptanforderung"
-  ]
+  ],
+  "codfsh.HapiValidator.Settings.AdditionalParameters": "-debug -ig kbv.basis#1.7.0-expansions -tx n/a -clear-tx-cache"
 }

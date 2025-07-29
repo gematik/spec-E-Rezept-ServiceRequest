@@ -596,14 +596,6 @@
       },
       {
         "reference": {
-          "reference": "Bundle/UC1-Rejection-Of-Pharmacy"
-        },
-        "name": "Rejectionrequest sent from Pharmacy",
-        "description": "Response sent from Pharmacy back to HealthCareService",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
-      },
-      {
-        "reference": {
           "reference": "Bundle/UC1-Rejection-Of-Prescriber"
         },
         "name": "Rejectionrequest sent from Prescriber",
