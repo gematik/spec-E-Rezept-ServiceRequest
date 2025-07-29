@@ -336,13 +336,6 @@
       },
       {
         "reference": {
-          "reference": "Medication/Example-Response-Medication"
-        },
-        "name": "Example-Response-Medication",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
           "reference": "ValueSet/service-identifier-vs"
         },
         "name": "Identifier of the use case",
@@ -468,6 +461,14 @@
         "name": "PrescriptionIdEx",
         "description": "Extension for Prescription ID",
         "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Medication/Example-Response-Medication"
+        },
+        "name": "PZN Medikation",
+        "description": "Dieses Beispiel demonstriert eine beispielhafte KBV_PZN Medication, die für eine erfüllte Rezeptanforderung wird.",
+        "exampleBoolean": true
       },
       {
         "reference": {
