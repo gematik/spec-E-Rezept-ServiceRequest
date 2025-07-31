@@ -1,6 +1,6 @@
 {
   "name": "de.gematik.erp-servicerequest",
-  "version": "1.2.0-rc3",
+  "version": "1.2.0",
   "description": "Ressourcen zur Rezeptanforderung eines E-Rezeptes",
   "fhirVersions": [
     "4.0.1"

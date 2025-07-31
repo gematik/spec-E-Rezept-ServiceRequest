@@ -2,9 +2,9 @@
   "resourceType": "ImplementationGuide",
   "id": "de.gematik.erp-servicerequest",
   "url": "https://gematik.de/fhir/erp-servicerequest/ImplementationGuide/de.gematik.erp-servicerequest",
-  "version": "1.2.0-rc3",
+  "version": "1.2.0",
   "name": "ERezeptServiceRequest",
-  "status": "draft",
+  "status": "active",
   "jurisdiction": [
     {
       "coding": [
@@ -789,7 +789,7 @@
       },
       {
         "code": "releaselabel",
-        "value": "ci-build"
+        "value": "release"
       },
       {
         "code": "no-narrative",
