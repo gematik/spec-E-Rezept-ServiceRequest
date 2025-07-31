@@ -1,7 +1,7 @@
 Extension: RemainingSupplyEX
 Id: remaining-supply-ex
-Title: "Remaining Supply EX"
-Description: "This extension is used to specify the remaining supply of a medication"
+Title: "Restreichweite strukturiert"
+Description: "Diese Extension gibt strukturiert darüber Auskunft, wie lange die Reichweite der Medikation noch dauert. Angabe erfolgt mit Wert und Einheit (z.B. 7 Stück)."
 * insert Meta (remaining-supply-ex)
 * value[x] 1..1 MS
 * value[x] only Quantity

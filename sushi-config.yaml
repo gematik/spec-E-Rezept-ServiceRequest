@@ -48,3 +48,4 @@ parameters:
   path-pages:
     - input/content
   bundle-references-resolve: true
+  viewDefinition: input/sql/sql-view-extensions.json

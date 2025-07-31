@@ -1,7 +1,7 @@
 Extension: RequestMVOEX
 Id: request-mvo-ex
-Title: "Request MVO (EX)"
-Description: "Extension to indicate if the prescription should be issued as a multiple prescription order (MVO)."
+Title: "Mehrfachverordnung angefragt"
+Description: "Diese Extension enthält einen Wahrheitswert darüber, ob der Anfragende die Ausstellung einer Mehrfachverordnung (MVO) wünscht. Das empfangende System sollte den Nutzer entsprechend darauf hinweisen und ggf. die Verordnung vorbereiten."
 Context: ServiceRequest, MedicationRequest, DeviceRequest, Task, SupplyRequest, SupplyDelivery
 * insert Meta (request-mvo-ex)
 * . ^isModifier = true

@@ -1,7 +1,7 @@
 Extension: RedeemByPatientEX
 Id: redeem-by-patient-ex
-Title: "Redeem By Patient (EX)"
-Description: "Extension to indicate if the prescription should be redeemed by the patient."
+Title: "Einlösung durch Patient"
+Description: "Diese Extension enthält einen Wahrheitswert darüber, ob die Verordnung vom Patienten selbst einzulösen ist. Dies hat Auswirkungen auf den Flowtype der Verordnung und darüber, ob ein E-Rezept Token an den Anfragenden zurückgegeben wird."
 Context: ServiceRequest, MedicationRequest, DeviceRequest, Task, SupplyRequest, SupplyDelivery
 * insert Meta (redeem-by-patient-ex)
 * . ^isModifier = true

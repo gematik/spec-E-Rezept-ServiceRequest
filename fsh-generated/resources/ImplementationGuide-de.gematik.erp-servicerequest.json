@@ -74,8 +74,8 @@
         "reference": {
           "reference": "StructureDefinition/alternative-delivery-address-ex"
         },
-        "name": "Alternative Delivery Address (EX)",
-        "description": "This extension is used to specify an alternative delivery Address",
+        "name": "Alternative Lieferadresse",
+        "description": "Diese Extension enthält eine alternative Lieferadresse nach deutschem Basisprofil für den Fall, dass die Belieferung einer Verordnung an eine alternative Adresse versendet werden soll.",
         "exampleBoolean": false
       },
       {
@@ -108,6 +108,14 @@
         },
         "name": "Art des ServiceRequests (VS)",
         "description": "Specifies the type of ServiceRequest and is used to identify ServiceRequests",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/changed-medication-ex"
+        },
+        "name": "Arzneimittel geändert",
+        "description": "Diese Extension enthält einen Wahrheitswert darüber, ob der Verordnende ein anderes Arzneimittel verordnet hat als angefragt wurde. Bei Änderungen durch den Arzt ist das Feld 'valueBoolean' mit 'true' zu setzen.",
         "exampleBoolean": false
       },
       {
@@ -184,14 +192,6 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/changed-medication-ex"
-        },
-        "name": "Changed Medication (EX)",
-        "description": "This extension is used to specify if the medication has been changed by the prescriber",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
           "reference": "StructureDefinition/gem-erp-sr-log-dispense-request"
         },
         "name": "Dispensieranforderung",
@@ -218,8 +218,8 @@
         "reference": {
           "reference": "StructureDefinition/eprescription-token-ex"
         },
-        "name": "E-Prescription Token Extension",
-        "description": "This extension is used to specify an e-prescription token",
+        "name": "E-Rezept Token",
+        "description": "Diese Extension trägt den E-Rezept Token, der für die Einlösung einer Verordnung gegenüber dem E-Rezept-Fachdienst benötigt wird.",
         "exampleBoolean": false
       },
       {
@@ -237,6 +237,14 @@
         "name": "Einheitenkodierter MedicationRequest einer Rezeptanforderung",
         "description": "Dieses Beispiel demonstriert einen beispielhaften MedicationRequest einer intialen Rezeptanforderung.",
         "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/redeem-by-patient-ex"
+        },
+        "name": "Einlösung durch Patient",
+        "description": "Diese Extension enthält einen Wahrheitswert darüber, ob die Verordnung vom Patienten selbst einzulösen ist. Dies hat Auswirkungen auf den Flowtype der Verordnung und darüber, ob ein E-Rezept Token an den Anfragenden zurückgegeben wird.",
+        "exampleBoolean": false
       },
       {
         "reference": {
@@ -336,6 +344,14 @@
       },
       {
         "reference": {
+          "reference": "Patient/Example-Patient-2"
+        },
+        "name": "Example-Patient-2",
+        "description": "Beispiel Patient 2",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-patient"
+      },
+      {
+        "reference": {
           "reference": "ValueSet/service-identifier-vs"
         },
         "name": "Identifier of the use case",
@@ -373,6 +389,14 @@
         "name": "MedicationRequest einer Rezeptanforderung mit 2 Packungen",
         "description": "Dieses Beispiel demonstriert einen beispielhaften MedicationRequest einer intialen Rezeptanforderung in der 2 Packungen angefragt werden.",
         "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/request-mvo-ex"
+        },
+        "name": "Mehrfachverordnung angefragt",
+        "description": "Diese Extension enthält einen Wahrheitswert darüber, ob der Anfragende die Ausstellung einer Mehrfachverordnung (MVO) wünscht. Das empfangende System sollte den Nutzer entsprechend darauf hinweisen und ggf. die Verordnung vorbereiten.",
+        "exampleBoolean": false
       },
       {
         "reference": {
@@ -456,14 +480,6 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/prescription-id-ex"
-        },
-        "name": "PrescriptionIdEx",
-        "description": "Extension for Prescription ID",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
           "reference": "Medication/Example-Response-Medication"
         },
         "name": "PZN Medikation",
@@ -488,34 +504,26 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/redeem-by-patient-ex"
+          "reference": "StructureDefinition/remaining-supply-free-text-ex"
         },
-        "name": "Redeem By Patient (EX)",
-        "description": "Extension to indicate if the prescription should be redeemed by the patient.",
+        "name": "Restreichweite Freitext",
+        "description": "Diese Extension bietet die Möglichkeit die Restreichweite einer Medikation als Freitext anzugeben.",
         "exampleBoolean": false
       },
       {
         "reference": {
           "reference": "StructureDefinition/remaining-supply-ex"
         },
-        "name": "Remaining Supply EX",
-        "description": "This extension is used to specify the remaining supply of a medication",
+        "name": "Restreichweite strukturiert",
+        "description": "Diese Extension gibt strukturiert darüber Auskunft, wie lange die Reichweite der Medikation noch dauert. Angabe erfolgt mit Wert und Einheit (z.B. 7 Stück).",
         "exampleBoolean": false
       },
       {
         "reference": {
-          "reference": "StructureDefinition/remaining-supply-free-text-ex"
+          "reference": "StructureDefinition/prescription-id-ex"
         },
-        "name": "Remaining Supply FreeText EX",
-        "description": "This extension is used to state the remaining supply of a medication as a free text",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/request-mvo-ex"
-        },
-        "name": "Request MVO (EX)",
-        "description": "Extension to indicate if the prescription should be issued as a multiple prescription order (MVO).",
+        "name": "Rezept-ID",
+        "description": "Diese Extension enthält eine Rezept-ID eines E-Rezeptes mit der Form 'aaa.bbb.bbb.bbb.bbb.cc', wobei 'aaa' der Flowtype des E-Rezeptes, 'cc' die Prüfnummer und 'bbb.bbb.bbb.bbb' die fortlaufende Rezeptnummer abbildet.",
         "exampleBoolean": false
       },
       {
@@ -793,6 +801,10 @@
       {
         "code": "bundle-references-resolve",
         "value": "true"
+      },
+      {
+        "code": "viewDefinition",
+        "value": "input/sql/sql-view-extensions.json"
       }
     ]
   }
