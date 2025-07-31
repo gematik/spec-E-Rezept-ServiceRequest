@@ -1,4 +1,8 @@
-## Der MessageHeader
+## Festlegungen zu mehrfachen Anfragen in einer KIM Nachricht
+
+Jeder ServiceRequest ist in der Lage eine Anforderung für ein Arzneimittel abzubilden. Um Anfragen zu Bündeln und so ggf. Last in einem Netzwerk zu minimieren, wird die Möglichkeit geschaffen mehrere Anfragen in einer Nachricht zu übermitteln. Die folgende Seite beschreibt wie das erreicht werden kann.
+
+### Der MessageHeader
 
 Generell basiert der Nachrichtenaustausch auf dem **Messaging Bundle**. Ein solches Bundle wird verwendet, um eine oder mehrere Rezeptanforderungen zu übermitteln. Dabei enthält das Bundle als ersten Eintrag den **MessageHeader**, welcher die Metadaten der Nachricht enthält.
 
@@ -8,22 +12,22 @@ Der **MessageHeader** ist eine spezielle FHIR-Ressource, die verwendet wird, um 
 - Einen **Event-Code**, der den spezifischen Anwendungsfall der Nachricht identifiziert.
 - Das Feld `focus`. Dieses Feld enthält Referenzen auf die entsprechenden **ServiceRequest**-Ressourcen, die die eigentlichen Rezeptanforderungen abbilden.
 
-## Identifikation von Rezeptanforderungen
+### Identifikation von Rezeptanforderungen
 
 Die zentrale Ressource, die eine Rezeptanforderung wiedergibt, ist die **ServiceRequest**-Ressource. Diese Ressource repräsentiert die eigentliche Anforderung und referenziert alle relevanten Informationen, wie Patientendaten, Verordnende/r und weitere Details.
 
-### Identifizieren und Gruppieren von Anfragen
+#### Identifizieren und Gruppieren von Anfragen
 Wenn mehrere Anfragen gestellt werden, handelt es sich meist um den selben Vorgang. Um diese Zusammengehörigkeit zu kennzeichnen, soll der [Request Procedure Identifier](./StructureDefinition-erp-service-request-procedure-identifier.html) in `ServiceRequest.requisition` genutzt werden.
 
 Dieser Identifier ermöglicht es, mehrere ServiceRequests zu einer gemeinsamen Anforderung zu gruppieren. So kann ein identischer requisition-Wert in mehreren ServiceRequest-Objekten verwendet werden, um zu signalisieren, dass diese Anfragen zusammengehören.
 
-## Referenzen auf gemeinsame Ressourcen
+### Referenzen auf gemeinsame Ressourcen
 Bei der Übermittlung von mehreren ServiceRequests in einer Nachricht ist zu beachten, dass jede Anfrage (Rezeptanforderung) durch einen eigenen ServiceRequest repräsentiert wird. Jedoch können mehrere ServiceRequests auf dieselben Ressourcen verweisen. Zum Beispiel:
 
 Wenn drei Rezeptanforderungen für denselben Patienten gestellt werden, gibt es im Bundle drei separate ServiceRequest-Ressourcen, die jeweils eine eigene Anforderung darstellen.
 Diese drei ServiceRequests können jedoch alle auf dieselbe Patient-Ressource verweisen. In diesem Fall wird der Patient nur einmal im Bundle enthalten sein, obwohl mehrere ServiceRequests diese Ressource referenzieren.
 
-## Beispielhafter Nachrichtenaufbau mit zwei Rezeptanforderungen
+### Beispielhafter Nachrichtenaufbau mit zwei Rezeptanforderungen
 
 Eine Nachricht, die z.B. zwei Rezeptanforderungen enthält, hat folgenden Aufbau:
 
@@ -31,7 +35,7 @@ Eine Nachricht, die z.B. zwei Rezeptanforderungen enthält, hat folgenden Aufbau
 - **Genau zwei Referenzen in `MessageHeader.focus`**: Diese verweisen auf zwei **ServiceRequest**-Objekte.
 - **Weitere Ressourcen im Bundle**: Ressourcen wie `Patient`, `Practitioner`, etc., die von den ServiceRequests referenziert werden, sind ebenfalls Teil des Bundles. Diese Ressourcen dienen als ergänzende Informationen zu den ServiceRequests.
 
-## Verarbeitung der Nachricht
+### Verarbeitung der Nachricht
 
 Ein empfangendes System sollte den **MessageHeader** auslesen und dabei folgende Schritte beachten:
 
@@ -40,7 +44,7 @@ Ein empfangendes System sollte den **MessageHeader** auslesen und dabei folgende
 
 Jede **ServiceRequest**-Ressource agiert also als eine Art "Trägerressource", die alle relevanten Informationen für eine Rezeptanforderung enthält.
 
-## Zusammenfassung der Nachricht
+### Zusammenfassung der Nachricht
 
 Eine Nachricht enthält:
 
@@ -51,11 +55,11 @@ Eine Nachricht enthält:
 
 **Hinweis**: Wenn ein Arzt mehrere Anfragen bekommt und einzelne davon ablehnen möchte ist das auf grundlage des einzelnen ServiceRequests möglich. Bestätigte ServiceRequest erhalten den Status `#completed` und abgelehnte Anfragen den Status `#revoked`.
 
-## Beispiele
+### Beispiele
 
 Beispielhaft sollen stark vereinfacht zwei Szenarien als Klassendiagramm dargestellt werden, die die Kardinalitäten und Beziehungen in einem Bundle ausdrücken.
 
-### Anfrage mehrerer Rezepte für einen Patienten
+#### Anfrage mehrerer Rezepte für einen Patienten
 å
 Zunächst kann z.B. für einen Patienten mehrere Rezepte angefordert werden. Damit können jeweils ein ServiceRequest (Rezeptanforderung) erstellt werden. Diese können auf die gleiche Patienten -Ressource referenzieren.
 
@@ -63,7 +67,7 @@ Zunächst kann z.B. für einen Patienten mehrere Rezepte angefordert werden. Dam
     {% include multiple-request-diagram-1.svg %}
 </div>
 
-### Anfrage des Selben Medikaments für mehrere Patienten
+#### Anfrage des Selben Medikaments für mehrere Patienten
 Weiterhin ist auch denkbar, dass exakt die gleiche Medikation für mehrere Patienten angefragt wird. In diesem Fall kann die MedicationRequest-Ressource mehrfach verwendet werden.
 
 <div class="gem-ig-svg-container" style="--box-width: 700px;">
