@@ -98,4 +98,4 @@ if __name__ == "__main__":
     # Run
     run_firely_bulk_conversion()
     sort_xml_files()
-    #cleanup_temp_folder()
+    cleanup_temp_folder()

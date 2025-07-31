@@ -216,6 +216,14 @@
       },
       {
         "reference": {
+          "reference": "Bundle/XSLT-Urgent-Bundle"
+        },
+        "name": "Dringende Rezeptanforderung",
+        "description": "Eine dringende Rezeptanforderung mit hoher Priorität",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/eprescription-token-ex"
         },
         "name": "E-Rezept Token",
@@ -456,46 +464,6 @@
       },
       {
         "reference": {
-          "reference": "Bundle/XSLT-Changed-Medication-Bundle"
-        },
-        "name": "Prescription Request with changed Medication",
-        "description": "A prescription request which has a changed Medication in the Response",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
-      },
-      {
-        "reference": {
-          "reference": "Bundle/XSLT-Prior-Prescription-ID-Bundle"
-        },
-        "name": "Prescription Request with changed Medication",
-        "description": "A prescription request which has a changed Medication in the Response",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
-      },
-      {
-        "reference": {
-          "reference": "Bundle/XSLT-Redeem-By-Patient-Bundle"
-        },
-        "name": "Prescription Request with changed Medication",
-        "description": "A prescription request which has a changed Medication in the Response",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
-      },
-      {
-        "reference": {
-          "reference": "Bundle/XSLT-Request-MVO-Bundle"
-        },
-        "name": "Prescription Request with changed Medication",
-        "description": "A prescription request which has a changed Medication in the Response",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
-      },
-      {
-        "reference": {
-          "reference": "Bundle/XSLT-Urgent-Bundle"
-        },
-        "name": "Prescription Request with changed Medication",
-        "description": "A prescription request which has a changed Medication in the Response",
-        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
-      },
-      {
-        "reference": {
           "reference": "Medication/Example-Response-Medication"
         },
         "name": "PZN Medikation",
@@ -580,6 +548,38 @@
         },
         "name": "Rezeptanforderung für Zytostatika-Zubereitung",
         "description": "Anfrage einer Apotheke an einen Verordnenden zur Erstellung eines E-Rezepts für anwendungsfertige Zytostatika-Zubereitungen",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/XSLT-Changed-Medication-Bundle"
+        },
+        "name": "Rezeptanforderung mit geänderter Medikation",
+        "description": "Eine Rezeptanforderung mit geänderter Medikation in der Antwort",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/XSLT-Request-MVO-Bundle"
+        },
+        "name": "Rezeptanforderung mit MVO-Anfrage",
+        "description": "Eine Rezeptanforderung mit Mehrfachverordnungs-Anfrage",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/XSLT-Prior-Prescription-ID-Bundle"
+        },
+        "name": "Rezeptanforderung mit vorheriger Rezept-ID",
+        "description": "Eine Rezeptanforderung mit Verweis auf eine vorherige Rezept-ID",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/XSLT-Redeem-By-Patient-Bundle"
+        },
+        "name": "Rezeptanforderung zur Patienteneinlösung",
+        "description": "Eine Rezeptanforderung zur Einlösung durch den Patienten",
         "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
       },
       {

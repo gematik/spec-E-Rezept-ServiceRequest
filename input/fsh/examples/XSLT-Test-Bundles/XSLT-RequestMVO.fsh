@@ -1,8 +1,8 @@
 Instance: XSLT-Request-MVO-Bundle
 InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
-Title: "Prescription Request with changed Medication"
-Description: "A prescription request which has a changed Medication in the Response"
+Title: "Rezeptanforderung mit MVO-Anfrage"
+Description: "Eine Rezeptanforderung mit Mehrfachverordnungs-Anfrage"
 * identifier.value = "urn:uuid:c881f35a-2463-4b0b-9164-0f7fc2e35136"
 * timestamp = "2025-05-13T14:25:12+02:00"
 // Header
@@ -26,8 +26,8 @@ Description: "A prescription request which has a changed Medication in the Respo
 Instance: XSLT-Request-MVO-Header
 InstanceOf: ERPServiceRequestRequestHeader
 Usage: #inline
-Title: "HealthCareService-to-Practitioner-MessageHeader"
-Description: "Message Header from HealthCareService to Practitioner"
+Title: "Pflegedienst-an-Leistungserbringer-MessageHeader"
+Description: "Message Header von Pflegedienst an Leistungserbringer"
 * insert HealthCareService-to-Practitioner(XSLT-Request-MVO-ServiceRequest)
 * eventCoding = ServiceIdentifierCS#eRezept_Rezeptanforderung;Rezeptanfrage 
 * responsible = Reference(Example-HealthCareService-Organization)
@@ -35,8 +35,8 @@ Description: "Message Header from HealthCareService to Practitioner"
 Instance: XSLT-Request-MVO-ServiceRequest
 InstanceOf: ERPServiceRequestPrescriptionRequest
 Usage: #inline
-Title: "Initial Prescription Request"
-Description: "This ServiceRequest is sent initially to the prescribing practitioner"
+Title: "Initiale Rezeptanforderung"
+Description: "Dieser ServiceRequest wird initial an den verschreibenden Leistungserbringer gesendet"
 * identifier[requestId].value = "1"
 * basedOn = Reference(XSLT-Request-MVO-Medication-Request)
 * requisition.value = "XSLT-Request-MVO"

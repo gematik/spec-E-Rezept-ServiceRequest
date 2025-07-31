@@ -1,8 +1,8 @@
 Instance: XSLT-Changed-Medication-Bundle
 InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
-Title: "Prescription Request with changed Medication"
-Description: "A prescription request which has a changed Medication in the Response"
+Title: "Rezeptanforderung mit geänderter Medikation"
+Description: "Eine Rezeptanforderung mit geänderter Medikation in der Antwort"
 * identifier.value = "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
 * timestamp = "2025-05-14T08:15:12+02:00"
 // Header
@@ -26,8 +26,8 @@ Description: "A prescription request which has a changed Medication in the Respo
 Instance: XSLT-Changed-Medication-Header
 InstanceOf: ERPServiceRequestRequestHeader
 Usage: #inline
-Title: "HealthCareService-to-Practitioner-MessageHeader"
-Description: "Message Header from HealthCareService to Practitioner"
+Title: "Pflegedienst-an-Leistungserbringer-MessageHeader"
+Description: "Message Header von Pflegedienst an Leistungserbringer"
 * insert Practitioner-to-HealthCareService(XSLT-Changed-Medication-ServiceRequest)
 * eventCoding = ServiceIdentifierCS#eRezept_Rezeptanforderung;Rezeptbestaetigung
 * responsible = Reference(Example-Practitioner-Organization)
@@ -35,8 +35,8 @@ Description: "Message Header from HealthCareService to Practitioner"
 Instance: XSLT-Changed-Medication-ServiceRequest
 InstanceOf: ERPServiceRequestPrescriptionRequest
 Usage: #inline
-Title: "Initial Prescription Request"
-Description: "This ServiceRequest is sent initially to the prescribing practitioner"
+Title: "Initiale Rezeptanforderung"
+Description: "Dieser ServiceRequest wird initial an den verschreibenden Leistungserbringer gesendet"
 * identifier[requestId].value = "1"
 * requisition.value = "XSLT-Changed-Medication"
 * extension[EPrescriptionToken].valueIdentifier.value = "Task/169.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
