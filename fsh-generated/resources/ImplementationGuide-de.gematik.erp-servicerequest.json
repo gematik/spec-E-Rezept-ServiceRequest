@@ -29,7 +29,7 @@
     },
     {
       "packageId": "de.gematik.fhir.atf",
-      "version": "1.4.0",
+      "version": "1.4.1",
       "uri": "http://fhir.org/packages/de.gematik.fhir.atf/ImplementationGuide/de.gematik.fhir.atf",
       "id": "de_gematik_fhir_atf"
     },
@@ -753,6 +753,11 @@
         {
           "nameUrl": "release_notes.html",
           "title": "Release Notes",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "ui-ux.html",
+          "title": "Ui Ux",
           "generation": "markdown"
         },
         {

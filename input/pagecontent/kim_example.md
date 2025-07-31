@@ -1,18 +1,37 @@
 ## Beispiel KIM Rezeptanforderung
 
+### Kennungen für KIM
+
+Für die Nutzung von KIM sind [Dienstkennungen](https://fachportal.gematik.de/toolkit/dienstkennung-kim-kom-le) vorgesehen. Wenn für die Rezeptanforderung KIM als Transportweg verwendet wird, dann ist der E-Mail Header `X-KIM-Dienstkennung` anzugeben. Wie im Featuredokument beschrieben ist für jede Nachricht einer Rezeptanforderung die gleiche Dienstkennung zu verwenden:
+
+- Für UseCase [1](./usecase-1-pflege.html), [2](./usecase-2-patient.html) und [3](./usecase-3-apotheke.html) ist die Dienstkennung "eRezept;Rezeptanforderung;1.0" zu verwenden
+- Für UseCase [4](./usecase-4-zyto.html) ist die Dienstkennung "eRezept;ParenteraleZubereitung;1.0" zu verwenden
+
+Damit erkennt ein KIM Client, dass es sich um eine strukturierte Nachricht im Rahmen der Rezeptanforderung, bzw. der anwendungsfertigen Zytostatikazubereitungen handelt. Der Datensatz ist dann an die zuständige Businesslogik weiterzugeben.
+
+Schematisch kann das wie folgt dargestellt werden:
+
+<div class="gem-ig-svg-container" style="--box-width: 500px;">
+    {% include kennungen-connections.svg %}
+</div>
+
+
+### KIM Beispiel
+
 Die FHIR-Datensätze in Anfrage- und Antwortnachrichten werden ausschließlich als Anhang in der KIM Nachricht übertragen.
 **siehe unten**
 
-|KIM-Header              |Inhalt                                 |verpflichtend|
-|------------------------|---------------------------------------|-------------|
-|X-KIM-Dienstkennung     |eRezept;Rezeptanforderung;1.0|ja|
-|X-KIM-Sendersystem      |\<PS-Bezeichnung>;\<Releaseversion>   |ja|
-|X-KIM-Support           |\<Support-Email-Adresse PS-Hersteller>|nein|
-|Subject                 |\<T/E>Rezeptanforderung\<UUID>                 |ja <br />T/E: *T*estsystem (RU) / *E*chtsystem (PU)<br />UUID: request bundle-identifier |
-|Content-Type            | application/xml;<br />name="<T/E>Rezeptanforderung<UUID>.xml" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: request bundle-identifier <br />
-|Content-Transfer-Encoding |base64 |ja|
-|Content-Disposition     |attachment; filename="<T/E>Rezeptanforderung<UUID>.xml" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: request bundle-identifier|
-|Content-Description     |Rezeptanforderung                               |ja|
+|KIM-Header|Inhalt|verpflichtend|
+|---|---|---|
+|X-KIM-Dienstkennung|eRezept;Rezeptanforderung;1.0|ja|
+|X-KIM-Sendersystem|\<PS-Bezeichnung>;\<Releaseversion>|ja|
+|X-KIM-Support|\<Support-Email-Adresse PS-Hersteller>|nein|
+|Subject|\<T/E>Rezeptanforderung\<UUID>|ja <br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: request bundle-identifier|
+|Content-Type|application/xml;<br />name="<T/E>Rezeptanforderung<UUID>.xml"|ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: request bundle-identifier <br />|
+|Content-Transfer-Encoding|base64|ja|
+|Content-Disposition|attachment; filename="<T/E>Rezeptanforderung<UUID>.xml"|ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: request bundle-identifier|
+|Content-Description|Rezeptanforderung|ja|
+
 Der Anhang enthält die Rezeptanforderung als FHIR-Ressource
 
 ### KIM Rezeptanforderung Beispielnachricht
