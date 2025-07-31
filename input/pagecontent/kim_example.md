@@ -5,7 +5,7 @@ Die FHIR-Datensätze in Anfrage- und Antwortnachrichten werden ausschließlich a
 
 |KIM-Header              |Inhalt                                 |verpflichtend|
 |------------------------|---------------------------------------|-------------|
-|X-KIM-Dienstkennung     |atf;eRezept_Rezeptanforderung;1.0|ja|
+|X-KIM-Dienstkennung     |eRezept;Rezeptanforderung;1.0|ja|
 |X-KIM-Sendersystem      |\<PS-Bezeichnung>;\<Releaseversion>   |ja|
 |X-KIM-Support           |\<Support-Email-Adresse PS-Hersteller>|nein|
 |Subject                 |\<T/E>Rezeptanforderung\<UUID>                 |ja <br />T/E: *T*estsystem (RU) / *E*chtsystem (PU)<br />UUID: request bundle-identifier |
