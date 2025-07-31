@@ -1,17 +1,17 @@
 // General rule for to handle versions for all structure definitions
 RuleSet: Versioning
-* ^status = #draft
+* ^status = #active
 * ^experimental = false
 * ^publisher = "gematik GmbH"
-* ^version = "1.2.0-rc3"
-* ^date = "2025-01-01"
+* ^version = "1.2.0"
+* ^date = "2025-07-31"
 
 RuleSet: VersioningInst
-* status = #draft
+* status = #active
 * experimental = false
 * publisher = "gematik GmbH"
-* version = "1.2.0-rc3"
-* date = "2025-01-01"
+* version = "1.2.0"
+* date = "2025-07-31"
 * contact.name = "gematik GmbH"
 * contact.telecom.system = #url
 * contact.telecom.value = "https://www.gematik.de"

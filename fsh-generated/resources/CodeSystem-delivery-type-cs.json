@@ -1,6 +1,6 @@
 {
   "resourceType": "CodeSystem",
-  "status": "draft",
+  "status": "active",
   "content": "complete",
   "name": "DeliveryTypeCS",
   "id": "delivery-type-cs",
@@ -27,7 +27,7 @@
   ],
   "experimental": false,
   "publisher": "gematik GmbH",
-  "version": "1.2.0-rc3",
-  "date": "2025-01-01",
+  "version": "1.2.0",
+  "date": "2025-07-31",
   "count": 4
 }

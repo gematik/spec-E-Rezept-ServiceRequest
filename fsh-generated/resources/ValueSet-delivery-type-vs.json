@@ -1,6 +1,6 @@
 {
   "resourceType": "ValueSet",
-  "status": "draft",
+  "status": "active",
   "name": "DeliveryTypeVS",
   "id": "delivery-type-vs",
   "title": "Art der Belieferung (VS)",
@@ -8,8 +8,8 @@
   "url": "https://gematik.de/fhir/erp-servicerequest/ValueSet/delivery-type-vs",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "version": "1.2.0-rc3",
-  "date": "2025-01-01",
+  "version": "1.2.0",
+  "date": "2025-07-31",
   "compose": {
     "include": [
       {
