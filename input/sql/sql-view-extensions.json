@@ -1,0 +1,38 @@
+{
+  "resourceType": "https://sql-on-fhir.org/ig/StructureDefinition/ViewDefinition",
+  "name": "all_extensions",
+  "status": "draft",
+  "resource": "StructureDefinition",
+  "select": [
+    {
+      "column": [
+        {
+          "name": "id",
+          "path": "getResourceKey()"
+        },
+        {
+          "name": "title",
+          "path": "title"
+        },
+        {
+          "name": "url",
+          "path": "url"
+        },
+        {
+          "name": "isModifier",
+          "path": "differential.element.where(path = 'Extension').first().isModifier"
+        },
+        {
+          "name": "description",
+          "path": "description.toString()",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "where": [
+    {
+      "path": "type = 'Extension'"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 Extension: EPrescriptionTokenEX
 Id: eprescription-token-ex
-Title: "E-Prescription Token Extension"
-Description: "This extension is used to specify an e-prescription token"
+Title: "E-Rezept Token"
+Description: "Diese Extension trägt den E-Rezept Token, der für die Einlösung einer Verordnung gegenüber dem E-Rezept-Fachdienst benötigt wird."
 Context: ServiceRequest, MedicationRequest, DeviceRequest, Task, SupplyRequest, SupplyDelivery
 * insert Meta (eprescription-token-ex)
 * value[x] 1..1 MS

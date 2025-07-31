@@ -1,6 +1,6 @@
 Instance: UC1-MULTI-HealthCareService-to-Practitioner-MessageHeader
 InstanceOf: ERPServiceRequestRequestHeader
-Usage: #example
+Usage: #inline
 Title: "HealthCareService-to-Practitioner-MessageHeader"
 Description: "Message Header from HealthCareService to Practitioner"
 * insert HealthCareService-to-Practitioner(UC1-MULTI-Initial-Prescription-Request-1)
@@ -28,7 +28,7 @@ Description: "Message Header from Practitioner to HealthCareService"
 
 Instance: Komplex-MULTI-HealthCareService-to-Practitioner-MessageHeader
 InstanceOf: ERPServiceRequestRequestHeader
-Usage: #example
+Usage: #inline
 Title: "HealthCareService-to-Practitioner-MessageHeader"
 Description: "Message Header from HealthCareService to Practitioner"
 * insert HealthCareService-to-Practitioner(UC1-MULTI-Initial-Prescription-Request-1)

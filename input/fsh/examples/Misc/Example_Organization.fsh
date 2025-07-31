@@ -1,6 +1,8 @@
 Instance: Example-HealthCareService-Organization
 InstanceOf: ERPServiceRequestOrganization
 Usage: #example
+Title: "Pflegeeinrichtung"
+Description: "Dieses Beispiel demonstriert eine Darstellung der Pflegeeinrichtung als Organization einer Rezeptanforderung."
 * name = "Pflegeheim Immergrün"
 * identifier[TelematikID].value = "123456789"
 * type[profession].coding = $profession-id-cs#1.2.276.0.76.4.245 "Betriebsstätte Gesundheits-, Kranken- und Altenpflege"

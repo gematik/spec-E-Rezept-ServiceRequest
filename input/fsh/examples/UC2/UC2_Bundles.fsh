@@ -1,8 +1,8 @@
 Instance: UC2-1-Prescription-Request-To-Prescriber
 InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
-Title: "Medication Request To Prescriber"
-Description: "Request sent to Prescriber to get a Prescription"
+Title: "Rezeptanforderung für Patienteneinlösung"
+Description: "Anfrage einer Pflegeeinrichtung an einen Verordnenden zur Erstellung eines E-Rezepts für Patienteneinlösung (Flowtype 160/200)"
 * identifier.value = "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
 * timestamp = "2025-05-13T14:25:12+02:00"
 // Header
@@ -27,8 +27,8 @@ Description: "Request sent to Prescriber to get a Prescription"
 Instance: UC2-2-Fullfilled-Prescription-Request
 InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
-Title: "Fullfilled Prescription Request"
-Description: "Response sent from Practitioner back to HealthCareService"
+Title: "Bestätigung der Rezepterstellung für Patienteneinlösung"
+Description: "Antwort des Verordnenden an die Pflegeeinrichtung mit Bestätigung der E-Rezept-Erstellung zur Patienteneinlösung"
 * identifier.value = "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
 * timestamp = "2025-05-14T08:15:12+02:00"
 // Header

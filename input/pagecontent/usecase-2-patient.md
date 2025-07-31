@@ -9,6 +9,10 @@ Der verordnende Leistungserbringer übermittelt den E-Rezept-Token, sowie den Pa
 
 Die Pflegeeinrichtung kann den Patienten informieren, dass das E-Rezept in einer Apotheke eingelöst werden kann und gibt ggf. den Patientenausdruck mit.
 
+<div class="dragon">
+<strong>Wichtig</strong>: Der E-Rezept Token darf bei diesem Anwendungsfall nicht übertragen werden.
+</div>
+
 ## Anfragender an Verordnenden
 
 In diesem Anwendungsfall erstellt die Pflegeeinrichtung im Namen des Patienten eine Rezeptanforderung mit der Kennzeichnung zur Patienteneinlösung an einen verordnenden Leistungserbringer. Der verordnende LE stellt ein E-Rezept am E-Rezept-Fachdienst ein. Der E-Rezept Token wird in diesem Anwendungsfall nicht an die Pflegeeinrichtung übertragen. Die Pflegeeinrichtung kann optional den Versicherten über die Ausstellung des E-Rezeptes informieren.
@@ -95,7 +99,7 @@ Im Falle einer Stornierung sollte das sendende System den Eintrag als "storniert
 
 ## Antwort des Verordnenden
 
-### [4] Rezeptanforderung_Bestätigung
+### [3] Rezeptanforderung_Bestätigung
 
 Der Verordnende kann nach dem Erhalt einer Rezeptanforderung diese prüfen und eine entsprechende Verordnung erstellen, signieren und im E-Rezept-Fachdienst einstellen (**[2]**).
 
@@ -125,9 +129,6 @@ Folgendes Klassendiagramm soll die verwendeten Profile graphisch darstellen:
 #### Wichtige Kennzeichnungen
 
 Folgende Bedingungen müssen erfüllt, bzw. Felder gesetzt sein, damit die Nachricht einer Rezeptanforderungs Bestätigung entspricht.
-
-<div class="dragon">
-==WICHTIG==: Der E-Rezept Token darf bei diesem Anwendungsfall nicht übertragen werden.
 
 |Profil|Bedingung|
 |---|---|

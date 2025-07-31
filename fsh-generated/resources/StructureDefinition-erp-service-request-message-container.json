@@ -14,7 +14,7 @@
   "kind": "resource",
   "abstract": false,
   "type": "Bundle",
-  "baseDefinition": "https://gematik.de/fhir/atf/StructureDefinition/bundle-app-transport-framework",
+  "baseDefinition": "https://gematik.de/fhir/atf/StructureDefinition/atf-message-bundle",
   "derivation": "constraint",
   "differential": {
     "element": [

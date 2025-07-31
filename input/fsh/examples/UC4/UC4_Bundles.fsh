@@ -2,8 +2,8 @@
 Instance: UC4-1-Prescription-and-Dispense-Request-To-Prescriber
 InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
-Title: "Zyto Medication Request To Prescriber"
-Description: "Request sent to Prescriber to get a Prescription"
+Title: "Rezeptanforderung für Zytostatika-Zubereitung"
+Description: "Anfrage einer Apotheke an einen Verordnenden zur Erstellung eines E-Rezepts für anwendungsfertige Zytostatika-Zubereitungen"
 * identifier.value = "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
 * timestamp = "2025-05-13T14:25:12+02:00"
 // Header
@@ -27,8 +27,8 @@ Description: "Request sent to Prescriber to get a Prescription"
 Instance: UC4-2-Prescription-Request-To-Pharmacy
 InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
-Title: "Fullfilled Zyto Prescription Request"
-Description: "Request sent to Pharmacy to request a dispense of the medication"
+Title: "Bestätigung der Zytostatika-Rezepterstellung"
+Description: "Antwort des Verordnenden an die Apotheke mit Bestätigung der E-Rezept-Erstellung für Zytostatika-Zubereitungen"
 * identifier.value = "urn:uuid:c80f6c55-92f8-4518-ba66-cb193da09336"
 * timestamp = "2025-05-14T08:15:12+02:00"
 // Header

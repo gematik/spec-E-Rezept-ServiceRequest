@@ -2,8 +2,8 @@
 Instance: UC2-Initial-Prescription-Request
 InstanceOf: ERPServiceRequestPrescriptionRequest
 Usage: #example
-Title: "Initial Prescription Request"
-Description: "This ServiceRequest is sent initially to the prescribing practitioner"
+Title: "Rezeptanforderung für Patienteneinlösung"
+Description: "ServiceRequest der Pflegeeinrichtung zur Anforderung eines E-Rezepts für Patienteneinlösung"
 * identifier[requestId].value = "1"
 * modifierExtension[redeemByPatient].valueBoolean = true
 * basedOn = Reference(Example-Initial-Medication-Request)
@@ -20,8 +20,8 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 Instance: UC2-Response-Prescription-Request
 InstanceOf: ERPServiceRequestPrescriptionRequest
 Usage: #inline
-Title: "Completed Response Prescription Request"
-Description: "ServiceRequest that is returned to the requester"
+Title: "Bestätigung Rezepterstellung für Patienteneinlösung"
+Description: "ServiceRequest-Antwort des Verordnenden mit Bestätigung der E-Rezept-Erstellung zur Patienteneinlösung"
 * identifier[requestId].value = "1"
 * requisition.value = "GroupID-UC2"
 * modifierExtension[redeemByPatient].valueBoolean = true

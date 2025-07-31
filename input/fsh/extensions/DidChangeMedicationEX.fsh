@@ -1,7 +1,7 @@
 Extension: ChangedMedicationEX
 Id: changed-medication-ex
-Title: "Changed Medication (EX)"
-Description: "This extension is used to specify if the medication has been changed by the prescriber"
+Title: "Arzneimittel geändert"
+Description: "Diese Extension enthält einen Wahrheitswert darüber, ob der Verordnende ein anderes Arzneimittel verordnet hat als angefragt wurde. Bei Änderungen durch den Arzt ist das Feld 'valueBoolean' mit 'true' zu setzen."
 Context: ServiceRequest, MedicationRequest, DeviceRequest, Task, SupplyRequest, Medication, SupplyDelivery
 * insert Meta (changed-medication-ex)
 * . ^isModifier = true

@@ -1,6 +1,8 @@
 Instance: Example-Initial-Medication-Request
 InstanceOf: ERPServiceRequestMedicationRequest
 Usage: #example
+Title: "Initialer MedicationRequest einer Rezeptanforderung"
+Description: "Dieses Beispiel demonstriert einen beispielhaften MedicationRequest einer intialen Rezeptanforderung."
 * status = #active
 * intent = #order
 * medicationReference = Reference(Example-Initial-Medication)
@@ -12,6 +14,8 @@ Usage: #example
 Instance: Example-Komplex-Medication-Request
 InstanceOf: ERPServiceRequestMedicationRequest
 Usage: #example
+Title: "MedicationRequest einer Rezeptanforderung mit 2 Packungen"
+Description: "Dieses Beispiel demonstriert einen beispielhaften MedicationRequest einer intialen Rezeptanforderung in der 2 Packungen angefragt werden."
 * status = #active
 * intent = #order
 * medicationReference = Reference(Example-Initial-Medication)
@@ -23,6 +27,8 @@ Usage: #example
 Instance: Example-Initial-Medication-Request-2
 InstanceOf: ERPServiceRequestMedicationRequest
 Usage: #example
+Title: "Einheitenkodierter MedicationRequest einer Rezeptanforderung"
+Description: "Dieses Beispiel demonstriert einen beispielhaften MedicationRequest einer intialen Rezeptanforderung."
 * status = #active
 * intent = #order
 * medicationReference = Reference(Example-Initial-Medication-2)
@@ -32,6 +38,8 @@ Usage: #example
 Instance: Example-Response-Medication-Request
 InstanceOf: ERPServiceRequestMedicationRequest
 Usage: #example
+Title: "Dosierung MedicationRequest einer Rezeptanforderung"
+Description: "Dieses Beispiel demonstriert einen beispielhaften MedicationRequest einer Angabe der Menge, sowie vorgeschlagene Dosierung."
 * status = #active
 * intent = #order
 * medicationReference = Reference(Example-Response-Medication)
@@ -42,6 +50,8 @@ Usage: #example
 Instance: Example-Zyto-Medication-Request
 InstanceOf: ERPServiceRequestMedicationRequest
 Usage: #inline
+Title: "Zyto MedicationRequest einer Rezeptanforderung"
+Description: "Dieses Beispiel demonstriert einen beispielhaften MedicationRequest für eine anwendungsfertige Zytostatikazubereitung."
 * status = #active
 * intent = #order
 * medicationReference = Reference(Example-Zyto-Medication)

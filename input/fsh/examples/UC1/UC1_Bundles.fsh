@@ -1,8 +1,8 @@
 Instance: UC1-1-Prescription-Request-To-Prescriber
 InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
-Title: "Medication Request To Prescriber"
-Description: "Request sent to Prescriber to get a Prescription"
+Title: "Rezeptanforderung der Pflegeeinrichtung"
+Description: "Anfrage einer Pflegeeinrichtung an einen Verordnenden zur Erstellung eines E-Rezepts für die Heimversorgung"
 * identifier.value = "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
 * timestamp = "2025-05-13T14:25:12+02:00"
 // Header
@@ -27,8 +27,8 @@ Description: "Request sent to Prescriber to get a Prescription"
 Instance: UC1-2-Fullfilled-Prescription-Request
 InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
-Title: "Fullfilled Prescription Request"
-Description: "Response sent from Practitioner back to HealthCareService"
+Title: "Bestätigung der Rezepterstellung für Heimversorgung"
+Description: "Antwort des Verordnenden an die Pflegeeinrichtung mit Bestätigung der E-Rezept-Erstellung für die Heimversorgung"
 * identifier.value = "urn:uuid:29888885-6639-481c-934e-4b7b51745084"
 * timestamp = "2025-05-14T08:15:12+02:00"
 // Header
@@ -52,8 +52,8 @@ Description: "Response sent from Practitioner back to HealthCareService"
 Instance: UC1-3-Dispense-Request-To-Pharmacy
 InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
-Title: "DispenseRequestToPharmacy"
-Description: "Request sent to pharmacy to request a dispense of the medication"
+Title: "Abgabeanforderung an Apotheke"
+Description: "Anfrage der Pflegeeinrichtung an eine Apotheke zur Belieferung mit dem E-Rezept für die Heimversorgung"
 * identifier.value = "urn:uuid:c80f6c55-92f8-4518-ba66-cb193da09336"
 * timestamp = "2025-05-14T08:23:12+02:00"
 // Header
@@ -71,8 +71,8 @@ Description: "Request sent to pharmacy to request a dispense of the medication"
 Instance: UC1-4-Fullfilled-DispenseRequest-To-Pharmacy
 InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
-Title: "DispenseRequestToPharmacy"
-Description: "Response sent from pharmacy to requester"
+Title: "Bestätigung der Belieferung durch Apotheke"
+Description: "Antwort der Apotheke an die Pflegeeinrichtung mit Bestätigung der Belieferung für die Heimversorgung"
 * identifier.value = "urn:uuid:c80f6c55-92f8-4518-ba66-cb193da09336"
 * timestamp = "2025-05-14T08:30:12+02:00"
 // Header
@@ -96,8 +96,8 @@ Description: "Response sent from pharmacy to requester"
 Instance: UC1-3-Alt-Delivery-Dispense-Request-To-Pharmacy
 InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
-Title: "DispenseRequestToPharmacy"
-Description: "Request sent to pharmacy to request a dispense of the medication"
+Title: "Abgabeanforderung mit alternativer Lieferadresse"
+Description: "Anfrage der Pflegeeinrichtung an eine Apotheke zur Belieferung mit alternativer Lieferadresse für die Heimversorgung"
 * identifier.value = "urn:uuid:fa23be14-c00a-4ddc-8128-82ace2f9a80b"
 * timestamp = "2025-05-14T08:23:12+02:00"
 // Header
@@ -115,8 +115,8 @@ Description: "Request sent to pharmacy to request a dispense of the medication"
 Instance: UC1-4-Alt-Delivery-Fullfilled-DispenseRequest-To-Pharmacy
 InstanceOf: ERPServiceRequestMessageContainer
 Usage: #example
-Title: "DispenseRequestToPharmacy"
-Description: "Response sent from pharmacy to requester"
+Title: "Bestätigung der Belieferung mit alternativer Lieferadresse"
+Description: "Antwort der Apotheke an die Pflegeeinrichtung mit Bestätigung der Belieferung an alternative Lieferadresse"
 * identifier.value = "urn:uuid:ebad657e-589f-4386-ad81-19352ca21310"
 * timestamp = "2025-05-14T08:30:12+02:00"
 // Header

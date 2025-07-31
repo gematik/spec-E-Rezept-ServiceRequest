@@ -2,8 +2,8 @@
 Instance: UC4-Initial-Prescription-Request
 InstanceOf: ERPServiceRequestPrescriptionRequest
 Usage: #inline
-Title: "Initial Prescription Request"
-Description: "This ServiceRequest is sent initially to the prescribing practitioner"
+Title: "Rezeptanforderung für Zytostatika-Zubereitung"
+Description: "ServiceRequest der Apotheke zur Anforderung eines E-Rezepts für anwendungsfertige Zytostatika-Zubereitungen"
 * identifier[+]
   * system = "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier"
   * value = "1"
@@ -31,8 +31,8 @@ Description: "This ServiceRequest is sent initially to the prescribing practitio
 Instance: UC4-Response-Prescription-Request
 InstanceOf: ERPServiceRequestPrescriptionRequest
 Usage: #inline
-Title: "Fullfilled Prescription Request"
-Description: "ServiceRequest that is returned to the requester"
+Title: "Bestätigung Zytostatika-Rezepterstellung"
+Description: "ServiceRequest-Antwort des Verordnenden mit E-Rezept-Token für Zytostatika-Zubereitungen an die Apotheke"
 * extension[EPrescriptionToken].valueIdentifier.value = "Task/169.100.000.000.004.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
 * identifier[+]
   * system = "https://gematik.de/fhir/erp-servicerequest/sid/RequestIdentifier"
