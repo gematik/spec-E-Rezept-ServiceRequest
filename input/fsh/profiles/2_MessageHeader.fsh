@@ -1,8 +1,8 @@
 Profile: ERPServiceRequestRequestHeader
 Parent: MessageHeaderAppTransportFramework
 Id: erp-service-request-request-header
-Title: "ERP Service Request Request Header"
-Description: "Header containing information about the sender and addressee"
+Title: "ERP Service Request Nachrichten-Header"
+Description: "Header mit Informationen über Absender und Empfänger"
 * insert Meta (erp-service-request-request-header)
 
 * sender

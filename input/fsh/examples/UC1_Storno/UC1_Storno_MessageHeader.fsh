@@ -2,7 +2,7 @@ Instance: UC1-HealthCareService-to-Practitioner-MessageHeader-Storno
 InstanceOf: ERPServiceRequestRequestHeader
 Usage: #inline
 Title: "HealthCareService-to-Practitioner-MessageHeader-Storno"
-Description: "Cancellation Message Header from HealthCareService to Practitioner"
+Description: "Stornierung Message Header von Pflegedienst an Leistungserbringer"
 * insert HealthCareService-to-Practitioner(UC1-Cancelled-Prescription-Request)
 * eventCoding = ServiceIdentifierCS#eRezept_Rezeptanforderung;Rezeptanfrage_Storno
 * source.name = "HealthCare-Source"

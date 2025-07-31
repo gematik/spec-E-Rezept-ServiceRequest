@@ -2,7 +2,7 @@ Instance: UC1-Practitioner-to-HealthCareService-MessageHeader-Rejection
 InstanceOf: ERPServiceRequestRequestHeader
 Usage: #inline
 Title: "Practitioner-to-HealthCareService-MessageHeader-Rejection"
-Description: "Cancellation Message Header from Practitioner to HealthCareService"
+Description: "Ablehnungs-Message Header von Leistungserbringer an Pflegedienst"
 * insert HealthCareService-to-Practitioner(UC1-Rejection-Prescription-Request)
 * eventCoding = ServiceIdentifierCS#eRezept_Rezeptanforderung;Rezeptanfrage_Ablehnung
 * source.name = "Practitioner-Source"

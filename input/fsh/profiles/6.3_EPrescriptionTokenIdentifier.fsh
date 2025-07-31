@@ -1,8 +1,8 @@
 Profile: ERPServiceRequestEPrescriptionToken
 Parent: Identifier
 Id: erp-service-request-eprescription-token
-Title: "ERP Service Request EPrescription Token"
-Description: "Identifier containing an e-prescription token"
+Title: "ERP Service Request E-Rezept-Token"
+Description: "Identifikator, der einen E-Rezept-Token enthält"
 * insert Meta (erp-service-request-eprescription-token)
 * system 1..1 MS
 * system = "https://gematik.de/fhir/erp/sid/NamingSystemEPrescriptionToken" (exactly)
@@ -14,7 +14,7 @@ Instance: NamingSystemEPrescriptionToken
 InstanceOf: NamingSystem
 Usage: #definition
 Title: "E-Rezept-Token NamingSystem"
-Description: "NamingSystem for specifying an e-prescription token"
+Description: "NamingSystem zur Spezifikation eines E-Rezept-Token"
 * name = "NamingSystemEPrescriptionToken"
 * status = #active
 * kind = #identifier

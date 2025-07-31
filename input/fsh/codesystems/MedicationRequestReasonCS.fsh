@@ -1,7 +1,7 @@
 CodeSystem: MedicationRequestReasonCS
 Id: medication-request-reason-cs
-Title: "Reason for medication request (CS)"
-Description: "Provides codes for reasons why medication is requested"
+Title: "Grund für Medikationsanforderung (CS)"
+Description: "Stellt Codes für Gründe bereit, warum Medikamente angefordert werden"
 * insert MetaCodeSystem(medication-request-reason-cs)
 * #correction "Korrektur"
 * #exhausted-range "Reichweite erschöpft(Dauermedikation)"

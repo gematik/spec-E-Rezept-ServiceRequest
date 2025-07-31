@@ -1,8 +1,8 @@
 Profile: ERPServiceRequestMedicationRequest
 Parent: MedicationRequest
 Id: erp-service-request-medication-request
-Title: "ERP Service Request Medication Request"
-Description: "Medical and pharmaceutical information for the prescription request"
+Title: "ERP Service Request Medikationsanforderung"
+Description: "Medizinische und pharmazeutische Informationen für die Rezeptanforderung"
 * insert Meta (erp-service-request-medication-request)
 
 * extension MS

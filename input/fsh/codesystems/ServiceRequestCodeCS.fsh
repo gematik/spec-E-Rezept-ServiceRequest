@@ -1,8 +1,8 @@
 CodeSystem: ServiceRequestTypeCS
 Id: service-request-type-cs
 Title: "Art des ServiceRequests (CS)"
-Description: "Specifies the type of ServiceRequest and is used to identify ServiceRequests"
+Description: "Spezifiziert den Typ des ServiceRequests und wird zur Identifikation von ServiceRequests verwendet"
 * insert MetaCodeSystem(service-request-type-cs)
 
-* #prescription-request "Request for a prescription"
-* #dispense-request "Request for the delivery of a prescription"
+* #prescription-request "Anfrage für ein Rezept"
+* #dispense-request "Anfrage für die Lieferung eines Rezepts"

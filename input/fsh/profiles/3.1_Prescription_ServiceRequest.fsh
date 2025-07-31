@@ -1,8 +1,8 @@
 Profile: ERPServiceRequestPrescriptionRequest
 Parent: ServiceRequest
 Id: erp-service-request-prescription-request
-Title: "ERP Service Request Prescription Request"
-Description: "ServiceRequest, which is used to request a recipe"
+Title: "ERP Service Request Rezeptanforderung"
+Description: "ServiceRequest, der zur Anforderung eines Rezepts verwendet wird"
 * insert Meta (erp-service-request-prescription-request)
 
 * obeys servicerequest-prescription-request-1
@@ -151,27 +151,27 @@ Description: "ServiceRequest, which is used to request a recipe"
   * type = "Organization"
 
 Invariant: servicerequest-prescription-request-1
-Description: "If the status is active, the requester must be present."
+Description: "Wenn der Status aktiv ist, muss der Anforderer vorhanden sein."
 Expression: "status = 'active' implies requester.exists()"
 Severity: #error
 
 Invariant: servicerequest-prescription-request-2
-Description: "If the status is completed and the prescription should be redeemed by the patient, the e-prescription-token must not be present."
+Description: "Wenn der Status abgeschlossen ist und das Rezept vom Patienten eingelöst werden soll, darf der E-Rezept-Token nicht vorhanden sein."
 Expression: "(status = 'completed' and modifierExtension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex').exists() and modifierExtension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex').value = true) implies extension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex').exists().not()"
 Severity: #error
 
 Invariant: servicerequest-prescription-request-3
-Description: "If the status is revoked or entered-in-error, then the reasonCode or note must be present."
+Description: "Wenn der Status widerrufen oder fehlerhaft eingegeben ist, muss der Grund oder eine Notiz vorhanden sein."
 Expression: "(status = 'revoked' or status = 'entered-in-error') implies (reasonCode.text.exists() or note.exists())"
 Severity: #error
 
 Invariant: servicerequest-prescription-request-4
-Description: "If the status is completed, the performer must be present."
+Description: "Wenn der Status abgeschlossen ist, muss der Durchführende vorhanden sein."
 Expression: "status = 'completed' implies performer.exists()"
 Severity: #error
 
 Invariant: servicerequest-prescription-request-5
-Description: "If the status is completed and the prescription should not be redeemed by the patient, the e-prescription-token must be present."
+Description: "Wenn der Status abgeschlossen ist und das Rezept nicht vom Patienten eingelöst werden soll, muss der E-Rezept-Token vorhanden sein."
 Expression: "(status = 'completed' and (modifierExtension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex').value = false or modifierExtension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex').exists().not())) implies extension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex').exists()"
 Severity: #error
 

@@ -80,18 +80,18 @@
       },
       {
         "reference": {
-          "reference": "ValueSet/delivery-type-vs"
+          "reference": "CodeSystem/delivery-type-cs"
         },
-        "name": "Art der Belieferung (VS)",
-        "description": "Specifies how a dispense request should be fulfilled/ delivered",
+        "name": "Art der Belieferung (CS)",
+        "description": "Spezifiziert, wie eine Abgabeanforderung erfüllt/geliefert werden soll",
         "exampleBoolean": false
       },
       {
         "reference": {
-          "reference": "CodeSystem/delivery-type-cs"
+          "reference": "ValueSet/delivery-type-vs"
         },
-        "name": "Art des Belieferung (CS)",
-        "description": "Specifies how a dispense request should be fulfilled/ delivered",
+        "name": "Art der Belieferung (VS)",
+        "description": "Spezifiziert, wie eine Abgabeanforderung erfüllt/geliefert werden soll",
         "exampleBoolean": false
       },
       {
@@ -99,7 +99,7 @@
           "reference": "CodeSystem/service-request-type-cs"
         },
         "name": "Art des ServiceRequests (CS)",
-        "description": "Specifies the type of ServiceRequest and is used to identify ServiceRequests",
+        "description": "Spezifiziert den Typ des ServiceRequests und wird zur Identifikation von ServiceRequests verwendet",
         "exampleBoolean": false
       },
       {
@@ -107,7 +107,7 @@
           "reference": "ValueSet/service-request-type-vs"
         },
         "name": "Art des ServiceRequests (VS)",
-        "description": "Specifies the type of ServiceRequest and is used to identify ServiceRequests",
+        "description": "Spezifiziert den Typ des ServiceRequests und wird zur Identifikation von ServiceRequests verwendet",
         "exampleBoolean": false
       },
       {
@@ -227,7 +227,7 @@
           "reference": "NamingSystem/NamingSystemEPrescriptionToken"
         },
         "name": "E-Rezept-Token NamingSystem",
-        "description": "NamingSystem for specifying an e-prescription token",
+        "description": "NamingSystem zur Spezifikation eines E-Rezept-Token",
         "exampleBoolean": false
       },
       {
@@ -250,48 +250,64 @@
         "reference": {
           "reference": "StructureDefinition/erp-service-request-dispense-request"
         },
-        "name": "ERP Service Request Dispense Request",
-        "description": "ServiceRequest that is used to supply a recipe",
+        "name": "ERP Service Request Abgabeanforderung",
+        "description": "ServiceRequest, der zur Abgabe eines Rezepts verwendet wird",
         "exampleBoolean": false
       },
       {
         "reference": {
           "reference": "StructureDefinition/erp-service-request-eprescription-token"
         },
-        "name": "ERP Service Request EPrescription Token",
-        "description": "Identifier containing an e-prescription token",
+        "name": "ERP Service Request E-Rezept-Token",
+        "description": "Identifikator, der einen E-Rezept-Token enthält",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/erp-service-request-practitioner"
+        },
+        "name": "ERP Service Request Leistungserbringer",
+        "description": "Leistungserbringer, der zur Identifikation des gewünschten Durchführers einer ServiceRequest verwendet werden kann",
         "exampleBoolean": false
       },
       {
         "reference": {
           "reference": "StructureDefinition/erp-service-request-medication-dispense"
         },
-        "name": "ERP Service Request Medication Dispense",
-        "description": "Medical and pharmaceutical information for the dispense information",
+        "name": "ERP Service Request Medikationsabgabe",
+        "description": "Medizinische und pharmazeutische Informationen für die Abgabeinformationen",
         "exampleBoolean": false
       },
       {
         "reference": {
           "reference": "StructureDefinition/erp-service-request-medication-request"
         },
-        "name": "ERP Service Request Medication Request",
-        "description": "Medical and pharmaceutical information for the prescription request",
+        "name": "ERP Service Request Medikationsanforderung",
+        "description": "Medizinische und pharmazeutische Informationen für die Rezeptanforderung",
         "exampleBoolean": false
       },
       {
         "reference": {
           "reference": "StructureDefinition/erp-service-request-message-container"
         },
-        "name": "ERP Service Request Message Container",
-        "description": "Bundle, which contains all resources of a message",
+        "name": "ERP Service Request Nachrichten-Container",
+        "description": "Bundle, welches alle Ressourcen einer Nachricht enthält",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/erp-service-request-request-header"
+        },
+        "name": "ERP Service Request Nachrichten-Header",
+        "description": "Header mit Informationen über Absender und Empfänger",
         "exampleBoolean": false
       },
       {
         "reference": {
           "reference": "StructureDefinition/erp-service-request-organization"
         },
-        "name": "ERP Service Request Organization",
-        "description": "Organization that can be used to specify a KIM address",
+        "name": "ERP Service Request Organisation",
+        "description": "Organisation, die zur Angabe einer KIM-Adresse verwendet werden kann",
         "exampleBoolean": false
       },
       {
@@ -299,23 +315,7 @@
           "reference": "StructureDefinition/erp-service-request-patient"
         },
         "name": "ERP Service Request Patient",
-        "description": "Patient that can be used for the UseCase ServiceRequest",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/erp-service-request-practitioner"
-        },
-        "name": "ERP Service Request Practitioner",
-        "description": "Practitioner that can be used to identify the desired performer of a ServiceRequest",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/erp-service-request-prescription-request"
-        },
-        "name": "ERP Service Request Prescription Request",
-        "description": "ServiceRequest, which is used to request a recipe",
+        "description": "Patient, der für den Anwendungsfall ServiceRequest verwendet werden kann",
         "exampleBoolean": false
       },
       {
@@ -328,18 +328,18 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/erp-service-request-request-header"
-        },
-        "name": "ERP Service Request Request Header",
-        "description": "Header containing information about the sender and addressee",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
           "reference": "StructureDefinition/erp-service-request-request-identifier"
         },
         "name": "ERP Service Request Request Identifier",
         "description": "Eine eindeutige Anfrage ID, die eine konkrete Anfrage referenziert. Dieser Wert wird erzeugt, wenn ein Anfragender initial den ServiceRequest erstellt. \nSysteme, die einen ServiceRequest auswerten und bearbeiten müssen bei Antworten den Identifier wieder mit angeben.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/erp-service-request-prescription-request"
+        },
+        "name": "ERP Service Request Rezeptanforderung",
+        "description": "ServiceRequest, der zur Anforderung eines Rezepts verwendet wird",
         "exampleBoolean": false
       },
       {
@@ -352,10 +352,26 @@
       },
       {
         "reference": {
+          "reference": "CodeSystem/medication-request-reason-cs"
+        },
+        "name": "Grund für Medikationsanforderung (CS)",
+        "description": "Stellt Codes für Gründe bereit, warum Medikamente angefordert werden",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/medication-request-reason-vs"
+        },
+        "name": "Grund für Medikationsanforderung (VS)",
+        "description": "Stellt Codes für Gründe bereit, warum Medikamente angefordert werden",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "ValueSet/service-identifier-vs"
         },
-        "name": "Identifier of the use case",
-        "description": "Identifiers for specifying an application of e-prescription communication",
+        "name": "Identifikator des Anwendungsfalls",
+        "description": "Identifikatoren zur Spezifikation einer Anwendung der E-Rezept-Kommunikation",
         "exampleBoolean": false
       },
       {
@@ -488,22 +504,6 @@
       },
       {
         "reference": {
-          "reference": "CodeSystem/medication-request-reason-cs"
-        },
-        "name": "Reason for medication request (CS)",
-        "description": "Provides codes for reasons why medication is requested",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "ValueSet/medication-request-reason-vs"
-        },
-        "name": "Reason for medication request (VS)",
-        "description": "Provides codes for reasons why medication is requested",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
           "reference": "StructureDefinition/remaining-supply-free-text-ex"
         },
         "name": "Restreichweite Freitext",
@@ -610,16 +610,16 @@
         "reference": {
           "reference": "ConceptMap/ServiceIdentifierToSubjectConceptMap"
         },
-        "name": "Service Identifier To Subject Concept Map",
-        "description": "This Concept Map allows for the mapping of a Service Identifier to a Subject Header for a KIM-Message in the context of a Service Request.",
+        "name": "Service Identifier zu Subject Concept Map",
+        "description": "Diese Concept Map ermöglicht die Zuordnung eines Service Identifiers zu einem Subject Header für eine KIM-Nachricht im Kontext einer Service Request.",
         "exampleBoolean": false
       },
       {
         "reference": {
           "reference": "ValueSet/service-request-priority-vs"
         },
-        "name": "Service Request Priority VS",
-        "description": "Provides codes for the priority of a service request",
+        "name": "Service Request Priorität VS",
+        "description": "Stellt Codes für die Priorität einer Service Request bereit",
         "exampleBoolean": false
       },
       {
@@ -635,7 +635,7 @@
           "reference": "ValueSet/service-request-status-vs"
         },
         "name": "Status des ServiceRequests",
-        "description": "Selection of codes to indicate the status of a ServiceRequest",
+        "description": "Auswahl von Codes zur Angabe des Status eines ServiceRequests",
         "exampleBoolean": false
       },
       {

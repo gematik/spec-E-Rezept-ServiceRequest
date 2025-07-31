@@ -2,8 +2,8 @@
 Instance: UC1-Rejection-Prescription-Request
 InstanceOf: ERPServiceRequestPrescriptionRequest
 Usage: #inline
-Title: "Rejected Prescription Request"
-Description: "This ServiceRequest is sent to reject the prescription"
+Title: "Abgelehnte Rezeptanforderung"
+Description: "Dieser ServiceRequest wird gesendet, um die Rezeptanforderung abzulehnen"
 * identifier[requestId].value = "1"
 * requisition.value = "GroupID-UC1"
 * status = RequestStatus#revoked
@@ -18,8 +18,8 @@ Description: "This ServiceRequest is sent to reject the prescription"
 Instance: UC1-Rejection-Dispense-Request
 InstanceOf: ERPServiceRequestDispenseRequest
 Usage: #inline
-Title: "Rejected Dispense Request"
-Description: "This ServiceRequest is sent to reject the dispensation"
+Title: "Abgelehnte Abgabeanforderung"
+Description: "Dieser ServiceRequest wird gesendet, um die Abgabeanforderung abzulehnen"
 * identifier[requestId].value = "1"
 * requisition.value = "GroupID-UC1"
 * status = RequestStatus#revoked

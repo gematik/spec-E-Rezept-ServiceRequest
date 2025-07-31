@@ -1,7 +1,7 @@
 ValueSet: MedicationRequestReasonVS
 Id: medication-request-reason-vs
-Title: "Reason for medication request (VS)"
-Description: "Provides codes for reasons why medication is requested"
+Title: "Grund für Medikationsanforderung (VS)"
+Description: "Stellt Codes für Gründe bereit, warum Medikamente angefordert werden"
 * insert MetaValueSet(medication-request-reason-vs)
 
 * include codes from system MedicationRequestReasonCS

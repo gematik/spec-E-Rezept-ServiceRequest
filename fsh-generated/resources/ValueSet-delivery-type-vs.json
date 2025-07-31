@@ -4,7 +4,7 @@
   "name": "DeliveryTypeVS",
   "id": "delivery-type-vs",
   "title": "Art der Belieferung (VS)",
-  "description": "Specifies how a dispense request should be fulfilled/ delivered",
+  "description": "Spezifiziert, wie eine Abgabeanforderung erfüllt/geliefert werden soll",
   "url": "https://gematik.de/fhir/erp-servicerequest/ValueSet/delivery-type-vs",
   "experimental": false,
   "publisher": "gematik GmbH",
