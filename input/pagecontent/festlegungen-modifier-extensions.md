@@ -4,8 +4,6 @@ Modifier Extensions in FHIR definieren Extensions, deren Inhalt die weitere Vera
 
 In diesem Projekt sind folgende Modifier Extensions definiert und müssen entsprechend der Beschreibung verarbeitet werden:
 
-//TODO: Check Output
-
 {% sql
 SELECT title AS "Titel", description AS "Beschreibung"
 FROM all_extensions
