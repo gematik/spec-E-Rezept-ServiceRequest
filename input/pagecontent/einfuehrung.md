@@ -67,10 +67,53 @@ Beispielinstanzen sind unter [Beispiele](./artifacts.html#example-example-instan
 
 Folgende UseCases sind mit entsprechenden Beispielen beschrieben:
 
-* UC1: Rezeptanforderung durch Pflegeeinrichtung
-* UC2: Rezeptanforderung der Pflegeeinrichtung mit Einlösung durch Patient
-* UC3: Rezeptanforderung der heimversorgenden Apotheke
-* UC4: Rezeptanforderung für anwendungsfertige Zytostatikazubereitungen
+#### UC1: Rezeptanforderung durch Pflegeeinrichtung
+
+{% sql {
+  "query" : "SELECT Name, Description, Id, Web FROM Resources WHERE Id LIKE 'UC1-%'",
+  "class" : "grid",
+  "columns" : [
+    { "title" : "Name", "type" : "link", "source" : "Name", "target": "Web"},
+    { "name" : "Description", "type" : "markdown", "source" : "Description"}
+  ]
+} 
+%}
+
+#### UC2: Rezeptanforderung der Pflegeeinrichtung mit Einlösung durch Patient
+
+{% sql {
+  "query" : "SELECT Name, Description, Id, Web FROM Resources WHERE Id LIKE 'UC2-%'",
+  "class" : "grid",
+  "columns" : [
+    { "title" : "Name", "type" : "link", "source" : "Name", "target": "Web"},
+    { "name" : "Description", "type" : "markdown", "source" : "Description"}
+  ]
+} 
+%}
+
+#### UC3: Rezeptanforderung der heimversorgenden Apotheke
+
+{% sql {
+  "query" : "SELECT Name, Description, Id, Web FROM Resources WHERE Id LIKE 'UC3-%'",
+  "class" : "grid",
+  "columns" : [
+    { "title" : "Name", "type" : "link", "source" : "Name", "target": "Web"},
+    { "name" : "Description", "type" : "markdown", "source" : "Description"}
+  ]
+} 
+%}
+
+#### UC4: Rezeptanforderung für anwendungsfertige Zytostatikazubereitungen
+
+{% sql {
+  "query" : "SELECT Name, Description, Id, Web FROM Resources WHERE Id LIKE 'UC4-%'",
+  "class" : "grid",
+  "columns" : [
+    { "title" : "Name", "type" : "link", "source" : "Name", "target": "Web"},
+    { "name" : "Description", "type" : "markdown", "source" : "Description"}
+  ]
+} 
+%}
 
 Die Beispiele tragen jeweils das Präfix zum entsprechenden UseCase und der entsprechenden Sequenz. Bsp: UC1-3-* ist ein Beispiel, was UC1 zugeordnet ist und den dritten Schritt in der Abfolge entspricht.
 Für UC1 gibt es auch Beispiele für Stornierung und Ablehnung.

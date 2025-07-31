@@ -4,8 +4,8 @@
 
 Für die Nutzung von KIM sind [Dienstkennungen](https://fachportal.gematik.de/toolkit/dienstkennung-kim-kom-le) vorgesehen. Wenn für die Rezeptanforderung KIM als Transportweg verwendet wird, dann ist der E-Mail Header `X-KIM-Dienstkennung` anzugeben. Wie im Featuredokument beschrieben ist für jede Nachricht einer Rezeptanforderung die gleiche Dienstkennung zu verwenden:
 
-- Für UseCase 1, 2 und 3 ist die Dienstkennung "eRezept;Rezeptanforderung;1.0" zu verwenden
-- Für UseCase 4 ist die Dienstkennung "eRezept;ParenteraleZubereitung;1.0" zu verwenden
+- Für UseCase [1](./usecase-1-pflege.html), [2](./usecase-2-patient.html) und [3](./usecase-3-apotheke.html) ist die Dienstkennung "eRezept;Rezeptanforderung;1.0" zu verwenden
+- Für UseCase [4](./usecase-4-zyto.html) ist die Dienstkennung "eRezept;ParenteraleZubereitung;1.0" zu verwenden
 
 Damit erkennt ein KIM Client, dass es sich um eine strukturierte Nachricht im Rahmen der Rezeptanforderung, bzw. der anwendungsfertigen Zytostatikazubereitungen handelt. Der Datensatz ist dann an die zuständige Businesslogik weiterzugeben.
 
