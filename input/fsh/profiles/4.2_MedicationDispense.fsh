@@ -1,8 +1,8 @@
 Profile: ERPServiceRequestMedicationDispense
 Parent: MedicationDispense
 Id: erp-service-request-medication-dispense
-Title: "ERP Service Request Medication Dispense"
-Description: "Medical and pharmaceutical information for the dispense information"
+Title: "ERP Service Request Medikationsabgabe"
+Description: "Medizinische und pharmazeutische Informationen für die Abgabeinformationen"
 * insert Meta (erp-service-request-medication-dispense)
 
 * identifier MS

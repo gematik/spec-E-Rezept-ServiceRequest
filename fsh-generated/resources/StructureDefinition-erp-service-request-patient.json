@@ -9,7 +9,7 @@
   "experimental": false,
   "date": "2025-07-31",
   "publisher": "gematik GmbH",
-  "description": "Patient that can be used for the UseCase ServiceRequest",
+  "description": "Patient, der für den Anwendungsfall ServiceRequest verwendet werden kann",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,

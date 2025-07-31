@@ -4,8 +4,8 @@
   "content": "complete",
   "name": "DeliveryTypeCS",
   "id": "delivery-type-cs",
-  "title": "Art des Belieferung (CS)",
-  "description": "Specifies how a dispense request should be fulfilled/ delivered",
+  "title": "Art der Belieferung (CS)",
+  "description": "Spezifiziert, wie eine Abgabeanforderung erfüllt/geliefert werden soll",
   "url": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/delivery-type-cs",
   "concept": [
     {

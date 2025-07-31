@@ -1,8 +1,8 @@
 Profile: ERPServiceRequestDispenseRequest
 Parent: ServiceRequest
 Id: erp-service-request-dispense-request
-Title: "ERP Service Request Dispense Request"
-Description: "ServiceRequest that is used to supply a recipe"
+Title: "ERP Service Request Abgabeanforderung"
+Description: "ServiceRequest, der zur Abgabe eines Rezepts verwendet wird"
 * insert Meta (erp-service-request-dispense-request)
 
 * obeys servicerequest-dispense-request-1
@@ -124,21 +124,21 @@ Description: "ServiceRequest that is used to supply a recipe"
     * ^comment = "This is used in order to sort the Annotations"
 
 Invariant: servicerequest-dispense-request-1
-Description: "If the status is active, then requester must be present."
+Description: "Wenn der Status aktiv ist, muss der Anforderer vorhanden sein."
 Expression: "status = 'active' implies requester.exists()"
 Severity: #error
 
 Invariant: servicerequest-dispense-request-2
-Description: "If the status is active, then the e-prescription-token must be present."
+Description: "Wenn der Status aktiv ist, muss der E-Rezept-Token vorhanden sein."
 Expression: "status = 'active' implies extension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex').exists()"
 Severity: #error
 
 Invariant: servicerequest-dispense-request-3
-Description: "If the status is completed, then the dispense data must be present."
+Description: "Wenn der Status abgeschlossen ist, müssen die Abgabedaten vorhanden sein."
 Expression: "status = 'completed' implies supportingInfo.where(type='MedicationDispense').exists()"
 Severity: #error
 
 Invariant: servicerequest-dispense-request-4
-Description: "If the the code for the delivery type is alternatve-address, then the address must be stated."
+Description: "Wenn der Code für den Liefertyp 'alternative-address' ist, muss die Adresse angegeben werden."
 Expression: "(status = 'active' and code.coding.where(system='https://gematik.de/fhir/erp-servicerequest/CodeSystem/delivery-type-cs').exists() and code.coding.where(system='https://gematik.de/fhir/erp-servicerequest/CodeSystem/delivery-type-cs').code = 'delivery-to-alternative-address') implies (extension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/alternative-delivery-address-ex').exists() and extension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/alternative-delivery-address-ex').value.empty().not())"
 Severity: #error

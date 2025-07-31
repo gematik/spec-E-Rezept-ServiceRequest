@@ -1,8 +1,8 @@
 Instance: ServiceIdentifierToSubjectConceptMap
 InstanceOf: ConceptMap
 Usage: #definition
-Title: "Service Identifier To Subject Concept Map"
-Description: "This Concept Map allows for the mapping of a Service Identifier to a Subject Header for a KIM-Message in the context of a Service Request."
+Title: "Service Identifier zu Subject Concept Map"
+Description: "Diese Concept Map ermöglicht die Zuordnung eines Service Identifiers zu einem Subject Header für eine KIM-Nachricht im Kontext einer Service Request."
 * insert VersioningInst
 // TODO: ConceptMap.group[0] | No Source Code System, so the source codes cannot be checked {CONCEPTMAP_GROUP_SOURCE_MISSING}
 * name = "Service Identifier To Subject Concept Map"

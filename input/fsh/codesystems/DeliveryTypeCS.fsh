@@ -1,7 +1,7 @@
 CodeSystem: DeliveryTypeCS
 Id: delivery-type-cs
-Title: "Art des Belieferung (CS)"
-Description: "Specifies how a dispense request should be fulfilled/ delivered"
+Title: "Art der Belieferung (CS)"
+Description: "Spezifiziert, wie eine Abgabeanforderung erfüllt/geliefert werden soll"
 * insert MetaCodeSystem(delivery-type-cs)
 
 * #pickup-by-healthcare-service "Abholung durch Pflegeeinrichtung"

@@ -5,16 +5,16 @@
   "name": "ServiceRequestTypeCS",
   "id": "service-request-type-cs",
   "title": "Art des ServiceRequests (CS)",
-  "description": "Specifies the type of ServiceRequest and is used to identify ServiceRequests",
+  "description": "Spezifiziert den Typ des ServiceRequests und wird zur Identifikation von ServiceRequests verwendet",
   "url": "https://gematik.de/fhir/erp-servicerequest/CodeSystem/service-request-type-cs",
   "concept": [
     {
       "code": "prescription-request",
-      "display": "Request for a prescription"
+      "display": "Anfrage für ein Rezept"
     },
     {
       "code": "dispense-request",
-      "display": "Request for the delivery of a prescription"
+      "display": "Anfrage für die Lieferung eines Rezepts"
     }
   ],
   "experimental": false,

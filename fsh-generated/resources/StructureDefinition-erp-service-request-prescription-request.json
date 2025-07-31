@@ -4,12 +4,12 @@
   "url": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request",
   "version": "1.2.0",
   "name": "ERPServiceRequestPrescriptionRequest",
-  "title": "ERP Service Request Prescription Request",
+  "title": "ERP Service Request Rezeptanforderung",
   "status": "active",
   "experimental": false,
   "date": "2025-07-31",
   "publisher": "gematik GmbH",
-  "description": "ServiceRequest, which is used to request a recipe",
+  "description": "ServiceRequest, der zur Anforderung eines Rezepts verwendet wird",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
@@ -25,35 +25,35 @@
           {
             "key": "servicerequest-prescription-request-1",
             "severity": "error",
-            "human": "If the status is active, the requester must be present.",
+            "human": "Wenn der Status aktiv ist, muss der Anforderer vorhanden sein.",
             "expression": "status = 'active' implies requester.exists()",
             "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
           },
           {
             "key": "servicerequest-prescription-request-2",
             "severity": "error",
-            "human": "If the status is completed and the prescription should be redeemed by the patient, the e-prescription-token must not be present.",
+            "human": "Wenn der Status abgeschlossen ist und das Rezept vom Patienten eingelöst werden soll, darf der E-Rezept-Token nicht vorhanden sein.",
             "expression": "(status = 'completed' and modifierExtension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex').exists() and modifierExtension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex').value = true) implies extension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex').exists().not()",
             "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
           },
           {
             "key": "servicerequest-prescription-request-3",
             "severity": "error",
-            "human": "If the status is revoked or entered-in-error, then the reasonCode or note must be present.",
+            "human": "Wenn der Status widerrufen oder fehlerhaft eingegeben ist, muss der Grund oder eine Notiz vorhanden sein.",
             "expression": "(status = 'revoked' or status = 'entered-in-error') implies (reasonCode.text.exists() or note.exists())",
             "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
           },
           {
             "key": "servicerequest-prescription-request-4",
             "severity": "error",
-            "human": "If the status is completed, the performer must be present.",
+            "human": "Wenn der Status abgeschlossen ist, muss der Durchführende vorhanden sein.",
             "expression": "status = 'completed' implies performer.exists()",
             "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
           },
           {
             "key": "servicerequest-prescription-request-5",
             "severity": "error",
-            "human": "If the status is completed and the prescription should not be redeemed by the patient, the e-prescription-token must be present.",
+            "human": "Wenn der Status abgeschlossen ist und das Rezept nicht vom Patienten eingelöst werden soll, muss der E-Rezept-Token vorhanden sein.",
             "expression": "(status = 'completed' and (modifierExtension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex').value = false or modifierExtension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/redeem-by-patient-ex').exists().not())) implies extension.where(url = 'https://gematik.de/fhir/erp-servicerequest/StructureDefinition/eprescription-token-ex').exists()",
             "source": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
           }

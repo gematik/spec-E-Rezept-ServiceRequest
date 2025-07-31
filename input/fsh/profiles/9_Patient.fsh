@@ -2,7 +2,7 @@ Profile: ERPServiceRequestPatient
 Parent: TIPatient
 Id: erp-service-request-patient
 Title: "ERP Service Request Patient"
-Description: "Patient that can be used for the UseCase ServiceRequest"
+Description: "Patient, der für den Anwendungsfall ServiceRequest verwendet werden kann"
 * insert Meta (erp-service-request-patient)
 
 * address only AddressDeBasis

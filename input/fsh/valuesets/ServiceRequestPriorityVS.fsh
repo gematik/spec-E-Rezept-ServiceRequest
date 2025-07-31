@@ -1,7 +1,7 @@
 ValueSet: ServiceRequestPriorityVS
 Id: service-request-priority-vs
-Title: "Service Request Priority VS"
-Description: "Provides codes for the priority of a service request"
+Title: "Service Request Priorität VS" 
+Description: "Stellt Codes für die Priorität einer Service Request bereit"
 * insert MetaValueSet (service-request-priority-vs)
 * include RequestPriority#routine
 * include RequestPriority#urgent

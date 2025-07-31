@@ -1,8 +1,8 @@
 Profile: ERPServiceRequestOrganization
 Parent: TIOrganization
 Id: erp-service-request-organization
-Title: "ERP Service Request Organization"
-Description: "Organization that can be used to specify a KIM address"
+Title: "ERP Service Request Organisation"
+Description: "Organisation, die zur Angabe einer KIM-Adresse verwendet werden kann"
 * insert Meta (erp-service-request-organization)
 
 * contact 1..* MS
