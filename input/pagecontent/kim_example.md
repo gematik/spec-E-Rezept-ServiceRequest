@@ -11,7 +11,7 @@ Damit erkennt ein KIM Client, dass es sich um eine strukturierte Nachricht im Ra
 
 Schematisch kann das wie folgt dargestellt werden:
 
-<div class="gem-ig-svg-container" style="--box-width: 400px;">
+<div class="gem-ig-svg-container" style="--box-width: 500px;">
     {% include kennungen-connections.svg %}
 </div>
 
