@@ -37,8 +37,9 @@ menu:
     Ressourcen: festlegungen-resource-usage.html
   FHIR-Artefakte: artifacts.html
   Anhänge:
-    Downloads: downloads.html
     Beispiel KIM Nachricht: kim_example.html
+    UI/UX: ui-ux.html
+    Downloads: downloads.html
     Release Notes: release_notes.html
 
 parameters:
