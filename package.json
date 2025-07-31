@@ -3,6 +3,7 @@
   "version": "1.2.0",
   "author": "gematik GmbH",
   "description": "Ressourcen zur Rezeptanforderung eines E-Rezeptes",
+  "jurisdiction" : "urn:iso:std:iso:3166#DE",
   "fhirVersions": [
     "4.0.1"
   ],
