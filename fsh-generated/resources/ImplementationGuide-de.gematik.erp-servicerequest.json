@@ -789,7 +789,7 @@
       },
       {
         "code": "releaselabel",
-        "value": "ci-build"
+        "value": "release"
       },
       {
         "code": "no-narrative",
