@@ -21,16 +21,17 @@ Schematisch kann das wie folgt dargestellt werden:
 Die FHIR-Datensätze in Anfrage- und Antwortnachrichten werden ausschließlich als Anhang in der KIM Nachricht übertragen.
 **siehe unten**
 
-|KIM-Header              |Inhalt                                 |verpflichtend|
-|------------------------|---------------------------------------|-------------|
-|X-KIM-Dienstkennung     |eRezept;Rezeptanforderung;1.0|ja|
-|X-KIM-Sendersystem      |\<PS-Bezeichnung>;\<Releaseversion>   |ja|
-|X-KIM-Support           |\<Support-Email-Adresse PS-Hersteller>|nein|
-|Subject                 |\<T/E>Rezeptanforderung\<UUID>                 |ja <br />T/E: *T*estsystem (RU) / *E*chtsystem (PU)<br />UUID: request bundle-identifier |
-|Content-Type            | application/xml;<br />name="<T/E>Rezeptanforderung<UUID>.xml" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: request bundle-identifier <br />
-|Content-Transfer-Encoding |base64 |ja|
-|Content-Disposition     |attachment; filename="<T/E>Rezeptanforderung<UUID>.xml" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: request bundle-identifier|
-|Content-Description     |Rezeptanforderung                               |ja|
+|KIM-Header|Inhalt|verpflichtend|
+|---|---|---|
+|X-KIM-Dienstkennung|eRezept;Rezeptanforderung;1.0|ja|
+|X-KIM-Sendersystem|\<PS-Bezeichnung>;\<Releaseversion>|ja|
+|X-KIM-Support|\<Support-Email-Adresse PS-Hersteller>|nein|
+|Subject|\<T/E>Rezeptanforderung\<UUID>|ja <br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: request bundle-identifier|
+|Content-Type|application/xml;<br />name="<T/E>Rezeptanforderung<UUID>.xml"|ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: request bundle-identifier <br />|
+|Content-Transfer-Encoding|base64|ja|
+|Content-Disposition|attachment; filename="<T/E>Rezeptanforderung<UUID>.xml"|ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: request bundle-identifier|
+|Content-Description|Rezeptanforderung|ja|
+
 Der Anhang enthält die Rezeptanforderung als FHIR-Ressource
 
 ### KIM Rezeptanforderung Beispielnachricht
