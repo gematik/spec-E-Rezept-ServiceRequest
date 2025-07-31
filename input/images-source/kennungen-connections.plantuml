@@ -1,0 +1,28 @@
+@startuml "kennungen-connections"
+!pragma layout smetana
+
+legend left
+<b>Legende</b>
+
+<i>ServiceIdentifier</i>
+  Code aus ServiceIdentifierCS des App Transport Framework
+
+<i>X-KIM-Dienstkennung</i>
+  KIM-Dienstkennung aus dem Fachportal
+endlegend
+
+rectangle "KIM-Nachricht" as KIMMSG {
+
+  rectangle "KIM-Header" as KIMHDR {
+    rectangle "<color:green>X-KIM-Dienstkennung</color>\n(z.B. eRezept;Rezeptanforderung;V1.0)" as KIMINFO
+  }
+
+  rectangle "KIM-Body / Bundle" as KIMBODY {
+    rectangle "MessageHeader.eventCode = <color:blue>ServiceIdentifier</color>\n(z.B. eRezept_Rezeptanforderung;Rezeptanfrage_Storno)" as MSGH
+    rectangle "ServiceRequest-Daten" as MSGB
+  }
+}
+
+KIMHDR -down[hidden]-> KIMBODY
+MSGH -down[hidden]-> MSGB
+@enduml
