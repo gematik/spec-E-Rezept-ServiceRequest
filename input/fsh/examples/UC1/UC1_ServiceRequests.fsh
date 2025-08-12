@@ -44,7 +44,7 @@ Description: "ServiceRequest-Antwort des Verordnenden mit E-Rezept-Token an die 
 // Dispense Service Requests
 Instance: UC1-Initial-Dispense-Request
 InstanceOf: ERPServiceRequestDispenseRequest
-Usage: #inline
+Usage: #example
 Title: "Abgabeanforderung der Pflegeeinrichtung"
 Description: "ServiceRequest der Pflegeeinrichtung zur Abgabe des E-Rezepts an die Apotheke für die Heimversorgung"
 * extension[EPrescriptionToken].valueIdentifier.value = "Task/169.100.000.000.002.36/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"

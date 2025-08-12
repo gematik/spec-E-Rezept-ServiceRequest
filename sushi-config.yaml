@@ -43,6 +43,16 @@ menu:
     Release Notes: release_notes.html
 
 parameters:
+  no-validate:
+    - Bundle/INVALID-Container
+    - MedicationDispense/INVALID-Medication-Dispense
+    - MedicationRequest/INVALID-Medication-Request
+    - MessageHeader/INVALID-MessageHeader
+    - Organization/INVALID-HealthCareService-Organization
+    - Patient/INVALID-Patient
+    - Practitioner/INVALID-Practitioner
+    - ServiceRequest/INVALID-Dispense-Request
+    - ServiceRequest/INVALID-Prescription-Request
   no-narrative:
     - Medication/* # In order to Avoid the forbidden Medication.text field
     - Bundle/*

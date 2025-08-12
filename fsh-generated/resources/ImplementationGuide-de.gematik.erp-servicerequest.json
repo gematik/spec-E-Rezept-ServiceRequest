@@ -64,6 +64,22 @@
       },
       {
         "reference": {
+          "reference": "ServiceRequest/INVALID-Dispense-Request"
+        },
+        "name": "Abgabeanforderung der Pflegeeinrichtung",
+        "description": "ServiceRequest der Pflegeeinrichtung zur Abgabe des E-Rezepts an die Apotheke für die Heimversorgung",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"
+      },
+      {
+        "reference": {
+          "reference": "ServiceRequest/UC1-Initial-Dispense-Request"
+        },
+        "name": "Abgabeanforderung der Pflegeeinrichtung",
+        "description": "ServiceRequest der Pflegeeinrichtung zur Abgabe des E-Rezepts an die Apotheke für die Heimversorgung",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-dispense-request"
+      },
+      {
+        "reference": {
           "reference": "Bundle/UC1-3-Alt-Delivery-Dispense-Request-To-Pharmacy"
         },
         "name": "Abgabeanforderung mit alternativer Lieferadresse",
@@ -189,6 +205,14 @@
         "name": "Bestätigung der Zytostatika-Rezepterstellung",
         "description": "Antwort des Verordnenden an die Apotheke mit Bestätigung der E-Rezept-Erstellung für Zytostatika-Zubereitungen",
         "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
+      },
+      {
+        "reference": {
+          "reference": "ServiceRequest/INVALID-Prescription-Request"
+        },
+        "name": "Bestätigung Rezepterstellung für Heimversorgung",
+        "description": "ServiceRequest-Antwort des Verordnenden mit E-Rezept-Token an die Pflegeeinrichtung",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-prescription-request"
       },
       {
         "reference": {
@@ -397,6 +421,62 @@
         "name": "Initialer MedicationRequest einer Rezeptanforderung",
         "description": "Dieses Beispiel demonstriert einen beispielhaften MedicationRequest einer intialen Rezeptanforderung.",
         "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request"
+      },
+      {
+        "reference": {
+          "reference": "MedicationDispense/INVALID-Medication-Dispense"
+        },
+        "name": "Invalide Medikationsabgabe",
+        "description": "Dieses Beispiel ist invalide und dient nur der Sicherstellung der Validierung.",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-dispense"
+      },
+      {
+        "reference": {
+          "reference": "MedicationRequest/INVALID-Medication-Request"
+        },
+        "name": "Invalide Medikationsanforderung",
+        "description": "Dieses Beispiel ist invalide und dient nur der Sicherstellung der Validierung.",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-medication-request"
+      },
+      {
+        "reference": {
+          "reference": "Organization/INVALID-HealthCareService-Organization"
+        },
+        "name": "Invalide Pflegeeinrichtung",
+        "description": "Dieses Beispiel ist invalide und dient nur der Sicherstellung der Validierung.",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-organization"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/INVALID-Container"
+        },
+        "name": "Invalider MessageContainer",
+        "description": "Dieses Beispiel ist invalide und dient nur der Sicherstellung der Validierung.",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-message-container"
+      },
+      {
+        "reference": {
+          "reference": "MessageHeader/INVALID-MessageHeader"
+        },
+        "name": "Invalider MessageHeader",
+        "description": "Dieses Beispiel ist invalide und dient nur der Sicherstellung der Validierung.",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-request-header"
+      },
+      {
+        "reference": {
+          "reference": "Patient/INVALID-Patient"
+        },
+        "name": "Invalider Patient",
+        "description": "Dieses Beispiel ist invalide und dient nur der Sicherstellung der Validierung.",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-patient"
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/INVALID-Practitioner"
+        },
+        "name": "Invalider Practitioner",
+        "description": "Dieses Beispiel ist invalide und dient nur der Sicherstellung der Validierung.",
+        "exampleCanonical": "https://gematik.de/fhir/erp-servicerequest/StructureDefinition/erp-service-request-practitioner"
       },
       {
         "reference": {
@@ -790,6 +870,42 @@
       {
         "code": "releaselabel",
         "value": "release"
+      },
+      {
+        "code": "no-validate",
+        "value": "Bundle/INVALID-Container"
+      },
+      {
+        "code": "no-validate",
+        "value": "MedicationDispense/INVALID-Medication-Dispense"
+      },
+      {
+        "code": "no-validate",
+        "value": "MedicationRequest/INVALID-Medication-Request"
+      },
+      {
+        "code": "no-validate",
+        "value": "MessageHeader/INVALID-MessageHeader"
+      },
+      {
+        "code": "no-validate",
+        "value": "Organization/INVALID-HealthCareService-Organization"
+      },
+      {
+        "code": "no-validate",
+        "value": "Patient/INVALID-Patient"
+      },
+      {
+        "code": "no-validate",
+        "value": "Practitioner/INVALID-Practitioner"
+      },
+      {
+        "code": "no-validate",
+        "value": "ServiceRequest/INVALID-Dispense-Request"
+      },
+      {
+        "code": "no-validate",
+        "value": "ServiceRequest/INVALID-Prescription-Request"
       },
       {
         "code": "no-narrative",
