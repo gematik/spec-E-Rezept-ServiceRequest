@@ -1,0 +1,17 @@
+{
+  "package-id": "de.gematik.erp-servicerequest",
+  "version": "1.2.0",
+  "path": "https://gematik.de/fhir/erp-servicerequest/1.2.0",
+  "status": "release",
+  "first": true,
+  "mode": "milestone",
+  "sequence": "E-Rezept",
+  "desc": "E-Rezept ServiceRequest",
+  "ci-build": "https://gematik.de/fhir/erp-servicerequest/build",
+  "category": "gematik",
+  "title": "E-Rezept ServiceRequest ",
+  "introduction": "E-Rezept ServiceRequest",
+  "registry-description": "E-Rezept ServiceRequest",
+  "registry-country": "DE",
+  "registry-authority": "gematik"
+}

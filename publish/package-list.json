@@ -1,0 +1,25 @@
+{
+    "package-id": "de.gematik.erp-servicerequest",
+    "canonical": "https://gematik.de/fhir/erp-servicerequest",
+    "title": "E-Rezept ServiceRequest",
+    "introduction": "E-Rezept ServiceRequest",
+    "list": [
+        {
+            "version": "1.2.0",
+            "desc": "E-Rezept ServiceRequest",
+            "path": "https://gematik.de/fhir/erp-servicerequest/1.2.0",
+            "status": "release",
+            "current": false,
+            "date": "2025-07-31",
+            "sequence": "E-Rezept",
+            "fhirversion": "4.0.1"
+        },
+        {
+            "version": "current",
+            "desc": "Continuous Integration Build (latest in version control)",
+            "path": "https://gematik.de/fhir/erp-servicerequest/build",
+            "status": "ci-build",
+            "current": true
+        }
+    ]
+}

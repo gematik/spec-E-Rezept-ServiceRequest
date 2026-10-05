@@ -4,7 +4,25 @@
   "url": "https://gematik.de/fhir/erp-servicerequest/ImplementationGuide/de.gematik.erp-servicerequest",
   "version": "1.2.0",
   "name": "ERezeptServiceRequest",
+  "title": "E-Rezept ServiceRequest",
   "status": "active",
+  "date": "2025-07-31",
+  "publisher": "gematik GmbH",
+  "contact": [
+    {
+      "name": "gematik GmbH",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://gematik.de"
+        },
+        {
+          "system": "email",
+          "value": "erp-umsetzung@gematik.de"
+        }
+      ]
+    }
+  ],
   "jurisdiction": [
     {
       "coding": [
